@@ -1,0 +1,81 @@
+{
+  "name": "isofw-web",
+  "version": "1.0.1",
+  "main": "index.js",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "start": "npm run dev",
+    "build": "./node_modules/.bin/webpack --config ./webpack.config.prod.ts || true",
+    "buildSsr": "./node_modules/.bin/webpack --config ./webpack.config.server.prod.ts  || true",
+    "buildElectron": "./node_modules/.bin/webpack --config ./webpack.config.electron.ts  || true",
+    "dev": "../ci/node_modules/.bin/webpack-dev-server --config ./webpack.config.ts --port 4201 --content-base webpackDist",
+    "devSsr": "./node_modules/.bin/webpack -w --config ./webpack.config.server.ts"
+  },
+  "dependencies": {
+    "preact": "^8.3.1",
+    "preact-compat": "^3.18.4"
+  },
+  "devDependencies": {
+    "@types/copy-webpack-plugin": "^4.4.2",
+    "@types/extract-text-webpack-plugin": "^3.0.3",
+    "@types/graceful-fs": "^4.1.2",
+    "@types/jest": "^23.3.9",
+    "@types/mini-css-extract-plugin": "^0.2.0",
+    "@types/node": "^10.12.5",
+    "@types/react": "^16.7.2",
+    "@types/react-dom": "^16.0.9",
+    "@types/react-test-renderer": "^16.0.3",
+    "@types/uglifyjs-webpack-plugin": "^1.1.0",
+    "@types/webpack": "^4.4.18",
+    "awesome-typescript-loader": "^5.2.1",
+    "copy-webpack-plugin": "^4.6.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^2.0.0",
+    "graceful-fs": "^4.1.15",
+    "jest": "^23.6.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "source-map-loader": "^0.2.4",
+    "ts-jest": "^23.10.4",
+    "ts-loader": "^5.3.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "diagnostics": false
+      }
+    },
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.ts",
+      "isofw-node(.*)": "<rootDir>/../isofw-node$1",
+      "isofw-shared(.*)": "<rootDir>/../isofw-shared$1",
+      "isofw-web(.*)": "<rootDir>/../isofw-web$1",
+      "isofw-rn(.*)": "<rootDir>/../isofw-rn$1",
+      "preact-render-to-json": "preact-render-to-json",
+      "preact-compat": "preact-compat",
+      "preact": "preact",
+      "react": "preact-compat",
+      "react-dom": "preact-compat",
+      "react-native": "<rootDir>/node_modules/react-native-web",
+      "\\.(css|sass|scss)$": "<rootDir>/__mocks__/styleMock.ts"
+    },
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/",
+      "<rootDir>/lib",
+      "<rootDir>/dist"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  }
+}

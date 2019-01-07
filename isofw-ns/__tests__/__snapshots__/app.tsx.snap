@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Verify app rendering: rendered 1`] = `
+<page>
+  <actionBar
+    text="isofw"
+  />
+  <scrollView>
+    <stackLayout>
+      <button
+        text="isofwbtn"
+      />
+      <button
+        text="shared"
+      />
+      <progress
+        value={50}
+      />
+    </stackLayout>
+  </scrollView>
+</page>
+`;

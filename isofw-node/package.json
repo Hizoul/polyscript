@@ -1,0 +1,73 @@
+{
+  "name": "isofw-node",
+  "version": "1.0.1",
+  "main": "index.js",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "build": "../ci/node_modules/.bin/tsc",
+    "prod": "cd dist && NODE_PATH=$NODE_PATH:./ node isofw-node/src/universalWebpackRunner",
+    "dev": "NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/nodemon -e ts,tsx --watch src --watch ../isofw-shared/src --exec '../ci/node_modules/.bin/ts-node' src/debug",
+    "devSsr": "NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/nodemon --watch webpackDist webpackDist/isoapp"
+  },
+  "dependencies": {
+    "@feathersjs/authentication": "^2.1.13",
+    "@feathersjs/authentication-jwt": "^2.0.7",
+    "@feathersjs/authentication-local": "^1.2.7",
+    "@feathersjs/express": "^1.2.7",
+    "@feathersjs/feathers": "^3.2.3",
+    "@feathersjs/socketio": "^3.2.7",
+    "body-parser": "^1.18.3",
+    "feathers-memory": "^2.2.0",
+    "feathers-mongodb": "^3.3.0",
+    "lodash": "^4.17.11",
+    "mongodb": "^3.1.9",
+    "preact": "^8.3.1",
+    "preact-compat": "^3.18.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@types/feathersjs__authentication": "^2.1.2",
+    "@types/feathersjs__authentication-jwt": "^1.0.3",
+    "@types/feathersjs__authentication-local": "^1.0.3",
+    "@types/feathersjs__errors": "^3.2.1",
+    "@types/feathersjs__express": "^1.1.4",
+    "@types/feathersjs__feathers": "^3.0.5",
+    "@types/feathersjs__socketio": "^3.0.3",
+    "@types/jest": "^23.3.9",
+    "@types/lodash": "^4.14.118",
+    "@types/react": "^16.7.2",
+    "@types/react-dom": "^16.0.9",
+    "babel-jest": "^23.6.0",
+    "react-test-renderer": "^16.6.1",
+    "ts-jest": "^23.10.4",
+    "typescript": "^3.1.6"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "diagnostics": false
+      }
+    },
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleNameMapper": {
+      "isofw-node(.*)": "<rootDir>/../isofw-node$1",
+      "isofw-shared(.*)": "<rootDir>/../isofw-shared$1",
+      "isofw-web(.*)": "<rootDir>/../isofw-web$1",
+      "react-native": "<rootDir>/node_modules/react-native-web"
+    },
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/",
+      "<rootDir>/lib",
+      "<rootDir>/dist"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+    "plugins": [
+        {
+            "id": "custom",
+            "enabled": true,
+            "showStatus": true,
+            "config": {
+                "prepare": "cd $PWD/ci && npm run ciInit",
+                "test": "cd $PWD/ci && npm run test"
+            }
+        }
+    ]
+}

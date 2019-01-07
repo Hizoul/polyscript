@@ -1,0 +1,37 @@
+{
+  "name": "isofw-ci-scripts",
+  "version": "1.0.1",
+  "main": "index.js",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "build": "./node_modules/.bin/ts-node src/build",
+    "web": "cd ../isofw-web && npm run dev",
+    "server": "cd ../isofw-node && npm run dev",
+    "test": "./node_modules/.bin/ts-node src/test",
+    "testDev": "cd .. && ./ci/node_modules/.bin/jest --watchAll --coverage --projects isofw-node isofw-shared isofw-web isofw-rn isofw-electron",
+    "ssr": "./node_modules/.bin/ts-node src/ssrDev",
+    "update": "./node_modules/.bin/ts-node src/upgradeDeps",
+    "init": "npm install && ./node_modules/.bin/ts-node src/init",
+    "ciInit": "yarn && ./node_modules/.bin/ts-node src/init",
+    "setPackageVersions": "./node_modules/.bin/ts-node src/setPackageVersions",
+    "rns": "adb reverse tcp:4202 tcp:4202",
+    "rnad": "adb shell input keyevent 82"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "@types/lodash": "^4.14.118",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.6",
+    "npm-check-updates": "^2.14.2",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "yarn": "^1.12.3"
+  },
+  "dependencies": {
+    "@types/shelljs": "^0.8.0",
+    "shelljs": "^0.8.2"
+  }
+}

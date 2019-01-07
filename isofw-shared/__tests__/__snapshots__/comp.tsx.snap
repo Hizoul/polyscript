@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Verify Component: rendered 1`] = `
+<div
+  class="mzmock"
+>
+  {
+  "text": "shared",
+  "children": []
+}
+</div>
+`;
