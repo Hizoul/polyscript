@@ -22,7 +22,13 @@ const LoadableLoginPage = Loadable({
   loader: () => import("./login")
 })
 
+const LoadableDirectorPage = Loadable({
+  loading: LoadingPage,
+  loader: () => import("./project/directorSheet")
+})
+
 
 export {
-  LoadableCreatePage, LoadableEditPage, LoadableListPage, LoadableLoginPage, 
+  LoadableCreatePage, LoadableEditPage, LoadableListPage, LoadableLoginPage,
+  LoadableDirectorPage
 }

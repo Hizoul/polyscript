@@ -1,10 +1,20 @@
-import ValidationRegistry, { IForm, Permission } from "@xpfw/validate"
+import ValidationRegistry, { IForm, Permission, IField, FieldType } from "@xpfw/validate"
+
+const ProjectName: IField = {
+  type: FieldType.Text,
+  mapTo: "name"
+}
+
+const ProjectShot: IField = {
+  type: FieldType.Number,
+  mapTo: "shot"
+}
 
 const ProjectForm: IForm = {
   model: "projectModel",
   collection: "projects",
   sections: [{fields: [
-    
+    ProjectName, ProjectShot
   ]}],
   permissions: {
     required: {
@@ -23,5 +33,5 @@ const ProjectForm: IForm = {
 
 ValidationRegistry.registerForm(ProjectForm)
 export {
-  ProjectForm
+  ProjectForm, ProjectName, ProjectShot
 }

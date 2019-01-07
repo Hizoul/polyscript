@@ -6,7 +6,8 @@ import Home from "isofw-web/src/pages/home"
 import {
   LoadableCreatePage, LoadableEditPage,
   LoadableListPage,
-  LoadableLoginPage
+  LoadableLoginPage,
+  LoadableDirectorPage
 } from "isofw-web/src/pages/loadable"
 import * as React from "react"
 import pose, { PoseGroup } from "react-pose"
@@ -48,7 +49,8 @@ const AppRouter = () => (
                   <Route path="/login" component={LoadableLoginPage} key="login" />
                   <Route path="/create/:collection" component={LoadableCreatePage} key="create" />
                   <Route path="/list/:collection" component={LoadableListPage} key="list" />
-                  <Route path="/edit/:collection/:id" component={LoadableEditPage} key="about" />
+                  <Route path="/edit/:collection/:id" component={LoadableEditPage} key="edit" />
+                  <Route path="/director/:id" component={LoadableDirectorPage} key="director" />
                 </Switch>
               </RouteContainer>
             </PoseGroup>
