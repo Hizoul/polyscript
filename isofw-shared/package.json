@@ -4,26 +4,24 @@
   "main": "index.js",
   "license": "AGPL-3.0",
   "dependencies": {
-    "@feathersjs/feathers": "^3.2.3",
-    "@feathersjs/rest-client": "^1.4.5",
-    "@feathersjs/socketio-client": "^1.1.5",
+    "@feathersjs/feathers": "^3.3.1",
+    "@feathersjs/rest-client": "^1.4.7",
+    "@feathersjs/socketio-client": "^1.2.1",
     "isomorphic-fetch": "^2.2.1",
-    "preact": "^8.3.1",
-    "preact-compat": "^3.18.4",
-    "socket.io-client": "^2.1.1"
+    "react": "^16.7.0",
+    "socket.io-client": "^2.2.0"
   },
   "devDependencies": {
-    "@babel/runtime": "^7.1.5",
-    "@types/jest": "^23.3.9",
-    "@types/lodash": "^4.14.118",
-    "@types/react": "^16.7.2",
-    "@types/react-dom": "^16.0.9",
-    "@types/react-native": "^0.57.7",
+    "@babel/runtime": "^7.2.0",
+    "@types/jest": "^23.3.12",
+    "@types/lodash": "^4.14.119",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-native": "^0.57.25",
     "jest": "^23.6.0",
-    "preact-render-to-json": "^3.6.6",
-    "react": "^16.6.1",
-    "ts-jest": "^23.10.4",
-    "typescript": "^3.1.6"
+    "react-dom": "^16.7.0",
+    "ts-jest": "^23.10.5",
+    "typescript": "3.1.6"
   },
   "jest": {
     "globals": {
@@ -38,13 +36,7 @@
     "moduleNameMapper": {
       "isofw-node(.*)": "<rootDir>/../isofw-node$1",
       "isofw-shared(.*)": "<rootDir>/../isofw-shared$1",
-      "isofw-web(.*)": "<rootDir>/../isofw-web$1",
-      "preact-render-to-json": "preact-render-to-json",
-      "preact-compat": "preact-compat",
-      "preact": "preact",
-      "react": "preact-compat",
-      "react-dom": "preact-compat",
-      "react-native": "<rootDir>/node_modules/react-native-web"
+      "isofw-web(.*)": "<rootDir>/../isofw-web$1"
     },
     "testPathIgnorePatterns": [
       "\\.snap$",

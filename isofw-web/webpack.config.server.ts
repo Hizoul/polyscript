@@ -61,9 +61,7 @@ const webpackServerConfig: webpack.Configuration = {
       "isofw-web": __dirname,
       "isofw-shared": path.resolve(__dirname, `../isofw-shared`),
       "isofw-rn": path.resolve(__dirname, `../isofw-rn`),
-      "isofw-node": path.resolve(__dirname, `../isofw-node`),
-      "react": "preact-compat",
-      "react-dom": "preact-compat"
+      "isofw-node": path.resolve(__dirname, `../isofw-node`)
     }
   }
 }

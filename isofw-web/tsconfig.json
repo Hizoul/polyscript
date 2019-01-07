@@ -24,8 +24,6 @@
       "@types",
       "./@types",
       "node_modules/@types",
-      "../isofw-node/src/@types",
-      "../isofw-node/node_modules/@types"
     ]
   },
   "exclude": [

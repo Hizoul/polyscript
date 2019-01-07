@@ -4,7 +4,6 @@ import pd from "./projectDirectories"
 for (const key in pd) {
   const dir = pd[key]
   if (dir !== pd.ci) {
-    exec(`npm i`, {cwd: dir})
-    // exec(`${pd.ci}/node_modules/.bin/yarn`, {cwd: dir})
+    exec(`${pd.ci}/node_modules/.bin/yarn`, {cwd: dir})
   }
 }
