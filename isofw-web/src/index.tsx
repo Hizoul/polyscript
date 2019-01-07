@@ -1,15 +1,10 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
-import Hello from "./comp"
+import App from "./app"
 
-const ele: any = () => (
-    <div>
-        <Hello />
-    </div>
-)
 document.addEventListener(`DOMContentLoaded`, () => {
     ReactDOM.render(
-        ele,
+        <App />,
         document.getElementById("root")
     )
 })

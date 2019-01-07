@@ -372,6 +372,11 @@
   dependencies:
     "@types/node" "*"
 
+"@xpfw/feathers@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@xpfw/feathers/-/feathers-0.1.1.tgz#e916689ee00d014ecc81470fdd9a1855d993df0e"
+  integrity sha512-cpVKG9IBTmmiyHjbr7luvV7fkjG0SjTnMtw5X1E9TW2k5PgMcVFM1ogMlDV0dGUH4JGG6IdqQJGqLFSEObS8qA==
+
 accepts@~1.3.4:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.4.tgz#86246758c7dd6d21a6474ff084a4740ec05eb21f"
