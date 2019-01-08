@@ -9,14 +9,14 @@ export interface IButton {
   onClick?: any
   loading?: boolean
   disabled?: boolean
-  icon?: {type: string, name: string}
+  icon?: any
   leftIcon?: boolean
   rightIcon?: boolean
 }
 
 class WebButton extends React.Component<IButton, any> {
   public render() {
-    let classNames = `button ${this.props.className}`
+    let classNames = `customButton ${this.props.className}`
     let onClick = this.props.onClick
     if (this.props.loading) {
       onClick = undefined
@@ -27,11 +27,8 @@ class WebButton extends React.Component<IButton, any> {
       classNames += " is-outlined"
     }
     let IconToDisplay
-    if (isObject(this.props.icon)) {
-      IconToDisplay = (
-        <span className="icon is-small">icon
-        </span>
-      )
+    if (this.props.icon != null) {
+      IconToDisplay = this.props.icon
     }
     return (
       <a
