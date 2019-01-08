@@ -4,7 +4,8 @@ const emptyPort: () => Promise<number> = () => {
   return new Promise((resolve, reject) => {
     const server = http.createServer()
       .listen(0, () => {
-        const port = server.address().port
+        const address: any = server.address()
+        const port = address.port
         server.close(() => {
           resolve(port)
         })
