@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` direct a test   can increase number :  creation of projects  1`] = `
+Array [
+  Object {
+    "_id": "p1",
+    "name": "pn1",
+    "shot": 1,
+  },
+  Object {
+    "_id": "p2",
+    "name": "pn2",
+    "shot": 8,
+  },
+  Object {
+    "_id": "p3",
+    "name": "pn3",
+    "shot": 6,
+  },
+]
+`;

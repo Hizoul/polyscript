@@ -2,8 +2,12 @@ const val = {
   isDebug: true,
   version: "0.1.0",
   i18nNameSpace: "langSpace",
-  channels: {
+  channel: {
     realtime: "realtime"
+  },
+  service: {
+    user: "/users",
+    project: "projects"
   }
 }
 
