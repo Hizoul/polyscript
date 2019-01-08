@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` direct a test   can increase number :  creation of proInjects  1`] = `
+Array [
+  Object {
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 1,
+  },
+  Object {
+    "_id": "b29999999999999999999999",
+    "name": "pn2",
+    "shot": 8,
+  },
+  Object {
+    "_id": "b39999999999999999999999",
+    "name": "pn3",
+    "shot": 6,
+  },
+]
+`;
+
+exports[` direct a test   can increase number :  info pushed by Server  1`] = `
+<div>
+  Editing page
+  Shop number is: 
+  42
+  <a
+    className="button undefined"
+    onClick={[Function]}
+  >
+    <span>
+       change 
+    </span>
+  </a>
+</div>
+`;
+
+exports[` direct a test   can increase number :  project Edited by client 1`] = `
+Object {
+  "createState": Object {},
+  "getState": Object {
+    "projects": Object {
+      "b19999999999999999999999": Object {
+        "result": Object {
+          "_id": "b19999999999999999999999",
+          "name": "pn1",
+          "shot": 43,
+        },
+      },
+    },
+    "users": Object {
+      "u1": Object {
+        "result": Object {
+          "_id": "u1",
+          "email": "u1",
+        },
+      },
+    },
+  },
+  "updateState": Object {
+    "shotEdit.b19999999999999999999999projectModel": Object {
+      "result": Object {
+        "_id": "b19999999999999999999999",
+        "name": "pn1",
+        "shot": 43,
+      },
+    },
+  },
+}
+`;
+
+exports[` direct a test   can increase number :  project pushed by server  1`] = `
+Object {
+  "createState": Object {},
+  "getState": Object {
+    "projects": Object {
+      "b19999999999999999999999": Object {
+        "result": Object {
+          "_id": "b19999999999999999999999",
+          "name": "pn1",
+          "shot": 42,
+        },
+      },
+    },
+    "users": Object {
+      "u1": Object {
+        "result": Object {
+          "_id": "u1",
+          "email": "u1",
+        },
+      },
+    },
+  },
+  "updateState": Object {},
+}
+`;
+
+exports[` direct a test   can increase number : After manual edits 1`] = `
+<div>
+  Editing page
+  Shop number is: 
+  43
+  <a
+    className="button undefined"
+    onClick={[Function]}
+  >
+    <span>
+       change 
+    </span>
+  </a>
+</div>
+`;
+
+exports[` direct a test   can increase number : Before manual edits 1`] = `
+<div>
+  Editing page
+  Shop number is: 
+  42
+  <a
+    className="button undefined"
+    onClick={[Function]}
+  >
+    <span>
+       change 
+    </span>
+  </a>
+</div>
+`;

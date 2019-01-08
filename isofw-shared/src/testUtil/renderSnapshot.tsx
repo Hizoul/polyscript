@@ -1,8 +1,10 @@
 import * as React from "react"
-const render = require("preact-render-to-json")
+const render = require("react-test-renderer")
 
 const renderSnapshot = (component: any, msg: string) => {
-  expect(render(component)).toMatchSnapshot(msg)
+  const tree = render.create(component)
+  expect(tree.toJSON()).toMatchSnapshot(msg)
+  tree.unmount()
 }
 
 export default renderSnapshot

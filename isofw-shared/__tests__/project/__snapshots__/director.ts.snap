@@ -1,21 +1,304 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` direct a test   can increase number :  creation of projects  1`] = `
+exports[` direct a test   can increase number :  creation of proInjects  1`] = `
 Array [
   Object {
-    "_id": "p1",
+    "_id": "b19999999999999999999999",
     "name": "pn1",
     "shot": 1,
   },
   Object {
-    "_id": "p2",
+    "_id": "b29999999999999999999999",
     "name": "pn2",
     "shot": 8,
   },
   Object {
-    "_id": "p3",
+    "_id": "b39999999999999999999999",
     "name": "pn3",
     "shot": 6,
   },
 ]
+`;
+
+exports[` direct a test   can increase number :  info pushed by Server  1`] = `
+<div
+  className="DirectorEle"
+>
+  {
+  "form": {
+    "model": "projectModel",
+    "collection": "projects",
+    "sections": [
+      {
+        "fields": [
+          {
+            "type": 2,
+            "mapTo": "_id"
+          },
+          {
+            "type": 2,
+            "mapTo": "name"
+          },
+          {
+            "type": 3,
+            "mapTo": "shot"
+          }
+        ]
+      }
+    ],
+    "permissions": {
+      "required": {
+        "create": "user",
+        "find": "user",
+        "get": "user",
+        "update": "user",
+        "remove": "server"
+      }
+    },
+    "options": {
+      "addCreatedAt": true,
+      "idPath": "_id"
+    }
+  },
+  "id": "b19999999999999999999999",
+  "prefix": "shotEdit",
+  "loading": false,
+  "original": {
+    "result": {
+      "_id": "b19999999999999999999999",
+      "name": "pn1",
+      "shot": 42
+    }
+  },
+  "user": {
+    "_id": "u1",
+    "email": "u1"
+  },
+  "fields": [
+    {
+      "type": 2,
+      "mapTo": "_id"
+    },
+    {
+      "type": 2,
+      "mapTo": "name"
+    },
+    {
+      "type": 3,
+      "mapTo": "shot"
+    }
+  ]
+}
+</div>
+`;
+
+exports[` direct a test   can increase number :  project Edited by client 1`] = `
+Object {
+  "createState": Object {},
+  "getState": Object {
+    "projects": Object {
+      "b19999999999999999999999": Object {
+        "result": Object {
+          "_id": "b19999999999999999999999",
+          "name": "pn1",
+          "shot": 43,
+        },
+      },
+    },
+    "users": Object {
+      "u1": Object {
+        "result": Object {
+          "_id": "u1",
+          "email": "u1",
+        },
+      },
+    },
+  },
+  "updateState": Object {
+    "shotEdit.b19999999999999999999999projectModel": Object {
+      "result": Object {
+        "_id": "b19999999999999999999999",
+        "name": "pn1",
+        "shot": 43,
+      },
+    },
+  },
+}
+`;
+
+exports[` direct a test   can increase number :  project pushed by server  1`] = `
+Object {
+  "createState": Object {},
+  "getState": Object {
+    "projects": Object {
+      "b19999999999999999999999": Object {
+        "result": Object {
+          "_id": "b19999999999999999999999",
+          "name": "pn1",
+          "shot": 42,
+        },
+      },
+    },
+    "users": Object {
+      "u1": Object {
+        "result": Object {
+          "_id": "u1",
+          "email": "u1",
+        },
+      },
+    },
+  },
+  "updateState": Object {},
+}
+`;
+
+exports[` direct a test   can increase number : After manual edits 1`] = `
+<div
+  className="DirectorEle"
+>
+  {
+  "form": {
+    "model": "projectModel",
+    "collection": "projects",
+    "sections": [
+      {
+        "fields": [
+          {
+            "type": 2,
+            "mapTo": "_id"
+          },
+          {
+            "type": 2,
+            "mapTo": "name"
+          },
+          {
+            "type": 3,
+            "mapTo": "shot"
+          }
+        ]
+      }
+    ],
+    "permissions": {
+      "required": {
+        "create": "user",
+        "find": "user",
+        "get": "user",
+        "update": "user",
+        "remove": "server"
+      }
+    },
+    "options": {
+      "addCreatedAt": true,
+      "idPath": "_id"
+    }
+  },
+  "id": "b19999999999999999999999",
+  "prefix": "shotEdit",
+  "state": {
+    "result": {
+      "_id": "b19999999999999999999999",
+      "name": "pn1",
+      "shot": 43
+    }
+  },
+  "loading": false,
+  "original": {
+    "result": {
+      "_id": "b19999999999999999999999",
+      "name": "pn1",
+      "shot": 43
+    }
+  },
+  "user": {
+    "_id": "u1",
+    "email": "u1"
+  },
+  "fields": [
+    {
+      "type": 2,
+      "mapTo": "_id"
+    },
+    {
+      "type": 2,
+      "mapTo": "name"
+    },
+    {
+      "type": 3,
+      "mapTo": "shot"
+    }
+  ]
+}
+</div>
+`;
+
+exports[` direct a test   can increase number : Before manual edits 1`] = `
+<div
+  className="DirectorEle"
+>
+  {
+  "form": {
+    "model": "projectModel",
+    "collection": "projects",
+    "sections": [
+      {
+        "fields": [
+          {
+            "type": 2,
+            "mapTo": "_id"
+          },
+          {
+            "type": 2,
+            "mapTo": "name"
+          },
+          {
+            "type": 3,
+            "mapTo": "shot"
+          }
+        ]
+      }
+    ],
+    "permissions": {
+      "required": {
+        "create": "user",
+        "find": "user",
+        "get": "user",
+        "update": "user",
+        "remove": "server"
+      }
+    },
+    "options": {
+      "addCreatedAt": true,
+      "idPath": "_id"
+    }
+  },
+  "id": "b19999999999999999999999",
+  "prefix": "shotEdit",
+  "loading": false,
+  "original": {
+    "result": {
+      "_id": "b19999999999999999999999",
+      "name": "pn1",
+      "shot": 42
+    }
+  },
+  "user": {
+    "_id": "u1",
+    "email": "u1"
+  },
+  "fields": [
+    {
+      "type": 2,
+      "mapTo": "_id"
+    },
+    {
+      "type": 2,
+      "mapTo": "name"
+    },
+    {
+      "type": 3,
+      "mapTo": "shot"
+    }
+  ]
+}
+</div>
 `;

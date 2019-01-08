@@ -1,14 +1,13 @@
 import * as React from "react"
-import "isofw-web/src/customizedBulma.sass"
 import { SharedFormEdit, IFormEditProps, DbStore } from "@xpfw/ui-shared";
 import { ProjectForm, ProjectShot } from "isofw-shared/src/xpfwDefs/project";
 import { FormStore } from "@xpfw/form-shared";
-
-const increaseTruckNumber = (thisRef: any) => {
+const directorPrefix = "shotEdit"
+const increaseShotNumber = (thisRef: any) => {
     return async () => {
-        const currentValue = FormStore.getValue(`shotEdit.${ProjectShot.mapTo}`)
-        FormStore.setValue(`shotEdit.${ProjectShot.mapTo}`, Number(currentValue) + 1)
-        await DbStore.patch(thisRef.props.id, ProjectForm, "shotEdit")
+        const currentValue = FormStore.getValue(`${directorPrefix}.${ProjectShot.mapTo}`)
+        FormStore.setValue(`${directorPrefix}.${ProjectShot.mapTo}`, Number(currentValue) + 1)
+        await DbStore.patch(thisRef.props.id, ProjectForm, directorPrefix)
     }
 }
 export interface DirectorComponentProps extends IFormEditProps {
@@ -19,7 +18,7 @@ const sharedDirectorComponent = (Component: React.ComponentType<DirectorComponen
         private increase: any
         public constructor(props: any) {
             super(props)
-            this.increase = increaseTruckNumber(this)
+            this.increase = increaseShotNumber(this)
         }
         public render() {
             return (
@@ -27,9 +26,11 @@ const sharedDirectorComponent = (Component: React.ComponentType<DirectorComponen
             )
         }
       }
-      
     const WrappedDirectorComponent = SharedFormEdit<{}>(DirectorComponent)
     return WrappedDirectorComponent
 }
 
 export default sharedDirectorComponent
+export {
+  increaseShotNumber, directorPrefix
+}

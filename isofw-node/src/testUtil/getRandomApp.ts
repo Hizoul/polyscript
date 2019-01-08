@@ -13,6 +13,8 @@ import { MongoClient } from "mongodb"
 import emptyPort from "./emptyPort"
 import customServiceConfigurator from "../services/index"
 import { convertIds } from "@xpfw/feathers";
+import { UserStore, DbStore } from "isofw-shared/src/util/xpfwuishared"
+import collections from "isofw-shared/src/xpfwDefs/collections"
 const sio: any = sios
 const res: any = rest
 const mongoServic: any = mongoService
@@ -91,7 +93,12 @@ const getRandomApp = async (memoryServiceName: string,
   let server: any
   if (ClientHolder) {
     server = await promisifyListen(app, port)
-    ClientHolder.connectTo(`http://localhost:${port}`, useRest)
+    ClientHolder.connectTo(`http://localhost:${port}`, {
+      useRest,
+      userStore: UserStore,
+      dbStore: DbStore,
+      collections
+    })
   }
   return Promise.resolve({
     app,
@@ -99,7 +106,7 @@ const getRandomApp = async (memoryServiceName: string,
     service: app.service(memoryServiceName),
     cleanUp: async () => {
       if (useMongo) {
-        await col.drop()
+        await db.dropDatabase()
         await c.close()
       }
       if (ClientHolder) {

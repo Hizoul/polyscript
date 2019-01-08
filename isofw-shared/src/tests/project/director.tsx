@@ -1,12 +1,18 @@
 import getRandomApp from "isofw-node/src/testUtil/getRandomApp"
 import { FormStore } from "@xpfw/form-shared"
 import { FeathersClient } from "@xpfw/ui-feathers"
-import { BackendClient, DbStore, ListStore, MailField, PwField, UserStore } from "@xpfw/ui-shared"
+import { BackendClient, DbStore, ListStore, MailField, PwField, UserStore } from "isofw-shared/src/util/xpfwuishared"
 import { TestDefs, ValidationRegistry } from "@xpfw/validate"
 import createTestUsers from "isofw-shared/src/testUtil/data/users"
 import logIntoUser from "isofw-shared/src/testUtil/login"
 import createTestProjects from "isofw-shared/src/testUtil/data/project"
-
+import { increaseShotNumber, directorPrefix } from "isofw-shared/src/components/project/directorSheet"
+import val from "isofw-shared/src/globals/val"
+import { ProjectForm, ProjectName, ProjectShot } from "isofw-shared/src/xpfwDefs/project"
+import { matchStoreState } from "resub-persist"
+import promiseTimeout from "isofw-shared/src/util/promiseTimeout";
+import renderSnapshot from "isofw-shared/src/testUtil/renderSnapshot"
+import * as React from "react"
 BackendClient.client = FeathersClient
 
 const directorTest = (Component: any) => {
@@ -21,7 +27,25 @@ const directorTest = (Component: any) => {
       console.log("logged in")
       const projectResults = await createTestProjects(appRef.app)
       console.log("Created Projects")
-      expect(projectResults).toMatchSnapshot(" creation of projects ")
+      expect(projectResults).toMatchSnapshot(" creation of proInjects ")
+      // Shop number automatically pushed After Server change
+      console.log("Server patch Projects")
+      await appRef.app.service(val.service.project).patch(projectResults[0]._id, {[ProjectShot.mapTo]: 42})
+      await promiseTimeout(500)
+      matchStoreState(DbStore, " project pushed by server ")
+      renderSnapshot(<Component form={ProjectForm} id={projectResults[0]._id.toHexString()} prefix={directorPrefix}/>, " info pushed by Server ")
+      // Shop number edited via client
+      const artificialThis = {
+        props: {id: projectResults[0]._id}
+      }
+      const withThis = increaseShotNumber(artificialThis)
+      console.log("Client patch Projects")
+      await DbStore.getEditOriginal(projectResults[0]._id, ProjectForm, directorPrefix, true)
+      console.log("About to submit", await FormStore.getFormData(ProjectForm, directorPrefix))
+      renderSnapshot(<Component form={ProjectForm} id={projectResults[0]._id.toHexString()} prefix={directorPrefix}/>, "Before manual edits")
+      await withThis()
+      renderSnapshot(<Component form={ProjectForm} id={projectResults[0]._id.toHexString()} prefix={directorPrefix}/>, "After manual edits")
+      matchStoreState(DbStore, " project Edited by client")
       await appRef.cleanUp()
     }, 100000)
   })
