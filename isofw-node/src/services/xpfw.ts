@@ -22,7 +22,8 @@ const pluginCollections = (db: any) => {
         paginate: {
           default: 10,
           max: 100
-        }
+        },
+        whitelist: ["$regex"]
       })
       app.use(collection, service)
       console.log(`Registered XPFW-Collection ${collection}`)

@@ -2,6 +2,7 @@
 import i18n from "isofw-shared/src/util/i18n"
 import { isObject } from "lodash"
 import * as React from "react"
+import { Link } from "react-router-dom";
 
 export interface IButton {
   className?: string
@@ -10,6 +11,7 @@ export interface IButton {
   loading?: boolean
   disabled?: boolean
   icon?: any
+  to?: any
   leftIcon?: boolean
   rightIcon?: boolean
 }
@@ -29,18 +31,33 @@ class WebButton extends React.Component<IButton, any> {
     let IconToDisplay
     if (this.props.icon != null) {
       IconToDisplay = this.props.icon
+    } 
+    if (this.props.to == null) {
+      return (
+        <a
+          className={classNames}
+          onClick={onClick}
+        >
+          {this.props.leftIcon ? IconToDisplay : null}
+          <span>
+          {i18n.t(this.props.text)}
+          </span>
+          {this.props.rightIcon ? IconToDisplay : null}
+        </a>
+      )
     }
     return (
-      <a
+      <Link
         className={classNames}
         onClick={onClick}
+        to={this.props.to}
       >
         {this.props.leftIcon ? IconToDisplay : null}
         <span>
         {i18n.t(this.props.text)}
         </span>
         {this.props.rightIcon ? IconToDisplay : null}
-      </a>
+      </Link>
     )
   }
 }

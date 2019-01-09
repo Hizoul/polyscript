@@ -3,6 +3,7 @@ import { SharedFormAuth, IFormAuthProps } from "@xpfw/ui-shared"
 import Loading from "./loading";
 import { HashRouter, Link, Route, Switch } from "react-router-dom"
 import collections from "isofw-shared/src/xpfwDefs/collections"
+import urls from "isofw-shared/src/globals/url";
 export interface IPageContainer {
   requireLoggedIn?: boolean
 }
@@ -25,6 +26,9 @@ class WebPageContainer extends React.Component<IPageContainer & IFormAuthProps, 
           </li>
           <li>
             <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to={`${urls.projectOverview}`}>Project list</Link>
           </li>
           {collections.map((col) => {
             return [

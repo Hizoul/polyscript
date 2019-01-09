@@ -1,10 +1,25 @@
-import ValidationRegistry, { IForm, Permission, IField, FieldType } from "@xpfw/validate"
+import ValidationRegistry, { IForm, Permission, IField, FieldType, fieldConverter } from "@xpfw/validate"
 import val from "isofw-shared/src/globals/val"
 import IDField from "./idField"
 
+
+const convertTextToMongoRegex: any = (value: any) => {
+  if (value == null || value.length === 0) {
+    return null
+  }
+  return {
+      $regex: `(.*?)${value}(.*?)`
+  }
+}
+
 const ProjectName: IField = {
   type: FieldType.Text,
-  mapTo: "name"
+  mapTo: "name",
+  validate: {
+    convert: {
+      find: convertTextToMongoRegex
+    }
+  }
 }
 
 const ProjectShot: IField = {
