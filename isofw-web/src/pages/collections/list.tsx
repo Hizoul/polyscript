@@ -1,12 +1,9 @@
-import { registerComponents as rg} from "@xpfw/form-web"
-rg()
-import { registerComponents } from "@xpfw/form-bulma"
-registerComponents()
-import { BulmaList, registerComponents as uiComponents } from "@xpfw/ui-bulma"
-uiComponents()
+import "isofw-web/src/components/form"
+import { BulmaList } from "@xpfw/ui-bulma"
 import ValidationRegistry from "@xpfw/validate"
 import { get } from "lodash"
 import * as React from "react"
+import WebPageContainer from "isofw-web/src/components/pageContainer";
 import "isofw-web/src/customizedBulma.sass"
 
 const ListPage: React.FunctionComponent<any> = (props) => {
@@ -14,14 +11,14 @@ const ListPage: React.FunctionComponent<any> = (props) => {
   const form = ValidationRegistry.forms[collection]
   if (form == null) {
     return (
-      <div>Collection not found</div>
+      <WebPageContainer requireLoggedIn={true}>Collection not found</WebPageContainer>
     )
   }
   return (
-    <div>
+    <WebPageContainer requireLoggedIn={true}>
       List of {collection}
       <BulmaList form={form} />
-    </div>
+    </WebPageContainer>
   )
 }
 

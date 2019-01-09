@@ -12,11 +12,58 @@ const ProjectShot: IField = {
   mapTo: "shot"
 }
 
+const ShotName: IField = {
+  type: FieldType.Text,
+  mapTo: "pname"
+}
+
+const ShotMovement: IField = {
+  type: FieldType.Text,
+  mapTo: "movement"
+}
+
+const ShotMovementTowards: IField = {
+  type: FieldType.Text,
+  mapTo: "movementTowards"
+}
+
+const ShotDuration: IField = {
+  type: FieldType.Number,
+  mapTo: "duration"
+}
+
+const ShotType: IField = {
+  type: FieldType.Text,
+  mapTo: "type"
+}
+
+const ShotRemarksDirector: IField = {
+  type: FieldType.Text,
+  mapTo: "directorRemarks"
+}
+
+const ShotRemarksOperator: IField = {
+  type: FieldType.Text,
+  mapTo: "operatorRemarks"
+}
+
+const ProjectProgram: IField = {
+  type: FieldType.Array,
+  mapTo: "program",
+  validate: {
+    type: FieldType.Object,
+    validate: {objectDef: [
+      ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator
+    ]}
+  }
+}
+
+
 const ProjectForm: IForm = {
   model: "projectModel",
   collection: val.service.project,
   sections: [{fields: [
-    IDField, ProjectName, ProjectShot
+    IDField, ProjectName, ProjectShot, ProjectProgram
   ]}],
   permissions: {
     required: {

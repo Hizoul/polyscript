@@ -14,7 +14,7 @@
   "dependencies": {
     "@xpfw/form-bulma": "^0.1.1",
     "@xpfw/form-shared": "^0.1.1",
-    "@xpfw/form-web": "^0.1.1",
+    "@xpfw/form-web": "^0.1.2",
     "@xpfw/ui-bulma": "^0.1.1",
     "@xpfw/ui-feathers": "^0.1.1",
     "@xpfw/ui-shared": "^0.1.1",
