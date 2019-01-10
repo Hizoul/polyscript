@@ -4,9 +4,12 @@ import { cloneDeep, get, map } from "lodash"
 import * as React from "react"
 import { FaEraser, FaPlusCircle, FaTrash } from "react-icons/fa"
 import WebButton from "isofw-web/src/components/button";
-import { ShotName } from "isofw-shared/src/xpfwDefs/project";
+import { 
+  ShotName, ShotType, ShotMovement, ShotMovementTowards,
+  ShotDuration, ShotRemarksDirector, ShotRemarksOperator
+} from "isofw-shared/src/xpfwDefs/project";
 import "../style.sass"
-const fieldsToConvert = [ShotName]
+const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator]
 const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size: number, remove: any}> = (props) => {
   const convertedFields = []
   for (const field of fieldsToConvert) {
@@ -16,12 +19,23 @@ const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size:
   }
   return (
     <div className="currentBox">
+      <span className="shotNumber">{props.index}</span>
       <SharedField field={convertedFields[0]}  prefix={props.prefix} />
+      <SharedField field={convertedFields[2]}  prefix={props.prefix} />
+      <SharedField field={convertedFields[5]}  prefix={props.prefix} />
+      <SharedField field={convertedFields[6]}  prefix={props.prefix} />
       <WebButton
         className="is-warning  iconMargin"
         onClick={props.removeItem(props.index)}
         text="delete"
         icon={<FaEraser className="is-size-6"/>}
+        rightIcon={true}
+      />
+      <WebButton
+        className="is-fullwidth is-info"
+        onClick={() => props.increaseSize(props.index)}
+        text="Add"
+        icon={<FaPlusCircle />}
         rightIcon={true}
       />
     </div>

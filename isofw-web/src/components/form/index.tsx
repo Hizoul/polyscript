@@ -11,5 +11,6 @@ import BulmaBooleanField from "./boolean"
 registerWeb()
 registerComponents()
 regUiComp()
+ComponentRegistry.registerComponent(FieldType.Text, TextField)
 ComponentRegistry.registerComponent(FieldType.Array, BulmaArrayField)
 // ComponentRegistry.registerComponent(FieldType.Object, ObjectField)
