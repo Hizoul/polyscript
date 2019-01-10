@@ -1,13 +1,18 @@
 import * as React from "react"
 import { SharedFormEdit, IFormEditProps, DbStore } from "@xpfw/ui-shared";
-import { ProjectForm, ProjectShot } from "isofw-shared/src/xpfwDefs/project";
-import { FormStore } from "@xpfw/form-shared";
+import { ProjectForm, ProjectShot, ProjectProgram } from "isofw-shared/src/xpfwDefs/project";
+import { FormStore, SharedField } from "@xpfw/form-shared";
 import sharedDirectorComponent, { DirectorComponentProps } from "isofw-shared/src/components/project/directorSheet";
-import LoadingPage from "../loading";
-import WebButton from "../button";
+import LoadingPage from "../../loading";
+import ProgramArray from "./array";
 import { get } from "lodash"
-import "./style.sass"
+import { ComponentRegistry } from "@xpfw/form-shared"
 import { FaStepForward, FaStepBackward, FaSync } from "react-icons/fa";
+import { FieldType } from "isofw-shared/src/util/xpfwvalidate";
+import WebButton from "isofw-web/src/components/button";
+
+const programTheme = "program"
+ComponentRegistry.registerComponent(FieldType.Array, ProgramArray, programTheme)
 
 
 const ProgramEditor: React.FunctionComponent<IFormEditProps> = (props) => {
@@ -18,14 +23,9 @@ const ProgramEditor: React.FunctionComponent<IFormEditProps> = (props) => {
           {get(props, "original.result.name")}
         </div>
       </div>
-      <div className="flex center">
-        <div className="currentBox">
-          <span className="shotNumber">{get(props, "original.result.shot")}</span>
-          <br />
-          <span>CA ?</span>
-        </div>
-      </div>
+      <SharedField field={ProjectProgram} prefix={props.prefix} theme={programTheme} />
       {props.loading ? <LoadingPage /> : null}
+      <WebButton text="save" onClick={props.submitEdit} loading={props.loading} />
     </div>
   )
 }
