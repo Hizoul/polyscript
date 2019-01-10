@@ -1,9 +1,4 @@
-import { registerComponents as rg} from "@xpfw/form-web"
-rg()
-import { registerComponents } from "@xpfw/form-bulma"
-registerComponents()
-import { registerComponents as uiComponents } from "@xpfw/ui-bulma"
-uiComponents()
+import "isofw-web/src/components/form"
 
 import { SharedField } from "@xpfw/form-shared"
 import { IFormAuthProps, MailField, PwField, SharedFormAuth } from "@xpfw/ui-shared"
@@ -11,6 +6,8 @@ import WebButton from "isofw-web/src/components/button"
 import { get } from "lodash"
 import * as React from "react"
 import "isofw-web/src/customizedBulma.sass"
+import WebPageContainer from "isofw-web/src/components/pageContainer";
+import { FaPlus, FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 
 class WebLogin extends React.Component<IFormAuthProps, any> {
   public render() {
@@ -24,7 +21,7 @@ class WebLogin extends React.Component<IFormAuthProps, any> {
     }
     if (this.props.loggedIn) {
       return (
-        <div>
+        <WebPageContainer>
           <div className="miniContainer pullIntoHero">
             <div className="box">
               <WebButton
@@ -32,17 +29,17 @@ class WebLogin extends React.Component<IFormAuthProps, any> {
                 onClick={this.props.submitLogout}
                 loading={this.props.loading}
                 text="logout"
-                icon={{type: "font-awesome", name: "sign-out-alt"}}
+                icon={<FaSignOutAlt />}
                 rightIcon={true}
               />
               {msg}
             </div>
           </div>
-        </div>
+        </WebPageContainer>
       )
     }
     return (
-      <div>
+      <WebPageContainer>
         <div className="miniContainer pullIntoHero">
           <div className="box">
             <SharedField field={MailField} />
@@ -52,7 +49,7 @@ class WebLogin extends React.Component<IFormAuthProps, any> {
               onClick={this.props.submitLogin}
               loading={this.props.loading}
               text="login"
-              icon={{type: "font-awesome", name: "sign-in-alt"}}
+              icon={<FaSignInAlt />}
               rightIcon={true}
             />
             <WebButton
@@ -60,13 +57,13 @@ class WebLogin extends React.Component<IFormAuthProps, any> {
               onClick={this.props.submitRegister}
               loading={this.props.loading}
               text="register"
-              icon={{type: "font-awesome", name: "plus"}}
+              icon={<FaPlus />}
               rightIcon={true}
             />
             {msg}
           </div>
         </div>
-      </div>
+      </WebPageContainer>
     )
   }
 }
