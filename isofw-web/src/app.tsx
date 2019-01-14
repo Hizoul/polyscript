@@ -19,7 +19,7 @@ import 'framework7/css/framework7.min.css';
 import 'framework7/css/framework7.ios.min.css';
 import Framework7 from 'framework7';
 import Framework7React, { App, View } from 'framework7-react';
-
+import "@fortawesome/fontawesome-free/css/all.css"
 // Init F7-React Plugin
 Framework7.use(Framework7React);
 

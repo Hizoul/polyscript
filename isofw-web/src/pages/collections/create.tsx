@@ -1,6 +1,5 @@
 import "isofw-web/src/components/form"
 import ValidationRegistry from "@xpfw/validate"
-import "isofw-web/src/customizedBulma.sass"
 import { get } from "lodash"
 import * as React from "react"
 import WebPageContainer from "isofw-web/src/components/pageContainer";

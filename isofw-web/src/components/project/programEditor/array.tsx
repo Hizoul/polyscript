@@ -25,11 +25,9 @@ const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size:
       <SharedField field={convertedFields[5]}  prefix={props.prefix} />
       <SharedField field={convertedFields[6]}  prefix={props.prefix} />
       <WebButton
-        className="is-warning  iconMargin"
         onClick={props.removeItem(props.index)}
         text="delete"
-        icon={<FaEraser className="is-size-6"/>}
-        rightIcon={true}
+        iconFa="eraser"
       />
     </div>
   )
@@ -51,8 +49,7 @@ const ProgramArray: React.FunctionComponent<IArrayProps> = (props) => {
         className="is-fullwidth is-info"
         onClick={props.increaseSize}
         text="Add"
-        icon={<FaPlusCircle />}
-        rightIcon={true}
+        iconFa="plus-circle"
       />
     </div>
   )

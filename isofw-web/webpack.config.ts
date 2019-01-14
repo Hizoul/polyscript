@@ -47,7 +47,8 @@ const webpackConfig: webpack.Configuration = {
       }, {
         test: /\.tsx?$/,
         loader: "awesome-typescript-loader"
-      }
+      },
+      { test: /\.(woff|woff2|eot|ttf)$/, loader: 'url-loader?limit=100000' }
     ]
   },
   resolve: {

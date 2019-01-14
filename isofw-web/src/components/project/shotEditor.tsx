@@ -29,20 +29,17 @@ const ShotEditor = (props: DirectorComponentProps) => {
       <div className="flex center">
         <WebButton
           text={"previous shot"}
-          icon={<FaStepBackward />}
-          leftIcon={true}
+          iconFa="step-backward"
           onClick={props.decrease}
         />
         <WebButton
           text={"next shot"}
           className="flex1 center forwardButton"
-          icon={<FaStepForward />}
-          rightIcon={true}
+          iconFa="step-forward"
           onClick={props.increase}
         />
         <WebButton
-          rightIcon={true}
-          icon={<FaSync />}
+          iconFa="sync"
           text={"placeholder"}
         />
       </div>

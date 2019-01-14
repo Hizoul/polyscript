@@ -5,9 +5,9 @@ import { IFormAuthProps, MailField, PwField, SharedFormAuth } from "@xpfw/ui-sha
 import WebButton from "isofw-web/src/components/button"
 import { get } from "lodash"
 import * as React from "react"
-import "isofw-web/src/customizedBulma.sass"
 import WebPageContainer from "isofw-web/src/components/pageContainer";
 import { FaPlus, FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+import { List, BlockTitle, Block, Icon } from "framework7-react";
 
 class WebLogin extends React.Component<IFormAuthProps, any> {
   public render() {
@@ -29,8 +29,7 @@ class WebLogin extends React.Component<IFormAuthProps, any> {
                 onClick={this.props.submitLogout}
                 loading={this.props.loading}
                 text="logout"
-                icon={<FaSignOutAlt />}
-                rightIcon={true}
+                iconFa="sign-out-alt"
               />
               {msg}
             </div>
@@ -40,29 +39,29 @@ class WebLogin extends React.Component<IFormAuthProps, any> {
     }
     return (
       <WebPageContainer name="login" title="login">
-        <div className="miniContainer pullIntoHero">
-          <div className="box">
-            <SharedField field={MailField} />
-            <SharedField field={PwField} />
-            <WebButton
-              className="is-primary is-fullwidth"
-              onClick={this.props.submitLogin}
-              loading={this.props.loading}
-              text="login"
-              icon={<FaSignInAlt />}
-              rightIcon={true}
-            />
-            <WebButton
-              className="marginTop is-info is-outlined is-fullwidth"
-              onClick={this.props.submitRegister}
-              loading={this.props.loading}
-              text="register"
-              icon={<FaPlus />}
-              rightIcon={true}
-            />
+      <BlockTitle>Enter log in details</BlockTitle>
+        <List form>
+          <ul>
+          <SharedField field={MailField} />
+          <SharedField field={PwField} />
+          </ul>
+        </List>
+        <WebButton
+          className="is-primary is-fullwidth"
+          onClick={this.props.submitLogin}
+          loading={this.props.loading}
+          text="login"
+          iconFa="sign-in-alt"
+          fill
+        />
+        <WebButton
+          className="marginTop is-info is-outlined is-fullwidth"
+          onClick={this.props.submitRegister}
+          loading={this.props.loading}
+          text="register"
+          iconFa="plus"
+        />
             {msg}
-          </div>
-        </div>
       </WebPageContainer>
     )
   }

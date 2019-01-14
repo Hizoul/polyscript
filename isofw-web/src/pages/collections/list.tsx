@@ -4,7 +4,6 @@ import ValidationRegistry from "@xpfw/validate"
 import { get } from "lodash"
 import * as React from "react"
 import WebPageContainer from "isofw-web/src/components/pageContainer";
-import "isofw-web/src/customizedBulma.sass"
 
 const ListPage: React.FunctionComponent<any> = (props) => {
   const collection = get(props, "collection")

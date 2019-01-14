@@ -4,7 +4,6 @@ import ValidationRegistry from "@xpfw/validate"
 import { get } from "lodash"
 import * as React from "react"
 import WebPageContainer from "isofw-web/src/components/pageContainer"
-import "isofw-web/src/customizedBulma.sass"
 import { ProjectForm } from "isofw-shared/src/xpfwDefs/project"
 import ProjectOverviewComponent from "isofw-web/src/components/project/overview"
 

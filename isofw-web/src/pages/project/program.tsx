@@ -1,7 +1,6 @@
 import "isofw-web/src/components/form"
 import { get } from "lodash"
 import * as React from "react"
-import "isofw-web/src/customizedBulma.sass"
 import { ProjectForm, ProjectShot } from "isofw-shared/src/xpfwDefs/project";
 import WebPageContainer from "isofw-web/src/components/pageContainer";
 import ProgramEditor from "isofw-web/src/components/project/programEditor";

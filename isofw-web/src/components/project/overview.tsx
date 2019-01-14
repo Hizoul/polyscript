@@ -10,8 +10,8 @@ const  ItemProject: React.FunctionComponent<IFormShowProps> = (props) => {
   return (
     <div className="box">
       {get(props.item, ProjectName.mapTo)}
-      <WebButton text="director" to={`${urls.directorPage}/${get(props.item, "_id")}`} />
-      <WebButton text="program" to={`${urls.programPage}/${get(props.item, "_id")}`} />
+      <WebButton text="director" href={`${urls.directorPage}/${get(props.item, "_id")}`} />
+      <WebButton text="program" href={`${urls.programPage}/${get(props.item, "_id")}`} />
     </div>
   )
 }
