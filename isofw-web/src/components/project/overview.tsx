@@ -8,22 +8,29 @@ import urls from "isofw-shared/src/globals/url"
 
 const  ItemProject: React.FunctionComponent<IFormShowProps> = (props) => {
   return (
-    <div className="box">
-      {get(props.item, ProjectName.mapTo)}
-      <WebButton text="director" href={`${urls.directorPage}/${get(props.item, "_id")}`} />
-      <WebButton text="program" href={`${urls.programPage}/${get(props.item, "_id")}`} />
-    </div>
+    <tr>
+      <td>{get(props.item, ProjectName.mapTo)}</td>
+      <td>
+        <WebButton text="director" href={`${urls.directorPage}/${get(props.item, "_id")}`} />
+        <WebButton text="program" href={`${urls.programPage}/${get(props.item, "_id")}`} />
+      </td>
+    </tr>
   )
 }
 
 const  ProjectOverviewComponent: React.FunctionComponent<IFormListProps> = (props) => {
-  const items =  get(props, "list.result", []).map((item: any) => <ItemProject loading={false} item={item} />)
+  const items = get(props, "list.result", []).map((item: any) => <ItemProject loading={false} item={item} />)
   return (
-    <div className="flex1">
-      <div>
-        <SharedField field={ProjectName} prefix={props.prefix} />
-      </div>
-      {items}
+    <div className="data-table card">
+      <table>
+        <thead>
+          <th>name</th>
+          <th>actions</th>
+        </thead>
+        <tbody>
+          {items}
+        </tbody>
+      </table>
     </div>
   )
 }

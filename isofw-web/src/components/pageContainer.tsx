@@ -4,12 +4,13 @@ import Loading from "./loading";
 import { HashRouter, Route, Switch } from "react-router-dom"
 import collections from "isofw-shared/src/xpfwDefs/collections"
 import urls from "isofw-shared/src/globals/url";
-import { App, Statusbar, View, Page, Navbar, Toolbar, Link, NavRight, Block } from 'framework7-react';
+import { App, Statusbar, View, Page, Navbar, Toolbar, Link, NavRight, Block, Subnavbar } from 'framework7-react';
 export interface IPageContainer {
   requireLoggedIn?: boolean
   name: string
   title: string
   subtitle?: string
+  subContent?: any
 }
 
 class WebPageContainer extends React.Component<IPageContainer & IFormAuthProps, any> {
@@ -23,6 +24,9 @@ class WebPageContainer extends React.Component<IPageContainer & IFormAuthProps, 
           <NavRight>
             <Link panelOpen="left" iconFa="bars"/>
           </NavRight>
+          <Subnavbar inner={false}>
+            {this.props.subContent}
+          </Subnavbar>
         </Navbar>
         {this.props.requireLoggedIn && !this.props.loggedIn ? (
           <Block>

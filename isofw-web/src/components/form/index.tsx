@@ -5,6 +5,7 @@ import { registerComponents as regUiComp } from "@xpfw/ui-bulma"
 import { FieldType } from "@xpfw/validate"
 import BulmaArrayField from "isofw-web/src/components/form/array"
 import ObjectField from "isofw-web/src/components/form/object"
+import SearchField from "isofw-web/src/components/form/search"
 import TextField from "isofw-web/src/components/form/text"
 import BulmaBooleanField from "./boolean"
 
@@ -12,6 +13,7 @@ registerWeb()
 registerComponents()
 regUiComp()
 ComponentRegistry.registerComponent(FieldType.Text, TextField)
+ComponentRegistry.registerComponent(FieldType.Text, SearchField, "search")
 ComponentRegistry.registerComponent(FieldType.Password, TextField)
 ComponentRegistry.registerComponent(FieldType.Number, TextField)
 ComponentRegistry.registerComponent(FieldType.Date, TextField)
