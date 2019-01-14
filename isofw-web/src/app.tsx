@@ -14,33 +14,35 @@ import * as React from "react"
 import pose, { PoseGroup } from "react-pose"
 import { HashRouter, Link, Route, Switch } from "react-router-dom"
 import urls from "isofw-shared/src/globals/url";
+import routes from './pages';
+import 'framework7/css/framework7.min.css';
+import 'framework7/css/framework7.ios.min.css';
+import Framework7 from 'framework7';
+import Framework7React, { App, View } from 'framework7-react';
+
+// Init F7-React Plugin
+Framework7.use(Framework7React);
 
 const RouteContainer = pose.div({
   enter: { opacity: 1, delay: 300, beforeChildren: true },
   exit: { opacity: 0 }
 })
 
+const f7params = {
+  // Array with app routes
+  routes,
+  // App Name
+  name: 'My App',
+  theme: "ios",
+  // App id
+  id: 'com.myapp.test',
+  // ...
+};
+
 const AppRouter = () => (
-  <HashRouter>
-    <Route
-      render={({ location }) => (
-        <PoseGroup>
-          <RouteContainer className="flex1" key={location.key ? location.key : "HA"}>
-            <Switch location={location}>
-              <Route exact={true} path="/" component={Home} key="home" />
-              <Route path="/login" component={LoadableLoginPage} key="login" />
-              <Route path="/create/:collection" component={LoadableCreatePage} key="create" />
-              <Route path="/list/:collection" component={LoadableListPage} key="list" />
-              <Route path="/edit/:collection/:id" component={LoadableEditPage} key="edit" />
-              <Route path={`${urls.directorPage}/:id`} component={LoadableDirectorPage} key="director" />
-              <Route path={`${urls.programPage}/:id`} component={LoadableProgramPage} key="program" />
-              <Route path={`${urls.projectOverview}`} component={LoadableProjectOverview} key="project" />
-            </Switch>
-          </RouteContainer>
-        </PoseGroup>
-      )}
-    />
-  </HashRouter>
+  <App params={f7params}>
+    <View main url="/" pushState={true} />
+  </App>
 )
 
 export default AppRouter

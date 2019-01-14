@@ -31,13 +31,6 @@ const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size:
         icon={<FaEraser className="is-size-6"/>}
         rightIcon={true}
       />
-      <WebButton
-        className="is-fullwidth is-info"
-        onClick={() => props.increaseSize(props.index)}
-        text="Add"
-        icon={<FaPlusCircle />}
-        rightIcon={true}
-      />
     </div>
   )
 }

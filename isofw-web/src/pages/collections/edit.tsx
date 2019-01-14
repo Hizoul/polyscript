@@ -7,17 +7,17 @@ import * as React from "react"
 import "isofw-web/src/customizedBulma.sass"
 
 const EditPage: React.FunctionComponent<any> = (props) => {
-  const collection = get(props, "match.params.collection")
-  const id = get(props, "match.params.id")
+  const collection = get(props, "collection")
+  const id = get(props, "id")
   const form = ValidationRegistry.forms[collection]
   if (form == null) {
     return (
-      <WebPageContainer requireLoggedIn={true}>Collection not found</WebPageContainer>
+      <WebPageContainer requireLoggedIn={true} name="Error" title="Error">Collection not found</WebPageContainer>
     )
   }
   return (
-    <WebPageContainer requireLoggedIn={true}>
-      Create of {collection}
+    <WebPageContainer requireLoggedIn={true} name="Edit" title="Edit">
+      Edit of {collection}
       <BulmaEdit form={form} id={id} resetState={true} />
     </WebPageContainer>
   )

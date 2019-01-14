@@ -2,7 +2,7 @@
 import i18n from "isofw-shared/src/util/i18n"
 import { isObject } from "lodash"
 import * as React from "react"
-import { Link } from "react-router-dom";
+import { Link } from "framework7-react";
 
 export interface IButton {
   className?: string
@@ -50,7 +50,7 @@ class WebButton extends React.Component<IButton, any> {
       <Link
         className={classNames}
         onClick={onClick}
-        to={this.props.to}
+        href={this.props.to}
       >
         {this.props.leftIcon ? IconToDisplay : null}
         <span>

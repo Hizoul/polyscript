@@ -7,9 +7,9 @@ import WebPageContainer from "isofw-web/src/components/pageContainer";
 import ProgramEditor from "isofw-web/src/components/project/programEditor";
 
 const ProgramPage: React.FunctionComponent<any> = (props) => {
-  const id = get(props, "match.params.id")
+  const id = get(props, "id")
   return (
-    <WebPageContainer requireLoggedIn={true}>
+    <WebPageContainer requireLoggedIn={true} name="programEditor" title="Review presets">
       <ProgramEditor form={ProjectForm} id={id} resetState={true} prefix="programEdit" />
     </WebPageContainer>
   )

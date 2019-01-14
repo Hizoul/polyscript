@@ -21,7 +21,7 @@ class WebLogin extends React.Component<IFormAuthProps, any> {
     }
     if (this.props.loggedIn) {
       return (
-        <WebPageContainer>
+        <WebPageContainer name="login" title="logout">
           <div className="miniContainer pullIntoHero">
             <div className="box">
               <WebButton
@@ -39,7 +39,7 @@ class WebLogin extends React.Component<IFormAuthProps, any> {
       )
     }
     return (
-      <WebPageContainer>
+      <WebPageContainer name="login" title="login">
         <div className="miniContainer pullIntoHero">
           <div className="box">
             <SharedField field={MailField} />

@@ -10,7 +10,7 @@ import ProjectOverviewComponent from "isofw-web/src/components/project/overview"
 
 const ProjectOverview: React.FunctionComponent<any> = (props) => {
   return (
-    <WebPageContainer requireLoggedIn={true}>
+    <WebPageContainer requireLoggedIn={true} name="projectOverview" title="Projects">
       <ProjectOverviewComponent form={ProjectForm} prefix="projectOverview" />
     </WebPageContainer>
   )

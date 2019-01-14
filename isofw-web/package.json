@@ -21,6 +21,8 @@
     "@xpfw/validate": "^0.1.1",
     "bulma": "^0.7.2",
     "css-loader": "^2.1.0",
+    "framework7": "^3.6.5",
+    "framework7-react": "^3.6.5",
     "localforage": "^1.7.3",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
