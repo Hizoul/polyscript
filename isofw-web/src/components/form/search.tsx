@@ -71,6 +71,7 @@ class TextField extends React.Component<IFieldProps, any> {
     return (
       <Searchbar
         value={value}
+        onChange={onChange}
         customSearch
       />
     )
