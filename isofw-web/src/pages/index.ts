@@ -26,6 +26,9 @@ const routes: any = [
   },{
     path: `${urls.cameraOverview}`,
     async: routeResolver(() => import("./camera/overview"))
+  },{
+    path: `${urls.create}/:collection`,
+    async: routeResolver(() => import("./collections/create"))
   }
 ]
               // <Route exact={true} path="/" component={Home} key="home" />

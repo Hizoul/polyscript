@@ -3,6 +3,8 @@ import ValidationRegistry from "@xpfw/validate"
 import { get } from "lodash"
 import * as React from "react"
 import WebPageContainer from "isofw-web/src/components/pageContainer";
+import WrappedFramework7Create from "isofw-web/src/components/form/create";
+import { BlockTitle } from "framework7-react";
 
 const CreatePage: React.FunctionComponent<any> = (props) => {
   const collection = get(props, "collection")
@@ -14,8 +16,8 @@ const CreatePage: React.FunctionComponent<any> = (props) => {
   }
   return (
     <WebPageContainer requireLoggedIn={true} name="Create" title="Create">
-      Create of {collection}
-      {/* <BulmaCreate form={form} resetState={true} /> */}
+      <BlockTitle>Fill in {collection.substring(0, collection.length-1)} information</BlockTitle>
+      <WrappedFramework7Create form={form} resetState={true} />
     </WebPageContainer>
   )
 }

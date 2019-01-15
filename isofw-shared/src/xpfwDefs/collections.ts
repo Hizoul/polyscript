@@ -1,4 +1,6 @@
 import { ProjectForm } from "./project"
-const collections: any[] = [ProjectForm.collection]
+import { CameraForm } from "./camera"
+
+const collections: any[] = [ProjectForm.collection, CameraForm.collection]
 
 export default collections

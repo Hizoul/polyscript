@@ -2,8 +2,9 @@ import "isofw-web/src/components/form"
 import * as React from "react"
 import WebPageContainer from "isofw-web/src/components/pageContainer"
 import { ProjectForm, ProjectName } from "isofw-shared/src/xpfwDefs/project"
-import ProjectOverviewComponent from "isofw-web/src/components/project/overview"
-import { SharedField } from "@xpfw/form-shared";
+import { CameraForm } from "isofw-shared/src/xpfwDefs/camera"
+import CameraOverviewComponent from "isofw-web/src/components/camera/overview"
+import { SharedField } from "@xpfw/form-shared"
 
 const CameraOverview: React.FunctionComponent<any> = (props) => {
   return (
@@ -11,9 +12,9 @@ const CameraOverview: React.FunctionComponent<any> = (props) => {
       requireLoggedIn={true}
       name="cameraOverview"
       title="Cameras"
-      subContent={<SharedField field={ProjectName} prefix={props.prefix} theme="search" />}
+      subContent={<SharedField field={ProjectName} prefix="cameraOverview" theme="search" />}
     >
-      <ProjectOverviewComponent form={ProjectForm} prefix="cameraOverview" />
+      <CameraOverviewComponent form={CameraForm} prefix="cameraOverview" />
     </WebPageContainer>
   )
 }

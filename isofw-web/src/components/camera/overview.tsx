@@ -2,14 +2,16 @@ import { SharedFormList, IFormListProps, IFormShowProps } from "isofw-shared/src
 import * as React from "react"
 import { get } from "lodash"
 import { SharedField } from "@xpfw/form-shared"
-import { ProjectName, ProjectForm } from "isofw-shared/src/xpfwDefs/project"
+import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
+import { CameraIp, CameraForm } from "isofw-shared/src/xpfwDefs/camera"
 import WebButton from "../button"
 import urls from "isofw-shared/src/globals/url"
 
-const ItemProject: React.FunctionComponent<IFormShowProps> = (props) => {
+const ItemCamera: React.FunctionComponent<IFormShowProps> = (props) => {
   return (
     <tr>
       <td>{get(props.item, ProjectName.mapTo)}</td>
+      <td>{get(props.item, CameraIp.mapTo)}</td>
       <td>
         <WebButton text="director" href={`${urls.directorPage}/${get(props.item, "_id")}`} />
         <WebButton text="program" href={`${urls.programPage}/${get(props.item, "_id")}`} />
@@ -18,22 +20,23 @@ const ItemProject: React.FunctionComponent<IFormShowProps> = (props) => {
   )
 }
 
-const ProjectOverviewComponent: React.FunctionComponent<IFormListProps> = (props) => {
-  const items = get(props, "list.result", []).map((item: any) => <ItemProject loading={false} item={item} />)
+const CameraOverviewComponent: React.FunctionComponent<IFormListProps> = (props) => {
+  const items = get(props, "list.result", []).map((item: any) => <ItemCamera loading={false} item={item} />)
   return (
     <div className="data-table card">
       <table>
         <thead>
           <th>name</th>
+          <th>IP</th>
           <th>actions</th>
         </thead>
         <tbody>
           {items}
         </tbody>
       </table>
-      <WebButton text="Create" iconFa="plus" fill href={`${urls.create}/${ProjectForm.collection}`} style={{margin: "0.5rem"}} />
+      <WebButton text="Create" iconFa="plus" fill href={`${urls.create}/${CameraForm.collection}`} style={{margin: "0.5rem"}} />
     </div>
   )
 }
 
-export default SharedFormList<{}>(ProjectOverviewComponent)
+export default SharedFormList<{}>(CameraOverviewComponent)

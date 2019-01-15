@@ -5,7 +5,8 @@ const urls = {
   directorPage: "/director",
   programPage: "/program",
   projectOverview: "/projectOverview",
-  cameraOverview: "/cameraOverview"
+  cameraOverview: "/cameraOverview",
+  create: "/create"
 }
 
 export default urls

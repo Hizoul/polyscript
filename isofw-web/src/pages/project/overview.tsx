@@ -13,7 +13,7 @@ const ProjectOverview: React.FunctionComponent<any> = (props) => {
       requireLoggedIn={true}
       name="projectOverview"
       title="Projects"
-      subContent={<SharedField field={ProjectName} prefix={props.prefix} theme="search" />}
+      subContent={<SharedField field={ProjectName} prefix="projectOverview" theme="search" />}
     >
       <ProjectOverviewComponent form={ProjectForm} prefix="projectOverview" />
     </WebPageContainer>
