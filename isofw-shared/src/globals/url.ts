@@ -4,7 +4,8 @@ const urls = {
   mainServer: `localhost:4202`,
   directorPage: "/director",
   programPage: "/program",
-  projectOverview: "/projectOverview"
+  projectOverview: "/projectOverview",
+  cameraOverview: "/cameraOverview"
 }
 
 export default urls

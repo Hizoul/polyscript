@@ -3,7 +3,6 @@ import ValidationRegistry from "@xpfw/validate"
 import { get } from "lodash"
 import * as React from "react"
 import WebPageContainer from "isofw-web/src/components/pageContainer";
-import { BulmaCreate } from "@xpfw/ui-bulma";
 
 const CreatePage: React.FunctionComponent<any> = (props) => {
   const collection = get(props, "collection")
@@ -16,7 +15,7 @@ const CreatePage: React.FunctionComponent<any> = (props) => {
   return (
     <WebPageContainer requireLoggedIn={true} name="Create" title="Create">
       Create of {collection}
-      <BulmaCreate form={form} resetState={true} />
+      {/* <BulmaCreate form={form} resetState={true} /> */}
     </WebPageContainer>
   )
 }

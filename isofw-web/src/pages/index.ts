@@ -23,7 +23,10 @@ const routes: any = [
   },{
     path: `${urls.programPage}/:id`,
     async: routeResolver(() => import("./project/program"))
-  },
+  },{
+    path: `${urls.cameraOverview}`,
+    async: routeResolver(() => import("./camera/overview"))
+  }
 ]
               // <Route exact={true} path="/" component={Home} key="home" />
               // <Route path="/login" component={LoadableLoginPage} key="login" />

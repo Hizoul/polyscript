@@ -1,23 +1,21 @@
 import "isofw-web/src/components/form"
-import ValidationRegistry from "@xpfw/validate"
-import { get } from "lodash"
 import * as React from "react"
 import WebPageContainer from "isofw-web/src/components/pageContainer"
 import { ProjectForm, ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import ProjectOverviewComponent from "isofw-web/src/components/project/overview"
 import { SharedField } from "@xpfw/form-shared";
 
-const ProjectOverview: React.FunctionComponent<any> = (props) => {
+const CameraOverview: React.FunctionComponent<any> = (props) => {
   return (
     <WebPageContainer
       requireLoggedIn={true}
-      name="projectOverview"
-      title="Projects"
+      name="cameraOverview"
+      title="Cameras"
       subContent={<SharedField field={ProjectName} prefix={props.prefix} theme="search" />}
     >
-      <ProjectOverviewComponent form={ProjectForm} prefix="projectOverview" />
+      <ProjectOverviewComponent form={ProjectForm} prefix="cameraOverview" />
     </WebPageContainer>
   )
 }
 
-export default ProjectOverview
+export default CameraOverview

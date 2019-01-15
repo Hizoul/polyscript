@@ -7,7 +7,6 @@ import LoadingPage from "../loading";
 import WebButton from "../button";
 import { get } from "lodash"
 import "./style.sass"
-import { FaStepForward, FaStepBackward, FaSync } from "react-icons/fa";
 
 
 const ShotEditor = (props: DirectorComponentProps) => {

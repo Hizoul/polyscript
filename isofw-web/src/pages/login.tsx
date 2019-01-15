@@ -6,7 +6,6 @@ import WebButton from "isofw-web/src/components/button"
 import { get } from "lodash"
 import * as React from "react"
 import WebPageContainer from "isofw-web/src/components/pageContainer";
-import { FaPlus, FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
 import { List, BlockTitle, Block, Icon } from "framework7-react";
 
 class WebLogin extends React.Component<IFormAuthProps, any> {

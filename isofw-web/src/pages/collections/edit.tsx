@@ -1,5 +1,4 @@
 import "isofw-web/src/components/form"
-import { BulmaEdit } from "@xpfw/ui-bulma"
 import ValidationRegistry from "@xpfw/validate"
 import { get } from "lodash"
 import WebPageContainer from "isofw-web/src/components/pageContainer";
@@ -17,7 +16,7 @@ const EditPage: React.FunctionComponent<any> = (props) => {
   return (
     <WebPageContainer requireLoggedIn={true} name="Edit" title="Edit">
       Edit of {collection}
-      <BulmaEdit form={form} id={id} resetState={true} />
+      {/* <BulmaEdit form={form} id={id} resetState={true} /> */}
     </WebPageContainer>
   )
 }

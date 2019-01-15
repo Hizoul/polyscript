@@ -2,12 +2,10 @@ import * as React from "react"
 import { SharedFormEdit, IFormEditProps, DbStore } from "@xpfw/ui-shared";
 import { ProjectForm, ProjectShot, ProjectProgram } from "isofw-shared/src/xpfwDefs/project";
 import { FormStore, SharedField } from "@xpfw/form-shared";
-import sharedDirectorComponent, { DirectorComponentProps } from "isofw-shared/src/components/project/directorSheet";
 import LoadingPage from "../../loading";
 import ProgramArray from "./array";
 import { get } from "lodash"
 import { ComponentRegistry } from "@xpfw/form-shared"
-import { FaStepForward, FaStepBackward, FaSync } from "react-icons/fa";
 import { FieldType } from "isofw-shared/src/util/xpfwvalidate";
 import WebButton from "isofw-web/src/components/button";
 

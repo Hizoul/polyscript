@@ -1,5 +1,4 @@
 import "isofw-web/src/components/form"
-import { BulmaList } from "@xpfw/ui-bulma"
 import ValidationRegistry from "@xpfw/validate"
 import { get } from "lodash"
 import * as React from "react"
@@ -16,7 +15,7 @@ const ListPage: React.FunctionComponent<any> = (props) => {
   return (
     <WebPageContainer requireLoggedIn={true} name="list" title="Listing">
       List of {collection}
-      <BulmaList form={form} />
+      {/* <BulmaList form={form} /> */}
     </WebPageContainer>
   )
 }

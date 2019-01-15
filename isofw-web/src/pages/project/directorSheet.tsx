@@ -1,9 +1,3 @@
-import { registerComponents as rg} from "@xpfw/form-web"
-rg()
-import { registerComponents } from "@xpfw/form-bulma"
-registerComponents()
-import { registerComponents as uiComponents } from "@xpfw/ui-bulma"
-uiComponents()
 import { get } from "lodash"
 import * as React from "react"
 import { ProjectForm, ProjectShot } from "isofw-shared/src/xpfwDefs/project";

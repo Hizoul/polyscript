@@ -2,7 +2,6 @@ import { IFieldProps, SharedField, SharedArray, IArrayProps } from "@xpfw/form-s
 import { IField } from "@xpfw/validate"
 import { cloneDeep, get, map } from "lodash"
 import * as React from "react"
-import { FaEraser, FaPlusCircle, FaTrash } from "react-icons/fa"
 import WebButton from "isofw-web/src/components/button";
 
 const Rayfield: React.FunctionComponent<IArrayProps> = (props) => {
