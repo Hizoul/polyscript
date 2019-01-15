@@ -13,8 +13,7 @@ const ItemCamera: React.FunctionComponent<IFormShowProps> = (props) => {
       <td>{get(props.item, ProjectName.mapTo)}</td>
       <td>{get(props.item, CameraIp.mapTo)}</td>
       <td>
-        <WebButton text="director" href={`${urls.directorPage}/${get(props.item, "_id")}`} />
-        <WebButton text="program" href={`${urls.programPage}/${get(props.item, "_id")}`} />
+        <WebButton text="Edit" iconFa="edit" href={`${urls.edit}/${CameraForm.collection}/${get(props.item, "_id")}`} />
       </td>
     </tr>
   )

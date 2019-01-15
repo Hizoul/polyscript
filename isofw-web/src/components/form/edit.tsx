@@ -1,11 +1,11 @@
-import * as React from "react"
-import { SharedField } from "@xpfw/form-shared"
-import { IFormCreateProps, ISharedFormCreate, SharedFormCreate } from "@xpfw/ui-shared"
-import {  IField } from "@xpfw/validate"
+import { FormStore, SharedField } from "@xpfw/form-shared"
+import { IFormEditProps, ISharedFormEdit, ListStore, SharedFormEdit } from "@xpfw/ui-shared"
+import { getFieldsFromForm,  IField } from "@xpfw/validate"
 import { get } from "lodash"
+import * as React from "react"
 import { Button, Block, BlockTitle, List } from "framework7-react";
 
-class Framework7Create extends React.Component<IFormCreateProps, any> {
+class MiniEdit extends React.Component<IFormEditProps, any> {
   public render() {
     const fields = this.props.fields.map((field: IField) => {
       return <SharedField key={field.mapTo} field={field} prefix={this.props.prefix} user={this.props.user} />
@@ -28,7 +28,7 @@ class Framework7Create extends React.Component<IFormCreateProps, any> {
         <div>        
           <BlockTitle>Success</BlockTitle>
           <Block strong inset>
-            <p>created {get(result, get(this.props.form, "options.idPath", "_id"))}</p>
+            <p>Saved changes to {get(result, get(this.props.form, "options.idPath", "_id"))}</p>
           </Block>
         </div>
       )
@@ -40,12 +40,13 @@ class Framework7Create extends React.Component<IFormCreateProps, any> {
             {fields}
           </ul>
         </List>
-        <Button onClick={this.props.submitCreate} iconFa="plus" fill>Create</Button>
+        <Button onClick={this.props.submitEdit} iconFa="save" fill>Save</Button>
         {msg}
       </div>
     )
   }
 }
 
-const WrappedFramework7Create: React.ComponentType<ISharedFormCreate> = SharedFormCreate<{}>(Framework7Create)
-export default WrappedFramework7Create
+const Framework7Edit: React.ComponentType<ISharedFormEdit> = SharedFormEdit<{}>(MiniEdit)
+
+export default Framework7Edit

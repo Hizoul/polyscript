@@ -3,6 +3,8 @@ import ValidationRegistry from "@xpfw/validate"
 import { get } from "lodash"
 import WebPageContainer from "isofw-web/src/components/pageContainer";
 import * as React from "react"
+import Framework7Edit from "isofw-web/src/components/form/edit";
+import { BlockTitle } from "framework7-react";
 
 const EditPage: React.FunctionComponent<any> = (props) => {
   const collection = get(props, "collection")
@@ -15,8 +17,8 @@ const EditPage: React.FunctionComponent<any> = (props) => {
   }
   return (
     <WebPageContainer requireLoggedIn={true} name="Edit" title="Edit">
-      Edit of {collection}
-      {/* <BulmaEdit form={form} id={id} resetState={true} /> */}
+      <BlockTitle>Adjust information of {id} in {collection.substring(0, collection.length-1)}</BlockTitle>
+      <Framework7Edit form={form} id={id} resetState={true} />
     </WebPageContainer>
   )
 }

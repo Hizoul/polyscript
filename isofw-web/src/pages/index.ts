@@ -29,6 +29,9 @@ const routes: any = [
   },{
     path: `${urls.create}/:collection`,
     async: routeResolver(() => import("./collections/create"))
+  },{
+    path: `${urls.edit}/:collection/:id`,
+    async: routeResolver(() => import("./collections/edit"))
   }
 ]
               // <Route exact={true} path="/" component={Home} key="home" />
