@@ -1,4 +1,4 @@
-import ValidationRegistry, { IForm, Permission, IField, FieldType, fieldConverter } from "@xpfw/validate"
+import ValidationRegistry, { IForm, Permission, IField, FieldType } from "@xpfw/validate"
 import val from "isofw-shared/src/globals/val"
 import IDField from "./idField"
 
@@ -8,7 +8,8 @@ const convertTextToMongoRegex: any = (value: any) => {
     return null
   }
   return {
-      $regex: `(.*?)${value}(.*?)`
+      $regex: `(.*?)${value}(.*?)`,
+      $options: "isg"
   }
 }
 

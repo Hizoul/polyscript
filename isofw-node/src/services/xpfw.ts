@@ -23,7 +23,7 @@ const pluginCollections = (db: any) => {
           default: 10,
           max: 100
         },
-        whitelist: ["$regex"]
+        whitelist: ["$regex", "$options"]
       })
       app.use(collection, service)
       console.log(`Registered XPFW-Collection ${collection}`)
