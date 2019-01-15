@@ -24,9 +24,11 @@ class WebPageContainer extends React.Component<IPageContainer & IFormAuthProps, 
           <NavRight>
             <Link panelOpen="left" iconFa="bars"/>
           </NavRight>
-          <Subnavbar inner={false}>
-            {this.props.subContent}
-          </Subnavbar>
+          {this.props.subContent ? (
+            <Subnavbar inner={false}>
+              {this.props.subContent}
+            </Subnavbar>
+          ) : undefined}
         </Navbar>
         {this.props.requireLoggedIn && !this.props.loggedIn ? (
           <Block>
