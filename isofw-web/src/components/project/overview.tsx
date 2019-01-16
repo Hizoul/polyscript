@@ -14,6 +14,7 @@ const ItemProject: React.FunctionComponent<IFormShowProps> = (props) => {
         <WebButton text="director" href={`${urls.directorPage}/${get(props.item, "_id")}`} />
         <WebButton text="program" href={`${urls.programPage}/${get(props.item, "_id")}`} />
         <WebButton text="operator" href={`${urls.operatorInfo}/${get(props.item, "_id")}`} />
+        <WebButton text="edit" href={`${urls.edit}/${ProjectForm.collection}/${get(props.item, "_id")}`} />
       </td>
     </tr>
   )
