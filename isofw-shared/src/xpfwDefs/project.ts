@@ -1,6 +1,7 @@
 import ValidationRegistry, { IForm, Permission, IField, FieldType } from "@xpfw/validate"
 import val from "isofw-shared/src/globals/val"
 import IDField from "./idField"
+import { MailField } from "@xpfw/ui-shared";
 
 
 const convertTextToMongoRegex: any = (value: any) => {
@@ -74,12 +75,42 @@ const ProjectProgram: IField = {
   }
 }
 
+const ProjectCameras: IField = {
+  type: FieldType.RelationshipMulti,
+  mapTo: "cameras",
+  validate: {
+    relationshipNamePath: ProjectName.mapTo,
+    relationshipCollection: "cameras",
+    relationshipIdPath: "_id"
+  }
+}
+
+const OperatorRelation: IField = {
+  type: FieldType.RelationshipMulti,
+  mapTo: "operator",
+  validate: {
+    relationshipNamePath: MailField.mapTo,
+    relationshipCollection: "users",
+    relationshipIdPath: "_id"
+  }
+}
+
+const ProjectOperators: IField = {
+  type: FieldType.Array,
+  mapTo: "operators",
+  validate: {
+    type: FieldType.Object,
+    validate: {objectDef: [
+      OperatorRelation, ProjectCameras
+    ]}
+  }
+}
 
 const ProjectForm: IForm = {
   model: "projectModel",
   collection: val.service.project,
   sections: [{fields: [
-    IDField, ProjectName, ProjectShot, ProjectProgram
+    IDField, ProjectName, ProjectShot, ProjectCameras, ProjectOperators, ProjectProgram
   ]}],
   permissions: {
     required: {
