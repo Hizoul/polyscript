@@ -10,6 +10,7 @@ import { SharedField } from "@xpfw/form-shared";
 const ProjectOverview: React.FunctionComponent<any> = (props) => {
   return (
     <WebPageContainer
+      backLink
       requireLoggedIn={true}
       name="projectOverview"
       title="Projects"

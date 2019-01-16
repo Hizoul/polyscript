@@ -8,7 +8,7 @@ import ProgramEditor from "isofw-web/src/components/project/programEditor";
 const ProgramPage: React.FunctionComponent<any> = (props) => {
   const id = get(props, "id")
   return (
-    <WebPageContainer requireLoggedIn={true} name="programEditor" title="Review presets">
+    <WebPageContainer backLink requireLoggedIn={true} name="programEditor" title="Review presets">
       <ProgramEditor form={ProjectForm} id={id} resetState={true} prefix="programEdit" />
     </WebPageContainer>
   )

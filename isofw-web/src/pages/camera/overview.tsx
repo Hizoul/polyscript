@@ -9,6 +9,7 @@ import { SharedField } from "@xpfw/form-shared"
 const CameraOverview: React.FunctionComponent<any> = (props) => {
   return (
     <WebPageContainer
+      backLink
       requireLoggedIn={true}
       name="cameraOverview"
       title="Cameras"

@@ -8,7 +8,7 @@ import OperatorInfo from "isofw-web/src/components/project/operatorInfo";
 const OperatorInfoPage: React.FunctionComponent<any> = (props) => {
   const id = get(props, "id")
   return (
-    <WebPageContainer requireLoggedIn={true} name="operatorInfo" title="Operator info's">
+    <WebPageContainer backLink requireLoggedIn={true} name="operatorInfo" title="Operator info's">
       <OperatorInfo form={ProjectForm} id={id} resetState={true} prefix="operatorInfo" />
     </WebPageContainer>
   )

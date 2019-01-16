@@ -12,11 +12,11 @@ const EditPage: React.FunctionComponent<any> = (props) => {
   const form = ValidationRegistry.forms[collection]
   if (form == null) {
     return (
-      <WebPageContainer requireLoggedIn={true} name="Error" title="Error">Collection not found</WebPageContainer>
+      <WebPageContainer backLink requireLoggedIn={true} name="Error" title="Error">Collection not found</WebPageContainer>
     )
   }
   return (
-    <WebPageContainer requireLoggedIn={true} name="Edit" title="Edit">
+    <WebPageContainer backLink requireLoggedIn={true} name="Edit" title="Edit">
       <BlockTitle>Adjust information of {id} in {collection.substring(0, collection.length-1)}</BlockTitle>
       <Framework7Edit form={form} id={id} resetState={true} />
     </WebPageContainer>

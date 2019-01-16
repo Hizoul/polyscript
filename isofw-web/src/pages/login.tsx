@@ -20,7 +20,7 @@ class WebLogin extends React.Component<IFormAuthProps, any> {
     }
     if (this.props.loggedIn) {
       return (
-        <WebPageContainer name="login" title="logout">
+        <WebPageContainer name="login" title="logout" backLink>
           <div className="miniContainer pullIntoHero">
             <div className="box">
               <WebButton
@@ -37,7 +37,7 @@ class WebLogin extends React.Component<IFormAuthProps, any> {
       )
     }
     return (
-      <WebPageContainer name="login" title="login">
+      <WebPageContainer name="login" title="login" backLink>
       <BlockTitle>Enter log in details</BlockTitle>
         <List form>
           <ul>

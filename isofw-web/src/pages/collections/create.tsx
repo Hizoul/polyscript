@@ -11,11 +11,11 @@ const CreatePage: React.FunctionComponent<any> = (props) => {
   const form = ValidationRegistry.forms[collection]
   if (form == null) {
     return (
-      <WebPageContainer requireLoggedIn={true} name="Error" title="Error">Collection not found</WebPageContainer>
+      <WebPageContainer backLink requireLoggedIn={true} name="Error" title="Error">Collection not found</WebPageContainer>
     )
   }
   return (
-    <WebPageContainer requireLoggedIn={true} name="Create" title="Create">
+    <WebPageContainer backLink requireLoggedIn={true} name="Create" title="Create">
       <BlockTitle>Fill in {collection.substring(0, collection.length-1)} information</BlockTitle>
       <WrappedFramework7Create form={form} resetState={true} />
     </WebPageContainer>
