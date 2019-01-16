@@ -6,6 +6,7 @@ import ObjectField from "isofw-web/src/components/form/object"
 import SearchField from "isofw-web/src/components/form/search"
 import TextField from "isofw-web/src/components/form/text"
 import MultiRelationship from "isofw-web/src/components/form/relationshipMulti"
+import SingleRelationship from "isofw-web/src/components/form/relationshipSingle"
 import BulmaBooleanField from "./boolean"
 
 registerWeb()
@@ -17,3 +18,4 @@ ComponentRegistry.registerComponent(FieldType.Date, TextField)
 ComponentRegistry.registerComponent(FieldType.Array, BulmaArrayField)
 ComponentRegistry.registerComponent(FieldType.Object, ObjectField)
 ComponentRegistry.registerComponent(FieldType.RelationshipMulti, MultiRelationship)
+ComponentRegistry.registerComponent(FieldType.RelationshipSingle, SingleRelationship)
