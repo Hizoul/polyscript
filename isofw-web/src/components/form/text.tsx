@@ -79,6 +79,7 @@ class TextField extends React.Component<IFieldProps, any> {
         min={min}
         max={max}
         onChange={onChange}
+        onInputClear={() => {this.props.setValue("")}}
         clearButton
       >
         <Icon icon="demo-list-icon" slot="media"/>
