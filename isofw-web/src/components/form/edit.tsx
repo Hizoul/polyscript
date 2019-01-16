@@ -35,7 +35,7 @@ class MiniEdit extends React.Component<IFormEditProps, any> {
     }
     return (
       <div>
-        <List form>
+        <List form style={{margin: "0pt"}}>
           <ul>
             {fields}
           </ul>

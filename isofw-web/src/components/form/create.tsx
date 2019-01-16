@@ -35,7 +35,7 @@ class Framework7Create extends React.Component<IFormCreateProps, any> {
     }
     return (
       <div>
-        <List form>
+        <List form style={{margin: "0pt"}}>
           <ul>
             {fields}
           </ul>
