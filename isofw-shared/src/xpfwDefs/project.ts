@@ -72,7 +72,7 @@ const ProjectProgram: IField = {
     validate: {objectDef: [
       ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator
     ]},
-    hide: {update: true}
+    hide: {update: true, create: true}
   }
 }
 
