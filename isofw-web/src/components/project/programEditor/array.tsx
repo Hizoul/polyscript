@@ -8,6 +8,7 @@ import {
   ShotDuration, ShotRemarksDirector, ShotRemarksOperator
 } from "isofw-shared/src/xpfwDefs/project";
 import "../style.sass"
+import { List } from "framework7-react";
 const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator]
 const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size: number, remove: any}> = (props) => {
   const convertedFields = []
@@ -17,17 +18,28 @@ const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size:
     convertedFields.push(newField)
   }
   return (
-    <div className="currentBox">
+    <div className="currentBox withMargin">
+      <div className="flex1" style={{marginBottom: "-2rem"}}>
+        <div className="flex1">&nbsp;</div>
+        <WebButton
+          className="boxTopRight"
+          onClick={props.removeItem(props.index)}
+          text=""
+          color="red"
+          fill
+          round
+          iconFa="times"
+        />
+      </div>
       <span className="shotNumber">{props.index}</span>
-      <SharedField field={convertedFields[0]}  prefix={props.prefix} />
-      <SharedField field={convertedFields[2]}  prefix={props.prefix} />
-      <SharedField field={convertedFields[5]}  prefix={props.prefix} />
-      <SharedField field={convertedFields[6]}  prefix={props.prefix} />
-      <WebButton
-        onClick={props.removeItem(props.index)}
-        text="delete"
-        iconFa="eraser"
-      />
+      <List form className="noMargin">
+        <ul>
+          <SharedField field={convertedFields[0]}  prefix={props.prefix} />
+          <SharedField field={convertedFields[2]}  prefix={props.prefix} />
+          <SharedField field={convertedFields[5]}  prefix={props.prefix} />
+          <SharedField field={convertedFields[6]}  prefix={props.prefix} />
+        </ul>
+      </List>
     </div>
   )
 }
