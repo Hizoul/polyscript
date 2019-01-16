@@ -24,6 +24,9 @@ const routes: any = [
     path: `${urls.programPage}/:id`,
     async: routeResolver(() => import("./project/program"))
   },{
+    path: `${urls.operatorInfo}/:id`,
+    async: routeResolver(() => import("./project/operatorInfo"))
+  },{
     path: `${urls.cameraOverview}`,
     async: routeResolver(() => import("./camera/overview"))
   },{

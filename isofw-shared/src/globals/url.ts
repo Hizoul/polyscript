@@ -6,6 +6,7 @@ const urls = {
   programPage: "/program",
   projectOverview: "/projectOverview",
   cameraOverview: "/cameraOverview",
+  operatorInfo: "/operatorInfo",
   create: "/create",
   edit: "/edit"
 }
