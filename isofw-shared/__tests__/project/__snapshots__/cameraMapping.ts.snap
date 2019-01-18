@@ -1,5 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[` camera mapping test  works as planned:  Hiding pop-up 1`] = `
+<div
+  className="DirectorEle"
+>
+  {
+  "field": {
+    "type": 10,
+    "mapTo": "operatorCameraMapping",
+    "theme": "cameraMapping",
+    "validate": {
+      "type": 12,
+      "validate": {
+        "objectDef": [
+          {
+            "type": 13,
+            "mapTo": "operator",
+            "validate": {
+              "relationshipNamePath": "email",
+              "relationshipCollection": "users",
+              "relationshipIdPath": "_id"
+            }
+          },
+          {
+            "type": 14,
+            "mapTo": "cameras",
+            "validate": {
+              "relationshipNamePath": "name",
+              "relationshipCollection": "cameras",
+              "relationshipIdPath": "_id",
+              "type": 2
+            }
+          }
+        ]
+      }
+    }
+  },
+  "prefix": "shotEdit",
+  "theme": "cameraMapping",
+  "cameras": [
+    "c19999999999999999999999",
+    "c29999999999999999999999",
+    "c39999999999999999999999"
+  ],
+  "operators": [
+    "u1",
+    "u2",
+    "u3"
+  ],
+  "showPopUp": false
+}
+</div>
+`;
+
 exports[` camera mapping test  works as planned:  One Operator with 2 camera 1`] = `
 <div
   className="DirectorEle"
@@ -56,7 +109,8 @@ exports[` camera mapping test  works as planned:  One Operator with 2 camera 1`]
     "u1",
     "u2",
     "u3"
-  ]
+  ],
+  "showPopUp": false
 }
 </div>
 `;
@@ -123,7 +177,8 @@ exports[` camera mapping test  works as planned:  One Operator with 2 camera And
     "u1",
     "u2",
     "u3"
-  ]
+  ],
+  "showPopUp": false
 }
 </div>
 `;
@@ -183,7 +238,61 @@ exports[` camera mapping test  works as planned:  One Operator with one camera 1
     "u1",
     "u2",
     "u3"
-  ]
+  ],
+  "showPopUp": false
+}
+</div>
+`;
+
+exports[` camera mapping test  works as planned:  Showing pop-up 1`] = `
+<div
+  className="DirectorEle"
+>
+  {
+  "field": {
+    "type": 10,
+    "mapTo": "operatorCameraMapping",
+    "theme": "cameraMapping",
+    "validate": {
+      "type": 12,
+      "validate": {
+        "objectDef": [
+          {
+            "type": 13,
+            "mapTo": "operator",
+            "validate": {
+              "relationshipNamePath": "email",
+              "relationshipCollection": "users",
+              "relationshipIdPath": "_id"
+            }
+          },
+          {
+            "type": 14,
+            "mapTo": "cameras",
+            "validate": {
+              "relationshipNamePath": "name",
+              "relationshipCollection": "cameras",
+              "relationshipIdPath": "_id",
+              "type": 2
+            }
+          }
+        ]
+      }
+    }
+  },
+  "prefix": "shotEdit",
+  "theme": "cameraMapping",
+  "cameras": [
+    "c19999999999999999999999",
+    "c29999999999999999999999",
+    "c39999999999999999999999"
+  ],
+  "operators": [
+    "u1",
+    "u2",
+    "u3"
+  ],
+  "showPopUp": true
 }
 </div>
 `;
@@ -235,7 +344,8 @@ exports[` camera mapping test  works as planned:  after preparing operators and 
     "u1",
     "u2",
     "u3"
-  ]
+  ],
+  "showPopUp": false
 }
 </div>
 `;
@@ -341,7 +451,8 @@ exports[` camera mapping test  works as planned:  two Operator with one camera 1
     "u1",
     "u2",
     "u3"
-  ]
+  ],
+  "showPopUp": false
 }
 </div>
 `;
@@ -382,7 +493,8 @@ exports[` camera mapping test  works as planned: Before anything 1`] = `
     }
   },
   "prefix": "shotEdit",
-  "theme": "cameraMapping"
+  "theme": "cameraMapping",
+  "showPopUp": false
 }
 </div>
 `;
@@ -446,7 +558,8 @@ exports[` camera mapping test  works as planned: remove all camearas of one oper
     "u1",
     "u2",
     "u3"
-  ]
+  ],
+  "showPopUp": false
 }
 </div>
 `;

@@ -37,11 +37,108 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
           },
           {
             "type": 2,
-            "mapTo": "name"
+            "mapTo": "name",
+            "validate": {
+              "convert": {}
+            }
           },
           {
             "type": 3,
             "mapTo": "shot"
+          },
+          {
+            "type": 14,
+            "mapTo": "cameras",
+            "validate": {
+              "relationshipNamePath": "name",
+              "relationshipCollection": "cameras",
+              "relationshipIdPath": "_id",
+              "type": 2
+            }
+          },
+          {
+            "type": 14,
+            "mapTo": "operators",
+            "validate": {
+              "relationshipNamePath": "email",
+              "relationshipCollection": "users",
+              "relationshipIdPath": "_id",
+              "type": 2
+            }
+          },
+          {
+            "type": 10,
+            "mapTo": "operatorCameraMapping",
+            "theme": "cameraMapping",
+            "validate": {
+              "type": 12,
+              "validate": {
+                "objectDef": [
+                  {
+                    "type": 13,
+                    "mapTo": "operator",
+                    "validate": {
+                      "relationshipNamePath": "email",
+                      "relationshipCollection": "users",
+                      "relationshipIdPath": "_id"
+                    }
+                  },
+                  {
+                    "type": 14,
+                    "mapTo": "cameras",
+                    "validate": {
+                      "relationshipNamePath": "name",
+                      "relationshipCollection": "cameras",
+                      "relationshipIdPath": "_id",
+                      "type": 2
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": 10,
+            "mapTo": "program",
+            "validate": {
+              "type": 12,
+              "validate": {
+                "objectDef": [
+                  {
+                    "type": 2,
+                    "mapTo": "pname"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "type"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "movement"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "movementTowards"
+                  },
+                  {
+                    "type": 3,
+                    "mapTo": "duration"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "directorRemarks"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "operatorRemarks"
+                  }
+                ]
+              },
+              "hide": {
+                "update": true,
+                "create": true
+              }
+            }
           }
         ]
       }
@@ -81,11 +178,65 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
     },
     {
       "type": 2,
-      "mapTo": "name"
+      "mapTo": "name",
+      "validate": {
+        "convert": {}
+      }
     },
     {
       "type": 3,
       "mapTo": "shot"
+    },
+    {
+      "type": 14,
+      "mapTo": "cameras",
+      "validate": {
+        "relationshipNamePath": "name",
+        "relationshipCollection": "cameras",
+        "relationshipIdPath": "_id",
+        "type": 2
+      }
+    },
+    {
+      "type": 14,
+      "mapTo": "operators",
+      "validate": {
+        "relationshipNamePath": "email",
+        "relationshipCollection": "users",
+        "relationshipIdPath": "_id",
+        "type": 2
+      }
+    },
+    {
+      "type": 10,
+      "mapTo": "operatorCameraMapping",
+      "theme": "cameraMapping",
+      "validate": {
+        "type": 12,
+        "validate": {
+          "objectDef": [
+            {
+              "type": 13,
+              "mapTo": "operator",
+              "validate": {
+                "relationshipNamePath": "email",
+                "relationshipCollection": "users",
+                "relationshipIdPath": "_id"
+              }
+            },
+            {
+              "type": 14,
+              "mapTo": "cameras",
+              "validate": {
+                "relationshipNamePath": "name",
+                "relationshipCollection": "cameras",
+                "relationshipIdPath": "_id",
+                "type": 2
+              }
+            }
+          ]
+        }
+      }
     }
   ]
 }
@@ -169,11 +320,108 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
           },
           {
             "type": 2,
-            "mapTo": "name"
+            "mapTo": "name",
+            "validate": {
+              "convert": {}
+            }
           },
           {
             "type": 3,
             "mapTo": "shot"
+          },
+          {
+            "type": 14,
+            "mapTo": "cameras",
+            "validate": {
+              "relationshipNamePath": "name",
+              "relationshipCollection": "cameras",
+              "relationshipIdPath": "_id",
+              "type": 2
+            }
+          },
+          {
+            "type": 14,
+            "mapTo": "operators",
+            "validate": {
+              "relationshipNamePath": "email",
+              "relationshipCollection": "users",
+              "relationshipIdPath": "_id",
+              "type": 2
+            }
+          },
+          {
+            "type": 10,
+            "mapTo": "operatorCameraMapping",
+            "theme": "cameraMapping",
+            "validate": {
+              "type": 12,
+              "validate": {
+                "objectDef": [
+                  {
+                    "type": 13,
+                    "mapTo": "operator",
+                    "validate": {
+                      "relationshipNamePath": "email",
+                      "relationshipCollection": "users",
+                      "relationshipIdPath": "_id"
+                    }
+                  },
+                  {
+                    "type": 14,
+                    "mapTo": "cameras",
+                    "validate": {
+                      "relationshipNamePath": "name",
+                      "relationshipCollection": "cameras",
+                      "relationshipIdPath": "_id",
+                      "type": 2
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": 10,
+            "mapTo": "program",
+            "validate": {
+              "type": 12,
+              "validate": {
+                "objectDef": [
+                  {
+                    "type": 2,
+                    "mapTo": "pname"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "type"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "movement"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "movementTowards"
+                  },
+                  {
+                    "type": 3,
+                    "mapTo": "duration"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "directorRemarks"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "operatorRemarks"
+                  }
+                ]
+              },
+              "hide": {
+                "update": true,
+                "create": true
+              }
+            }
           }
         ]
       }
@@ -220,11 +468,65 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
     },
     {
       "type": 2,
-      "mapTo": "name"
+      "mapTo": "name",
+      "validate": {
+        "convert": {}
+      }
     },
     {
       "type": 3,
       "mapTo": "shot"
+    },
+    {
+      "type": 14,
+      "mapTo": "cameras",
+      "validate": {
+        "relationshipNamePath": "name",
+        "relationshipCollection": "cameras",
+        "relationshipIdPath": "_id",
+        "type": 2
+      }
+    },
+    {
+      "type": 14,
+      "mapTo": "operators",
+      "validate": {
+        "relationshipNamePath": "email",
+        "relationshipCollection": "users",
+        "relationshipIdPath": "_id",
+        "type": 2
+      }
+    },
+    {
+      "type": 10,
+      "mapTo": "operatorCameraMapping",
+      "theme": "cameraMapping",
+      "validate": {
+        "type": 12,
+        "validate": {
+          "objectDef": [
+            {
+              "type": 13,
+              "mapTo": "operator",
+              "validate": {
+                "relationshipNamePath": "email",
+                "relationshipCollection": "users",
+                "relationshipIdPath": "_id"
+              }
+            },
+            {
+              "type": 14,
+              "mapTo": "cameras",
+              "validate": {
+                "relationshipNamePath": "name",
+                "relationshipCollection": "cameras",
+                "relationshipIdPath": "_id",
+                "type": 2
+              }
+            }
+          ]
+        }
+      }
     }
   ]
 }
@@ -248,11 +550,108 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
           },
           {
             "type": 2,
-            "mapTo": "name"
+            "mapTo": "name",
+            "validate": {
+              "convert": {}
+            }
           },
           {
             "type": 3,
             "mapTo": "shot"
+          },
+          {
+            "type": 14,
+            "mapTo": "cameras",
+            "validate": {
+              "relationshipNamePath": "name",
+              "relationshipCollection": "cameras",
+              "relationshipIdPath": "_id",
+              "type": 2
+            }
+          },
+          {
+            "type": 14,
+            "mapTo": "operators",
+            "validate": {
+              "relationshipNamePath": "email",
+              "relationshipCollection": "users",
+              "relationshipIdPath": "_id",
+              "type": 2
+            }
+          },
+          {
+            "type": 10,
+            "mapTo": "operatorCameraMapping",
+            "theme": "cameraMapping",
+            "validate": {
+              "type": 12,
+              "validate": {
+                "objectDef": [
+                  {
+                    "type": 13,
+                    "mapTo": "operator",
+                    "validate": {
+                      "relationshipNamePath": "email",
+                      "relationshipCollection": "users",
+                      "relationshipIdPath": "_id"
+                    }
+                  },
+                  {
+                    "type": 14,
+                    "mapTo": "cameras",
+                    "validate": {
+                      "relationshipNamePath": "name",
+                      "relationshipCollection": "cameras",
+                      "relationshipIdPath": "_id",
+                      "type": 2
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": 10,
+            "mapTo": "program",
+            "validate": {
+              "type": 12,
+              "validate": {
+                "objectDef": [
+                  {
+                    "type": 2,
+                    "mapTo": "pname"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "type"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "movement"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "movementTowards"
+                  },
+                  {
+                    "type": 3,
+                    "mapTo": "duration"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "directorRemarks"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "operatorRemarks"
+                  }
+                ]
+              },
+              "hide": {
+                "update": true,
+                "create": true
+              }
+            }
           }
         ]
       }
@@ -292,11 +691,65 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
     },
     {
       "type": 2,
-      "mapTo": "name"
+      "mapTo": "name",
+      "validate": {
+        "convert": {}
+      }
     },
     {
       "type": 3,
       "mapTo": "shot"
+    },
+    {
+      "type": 14,
+      "mapTo": "cameras",
+      "validate": {
+        "relationshipNamePath": "name",
+        "relationshipCollection": "cameras",
+        "relationshipIdPath": "_id",
+        "type": 2
+      }
+    },
+    {
+      "type": 14,
+      "mapTo": "operators",
+      "validate": {
+        "relationshipNamePath": "email",
+        "relationshipCollection": "users",
+        "relationshipIdPath": "_id",
+        "type": 2
+      }
+    },
+    {
+      "type": 10,
+      "mapTo": "operatorCameraMapping",
+      "theme": "cameraMapping",
+      "validate": {
+        "type": 12,
+        "validate": {
+          "objectDef": [
+            {
+              "type": 13,
+              "mapTo": "operator",
+              "validate": {
+                "relationshipNamePath": "email",
+                "relationshipCollection": "users",
+                "relationshipIdPath": "_id"
+              }
+            },
+            {
+              "type": 14,
+              "mapTo": "cameras",
+              "validate": {
+                "relationshipNamePath": "name",
+                "relationshipCollection": "cameras",
+                "relationshipIdPath": "_id",
+                "type": 2
+              }
+            }
+          ]
+        }
+      }
     }
   ]
 }

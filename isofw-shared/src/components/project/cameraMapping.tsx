@@ -27,19 +27,32 @@ const changeMapping = (thisRef: any) => {
     }
   }
 }
+const popupVisibilityKey = ""
+
+const togglePop = (thisRef: any) => {
+  return () => {
+    let currentValue = get(thisRef, "state.showPopUp", false)
+    const prefix = prefixMaker(get(thisRef.props, "prefix", ""))
+    FormStore.setValue(prefix+popupVisibilityKey, !currentValue)
+  }
+}
 
 export interface SharedCameraMappingProps extends IArrayProps {
   cameras: string[]
   operators: string[]
+  showPopUp: boolean
   changeMapping: (operator: string, camera: string) => void
+  togglePop: () => void
 }
 
 const SharedCameraMapping = (Container: React.ComponentType<SharedCameraMappingProps>) => {
   return class extends ComponentBase<IArrayProps, any> {
     private changeMapping: any
+    private togglePop: any
     constructor(props: any) {
       super(props)
       this.changeMapping = changeMapping(this)
+      this.togglePop = togglePop(this)
     }
     public render() {
       return (
@@ -47,7 +60,9 @@ const SharedCameraMapping = (Container: React.ComponentType<SharedCameraMappingP
           {...this.props}
           cameras={this.state.cameras}
           operators={this.state.operators}
+          showPopUp={this.state.showPopUp}
           changeMapping={this.changeMapping}
+          togglePop={this.togglePop}
         />
       )
     }
@@ -56,6 +71,7 @@ const SharedCameraMapping = (Container: React.ComponentType<SharedCameraMappingP
       return {
         cameras: FormStore.getValue(`${prefix}${ProjectCameras.mapTo}`),
         operators: FormStore.getValue(`${prefix}${ProjectOperators.mapTo}`),
+        showPopUp: FormStore.getValue(`${prefix}${popupVisibilityKey}`)
       }
     }
   }
@@ -63,5 +79,5 @@ const SharedCameraMapping = (Container: React.ComponentType<SharedCameraMappingP
 
 export default SharedCameraMapping
 export {
-  changeMapping
+  changeMapping, togglePop
 }

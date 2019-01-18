@@ -14,7 +14,7 @@ import { matchStoreState } from "resub-persist"
 import promiseTimeout from "isofw-shared/src/util/promiseTimeout";
 import renderSnapshot from "isofw-shared/src/testUtil/renderSnapshot"
 import * as React from "react"
-import { changeMapping } from "isofw-shared/src/components/project/cameraMapping";
+import { changeMapping, togglePop } from "isofw-shared/src/components/project/cameraMapping";
 BackendClient.client = FeathersClient
 
 const cameraMappingTest = () => {
@@ -36,10 +36,19 @@ const cameraMappingTest = () => {
       const thisRef = {
         props: {
           value: [],
+          prefix: directorPrefix,
           setValue: (newValue: any) => FormStore.setValue(`${prefixMaker(directorPrefix)}${ProjectOperatorCameraMapping.mapTo}`, newValue)
+        }, state: {
+          showPopUp: false
         }
       }
       const mapped = changeMapping(thisRef)
+      const tugger = togglePop(thisRef)
+      tugger()
+      renderSnapshot(<SharedField field={ProjectOperatorCameraMapping} prefix={directorPrefix} theme={ProjectOperatorCameraMapping.theme} />, " Showing pop-up")
+      thisRef.state.showPopUp = true
+      tugger()
+      renderSnapshot(<SharedField field={ProjectOperatorCameraMapping} prefix={directorPrefix} theme={ProjectOperatorCameraMapping.theme} />, " Hiding pop-up")
       mapped(userIds[0], cameraIds[0])()
       thisRef.props.value = FormStore.getValue(`${prefixMaker(directorPrefix)}${ProjectOperatorCameraMapping.mapTo}`)
       renderSnapshot(<SharedField field={ProjectOperatorCameraMapping} prefix={directorPrefix} theme={ProjectOperatorCameraMapping.theme} />, " One Operator with one camera")
