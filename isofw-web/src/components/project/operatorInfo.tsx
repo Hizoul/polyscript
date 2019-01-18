@@ -33,7 +33,8 @@ const PresetItem: React.FunctionComponent<IFormShowProps> = (props) => {
 
 const OperatorInfo: React.FunctionComponent<IFormEditProps> = (props) => {
   console.log(" operator props ", props, get(props.original, ProjectProgram.mapTo, []))
-  const items = get(props.original, `result.${ProjectProgram.mapTo}`, []).map((item: any) => <PresetItem loading={false} item={item} />)
+  let i = 0
+  const items = get(props.original, `result.${ProjectProgram.mapTo}`, []).map((item: any) => <PresetItem loading={false} item={item} key={++i} />)
   return (
     <div>
       <Row>

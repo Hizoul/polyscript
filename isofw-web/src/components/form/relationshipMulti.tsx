@@ -13,8 +13,10 @@ class WebRelationshipMulti extends React.Component<ISharedRelationshipFieldProps
     let content
     const gotVal = Array.isArray(this.props.value) && this.props.value.length > 0
     const relationItems = []
+    let i = 0
     for (const child of get(this.props, "relatedObject", [])) {
-      relationItems.push(<WebRelationshipItem field={this.props.field} item={child} addId={this.props.addId} removeId={this.props.removeId} isAdd={false} />)
+      relationItems.push(<WebRelationshipItem field={this.props.field} item={child} key={i} addId={this.props.addId} removeId={this.props.removeId} isAdd={false} />)
+      i++
     }
     content = (
       <Card>

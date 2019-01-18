@@ -42,7 +42,7 @@ class WebRelationshipSearch extends React.Component<ISharedRelationshipFieldProp
     return (
       <div>
         <BlockTitle>Search for {this.props.searchForm.collection}</BlockTitle>
-        <List form>
+        <List>
           <ul>
             <SharedField field={field} prefix={this.props.prefix} />
           </ul>

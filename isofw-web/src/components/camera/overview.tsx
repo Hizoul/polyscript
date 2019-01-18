@@ -20,7 +20,7 @@ const ItemCamera: React.FunctionComponent<IFormShowProps> = (props) => {
 }
 
 const CameraOverviewComponent: React.FunctionComponent<IFormListProps> = (props) => {
-  const items = get(props, "list.result", []).map((item: any) => <ItemCamera loading={false} item={item} />)
+  const items = get(props, "list.result", []).map((item: any) => <ItemCamera loading={false} item={item} key={item._id} />)
   return (
     <div className="data-table card">
       <table>

@@ -68,6 +68,7 @@ class TextField extends React.Component<IFieldProps, any> {
       }
       value = moment(value).format(getOriginalFormatFromType(dateType))
     }
+    value = value == null ? "" : value
     return (
       <ListInput
         type={type}
