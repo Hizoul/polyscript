@@ -18,6 +18,10 @@ class WebButton extends React.Component<IButton, any> {
       buttonProps.outline = true
     }
 
+    if (this.props.loading) {
+      buttonProps.text = "Loading..."
+    }
+
     return (
       <Button
         {...buttonProps}
