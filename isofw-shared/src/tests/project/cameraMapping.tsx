@@ -14,6 +14,7 @@ import { matchStoreState } from "resub-persist"
 import promiseTimeout from "isofw-shared/src/util/promiseTimeout";
 import renderSnapshot from "isofw-shared/src/testUtil/renderSnapshot"
 import * as React from "react"
+import { changeMapping } from "isofw-shared/src/components/project/cameraMapping";
 BackendClient.client = FeathersClient
 
 const cameraMappingTest = () => {
@@ -32,6 +33,29 @@ const cameraMappingTest = () => {
       const cameraIds = testCameras.map((item) => item._id)
       FormStore.setValue(prefixMaker(directorPrefix) + ProjectCameras.mapTo, cameraIds)
       renderSnapshot(<SharedField field={ProjectOperatorCameraMapping} prefix={directorPrefix} theme={ProjectOperatorCameraMapping.theme} />, " after preparing operators and cameras ")
+      const thisRef = {
+        props: {
+          value: [],
+          setValue: (newValue: any) => FormStore.setValue(`${prefixMaker(directorPrefix)}${ProjectOperatorCameraMapping.mapTo}`, newValue)
+        }
+      }
+      const mapped = changeMapping(thisRef)
+      mapped(userIds[0], cameraIds[0])()
+      thisRef.props.value = FormStore.getValue(`${prefixMaker(directorPrefix)}${ProjectOperatorCameraMapping.mapTo}`)
+      renderSnapshot(<SharedField field={ProjectOperatorCameraMapping} prefix={directorPrefix} theme={ProjectOperatorCameraMapping.theme} />, " One Operator with one camera")
+      mapped(userIds[0], cameraIds[1])()
+      thisRef.props.value = FormStore.getValue(`${prefixMaker(directorPrefix)}${ProjectOperatorCameraMapping.mapTo}`)
+      renderSnapshot(<SharedField field={ProjectOperatorCameraMapping} prefix={directorPrefix} theme={ProjectOperatorCameraMapping.theme} />, " One Operator with 2 camera")
+      mapped(userIds[1], cameraIds[2])()
+      thisRef.props.value = FormStore.getValue(`${prefixMaker(directorPrefix)}${ProjectOperatorCameraMapping.mapTo}`)
+      renderSnapshot(<SharedField field={ProjectOperatorCameraMapping} prefix={directorPrefix} theme={ProjectOperatorCameraMapping.theme} />, " One Operator with 2 camera And one with the one")
+      mapped(userIds[0], cameraIds[0])()
+      thisRef.props.value = FormStore.getValue(`${prefixMaker(directorPrefix)}${ProjectOperatorCameraMapping.mapTo}`)
+      renderSnapshot(<SharedField field={ProjectOperatorCameraMapping} prefix={directorPrefix} theme={ProjectOperatorCameraMapping.theme} />, " two Operator with one camera")
+      mapped(userIds[1], cameraIds[2])()
+      thisRef.props.value = FormStore.getValue(`${prefixMaker(directorPrefix)}${ProjectOperatorCameraMapping.mapTo}`)
+      renderSnapshot(<SharedField field={ProjectOperatorCameraMapping} prefix={directorPrefix} theme={ProjectOperatorCameraMapping.theme} />, "remove all camearas of one operator")
+      await promiseTimeout(1200)
       await appRef.cleanUp()
     }, 100000)
   })

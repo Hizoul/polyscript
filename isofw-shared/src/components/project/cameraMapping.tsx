@@ -1,16 +1,28 @@
 import { IField, prefixMaker } from "@xpfw/validate"
-import { cloneDeep, get, isNumber } from "lodash"
+import { cloneDeep, get, findIndex } from "lodash"
 import * as React from "react"
 import { IArrayProps, FormStore } from "@xpfw/form-shared";
 import { ComponentBase } from "resub";
-import { ProjectCameras, ProjectOperators } from "isofw-shared/src/xpfwDefs/project";
+import { ProjectCameras, ProjectOperators, OperatorRelation } from "isofw-shared/src/xpfwDefs/project";
 
-const removeItem = (thisRef: any) => {
-  return (index: any) => {
+const changeMapping = (thisRef: any) => {
+  return (operator: string, camera: string) => {
     return () => {
       let currentArray = get(thisRef, "props.value", [])
-      currentArray = cloneDeep(currentArray)
-      currentArray.splice(index, 1)
+      const operatorIndex = findIndex(currentArray, [OperatorRelation.mapTo, operator])
+      if (operatorIndex === -1) {
+        currentArray.push({[OperatorRelation.mapTo]: operator, [ProjectCameras.mapTo]: [camera]})
+      } else {
+        currentArray = cloneDeep(currentArray)
+        const operatorCameras = get(currentArray[operatorIndex], ProjectCameras.mapTo, [])
+        const cameraIndex = operatorCameras.indexOf(camera)
+        if (cameraIndex === -1) {
+          operatorCameras.push(camera)
+        } else {
+          operatorCameras.splice(cameraIndex, 1)
+        }
+        currentArray[operatorIndex][ProjectCameras.mapTo] = operatorCameras
+      }
       thisRef.props.setValue(currentArray)
     }
   }
@@ -19,12 +31,15 @@ const removeItem = (thisRef: any) => {
 export interface SharedCameraMappingProps extends IArrayProps {
   cameras: string[]
   operators: string[]
+  changeMapping: (operator: string, camera: string) => void
 }
 
 const SharedCameraMapping = (Container: React.ComponentType<SharedCameraMappingProps>) => {
   return class extends ComponentBase<IArrayProps, any> {
+    private changeMapping: any
     constructor(props: any) {
       super(props)
+      this.changeMapping = changeMapping(this)
     }
     public render() {
       return (
@@ -32,6 +47,7 @@ const SharedCameraMapping = (Container: React.ComponentType<SharedCameraMappingP
           {...this.props}
           cameras={this.state.cameras}
           operators={this.state.operators}
+          changeMapping={this.changeMapping}
         />
       )
     }
@@ -47,4 +63,5 @@ const SharedCameraMapping = (Container: React.ComponentType<SharedCameraMappingP
 
 export default SharedCameraMapping
 export {
+  changeMapping
 }

@@ -2,6 +2,7 @@ import { MailField, OwnerField, PwField } from "@xpfw/ui-shared"
 import ValidationRegistry, { FieldType, IField, IForm, Permission } from "@xpfw/validate"
 import collections from "isofw-shared/src/xpfwDefs/collections"
 import { ProjectName } from "./project";
+import IDField from "./idField";
 
 const CameraIp: IField = {
   type: FieldType.Text,
@@ -12,7 +13,7 @@ const CameraForm: IForm = {
   model: "cameraModel",
   collection: "cameras",
   sections: [{fields: [
-    ProjectName, CameraIp
+    IDField, ProjectName, CameraIp
   ]}],
   permissions: {
     required: {
