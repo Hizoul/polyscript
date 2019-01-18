@@ -1,13 +1,13 @@
 import { IField, prefixMaker } from "@xpfw/validate"
 import { cloneDeep, get, findIndex } from "lodash"
 import * as React from "react"
-import { IArrayProps, FormStore } from "@xpfw/form-shared";
+import { IArrayProps, FormStore, IFieldProps } from "@xpfw/form-shared";
 import { ComponentBase } from "resub";
 import { ProjectCameras, ProjectOperators, OperatorRelation } from "isofw-shared/src/xpfwDefs/project";
 
 const changeMapping = (thisRef: any) => {
   return (operator: string, camera: string) => {
-    return () => {
+    return (event?: any) => {
       let currentArray = get(thisRef, "props.value", [])
       const operatorIndex = findIndex(currentArray, [OperatorRelation.mapTo, operator])
       if (operatorIndex === -1) {
@@ -27,7 +27,7 @@ const changeMapping = (thisRef: any) => {
     }
   }
 }
-const popupVisibilityKey = ""
+const popupVisibilityKey = "cameraMappingPopup"
 
 const togglePop = (thisRef: any) => {
   return () => {
@@ -37,16 +37,16 @@ const togglePop = (thisRef: any) => {
   }
 }
 
-export interface SharedCameraMappingProps extends IArrayProps {
+export interface SharedCameraMappingProps extends IFieldProps {
   cameras: string[]
   operators: string[]
   showPopUp: boolean
-  changeMapping: (operator: string, camera: string) => void
+  changeMapping: (operator: string, camera: string) => () => void
   togglePop: () => void
 }
 
 const SharedCameraMapping = (Container: React.ComponentType<SharedCameraMappingProps>) => {
-  return class extends ComponentBase<IArrayProps, any> {
+  return class extends ComponentBase<IFieldProps, any> {
     private changeMapping: any
     private togglePop: any
     constructor(props: any) {
@@ -66,11 +66,15 @@ const SharedCameraMapping = (Container: React.ComponentType<SharedCameraMappingP
         />
       )
     }
-    protected _buildState(props: IArrayProps, initialBuild: boolean): any {
+    protected _buildState(props: IFieldProps, initialBuild: boolean): any {
       const prefix = prefixMaker(get(props, "prefix", ""))
+      let cameras = FormStore.getValue(`${prefix}${ProjectCameras.mapTo}`)
+      cameras = cameras ? cameras : []
+      let operators = FormStore.getValue(`${prefix}${ProjectOperators.mapTo}`)
+      operators = operators ? operators : []
       return {
-        cameras: FormStore.getValue(`${prefix}${ProjectCameras.mapTo}`),
-        operators: FormStore.getValue(`${prefix}${ProjectOperators.mapTo}`),
+        cameras,
+        operators,
         showPopUp: FormStore.getValue(`${prefix}${popupVisibilityKey}`)
       }
     }

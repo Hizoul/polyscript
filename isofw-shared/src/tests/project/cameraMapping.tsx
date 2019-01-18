@@ -46,9 +46,6 @@ const cameraMappingTest = () => {
       const tugger = togglePop(thisRef)
       tugger()
       renderSnapshot(<SharedField field={ProjectOperatorCameraMapping} prefix={directorPrefix} theme={ProjectOperatorCameraMapping.theme} />, " Showing pop-up")
-      thisRef.state.showPopUp = true
-      tugger()
-      renderSnapshot(<SharedField field={ProjectOperatorCameraMapping} prefix={directorPrefix} theme={ProjectOperatorCameraMapping.theme} />, " Hiding pop-up")
       mapped(userIds[0], cameraIds[0])()
       thisRef.props.value = FormStore.getValue(`${prefixMaker(directorPrefix)}${ProjectOperatorCameraMapping.mapTo}`)
       renderSnapshot(<SharedField field={ProjectOperatorCameraMapping} prefix={directorPrefix} theme={ProjectOperatorCameraMapping.theme} />, " One Operator with one camera")
@@ -64,7 +61,9 @@ const cameraMappingTest = () => {
       mapped(userIds[1], cameraIds[2])()
       thisRef.props.value = FormStore.getValue(`${prefixMaker(directorPrefix)}${ProjectOperatorCameraMapping.mapTo}`)
       renderSnapshot(<SharedField field={ProjectOperatorCameraMapping} prefix={directorPrefix} theme={ProjectOperatorCameraMapping.theme} />, "remove all camearas of one operator")
-      await promiseTimeout(1200)
+      thisRef.state.showPopUp = true
+      tugger()
+      renderSnapshot(<SharedField field={ProjectOperatorCameraMapping} prefix={directorPrefix} theme={ProjectOperatorCameraMapping.theme} />, " Hiding pop-up")
       await appRef.cleanUp()
     }, 100000)
   })

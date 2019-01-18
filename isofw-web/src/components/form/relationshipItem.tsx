@@ -28,7 +28,11 @@ class WebRelationshipItem extends React.Component<{
         after={this.props.isAdd ? "add" : "remove"}
         onClick={action}
       >
-        <Icon slot="media" fa={this.props.isAdd ? "plus" : "trash"}/>
+        <Icon
+          slot="inner"
+          fa={this.props.isAdd ? "plus" : "trash"}
+          color={!this.props.isAdd ? "red" : "green"}
+        />
       </ListItem>
     )
   }

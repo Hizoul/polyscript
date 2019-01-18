@@ -40,7 +40,7 @@ class MiniEdit extends React.Component<IFormEditProps, any> {
             {fields}
           </ul>
         </List>
-        <Button onClick={this.props.submitEdit} iconFa="save" fill>Save</Button>
+        <Button className="marginTopBottom" onClick={this.props.submitEdit} iconFa="save" fill>Save</Button>
         {msg}
       </div>
     )

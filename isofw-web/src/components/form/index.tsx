@@ -9,7 +9,8 @@ import MultiRelationship from "isofw-web/src/components/form/relationshipMulti"
 import SingleRelationship from "isofw-web/src/components/form/relationshipSingle"
 import CameraMapInField from "isofw-web/src/components/project/cameraMapping"
 import BulmaBooleanField from "./boolean"
-
+import { ProjectOperatorCameraMapping } from "isofw-shared/src/xpfwDefs/project";
+const b: any = CameraMapInField
 registerWeb()
 ComponentRegistry.registerComponent(FieldType.Text, TextField)
 ComponentRegistry.registerComponent(FieldType.Text, SearchField, "search")
@@ -20,4 +21,4 @@ ComponentRegistry.registerComponent(FieldType.Array, BulmaArrayField)
 ComponentRegistry.registerComponent(FieldType.Object, ObjectField)
 ComponentRegistry.registerComponent(FieldType.RelationshipMulti, MultiRelationship)
 ComponentRegistry.registerComponent(FieldType.RelationshipSingle, SingleRelationship)
-ComponentRegistry.registerComponent(FieldType.Array, CameraMapInField)
+ComponentRegistry.registerComponent(FieldType.Array, b, ProjectOperatorCameraMapping.theme)

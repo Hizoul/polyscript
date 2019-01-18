@@ -1,64 +1,58 @@
-import { IFieldProps, SharedField, SharedArray, IArrayProps } from "@xpfw/form-shared"
-import { IField } from "@xpfw/validate"
-import { cloneDeep, get, map } from "lodash"
 import * as React from "react"
 import WebButton from "isofw-web/src/components/button";
-import { 
-  ShotName, ShotType, ShotMovement, ShotMovementTowards,
-  ShotDuration, ShotRemarksDirector, ShotRemarksOperator
-} from "isofw-shared/src/xpfwDefs/project";
 import "../style.sass"
-import { List } from "framework7-react";
-import SharedCameraMapping from "isofw-shared/src/components/project/cameraMapping";
+import { List, Popup, Card, CardHeader, CardContent, ListItem, Icon, BlockTitle, Row } from "framework7-react";
+import SharedCameraMapping, { SharedCameraMappingProps } from "isofw-shared/src/components/project/cameraMapping";
+import NameDisplayer from "isofw-web/src/components/displayName"
+import val from "isofw-shared/src/globals/val";
+import { MailField } from "isofw-shared/src/util/xpfwuishared";
+import { find, get } from "lodash";
+import { OperatorRelation, ProjectCameras, ProjectName } from "isofw-shared/src/xpfwDefs/project";
 
-const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator]
-const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size: number, remove: any}> = (props) => {
-  const convertedFields = []
-  for (const field of fieldsToConvert) {
-    const newField = cloneDeep(field)
-    newField.mapTo = `${props.field.mapTo}[${props.index}].${field.mapTo}`
-    convertedFields.push(newField)
-  }
+const OperatorCamera: React.FunctionComponent<SharedCameraMappingProps & {operator: string}> = (props) => {
   return (
-    <div className="currentBox withMargin">
-      <div className="flex1" style={{marginBottom: "-2rem"}}>
-        <div className="flex1">&nbsp;</div>
-        <WebButton
-          className="boxTopRight"
-          onClick={props.removeItem(props.index)}
-          text=""
-          color="red"
-          fill
-          round
-          iconFa="times"
-        />
-      </div>
-      <span className="shotNumber">{props.index}</span>
-      <List form className="noMargin">
+    <Card>
+      <CardHeader>
+        <NameDisplayer collection={val.service.user} id={props.operator} getNameFrom={MailField.mapTo} />
+      </CardHeader>
+      <List className="noMargin">
         <ul>
-          <SharedField field={convertedFields[0]}  prefix={props.prefix} />
-          <SharedField field={convertedFields[2]}  prefix={props.prefix} />
-          <SharedField field={convertedFields[5]}  prefix={props.prefix} />
-          <SharedField field={convertedFields[6]}  prefix={props.prefix} />
+          {props.cameras.map((camera) => {
+            const operatorCameras = find(props.value, [OperatorRelation.mapTo, props.operator])
+            let selected = get(operatorCameras, ProjectCameras.mapTo, []).indexOf(camera) !== -1
+            return <ListItem key={camera} onClick={props.changeMapping(props.operator, camera)}>
+              <div slot="title">
+                <NameDisplayer collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />
+              </div>
+              <div slot="inner">
+                <Icon fa={selected ? "times" : "plus"} color={selected ? "red" : "green"}/>
+              </div>
+            </ListItem>
+          })}
         </ul>
       </List>
-    </div>
+    </Card>
   )
 }
 
-const ProgramArray: React.FunctionComponent<IArrayProps> = (props) => {
-  console.log("PROPS ARE", props)
+const webCameraMapping: React.FunctionComponent<SharedCameraMappingProps> = (props) => {
   return (
-    <div className="flex1">
+    <div>
       <WebButton
-        className="is-fullwidth is-info"
-        onClick={props.increaseSize}
+        fill
+        big
+        onClick={props.togglePop}
         text="operator to camera mapping"
         iconFa="camera"
       />
+      <Popup opened={props.showPopUp} onPopupClosed={props.togglePop}>
+        <BlockTitle>select which operator handles which cameras</BlockTitle>
+        {props.operators.map((operator) => <OperatorCamera {...props} key={operator} operator={operator} />)}
+      </Popup>
     </div>
   )
 }
-const b: any = SharedArray(ProgramArray)
-export default SharedCameraMapping(b) 
+
+const WrappedCameraMapping = SharedCameraMapping(webCameraMapping) 
+export default WrappedCameraMapping
 
