@@ -93,16 +93,18 @@ const OperatorInfo: React.FunctionComponent<IFormEditProps> = (props) => {
       <div className="data-table card" style={{marginLeft: "0pt", marginRight: "0pt"}}>
         <table>
           <thead>
-            <th>shot</th>
-            <th>CA</th>
-            <th>Preset</th>
-            <th>Type</th>
-            <th>Object</th>
-            <th>Movement</th>
-            <th>Towards</th>
-            <th>Duration</th>
-            <th>picture</th>
-            <th>remarks</th>
+            <tr>
+              <th>shot</th>
+              <th>CA</th>
+              <th>Preset</th>
+              <th>Type</th>
+              <th>Object</th>
+              <th>Movement</th>
+              <th>Towards</th>
+              <th>Duration</th>
+              <th>picture</th>
+              <th>remarks</th>
+            </tr>
           </thead>
           <tbody>
             {items}

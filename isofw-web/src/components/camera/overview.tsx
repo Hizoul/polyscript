@@ -25,9 +25,11 @@ const CameraOverviewComponent: React.FunctionComponent<IFormListProps> = (props)
     <div className="data-table card">
       <table>
         <thead>
-          <th>name</th>
-          <th>IP</th>
-          <th>actions</th>
+          <tr>
+            <th>name</th>
+            <th>IP</th>
+            <th>actions</th>
+          </tr>
         </thead>
         <tbody>
           {items}

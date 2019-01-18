@@ -21,13 +21,15 @@ const ItemProject: React.FunctionComponent<IFormShowProps> = (props) => {
 }
 
 const ProjectOverviewComponent: React.FunctionComponent<IFormListProps> = (props) => {
-  const items = get(props, "list.result", []).map((item: any) => <ItemProject loading={false} item={item} />)
+  const items = get(props, "list.result", []).map((item: any) => <ItemProject loading={false} item={item} key={item._id} />)
   return (
     <div className="data-table card">
       <table>
         <thead>
-          <th>name</th>
-          <th>actions</th>
+          <tr>
+            <th>name</th>
+            <th>actions</th>
+          </tr>
         </thead>
         <tbody>
           {items}
