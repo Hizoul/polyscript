@@ -5,9 +5,9 @@ import urls from "isofw-shared/src/globals/url";
 
 const Home: React.FunctionComponent<any> = (props) => {
   return (
-    <WebPageContainer {...props} name="home" title="Poly direct">
+    <WebPageContainer {...props} name="home" title="PolyScript">
       <BlockTitle>
-        welcome to poly direct.<br />
+        welcome to PolyScript.<br />
         what do you wish to do?
       </BlockTitle>
       <List>

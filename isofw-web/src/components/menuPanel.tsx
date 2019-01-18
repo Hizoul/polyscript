@@ -8,7 +8,7 @@ const MenuPanel: React.FunctionComponent<IFormAuthProps> = (props) => {
     <Panel left reveal>
         <Page>
           <Block>
-            Poly direct
+            PolyScript
           </Block>
           <List>
             <ListItem
