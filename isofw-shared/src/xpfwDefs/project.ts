@@ -86,8 +86,18 @@ const ProjectCameras: IField = {
   }
 }
 
-const OperatorRelation: IField = {
+const ProjectOperators: IField = {
   type: FieldType.RelationshipMulti,
+  mapTo: "operators",
+  validate: {
+    relationshipNamePath: MailField.mapTo,
+    relationshipCollection: "users",
+    relationshipIdPath: "_id"
+  }
+}
+
+const OperatorRelation: IField = {
+  type: FieldType.RelationshipSingle,
   mapTo: "operator",
   validate: {
     relationshipNamePath: MailField.mapTo,
@@ -96,9 +106,10 @@ const OperatorRelation: IField = {
   }
 }
 
-const ProjectOperators: IField = {
+const ProjectOperatorCameraMapping: IField = {
   type: FieldType.Array,
-  mapTo: "operators",
+  mapTo: "operatorCameraMapping",
+  theme: "cameraMapping",
   validate: {
     type: FieldType.Object,
     validate: {objectDef: [
@@ -111,7 +122,7 @@ const ProjectForm: IForm = {
   model: "projectModel",
   collection: val.service.project,
   sections: [{fields: [
-    IDField, ProjectName, ProjectShot, ProjectCameras, ProjectOperators, ProjectProgram
+    IDField, ProjectName, ProjectShot, ProjectCameras, ProjectOperators, ProjectOperatorCameraMapping, ProjectProgram
   ]}],
   permissions: {
     required: {
@@ -131,5 +142,6 @@ const ProjectForm: IForm = {
 ValidationRegistry.registerForm(ProjectForm)
 export {
   ProjectForm, ProjectName, ProjectShot, ProjectProgram,
+  ProjectOperators, ProjectOperatorCameraMapping, OperatorRelation, ProjectCameras,
   ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator
 }

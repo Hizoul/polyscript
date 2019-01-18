@@ -41,7 +41,8 @@ const makeApp: (prerender?: Service<any>, db?: any) => Application<any> = (prere
     paginate: {
       default: 10,
       max: 100
-    }
+    },
+    whitelist: ["$regex", "$options"]
   }))
   app.service("users").hooks({
     // Make sure `password` never gets sent to the client

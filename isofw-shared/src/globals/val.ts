@@ -7,7 +7,8 @@ const val = {
   },
   service: {
     user: "/users",
-    project: "projects"
+    project: "projects",
+    camera: "cameras"
   }
 }
 

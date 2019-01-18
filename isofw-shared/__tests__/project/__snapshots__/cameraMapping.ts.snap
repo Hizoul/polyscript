@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` camera mapping test  works as planned:  after preparing operators and cameras  1`] = `
+<div
+  className="DirectorEle"
+>
+  {
+  "field": {
+    "type": 10,
+    "mapTo": "operatorCameraMapping",
+    "theme": "cameraMapping",
+    "validate": {
+      "type": 12,
+      "validate": {
+        "objectDef": [
+          {
+            "type": 13,
+            "mapTo": "operator",
+            "validate": {
+              "relationshipNamePath": "email",
+              "relationshipCollection": "users",
+              "relationshipIdPath": "_id"
+            }
+          },
+          {
+            "type": 14,
+            "mapTo": "cameras",
+            "validate": {
+              "relationshipNamePath": "name",
+              "relationshipCollection": "cameras",
+              "relationshipIdPath": "_id",
+              "type": 2
+            }
+          }
+        ]
+      }
+    }
+  },
+  "prefix": "shotEdit",
+  "theme": "cameraMapping",
+  "cameras": [
+    "c19999999999999999999999",
+    "c29999999999999999999999",
+    "c39999999999999999999999"
+  ],
+  "operators": [
+    "u1",
+    "u2",
+    "u3"
+  ]
+}
+</div>
+`;
+
+exports[` camera mapping test  works as planned:  creation of cameras  1`] = `
+Array [
+  Object {
+    "_id": "5c419d0005f9991704fe497c",
+    "ip": "localhost:4202/c1",
+    "name": "Camera#1",
+  },
+  Object {
+    "_id": "5c419d0005f9991704fe497d",
+    "ip": "localhost:4202/c2",
+    "name": "Camera#2",
+  },
+  Object {
+    "_id": "5c419d0005f9991704fe497e",
+    "ip": "localhost:4202/c3",
+    "name": "Camera#3",
+  },
+]
+`;
+
+exports[` camera mapping test  works as planned:  creation of proInjects  1`] = `
+Array [
+  Object {
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 1,
+  },
+  Object {
+    "_id": "b29999999999999999999999",
+    "name": "pn2",
+    "shot": 8,
+  },
+  Object {
+    "_id": "b39999999999999999999999",
+    "name": "pn3",
+    "shot": 6,
+  },
+]
+`;
+
+exports[` camera mapping test  works as planned: Before anything 1`] = `
+<div
+  className="DirectorEle"
+>
+  {
+  "field": {
+    "type": 10,
+    "mapTo": "operatorCameraMapping",
+    "theme": "cameraMapping",
+    "validate": {
+      "type": 12,
+      "validate": {
+        "objectDef": [
+          {
+            "type": 13,
+            "mapTo": "operator",
+            "validate": {
+              "relationshipNamePath": "email",
+              "relationshipCollection": "users",
+              "relationshipIdPath": "_id"
+            }
+          },
+          {
+            "type": 14,
+            "mapTo": "cameras",
+            "validate": {
+              "relationshipNamePath": "name",
+              "relationshipCollection": "cameras",
+              "relationshipIdPath": "_id"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "prefix": "shotEdit",
+  "theme": "cameraMapping"
+}
+</div>
+`;
