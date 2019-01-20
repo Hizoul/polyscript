@@ -1,9 +1,10 @@
 import * as React from "react"
 
-const makeMockElement = (name: string) => {
+const makeMockElement = (name: string, showChildren: boolean = false) => {
   return (props: any) => (
     <div className={name}>
-      {JSON.stringify(props, undefined, 2)}
+      {JSON.stringify({...props, children: undefined}, undefined, 2)}
+      {props.children}
     </div>
   )
   }

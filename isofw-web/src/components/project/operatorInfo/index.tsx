@@ -2,14 +2,15 @@ import * as React from "react"
 import { SharedFormEdit, IFormEditProps, DbStore, IFormShowProps } from "@xpfw/ui-shared";
 import { ProjectForm, ProjectShot, ProjectProgram, ProjectName, ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator } from "isofw-shared/src/xpfwDefs/project";
 import { FormStore, SharedField } from "@xpfw/form-shared";
-import LoadingPage from "../loading";
+import LoadingPage from "../../loading";
 import { get } from "lodash"
 import { ComponentRegistry } from "@xpfw/form-shared"
 import { FieldType } from "isofw-shared/src/util/xpfwvalidate";
 import WebButton from "isofw-web/src/components/button";
 import { Row, Col, Block, Link, Icon } from "framework7-react";
-import "./style.sass"
+import "../style.sass"
 import urls from "isofw-shared/src/globals/url";
+import CurrentOperatorDisplay from "./currentOperatorDisplay";
 
 const PresetItem: React.FunctionComponent<IFormShowProps> = (props) => {
   return (
@@ -50,10 +51,7 @@ const OperatorInfo: React.FunctionComponent<IFormEditProps> = (props) => {
             </div>
         </Col>
         <Col>
-          <div className="subtitleBox centerText">
-            <div className="subtitle">Operator info</div>
-            CA 5 6 9
-          </div>
+          <CurrentOperatorDisplay item={get(props.original, `result`)} />
         </Col>
         <Col>
           <div className="subtitleBox withPadding">

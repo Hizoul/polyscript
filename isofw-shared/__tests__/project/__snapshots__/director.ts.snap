@@ -131,6 +131,10 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
                   {
                     "type": 2,
                     "mapTo": "operatorRemarks"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "camera"
                   }
                 ]
               },
@@ -414,6 +418,10 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
                   {
                     "type": 2,
                     "mapTo": "operatorRemarks"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "camera"
                   }
                 ]
               },
@@ -644,6 +652,10 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
                   {
                     "type": 2,
                     "mapTo": "operatorRemarks"
+                  },
+                  {
+                    "type": 2,
+                    "mapTo": "camera"
                   }
                 ]
               },

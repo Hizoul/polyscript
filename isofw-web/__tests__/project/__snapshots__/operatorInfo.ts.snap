@@ -1,0 +1,475 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` operator info test  works as planned:  creation of cameras  1`] = `
+Array [
+  Object {
+    "_id": "c19999999999999999999999",
+    "ip": "localhost:4202/c1",
+    "name": "Camera#1",
+  },
+  Object {
+    "_id": "c29999999999999999999999",
+    "ip": "localhost:4202/c2",
+    "name": "Camera#2",
+  },
+  Object {
+    "_id": "c39999999999999999999999",
+    "ip": "localhost:4202/c3",
+    "name": "Camera#3",
+  },
+]
+`;
+
+exports[` operator info test  works as planned:  creation of proInjects  1`] = `
+Array [
+  Object {
+    "_id": "b19999999999999999999999",
+    "cameras": Array [
+      "c19999999999999999999999",
+      "c29999999999999999999999",
+      "c39999999999999999999999",
+    ],
+    "name": "pn1",
+    "operatorCameraMapping": Array [
+      Object {
+        "cameras": Array [
+          "c19999999999999999999999",
+          "c39999999999999999999999",
+        ],
+        "operator": "u1",
+      },
+      Object {
+        "cameras": Array [
+          "c29999999999999999999999",
+        ],
+        "operator": "u2",
+      },
+    ],
+    "operators": Array [
+      "u1",
+      "u2",
+    ],
+    "shot": 1,
+  },
+  Object {
+    "_id": "b29999999999999999999999",
+    "cameras": Array [
+      "c19999999999999999999999",
+      "c29999999999999999999999",
+    ],
+    "name": "pn2",
+    "operatorCameraMapping": Array [
+      Object {
+        "cameras": Array [
+          "c19999999999999999999999",
+        ],
+        "operator": "u3",
+      },
+      Object {
+        "cameras": Array [
+          "c29999999999999999999999",
+        ],
+        "operator": "u1",
+      },
+    ],
+    "operators": Array [
+      "u1",
+      "u3",
+    ],
+    "shot": 8,
+  },
+  Object {
+    "_id": "b39999999999999999999999",
+    "cameras": Array [
+      "c19999999999999999999999",
+      "c39999999999999999999999",
+    ],
+    "name": "pn3",
+    "operatorCameraMapping": Array [
+      Object {
+        "cameras": Array [
+          "c19999999999999999999999",
+        ],
+        "operator": "u3",
+      },
+      Object {
+        "cameras": Array [
+          "c39999999999999999999999",
+        ],
+        "operator": "u2",
+      },
+    ],
+    "operators": Array [
+      "u2",
+      "u3",
+    ],
+    "shot": 6,
+  },
+]
+`;
+
+exports[` operator info test  works as planned: Before anything 1`] = `
+<div>
+  <div
+    className="Link"
+  >
+    {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+    <div
+      className="subtitle"
+    >
+      none selected
+    </div>
+    <span>
+       
+    </span>
+  </div>
+  <div
+    className="Popover"
+  >
+    {
+  "className": "operatorChooser"
+}
+    <div
+      className="List"
+    >
+      {}
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": ".operatorChooser"
+}
+        <div
+          slot="title"
+        >
+          No one
+        </div>
+        <div
+          slot="footer"
+        >
+          All cameras
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": true
+}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="footer"
+        >
+          <span>
+            Cameras: 
+            <span />
+            <span />
+          </span>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": true
+}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="footer"
+        >
+          <span>
+            Cameras: 
+            <span />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[` operator info test  works as planned: Invalid user selected 1`] = `
+<div>
+  <div
+    className="Link"
+  >
+    {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+    <div
+      className="subtitle"
+    >
+      <span />
+    </div>
+    <span>
+       
+    </span>
+  </div>
+  <div
+    className="Popover"
+  >
+    {
+  "className": "operatorChooser"
+}
+    <div
+      className="List"
+    >
+      {}
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": ".operatorChooser"
+}
+        <div
+          slot="title"
+        >
+          No one
+        </div>
+        <div
+          slot="footer"
+        >
+          All cameras
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": true
+}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="footer"
+        >
+          <span>
+            Cameras: 
+            <span />
+            <span />
+          </span>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": true
+}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="footer"
+        >
+          <span>
+            Cameras: 
+            <span />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[` operator info test  works as planned: Removed user selection 1`] = `
+<div>
+  <div
+    className="Link"
+  >
+    {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+    <div
+      className="subtitle"
+    >
+      none selected
+    </div>
+    <span>
+       
+    </span>
+  </div>
+  <div
+    className="Popover"
+  >
+    {
+  "className": "operatorChooser"
+}
+    <div
+      className="List"
+    >
+      {}
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": ".operatorChooser"
+}
+        <div
+          slot="title"
+        >
+          No one
+        </div>
+        <div
+          slot="footer"
+        >
+          All cameras
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": true
+}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="footer"
+        >
+          <span>
+            Cameras: 
+            <span />
+            <span />
+          </span>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": true
+}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="footer"
+        >
+          <span>
+            Cameras: 
+            <span />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[` operator info test  works as planned: first user selected 1`] = `
+<div>
+  <div
+    className="Link"
+  >
+    {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+    <div
+      className="subtitle"
+    >
+      <span />
+    </div>
+    <span>
+      CA 
+      <span />
+      <span />
+    </span>
+  </div>
+  <div
+    className="Popover"
+  >
+    {
+  "className": "operatorChooser"
+}
+    <div
+      className="List"
+    >
+      {}
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": ".operatorChooser"
+}
+        <div
+          slot="title"
+        >
+          No one
+        </div>
+        <div
+          slot="footer"
+        >
+          All cameras
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": true
+}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="footer"
+        >
+          <span>
+            Cameras: 
+            <span />
+            <span />
+          </span>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": true
+}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="footer"
+        >
+          <span>
+            Cameras: 
+            <span />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

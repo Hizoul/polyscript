@@ -63,6 +63,10 @@ const ShotRemarksOperator: IField = {
   type: FieldType.Text,
   mapTo: "operatorRemarks"
 }
+const ShotCamera: IField = {
+  type: FieldType.Text,
+  mapTo: "camera"
+}
 
 const ProjectProgram: IField = {
   type: FieldType.Array,
@@ -70,7 +74,7 @@ const ProjectProgram: IField = {
   validate: {
     type: FieldType.Object,
     validate: {objectDef: [
-      ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator
+      ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera
     ]},
     hide: {update: true, create: true}
   }
@@ -141,7 +145,7 @@ const ProjectForm: IForm = {
 
 ValidationRegistry.registerForm(ProjectForm)
 export {
-  ProjectForm, ProjectName, ProjectShot, ProjectProgram,
+  ProjectForm, ProjectName, ProjectShot, ProjectProgram, ShotCamera,
   ProjectOperators, ProjectOperatorCameraMapping, OperatorRelation, ProjectCameras,
   ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator
 }
