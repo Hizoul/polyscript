@@ -24,9 +24,7 @@ const operatorInfoTest = (Component: any) => {
       const userResults = await createTestUsers(appRef.app)
       await logIntoUser()
       const cameraResult = await createTestCameras(appRef.app)
-      expect(cameraResult).toMatchSnapshot(" creation of cameras ")
       const projectResults = await createTestProjects(appRef.app, true)
-      expect(projectResults).toMatchSnapshot(" creation of proInjects ")
       const thisRef = {}
       const changer = changeOperator(thisRef)
       renderSnapshot(<Component item={projectResults[0]} />, "Before anything")

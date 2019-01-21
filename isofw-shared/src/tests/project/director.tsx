@@ -27,7 +27,6 @@ const directorTest = (Component: any) => {
       console.log("logged in")
       const projectResults = await createTestProjects(appRef.app)
       console.log("Created Projects")
-      expect(projectResults).toMatchSnapshot(" creation of proInjects ")
       // Shop number automatically pushed After Server change
       console.log("Server patch Projects")
       await appRef.app.service(val.service.project).patch(projectResults[0]._id, {[ProjectShot.mapTo]: 42})

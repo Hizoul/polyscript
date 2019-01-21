@@ -136,46 +136,6 @@ exports[` camera mapping test  works as planned:  after preparing cameras  1`] =
 </div>
 `;
 
-exports[` camera mapping test  works as planned:  creation of cameras  1`] = `
-Array [
-  Object {
-    "_id": "c1bbbbbbbbbbbbbbbbbbbbbb",
-    "ip": "localhost:4202/c1",
-    "name": "Camera#1",
-  },
-  Object {
-    "_id": "c2bbbbbbbbbbbbbbbbbbbbbb",
-    "ip": "localhost:4202/c2",
-    "name": "Camera#2",
-  },
-  Object {
-    "_id": "c3bbbbbbbbbbbbbbbbbbbbbb",
-    "ip": "localhost:4202/c3",
-    "name": "Camera#3",
-  },
-]
-`;
-
-exports[` camera mapping test  works as planned:  creation of proInjects  1`] = `
-Array [
-  Object {
-    "_id": "b19999999999999999999999",
-    "name": "pn1",
-    "shot": 1,
-  },
-  Object {
-    "_id": "b29999999999999999999999",
-    "name": "pn2",
-    "shot": 8,
-  },
-  Object {
-    "_id": "b39999999999999999999999",
-    "name": "pn3",
-    "shot": 6,
-  },
-]
-`;
-
 exports[` camera mapping test  works as planned: Before anything 1`] = `
 <div
   className="DirectorEle"

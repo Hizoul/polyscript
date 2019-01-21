@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Preset creation works as planned:  creation of cameras  1`] = `
+exports[`Preset creation works as planned:  creation of Cameras 1`] = `
 Array [
   Object {
     "_id": "c1bbbbbbbbbbbbbbbbbbbbbb",
@@ -20,7 +20,7 @@ Array [
 ]
 `;
 
-exports[`Preset creation works as planned:  creation of proInjects  1`] = `
+exports[`Preset creation works as planned:  creation of Projects  1`] = `
 Array [
   Object {
     "_id": "b19999999999999999999999",
@@ -195,14 +195,14 @@ Object {
           "number": 17,
         },
         Object {
-          "_id": "c1bbbbbbbbbbbbbbbbbbbbb9",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 9,
-        },
-        Object {
           "_id": "c1bbbbbbbbbbbbbbbbbbbb18",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 18,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbbb9",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 9,
         },
         Object {
           "_id": "c1bbbbbbbbbbbbbbbbbbbb19",
@@ -225,14 +225,14 @@ Object {
           "number": 22,
         },
         Object {
-          "_id": "c1bbbbbbbbbbbbbbbbbbbb23",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 23,
-        },
-        Object {
           "_id": "c1bbbbbbbbbbbbbbbbbbbb20",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 20,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb23",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 23,
         },
         Object {
           "_id": "c1bbbbbbbbbbbbbbbbbbbb24",
@@ -680,14 +680,14 @@ Object {
           "number": 12,
         },
         Object {
-          "_id": "c2bbbbbbbbbbbbbbbbbbbb14",
-          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 14,
-        },
-        Object {
           "_id": "c2bbbbbbbbbbbbbbbbbbbb13",
           "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
           "number": 13,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb14",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 14,
         },
         Object {
           "_id": "c2bbbbbbbbbbbbbbbbbbbb15",
@@ -1115,14 +1115,14 @@ Object {
           "number": 99,
         },
         Object {
-          "_id": "c3bbbbbbbbbbbbbbbbbbbbb1",
-          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 1,
-        },
-        Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbbb0",
           "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
           "number": 0,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbbb1",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 1,
         },
         Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbbb2",
@@ -1205,14 +1205,14 @@ Object {
           "number": 17,
         },
         Object {
-          "_id": "c3bbbbbbbbbbbbbbbbbbbb18",
-          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 18,
-        },
-        Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb19",
           "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
           "number": 19,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb18",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 18,
         },
         Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb20",
@@ -1295,14 +1295,14 @@ Object {
           "number": 35,
         },
         Object {
-          "_id": "c3bbbbbbbbbbbbbbbbbbbb37",
-          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 37,
-        },
-        Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb36",
           "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
           "number": 36,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb37",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 37,
         },
         Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb38",
@@ -1335,11 +1335,6 @@ Object {
           "number": 43,
         },
         Object {
-          "_id": "c3bbbbbbbbbbbbbbbbbbbb46",
-          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 46,
-        },
-        Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb44",
           "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
           "number": 44,
@@ -1348,6 +1343,11 @@ Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb45",
           "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
           "number": 45,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb46",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 46,
         },
         Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb47",
@@ -1360,14 +1360,14 @@ Object {
           "number": 48,
         },
         Object {
-          "_id": "c3bbbbbbbbbbbbbbbbbbbb50",
-          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 50,
-        },
-        Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb49",
           "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
           "number": 49,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb50",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 50,
         },
         Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb51",
@@ -1385,9 +1385,9 @@ Object {
           "number": 53,
         },
         Object {
-          "_id": "c3bbbbbbbbbbbbbbbbbbbb56",
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb54",
           "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 56,
+          "number": 54,
         },
         Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb55",
@@ -1395,9 +1395,9 @@ Object {
           "number": 55,
         },
         Object {
-          "_id": "c3bbbbbbbbbbbbbbbbbbbb54",
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb56",
           "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 54,
+          "number": 56,
         },
         Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb57",
@@ -1565,14 +1565,14 @@ Object {
           "number": 89,
         },
         Object {
-          "_id": "c3bbbbbbbbbbbbbbbbbbbb90",
-          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 90,
-        },
-        Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb91",
           "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
           "number": 91,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb90",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 90,
         },
         Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb92",
@@ -1590,14 +1590,14 @@ Object {
           "number": 94,
         },
         Object {
-          "_id": "c3bbbbbbbbbbbbbbbbbbbb96",
-          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 96,
-        },
-        Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb95",
           "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
           "number": 95,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb96",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 96,
         },
         Object {
           "_id": "c3bbbbbbbbbbbbbbbbbbbb97",

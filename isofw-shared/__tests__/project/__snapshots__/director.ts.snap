@@ -1,25 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` direct a test   can increase number :  creation of proInjects  1`] = `
-Array [
-  Object {
-    "_id": "b19999999999999999999999",
-    "name": "pn1",
-    "shot": 1,
-  },
-  Object {
-    "_id": "b29999999999999999999999",
-    "name": "pn2",
-    "shot": 8,
-  },
-  Object {
-    "_id": "b39999999999999999999999",
-    "name": "pn3",
-    "shot": 6,
-  },
-]
-`;
-
 exports[` direct a test   can increase number :  info pushed by Server  1`] = `
 <div
   className="DirectorEle"
