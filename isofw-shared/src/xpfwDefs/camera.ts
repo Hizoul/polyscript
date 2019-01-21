@@ -3,6 +3,7 @@ import ValidationRegistry, { FieldType, IField, IForm, Permission } from "@xpfw/
 import collections from "isofw-shared/src/xpfwDefs/collections"
 import { ProjectName } from "./project";
 import IDField from "./idField";
+import val from "isofw-shared/src/globals/val"
 
 const CameraIp: IField = {
   type: FieldType.Text,
@@ -11,7 +12,7 @@ const CameraIp: IField = {
 
 const CameraForm: IForm = {
   model: "cameraModel",
-  collection: "cameras",
+  collection: val.service.camera,
   sections: [{fields: [
     IDField, ProjectName, CameraIp
   ]}],

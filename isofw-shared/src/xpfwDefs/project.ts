@@ -1,8 +1,7 @@
 import ValidationRegistry, { IForm, Permission, IField, FieldType } from "@xpfw/validate"
 import val from "isofw-shared/src/globals/val"
 import IDField from "./idField"
-import { MailField } from "@xpfw/ui-shared";
-
+import { MailField } from "@xpfw/ui-shared"
 
 const convertTextToMongoRegex: any = (value: any) => {
   if (value == null || value.length === 0) {

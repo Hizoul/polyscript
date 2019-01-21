@@ -1,10 +1,11 @@
 import { MailField, OwnerField, PwField } from "@xpfw/ui-shared"
 import ValidationRegistry, { FieldType, IField, IForm, Permission } from "@xpfw/validate"
 import collections from "isofw-shared/src/xpfwDefs/collections"
+import val from "isofw-shared/src/globals/val"
 
 const UserForm: IForm = {
   model: "userModel",
-  collection: "users",
+  collection: val.service.user,
   sections: [{fields: [
     MailField, PwField
   ]}],
