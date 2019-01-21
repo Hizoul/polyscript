@@ -8,9 +8,11 @@ import { get } from "lodash"
 import { ComponentRegistry } from "@xpfw/form-shared"
 import { FieldType } from "isofw-shared/src/util/xpfwvalidate";
 import WebButton from "isofw-web/src/components/button";
+import WrappedCameraChooser from "./cameraChooser";
 
 const programTheme = "program"
 ComponentRegistry.registerComponent(FieldType.Array, ProgramArray, programTheme)
+ComponentRegistry.registerComponent(FieldType.RelationshipSingle, WrappedCameraChooser, programTheme)
 
 
 const ProgramEditor: React.FunctionComponent<IFormEditProps> = (props) => {

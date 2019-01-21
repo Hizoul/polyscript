@@ -1,0 +1,654 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` camera mapping test  works as planned:  after Closing pop up  1`] = `
+<div>
+  <div
+    className="ListItem"
+  >
+    {}
+    <div
+      slot="title"
+    >
+      Camera: 
+      <span>
+        Camera#2
+      </span>
+    </div>
+    <div
+      slot="inner"
+    >
+      <div
+        className="Icon"
+      >
+        {
+  "fa": "camera"
+}
+      </div>
+    </div>
+  </div>
+  <div
+    className="Popup"
+  >
+    {
+  "opened": false
+}
+    <div
+      className="BlockTitle"
+    >
+      {}
+      Choose a camera 
+      camera
+    </div>
+    <div
+      className="List"
+    >
+      {}
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span>
+            Camera#1
+          </span>
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span>
+            Camera#2
+          </span>
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span>
+            Camera#3
+          </span>
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[` camera mapping test  works as planned:  after Fetching cameras  1`] = `
+<div>
+  <div
+    className="ListItem"
+  >
+    {}
+    <div
+      slot="title"
+    >
+      Camera: 
+      <span>
+        Camera#2
+      </span>
+    </div>
+    <div
+      slot="inner"
+    >
+      <div
+        className="Icon"
+      >
+        {
+  "fa": "camera"
+}
+      </div>
+    </div>
+  </div>
+  <div
+    className="Popup"
+  >
+    {}
+    <div
+      className="BlockTitle"
+    >
+      {}
+      Choose a camera 
+      camera
+    </div>
+    <div
+      className="List"
+    >
+      {}
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span>
+            Camera#1
+          </span>
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span>
+            Camera#2
+          </span>
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span>
+            Camera#3
+          </span>
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[` camera mapping test  works as planned:  after Opening pop up  1`] = `
+<div>
+  <div
+    className="ListItem"
+  >
+    {}
+    <div
+      slot="title"
+    >
+      Camera: 
+      <span>
+        Camera#2
+      </span>
+    </div>
+    <div
+      slot="inner"
+    >
+      <div
+        className="Icon"
+      >
+        {
+  "fa": "camera"
+}
+      </div>
+    </div>
+  </div>
+  <div
+    className="Popup"
+  >
+    {
+  "opened": true
+}
+    <div
+      className="BlockTitle"
+    >
+      {}
+      Choose a camera 
+      camera
+    </div>
+    <div
+      className="List"
+    >
+      {}
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span>
+            Camera#1
+          </span>
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span>
+            Camera#2
+          </span>
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span>
+            Camera#3
+          </span>
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[` camera mapping test  works as planned:  after Setting Camera  1`] = `
+<div>
+  <div
+    className="ListItem"
+  >
+    {}
+    <div
+      slot="title"
+    >
+      Camera: 
+      <span>
+        not yet selected
+      </span>
+    </div>
+    <div
+      slot="inner"
+    >
+      <div
+        className="Icon"
+      >
+        {
+  "fa": "camera"
+}
+      </div>
+    </div>
+  </div>
+  <div
+    className="Popup"
+  >
+    {}
+    <div
+      className="BlockTitle"
+    >
+      {}
+      Choose a camera 
+      camera
+    </div>
+    <div
+      className="List"
+    >
+      {}
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[` camera mapping test  works as planned:  after preparing cameras  1`] = `
+<div>
+  <div
+    className="ListItem"
+  >
+    {}
+    <div
+      slot="title"
+    >
+      Camera: 
+      <span>
+        not yet selected
+      </span>
+    </div>
+    <div
+      slot="inner"
+    >
+      <div
+        className="Icon"
+      >
+        {
+  "fa": "camera"
+}
+      </div>
+    </div>
+  </div>
+  <div
+    className="Popup"
+  >
+    {}
+    <div
+      className="BlockTitle"
+    >
+      {}
+      Choose a camera 
+      camera
+    </div>
+    <div
+      className="List"
+    >
+      {}
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="inner"
+        >
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "chevron"
+}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[` camera mapping test  works as planned:  creation of cameras  1`] = `
+Array [
+  Object {
+    "_id": "c19999999999999999999999",
+    "ip": "localhost:4202/c1",
+    "name": "Camera#1",
+  },
+  Object {
+    "_id": "c29999999999999999999999",
+    "ip": "localhost:4202/c2",
+    "name": "Camera#2",
+  },
+  Object {
+    "_id": "c39999999999999999999999",
+    "ip": "localhost:4202/c3",
+    "name": "Camera#3",
+  },
+]
+`;
+
+exports[` camera mapping test  works as planned:  creation of proInjects  1`] = `
+Array [
+  Object {
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 1,
+  },
+  Object {
+    "_id": "b29999999999999999999999",
+    "name": "pn2",
+    "shot": 8,
+  },
+  Object {
+    "_id": "b39999999999999999999999",
+    "name": "pn3",
+    "shot": 6,
+  },
+]
+`;
+
+exports[` camera mapping test  works as planned: Before anything 1`] = `
+<div>
+  <div
+    className="ListItem"
+  >
+    {}
+    <div
+      slot="title"
+    >
+      Camera: 
+      <span>
+        not yet selected
+      </span>
+    </div>
+    <div
+      slot="inner"
+    >
+      <div
+        className="Icon"
+      >
+        {
+  "fa": "camera"
+}
+      </div>
+    </div>
+  </div>
+  <div
+    className="Popup"
+  >
+    {}
+    <div
+      className="BlockTitle"
+    >
+      {}
+      Choose a camera 
+      camera
+    </div>
+    <div
+      className="List"
+    >
+      {}
+    </div>
+  </div>
+</div>
+`;

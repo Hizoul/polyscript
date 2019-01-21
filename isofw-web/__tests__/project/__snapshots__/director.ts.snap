@@ -21,18 +21,64 @@ Array [
 `;
 
 exports[` direct a test   can increase number :  info pushed by Server  1`] = `
-<div>
-  Editing page
-  Shop number is: 
-  42
-  <a
-    className="button undefined"
-    onClick={[Function]}
+<div
+  className="flex1 column"
+>
+  <div
+    className="flex center"
   >
-    <span>
-       change 
-    </span>
-  </a>
+    <div
+      className="titleBox"
+    >
+      pn1
+    </div>
+  </div>
+  <div
+    className="flex center"
+  >
+    <div
+      className="currentBox"
+    >
+      <span
+        className="shotNumber"
+      >
+        42
+      </span>
+      <br />
+      <span>
+        CA ?
+      </span>
+    </div>
+  </div>
+  <div
+    className="flex center"
+  >
+    <div
+      className="Button"
+    >
+      {
+  "text": "previous shot",
+  "iconFa": "step-backward"
+}
+    </div>
+    <div
+      className="Button"
+    >
+      {
+  "text": "next shot",
+  "className": "flex1 center forwardButton",
+  "iconFa": "step-forward"
+}
+    </div>
+    <div
+      className="Button"
+    >
+      {
+  "iconFa": "sync",
+  "text": "placeholder"
+}
+    </div>
+  </div>
 </div>
 `;
 
@@ -97,33 +143,125 @@ Object {
 `;
 
 exports[` direct a test   can increase number : After manual edits 1`] = `
-<div>
-  Editing page
-  Shop number is: 
-  43
-  <a
-    className="button undefined"
-    onClick={[Function]}
+<div
+  className="flex1 column"
+>
+  <div
+    className="flex center"
   >
-    <span>
-       change 
-    </span>
-  </a>
+    <div
+      className="titleBox"
+    >
+      pn1
+    </div>
+  </div>
+  <div
+    className="flex center"
+  >
+    <div
+      className="currentBox"
+    >
+      <span
+        className="shotNumber"
+      >
+        43
+      </span>
+      <br />
+      <span>
+        CA ?
+      </span>
+    </div>
+  </div>
+  <div
+    className="flex center"
+  >
+    <div
+      className="Button"
+    >
+      {
+  "text": "previous shot",
+  "iconFa": "step-backward"
+}
+    </div>
+    <div
+      className="Button"
+    >
+      {
+  "text": "next shot",
+  "className": "flex1 center forwardButton",
+  "iconFa": "step-forward"
+}
+    </div>
+    <div
+      className="Button"
+    >
+      {
+  "iconFa": "sync",
+  "text": "placeholder"
+}
+    </div>
+  </div>
 </div>
 `;
 
 exports[` direct a test   can increase number : Before manual edits 1`] = `
-<div>
-  Editing page
-  Shop number is: 
-  42
-  <a
-    className="button undefined"
-    onClick={[Function]}
+<div
+  className="flex1 column"
+>
+  <div
+    className="flex center"
   >
-    <span>
-       change 
-    </span>
-  </a>
+    <div
+      className="titleBox"
+    >
+      pn1
+    </div>
+  </div>
+  <div
+    className="flex center"
+  >
+    <div
+      className="currentBox"
+    >
+      <span
+        className="shotNumber"
+      >
+        42
+      </span>
+      <br />
+      <span>
+        CA ?
+      </span>
+    </div>
+  </div>
+  <div
+    className="flex center"
+  >
+    <div
+      className="Button"
+    >
+      {
+  "text": "previous shot",
+  "iconFa": "step-backward"
+}
+    </div>
+    <div
+      className="Button"
+    >
+      {
+  "text": "next shot",
+  "className": "flex1 center forwardButton",
+  "iconFa": "step-forward"
+}
+    </div>
+    <div
+      className="Button"
+    >
+      {
+  "iconFa": "sync",
+  "text": "placeholder"
+}
+    </div>
+  </div>
 </div>
 `;

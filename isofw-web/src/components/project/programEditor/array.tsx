@@ -5,11 +5,11 @@ import * as React from "react"
 import WebButton from "isofw-web/src/components/button";
 import { 
   ShotName, ShotType, ShotMovement, ShotMovementTowards,
-  ShotDuration, ShotRemarksDirector, ShotRemarksOperator
+  ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset
 } from "isofw-shared/src/xpfwDefs/project";
 import "../style.sass"
 import { List } from "framework7-react";
-const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator]
+const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset]
 const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size: number, remove: any}> = (props) => {
   const convertedFields = []
   for (const field of fieldsToConvert) {
@@ -34,10 +34,12 @@ const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size:
       <span className="shotNumber">{props.index}</span>
       <List form className="noMargin">
         <ul>
+          <SharedField field={convertedFields[7]}  prefix={props.prefix} />
           <SharedField field={convertedFields[0]}  prefix={props.prefix} />
           <SharedField field={convertedFields[2]}  prefix={props.prefix} />
           <SharedField field={convertedFields[5]}  prefix={props.prefix} />
           <SharedField field={convertedFields[6]}  prefix={props.prefix} />
+          <SharedField field={convertedFields[8]}  prefix={props.prefix} />
         </ul>
       </List>
     </div>
