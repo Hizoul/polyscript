@@ -9,7 +9,8 @@ const val = {
     user: "/users",
     project: "projects",
     camera: "cameras",
-    preset: "presets"
+    preset: "presets",
+    presetAssistant: "presetAssistant"
   },
   maximumPresetAmount: 100
 }

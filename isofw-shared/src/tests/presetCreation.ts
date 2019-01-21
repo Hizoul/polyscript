@@ -11,12 +11,13 @@ import { increaseShotNumber, directorPrefix } from "isofw-shared/src/components/
 import val from "isofw-shared/src/globals/val"
 import { ProjectForm, ProjectName, ProjectShot, ProjectOperatorCameraMapping, ProjectOperators, ProjectCameras } from "isofw-shared/src/xpfwDefs/project"
 import { matchStoreState } from "resub-persist"
-import { PresetForm } from "isofw-shared/src/xpfwDefs/preset";
+import { PresetForm, PresetCameraField, PresetAssistantForm, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset";
 BackendClient.client = FeathersClient
 
 const presetCreationTest = (Component: any) => {
   describe("Preset creation", () => {
     it("works as planned", async () => {
+      const prefix = "presetCreationPrefix"
       const appRef = await getRandomApp(" not important ", true, BackendClient.client, false)
       const userResults = await createTestUsers(appRef.app)
       await logIntoUser()
@@ -27,6 +28,12 @@ const presetCreationTest = (Component: any) => {
       ListStore.pageSize = 400
       await ListStore.getList("presets", PresetForm, undefined, true)
       matchStoreState(ListStore,  " fetched presets ")
+      FormStore.setValue(`${prefixMaker(prefix)}${PresetCameraField.mapTo}`, cameraResult[0]._id)
+      FormStore.setValue(`${prefixMaker(prefix)}${PresetProjectField.mapTo}`, projectResults[0]._id)
+      matchStoreState(DbStore, "Before preset is being pushed via real-time")
+      const iDFetchedResults = await DbStore.create(PresetAssistantForm, prefix)
+      expect(iDFetchedResults).toMatchSnapshot(" first available ID ")
+      matchStoreState(DbStore, "after preset has been pushed via real-time")
       await appRef.cleanUp()
     }, 100000)
   })

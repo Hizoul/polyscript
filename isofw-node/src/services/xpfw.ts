@@ -51,6 +51,7 @@ const pluginCollections = (db: any) => {
             permission.general(form, "get", {...opts, docIdPath: "params.user._id"})
           ],
           find: [
+            auth.hooks.authenticate("jwt"),
             permission.general(form, "find", opts),
             validate.general(form, "find", opts),
             convertIds("_id", true)

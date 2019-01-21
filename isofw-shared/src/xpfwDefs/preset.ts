@@ -1,5 +1,9 @@
 import ValidationRegistry, { FieldType, IField, IForm, Permission } from "@xpfw/validate"
-import IDField from "./idField";
+import IDField from "./idField"
+import { cloneDeep } from "lodash"
+import val from "isofw-shared/src/globals/val"
+
+const EMPTY_PRESET = "-"
 
 const PresetNumberField: IField = {
   type: FieldType.Number,
@@ -18,7 +22,7 @@ const PresetCameraField: IField = {
 
 const PresetForm: IForm = {
   model: "presetModel",
-  collection: "presets",
+  collection: val.service.preset,
   sections: [{fields: [
     IDField, PresetNumberField, PresetProjectField, PresetCameraField
   ]}],
@@ -33,12 +37,20 @@ const PresetForm: IForm = {
   },
   options: {
     addCreatedAt: true,
-    idPath: "_id"
+    idPath: "_id",
+    defaultSort: {
+      [PresetCameraField.mapTo]: 1,
+      [PresetNumberField.mapTo]: 1
+    }
   }
 }
 
 ValidationRegistry.registerForm(PresetForm)
 
+const PresetAssistantForm: IForm = cloneDeep(PresetForm)
+PresetAssistantForm.collection = val.service.presetAssistant
+ValidationRegistry.registerForm(PresetAssistantForm)
+
 export {
-  PresetForm, PresetNumberField, PresetProjectField, PresetCameraField
+  PresetForm, PresetNumberField, PresetProjectField, PresetCameraField, EMPTY_PRESET, PresetAssistantForm
 }
