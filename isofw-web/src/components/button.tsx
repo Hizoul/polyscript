@@ -2,7 +2,7 @@
 import i18n from "isofw-shared/src/util/i18n"
 import { isObject } from "lodash"
 import * as React from "react"
-import { Link, Button, F7Button } from "framework7-react";
+import { Link, Button, F7Button, Preloader } from "framework7-react";
 
 export interface IButton extends F7Button.Props {
   text: string
@@ -26,6 +26,7 @@ class WebButton extends React.Component<IButton, any> {
       <Button
         {...buttonProps}
       >
+        {this.props.loading ? <Preloader  /> : undefined}
       </Button>
     )
   }

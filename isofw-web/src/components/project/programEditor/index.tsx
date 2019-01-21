@@ -24,7 +24,6 @@ const ProgramEditor: React.FunctionComponent<IFormEditProps> = (props) => {
         </div>
       </div>
       <SharedField field={ProjectProgram} prefix={props.prefix} theme={programTheme} />
-      {props.loading ? <LoadingPage /> : null}
       <WebButton text="save" onClick={props.submitEdit} loading={props.loading} />
     </div>
   )

@@ -4,6 +4,7 @@ import { IFormCreateProps, ISharedFormCreate, SharedFormCreate } from "@xpfw/ui-
 import {  IField } from "@xpfw/validate"
 import { get } from "lodash"
 import { Button, Block, BlockTitle, List } from "framework7-react";
+import WebButton from "../button";
 
 class Framework7Create extends React.Component<IFormCreateProps, any> {
   public render() {
@@ -40,7 +41,7 @@ class Framework7Create extends React.Component<IFormCreateProps, any> {
             {fields}
           </ul>
         </List>
-        <Button onClick={this.props.submitCreate} iconFa="plus" fill>Create</Button>
+        <WebButton onClick={this.props.submitCreate} iconFa="plus" fill loading={this.props.loading} text="Create" />
         {msg}
       </div>
     )

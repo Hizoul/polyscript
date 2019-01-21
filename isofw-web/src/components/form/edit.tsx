@@ -4,6 +4,7 @@ import { getFieldsFromForm,  IField } from "@xpfw/validate"
 import { get } from "lodash"
 import * as React from "react"
 import { Button, Block, BlockTitle, List } from "framework7-react";
+import WebButton from "../button";
 
 class MiniEdit extends React.Component<IFormEditProps, any> {
   public render() {
@@ -40,7 +41,7 @@ class MiniEdit extends React.Component<IFormEditProps, any> {
             {fields}
           </ul>
         </List>
-        <Button className="marginTopBottom" onClick={this.props.submitEdit} iconFa="save" fill>Save</Button>
+        <WebButton className="marginTopBottom" onClick={this.props.submitEdit} iconFa="save" fill text="Save" loading={this.props.loading} />
         {msg}
       </div>
     )
