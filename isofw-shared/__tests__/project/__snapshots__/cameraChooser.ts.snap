@@ -17,11 +17,11 @@ exports[` camera mapping test  works as planned:  after Closing pop up  1`] = `
   },
   "prefix": "shotEdit",
   "theme": "program",
-  "value": "c29999999999999999999999",
+  "value": "c2bbbbbbbbbbbbbbbbbbbbbb",
   "cameras": [
-    "c19999999999999999999999",
-    "c29999999999999999999999",
-    "c39999999999999999999999"
+    "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
   "showPopUp": false
 }
@@ -45,11 +45,11 @@ exports[` camera mapping test  works as planned:  after Fetching cameras  1`] = 
   },
   "prefix": "shotEdit",
   "theme": "program",
-  "value": "c29999999999999999999999",
+  "value": "c2bbbbbbbbbbbbbbbbbbbbbb",
   "cameras": [
-    "c19999999999999999999999",
-    "c29999999999999999999999",
-    "c39999999999999999999999"
+    "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
   ]
 }
 </div>
@@ -72,11 +72,11 @@ exports[` camera mapping test  works as planned:  after Opening pop up  1`] = `
   },
   "prefix": "shotEdit",
   "theme": "program",
-  "value": "c29999999999999999999999",
+  "value": "c2bbbbbbbbbbbbbbbbbbbbbb",
   "cameras": [
-    "c19999999999999999999999",
-    "c29999999999999999999999",
-    "c39999999999999999999999"
+    "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
   "showPopUp": true
 }
@@ -100,11 +100,11 @@ exports[` camera mapping test  works as planned:  after Setting Camera  1`] = `
   },
   "prefix": "shotEdit",
   "theme": "program",
-  "value": "c29999999999999999999999",
+  "value": "c2bbbbbbbbbbbbbbbbbbbbbb",
   "cameras": [
-    "c19999999999999999999999",
-    "c29999999999999999999999",
-    "c39999999999999999999999"
+    "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
   ]
 }
 </div>
@@ -128,9 +128,9 @@ exports[` camera mapping test  works as planned:  after preparing cameras  1`] =
   "prefix": "shotEdit",
   "theme": "program",
   "cameras": [
-    "c19999999999999999999999",
-    "c29999999999999999999999",
-    "c39999999999999999999999"
+    "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
   ]
 }
 </div>
@@ -139,17 +139,17 @@ exports[` camera mapping test  works as planned:  after preparing cameras  1`] =
 exports[` camera mapping test  works as planned:  creation of cameras  1`] = `
 Array [
   Object {
-    "_id": "c19999999999999999999999",
+    "_id": "c1bbbbbbbbbbbbbbbbbbbbbb",
     "ip": "localhost:4202/c1",
     "name": "Camera#1",
   },
   Object {
-    "_id": "c29999999999999999999999",
+    "_id": "c2bbbbbbbbbbbbbbbbbbbbbb",
     "ip": "localhost:4202/c2",
     "name": "Camera#2",
   },
   Object {
-    "_id": "c39999999999999999999999",
+    "_id": "c3bbbbbbbbbbbbbbbbbbbbbb",
     "ip": "localhost:4202/c3",
     "name": "Camera#3",
   },

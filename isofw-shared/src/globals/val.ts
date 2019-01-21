@@ -8,8 +8,10 @@ const val = {
   service: {
     user: "/users",
     project: "projects",
-    camera: "cameras"
-  }
+    camera: "cameras",
+    preset: "presets"
+  },
+  maximumPresetAmount: 100
 }
 
 export default val

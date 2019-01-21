@@ -42,7 +42,7 @@ exports[` camera mapping test  works as planned:  Hiding pop-up 1`] = `
     {
       "operator": "u1",
       "cameras": [
-        "c29999999999999999999999"
+        "c2bbbbbbbbbbbbbbbbbbbbbb"
       ]
     },
     {
@@ -51,9 +51,9 @@ exports[` camera mapping test  works as planned:  Hiding pop-up 1`] = `
     }
   ],
   "cameras": [
-    "c19999999999999999999999",
-    "c29999999999999999999999",
-    "c39999999999999999999999"
+    "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
   "operators": [
     "u1",
@@ -107,15 +107,15 @@ exports[` camera mapping test  works as planned:  One Operator with 2 camera 1`]
     {
       "operator": "u1",
       "cameras": [
-        "c19999999999999999999999",
-        "c29999999999999999999999"
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c2bbbbbbbbbbbbbbbbbbbbbb"
       ]
     }
   ],
   "cameras": [
-    "c19999999999999999999999",
-    "c29999999999999999999999",
-    "c39999999999999999999999"
+    "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
   "operators": [
     "u1",
@@ -169,21 +169,21 @@ exports[` camera mapping test  works as planned:  One Operator with 2 camera And
     {
       "operator": "u1",
       "cameras": [
-        "c19999999999999999999999",
-        "c29999999999999999999999"
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c2bbbbbbbbbbbbbbbbbbbbbb"
       ]
     },
     {
       "operator": "u2",
       "cameras": [
-        "c39999999999999999999999"
+        "c3bbbbbbbbbbbbbbbbbbbbbb"
       ]
     }
   ],
   "cameras": [
-    "c19999999999999999999999",
-    "c29999999999999999999999",
-    "c39999999999999999999999"
+    "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
   "operators": [
     "u1",
@@ -237,14 +237,14 @@ exports[` camera mapping test  works as planned:  One Operator with one camera 1
     {
       "operator": "u1",
       "cameras": [
-        "c19999999999999999999999"
+        "c1bbbbbbbbbbbbbbbbbbbbbb"
       ]
     }
   ],
   "cameras": [
-    "c19999999999999999999999",
-    "c29999999999999999999999",
-    "c39999999999999999999999"
+    "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
   "operators": [
     "u1",
@@ -295,9 +295,9 @@ exports[` camera mapping test  works as planned:  Showing pop-up 1`] = `
   "prefix": "shotEdit",
   "theme": "cameraMapping",
   "cameras": [
-    "c19999999999999999999999",
-    "c29999999999999999999999",
-    "c39999999999999999999999"
+    "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
   "operators": [
     "u1",
@@ -348,9 +348,9 @@ exports[` camera mapping test  works as planned:  after preparing operators and 
   "prefix": "shotEdit",
   "theme": "cameraMapping",
   "cameras": [
-    "c19999999999999999999999",
-    "c29999999999999999999999",
-    "c39999999999999999999999"
+    "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
   "operators": [
     "u1",
@@ -364,17 +364,17 @@ exports[` camera mapping test  works as planned:  after preparing operators and 
 exports[` camera mapping test  works as planned:  creation of cameras  1`] = `
 Array [
   Object {
-    "_id": "c19999999999999999999999",
+    "_id": "c1bbbbbbbbbbbbbbbbbbbbbb",
     "ip": "localhost:4202/c1",
     "name": "Camera#1",
   },
   Object {
-    "_id": "c29999999999999999999999",
+    "_id": "c2bbbbbbbbbbbbbbbbbbbbbb",
     "ip": "localhost:4202/c2",
     "name": "Camera#2",
   },
   Object {
-    "_id": "c39999999999999999999999",
+    "_id": "c3bbbbbbbbbbbbbbbbbbbbbb",
     "ip": "localhost:4202/c3",
     "name": "Camera#3",
   },
@@ -443,20 +443,20 @@ exports[` camera mapping test  works as planned:  two Operator with one camera 1
     {
       "operator": "u1",
       "cameras": [
-        "c29999999999999999999999"
+        "c2bbbbbbbbbbbbbbbbbbbbbb"
       ]
     },
     {
       "operator": "u2",
       "cameras": [
-        "c39999999999999999999999"
+        "c3bbbbbbbbbbbbbbbbbbbbbb"
       ]
     }
   ],
   "cameras": [
-    "c19999999999999999999999",
-    "c29999999999999999999999",
-    "c39999999999999999999999"
+    "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
   "operators": [
     "u1",
@@ -553,7 +553,7 @@ exports[` camera mapping test  works as planned: remove all camearas of one oper
     {
       "operator": "u1",
       "cameras": [
-        "c29999999999999999999999"
+        "c2bbbbbbbbbbbbbbbbbbbbbb"
       ]
     },
     {
@@ -562,9 +562,9 @@ exports[` camera mapping test  works as planned: remove all camearas of one oper
     }
   ],
   "cameras": [
-    "c19999999999999999999999",
-    "c29999999999999999999999",
-    "c39999999999999999999999"
+    "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
   "operators": [
     "u1",

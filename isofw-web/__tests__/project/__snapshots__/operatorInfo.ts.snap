@@ -3,17 +3,17 @@
 exports[` operator info test  works as planned:  creation of cameras  1`] = `
 Array [
   Object {
-    "_id": "c19999999999999999999999",
+    "_id": "c1bbbbbbbbbbbbbbbbbbbbbb",
     "ip": "localhost:4202/c1",
     "name": "Camera#1",
   },
   Object {
-    "_id": "c29999999999999999999999",
+    "_id": "c2bbbbbbbbbbbbbbbbbbbbbb",
     "ip": "localhost:4202/c2",
     "name": "Camera#2",
   },
   Object {
-    "_id": "c39999999999999999999999",
+    "_id": "c3bbbbbbbbbbbbbbbbbbbbbb",
     "ip": "localhost:4202/c3",
     "name": "Camera#3",
   },
@@ -25,22 +25,22 @@ Array [
   Object {
     "_id": "b19999999999999999999999",
     "cameras": Array [
-      "c19999999999999999999999",
-      "c29999999999999999999999",
-      "c39999999999999999999999",
+      "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "c3bbbbbbbbbbbbbbbbbbbbbb",
     ],
     "name": "pn1",
     "operatorCameraMapping": Array [
       Object {
         "cameras": Array [
-          "c19999999999999999999999",
-          "c39999999999999999999999",
+          "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "c3bbbbbbbbbbbbbbbbbbbbbb",
         ],
         "operator": "u1",
       },
       Object {
         "cameras": Array [
-          "c29999999999999999999999",
+          "c2bbbbbbbbbbbbbbbbbbbbbb",
         ],
         "operator": "u2",
       },
@@ -54,20 +54,20 @@ Array [
   Object {
     "_id": "b29999999999999999999999",
     "cameras": Array [
-      "c19999999999999999999999",
-      "c29999999999999999999999",
+      "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "c2bbbbbbbbbbbbbbbbbbbbbb",
     ],
     "name": "pn2",
     "operatorCameraMapping": Array [
       Object {
         "cameras": Array [
-          "c19999999999999999999999",
+          "c1bbbbbbbbbbbbbbbbbbbbbb",
         ],
         "operator": "u3",
       },
       Object {
         "cameras": Array [
-          "c29999999999999999999999",
+          "c2bbbbbbbbbbbbbbbbbbbbbb",
         ],
         "operator": "u1",
       },
@@ -81,20 +81,20 @@ Array [
   Object {
     "_id": "b39999999999999999999999",
     "cameras": Array [
-      "c19999999999999999999999",
-      "c39999999999999999999999",
+      "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "c3bbbbbbbbbbbbbbbbbbbbbb",
     ],
     "name": "pn3",
     "operatorCameraMapping": Array [
       Object {
         "cameras": Array [
-          "c19999999999999999999999",
+          "c1bbbbbbbbbbbbbbbbbbbbbb",
         ],
         "operator": "u3",
       },
       Object {
         "cameras": Array [
-          "c39999999999999999999999",
+          "c3bbbbbbbbbbbbbbbbbbbbbb",
         ],
         "operator": "u2",
       },

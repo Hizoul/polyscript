@@ -21,7 +21,7 @@ const pluginCollections = (db: any) => {
         Model: col,
         paginate: {
           default: 10,
-          max: 100
+          max: 1000
         },
         whitelist: ["$regex", "$options"]
       })

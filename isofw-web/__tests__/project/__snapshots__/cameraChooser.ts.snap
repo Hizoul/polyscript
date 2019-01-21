@@ -50,9 +50,7 @@ exports[` camera mapping test  works as planned:  after Closing pop up  1`] = `
         <div
           slot="title"
         >
-          <span>
-            Camera#1
-          </span>
+          <span />
         </div>
         <div
           slot="inner"
@@ -96,9 +94,7 @@ exports[` camera mapping test  works as planned:  after Closing pop up  1`] = `
         <div
           slot="title"
         >
-          <span>
-            Camera#3
-          </span>
+          <span />
         </div>
         <div
           slot="inner"
@@ -165,9 +161,7 @@ exports[` camera mapping test  works as planned:  after Fetching cameras  1`] = 
         <div
           slot="title"
         >
-          <span>
-            Camera#1
-          </span>
+          <span />
         </div>
         <div
           slot="inner"
@@ -211,9 +205,7 @@ exports[` camera mapping test  works as planned:  after Fetching cameras  1`] = 
         <div
           slot="title"
         >
-          <span>
-            Camera#3
-          </span>
+          <span />
         </div>
         <div
           slot="inner"
@@ -282,9 +274,7 @@ exports[` camera mapping test  works as planned:  after Opening pop up  1`] = `
         <div
           slot="title"
         >
-          <span>
-            Camera#1
-          </span>
+          <span />
         </div>
         <div
           slot="inner"
@@ -328,9 +318,7 @@ exports[` camera mapping test  works as planned:  after Opening pop up  1`] = `
         <div
           slot="title"
         >
-          <span>
-            Camera#3
-          </span>
+          <span />
         </div>
         <div
           slot="inner"
@@ -570,17 +558,17 @@ exports[` camera mapping test  works as planned:  after preparing cameras  1`] =
 exports[` camera mapping test  works as planned:  creation of cameras  1`] = `
 Array [
   Object {
-    "_id": "c19999999999999999999999",
+    "_id": "c1bbbbbbbbbbbbbbbbbbbbbb",
     "ip": "localhost:4202/c1",
     "name": "Camera#1",
   },
   Object {
-    "_id": "c29999999999999999999999",
+    "_id": "c2bbbbbbbbbbbbbbbbbbbbbb",
     "ip": "localhost:4202/c2",
     "name": "Camera#2",
   },
   Object {
-    "_id": "c39999999999999999999999",
+    "_id": "c3bbbbbbbbbbbbbbbbbbbbbb",
     "ip": "localhost:4202/c3",
     "name": "Camera#3",
   },

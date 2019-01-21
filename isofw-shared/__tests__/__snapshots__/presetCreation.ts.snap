@@ -1,0 +1,1623 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Preset creation works as planned:  creation of cameras  1`] = `
+Array [
+  Object {
+    "_id": "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "ip": "localhost:4202/c1",
+    "name": "Camera#1",
+  },
+  Object {
+    "_id": "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "ip": "localhost:4202/c2",
+    "name": "Camera#2",
+  },
+  Object {
+    "_id": "c3bbbbbbbbbbbbbbbbbbbbbb",
+    "ip": "localhost:4202/c3",
+    "name": "Camera#3",
+  },
+]
+`;
+
+exports[`Preset creation works as planned:  creation of proInjects  1`] = `
+Array [
+  Object {
+    "_id": "b19999999999999999999999",
+    "cameras": Array [
+      "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "c3bbbbbbbbbbbbbbbbbbbbbb",
+    ],
+    "name": "pn1",
+    "operatorCameraMapping": Array [
+      Object {
+        "cameras": Array [
+          "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "c3bbbbbbbbbbbbbbbbbbbbbb",
+        ],
+        "operator": "u1",
+      },
+      Object {
+        "cameras": Array [
+          "c2bbbbbbbbbbbbbbbbbbbbbb",
+        ],
+        "operator": "u2",
+      },
+    ],
+    "operators": Array [
+      "u1",
+      "u2",
+    ],
+    "shot": 1,
+  },
+  Object {
+    "_id": "b29999999999999999999999",
+    "cameras": Array [
+      "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "c2bbbbbbbbbbbbbbbbbbbbbb",
+    ],
+    "name": "pn2",
+    "operatorCameraMapping": Array [
+      Object {
+        "cameras": Array [
+          "c1bbbbbbbbbbbbbbbbbbbbbb",
+        ],
+        "operator": "u3",
+      },
+      Object {
+        "cameras": Array [
+          "c2bbbbbbbbbbbbbbbbbbbbbb",
+        ],
+        "operator": "u1",
+      },
+    ],
+    "operators": Array [
+      "u1",
+      "u3",
+    ],
+    "shot": 8,
+  },
+  Object {
+    "_id": "b39999999999999999999999",
+    "cameras": Array [
+      "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "c3bbbbbbbbbbbbbbbbbbbbbb",
+    ],
+    "name": "pn3",
+    "operatorCameraMapping": Array [
+      Object {
+        "cameras": Array [
+          "c1bbbbbbbbbbbbbbbbbbbbbb",
+        ],
+        "operator": "u3",
+      },
+      Object {
+        "cameras": Array [
+          "c3bbbbbbbbbbbbbbbbbbbbbb",
+        ],
+        "operator": "u2",
+      },
+    ],
+    "operators": Array [
+      "u2",
+      "u3",
+    ],
+    "shot": 6,
+  },
+]
+`;
+
+exports[`Preset creation works as planned:  fetched presets  1`] = `
+Object {
+  "lists": Object {
+    "presetModel": Object {
+      "limit": 400,
+      "result": Array [
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbbb0",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 0,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbbb1",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 1,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbbb2",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbbb3",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 3,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbbb4",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 4,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbbb5",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 5,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbbb7",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 7,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbbb6",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 6,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbbb8",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 8,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb10",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 10,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb11",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 11,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb12",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 12,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb13",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 13,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb14",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 14,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb16",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 16,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb17",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 17,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbbb9",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 9,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb18",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 18,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb19",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 19,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb15",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 15,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb21",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 21,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb22",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 22,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb23",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 23,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb20",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 20,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb24",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 24,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb25",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 25,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb26",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 26,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb27",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 27,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb28",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 28,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb29",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 29,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb30",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 30,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb31",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 31,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb32",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 32,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb33",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 33,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb34",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 34,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb35",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 35,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb36",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 36,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb37",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 37,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb38",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 38,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb39",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 39,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb40",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 40,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb41",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 41,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb42",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 42,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb43",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 43,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb44",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 44,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb45",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 45,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb46",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 46,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb47",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 47,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb48",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 48,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb49",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 49,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb50",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 50,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb51",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 51,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb52",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 52,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb53",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 53,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb54",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 54,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb55",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 55,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb56",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 56,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb57",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 57,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb58",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 58,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb59",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 59,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb60",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 60,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb61",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 61,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb62",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 62,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb63",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 63,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb64",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 64,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb65",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 65,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb66",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 66,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb67",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 67,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb68",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 68,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb69",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 69,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb70",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 70,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb71",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 71,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb72",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 72,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb73",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 73,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb74",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 74,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb75",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 75,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb76",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 76,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb77",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 77,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb78",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 78,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb79",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 79,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb80",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 80,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb81",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 81,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb82",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 82,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb83",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 83,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb84",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 84,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb85",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 85,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb86",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 86,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb87",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 87,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb88",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 88,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb89",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 89,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb90",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 90,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb91",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 91,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb92",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 92,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb93",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 93,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb94",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 94,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb95",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 95,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb96",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 96,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb97",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 97,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb98",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 98,
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbb99",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 99,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbbb0",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 0,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbbb1",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 1,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbbb2",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbbb3",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 3,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbbb4",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 4,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbbb5",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 5,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbbb6",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 6,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbbb7",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 7,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbbb8",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 8,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbbb9",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 9,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb10",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 10,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb11",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 11,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb12",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 12,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb14",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 14,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb13",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 13,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb15",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 15,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb16",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 16,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb17",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 17,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb18",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 18,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb19",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 19,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb20",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 20,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb21",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 21,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb22",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 22,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb23",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 23,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb24",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 24,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb25",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 25,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb26",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 26,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb27",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 27,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb28",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 28,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb29",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 29,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb30",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 30,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb31",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 31,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb32",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 32,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb33",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 33,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb34",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 34,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb35",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 35,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb36",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 36,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb37",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 37,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb38",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 38,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb39",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 39,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb40",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 40,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb41",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 41,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb42",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 42,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb43",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 43,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb44",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 44,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb45",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 45,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb46",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 46,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb47",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 47,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb48",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 48,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb49",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 49,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb50",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 50,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb51",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 51,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb52",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 52,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb53",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 53,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb54",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 54,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb55",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 55,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb56",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 56,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb57",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 57,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb58",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 58,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb59",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 59,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb60",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 60,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb61",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 61,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb62",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 62,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb63",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 63,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb64",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 64,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb65",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 65,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb66",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 66,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb67",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 67,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb68",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 68,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb69",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 69,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb70",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 70,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb71",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 71,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb72",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 72,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb73",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 73,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb74",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 74,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb75",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 75,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb76",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 76,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb77",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 77,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb78",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 78,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb79",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 79,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb80",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 80,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb81",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 81,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb82",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 82,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb83",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 83,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb84",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 84,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb85",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 85,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb86",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 86,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb87",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 87,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb88",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 88,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb89",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 89,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb90",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 90,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb91",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 91,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb92",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 92,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb93",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 93,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb94",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 94,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb95",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 95,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb96",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 96,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb97",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 97,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb98",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 98,
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbb99",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 99,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbbb1",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 1,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbbb0",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 0,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbbb2",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbbb3",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 3,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbbb4",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 4,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbbb5",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 5,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbbb6",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 6,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbbb7",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 7,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbbb8",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 8,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbbb9",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 9,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb10",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 10,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb11",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 11,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb12",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 12,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb13",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 13,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb14",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 14,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb15",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 15,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb16",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 16,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb17",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 17,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb18",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 18,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb19",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 19,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb20",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 20,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb21",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 21,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb22",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 22,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb23",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 23,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb24",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 24,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb25",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 25,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb26",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 26,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb27",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 27,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb28",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 28,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb29",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 29,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb30",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 30,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb31",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 31,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb32",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 32,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb33",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 33,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb34",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 34,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb35",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 35,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb37",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 37,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb36",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 36,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb38",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 38,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb39",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 39,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb40",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 40,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb41",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 41,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb42",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 42,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb43",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 43,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb46",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 46,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb44",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 44,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb45",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 45,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb47",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 47,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb48",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 48,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb50",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 50,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb49",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 49,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb51",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 51,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb52",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 52,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb53",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 53,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb56",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 56,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb55",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 55,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb54",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 54,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb57",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 57,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb58",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 58,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb59",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 59,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb60",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 60,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb61",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 61,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb62",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 62,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb63",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 63,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb64",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 64,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb65",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 65,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb66",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 66,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb67",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 67,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb68",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 68,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb69",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 69,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb70",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 70,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb71",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 71,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb72",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 72,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb73",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 73,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb74",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 74,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb75",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 75,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb76",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 76,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb77",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 77,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb78",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 78,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb79",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 79,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb80",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 80,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb81",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 81,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb82",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 82,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb83",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 83,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb84",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 84,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb85",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 85,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb86",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 86,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb87",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 87,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb88",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 88,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb89",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 89,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb90",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 90,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb91",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 91,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb92",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 92,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb93",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 93,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb94",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 94,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb96",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 96,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb95",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 95,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb97",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 97,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb98",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 98,
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbbbbbb99",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 99,
+        },
+      ],
+      "skip": 0,
+      "total": 300,
+    },
+  },
+}
+`;
