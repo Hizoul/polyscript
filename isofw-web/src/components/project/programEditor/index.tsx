@@ -1,6 +1,6 @@
 import * as React from "react"
 import { SharedFormEdit, IFormEditProps, DbStore } from "@xpfw/ui-shared";
-import { ProjectForm, ProjectShot, ProjectProgram } from "isofw-shared/src/xpfwDefs/project";
+import { ProjectForm, ProjectShot, ProjectProgram, ShotPreset } from "isofw-shared/src/xpfwDefs/project";
 import { FormStore, SharedField } from "@xpfw/form-shared";
 import LoadingPage from "../../loading";
 import ProgramArray from "./array";
@@ -9,10 +9,12 @@ import { ComponentRegistry } from "@xpfw/form-shared"
 import { FieldType } from "isofw-shared/src/util/xpfwvalidate";
 import WebButton from "isofw-web/src/components/button";
 import WrappedCameraChooser from "./cameraChooser";
+import PresetNumberDisplay from "./presetNumberDisplay";
 
 const programTheme = "program"
 ComponentRegistry.registerComponent(FieldType.Array, ProgramArray, programTheme)
 ComponentRegistry.registerComponent(FieldType.RelationshipSingle, WrappedCameraChooser, programTheme)
+ComponentRegistry.registerComponent(FieldType.RelationshipSingle, PresetNumberDisplay, ShotPreset.theme)
 
 
 const ProgramEditor: React.FunctionComponent<IFormEditProps> = (props) => {

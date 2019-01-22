@@ -75,8 +75,9 @@ const ShotCamera: IField = {
 }
 
 const ShotPreset: IField = {
-  type: FieldType.Text,
-  mapTo: "preset"
+  type: FieldType.RelationshipSingle,
+  mapTo: "preset",
+  theme: "presetNumberDisplay"
 }
 
 const ProjectProgram: IField = {

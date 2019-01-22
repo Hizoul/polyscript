@@ -29,7 +29,7 @@ const webCameraMapping: React.FunctionComponent<SharedCameraChoiceProps> = (prop
         <List>
           {props.cameras.map((camera) => <ListItem key={camera} onClick={() => {
             props.togglePop(false)
-            props.setValue(camera)
+            props.setValueWithPreset(camera)
           }}>
                 <div slot="title">
                   <NameDisplayer collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />
