@@ -123,8 +123,9 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
                     }
                   },
                   {
-                    "type": 2,
-                    "mapTo": "preset"
+                    "type": 13,
+                    "mapTo": "preset",
+                    "theme": "presetNumberDisplay"
                   }
                 ]
               },
@@ -420,8 +421,9 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
                     }
                   },
                   {
-                    "type": 2,
-                    "mapTo": "preset"
+                    "type": 13,
+                    "mapTo": "preset",
+                    "theme": "presetNumberDisplay"
                   }
                 ]
               },
@@ -664,8 +666,9 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
                     }
                   },
                   {
-                    "type": 2,
-                    "mapTo": "preset"
+                    "type": 13,
+                    "mapTo": "preset",
+                    "theme": "presetNumberDisplay"
                   }
                 ]
               },

@@ -7,7 +7,7 @@ const presetCreator: Hook = async (hook) => {
   const cameraId = hook.result._id.toHexString()
   console.log(" created camera with ID ",  cameraId)
   for (let index = 0; index < val.maximumPresetAmount; index++) {
-    const presetId = `${cameraId.substring(0, cameraId.length - String(index).length)}${index}`
+    const presetId = `${cameraId.substring(0, cameraId.length - String(index).length - 5)}${index}98765`
     hook.app.service(val.service.preset).create({
       _id: presetId,
       [PresetNumberField.mapTo]: index,
