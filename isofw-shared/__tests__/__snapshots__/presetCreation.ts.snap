@@ -1928,6 +1928,76 @@ Object {
 }
 `;
 
+exports[`Preset creation works as planned: After using the utility function 1`] = `
+Object {
+  "createState": Object {
+    "presetCreationPrefix.presetModel": Object {
+      "result": "c1bbbbbbbbbbbbbbbbbbbbb0",
+    },
+    "presetCreationPrefixfreePresetGetter.presetModel": Object {
+      "result": "c2bbbbbbbbbbbbbbbbbbbbb0",
+    },
+  },
+  "getState": Object {
+    "presets": Object {
+      "c1bbbbbbbbbbbbbbbbbbbbb0": Object {
+        "result": Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbbb0",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 0,
+          "project": "b19999999999999999999999",
+        },
+      },
+      "c2bbbbbbbbbbbbbbbbbbbbb0": Object {
+        "result": Object {
+          "_id": "c2bbbbbbbbbbbbbbbbbbbbb0",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 0,
+          "project": "b19999999999999999999999",
+        },
+      },
+    },
+    "users": Object {
+      "u1": Object {
+        "result": Object {
+          "_id": "u1",
+          "email": "u1",
+        },
+      },
+    },
+  },
+  "updateState": Object {},
+}
+`;
+
+exports[`Preset creation works as planned: After using the utility function 2`] = `
+Object {
+  "formData": Object {
+    "email": "u1",
+    "password": "",
+    "presetCreationPrefix": Object {
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "program": Array [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        Object {
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "preset": "c2bbbbbbbbbbbbbbbbbbbbb0",
+        },
+      ],
+      "project": "b19999999999999999999999",
+    },
+    "presetCreationPrefixfreePresetGetter": Object {
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "project": "b19999999999999999999999",
+    },
+  },
+}
+`;
+
 exports[`Preset creation works as planned: Before preset is being pushed via real-time 1`] = `
 Object {
   "createState": Object {},
@@ -1942,6 +2012,50 @@ Object {
     },
   },
   "updateState": Object {},
+}
+`;
+
+exports[`Preset creation works as planned: Before using the utility function 1`] = `
+Object {
+  "createState": Object {
+    "presetCreationPrefix.presetModel": Object {
+      "result": "c1bbbbbbbbbbbbbbbbbbbbb0",
+    },
+  },
+  "getState": Object {
+    "presets": Object {
+      "c1bbbbbbbbbbbbbbbbbbbbb0": Object {
+        "result": Object {
+          "_id": "c1bbbbbbbbbbbbbbbbbbbbb0",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 0,
+          "project": "b19999999999999999999999",
+        },
+      },
+    },
+    "users": Object {
+      "u1": Object {
+        "result": Object {
+          "_id": "u1",
+          "email": "u1",
+        },
+      },
+    },
+  },
+  "updateState": Object {},
+}
+`;
+
+exports[`Preset creation works as planned: Before using the utility function 2`] = `
+Object {
+  "formData": Object {
+    "email": "u1",
+    "password": "",
+    "presetCreationPrefix": Object {
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "project": "b19999999999999999999999",
+    },
+  },
 }
 `;
 

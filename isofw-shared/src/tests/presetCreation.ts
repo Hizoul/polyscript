@@ -9,10 +9,13 @@ import createTestProjects from "isofw-shared/src/testUtil/data/project"
 import createTestCameras, { testCameras } from "isofw-shared/src/testUtil/data/camera"
 import { increaseShotNumber, directorPrefix } from "isofw-shared/src/components/project/directorSheet"
 import val from "isofw-shared/src/globals/val"
-import { ProjectForm, ProjectName, ProjectShot, ProjectOperatorCameraMapping, ProjectOperators, ProjectCameras } from "isofw-shared/src/xpfwDefs/project"
+import { ProjectForm, ProjectName, ProjectShot, ProjectOperatorCameraMapping, ProjectOperators, ProjectCameras, ProjectProgram } from "isofw-shared/src/xpfwDefs/project"
 import { matchStoreState } from "resub-persist"
 import { PresetForm, PresetCameraField, PresetAssistantForm, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset";
+import { setValueWithPreset } from "isofw-shared/src/components/project/cameraChooser";
+import promiseTimeout from "src/util/promiseTimeout";
 BackendClient.client = FeathersClient
+const untypedDbStore: any = DbStore
 
 const presetCreationTest = (Component: any) => {
   describe("Preset creation", () => {
@@ -34,6 +37,17 @@ const presetCreationTest = (Component: any) => {
       const iDFetchedResults = await DbStore.create(PresetAssistantForm, prefix)
       expect(iDFetchedResults).toMatchSnapshot(" first available ID ")
       matchStoreState(DbStore, "after preset has been pushed via real-time")
+      matchStoreState(DbStore, "Before using the utility function")
+      matchStoreState(FormStore, "Before using the utility function")
+      untypedDbStore.currentlyEditing = projectResults[0]._id
+      const thisReference = {
+        props: {
+          prefix, field: {mapTo: `${ProjectProgram.mapTo}[5]${PresetCameraField.mapTo}`}, setValue: (a:any) => FormStore.setValue(`${prefixMaker(prefix)}${ProjectProgram.mapTo}[5]${PresetCameraField.mapTo}`, a)
+        }
+      }
+      await setValueWithPreset(thisReference)(cameraResult[1]._id)
+      matchStoreState(DbStore, "After using the utility function")
+      matchStoreState(FormStore, "After using the utility function")
       await appRef.cleanUp()
     }, 100000)
   })
