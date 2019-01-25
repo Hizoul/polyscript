@@ -1,6 +1,6 @@
 import * as React from "react"
 import { SharedFormEdit, IFormEditProps, DbStore, IFormShowProps } from "@xpfw/ui-shared";
-import { ProjectForm, ProjectShot, ProjectProgram, ProjectName, ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator } from "isofw-shared/src/xpfwDefs/project";
+import { ProjectForm, ProjectShot, ProjectProgram, ProjectName, ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset } from "isofw-shared/src/xpfwDefs/project";
 import { FormStore, SharedField } from "@xpfw/form-shared";
 import LoadingPage from "../../loading";
 import { get } from "lodash"
@@ -11,13 +11,20 @@ import { Row, Col, Block, Link, Icon } from "framework7-react";
 import "../style.sass"
 import urls from "isofw-shared/src/globals/url";
 import CurrentOperatorDisplay from "./currentOperatorDisplay";
+import val from "isofw-shared/src/globals/val";
+import NameDisplayer from "isofw-web/src/components/displayName"
+import { PresetNumberField } from "../../../../../isofw-shared/src/xpfwDefs/preset";
 
-const PresetItem: React.FunctionComponent<IFormShowProps> = (props) => {
+const PresetItem: React.FunctionComponent<IFormShowProps & {index: number}> = (props) => {
   return (
     <tr>
-      <td>{get(props.item, ProjectName.mapTo)}</td>
-      <td>{get(props.item, ProjectName.mapTo)}</td>
-      <td>{get(props.item, ProjectName.mapTo)}</td>
+      <td>{props.index}</td>
+      <td>
+        <NameDisplayer collection={val.service.camera} id={get(props.item, ShotCamera.mapTo)} getNameFrom={ProjectName.mapTo} placeholder="" />
+      </td>
+      <td>
+        <NameDisplayer collection={val.service.preset} id={get(props.item, ShotPreset.mapTo)} getNameFrom={PresetNumberField.mapTo} placeholder="" />
+      </td>
       <td>{get(props.item, ShotType.mapTo)}</td>
       <td>{get(props.item, ShotName.mapTo)}</td>
       <td>{get(props.item, ShotMovement.mapTo)}</td>
@@ -35,7 +42,10 @@ const PresetItem: React.FunctionComponent<IFormShowProps> = (props) => {
 const OperatorInfo: React.FunctionComponent<IFormEditProps> = (props) => {
   console.log(" operator props ", props, get(props.original, ProjectProgram.mapTo, []))
   let i = 0
-  const items = get(props.original, `result.${ProjectProgram.mapTo}`, []).map((item: any) => <PresetItem loading={false} item={item} key={++i} />)
+  const items = get(props.original, `result.${ProjectProgram.mapTo}`, []).map((item: any) => {
+    i++
+    return <PresetItem loading={false} item={item} key={i} index={i} />
+  })
   return (
     <div>
       <Row>
@@ -56,7 +66,7 @@ const OperatorInfo: React.FunctionComponent<IFormEditProps> = (props) => {
         <Col>
           <div className="subtitleBox withPadding">
             <div className="subtitle">Current shot</div>
-            5
+            3
           </div>
         </Col>
       </Row>

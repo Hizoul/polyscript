@@ -20,15 +20,24 @@ const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size:
   return (
     <div className="currentBox withMargin">
       <div className="flex1" style={{marginBottom: "-2rem"}}>
-        <div className="flex1">&nbsp;</div>
         <WebButton
-          className="boxTopRight"
+          className="boxTopLeft"
           onClick={props.removeItem(props.index)}
           text=""
           color="red"
           fill
           round
           iconFa="times"
+        />
+        <div className="flex1">&nbsp;</div>
+        <WebButton
+          className="boxTopRight"
+          onClick={() => props.increaseSize(props.index+1)}
+          text=""
+          color="green"
+          fill
+          round
+          iconFa="plus"
         />
       </div>
       <span className="shotNumber">{props.index}</span>
@@ -37,6 +46,7 @@ const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size:
           <SharedField field={convertedFields[7]}  prefix={props.prefix} />
           <SharedField field={convertedFields[0]}  prefix={props.prefix} />
           <SharedField field={convertedFields[2]}  prefix={props.prefix} />
+          <SharedField field={convertedFields[4]}  prefix={props.prefix} />
           <SharedField field={convertedFields[5]}  prefix={props.prefix} />
           <SharedField field={convertedFields[6]}  prefix={props.prefix} />
           <SharedField field={convertedFields[8]}  prefix={props.prefix} />
