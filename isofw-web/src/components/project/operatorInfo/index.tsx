@@ -1,19 +1,20 @@
-import * as React from "react"
-import { SharedFormEdit, IFormEditProps, DbStore, IFormShowProps } from "@xpfw/ui-shared";
-import { ProjectForm, ProjectShot, ProjectProgram, ProjectName, ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset } from "isofw-shared/src/xpfwDefs/project";
-import { FormStore, SharedField } from "@xpfw/form-shared";
-import LoadingPage from "../../loading";
-import { get } from "lodash"
 import { ComponentRegistry } from "@xpfw/form-shared"
-import { FieldType } from "isofw-shared/src/util/xpfwvalidate";
-import WebButton from "isofw-web/src/components/button";
-import { Row, Col, Block, Link, Icon } from "framework7-react";
-import "../style.sass"
-import urls from "isofw-shared/src/globals/url";
-import CurrentOperatorDisplay from "./currentOperatorDisplay";
-import val from "isofw-shared/src/globals/val";
+import { FormStore, SharedField } from "@xpfw/form-shared"
+import { DbStore, IFormEditProps, IFormShowProps, SharedFormEdit } from "@xpfw/ui-shared"
+import { Block, Col, Icon, Link, Row } from "framework7-react"
+import urls from "isofw-shared/src/globals/url"
+import val from "isofw-shared/src/globals/val"
+import { FieldType } from "isofw-shared/src/util/xpfwvalidate"
+import { ProjectForm, ProjectName, ProjectProgram, ProjectShot, ShotCamera, ShotDuration, ShotMovement, ShotMovementTowards, ShotName, ShotPreset, ShotRemarksDirector, ShotRemarksOperator, ShotType } from "isofw-shared/src/xpfwDefs/project"
+import WebButton from "isofw-web/src/components/button"
 import NameDisplayer from "isofw-web/src/components/displayName"
-import { PresetNumberField } from "../../../../../isofw-shared/src/xpfwDefs/preset";
+import { get } from "lodash"
+import * as React from "react"
+import SharedOperatorInfo, { SharedOperatorInfoProps } from "../../../../../isofw-shared/src/components/project/operatorInfo"
+import { PresetNumberField } from "../../../../../isofw-shared/src/xpfwDefs/preset"
+import LoadingPage from "../../loading"
+import "../style.sass"
+import CurrentOperatorDisplay from "./currentOperatorDisplay"
 
 const PresetItem: React.FunctionComponent<IFormShowProps & {index: number}> = (props) => {
   return (
@@ -39,10 +40,9 @@ const PresetItem: React.FunctionComponent<IFormShowProps & {index: number}> = (p
   )
 }
 
-const OperatorInfo: React.FunctionComponent<IFormEditProps> = (props) => {
-  console.log(" operator props ", props, get(props.original, ProjectProgram.mapTo, []))
+const OperatorInfo: React.FunctionComponent<IFormEditProps & SharedOperatorInfoProps> = (props) => {
   let i = 0
-  const items = get(props.original, `result.${ProjectProgram.mapTo}`, []).map((item: any) => {
+  const items = props.filteredList.map((item: any) => {
     i++
     return <PresetItem loading={false} item={item} key={i} index={i} />
   })
@@ -61,7 +61,7 @@ const OperatorInfo: React.FunctionComponent<IFormEditProps> = (props) => {
             </div>
         </Col>
         <Col>
-          <CurrentOperatorDisplay item={get(props.original, `result`)} />
+          <CurrentOperatorDisplay {...props} />
         </Col>
         <Col>
           <div className="subtitleBox withPadding">
@@ -72,31 +72,31 @@ const OperatorInfo: React.FunctionComponent<IFormEditProps> = (props) => {
       </Row>
       <Row className="marginTopBottom">
         <Col>
-          <WebButton big fill text="shot ready" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
+          <WebButton big={true} fill={true} text="shot ready" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
         </Col>
         <Col>
-          <WebButton big fill text="update preset" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
+          <WebButton big={true} fill={true} text="update preset" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
         </Col>
         <Col>
-          <WebButton big fill text="wide" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
+          <WebButton big={true} fill={true} text="wide" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
         </Col>
         <Col>
-          <WebButton big fill text="stop zoom" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
+          <WebButton big={true} fill={true} text="stop zoom" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
         </Col>
         <Col>
-          <WebButton big fill text="tele" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
+          <WebButton big={true} fill={true} text="tele" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
         </Col>
         <Col>
-          <WebButton big fill text="not ready" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
+          <WebButton big={true} fill={true} text="not ready" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
         </Col>
         <Col>
-          <WebButton big fill text="following position" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
+          <WebButton big={true} fill={true} text="following position" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
         </Col>
         <Col>
-          <WebButton big fill text="script view" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
+          <WebButton big={true} fill={true} text="script view" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
         </Col>
         <Col>
-          <WebButton big fill text="preset view" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
+          <WebButton big={true} fill={true} text="preset view" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
         </Col>
       </Row>
       <div className="data-table card" style={{marginLeft: "0pt", marginRight: "0pt"}}>
@@ -124,5 +124,6 @@ const OperatorInfo: React.FunctionComponent<IFormEditProps> = (props) => {
     </div>
   )
 }
-
-export default SharedFormEdit<{}>(OperatorInfo)
+const c: any = OperatorInfo
+const b: any = SharedOperatorInfo(c)
+export default SharedFormEdit<any>(b)

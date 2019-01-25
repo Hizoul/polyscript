@@ -1,5 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[` operator info test  works as planned: 2nd user selected 1`] = `
+<div>
+  <div
+    className="Link"
+  >
+    {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+    <div
+      className="subtitle"
+    >
+      <span />
+    </div>
+    <span>
+       
+    </span>
+  </div>
+  <div
+    className="Popover"
+  >
+    {
+  "className": "operatorChooser"
+}
+    <div
+      className="List"
+    >
+      {}
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": ".operatorChooser"
+}
+        <div
+          slot="title"
+        >
+          No one
+        </div>
+        <div
+          slot="footer"
+        >
+          All cameras
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[` operator info test  works as planned: Before anything 1`] = `
 <div>
   <div
@@ -43,47 +93,6 @@ exports[` operator info test  works as planned: Before anything 1`] = `
           slot="footer"
         >
           All cameras
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
-}
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-            <span />
-          </span>
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
-}
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-          </span>
         </div>
       </div>
     </div>
@@ -136,47 +145,6 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
           All cameras
         </div>
       </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
-}
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-            <span />
-          </span>
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
-}
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-          </span>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -227,47 +195,6 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
           All cameras
         </div>
       </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
-}
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-            <span />
-          </span>
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
-}
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-          </span>
-        </div>
-      </div>
     </div>
   </div>
 </div>
@@ -288,9 +215,7 @@ exports[` operator info test  works as planned: first user selected 1`] = `
       <span />
     </div>
     <span>
-      CA 
-      <span />
-      <span />
+       
     </span>
   </div>
   <div
@@ -318,47 +243,6 @@ exports[` operator info test  works as planned: first user selected 1`] = `
           slot="footer"
         >
           All cameras
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
-}
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-            <span />
-          </span>
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
-}
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-          </span>
         </div>
       </div>
     </div>

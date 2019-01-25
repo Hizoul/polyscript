@@ -1,11 +1,11 @@
-import * as React from "react"
-import NameDisplayer from "isofw-web/src/components/displayName"
-import SharedOperatorInfo, { SharedOperatorInfoProps } from "isofw-shared/src/components/project/operatorInfo"
 import { MailField } from "@xpfw/ui-shared";
+import { Link, List, ListItem, Popover } from "framework7-react";
+import SharedOperatorInfo, { SharedOperatorInfoProps } from "isofw-shared/src/components/project/operatorInfo"
 import val from "isofw-shared/src/globals/val";
-import { ProjectName, ProjectOperatorCameraMapping, OperatorRelation, ProjectCameras } from "isofw-shared/src/xpfwDefs/project";
-import { Popover, List, ListItem, Link } from "framework7-react";
+import { OperatorRelation, ProjectCameras, ProjectName, ProjectOperatorCameraMapping } from "isofw-shared/src/xpfwDefs/project";
+import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash";
+import * as React from "react"
 
 const CurrentOperatorDisplay: React.FunctionComponent<SharedOperatorInfoProps> = (props) => {
   const name = props.currentOperator && props.currentOperator.length > 0 ?
@@ -15,7 +15,7 @@ const CurrentOperatorDisplay: React.FunctionComponent<SharedOperatorInfoProps> =
       <Link popoverOpen=".operatorChooser" className="subtitleBox centerText">
         <div className="subtitle">{name}</div>
         {props.currentCameras && props.currentCameras.length > 0 ? (
-          <span>CA {props.currentCameras.map((camera) => 
+          <span>CA {props.currentCameras.map((camera) =>
             <NameDisplayer key={camera} collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />)}</span>
         ) : <span>&nbsp;</span>}
       </Link>
@@ -31,13 +31,13 @@ const CurrentOperatorDisplay: React.FunctionComponent<SharedOperatorInfoProps> =
           {get(props.item, ProjectOperatorCameraMapping.mapTo, []).map((mapping: any) => {
             const cameras = mapping[ProjectCameras.mapTo]
             return (
-              <ListItem key={mapping[OperatorRelation.mapTo]} onClick={props.changeOperator(mapping[OperatorRelation.mapTo])} popoverClose>
+              <ListItem key={mapping[OperatorRelation.mapTo]} onClick={props.changeOperator(mapping[OperatorRelation.mapTo])} popoverClose={true}>
                 <div slot="title">
                   <NameDisplayer collection={val.service.user} id={mapping[OperatorRelation.mapTo]} getNameFrom={MailField.mapTo} />
                 </div>
                 <div slot="footer">
                   {cameras && cameras.length > 0 ? (
-                    <span>Cameras: {cameras.map((camera: any) => 
+                    <span>Cameras: {cameras.map((camera: any) =>
                       <NameDisplayer key={camera} collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />)}
                     </span>
                   ) : undefined}
@@ -50,4 +50,4 @@ const CurrentOperatorDisplay: React.FunctionComponent<SharedOperatorInfoProps> =
   )
 }
 
-export default SharedOperatorInfo(CurrentOperatorDisplay)
+export default CurrentOperatorDisplay

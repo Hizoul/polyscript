@@ -1,5 +1,123 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[` operator info test  works as planned: 2nd user selected 1`] = `
+<div
+  className="operatorinfo"
+>
+  {
+  "item": {
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 1,
+    "cameras": [
+      "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "c3bbbbbbbbbbbbbbbbbbbbbb"
+    ],
+    "operators": [
+      "u1",
+      "u2"
+    ],
+    "operatorCameraMapping": [
+      {
+        "operator": "u1",
+        "cameras": [
+          "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "c3bbbbbbbbbbbbbbbbbbbbbb"
+        ]
+      },
+      {
+        "operator": "u2",
+        "cameras": [
+          "c2bbbbbbbbbbbbbbbbbbbbbb"
+        ]
+      }
+    ],
+    "program": [
+      {
+        "pname": "S#1",
+        "movement": "m#1",
+        "movementTowards": "mt#1",
+        "duration": 5,
+        "directorRemarks": "rd#1",
+        "operatorRemarks": "ro#1",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#2",
+        "movement": "m#2",
+        "movementTowards": "mt#2",
+        "duration": 6,
+        "directorRemarks": "rd#2",
+        "operatorRemarks": "ro#2",
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#3",
+        "movement": "m#3",
+        "movementTowards": "mt#3",
+        "duration": 1,
+        "directorRemarks": "rd#3",
+        "operatorRemarks": "ro#3",
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#4",
+        "movement": "m#4",
+        "movementTowards": "mt#4",
+        "duration": 3,
+        "directorRemarks": "rd#4",
+        "operatorRemarks": "ro#4",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#5",
+        "movement": "m#5",
+        "movementTowards": "mt#5",
+        "duration": 2,
+        "directorRemarks": "rd#5",
+        "operatorRemarks": "ro#5",
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#6",
+        "movement": "m#6",
+        "movementTowards": "mt#6",
+        "duration": 2,
+        "directorRemarks": "rd#6",
+        "operatorRemarks": "ro#6",
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      }
+    ]
+  },
+  "currentOperator": "u2",
+  "currentCameras": [
+    "c2bbbbbbbbbbbbbbbbbbbbbb"
+  ],
+  "filteredList": [
+    {
+      "pname": "S#3",
+      "movement": "m#3",
+      "movementTowards": "mt#3",
+      "duration": 1,
+      "directorRemarks": "rd#3",
+      "operatorRemarks": "ro#3",
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#5",
+      "movement": "m#5",
+      "movementTowards": "mt#5",
+      "duration": 2,
+      "directorRemarks": "rd#5",
+      "operatorRemarks": "ro#5",
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ]
+}
+</div>
+`;
+
 exports[` operator info test  works as planned: Before anything 1`] = `
 <div
   className="operatorinfo"
@@ -32,10 +150,121 @@ exports[` operator info test  works as planned: Before anything 1`] = `
           "c2bbbbbbbbbbbbbbbbbbbbbb"
         ]
       }
+    ],
+    "program": [
+      {
+        "pname": "S#1",
+        "movement": "m#1",
+        "movementTowards": "mt#1",
+        "duration": 5,
+        "directorRemarks": "rd#1",
+        "operatorRemarks": "ro#1",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#2",
+        "movement": "m#2",
+        "movementTowards": "mt#2",
+        "duration": 6,
+        "directorRemarks": "rd#2",
+        "operatorRemarks": "ro#2",
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#3",
+        "movement": "m#3",
+        "movementTowards": "mt#3",
+        "duration": 1,
+        "directorRemarks": "rd#3",
+        "operatorRemarks": "ro#3",
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#4",
+        "movement": "m#4",
+        "movementTowards": "mt#4",
+        "duration": 3,
+        "directorRemarks": "rd#4",
+        "operatorRemarks": "ro#4",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#5",
+        "movement": "m#5",
+        "movementTowards": "mt#5",
+        "duration": 2,
+        "directorRemarks": "rd#5",
+        "operatorRemarks": "ro#5",
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#6",
+        "movement": "m#6",
+        "movementTowards": "mt#6",
+        "duration": 2,
+        "directorRemarks": "rd#6",
+        "operatorRemarks": "ro#6",
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      }
     ]
   },
   "currentCameras": [],
-  "filteredList": []
+  "filteredList": [
+    {
+      "pname": "S#1",
+      "movement": "m#1",
+      "movementTowards": "mt#1",
+      "duration": 5,
+      "directorRemarks": "rd#1",
+      "operatorRemarks": "ro#1",
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#2",
+      "movement": "m#2",
+      "movementTowards": "mt#2",
+      "duration": 6,
+      "directorRemarks": "rd#2",
+      "operatorRemarks": "ro#2",
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#3",
+      "movement": "m#3",
+      "movementTowards": "mt#3",
+      "duration": 1,
+      "directorRemarks": "rd#3",
+      "operatorRemarks": "ro#3",
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#4",
+      "movement": "m#4",
+      "movementTowards": "mt#4",
+      "duration": 3,
+      "directorRemarks": "rd#4",
+      "operatorRemarks": "ro#4",
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#5",
+      "movement": "m#5",
+      "movementTowards": "mt#5",
+      "duration": 2,
+      "directorRemarks": "rd#5",
+      "operatorRemarks": "ro#5",
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#6",
+      "movement": "m#6",
+      "movementTowards": "mt#6",
+      "duration": 2,
+      "directorRemarks": "rd#6",
+      "operatorRemarks": "ro#6",
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ]
 }
 </div>
 `;
@@ -72,11 +301,122 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
           "c2bbbbbbbbbbbbbbbbbbbbbb"
         ]
       }
+    ],
+    "program": [
+      {
+        "pname": "S#1",
+        "movement": "m#1",
+        "movementTowards": "mt#1",
+        "duration": 5,
+        "directorRemarks": "rd#1",
+        "operatorRemarks": "ro#1",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#2",
+        "movement": "m#2",
+        "movementTowards": "mt#2",
+        "duration": 6,
+        "directorRemarks": "rd#2",
+        "operatorRemarks": "ro#2",
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#3",
+        "movement": "m#3",
+        "movementTowards": "mt#3",
+        "duration": 1,
+        "directorRemarks": "rd#3",
+        "operatorRemarks": "ro#3",
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#4",
+        "movement": "m#4",
+        "movementTowards": "mt#4",
+        "duration": 3,
+        "directorRemarks": "rd#4",
+        "operatorRemarks": "ro#4",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#5",
+        "movement": "m#5",
+        "movementTowards": "mt#5",
+        "duration": 2,
+        "directorRemarks": "rd#5",
+        "operatorRemarks": "ro#5",
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#6",
+        "movement": "m#6",
+        "movementTowards": "mt#6",
+        "duration": 2,
+        "directorRemarks": "rd#6",
+        "operatorRemarks": "ro#6",
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      }
     ]
   },
   "currentOperator": "blabliblu",
   "currentCameras": [],
-  "filteredList": []
+  "filteredList": [
+    {
+      "pname": "S#1",
+      "movement": "m#1",
+      "movementTowards": "mt#1",
+      "duration": 5,
+      "directorRemarks": "rd#1",
+      "operatorRemarks": "ro#1",
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#2",
+      "movement": "m#2",
+      "movementTowards": "mt#2",
+      "duration": 6,
+      "directorRemarks": "rd#2",
+      "operatorRemarks": "ro#2",
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#3",
+      "movement": "m#3",
+      "movementTowards": "mt#3",
+      "duration": 1,
+      "directorRemarks": "rd#3",
+      "operatorRemarks": "ro#3",
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#4",
+      "movement": "m#4",
+      "movementTowards": "mt#4",
+      "duration": 3,
+      "directorRemarks": "rd#4",
+      "operatorRemarks": "ro#4",
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#5",
+      "movement": "m#5",
+      "movementTowards": "mt#5",
+      "duration": 2,
+      "directorRemarks": "rd#5",
+      "operatorRemarks": "ro#5",
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#6",
+      "movement": "m#6",
+      "movementTowards": "mt#6",
+      "duration": 2,
+      "directorRemarks": "rd#6",
+      "operatorRemarks": "ro#6",
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ]
 }
 </div>
 `;
@@ -113,11 +453,122 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
           "c2bbbbbbbbbbbbbbbbbbbbbb"
         ]
       }
+    ],
+    "program": [
+      {
+        "pname": "S#1",
+        "movement": "m#1",
+        "movementTowards": "mt#1",
+        "duration": 5,
+        "directorRemarks": "rd#1",
+        "operatorRemarks": "ro#1",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#2",
+        "movement": "m#2",
+        "movementTowards": "mt#2",
+        "duration": 6,
+        "directorRemarks": "rd#2",
+        "operatorRemarks": "ro#2",
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#3",
+        "movement": "m#3",
+        "movementTowards": "mt#3",
+        "duration": 1,
+        "directorRemarks": "rd#3",
+        "operatorRemarks": "ro#3",
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#4",
+        "movement": "m#4",
+        "movementTowards": "mt#4",
+        "duration": 3,
+        "directorRemarks": "rd#4",
+        "operatorRemarks": "ro#4",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#5",
+        "movement": "m#5",
+        "movementTowards": "mt#5",
+        "duration": 2,
+        "directorRemarks": "rd#5",
+        "operatorRemarks": "ro#5",
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#6",
+        "movement": "m#6",
+        "movementTowards": "mt#6",
+        "duration": 2,
+        "directorRemarks": "rd#6",
+        "operatorRemarks": "ro#6",
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      }
     ]
   },
   "currentOperator": "",
   "currentCameras": [],
-  "filteredList": []
+  "filteredList": [
+    {
+      "pname": "S#1",
+      "movement": "m#1",
+      "movementTowards": "mt#1",
+      "duration": 5,
+      "directorRemarks": "rd#1",
+      "operatorRemarks": "ro#1",
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#2",
+      "movement": "m#2",
+      "movementTowards": "mt#2",
+      "duration": 6,
+      "directorRemarks": "rd#2",
+      "operatorRemarks": "ro#2",
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#3",
+      "movement": "m#3",
+      "movementTowards": "mt#3",
+      "duration": 1,
+      "directorRemarks": "rd#3",
+      "operatorRemarks": "ro#3",
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#4",
+      "movement": "m#4",
+      "movementTowards": "mt#4",
+      "duration": 3,
+      "directorRemarks": "rd#4",
+      "operatorRemarks": "ro#4",
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#5",
+      "movement": "m#5",
+      "movementTowards": "mt#5",
+      "duration": 2,
+      "directorRemarks": "rd#5",
+      "operatorRemarks": "ro#5",
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#6",
+      "movement": "m#6",
+      "movementTowards": "mt#6",
+      "duration": 2,
+      "directorRemarks": "rd#6",
+      "operatorRemarks": "ro#6",
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ]
 }
 </div>
 `;
@@ -154,6 +605,62 @@ exports[` operator info test  works as planned: first user selected 1`] = `
           "c2bbbbbbbbbbbbbbbbbbbbbb"
         ]
       }
+    ],
+    "program": [
+      {
+        "pname": "S#1",
+        "movement": "m#1",
+        "movementTowards": "mt#1",
+        "duration": 5,
+        "directorRemarks": "rd#1",
+        "operatorRemarks": "ro#1",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#2",
+        "movement": "m#2",
+        "movementTowards": "mt#2",
+        "duration": 6,
+        "directorRemarks": "rd#2",
+        "operatorRemarks": "ro#2",
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#3",
+        "movement": "m#3",
+        "movementTowards": "mt#3",
+        "duration": 1,
+        "directorRemarks": "rd#3",
+        "operatorRemarks": "ro#3",
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#4",
+        "movement": "m#4",
+        "movementTowards": "mt#4",
+        "duration": 3,
+        "directorRemarks": "rd#4",
+        "operatorRemarks": "ro#4",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#5",
+        "movement": "m#5",
+        "movementTowards": "mt#5",
+        "duration": 2,
+        "directorRemarks": "rd#5",
+        "operatorRemarks": "ro#5",
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      },
+      {
+        "pname": "S#6",
+        "movement": "m#6",
+        "movementTowards": "mt#6",
+        "duration": 2,
+        "directorRemarks": "rd#6",
+        "operatorRemarks": "ro#6",
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      }
     ]
   },
   "currentOperator": "u1",
@@ -161,7 +668,44 @@ exports[` operator info test  works as planned: first user selected 1`] = `
     "c1bbbbbbbbbbbbbbbbbbbbbb",
     "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
-  "filteredList": []
+  "filteredList": [
+    {
+      "pname": "S#1",
+      "movement": "m#1",
+      "movementTowards": "mt#1",
+      "duration": 5,
+      "directorRemarks": "rd#1",
+      "operatorRemarks": "ro#1",
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#2",
+      "movement": "m#2",
+      "movementTowards": "mt#2",
+      "duration": 6,
+      "directorRemarks": "rd#2",
+      "operatorRemarks": "ro#2",
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#4",
+      "movement": "m#4",
+      "movementTowards": "mt#4",
+      "duration": 3,
+      "directorRemarks": "rd#4",
+      "operatorRemarks": "ro#4",
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+    },
+    {
+      "pname": "S#6",
+      "movement": "m#6",
+      "movementTowards": "mt#6",
+      "duration": 2,
+      "directorRemarks": "rd#6",
+      "operatorRemarks": "ro#6",
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ]
 }
 </div>
 `;
