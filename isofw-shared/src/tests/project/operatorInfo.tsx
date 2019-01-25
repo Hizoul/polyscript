@@ -3,7 +3,7 @@ import { FeathersClient } from "@xpfw/ui-feathers"
 import { prefixMaker, TestDefs, ValidationRegistry } from "@xpfw/validate"
 import getRandomApp from "isofw-node/src/testUtil/getRandomApp"
 import { directorPrefix, increaseShotNumber } from "isofw-shared/src/components/project/directorSheet"
-import { changeOperator } from "isofw-shared/src/components/project/operatorInfo"
+import { changeValue, currentOperatorKey, whichViewIsActiveKey } from "isofw-shared/src/components/project/operatorInfo"
 import val from "isofw-shared/src/globals/val"
 import createTestCameras, { testCameras } from "isofw-shared/src/testUtil/data/camera"
 import createTestProjects from "isofw-shared/src/testUtil/data/project"
@@ -28,16 +28,26 @@ const operatorInfoTest = (Component: any) => {
       const cameraResult = await createTestCameras(appRef.app)
       const projectResults = await createTestProjects(appRef.app, true, true)
       const thisRef = {}
-      const changer = changeOperator(thisRef)
+      const operatorChanger = changeValue(thisRef, currentOperatorKey)
+      const activeViewChanger = changeValue(thisRef, whichViewIsActiveKey)
+
       renderSnapshot(<Component item={projectResults[0]} />, "Before anything")
-      changer(projectResults[0][ProjectOperators.mapTo][0])()
+      operatorChanger(projectResults[0][ProjectOperators.mapTo][0])()
       renderSnapshot(<Component item={projectResults[0]} />, "first user selected")
-      changer(projectResults[0][ProjectOperators.mapTo][1])()
+      operatorChanger(projectResults[0][ProjectOperators.mapTo][1])()
       renderSnapshot(<Component item={projectResults[0]} />, "2nd user selected")
-      changer("blabliblu")()
+      operatorChanger("blabliblu")()
       renderSnapshot(<Component item={projectResults[0]} />, "Invalid user selected")
-      changer("")()
+      operatorChanger("")()
       renderSnapshot(<Component item={projectResults[0]} />, "Removed user selection")
+
+      activeViewChanger(1)()
+      renderSnapshot(<Component item={projectResults[0]} />, "Preset view active No user selected")
+      operatorChanger(projectResults[0][ProjectOperators.mapTo][0])()
+      renderSnapshot(<Component item={projectResults[0]} />, "Preset view active first user selected")
+      activeViewChanger(0)()
+      renderSnapshot(<Component item={projectResults[0]} />, "Preset view disabled")
+
       await appRef.cleanUp()
     }, 100000)
   })
