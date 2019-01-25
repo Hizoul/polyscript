@@ -38,7 +38,7 @@ React.ComponentType<WrapperOperatorAndProps> = (Container: React.ComponentType<S
       this.changeOperator = changeOperator(this)
     }
     public render() {
-      const item = get(this.props, "original.result")
+      const item = get(this.props, "original.result", this.props.item)
       const mappings = find(get(item, ProjectOperatorCameraMapping.mapTo, []),
         [OperatorRelation.mapTo, this.state.currentOperator])
       const currentCameras = mappings && mappings[ProjectCameras.mapTo] ? mappings[ProjectCameras.mapTo] : []
