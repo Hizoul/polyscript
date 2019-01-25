@@ -12,11 +12,11 @@ const currentOperatorKey = `current${ProjectOperators.mapTo}`
 
 const whichViewIsActiveKey = `operatorInView`
 
-const changeValue = (thisRef: any, keyToUse: string, useThisValue?: any) => {
+const changeValue = (thisRef: any, keyToUse: string) => {
   return (operator: any) => {
     return () => {
       const prefix = prefixMaker(get(thisRef.props, "prefix", ""))
-      FormStore.setValue(prefix + keyToUse, useThisValue != null ? useThisValue : operator)
+      FormStore.setValue(prefix + keyToUse,  operator)
     }
   }
 }
@@ -37,15 +37,15 @@ export interface SharedOperatorInfoProps extends WrapperOperatorAndProps {
 }
 const SharedOperatorInfo: (Container: React.ComponentType<SharedOperatorInfoProps>) =>
 React.ComponentType<WrapperOperatorAndProps> = (Container: React.ComponentType<SharedOperatorInfoProps>) => {
-  return class extends ComponentBase<any, any> {
+  const b: any = class extends ComponentBase<any, any> {
     private changeOperator: any
     private useScriptView: any
     private usePresetView: any
     constructor(props: any) {
       super(props)
       this.changeOperator = changeValue(this, currentOperatorKey)
-      this.useScriptView = changeValue(this, whichViewIsActiveKey, 0)
-      this.usePresetView = changeValue(this, whichViewIsActiveKey, 1)
+      this.useScriptView = changeValue(this, whichViewIsActiveKey)(0)
+      this.usePresetView = changeValue(this, whichViewIsActiveKey)(1)
     }
     public render() {
       const item = get(this.props, "original.result", this.props.item)
@@ -53,13 +53,19 @@ React.ComponentType<WrapperOperatorAndProps> = (Container: React.ComponentType<S
         [OperatorRelation.mapTo, this.state.currentOperator])
       const currentCameras = mappings && mappings[ProjectCameras.mapTo] ? mappings[ProjectCameras.mapTo] : []
       let filteredList = get(item, ProjectProgram.mapTo, [])
-      const presetByCamera: any = {}
+      const presetByCameraObj: any = {}
       filteredList.forEach((subItem: any) => {
-        if (presetByCamera[subItem[ShotCamera.mapTo]] == null) {
-          presetByCamera[subItem[ShotCamera.mapTo]] = []
+        if (presetByCameraObj[subItem[ShotCamera.mapTo]] == null) {
+          presetByCameraObj[subItem[ShotCamera.mapTo]] = []
         }
-        presetByCamera[subItem[ShotCamera.mapTo]].push(presetByCamera[subItem[ShotPreset.mapTo]])
+        presetByCameraObj[subItem[ShotCamera.mapTo]].push(subItem[ShotPreset.mapTo])
       })
+      const presetByCamera: any[] = []
+      for (const k of Object.keys(presetByCameraObj)) {
+        presetByCamera.push({
+          camera: k, presets: presetByCameraObj[k]
+        })
+      }
       if (currentCameras.length > 0) {
         filteredList = filteredList.filter((subItem: any) => currentCameras.indexOf(subItem[ShotCamera.mapTo]) !== -1)
       }
@@ -86,6 +92,7 @@ React.ComponentType<WrapperOperatorAndProps> = (Container: React.ComponentType<S
       }
     }
   }
+  return b
 }
 
 export default SharedOperatorInfo

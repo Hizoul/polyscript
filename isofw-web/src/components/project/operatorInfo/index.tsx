@@ -14,38 +14,45 @@ import { get } from "lodash"
 import * as React from "react"
 import LoadingPage from "../../loading"
 import "../style.sass"
+import CameraPresets from "./cameraPresets"
 import CurrentOperatorDisplay from "./currentOperatorDisplay"
-
-const PresetItem: React.FunctionComponent<IFormShowProps & {index: number}> = (props) => {
-  return (
-    <tr>
-      <td>{props.index}</td>
-      <td>
-        <NameDisplayer collection={val.service.camera} id={get(props.item, ShotCamera.mapTo)} getNameFrom={ProjectName.mapTo} placeholder="" />
-      </td>
-      <td>
-        <NameDisplayer collection={val.service.preset} id={get(props.item, ShotPreset.mapTo)} getNameFrom={PresetNumberField.mapTo} placeholder="" />
-      </td>
-      <td>{get(props.item, ShotType.mapTo)}</td>
-      <td>{get(props.item, ShotName.mapTo)}</td>
-      <td>{get(props.item, ShotMovement.mapTo)}</td>
-      <td>{get(props.item, ShotMovementTowards.mapTo)}</td>
-      <td>{get(props.item, ShotDuration.mapTo)}</td>
-      <td>{get(props.item, ProjectName.mapTo)}</td>
-      <td>
-        {get(props.item, ShotRemarksDirector.mapTo)}<br />
-        {get(props.item, ShotRemarksOperator.mapTo)}
-      </td>
-    </tr>
-  )
-}
+import TablePresetItem from "./tablePresetItem"
 
 const OperatorInfo: React.FunctionComponent<IFormEditProps & SharedOperatorInfoProps> = (props) => {
   let i = 0
-  const items = props.filteredList.map((item: any) => {
-    i++
-    return <PresetItem loading={false} item={item} key={i} index={i} />
-  })
+  const content = props.isPresetView ? (
+    <div>
+      {props.presetByCamera.map((item: any) => {
+            i++
+            return <CameraPresets loading={false} item={item} key={item.camera} />
+          })}
+    </div>
+  ) : (
+    <div className="data-table card" style={{marginLeft: "0pt", marginRight: "0pt"}}>
+      <table>
+        <thead>
+          <tr>
+            <th>shot</th>
+            <th>CA</th>
+            <th>Preset</th>
+            <th>Type</th>
+            <th>Object</th>
+            <th>Movement</th>
+            <th>Towards</th>
+            <th>Duration</th>
+            <th>picture</th>
+            <th>remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          {props.filteredList.map((item: any) => {
+            i++
+            return <TablePresetItem loading={false} item={item} key={i} index={i} />
+          })}
+        </tbody>
+      </table>
+    </div>
+  )
   return (
     <div>
       <Row>
@@ -93,33 +100,16 @@ const OperatorInfo: React.FunctionComponent<IFormEditProps & SharedOperatorInfoP
           <WebButton big={true} fill={true} text="following position" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
         </Col>
         <Col>
-          <WebButton big={true} fill={true} text="script view" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
-        </Col>
-        <Col>
-          <WebButton big={true} fill={true} text="preset view" iconFa="check" onClick={props.submitEdit} loading={props.loading} />
+          <WebButton
+            big={true}
+            fill={true}
+            text={props.isPresetView ? "script view" : "preset view"}
+            iconFa={props.isPresetView ? "list-ol" : "images"}
+            onClick={props.isPresetView ? props.useScriptView : props.usePresetView}
+          />
         </Col>
       </Row>
-      <div className="data-table card" style={{marginLeft: "0pt", marginRight: "0pt"}}>
-        <table>
-          <thead>
-            <tr>
-              <th>shot</th>
-              <th>CA</th>
-              <th>Preset</th>
-              <th>Type</th>
-              <th>Object</th>
-              <th>Movement</th>
-              <th>Towards</th>
-              <th>Duration</th>
-              <th>picture</th>
-              <th>remarks</th>
-            </tr>
-          </thead>
-          <tbody>
-            {items}
-          </tbody>
-        </table>
-      </div>
+      {content}
       {props.loading ? <LoadingPage /> : null}
     </div>
   )
