@@ -4,7 +4,7 @@ import isServerParams from "isofw-shared/src/globals/isServerParams"
 import val from "isofw-shared/src/globals/val"
 import { EMPTY_PRESET, PresetCameraField, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset"
 import { get } from "lodash"
-import requireAuthentication from "./hooks/requireAuthentication";
+import requireAuthentication from "./hooks/requireAuthentication"
 
 const presetAssistantConfigurator: any = (app: feathers.Application) => {
   app.service(val.service.camera).hooks({after: {create: presetCreator}})
@@ -27,6 +27,11 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
         return foundId
       }
       return ""
+    },
+    get: async () => {
+      return app.service(val.service.preset).find({...isServerParams, query: {
+        $limit: 10000
+      }})
     }
   }
   app.use(val.service.presetAssistant, presentAssistanceService)
