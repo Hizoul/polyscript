@@ -1,11 +1,10 @@
-import { SharedFormList, IFormListProps, IFormShowProps } from "isofw-shared/src/util/xpfwuishared"
-import * as React from "react"
-import { get } from "lodash"
-import { SharedField } from "@xpfw/form-shared"
-import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
-import { CameraIp, CameraForm } from "isofw-shared/src/xpfwDefs/camera"
-import WebButton from "../button"
 import urls from "isofw-shared/src/globals/url"
+import { IFormListProps, IFormShowProps, SharedFormList } from "isofw-shared/src/util/xpfwuishared"
+import { CameraForm, CameraIp } from "isofw-shared/src/xpfwDefs/camera"
+import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
+import { get } from "lodash"
+import * as React from "react"
+import WebButton from "../button"
 
 const ItemCamera: React.FunctionComponent<IFormShowProps> = (props) => {
   return (
@@ -35,7 +34,7 @@ const CameraOverviewComponent: React.FunctionComponent<IFormListProps> = (props)
           {items}
         </tbody>
       </table>
-      <WebButton text="Create" iconFa="plus" fill href={`${urls.create}/${CameraForm.collection}`} style={{margin: "0.5rem"}} />
+      <WebButton text="Create" iconFa="plus" fill={true} href={`${urls.create}/${CameraForm.collection}`} style={{margin: "0.5rem"}} />
     </div>
   )
 }

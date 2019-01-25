@@ -1,16 +1,14 @@
-import "isofw-web/src/components/form"
-import ValidationRegistry from "@xpfw/validate"
-import { get } from "lodash"
-import * as React from "react"
-import WebPageContainer from "isofw-web/src/components/pageContainer"
+import { SharedField } from "@xpfw/form-shared"
 import { ProjectForm, ProjectName } from "isofw-shared/src/xpfwDefs/project"
+import "isofw-web/src/components/form"
+import WebPageContainer from "isofw-web/src/components/pageContainer"
 import ProjectOverviewComponent from "isofw-web/src/components/project/overview"
-import { SharedField } from "@xpfw/form-shared";
+import * as React from "react"
 
 const ProjectOverview: React.FunctionComponent<any> = (props) => {
   return (
     <WebPageContainer
-      backLink
+      backLink={true}
       requireLoggedIn={true}
       name="projectOverview"
       title="Projects"

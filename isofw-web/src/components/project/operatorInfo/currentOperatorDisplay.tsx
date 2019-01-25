@@ -1,10 +1,11 @@
-import { MailField } from "@xpfw/ui-shared";
-import { Link, List, ListItem, Popover } from "framework7-react";
+import { MailField } from "@xpfw/ui-shared"
+import { Link, List, ListItem, Popover } from "framework7-react"
 import SharedOperatorInfo, { SharedOperatorInfoProps } from "isofw-shared/src/components/project/operatorInfo"
-import val from "isofw-shared/src/globals/val";
-import { OperatorRelation, ProjectCameras, ProjectName, ProjectOperatorCameraMapping } from "isofw-shared/src/xpfwDefs/project";
+import val from "isofw-shared/src/globals/val"
+import { OperatorRelation, ProjectCameras, ProjectName,
+  ProjectOperatorCameraMapping } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
-import { get } from "lodash";
+import { get } from "lodash"
 import * as React from "react"
 
 const CurrentOperatorDisplay: React.FunctionComponent<SharedOperatorInfoProps> = (props) => {

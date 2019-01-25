@@ -1,7 +1,7 @@
-import ValidationRegistry, { IForm, Permission, IField, FieldType } from "@xpfw/validate"
+import { MailField } from "@xpfw/ui-shared"
+import ValidationRegistry, { FieldType, IField, IForm, Permission } from "@xpfw/validate"
 import val from "isofw-shared/src/globals/val"
 import IDField from "./idField"
-import { MailField } from "@xpfw/ui-shared"
 
 const convertTextToMongoRegex: any = (value: any) => {
   if (value == null || value.length === 0) {
@@ -86,7 +86,8 @@ const ProjectProgram: IField = {
   validate: {
     type: FieldType.Object,
     validate: {objectDef: [
-      ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset
+      ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration,
+      ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset
     ]},
     hide: {update: true, create: true}
   }

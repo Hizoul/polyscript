@@ -1,5 +1,5 @@
 import { Hook } from "@feathersjs/feathers"
-import val from "isofw-shared/src/globals/val";
+import val from "isofw-shared/src/globals/val"
 
 const disableInProd: Hook = async (hook) => {
     if (!val.isDebug) {

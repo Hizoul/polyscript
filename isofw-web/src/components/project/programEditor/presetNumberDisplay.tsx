@@ -1,11 +1,10 @@
-import { IFieldProps, FormStore } from "@xpfw/form-shared"
-import * as React from "react"
-import val from "isofw-shared/src/globals/val";
+import { FormStore, IFieldProps } from "@xpfw/form-shared"
+import val from "isofw-shared/src/globals/val"
 import { PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
 import NameDisplayer from "isofw-web/src/components/displayName"
+import * as React from "react"
 
 const presetNumberDisplay: React.FunctionComponent<IFieldProps> = (props) => {
-  console.log("GETTING PRESET", props.value, props.field)
   if (props.value && props.value) {
     return (
       <span>

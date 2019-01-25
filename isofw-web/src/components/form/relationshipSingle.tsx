@@ -1,10 +1,10 @@
 import { ISharedRelationshipField, ISharedRelationshipFieldProps, RelationShipWrapper } from "@xpfw/ui-shared"
+import { Card, CardContent, CardHeader, List, Popup } from "framework7-react"
 import { get, isNil } from "lodash"
 import * as React from "react"
+import WebButton from "../button"
 import WebRelationshipItem from "./relationshipItem"
 import WebRelationshipSearch from "./relationshipSearch"
-import { Card, CardHeader, CardContent, List, Popup } from "framework7-react";
-import WebButton from "../button";
 
 class WebRelationshipSingle extends React.Component<ISharedRelationshipFieldProps, any> {
   public render() {
@@ -16,9 +16,9 @@ class WebRelationshipSingle extends React.Component<ISharedRelationshipFieldProp
           <div className="flex1">{get(this.props, "field.mapTo", "RelationshipField")}</div>
           <WebButton
             style={{width: "auto", display: "inline-block", marginRight: "-1.5rem", marginTop: "-1.4rem"}}
-            fill
-            round
-            raised
+            fill={true}
+            round={true}
+            raised={true}
             onClick={this.props.setDisplayMode.bind(this, 1)}
             text=""
             iconFa="plus"

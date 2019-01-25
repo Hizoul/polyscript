@@ -1,9 +1,9 @@
+import { FormStore, IArrayProps, IFieldProps } from "@xpfw/form-shared"
 import { IField, prefixMaker } from "@xpfw/validate"
-import { cloneDeep, get, findIndex } from "lodash"
+import { OperatorRelation, ProjectCameras, ProjectOperators } from "isofw-shared/src/xpfwDefs/project"
+import { cloneDeep, findIndex, get } from "lodash"
 import * as React from "react"
-import { IArrayProps, FormStore, IFieldProps } from "@xpfw/form-shared";
-import { ComponentBase } from "resub";
-import { ProjectCameras, ProjectOperators, OperatorRelation } from "isofw-shared/src/xpfwDefs/project";
+import { ComponentBase } from "resub"
 
 const changeMapping = (thisRef: any) => {
   return (operator: string, camera: string) => {
@@ -31,9 +31,9 @@ const popupVisibilityKey = "cameraMappingPopup"
 
 const togglePop = (thisRef: any) => {
   return () => {
-    let currentValue = get(thisRef, "state.showPopUp", false)
+    const currentValue = get(thisRef, "state.showPopUp", false)
     const prefix = prefixMaker(get(thisRef.props, "prefix", ""))
-    FormStore.setValue(prefix+popupVisibilityKey, !currentValue)
+    FormStore.setValue(prefix + popupVisibilityKey, !currentValue)
   }
 }
 

@@ -1,10 +1,11 @@
-import * as React from "react"
-import { SharedFormAuth, IFormAuthProps } from "@xpfw/ui-shared"
-import Loading from "./loading";
-import { HashRouter, Route, Switch } from "react-router-dom"
+import { IFormAuthProps, SharedFormAuth } from "@xpfw/ui-shared"
+import { App, Block, Link, Navbar, NavLeft, NavRight, NavTitle,
+  Page, Statusbar, Subnavbar, Toolbar, View } from "framework7-react"
+import urls from "isofw-shared/src/globals/url"
 import collections from "isofw-shared/src/xpfwDefs/collections"
-import urls from "isofw-shared/src/globals/url";
-import { App, Statusbar, View, Page, Navbar, Toolbar, Link, NavRight, Block, Subnavbar, NavLeft, NavTitle } from 'framework7-react';
+import * as React from "react"
+import Loading from "./loading"
+
 export interface IPageContainer {
   requireLoggedIn?: boolean
   name: string
@@ -21,7 +22,7 @@ class WebPageContainer extends React.Component<IPageContainer & IFormAuthProps, 
         <Navbar
         >
           <NavLeft>
-            {this.props.backLink ? <Link back iconFa="chevron-left" /> : null}
+            {this.props.backLink ? <Link back={true} iconFa="chevron-left" /> : null}
             <Link panelOpen="left" iconFa="bars" style={{marginLeft: "0pt"}} />
           </NavLeft>
           <NavTitle subtitle={this.props.subtitle} title={this.props.title} />
@@ -41,7 +42,5 @@ class WebPageContainer extends React.Component<IPageContainer & IFormAuthProps, 
     )
   }
 }
-
-
 
 export default SharedFormAuth<IPageContainer>(WebPageContainer)

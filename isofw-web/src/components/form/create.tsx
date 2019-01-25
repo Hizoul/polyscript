@@ -1,10 +1,10 @@
-import * as React from "react"
 import { SharedField } from "@xpfw/form-shared"
 import { IFormCreateProps, ISharedFormCreate, SharedFormCreate } from "@xpfw/ui-shared"
 import {  IField } from "@xpfw/validate"
+import { Block, BlockTitle, Button, List } from "framework7-react"
 import { get } from "lodash"
-import { Button, Block, BlockTitle, List } from "framework7-react";
-import WebButton from "../button";
+import * as React from "react"
+import WebButton from "../button"
 
 class Framework7Create extends React.Component<IFormCreateProps, any> {
   public render() {
@@ -16,9 +16,9 @@ class Framework7Create extends React.Component<IFormCreateProps, any> {
     let msg: any
     if (gotErr) {
       msg = (
-        <div>        
+        <div>
           <BlockTitle>Error</BlockTitle>
-          <Block strong inset>
+          <Block strong={true} inset={true}>
             <p>please recheck your inputs or connection {JSON.stringify(get(this.props, "error"))}</p>
           </Block>
         </div>
@@ -26,9 +26,9 @@ class Framework7Create extends React.Component<IFormCreateProps, any> {
     }
     if (result) {
       msg = (
-        <div>        
+        <div>
           <BlockTitle>Success</BlockTitle>
-          <Block strong inset>
+          <Block strong={true} inset={true}>
             <p>created {get(result, get(this.props.form, "options.idPath", "_id"))}</p>
           </Block>
         </div>
@@ -36,12 +36,12 @@ class Framework7Create extends React.Component<IFormCreateProps, any> {
     }
     return (
       <div>
-        <List form style={{margin: "0pt"}}>
+        <List form={true} style={{margin: "0pt"}}>
           <ul>
             {fields}
           </ul>
         </List>
-        <WebButton onClick={this.props.submitCreate} iconFa="plus" fill loading={this.props.loading} text="Create" />
+        <WebButton onClick={this.props.submitCreate} iconFa="plus" fill={true} loading={this.props.loading} text="Create" />
         {msg}
       </div>
     )

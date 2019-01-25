@@ -1,7 +1,7 @@
 import ValidationRegistry, { FieldType, IField, IForm, Permission } from "@xpfw/validate"
-import IDField from "./idField"
-import { cloneDeep } from "lodash"
 import val from "isofw-shared/src/globals/val"
+import { cloneDeep } from "lodash"
+import IDField from "./idField"
 
 const EMPTY_PRESET = "-"
 

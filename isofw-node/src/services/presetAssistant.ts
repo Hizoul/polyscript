@@ -1,8 +1,8 @@
 import * as feathers from "@feathersjs/feathers"
-import val from "isofw-shared/src/globals/val"
 import presetCreator from "isofw-node/src/services/hooks/presetCreator"
 import isServerParams from "isofw-shared/src/globals/isServerParams"
-import { PresetCameraField, PresetProjectField, EMPTY_PRESET } from "isofw-shared/src/xpfwDefs/preset"
+import val from "isofw-shared/src/globals/val"
+import { EMPTY_PRESET, PresetCameraField, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset"
 import { get } from "lodash"
 import requireAuthentication from "./hooks/requireAuthentication";
 

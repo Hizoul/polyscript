@@ -1,12 +1,12 @@
 import { SharedField } from "@xpfw/form-shared"
 import { ISharedRelationshipField, ISharedRelationshipFieldProps, RelationShipWrapper } from "@xpfw/ui-shared"
 import { getFieldsFromForm, IField } from "@xpfw/validate"
+import { Block, BlockTitle, Card, CardContent, CardHeader, List, Popup } from "framework7-react"
 import { get, isNil } from "lodash"
 import * as React from "react"
+import WebButton from "../button"
 import WebRelationshipItem from "./relationshipItem"
 import WebRelationshipSearch from "./relationshipSearch"
-import { BlockTitle, Block, Card, Popup, List, CardHeader, CardContent } from "framework7-react";
-import WebButton from "../button";
 
 class WebRelationshipMulti extends React.Component<ISharedRelationshipFieldProps, any> {
   public render() {
@@ -24,9 +24,9 @@ class WebRelationshipMulti extends React.Component<ISharedRelationshipFieldProps
           <div className="flex1">{get(this.props, "field.mapTo", "RelationshipField")}</div>
           <WebButton
             style={{width: "auto", display: "inline-block", marginRight: "-1.5rem", marginTop: "-1.4rem"}}
-            fill
-            round
-            raised
+            fill={true}
+            round={true}
+            raised={true}
             onClick={this.props.setDisplayMode.bind(this, 1)}
             text=""
             iconFa="plus"

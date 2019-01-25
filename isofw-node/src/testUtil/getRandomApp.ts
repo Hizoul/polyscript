@@ -1,20 +1,21 @@
 import * as authenticationA from "@feathersjs/authentication"
+import jwt from "@feathersjs/authentication-jwt"
+import * as localA from "@feathersjs/authentication-local"
 import * as handler from "@feathersjs/errors/handler"
 import * as express from "@feathersjs/express"
 import * as rest from "@feathersjs/express/rest"
 import feathers, { Application, Service } from "@feathersjs/feathers"
-import * as localA from "@feathersjs/authentication-local"
 import * as sios from "@feathersjs/socketio"
+import { convertIds } from "@xpfw/feathers";
 import * as memdb from "feathers-memory"
 import * as mongoService from "feathers-mongodb"
-import { isString } from "lodash"
-import jwt from "@feathersjs/authentication-jwt"
-import { MongoClient } from "mongodb"
-import emptyPort from "./emptyPort"
-import customServiceConfigurator from "../services/index"
-import { convertIds } from "@xpfw/feathers";
-import { UserStore, DbStore } from "isofw-shared/src/util/xpfwuishared"
+import { DbStore, UserStore } from "isofw-shared/src/util/xpfwuishared"
 import collections from "isofw-shared/src/xpfwDefs/collections"
+import { isString } from "lodash"
+import { MongoClient } from "mongodb"
+import customServiceConfigurator from "../services/index"
+import emptyPort from "./emptyPort"
+
 const sio: any = sios
 const res: any = rest
 const mongoServic: any = mongoService
@@ -38,7 +39,7 @@ const getRandomApp = async (memoryServiceName: string,
   let col: any | undefined
   let db: any | undefined
   let c: any
-  let port = await emptyPort()
+  const port = await emptyPort()
   app.configure(useRest ? res() : sio())
   if (useMongo) {
     c = await MongoClient.connect(`mongodb://localhost:27017/`)
@@ -47,7 +48,7 @@ const getRandomApp = async (memoryServiceName: string,
     app.use(memoryServiceName, mongoServic({
       Model: col
     }))
-    
+
     const options: any = {}
     options.secret = `mysecret`
     app.configure(authentication(options))
@@ -75,7 +76,7 @@ const getRandomApp = async (memoryServiceName: string,
         ]
       }
     })
-  app.service("authentication").hooks({
+    app.service("authentication").hooks({
     before: {
      create: [
       // You can chain multiple strategies

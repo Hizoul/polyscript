@@ -1,16 +1,15 @@
-import * as React from "react"
-import WebButton from "isofw-web/src/components/button";
-import "../style.sass"
-import { List, Popup, Card, CardHeader, CardContent, ListItem, Icon, BlockTitle, Row } from "framework7-react";
-import SharedCameraChoice, { SharedCameraChoiceProps } from "isofw-shared/src/components/project/cameraChooser";
+import { BlockTitle, Card, CardContent, CardHeader, Icon, List, ListItem, Popup, Row } from "framework7-react"
+import SharedCameraChoice, { SharedCameraChoiceProps } from "isofw-shared/src/components/project/cameraChooser"
+import val from "isofw-shared/src/globals/val"
+import { MailField } from "isofw-shared/src/util/xpfwuishared"
+import { OperatorRelation, ProjectCameras, ProjectName } from "isofw-shared/src/xpfwDefs/project"
+import WebButton from "isofw-web/src/components/button"
 import NameDisplayer from "isofw-web/src/components/displayName"
-import val from "isofw-shared/src/globals/val";
-import { MailField } from "isofw-shared/src/util/xpfwuishared";
-import { find, get } from "lodash";
-import { OperatorRelation, ProjectCameras, ProjectName } from "isofw-shared/src/xpfwDefs/project";
+import { find, get } from "lodash"
+import * as React from "react"
+import "../style.sass"
 
 const webCameraMapping: React.FunctionComponent<SharedCameraChoiceProps> = (props) => {
-  console.log(" props are ",  props)
   return (
     <div>
       <ListItem
@@ -44,6 +43,6 @@ const webCameraMapping: React.FunctionComponent<SharedCameraChoiceProps> = (prop
   )
 }
 
-const WrappedCameraChooser = SharedCameraChoice(webCameraMapping) 
+const WrappedCameraChooser = SharedCameraChoice(webCameraMapping)
 export default WrappedCameraChooser
 

@@ -1,8 +1,8 @@
-import { IFieldProps, SharedField, SharedArray, IArrayProps } from "@xpfw/form-shared"
+import { IArrayProps, IFieldProps, SharedArray, SharedField } from "@xpfw/form-shared"
 import { IField } from "@xpfw/validate"
+import WebButton from "isofw-web/src/components/button"
 import { cloneDeep, get, map } from "lodash"
 import * as React from "react"
-import WebButton from "isofw-web/src/components/button";
 
 const Rayfield: React.FunctionComponent<IArrayProps> = (props) => {
   return (
@@ -27,4 +27,4 @@ const Rayfield: React.FunctionComponent<IArrayProps> = (props) => {
   )
 }
 
-export default SharedArray(Rayfield) 
+export default SharedArray(Rayfield)

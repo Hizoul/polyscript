@@ -1,9 +1,9 @@
 import { MailField, OwnerField, PwField } from "@xpfw/ui-shared"
 import ValidationRegistry, { FieldType, IField, IForm, Permission } from "@xpfw/validate"
-import collections from "isofw-shared/src/xpfwDefs/collections"
-import { ProjectName } from "./project";
-import IDField from "./idField";
 import val from "isofw-shared/src/globals/val"
+import collections from "isofw-shared/src/xpfwDefs/collections"
+import IDField from "./idField"
+import { ProjectName } from "./project"
 
 const CameraIp: IField = {
   type: FieldType.Text,

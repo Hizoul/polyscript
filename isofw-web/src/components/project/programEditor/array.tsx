@@ -1,15 +1,17 @@
-import { IFieldProps, SharedField, SharedArray, IArrayProps } from "@xpfw/form-shared"
-import { IField } from "@xpfw/validate"
+import { IArrayProps, IFieldProps, SharedArray, SharedField } from "@xpfw/form-shared"
+import { List } from "framework7-react"
+import {
+  ShotCamera, ShotDuration, ShotMovement, ShotMovementTowards,
+  ShotName, ShotPreset, ShotRemarksDirector, ShotRemarksOperator, ShotType
+} from "isofw-shared/src/xpfwDefs/project"
+import WebButton from "isofw-web/src/components/button"
 import { cloneDeep, get, map } from "lodash"
 import * as React from "react"
-import WebButton from "isofw-web/src/components/button";
-import { 
-  ShotName, ShotType, ShotMovement, ShotMovementTowards,
-  ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset
-} from "isofw-shared/src/xpfwDefs/project";
 import "../style.sass"
-import { List } from "framework7-react";
-const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset]
+
+const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards,
+  ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset]
+
 const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size: number, remove: any}> = (props) => {
   const convertedFields = []
   for (const field of fieldsToConvert) {
@@ -25,23 +27,23 @@ const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size:
           onClick={props.removeItem(props.index)}
           text=""
           color="red"
-          fill
-          round
+          fill={true}
+          round={true}
           iconFa="times"
         />
         <div className="flex1">&nbsp;</div>
         <WebButton
           className="boxTopRight"
-          onClick={() => props.increaseSize(props.index+1)}
+          onClick={() => props.increaseSize(props.index + 1)}
           text=""
           color="green"
-          fill
-          round
+          fill={true}
+          round={true}
           iconFa="plus"
         />
       </div>
       <span className="shotNumber">{props.index}</span>
-      <List form className="noMargin">
+      <List form={true} className="noMargin">
         <ul>
           <SharedField field={convertedFields[7]}  prefix={props.prefix} />
           <SharedField field={convertedFields[0]}  prefix={props.prefix} />
@@ -78,8 +80,7 @@ const ProgramArray: React.FunctionComponent<IArrayProps> = (props) => {
   )
 }
 
-export default SharedArray(ProgramArray) 
-
+export default SharedArray(ProgramArray)
 
 // {map(props.subFields, (field: any, index: any) => {
 //   return (

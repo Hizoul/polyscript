@@ -1,8 +1,10 @@
+import { FormStore } from "@xpfw/form-shared"
+import { DbStore, IFormEditProps, SharedFormEdit } from "@xpfw/ui-shared"
+import { ProjectForm, ProjectShot } from "isofw-shared/src/xpfwDefs/project"
 import * as React from "react"
-import { SharedFormEdit, IFormEditProps, DbStore } from "@xpfw/ui-shared";
-import { ProjectForm, ProjectShot } from "isofw-shared/src/xpfwDefs/project";
-import { FormStore } from "@xpfw/form-shared";
+
 const directorPrefix = "shotEdit"
+
 const increaseShotNumber = (thisRef: any, decrease?: boolean) => {
     return async () => {
         const currentValue = FormStore.getValue(`${directorPrefix}.${ProjectShot.mapTo}`)

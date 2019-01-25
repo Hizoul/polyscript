@@ -1,20 +1,20 @@
-import getRandomApp from "isofw-node/src/testUtil/getRandomApp"
 import { FormStore, SharedField } from "@xpfw/form-shared"
 import { FeathersClient } from "@xpfw/ui-feathers"
-import { BackendClient, DbStore, ListStore, MailField, PwField, UserStore } from "isofw-shared/src/util/xpfwuishared"
-import { TestDefs, ValidationRegistry, prefixMaker } from "@xpfw/validate"
+import { prefixMaker, TestDefs, ValidationRegistry } from "@xpfw/validate"
+import getRandomApp from "isofw-node/src/testUtil/getRandomApp"
+import { changeMapping, togglePop } from "isofw-shared/src/components/project/cameraMapping"
+import { directorPrefix, increaseShotNumber } from "isofw-shared/src/components/project/directorSheet"
+import val from "isofw-shared/src/globals/val"
+import createTestCameras, { testCameras } from "isofw-shared/src/testUtil/data/camera"
+import createTestProjects from "isofw-shared/src/testUtil/data/project"
 import createTestUsers, { testUsers } from "isofw-shared/src/testUtil/data/users"
 import logIntoUser from "isofw-shared/src/testUtil/login"
-import createTestProjects from "isofw-shared/src/testUtil/data/project"
-import createTestCameras, { testCameras } from "isofw-shared/src/testUtil/data/camera"
-import { increaseShotNumber, directorPrefix } from "isofw-shared/src/components/project/directorSheet"
-import val from "isofw-shared/src/globals/val"
-import { ProjectForm, ProjectName, ProjectShot, ProjectOperatorCameraMapping, ProjectOperators, ProjectCameras } from "isofw-shared/src/xpfwDefs/project"
-import { matchStoreState } from "resub-persist"
-import promiseTimeout from "isofw-shared/src/util/promiseTimeout";
 import renderSnapshot from "isofw-shared/src/testUtil/renderSnapshot"
+import promiseTimeout from "isofw-shared/src/util/promiseTimeout"
+import { BackendClient, DbStore, ListStore, MailField, PwField, UserStore } from "isofw-shared/src/util/xpfwuishared"
+import { ProjectCameras, ProjectOperatorCameraMapping, ProjectOperators } from "isofw-shared/src/xpfwDefs/project"
 import * as React from "react"
-import { changeMapping, togglePop } from "isofw-shared/src/components/project/cameraMapping";
+import { matchStoreState } from "resub-persist"
 BackendClient.client = FeathersClient
 
 const cameraMappingTest = () => {

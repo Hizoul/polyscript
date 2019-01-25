@@ -1,5 +1,5 @@
 import { IFieldProps, SharedField } from "@xpfw/form-shared"
-import { globals, IField } from "@xpfw/validate"
+import {  IField } from "@xpfw/validate"
 import { cloneDeep, each, get } from "lodash"
 import * as React from "react"
 

@@ -1,10 +1,10 @@
 import { FormStore, SharedField } from "@xpfw/form-shared"
 import { IFormEditProps, ISharedFormEdit, ListStore, SharedFormEdit } from "@xpfw/ui-shared"
 import { getFieldsFromForm,  IField } from "@xpfw/validate"
+import { Block, BlockTitle, Button, List } from "framework7-react"
 import { get } from "lodash"
 import * as React from "react"
-import { Button, Block, BlockTitle, List } from "framework7-react";
-import WebButton from "../button";
+import WebButton from "../button"
 
 class MiniEdit extends React.Component<IFormEditProps, any> {
   public render() {
@@ -16,9 +16,9 @@ class MiniEdit extends React.Component<IFormEditProps, any> {
     let msg: any
     if (gotErr) {
       msg = (
-        <div>        
+        <div>
           <BlockTitle>Error</BlockTitle>
-          <Block strong inset>
+          <Block strong={true} inset={true}>
             <p>please recheck your inputs or connection {JSON.stringify(get(this.props, "error"))}</p>
           </Block>
         </div>
@@ -26,9 +26,9 @@ class MiniEdit extends React.Component<IFormEditProps, any> {
     }
     if (result) {
       msg = (
-        <div>        
+        <div>
           <BlockTitle>Success</BlockTitle>
-          <Block strong inset>
+          <Block strong={true} inset={true}>
             <p>Saved changes to {get(result, get(this.props.form, "options.idPath", "_id"))}</p>
           </Block>
         </div>
@@ -36,12 +36,12 @@ class MiniEdit extends React.Component<IFormEditProps, any> {
     }
     return (
       <div>
-        <List form style={{margin: "0pt"}}>
+        <List form={true} style={{margin: "0pt"}}>
           <ul>
             {fields}
           </ul>
         </List>
-        <WebButton className="marginTopBottom" onClick={this.props.submitEdit} iconFa="save" fill text="Save" loading={this.props.loading} />
+        <WebButton className="marginTopBottom" onClick={this.props.submitEdit} iconFa="save" fill={true} text="Save" loading={this.props.loading} />
         {msg}
       </div>
     )

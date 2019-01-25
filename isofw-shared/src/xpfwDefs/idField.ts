@@ -1,4 +1,4 @@
-import ValidationRegistry, { IForm, Permission, IField, FieldType } from "@xpfw/validate"
+import ValidationRegistry, { FieldType, IField, IForm, Permission } from "@xpfw/validate"
 
 const IDField: IField = {
   type: FieldType.Text,

@@ -4,10 +4,10 @@ import * as local from "@feathersjs/authentication-local"
 import * as handler from "@feathersjs/errors/handler"
 import * as express from "@feathersjs/express"
 import * as rest from "@feathersjs/express/rest"
-import * as mongoServic from "feathers-mongodb"
 import feathers, { Application, Service } from "@feathersjs/feathers"
 import * as socketio from "@feathersjs/socketio"
 import * as memory from "feathers-memory"
+import * as mongoServic from "feathers-mongodb"
 import val from "isofw-shared/src/globals/val"
 import * as path from "path"
 import convertIds from "./services/hooks/convertIds";
@@ -69,7 +69,7 @@ const makeApp: (prerender?: Service<any>, db?: any) => Application<any> = (prere
      ]
     }
    })
-   app.configure(customServiceConfigurator(db))
+  app.configure(customServiceConfigurator(db))
   app.use(`/`, express.static(path.resolve(val.isDebug ? `../../isofw-web/webpackDist` : "./app")))
   if (prerender !== undefined && prerender !== null && typeof(prerender) === `function`) {
     app.use("*", prerender)

@@ -1,10 +1,7 @@
-import { SharedField } from "@xpfw/form-shared"
-import { RelationShipWrapper, ISharedRelationshipFieldProps, ISharedRelationshipField } from "@xpfw/ui-shared"
 import { getFieldsFromForm, IField } from "@xpfw/validate"
+import { Icon, ListItem } from "framework7-react"
 import { get, isNil } from "lodash"
 import * as React from "react"
-import WebRelationshipSearch from "./relationshipSearch";
-import { Icon, ListItem } from "framework7-react";
 
 class WebRelationshipItem extends React.Component<{
     item: any
@@ -21,7 +18,7 @@ class WebRelationshipItem extends React.Component<{
       name = get(obj, get(this.props, "field.validate.relationshipNamePath", "id"), "NOTFOUND")
       id = get(obj, get(this.props, "field.validate.relationshipIdPath", "id"), "NOTFOUND")
     }
-    let action = this.props.isAdd ? this.props.addId.bind(this, id) : this.props.removeId.bind(this, id)
+    const action = this.props.isAdd ? this.props.addId.bind(this, id) : this.props.removeId.bind(this, id)
     return (
       <ListItem
         title={name}

@@ -1,18 +1,18 @@
-import getRandomApp from "isofw-node/src/testUtil/getRandomApp"
 import { FormStore } from "@xpfw/form-shared"
 import { FeathersClient } from "@xpfw/ui-feathers"
-import { BackendClient, DbStore, ListStore, MailField, PwField, UserStore } from "isofw-shared/src/util/xpfwuishared"
 import { TestDefs, ValidationRegistry } from "@xpfw/validate"
+import getRandomApp from "isofw-node/src/testUtil/getRandomApp"
+import { directorPrefix, increaseShotNumber } from "isofw-shared/src/components/project/directorSheet"
+import val from "isofw-shared/src/globals/val"
+import createTestProjects from "isofw-shared/src/testUtil/data/project"
 import createTestUsers from "isofw-shared/src/testUtil/data/users"
 import logIntoUser from "isofw-shared/src/testUtil/login"
-import createTestProjects from "isofw-shared/src/testUtil/data/project"
-import { increaseShotNumber, directorPrefix } from "isofw-shared/src/components/project/directorSheet"
-import val from "isofw-shared/src/globals/val"
-import { ProjectForm, ProjectName, ProjectShot } from "isofw-shared/src/xpfwDefs/project"
-import { matchStoreState } from "resub-persist"
-import promiseTimeout from "isofw-shared/src/util/promiseTimeout";
 import renderSnapshot from "isofw-shared/src/testUtil/renderSnapshot"
+import promiseTimeout from "isofw-shared/src/util/promiseTimeout";
+import { BackendClient, DbStore, ListStore, MailField, PwField, UserStore } from "isofw-shared/src/util/xpfwuishared"
+import { ProjectForm, ProjectName, ProjectShot } from "isofw-shared/src/xpfwDefs/project"
 import * as React from "react"
+import { matchStoreState } from "resub-persist"
 BackendClient.client = FeathersClient
 
 const directorTest = (Component: any) => {

@@ -2,11 +2,11 @@ import "isofw-web/src/components/form"
 
 import { SharedField } from "@xpfw/form-shared"
 import { IFormAuthProps, MailField, PwField, SharedFormAuth } from "@xpfw/ui-shared"
+import { Block, BlockTitle, Icon, List } from "framework7-react"
 import WebButton from "isofw-web/src/components/button"
+import WebPageContainer from "isofw-web/src/components/pageContainer"
 import { get } from "lodash"
 import * as React from "react"
-import WebPageContainer from "isofw-web/src/components/pageContainer";
-import { List, BlockTitle, Block, Icon } from "framework7-react";
 
 class WebLogin extends React.Component<IFormAuthProps, any> {
   public render() {
@@ -20,7 +20,7 @@ class WebLogin extends React.Component<IFormAuthProps, any> {
     }
     if (this.props.loggedIn) {
       return (
-        <WebPageContainer name="login" title="logout" backLink>
+        <WebPageContainer name="login" title="logout" backLink={true}>
           <div className="miniContainer pullIntoHero">
             <div className="box">
               <WebButton
@@ -37,9 +37,9 @@ class WebLogin extends React.Component<IFormAuthProps, any> {
       )
     }
     return (
-      <WebPageContainer name="login" title="login" backLink>
+      <WebPageContainer name="login" title="login" backLink={true}>
       <BlockTitle>Enter log in details</BlockTitle>
-        <List form>
+        <List form={true}>
           <ul>
           <SharedField field={MailField} />
           <SharedField field={PwField} />
@@ -51,7 +51,7 @@ class WebLogin extends React.Component<IFormAuthProps, any> {
           loading={this.props.loading}
           text="login"
           iconFa="sign-in-alt"
-          fill
+          fill={true}
         />
         <WebButton
           className="marginTop is-info is-outlined is-fullwidth"

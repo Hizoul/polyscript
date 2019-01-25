@@ -1,7 +1,6 @@
 import * as i18next from "i18next"
 import * as sprintf from "i18next-sprintf-postprocessor"
 import val from "isofw-shared/src/globals/val"
-import { isNil } from "lodash"
 
 const i18nA: any = i18next
 const toInitWith = i18nA
@@ -19,6 +18,5 @@ const i18n = toInitWith.init({
     }
   }
 })
-console.log("I!(N IS ", i18n)
 
 export default i18n

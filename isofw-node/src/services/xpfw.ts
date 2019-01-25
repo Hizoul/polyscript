@@ -1,15 +1,13 @@
-import "isofw-shared/src/xpfwDefs"
 import * as authentication from "@feathersjs/authentication"
-import * as local from "@feathersjs/authentication-local"
 import { permission, validate } from "@xpfw/feathers"
 import * as memdb from "feathers-memory"
-import convertIds from "isofw-node/src/services/hooks/convertIds"
 import * as mongoService from "feathers-mongodb"
-import { get, isNil } from "lodash"
-import collections from "isofw-shared/src/xpfwDefs/collections"
+import convertIds from "isofw-node/src/services/hooks/convertIds"
 import { ValidationRegistry } from "isofw-shared/src/util/xpfwvalidate"
-const memd: any = memdb
+import "isofw-shared/src/xpfwDefs"
+import collections from "isofw-shared/src/xpfwDefs/collections"
 
+const memd: any = memdb
 
 const auth: any = authentication
 const mognoServic: any = mongoService

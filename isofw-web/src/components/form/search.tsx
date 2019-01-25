@@ -1,10 +1,10 @@
 import { IFieldProps } from "@xpfw/form-shared"
+import { setFromEvent } from "@xpfw/form-web"
 import { globals, IField } from "@xpfw/validate"
+import { Icon, ListInput, Searchbar } from "framework7-react"
 import { get } from "lodash"
 import * as momentA from "moment"
 import * as React from "react"
-import { setFromEvent } from "@xpfw/form-web"
-import { ListInput, Icon, Searchbar } from "framework7-react"
 
 const moment: any = momentA
 const getOriginalFormatFromType = (dateType: number) => {
@@ -72,7 +72,7 @@ class TextField extends React.Component<IFieldProps, any> {
       <Searchbar
         value={value}
         onChange={onChange}
-        customSearch
+        customSearch={true}
       />
     )
   }

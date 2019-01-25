@@ -1,10 +1,10 @@
-import { SharedFormList, IFormListProps, IFormShowProps } from "isofw-shared/src/util/xpfwuishared"
-import * as React from "react"
-import { get } from "lodash"
 import { SharedField } from "@xpfw/form-shared"
-import { ProjectName, ProjectForm } from "isofw-shared/src/xpfwDefs/project"
-import WebButton from "../button"
 import urls from "isofw-shared/src/globals/url"
+import { IFormListProps, IFormShowProps, SharedFormList } from "isofw-shared/src/util/xpfwuishared"
+import { ProjectForm, ProjectName } from "isofw-shared/src/xpfwDefs/project"
+import { get } from "lodash"
+import * as React from "react"
+import WebButton from "../button"
 
 const ItemProject: React.FunctionComponent<IFormShowProps> = (props) => {
   return (
@@ -35,7 +35,7 @@ const ProjectOverviewComponent: React.FunctionComponent<IFormListProps> = (props
           {items}
         </tbody>
       </table>
-      <WebButton text="Create" iconFa="plus" fill href={`${urls.create}/${ProjectForm.collection}`} style={{margin: "0.5rem"}} />
+      <WebButton text="Create" iconFa="plus" fill={true} href={`${urls.create}/${ProjectForm.collection}`} style={{margin: "0.5rem"}} />
     </div>
   )
 }

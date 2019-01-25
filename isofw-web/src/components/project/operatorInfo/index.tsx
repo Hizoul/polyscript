@@ -1,17 +1,17 @@
-import { ComponentRegistry } from "@xpfw/form-shared"
-import { FormStore, SharedField } from "@xpfw/form-shared"
 import { DbStore, IFormEditProps, IFormShowProps, SharedFormEdit } from "@xpfw/ui-shared"
 import { Block, Col, Icon, Link, Row } from "framework7-react"
+import SharedOperatorInfo, {
+  SharedOperatorInfoProps } from "isofw-shared/src/components/project/operatorInfo"
 import urls from "isofw-shared/src/globals/url"
 import val from "isofw-shared/src/globals/val"
-import { FieldType } from "isofw-shared/src/util/xpfwvalidate"
-import { ProjectForm, ProjectName, ProjectProgram, ProjectShot, ShotCamera, ShotDuration, ShotMovement, ShotMovementTowards, ShotName, ShotPreset, ShotRemarksDirector, ShotRemarksOperator, ShotType } from "isofw-shared/src/xpfwDefs/project"
+import { PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
+import { ProjectForm, ProjectName, ProjectProgram, ProjectShot, ShotCamera,
+  ShotDuration, ShotMovement, ShotMovementTowards, ShotName,
+  ShotPreset, ShotRemarksDirector, ShotRemarksOperator, ShotType } from "isofw-shared/src/xpfwDefs/project"
 import WebButton from "isofw-web/src/components/button"
 import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
 import * as React from "react"
-import SharedOperatorInfo, { SharedOperatorInfoProps } from "../../../../../isofw-shared/src/components/project/operatorInfo"
-import { PresetNumberField } from "../../../../../isofw-shared/src/xpfwDefs/preset"
 import LoadingPage from "../../loading"
 import "../style.sass"
 import CurrentOperatorDisplay from "./currentOperatorDisplay"

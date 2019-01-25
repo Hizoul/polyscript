@@ -1,7 +1,7 @@
+import { BlockTitle, Icon, List, ListItem } from "framework7-react"
+import urls from "isofw-shared/src/globals/url"
+import WebPageContainer from "isofw-web/src/components/pageContainer"
 import * as React from "react"
-import WebPageContainer from "isofw-web/src/components/pageContainer";
-import { List, ListItem, Icon, BlockTitle } from "framework7-react";
-import urls from "isofw-shared/src/globals/url";
 
 const Home: React.FunctionComponent<any> = (props) => {
   return (

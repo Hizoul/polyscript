@@ -1,19 +1,20 @@
-import getRandomApp from "isofw-node/src/testUtil/getRandomApp"
 import { FormStore, SharedField } from "@xpfw/form-shared"
 import { FeathersClient } from "@xpfw/ui-feathers"
-import { BackendClient, DbStore, ListStore, MailField, PwField, UserStore } from "isofw-shared/src/util/xpfwuishared"
-import { TestDefs, ValidationRegistry, prefixMaker } from "@xpfw/validate"
+import { prefixMaker, TestDefs, ValidationRegistry } from "@xpfw/validate"
+import getRandomApp from "isofw-node/src/testUtil/getRandomApp"
+import { setValueWithPreset } from "isofw-shared/src/components/project/cameraChooser"
+import { directorPrefix, increaseShotNumber } from "isofw-shared/src/components/project/directorSheet"
+import val from "isofw-shared/src/globals/val"
+import createTestCameras, { testCameras } from "isofw-shared/src/testUtil/data/camera"
+import createTestProjects from "isofw-shared/src/testUtil/data/project"
 import createTestUsers, { testUsers } from "isofw-shared/src/testUtil/data/users"
 import logIntoUser from "isofw-shared/src/testUtil/login"
-import createTestProjects from "isofw-shared/src/testUtil/data/project"
-import createTestCameras, { testCameras } from "isofw-shared/src/testUtil/data/camera"
-import { increaseShotNumber, directorPrefix } from "isofw-shared/src/components/project/directorSheet"
-import val from "isofw-shared/src/globals/val"
-import { ProjectForm, ProjectName, ProjectShot, ProjectOperatorCameraMapping, ProjectOperators, ProjectCameras, ProjectProgram } from "isofw-shared/src/xpfwDefs/project"
+import { BackendClient, DbStore, ListStore, MailField, PwField, UserStore } from "isofw-shared/src/util/xpfwuishared"
+import { PresetAssistantForm, PresetCameraField,
+  PresetForm, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset"
+import { ProjectProgram, ProjectShot } from "isofw-shared/src/xpfwDefs/project"
 import { matchStoreState } from "resub-persist"
-import { PresetForm, PresetCameraField, PresetAssistantForm, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset";
-import { setValueWithPreset } from "isofw-shared/src/components/project/cameraChooser";
-import promiseTimeout from "src/util/promiseTimeout";
+import promiseTimeout from "src/util/promiseTimeout"
 BackendClient.client = FeathersClient
 const untypedDbStore: any = DbStore
 
@@ -42,7 +43,7 @@ const presetCreationTest = (Component: any) => {
       untypedDbStore.currentlyEditing = projectResults[0]._id
       const thisReference = {
         props: {
-          prefix, field: {mapTo: `${ProjectProgram.mapTo}[5]${PresetCameraField.mapTo}`}, setValue: (a:any) => FormStore.setValue(`${prefixMaker(prefix)}${ProjectProgram.mapTo}[5]${PresetCameraField.mapTo}`, a)
+          prefix, field: {mapTo: `${ProjectProgram.mapTo}[5]${PresetCameraField.mapTo}`}, setValue: (a: any) => FormStore.setValue(`${prefixMaker(prefix)}${ProjectProgram.mapTo}[5]${PresetCameraField.mapTo}`, a)
         }
       }
       await setValueWithPreset(thisReference)(cameraResult[1]._id)

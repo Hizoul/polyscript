@@ -1,13 +1,12 @@
-import * as React from "react"
-import { SharedFormEdit, IFormEditProps, DbStore } from "@xpfw/ui-shared";
-import { ProjectForm, ProjectShot } from "isofw-shared/src/xpfwDefs/project";
-import { FormStore } from "@xpfw/form-shared";
-import sharedDirectorComponent, { DirectorComponentProps } from "isofw-shared/src/components/project/directorSheet";
-import LoadingPage from "../loading";
-import WebButton from "../button";
+import { FormStore } from "@xpfw/form-shared"
+import { DbStore, IFormEditProps, SharedFormEdit } from "@xpfw/ui-shared"
+import sharedDirectorComponent, { DirectorComponentProps } from "isofw-shared/src/components/project/directorSheet"
+import { ProjectForm, ProjectShot } from "isofw-shared/src/xpfwDefs/project"
 import { get } from "lodash"
+import * as React from "react"
+import WebButton from "../button"
+import LoadingPage from "../loading"
 import "./style.sass"
-
 
 const ShotEditor = (props: DirectorComponentProps) => {
   return (

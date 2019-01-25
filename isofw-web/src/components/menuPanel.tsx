@@ -1,11 +1,11 @@
-import { Panel, View, Page, Block, List,Link, ListItem, Icon } from "framework7-react";
-import * as React from "react"
+import { IFormAuthProps, SharedFormAuth } from "@xpfw/ui-shared"
+import { Block, Icon, Link, List, ListItem, Page, Panel, View } from "framework7-react"
 import urls from "isofw-shared/src/globals/url"
-import { SharedFormAuth, IFormAuthProps } from "@xpfw/ui-shared"
+import * as React from "react"
 
 const MenuPanel: React.FunctionComponent<IFormAuthProps> = (props) => {
   return (
-    <Panel left reveal>
+    <Panel left={true} reveal={true}>
         <Page>
           <Block>
             PolyScript

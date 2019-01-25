@@ -4,10 +4,10 @@ import {
   RelationShipWrapper, SharedFormList
 } from "@xpfw/ui-shared"
 import { getFieldsFromForm, IField } from "@xpfw/validate"
+import { BlockTitle, Card, List } from "framework7-react";
 import { get, isNil } from "lodash"
 import * as React from "react"
 import WebRelationshipItem from "./relationshipItem"
-import { List, Card, BlockTitle } from "framework7-react";
 
 class WebRelationshipSearchList extends React.Component<IFormListProps, any> {
   public render() {
@@ -22,7 +22,7 @@ class WebRelationshipSearchList extends React.Component<IFormListProps, any> {
         name = get(child, get(this.props, "field.validate.relationshipNamePath", "id"), "NOTFOUND")
         id = get(child, get(this.props, "field.validate.relationshipIdPath", "id"), "-1")
       }
-      nameObjs.push(<WebRelationshipItem field={field} item={child} addId={addId} removeId={removeId} isAdd />)
+      nameObjs.push(<WebRelationshipItem field={field} item={child} addId={addId} removeId={removeId} isAdd={true} />)
     }
     return (
       <List>

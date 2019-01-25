@@ -1,8 +1,8 @@
-import "isofw-web/src/components/form"
 import ValidationRegistry from "@xpfw/validate"
+import "isofw-web/src/components/form"
+import WebPageContainer from "isofw-web/src/components/pageContainer"
 import { get } from "lodash"
 import * as React from "react"
-import WebPageContainer from "isofw-web/src/components/pageContainer";
 
 const ListPage: React.FunctionComponent<any> = (props) => {
   const collection = get(props, "collection")

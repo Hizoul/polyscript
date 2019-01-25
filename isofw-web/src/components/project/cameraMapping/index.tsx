@@ -1,13 +1,13 @@
-import * as React from "react"
-import WebButton from "isofw-web/src/components/button";
-import "../style.sass"
-import { List, Popup, Card, CardHeader, CardContent, ListItem, Icon, BlockTitle, Row } from "framework7-react";
-import SharedCameraMapping, { SharedCameraMappingProps } from "isofw-shared/src/components/project/cameraMapping";
+import { BlockTitle, Card, CardContent, CardHeader, Icon, List, ListItem, Popup, Row } from "framework7-react"
+import SharedCameraMapping, { SharedCameraMappingProps } from "isofw-shared/src/components/project/cameraMapping"
+import val from "isofw-shared/src/globals/val"
+import { MailField } from "isofw-shared/src/util/xpfwuishared"
+import { OperatorRelation, ProjectCameras, ProjectName } from "isofw-shared/src/xpfwDefs/project"
+import WebButton from "isofw-web/src/components/button"
 import NameDisplayer from "isofw-web/src/components/displayName"
-import val from "isofw-shared/src/globals/val";
-import { MailField } from "isofw-shared/src/util/xpfwuishared";
-import { find, get } from "lodash";
-import { OperatorRelation, ProjectCameras, ProjectName } from "isofw-shared/src/xpfwDefs/project";
+import { find, get } from "lodash"
+import * as React from "react"
+import "../style.sass"
 
 const OperatorCamera: React.FunctionComponent<SharedCameraMappingProps & {operator: string}> = (props) => {
   return (
@@ -19,7 +19,7 @@ const OperatorCamera: React.FunctionComponent<SharedCameraMappingProps & {operat
         <ul>
           {props.cameras.map((camera) => {
             const operatorCameras = find(props.value, [OperatorRelation.mapTo, props.operator])
-            let selected = get(operatorCameras, ProjectCameras.mapTo, []).indexOf(camera) !== -1
+            const selected = get(operatorCameras, ProjectCameras.mapTo, []).indexOf(camera) !== -1
             return <ListItem key={camera} onClick={props.changeMapping(props.operator, camera)}>
               <div slot="title">
                 <NameDisplayer collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />
@@ -39,8 +39,8 @@ const webCameraMapping: React.FunctionComponent<SharedCameraMappingProps> = (pro
   return (
     <div>
       <WebButton
-        fill
-        big
+        fill={true}
+        big={true}
         onClick={props.togglePop}
         text="operator to camera mapping"
         iconFa="camera"
@@ -53,6 +53,6 @@ const webCameraMapping: React.FunctionComponent<SharedCameraMappingProps> = (pro
   )
 }
 
-const WrappedCameraMapping = SharedCameraMapping(webCameraMapping) 
+const WrappedCameraMapping = SharedCameraMapping(webCameraMapping)
 export default WrappedCameraMapping
 
