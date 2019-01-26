@@ -83,7 +83,6 @@ class TextField extends React.Component<IFieldProps, any> {
         onInputClear={() => {this.props.setValue("")}}
         clearButton={true}
       >
-        <Icon icon="demo-list-icon" slot="media"/>
       </ListInput>
     )
   }

@@ -30,8 +30,9 @@ const OperatorInfo: React.FunctionComponent<IFormEditProps & SharedOperatorInfoP
             <th>shot</th>
             <th>CA</th>
             <th>Preset</th>
+            <th>!</th>
+            <th>name</th>
             <th>Type</th>
-            <th>Object</th>
             <th>Movement</th>
             <th>Towards</th>
             <th>Duration</th>

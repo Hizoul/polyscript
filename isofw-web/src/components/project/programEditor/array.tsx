@@ -62,6 +62,7 @@ const ProgramObject: React.FunctionComponent<IArrayProps & {
         <ul>
           <SharedField field={convertedFields[7]}  prefix={props.prefix} />
           <SharedField field={convertedFields[0]}  prefix={props.prefix} />
+          <SharedField field={convertedFields[1]}  prefix={props.prefix} />
           <SharedField field={convertedFields[2]}  prefix={props.prefix} />
           <SharedField field={convertedFields[4]}  prefix={props.prefix} />
           <SharedField field={convertedFields[5]}  prefix={props.prefix} />
@@ -88,37 +89,8 @@ const ProgramArray: React.FunctionComponent<IArrayProps> = (props) => {
   return (
     <div className="flex1">
       {subFields}
-      <WebButton
-        className="is-fullwidth is-info"
-        onClick={props.increaseSize}
-        text="Add"
-        iconFa="plus-circle"
-      />
     </div>
   )
 }
 
 export default SharedArray(ProgramArray)
-
-// {map(props.subFields, (field: any, index: any) => {
-//   return (
-//   <div className="flex flex1 center">
-//     <SharedField field={field} prefix={props.prefix} />
-    // <WebButton
-    //   className="is-warning  iconMargin"
-    //   onClick={props.removeItem(index)}
-    //   text="delete"
-    //   icon={<FaEraser className="is-size-6"/>}
-    //   rightIcon={true}
-    // />
-//   </div>
-// )})}
-// <div className="flex center">
-  // <WebButton
-  //   className="is-fullwidth is-info"
-  //   onClick={props.increaseSize}
-  //   text="Add"
-  //   icon={<FaPlusCircle />}
-  //   rightIcon={true}
-  // />
-// </div>

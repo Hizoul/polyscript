@@ -28,7 +28,7 @@ class SelectField extends React.Component<IFieldProps, any> {
         type="select"
         label={i18n.t(get(this.props, "field.mapTo"))}
         className={this.props.className}
-        value={this.props.value}
+        value={this.props.value ? this.props.value : "n"}
         onChange={this.onChange}
       >
         {options}
