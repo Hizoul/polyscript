@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Preset Update works as planned:  after setting 2 falls  1`] = `
+<div
+  className="Card"
+>
+  {}
+  <div
+    className="CardHeader"
+  >
+    {}
+    <span>
+      Preset #
+    </span>
+  </div>
+  <div
+    className="CardFooter"
+  >
+    {}
+    <div
+      className="Link"
+    >
+      {
+  "text": "Update"
+}
+    </div>
+    <div
+      className="Link"
+    >
+      {
+  "text": "ready"
+}
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Preset Update works as planned:  after setting to true  1`] = `
+<div
+  className="Card"
+>
+  {}
+  <div
+    className="CardHeader"
+  >
+    {}
+    <span>
+      Preset #
+    </span>
+  </div>
+  <div
+    className="CardFooter"
+  >
+    {}
+    <div
+      className="Link"
+    >
+      {
+  "text": "Update"
+}
+    </div>
+    <div
+      className="Link"
+    >
+      {
+  "text": "ready"
+}
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Preset Update works as planned: Before anything 1`] = `
+<div
+  className="Card"
+>
+  {}
+  <div
+    className="CardHeader"
+  >
+    {}
+    <span>
+      Preset #
+    </span>
+  </div>
+  <div
+    className="CardFooter"
+  >
+    {}
+    <div
+      className="Link"
+    >
+      {
+  "text": "Update"
+}
+    </div>
+    <div
+      className="Link"
+    >
+      {
+  "text": "ready"
+}
+    </div>
+  </div>
+</div>
+`;

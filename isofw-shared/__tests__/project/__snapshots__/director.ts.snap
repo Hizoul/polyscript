@@ -134,16 +134,6 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
                     "theme": "presetNumberDisplay"
                   },
                   {
-                    "type": 4,
-                    "mapTo": "isReady",
-                    "validate": {
-                      "hide": {
-                        "create": false
-                      },
-                      "defaultValue": false
-                    }
-                  },
-                  {
                     "type": 6,
                     "mapTo": "importance",
                     "selectOptions": [
@@ -496,16 +486,6 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
                     "theme": "presetNumberDisplay"
                   },
                   {
-                    "type": 4,
-                    "mapTo": "isReady",
-                    "validate": {
-                      "hide": {
-                        "create": false
-                      },
-                      "defaultValue": false
-                    }
-                  },
-                  {
                     "type": 6,
                     "mapTo": "importance",
                     "selectOptions": [
@@ -803,16 +783,6 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
                     "type": 13,
                     "mapTo": "preset",
                     "theme": "presetNumberDisplay"
-                  },
-                  {
-                    "type": 4,
-                    "mapTo": "isReady",
-                    "validate": {
-                      "hide": {
-                        "create": false
-                      },
-                      "defaultValue": false
-                    }
                   },
                   {
                     "type": 6,

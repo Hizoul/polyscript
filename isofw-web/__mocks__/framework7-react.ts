@@ -7,6 +7,7 @@ const Card = makeMockElement("Card")
 const Popup = makeMockElement("Popup")
 const CardHeader = makeMockElement("CardHeader")
 const CardContent = makeMockElement("CardContent")
+const CardFooter = makeMockElement("CardFooter")
 const Icon = makeMockElement("Icon")
 const Button = makeMockElement("Button")
 const BlockTitle = makeMockElement("BlockTitle")
@@ -14,5 +15,6 @@ const Row = makeMockElement("Row")
 const Link = makeMockElement("Link")
 
 export {
-  List, Popover, ListItem, Link, Popup, Card, CardHeader, CardContent, Icon, BlockTitle, Row, Button
+  List, Popover, ListItem, Link, Popup, Card, CardHeader, CardContent, Icon, BlockTitle, Row, Button,
+  CardFooter
 }

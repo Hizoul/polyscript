@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Preset Update works as planned:  after setting 2 falls  1`] = `
+<div
+  className="presetupdater"
+>
+  {
+  "id": "c1bbbbbbbbbbbbbbbb098765",
+  "item": {
+    "_id": "c1bbbbbbbbbbbbbbbb098765",
+    "number": 0,
+    "project": "-",
+    "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "isReady": false
+  },
+  "isReady": false
+}
+</div>
+`;
+
+exports[`Preset Update works as planned:  after setting to true  1`] = `
+<div
+  className="presetupdater"
+>
+  {
+  "id": "c1bbbbbbbbbbbbbbbb098765",
+  "item": {
+    "_id": "c1bbbbbbbbbbbbbbbb098765",
+    "number": 0,
+    "project": "-",
+    "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "isReady": true
+  },
+  "isReady": true
+}
+</div>
+`;
+
+exports[`Preset Update works as planned: Before anything 1`] = `
+<div
+  className="presetupdater"
+>
+  {
+  "id": "c1bbbbbbbbbbbbbbbb098765",
+  "isReady": false
+}
+</div>
+`;

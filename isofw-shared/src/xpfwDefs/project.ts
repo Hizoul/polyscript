@@ -90,15 +90,6 @@ const ShotImportance: any = {
   ]
 }
 
-const ShotIsReadyField: IField = {
-  type: FieldType.Boolean,
-  mapTo: "isReady",
-  validate: {
-    hide: {create: false},
-    defaultValue: false
-  }
-}
-
 const ProjectProgram: IField = {
   type: FieldType.Array,
   mapTo: "program",
@@ -107,7 +98,7 @@ const ProjectProgram: IField = {
     validate: {objectDef: [
       ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration,
       ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset,
-      ShotIsReadyField, ShotImportance
+      ShotImportance
     ]},
     hide: {update: true, create: true}
   }
@@ -188,7 +179,7 @@ const ProjectForm: IForm = {
 
 ValidationRegistry.registerForm(ProjectForm)
 export {
-  ProjectForm, ProjectName, ProjectShot, ProjectProgram, ShotCamera, ShotPreset, ShotIsReadyField, ShotImportance,
+  ProjectForm, ProjectName, ProjectShot, ProjectProgram, ShotCamera, ShotPreset, ShotImportance,
   ProjectOperators, ProjectOperatorCameraMapping, OperatorRelation, ProjectCameras,
   ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator
 }

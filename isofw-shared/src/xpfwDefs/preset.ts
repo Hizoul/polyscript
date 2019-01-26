@@ -20,11 +20,20 @@ const PresetCameraField: IField = {
   mapTo: "camera"
 }
 
+const PresetIsReadyField: IField = {
+  type: FieldType.Boolean,
+  mapTo: "isReady",
+  validate: {
+    hide: {create: false},
+    defaultValue: false
+  }
+}
+
 const PresetForm: IForm = {
   model: "presetModel",
   collection: val.service.preset,
   sections: [{fields: [
-    IDField, PresetNumberField, PresetProjectField, PresetCameraField
+    IDField, PresetNumberField, PresetProjectField, PresetCameraField, PresetIsReadyField
   ]}],
   permissions: {
     required: {
@@ -52,5 +61,6 @@ PresetAssistantForm.collection = val.service.presetAssistant
 ValidationRegistry.registerForm(PresetAssistantForm)
 
 export {
-  PresetForm, PresetNumberField, PresetProjectField, PresetCameraField, EMPTY_PRESET, PresetAssistantForm
+  PresetForm, PresetNumberField, PresetProjectField, PresetCameraField, EMPTY_PRESET, PresetAssistantForm,
+  PresetIsReadyField
 }
