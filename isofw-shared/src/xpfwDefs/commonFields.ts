@@ -8,11 +8,6 @@ const IDField: IField = {
   }
 }
 
-const IsActiveField: IField = {
-  type: FieldType.Boolean,
-  mapTo: "isActive"
-}
-
 export {
-  IDField, IsActiveField
+  IDField
 }

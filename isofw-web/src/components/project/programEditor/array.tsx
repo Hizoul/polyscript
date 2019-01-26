@@ -1,8 +1,8 @@
 import { IArrayProps, IFieldProps, SharedArray, SharedField } from "@xpfw/form-shared"
 import { List } from "framework7-react"
 import {
-  ShotCamera, ShotDuration, ShotMovement, ShotMovementTowards,
-  ShotName, ShotPreset, ShotRemarksDirector, ShotRemarksOperator, ShotType
+  ShotCamera, ShotDuration, ShotImportance, ShotMovement,
+  ShotMovementTowards, ShotName, ShotPreset, ShotRemarksDirector, ShotRemarksOperator, ShotType
 } from "isofw-shared/src/xpfwDefs/project"
 import WebButton from "isofw-web/src/components/button"
 import { cloneDeep, get, map } from "lodash"
@@ -10,17 +10,28 @@ import * as React from "react"
 import "../style.sass"
 
 const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards,
-  ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset]
+  ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset, ShotImportance]
 
-const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size: number, remove: any}> = (props) => {
+const ProgramObject: React.FunctionComponent<IArrayProps & {
+  index: number, size: number, remove: any, value: any
+}> = (props) => {
   const convertedFields = []
   for (const field of fieldsToConvert) {
     const newField = cloneDeep(field)
     newField.mapTo = `${props.field.mapTo}[${props.index}].${field.mapTo}`
     convertedFields.push(newField)
   }
+  let classes = "currentBox withMargin"
+  let attentionItem: any
+  if (props.value && props.value[ShotImportance.mapTo] === "r") {
+    classes += " raised"
+    attentionItem = <span className="attentionText">!</span>
+  } else if (props.value && props.value[ShotImportance.mapTo] === "m") {
+    classes += " raised2"
+    attentionItem = <span className="attentionText">!!</span>
+  }
   return (
-    <div className="currentBox withMargin">
+    <div className={classes}>
       <div className="flex1" style={{marginBottom: "-2rem"}}>
         <WebButton
           className="boxTopLeft"
@@ -42,7 +53,11 @@ const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size:
           iconFa="plus"
         />
       </div>
-      <span className="shotNumber">{props.index}</span>
+      <span className="shotNumber">
+        {attentionItem}
+        {props.index}
+        {attentionItem}
+      </span>
       <List form={true} className="noMargin">
         <ul>
           <SharedField field={convertedFields[7]}  prefix={props.prefix} />
@@ -52,6 +67,7 @@ const ProgramObject: React.FunctionComponent<IArrayProps & {index: number, size:
           <SharedField field={convertedFields[5]}  prefix={props.prefix} />
           <SharedField field={convertedFields[6]}  prefix={props.prefix} />
           <SharedField field={convertedFields[8]}  prefix={props.prefix} />
+          <SharedField field={convertedFields[9]}  prefix={props.prefix} />
         </ul>
       </List>
     </div>
@@ -65,8 +81,10 @@ const ProgramArray: React.FunctionComponent<IArrayProps> = (props) => {
   }
   const subFields = []
   for (let i = 0; i < arraySize; i++) {
-    subFields.push(<ProgramObject {...props} key={i} index={i} size={arraySize} remove={props.removeItem(i)} />)
+    subFields.push(
+    <ProgramObject {...props} key={i} index={i} size={arraySize} remove={props.removeItem(i)} value={props.value ? props.value[i] : null} />)
   }
+  console.log(" Array item is ",  props)
   return (
     <div className="flex1">
       {subFields}

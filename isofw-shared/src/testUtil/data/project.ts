@@ -3,7 +3,7 @@ import val from "isofw-shared/src/globals/val"
 import {
   OperatorRelation, ProjectCameras, ProjectForm, ProjectName,
   ProjectOperatorCameraMapping, ProjectOperators, ProjectProgram, ProjectShot,
-  ShotCamera, ShotDuration, ShotMovement, ShotMovementTowards, ShotName, ShotRemarksDirector, ShotRemarksOperator
+  ShotCamera, ShotDuration, ShotImportance, ShotMovement, ShotMovementTowards, ShotName, ShotRemarksDirector, ShotRemarksOperator
 } from "isofw-shared/src/xpfwDefs/project"
 import { testCameras } from "./camera"
 import { testUsers } from "./users"
@@ -45,7 +45,7 @@ const createTestProjects = async (app: any, andMappings: boolean = false, andPro
       {
         [ShotName.mapTo]: "S#2", [ShotMovement.mapTo]: "m#2",  [ShotMovementTowards.mapTo]: "mt#2",
         [ShotDuration.mapTo]: 6, [ShotRemarksDirector.mapTo]: "rd#2", [ShotRemarksOperator.mapTo]: "ro#2",
-        [ShotCamera.mapTo]: testCameras[2]._id
+        [ShotCamera.mapTo]: testCameras[2]._id, [ShotImportance.mapTo]: "r"
       },
       {
         [ShotName.mapTo]: "S#3", [ShotMovement.mapTo]: "m#3",  [ShotMovementTowards.mapTo]: "mt#3",
@@ -55,7 +55,7 @@ const createTestProjects = async (app: any, andMappings: boolean = false, andPro
       {
         [ShotName.mapTo]: "S#4", [ShotMovement.mapTo]: "m#4",  [ShotMovementTowards.mapTo]: "mt#4",
         [ShotDuration.mapTo]: 3, [ShotRemarksDirector.mapTo]: "rd#4", [ShotRemarksOperator.mapTo]: "ro#4",
-        [ShotCamera.mapTo]: testCameras[0]._id
+        [ShotCamera.mapTo]: testCameras[0]._id, [ShotImportance.mapTo]: "m"
       },
       {
         [ShotName.mapTo]: "S#5", [ShotMovement.mapTo]: "m#5",  [ShotMovementTowards.mapTo]: "mt#5",

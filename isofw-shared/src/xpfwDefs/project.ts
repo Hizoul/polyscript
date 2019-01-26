@@ -1,7 +1,7 @@
 import { MailField } from "@xpfw/ui-shared"
 import ValidationRegistry, { FieldType, IField, IForm, Permission } from "@xpfw/validate"
 import val from "isofw-shared/src/globals/val"
-import { IDField, IsActiveField } from "./commonFields"
+import { IDField } from "./commonFields"
 
 const convertTextToMongoRegex: any = (value: any) => {
   if (value == null || value.length === 0) {
@@ -80,6 +80,25 @@ const ShotPreset: IField = {
   theme: "presetNumberDisplay"
 }
 
+const ShotImportance: any = {
+  type: FieldType.Select,
+  mapTo: "importance",
+  selectOptions: [
+    {label: "Normal", value: "n"},
+    {label: "Raised", value: "r"},
+    {label: "Maximum", value: "m"}
+  ]
+}
+
+const ShotIsReadyField: IField = {
+  type: FieldType.Boolean,
+  mapTo: "isReady",
+  validate: {
+    hide: {create: false},
+    defaultValue: false
+  }
+}
+
 const ProjectProgram: IField = {
   type: FieldType.Array,
   mapTo: "program",
@@ -87,7 +106,8 @@ const ProjectProgram: IField = {
     type: FieldType.Object,
     validate: {objectDef: [
       ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration,
-      ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset
+      ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset,
+      ShotIsReadyField, ShotImportance
     ]},
     hide: {update: true, create: true}
   }
@@ -135,11 +155,21 @@ const ProjectOperatorCameraMapping: IField = {
   }
 }
 
+const IsActiveField: IField = {
+  type: FieldType.Boolean,
+  mapTo: "isActive",
+  validate: {
+    hide: {create: false, update: false},
+    defaultValue: true
+  }
+}
+
 const ProjectForm: IForm = {
   model: "projectModel",
   collection: val.service.project,
   sections: [{fields: [
-    IDField, ProjectName, ProjectShot, ProjectCameras, ProjectOperators, ProjectOperatorCameraMapping, ProjectProgram
+    IDField, ProjectName, ProjectShot, ProjectCameras, ProjectOperators,
+    ProjectOperatorCameraMapping, ProjectProgram, IsActiveField
   ]}],
   permissions: {
     required: {
@@ -158,7 +188,7 @@ const ProjectForm: IForm = {
 
 ValidationRegistry.registerForm(ProjectForm)
 export {
-  ProjectForm, ProjectName, ProjectShot, ProjectProgram, ShotCamera, ShotPreset,
+  ProjectForm, ProjectName, ProjectShot, ProjectProgram, ShotCamera, ShotPreset, ShotIsReadyField, ShotImportance,
   ProjectOperators, ProjectOperatorCameraMapping, OperatorRelation, ProjectCameras,
   ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator
 }

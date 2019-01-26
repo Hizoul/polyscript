@@ -7,6 +7,7 @@ import ObjectField from "isofw-web/src/components/form/object"
 import MultiRelationship from "isofw-web/src/components/form/relationshipMulti"
 import SingleRelationship from "isofw-web/src/components/form/relationshipSingle"
 import SearchField from "isofw-web/src/components/form/search"
+import SelectField from "isofw-web/src/components/form/select"
 import TextField from "isofw-web/src/components/form/text"
 import CameraMapInField from "isofw-web/src/components/project/cameraMapping"
 
@@ -18,6 +19,7 @@ ComponentRegistry.registerComponent(FieldType.Text, SearchField, "search")
 ComponentRegistry.registerComponent(FieldType.Password, TextField)
 ComponentRegistry.registerComponent(FieldType.Number, TextField)
 ComponentRegistry.registerComponent(FieldType.Date, TextField)
+ComponentRegistry.registerComponent(FieldType.Select, SelectField)
 ComponentRegistry.registerComponent(FieldType.Array, BulmaArrayField)
 ComponentRegistry.registerComponent(FieldType.Object, ObjectField)
 ComponentRegistry.registerComponent(FieldType.RelationshipMulti, MultiRelationship)

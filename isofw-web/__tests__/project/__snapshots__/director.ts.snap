@@ -70,6 +70,7 @@ Object {
       "b19999999999999999999999": Object {
         "result": Object {
           "_id": "b19999999999999999999999",
+          "isActive": true,
           "name": "pn1",
           "shot": 43,
         },
@@ -88,6 +89,7 @@ Object {
     "shotEdit.b19999999999999999999999projectModel": Object {
       "result": Object {
         "_id": "b19999999999999999999999",
+        "isActive": true,
         "name": "pn1",
         "shot": 43,
       },
