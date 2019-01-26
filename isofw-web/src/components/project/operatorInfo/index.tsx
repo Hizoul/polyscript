@@ -3,13 +3,7 @@ import { Block, Col, Icon, Link, Row } from "framework7-react"
 import SharedOperatorInfo, {
   SharedOperatorInfoProps } from "isofw-shared/src/components/project/operatorInfo"
 import urls from "isofw-shared/src/globals/url"
-import val from "isofw-shared/src/globals/val"
-import { PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
-import { ProjectForm, ProjectName, ProjectProgram, ProjectShot, ShotCamera,
-  ShotDuration, ShotMovement, ShotMovementTowards, ShotName,
-  ShotPreset, ShotRemarksDirector, ShotRemarksOperator, ShotType } from "isofw-shared/src/xpfwDefs/project"
 import WebButton from "isofw-web/src/components/button"
-import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
 import * as React from "react"
 import LoadingPage from "../../loading"
@@ -24,6 +18,7 @@ const OperatorInfo: React.FunctionComponent<IFormEditProps & SharedOperatorInfoP
     <div>
       {props.presetByCamera.map((item: any) => {
             i++
+            if (props.currentCameras.length > 0 && props.currentCameras.indexOf(item.camera) === -1) {return null}
             return <CameraPresets loading={false} item={item} key={item.camera} />
           })}
     </div>
