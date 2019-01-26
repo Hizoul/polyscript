@@ -13,7 +13,13 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
         "fields": [
           {
             "type": 2,
-            "mapTo": "_id"
+            "mapTo": "_id",
+            "validate": {
+              "hide": {
+                "create": false,
+                "update": false
+              }
+            }
           },
           {
             "type": 2,
@@ -169,7 +175,13 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
   "fields": [
     {
       "type": 2,
-      "mapTo": "_id"
+      "mapTo": "_id",
+      "validate": {
+        "hide": {
+          "create": false,
+          "update": false
+        }
+      }
     },
     {
       "type": 2,
@@ -311,7 +323,13 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
         "fields": [
           {
             "type": 2,
-            "mapTo": "_id"
+            "mapTo": "_id",
+            "validate": {
+              "hide": {
+                "create": false,
+                "update": false
+              }
+            }
           },
           {
             "type": 2,
@@ -474,7 +492,13 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
   "fields": [
     {
       "type": 2,
-      "mapTo": "_id"
+      "mapTo": "_id",
+      "validate": {
+        "hide": {
+          "create": false,
+          "update": false
+        }
+      }
     },
     {
       "type": 2,
@@ -556,7 +580,13 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
         "fields": [
           {
             "type": 2,
-            "mapTo": "_id"
+            "mapTo": "_id",
+            "validate": {
+              "hide": {
+                "create": false,
+                "update": false
+              }
+            }
           },
           {
             "type": 2,
@@ -712,7 +742,13 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
   "fields": [
     {
       "type": 2,
-      "mapTo": "_id"
+      "mapTo": "_id",
+      "validate": {
+        "hide": {
+          "create": false,
+          "update": false
+        }
+      }
     },
     {
       "type": 2,

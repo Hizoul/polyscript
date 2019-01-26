@@ -92,20 +92,29 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
   },
   "currentOperator": "u2",
   "isPresetView": false,
-  "presetByCamera": {
-    "c1bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c3bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c2bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ]
-  },
+  "presetByCamera": [
+    {
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    }
+  ],
   "currentCameras": [
     "c2bbbbbbbbbbbbbbbbbbbbbb"
   ],
@@ -224,20 +233,29 @@ exports[` operator info test  works as planned: Before anything 1`] = `
     ]
   },
   "isPresetView": false,
-  "presetByCamera": {
-    "c1bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c3bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c2bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ]
-  },
+  "presetByCamera": [
+    {
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    }
+  ],
   "currentCameras": [],
   "filteredList": [
     {
@@ -391,20 +409,29 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
   },
   "currentOperator": "blabliblu",
   "isPresetView": false,
-  "presetByCamera": {
-    "c1bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c3bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c2bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ]
-  },
+  "presetByCamera": [
+    {
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    }
+  ],
   "currentCameras": [],
   "filteredList": [
     {
@@ -558,20 +585,29 @@ exports[` operator info test  works as planned: Preset view active No user selec
   },
   "currentOperator": "",
   "isPresetView": true,
-  "presetByCamera": {
-    "c1bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c3bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c2bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ]
-  },
+  "presetByCamera": [
+    {
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    }
+  ],
   "currentCameras": [],
   "filteredList": [
     {
@@ -725,20 +761,29 @@ exports[` operator info test  works as planned: Preset view active first user se
   },
   "currentOperator": "u1",
   "isPresetView": true,
-  "presetByCamera": {
-    "c1bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c3bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c2bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ]
-  },
+  "presetByCamera": [
+    {
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    }
+  ],
   "currentCameras": [
     "c1bbbbbbbbbbbbbbbbbbbbbb",
     "c3bbbbbbbbbbbbbbbbbbbbbb"
@@ -877,20 +922,29 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
   },
   "currentOperator": "u1",
   "isPresetView": false,
-  "presetByCamera": {
-    "c1bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c3bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c2bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ]
-  },
+  "presetByCamera": [
+    {
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    }
+  ],
   "currentCameras": [
     "c1bbbbbbbbbbbbbbbbbbbbbb",
     "c3bbbbbbbbbbbbbbbbbbbbbb"
@@ -1029,20 +1083,29 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
   },
   "currentOperator": "",
   "isPresetView": false,
-  "presetByCamera": {
-    "c1bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c3bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c2bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ]
-  },
+  "presetByCamera": [
+    {
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    }
+  ],
   "currentCameras": [],
   "filteredList": [
     {
@@ -1196,20 +1259,29 @@ exports[` operator info test  works as planned: first user selected 1`] = `
   },
   "currentOperator": "u1",
   "isPresetView": false,
-  "presetByCamera": {
-    "c1bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c3bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ],
-    "c2bbbbbbbbbbbbbbbbbbbbbb": [
-      null,
-      null
-    ]
-  },
+  "presetByCamera": [
+    {
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    },
+    {
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "presets": [
+        null,
+        null
+      ]
+    }
+  ],
   "currentCameras": [
     "c1bbbbbbbbbbbbbbbbbbbbbb",
     "c3bbbbbbbbbbbbbbbbbbbbbb"

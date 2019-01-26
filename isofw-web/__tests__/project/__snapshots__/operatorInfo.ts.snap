@@ -274,6 +274,283 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
 </div>
 `;
 
+exports[` operator info test  works as planned: Preset view active No user selected 1`] = `
+<div>
+  <div
+    className="Link"
+  >
+    {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+    <div
+      className="subtitle"
+    >
+      none selected
+    </div>
+    <span>
+       
+    </span>
+  </div>
+  <div
+    className="Popover"
+  >
+    {
+  "className": "operatorChooser"
+}
+    <div
+      className="List"
+    >
+      {}
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": ".operatorChooser"
+}
+        <div
+          slot="title"
+        >
+          No one
+        </div>
+        <div
+          slot="footer"
+        >
+          All cameras
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": true
+}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="footer"
+        >
+          <span>
+            Cameras: 
+            <span />
+            <span />
+          </span>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": true
+}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="footer"
+        >
+          <span>
+            Cameras: 
+            <span />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[` operator info test  works as planned: Preset view active first user selected 1`] = `
+<div>
+  <div
+    className="Link"
+  >
+    {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+    <div
+      className="subtitle"
+    >
+      <span />
+    </div>
+    <span>
+      CA 
+      <span />
+      <span />
+    </span>
+  </div>
+  <div
+    className="Popover"
+  >
+    {
+  "className": "operatorChooser"
+}
+    <div
+      className="List"
+    >
+      {}
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": ".operatorChooser"
+}
+        <div
+          slot="title"
+        >
+          No one
+        </div>
+        <div
+          slot="footer"
+        >
+          All cameras
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": true
+}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="footer"
+        >
+          <span>
+            Cameras: 
+            <span />
+            <span />
+          </span>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": true
+}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="footer"
+        >
+          <span>
+            Cameras: 
+            <span />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[` operator info test  works as planned: Preset view disabled 1`] = `
+<div>
+  <div
+    className="Link"
+  >
+    {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+    <div
+      className="subtitle"
+    >
+      <span />
+    </div>
+    <span>
+      CA 
+      <span />
+      <span />
+    </span>
+  </div>
+  <div
+    className="Popover"
+  >
+    {
+  "className": "operatorChooser"
+}
+    <div
+      className="List"
+    >
+      {}
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": ".operatorChooser"
+}
+        <div
+          slot="title"
+        >
+          No one
+        </div>
+        <div
+          slot="footer"
+        >
+          All cameras
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": true
+}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="footer"
+        >
+          <span>
+            Cameras: 
+            <span />
+            <span />
+          </span>
+        </div>
+      </div>
+      <div
+        className="ListItem"
+      >
+        {
+  "popoverClose": true
+}
+        <div
+          slot="title"
+        >
+          <span />
+        </div>
+        <div
+          slot="footer"
+        >
+          <span>
+            Cameras: 
+            <span />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[` operator info test  works as planned: Removed user selection 1`] = `
 <div>
   <div
