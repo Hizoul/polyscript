@@ -17,7 +17,7 @@ const TablePresetItem: React.FunctionComponent<IFormShowProps & {index: number}>
     importance = "!!"
   }
   return (
-    <tr>
+    <tr id={`presetPositioner${props.index}`}>
       <td>{props.index}</td>
       <td>
         <NameDisplayer collection={val.service.camera} id={get(props.item, ShotCamera.mapTo)} getNameFrom={ProjectName.mapTo} placeholder="" />
