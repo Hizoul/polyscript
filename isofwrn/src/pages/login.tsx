@@ -4,7 +4,7 @@ import NativePageContained from "isofwrn/src/components/pageContainer";
 
 const LogInPage: React.FunctionComponent<any> = (props) => {
   return (
-    <NativePageContained>
+    <NativePageContained {...props} title="log in">
       <Text>login page</Text>
     </NativePageContained>
   )

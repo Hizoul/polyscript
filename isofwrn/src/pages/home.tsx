@@ -4,7 +4,7 @@ import NativePageContained from "isofwrn/src/components/pageContainer";
 
 const HomePage: React.FunctionComponent<any> = (props) => {
   return (
-    <NativePageContained>
+    <NativePageContained {...props} title="PolyScript" hideBack>
       <Text>home page</Text>
     </NativePageContained>
   )
