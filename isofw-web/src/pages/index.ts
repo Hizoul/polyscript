@@ -10,10 +10,10 @@ const routeResolver: any = (fetcher: any) => {
 
 const routes: any = [
   {
-    path: "/",
+    path: urls.home,
     component: Home
   }, {
-    path: "/login",
+    path: urls.login,
     async: routeResolver(() => import("./login"))
   }, {
     path: `${urls.projectOverview}`,

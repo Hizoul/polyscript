@@ -8,7 +8,9 @@ const urls = {
   cameraOverview: "/cameraOverview",
   operatorInfo: "/operatorInfo",
   create: "/create",
-  edit: "/edit"
+  edit: "/edit",
+  login: "/login",
+  home: "/"
 }
 
 export default urls
