@@ -6,7 +6,11 @@ import {
   Text,
   View, Image, FlatList
 } from 'react-native'
-
+import { createDrawerNavigator, createAppContainer } from "react-navigation"
+import MenuPanel from "./components/menu"
+import HomePage from './pages/home';
+import LogInPage from './pages/login';
+import urls from '../../isofw-shared/src/globals/url';
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -28,9 +32,9 @@ const updatePosition = () => {
     ref.scrollToOffset({offset: (index * 15) - 80})
   }
 }
-setInterval(updatePosition, 3000)
-export default class App extends React.Component<any, any> {
-  protected state = {index: 0}
+// setInterval(updatePosition, 3000)
+class App extends React.Component<any, any> {
+  public state = {index: 0}
   constructor(props: any) {
     super(props)
     setter = (newState: any) => {
@@ -80,4 +84,13 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
-});
+})
+
+const navigated = createDrawerNavigator({
+  [urls.home]: {screen: HomePage},
+  [urls.login]: {screen: LogInPage}
+}, {
+  contentComponent: MenuPanel
+})
+
+export default createAppContainer(navigated)
