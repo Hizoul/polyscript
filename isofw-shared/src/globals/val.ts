@@ -1,6 +1,6 @@
 const val = {
   isDebug: true,
-  isNative: false,
+  isNative: true,
   version: "0.1.0",
   i18nNameSpace: "langSpace",
   channel: {

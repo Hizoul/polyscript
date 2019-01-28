@@ -2,50 +2,26 @@ import { IFormAuthProps, SharedFormAuth } from "isofw-shared/src/util/xpfwuishar
 import urls from "isofw-shared/src/globals/url"
 import * as React from "react"
 import { View } from "react-native";
-import ListItemLink from "./listItemLink";
+import ListItemLink from "./listItemLink"
+import { menuLoggedIn, menuLoggedOut } from "isofw-shared/src/globals/menu"
+import { Text } from "react-native-elements";
 
 const MenuPanel: React.FunctionComponent<IFormAuthProps> = (props) => {
+  const entries = props.loggedIn ? menuLoggedIn : menuLoggedOut
   return (
     <View>
+      <View style={{justifyContent: "center", alignItems: "center"}}>
+        <Text h2>PolyScript</Text>
+      </View>
+      {entries.map((item) =>
         <ListItemLink
           {...props}
-          link="/"
-          title="Home"
-          leftIcon={{name: "home"}}
-        >
-        
-        </ListItemLink>
-        {props.loggedIn ? [
-          <ListItemLink
-            link={urls.projectOverview}
-            title="Projects"
-            key="Projects"
-          >
-          
-          </ListItemLink>,
-          <ListItemLink
-            link={urls.cameraOverview}
-            title="Cameras"
-            key="Cameras"
-          >
-          
-          </ListItemLink>,
-          <ListItemLink
-            link="/login"
-            title="Logout"
-            key="Logout"
-          >
-          
-          </ListItemLink>
-        ] : (
-          <ListItemLink
-            link="/login"
-            title="Login"
-            {...props}
-          >
-          
-          </ListItemLink>
-        )}
+          link={item.link}
+          title={item.title}
+          key={item.link}
+          leftIcon={item.icon}
+        />
+      )}
     </View>
   )
 }
