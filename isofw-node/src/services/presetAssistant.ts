@@ -4,10 +4,12 @@ import isServerParams from "isofw-shared/src/globals/isServerParams"
 import val from "isofw-shared/src/globals/val"
 import { EMPTY_PRESET, PresetCameraField, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset"
 import { get } from "lodash"
+import freeUnusedPresets from "./hooks/freeUnusedPresets"
 import requireAuthentication from "./hooks/requireAuthentication"
 
 const presetAssistantConfigurator: any = (app: feathers.Application) => {
   app.service(val.service.camera).hooks({after: {create: presetCreator}})
+  app.service(val.service.project).hooks({after: {patch: freeUnusedPresets}})
   const presentAssistanceService = {
     create: async (data: any) => {
       const cameraId = get(data, PresetCameraField.mapTo, " not findable ")
