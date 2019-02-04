@@ -4,7 +4,8 @@ import isServerParams from "isofw-shared/src/globals/isServerParams"
 import val from "isofw-shared/src/globals/val"
 import { EMPTY_PRESET, PresetCameraField, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset"
 import { get } from "lodash"
-import freeUnusedPresets from "./hooks/freeUnusedPresets"
+import { IsActiveField, ProjectProgram, ShotPreset } from "../../../isofw-shared/src/xpfwDefs/project"
+import freeUnusedPresets, { freePresetsOfProject } from "./hooks/freeUnusedPresets"
 import requireAuthentication from "./hooks/requireAuthentication"
 
 const presetAssistantConfigurator: any = (app: feathers.Application) => {
@@ -30,10 +31,22 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
       }
       return ""
     },
-    get: async () => {
-      return app.service(val.service.preset).find({...isServerParams, query: {
-        $limit: 10000
-      }})
+    get: async (id: string) => {
+      const project = await app.service(val.service.project).get(id, isServerParams)
+      const newProgram = project[ProjectProgram.mapTo]
+      const isActive = project[IsActiveField.mapTo]
+      if (isActive) {
+        await freePresetsOfProject(app, id, true)
+        if (Array.isArray(newProgram)) {
+          newProgram.forEach((item: any) => {
+            delete item[ShotPreset.mapTo]
+          })
+        }
+      }
+      return app.service(val.service.project).patch(id, {
+        [IsActiveField.mapTo]: !isActive,
+        [ProjectProgram.mapTo]: newProgram
+      }, isServerParams)
     }
   }
   app.use(val.service.presetAssistant, presentAssistanceService)

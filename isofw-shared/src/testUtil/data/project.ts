@@ -1,17 +1,17 @@
 import isServerParams from "isofw-shared/src/globals/isServerParams"
 import val from "isofw-shared/src/globals/val"
 import {
-  OperatorRelation, ProjectCameras, ProjectForm, ProjectName,
-  ProjectOperatorCameraMapping, ProjectOperators, ProjectProgram, ProjectShot,
-  ShotCamera, ShotDuration, ShotImportance, ShotMovement, ShotMovementTowards, ShotName, ShotRemarksDirector, ShotRemarksOperator
+  IsActiveField, OperatorRelation, ProjectCameras, ProjectForm,
+  ProjectName, ProjectOperatorCameraMapping, ProjectOperators, ProjectProgram,
+  ProjectShot, ShotCamera, ShotDuration, ShotImportance, ShotMovement, ShotMovementTowards, ShotName, ShotRemarksDirector, ShotRemarksOperator
 } from "isofw-shared/src/xpfwDefs/project"
 import { testCameras } from "./camera"
 import { testUsers } from "./users"
 
 const testProjects: any[] = [
-  {_id: "b19999999999999999999999", [ProjectName.mapTo]: "pn1", [ProjectShot.mapTo]: 1},
-  {_id: "b29999999999999999999999", [ProjectName.mapTo]: "pn2", [ProjectShot.mapTo]: 8},
-  {_id: "b39999999999999999999999", [ProjectName.mapTo]: "pn3", [ProjectShot.mapTo]: 6}
+  {_id: "b19999999999999999999999", [ProjectName.mapTo]: "pn1", [ProjectShot.mapTo]: 1, [IsActiveField.mapTo]: true},
+  {_id: "b29999999999999999999999", [ProjectName.mapTo]: "pn2", [ProjectShot.mapTo]: 8, [IsActiveField.mapTo]: true},
+  {_id: "b39999999999999999999999", [ProjectName.mapTo]: "pn3", [ProjectShot.mapTo]: 6, [IsActiveField.mapTo]: true}
 ]
 8
 const createTestProjects = async (app: any, andMappings: boolean = false, andProgram: boolean = false) => {

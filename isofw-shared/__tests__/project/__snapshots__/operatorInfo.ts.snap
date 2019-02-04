@@ -90,7 +90,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
         "operatorRemarks": "ro#6",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
       }
-    ]
+    ],
+    "isActive": true
   },
   "currentOperator": "u2",
   "isPresetView": false,
@@ -234,7 +235,8 @@ exports[` operator info test  works as planned: Before anything 1`] = `
         "operatorRemarks": "ro#6",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
       }
-    ]
+    ],
+    "isActive": true
   },
   "isPresetView": false,
   "presetByCamera": [
@@ -413,7 +415,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
         "operatorRemarks": "ro#6",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
       }
-    ]
+    ],
+    "isActive": true
   },
   "currentOperator": "blabliblu",
   "isPresetView": false,
@@ -593,7 +596,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
         "operatorRemarks": "ro#6",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
       }
-    ]
+    ],
+    "isActive": true
   },
   "currentOperator": "",
   "isPresetView": true,
@@ -773,7 +777,8 @@ exports[` operator info test  works as planned: Preset view active first user se
         "operatorRemarks": "ro#6",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
       }
-    ]
+    ],
+    "isActive": true
   },
   "currentOperator": "u1",
   "isPresetView": true,
@@ -938,7 +943,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
         "operatorRemarks": "ro#6",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
       }
-    ]
+    ],
+    "isActive": true
   },
   "currentOperator": "u1",
   "isPresetView": false,
@@ -1103,7 +1109,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
         "operatorRemarks": "ro#6",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
       }
-    ]
+    ],
+    "isActive": true
   },
   "currentOperator": "",
   "isPresetView": false,
@@ -1283,7 +1290,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
         "operatorRemarks": "ro#6",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
       }
-    ]
+    ],
+    "isActive": true
   },
   "currentOperator": "u1",
   "isPresetView": false,

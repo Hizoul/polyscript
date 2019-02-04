@@ -106,6 +106,7 @@ Object {
       "b19999999999999999999999": Object {
         "result": Object {
           "_id": "b19999999999999999999999",
+          "isActive": true,
           "name": "pn1",
           "shot": 42,
         },

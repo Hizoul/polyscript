@@ -180,6 +180,6 @@ const ProjectForm: IForm = {
 ValidationRegistry.registerForm(ProjectForm)
 export {
   ProjectForm, ProjectName, ProjectShot, ProjectProgram, ShotCamera, ShotPreset, ShotImportance,
-  ProjectOperators, ProjectOperatorCameraMapping, OperatorRelation, ProjectCameras,
+  ProjectOperators, ProjectOperatorCameraMapping, OperatorRelation, ProjectCameras, IsActiveField,
   ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator
 }

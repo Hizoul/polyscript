@@ -5,13 +5,15 @@ import { EMPTY_PRESET, PresetProjectField } from "isofw-shared/src/xpfwDefs/pres
 import { ProjectProgram, ShotPreset } from "isofw-shared/src/xpfwDefs/project"
 import { get } from "lodash"
 
-const freePresetsOfProject = async (app: Application, projectId: any) => {
-  const project = await app.service(val.service.project).get(projectId, isServerParams)
+const freePresetsOfProject = async (app: Application, projectId: any, deleteAll?: boolean) => {
   const presetIdsInUse = []
-  for (const programItem of get(project, ProjectProgram.mapTo, [])) {
-    const id = programItem[ShotPreset.mapTo]
-    if (id) {
-      presetIdsInUse.push(id)
+  if (!deleteAll) {
+    const project = await app.service(val.service.project).get(projectId, isServerParams)
+    for (const programItem of get(project, ProjectProgram.mapTo, [])) {
+      const id = programItem[ShotPreset.mapTo]
+      if (id) {
+        presetIdsInUse.push(id)
+      }
     }
   }
   const presets = await app.service(val.service.preset).find({
@@ -35,3 +37,6 @@ const freeUnusedPresets: Hook = async (hook) => {
 }
 
 export default freeUnusedPresets
+export {
+  freePresetsOfProject
+}

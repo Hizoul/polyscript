@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`free unused presets after program Update works as planned: Before anything 1`] = `
+<div
+  className="Button"
+>
+  {
+  "text": "Re-activate",
+  "iconFa": "step-backward",
+  "loading": false
+}
+</div>
+`;
+
+exports[`free unused presets after program Update works as planned: after All having been freed up again 1`] = `
+<div
+  className="Button"
+>
+  {
+  "text": "Deactivate",
+  "iconFa": "step-backward",
+  "loading": false
+}
+</div>
+`;
+
+exports[`free unused presets after program Update works as planned: after reservation of four presets 1`] = `
+<div
+  className="Button"
+>
+  {
+  "text": "Deactivate",
+  "iconFa": "step-backward",
+  "loading": false
+}
+</div>
+`;

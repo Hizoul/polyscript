@@ -29,6 +29,7 @@ Array [
       "c2bbbbbbbbbbbbbbbbbbbbbb",
       "c3bbbbbbbbbbbbbbbbbbbbbb",
     ],
+    "isActive": true,
     "name": "pn1",
     "operatorCameraMapping": Array [
       Object {
@@ -57,6 +58,7 @@ Array [
       "c1bbbbbbbbbbbbbbbbbbbbbb",
       "c2bbbbbbbbbbbbbbbbbbbbbb",
     ],
+    "isActive": true,
     "name": "pn2",
     "operatorCameraMapping": Array [
       Object {
@@ -84,6 +86,7 @@ Array [
       "c1bbbbbbbbbbbbbbbbbbbbbb",
       "c3bbbbbbbbbbbbbbbbbbbbbb",
     ],
+    "isActive": true,
     "name": "pn3",
     "operatorCameraMapping": Array [
       Object {

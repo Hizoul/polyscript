@@ -2,6 +2,7 @@ import { SharedField } from "@xpfw/form-shared"
 import urls from "isofw-shared/src/globals/url"
 import { IFormListProps, IFormShowProps, SharedFormList } from "isofw-shared/src/util/xpfwuishared"
 import { ProjectForm, ProjectName } from "isofw-shared/src/xpfwDefs/project"
+import ProjectActiveButton from "isofw-web/src/components/project/activityButton"
 import { get } from "lodash"
 import * as React from "react"
 import WebButton from "../button"
@@ -15,6 +16,7 @@ const ItemProject: React.FunctionComponent<IFormShowProps> = (props) => {
         <WebButton text="program" href={`${urls.programPage}/${get(props.item, "_id")}`} />
         <WebButton text="operator" href={`${urls.operatorInfo}/${get(props.item, "_id")}`} />
         <WebButton text="edit" href={`${urls.edit}/${ProjectForm.collection}/${get(props.item, "_id")}`} />
+        <ProjectActiveButton id={get(props.item, "_id")} collection={ProjectForm.collection} loading={false} />
       </td>
     </tr>
   )
