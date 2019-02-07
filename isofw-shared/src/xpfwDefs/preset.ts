@@ -19,6 +19,10 @@ const PresetCameraField: IField = {
   type: FieldType.Text,
   mapTo: "camera"
 }
+const PresetActionTypeField: IField = {
+  type: FieldType.Number,
+  mapTo: "type"
+}
 
 const PresetIsReadyField: IField = {
   type: FieldType.Boolean,
@@ -33,7 +37,7 @@ const PresetForm: IForm = {
   model: "presetModel",
   collection: val.service.preset,
   sections: [{fields: [
-    IDField, PresetNumberField, PresetProjectField, PresetCameraField, PresetIsReadyField
+    IDField, PresetNumberField, PresetProjectField, PresetCameraField, PresetIsReadyField, PresetActionTypeField
   ]}],
   permissions: {
     required: {
@@ -57,10 +61,11 @@ const PresetForm: IForm = {
 ValidationRegistry.registerForm(PresetForm)
 
 const PresetAssistantForm: IForm = cloneDeep(PresetForm)
+// PresetAssistantForm.sections[0].fields.push(PresetActionTypeField)
 PresetAssistantForm.collection = val.service.presetAssistant
 ValidationRegistry.registerForm(PresetAssistantForm)
 
 export {
   PresetForm, PresetNumberField, PresetProjectField, PresetCameraField, EMPTY_PRESET, PresetAssistantForm,
-  PresetIsReadyField
+  PresetIsReadyField, PresetActionTypeField
 }

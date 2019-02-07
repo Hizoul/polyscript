@@ -1,8 +1,10 @@
 import * as feathers from "@feathersjs/feathers"
 import presetCreator from "isofw-node/src/services/hooks/presetCreator"
+import cameraApi, { cameraCommand } from "isofw-shared/src/cameraApi"
 import isServerParams from "isofw-shared/src/globals/isServerParams"
 import val from "isofw-shared/src/globals/val"
-import { EMPTY_PRESET, PresetCameraField, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset"
+import { CameraIp } from "isofw-shared/src/xpfwDefs/camera"
+import { EMPTY_PRESET, PresetActionTypeField, PresetCameraField, PresetNumberField, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset"
 import { get } from "lodash"
 import { IsActiveField, ProjectProgram, ShotPreset } from "../../../isofw-shared/src/xpfwDefs/project"
 import freeUnusedPresets, { freePresetsOfProject } from "./hooks/freeUnusedPresets"
@@ -47,6 +49,31 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
         [IsActiveField.mapTo]: !isActive,
         [ProjectProgram.mapTo]: newProgram
       }, isServerParams)
+    },
+    patch: async (id: string, data: any) => {
+      const camera = await app.service(val.service.camera).get(id, isServerParams)
+      if (!camera) {
+        return Promise.reject(" unknown Camera ")
+      }
+      console.log("CAMERA WAS FOUND", data)
+      const cameraIp = camera[CameraIp.mapTo]
+      switch (data[PresetActionTypeField.mapTo]) {
+        case cameraCommand.goToPreset: {
+          return cameraApi.goToPreset(cameraIp, data[PresetNumberField.mapTo])
+        }
+        case cameraCommand.updatePreset: {
+          return cameraApi.updatePreset(cameraIp, data[PresetNumberField.mapTo])
+        }
+        case cameraCommand.startZoom: {
+          return cameraApi.startZoom(cameraIp)
+        }
+        case cameraCommand.stopZoom: {
+          return cameraApi.stopZoom(cameraIp)
+        }
+        default: {
+          return Promise.resolve(" unknown command ")
+        }
+      }
     }
   }
   app.use(val.service.presetAssistant, presentAssistanceService)

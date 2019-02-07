@@ -1,0 +1,310 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Preset Update works as planned:  after Going to preset 1`] = `
+Object {
+  "createState": Object {},
+  "getState": Object {
+    "presetAssistant": Object {
+      "c1bbbbbbbbbbbbbbbbbbbbbb": Object {
+        "result": "s9",
+      },
+    },
+    "users": Object {
+      "u1": Object {
+        "result": Object {
+          "_id": "u1",
+          "email": "u1",
+        },
+      },
+    },
+  },
+  "updateState": Object {
+    "c1bbbbbbbbbbbbbbbbbbbbbbpresetModel": Object {
+      "result": "s9",
+    },
+  },
+}
+`;
+
+exports[`Preset Update works as planned:  after Saving preset  1`] = `
+Object {
+  "createState": Object {},
+  "getState": Object {
+    "presetAssistant": Object {
+      "c1bbbbbbbbbbbbbbbbbbbbbb": Object {
+        "result": "s6",
+      },
+    },
+    "users": Object {
+      "u1": Object {
+        "result": Object {
+          "_id": "u1",
+          "email": "u1",
+        },
+      },
+    },
+  },
+  "updateState": Object {
+    "c1bbbbbbbbbbbbbbbbbbbbbbpresetModel": Object {
+      "result": "s6",
+    },
+  },
+}
+`;
+
+exports[`Preset Update works as planned:  after Stop zooming  1`] = `
+Object {
+  "createState": Object {},
+  "getState": Object {
+    "presetAssistant": Object {
+      "c1bbbbbbbbbbbbbbbbbbbbbb": Object {
+        "result": "zS",
+      },
+    },
+    "users": Object {
+      "u1": Object {
+        "result": Object {
+          "_id": "u1",
+          "email": "u1",
+        },
+      },
+    },
+  },
+  "updateState": Object {
+    "c1bbbbbbbbbbbbbbbbbbbbbbpresetModel": Object {
+      "result": "zS",
+    },
+  },
+}
+`;
+
+exports[`Preset Update works as planned:  after zooming Out  1`] = `
+Object {
+  "createState": Object {},
+  "getState": Object {
+    "presetAssistant": Object {
+      "c1bbbbbbbbbbbbbbbbbbbbbb": Object {
+        "result": "zS",
+      },
+    },
+    "users": Object {
+      "u1": Object {
+        "result": Object {
+          "_id": "u1",
+          "email": "u1",
+        },
+      },
+    },
+  },
+  "updateState": Object {
+    "c1bbbbbbbbbbbbbbbbbbbbbbpresetModel": Object {
+      "result": "zS",
+    },
+  },
+}
+`;
+
+exports[`Preset Update works as planned:  after zooming in  1`] = `
+Object {
+  "createState": Object {},
+  "getState": Object {
+    "presetAssistant": Object {
+      "c1bbbbbbbbbbbbbbbbbbbbbb": Object {
+        "result": "zS",
+      },
+    },
+    "users": Object {
+      "u1": Object {
+        "result": Object {
+          "_id": "u1",
+          "email": "u1",
+        },
+      },
+    },
+  },
+  "updateState": Object {
+    "c1bbbbbbbbbbbbbbbbbbbbbbpresetModel": Object {
+      "result": "zS",
+    },
+  },
+}
+`;
+
+exports[`Preset Update works as planned: Before anything 1`] = `
+Object {
+  "createState": Object {},
+  "getState": Object {
+    "users": Object {
+      "u1": Object {
+        "result": Object {
+          "_id": "u1",
+          "email": "u1",
+        },
+      },
+    },
+  },
+  "updateState": Object {},
+}
+`;
+
+exports[`Preset Update works as planned: requests after Starting zoom in 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "Z",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: requests after Stop zoom 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "Z",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "Z",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "Z",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: requests after Updating preset 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "Z",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "Z",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "Z",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "M6",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: requests after going to preset 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "Z",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "Z",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "Z",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "M6",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "R9",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: requests after starting zoom out 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "Z",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "Z",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: requests before anything 1`] = `Array []`;
