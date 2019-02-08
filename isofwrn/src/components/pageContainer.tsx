@@ -38,7 +38,7 @@ const MenuAndBack: React.FunctionComponent<any> = (props) => {
 const NativePageContained: React.FunctionComponent<IPageContainer> = (props) => {
   navigatorRefHolder.ref = get(props, "navigation")
   return (
-    <View>
+    <View style={{flex: 1}}>
       <Header
         leftComponent={<MenuAndBack {...props} />}
         centerComponent={{text: props.title, style: {marginTop: -5, fontSize: 34, color: "white"}}}
