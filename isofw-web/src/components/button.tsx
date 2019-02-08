@@ -15,7 +15,6 @@ class WebButton extends React.Component<IButton, any> {
       buttonProps.onClick = undefined
       buttonProps.outline = true
     }
-
     if (this.props.loading) {
       buttonProps.text = "Loading..."
     }
