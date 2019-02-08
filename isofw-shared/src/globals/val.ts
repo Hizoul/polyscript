@@ -2,7 +2,7 @@ const val = {
   isDebug: true,
   isNative: true,
   version: "0.1.0",
-  i18nNameSpace: "langSpace",
+  i18nNameSpace: "main",
   channel: {
     realtime: "realtime"
   },
