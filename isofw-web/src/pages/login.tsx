@@ -20,24 +20,6 @@ const WebLogin: React.FunctionComponent<IFormAuthProps> = (props) => {
       </div>
     )
   }
-  if (props.loggedIn) {
-    return (
-      <WebPageContainer name="login" title="logout" backLink={true}>
-        <div className="miniContainer pullIntoHero">
-          <div className="box">
-            <WebButton
-              className="is-primary is-fullwidth"
-              onClick={props.submitLogout}
-              loading={props.loading}
-              text="logout"
-              iconFa="sign-out-alt"
-            />
-            {msg}
-          </div>
-        </div>
-      </WebPageContainer>
-    )
-  }
   return (
     <WebPageContainer name="login" title="login" backLink={true}>
     <BlockTitle>
@@ -60,7 +42,7 @@ const WebLogin: React.FunctionComponent<IFormAuthProps> = (props) => {
       className="is-primary is-fullwidth"
       onClick={props.loggedIn ? props.submitLogout : props.submitLogin}
       loading={props.loading}
-      text="login"
+      text={props.loggedIn ? "logout" : "login"}
       iconFa="sign-in-alt"
       fill={true}
     />
