@@ -1,3 +1,4 @@
+import navigatorRefHolder from "isofwrn/src/components/globalNavigator"
 import * as React from "react"
 import { ListItem, ListItemProps } from "react-native-elements"
 
@@ -14,7 +15,7 @@ const ListItemLink: React.FunctionComponent<IListItemLinkProps> = (props) => {
       title={props.title}
       rightIcon={props.rightIcon ? props.rightIcon : {name: "chevron-right"}}
       onPress={() => {
-        props.navigation.navigate(props.link)
+        navigatorRefHolder.ref.navigate(props.link)
       }}
     />
   )
