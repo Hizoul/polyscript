@@ -1,4 +1,5 @@
 import urls from "isofw-shared/src/globals/url"
+import "isofwrn/src/backendConnection"
 import "isofwrn/src/components/form"
 import { createAppContainer, createDrawerNavigator } from "react-navigation"
 import MenuPanel from "./components/menu"
