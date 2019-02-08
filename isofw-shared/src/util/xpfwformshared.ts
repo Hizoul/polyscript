@@ -1,6 +1,7 @@
 import {
   ComponentRegistry, FormErrorStore, FormStore,
-  IFieldProps, SharedField
+  IArrayProps, IFieldProps, LoadingStore, SharedArray,
+  SharedField
 } from "@xpfw/form-shared"
 import { options } from "./xpfwvalidate"
 
@@ -8,5 +9,6 @@ FormStore.setValue(options.relationshipAutoSelect, true)
 
 export {
   ComponentRegistry, FormStore, FormErrorStore,
-  SharedField, IFieldProps
+  SharedField, IFieldProps, SharedArray, IArrayProps,
+  LoadingStore
 }
