@@ -4,6 +4,7 @@ import * as React from "react"
 
 export interface IButton extends F7Button.Props {
   text: string
+  className?: string
   loading?: boolean
   disabled?: boolean
 }
