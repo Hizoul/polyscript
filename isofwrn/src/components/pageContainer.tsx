@@ -29,7 +29,7 @@ const NativePageContained: React.FunctionComponent<IPageContainer> = (props) => 
     <View>
       <Header
         leftComponent={<MenuAndBack {...props} />}
-        centerComponent={{text: props.title, style: {fontSize: 36, color: "white"}}}
+        centerComponent={{text: props.title, style: {marginTop: -5, fontSize: 34, color: "white"}}}
       />
       {props.children}
     </View>
