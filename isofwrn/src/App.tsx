@@ -3,12 +3,14 @@ import "isofwrn/src/backendConnection"
 import "isofwrn/src/components/form"
 import { createAppContainer, createDrawerNavigator } from "react-navigation"
 import MenuPanel from "./components/menu"
+import NativeCameraOverview from "./pages/camera/overview"
 import HomePage from "./pages/home"
 import LogInPage from "./pages/login"
 
 const navigated = createDrawerNavigator({
   [urls.home]: {screen: HomePage},
-  [urls.login]: {screen: LogInPage}
+  [urls.login]: {screen: LogInPage},
+  [urls.cameraOverview]: {screen: NativeCameraOverview}
 }, {
   contentComponent: MenuPanel
 })
