@@ -6,11 +6,13 @@ import MenuPanel from "./components/menu"
 import NativeCameraOverview from "./pages/camera/overview"
 import HomePage from "./pages/home"
 import LogInPage from "./pages/login"
+import NativeProjectOverview from "./pages/project/overview"
 
 const navigated = createDrawerNavigator({
   [urls.home]: {screen: HomePage},
   [urls.login]: {screen: LogInPage},
-  [urls.cameraOverview]: {screen: NativeCameraOverview}
+  [urls.cameraOverview]: {screen: NativeCameraOverview},
+  [urls.projectOverview]: {screen: NativeProjectOverview}
 }, {
   contentComponent: MenuPanel
 })

@@ -26,7 +26,7 @@ const NativeTable: React.FunctionComponent<INativeTable> = (props) => {
             </View>
           }
           if (isFunction(Item)) {
-            return <View style={[viewWrapStyle, {flex: 1}]}><Item isHeader={true} /></View>
+            return <View style={[viewWrapStyle, {flex: 1}]} />
           }
           return <View key={Item} />
         })}
