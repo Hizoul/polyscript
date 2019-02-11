@@ -7,7 +7,7 @@ import { Text } from "react-native"
 
 const NativeCameraOverview: React.FunctionComponent<any> = (props) => {
   return (
-    <NativePageContained {...props} title="PolyScript" hideBack={true}>
+    <NativePageContained {...props} title="PolyScript">
       <NativeCameraOverviewComponent form={CameraForm} />
     </NativePageContained>
   )
