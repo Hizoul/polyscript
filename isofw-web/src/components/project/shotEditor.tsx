@@ -32,22 +32,30 @@ const ShotEditor = (props: DirectorComponentProps) => {
           </span>
         </div>
       </div>
-      {props.loading ? <LoadingPage /> : null}
       <div className="flex center">
         <WebButton
           text={"previous shot"}
+          big={true}
           iconFa="step-backward"
           onClick={props.decrease}
+          loading={props.loading}
+          disabled={props.loading}
         />
         <WebButton
           text={"next shot"}
-          className="flex1 center forwardButton"
+          big={true}
           iconFa="step-forward"
+          fill={true}
           onClick={props.increase}
+          loading={props.loading}
+          disabled={props.loading}
         />
         <WebButton
+          big={true}
           iconFa="sync"
           text={"placeholder"}
+          loading={props.loading}
+          disabled={props.loading}
         />
       </div>
     </div>
