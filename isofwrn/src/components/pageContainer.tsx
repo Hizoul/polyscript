@@ -17,8 +17,8 @@ const MenuAndBack: React.FunctionComponent<any> = (props) => {
       {!props.hideBack ? (
         <Icon
           name="chevron-left"
-          color="white"
-          size={36}
+          color="rgb(0, 122, 255)"
+          size={38}
           onPress={() => {
             props.navigation.goBack()
           }}
@@ -26,7 +26,7 @@ const MenuAndBack: React.FunctionComponent<any> = (props) => {
       ) : null}
       <Icon
         name="menu"
-        color="white"
+        color="rgb(0, 122, 255)"
         size={36}
         onPress={() => {
           props.navigation.openDrawer()
@@ -40,8 +40,9 @@ const NativePageContained: React.FunctionComponent<IPageContainer> = (props) => 
   return (
     <View style={{flex: 1}}>
       <Header
+        backgroundColor="rgb(247, 247, 248)"
         leftComponent={<MenuAndBack {...props} />}
-        centerComponent={{text: props.title, style: {marginTop: -5, fontSize: 34, color: "white"}}}
+        centerComponent={{text: props.title, style: {marginTop: -5, fontSize: 34, color: "black"}}}
       />
       {props.children}
     </View>
