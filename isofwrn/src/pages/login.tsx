@@ -26,6 +26,8 @@ const LogInPage: React.FunctionComponent<IFormAuthProps> = (props) => {
       <NativeButton
         title={props.loggedIn ? "logout" : "login"}
         onPress={props.loggedIn ? props.submitLogout : props.submitLogin}
+        loading={props.loading}
+        disabled={props.loading}
       />
     </NativePageContained>
   )
