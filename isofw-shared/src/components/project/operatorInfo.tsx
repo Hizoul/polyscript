@@ -12,12 +12,15 @@ import { ComponentBase } from "resub"
 const currentOperatorKey = `current${ProjectOperators.mapTo}`
 
 const whichViewIsActiveKey = `operatorInView`
-
-const changeValue = (thisRef: any, keyToUse: string) => {
+const isOperatorChooserVisibleKey = `operatorChooserVisible`
+const changeValue = (thisRef: any, keyToUse: string, toggleChooser?: boolean) => {
   return (operator: any) => {
     return () => {
       const prefix = prefixMaker(get(thisRef.props, "prefix", ""))
       FormStore.setValue(prefix + keyToUse,  operator)
+      if (toggleChooser) {
+        thisRef.hideOperatorChooser()
+      }
     }
   }
 }
@@ -36,6 +39,9 @@ export interface SharedOperatorInfoProps extends WrapperOperatorAndProps {
   presetByCamera: any
   filteredList: any
   isPresetView: boolean
+  isOperatorChooserVisible: boolean
+  showOperatorChooser: any
+  hideOperatorChooser: any
 }
 const SharedOperatorInfo: (Container: React.ComponentType<SharedOperatorInfoProps>) =>
 React.ComponentType<WrapperOperatorAndProps> = (Container: React.ComponentType<SharedOperatorInfoProps>) => {
@@ -43,11 +49,15 @@ React.ComponentType<WrapperOperatorAndProps> = (Container: React.ComponentType<S
     private changeOperator: any
     private useScriptView: any
     private usePresetView: any
+    private showOperatorChooser: any
+    private hideOperatorChooser: any
     constructor(props: any) {
       super(props)
-      this.changeOperator = changeValue(this, currentOperatorKey)
+      this.changeOperator = changeValue(this, currentOperatorKey, true)
       this.useScriptView = changeValue(this, whichViewIsActiveKey)(0)
       this.usePresetView = changeValue(this, whichViewIsActiveKey)(1)
+      this.showOperatorChooser = changeValue(this, isOperatorChooserVisibleKey)(true)
+      this.hideOperatorChooser = changeValue(this, isOperatorChooserVisibleKey)(false)
     }
     public render() {
       const item = get(this.props, "original.result", this.props.item)
@@ -86,6 +96,9 @@ React.ComponentType<WrapperOperatorAndProps> = (Container: React.ComponentType<S
           currentCameras={currentCameras}
           filteredList={filteredList}
           currentPreset={currentPreset}
+          isOperatorChooserVisible={this.state.isOperatorChooserVisible}
+          hideOperatorChooser={this.hideOperatorChooser}
+          showOperatorChooser={this.showOperatorChooser}
         />
       )
     }
@@ -93,7 +106,8 @@ React.ComponentType<WrapperOperatorAndProps> = (Container: React.ComponentType<S
       const prefix = prefixMaker(get(props, "prefix", ""))
       return {
         currentOperator: FormStore.getValue(`${prefix}${currentOperatorKey}`),
-        isPresetView: FormStore.getValue(`${prefix}${whichViewIsActiveKey}`) === 1
+        isPresetView: FormStore.getValue(`${prefix}${whichViewIsActiveKey}`) === 1,
+        isOperatorChooserVisible: FormStore.getValue(`${prefix}${isOperatorChooserVisibleKey}`) === true
       }
     }
   }

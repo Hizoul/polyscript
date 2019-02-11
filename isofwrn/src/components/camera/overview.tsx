@@ -29,7 +29,8 @@ const NativeCameraOverview: React.FunctionComponent<IFormListProps> = (props) =>
           icon={{name: "plus", type: "font-awesome"}}
           iconRight={true}
           style={{marginTop: 10}}
-          href={`${urls.create}/${CameraForm.collection}`}
+          href={`${urls.create}`}
+          hrefParams={{collection: CameraForm.collection}}
         />
       </Card>
     </View>

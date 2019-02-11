@@ -8,16 +8,17 @@ export type RowContent = string | React.FunctionComponent<{item: any, isHeader?:
 export interface INativeTable {
   data: any[]
   rows: RowContent[]
+  refGetter?: any
   keyExtractor: (item: any) => string
 }
 
 const textAlignmentStyle: any = {flex: 1, alignItems: "center", justifyContent: "center"}
 
-const viewWrapStyle = {paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1, borderColor: "black"}
+const viewWrapStyle = {paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1, borderColor: "rgb(142, 142, 147);"}
 
 const NativeTable: React.FunctionComponent<INativeTable> = (props) => {
   return (
-    <View style={{flexDirection: "column"}}>
+    <View style={{flexDirection: "column", maxHeight: 220}}>
       <View style={{flexDirection: "row"}}>
         {props.rows.map((Item: any) => {
           if (isString(Item)) {
@@ -26,7 +27,7 @@ const NativeTable: React.FunctionComponent<INativeTable> = (props) => {
             </View>
           }
           if (isFunction(Item)) {
-            return <View style={[viewWrapStyle, {flex: 1}]} />
+            return <View style={[viewWrapStyle, {flex: 1}]}><Item key={Item} isHeader={true} /></View>
           }
           return <View key={Item} />
         })}
@@ -35,6 +36,7 @@ const NativeTable: React.FunctionComponent<INativeTable> = (props) => {
         data={props.data}
         keyExtractor={props.keyExtractor}
         contentContainerStyle={{flexDirection: "column"}}
+        ref={props.refGetter}
         renderItem={({item, index}) => {
           return <View style={{flexDirection: "row"}}>
             {props.rows.map((WantedContent: any) => {
@@ -42,7 +44,7 @@ const NativeTable: React.FunctionComponent<INativeTable> = (props) => {
                 return <View key={WantedContent} style={[viewWrapStyle, textAlignmentStyle]}><Text>{get(item, WantedContent)}</Text></View>
               }
               if (isFunction(WantedContent)) {
-                return <View style={[viewWrapStyle, {flex: 1}]}><WantedContent {...props} key={WantedContent} item={item} /></View>
+                return <View style={[viewWrapStyle, {flex: 1}]}><WantedContent {...props} key={WantedContent} item={item} index={index} /></View>
               }
               return <View key={WantedContent} />
             })}

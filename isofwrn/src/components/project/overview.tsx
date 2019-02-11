@@ -7,12 +7,20 @@ import NativeButton from "isofwrn/src/components/button"
 import NativeTable from "isofwrn/src/components/table"
 import { get } from "lodash"
 import * as React from "react"
-import { View } from "react-native"
+import { Text, View } from "react-native"
 import { Card } from "react-native-elements"
 
 const Actions: React.FunctionComponent<any> = (props) => {
+  if (props.isHeader) {return <View />}
   return (
     <View>
+      <NativeButton
+        title="Operator"
+        iconRight={true}
+        icon={{name: "info"}}
+        href={urls.operatorInfo}
+        hrefParams={{id: get(props, "item._id")}}
+      />
       <NativeButton title="Edit" iconRight={true} icon={{name: "edit"}} />
     </View>
   )
@@ -33,7 +41,8 @@ const NativeProjectOverview: React.FunctionComponent<IFormListProps> = (props) =
           icon={{name: "plus", type: "font-awesome"}}
           iconRight={true}
           style={{marginTop: 10}}
-          href={`${urls.create}/${ProjectForm.collection}`}
+          href={`${urls.create}`}
+          hrefParams={{collection: ProjectForm.collection}}
         />
       </Card>
     </View>

@@ -10,17 +10,17 @@ import * as React from "react"
 
 const CurrentOperatorDisplay: React.FunctionComponent<SharedOperatorInfoProps> = (props) => {
   const name = props.currentOperator && props.currentOperator.length > 0 ?
-  <NameDisplayer collection={val.service.user} id={props.currentOperator} getNameFrom={MailField.mapTo} /> : "none selected"
+  <NameDisplayer collection={val.service.user} id={props.currentOperator} getNameFrom={MailField.mapTo} /> : "No one"
   return (
     <div>
-      <Link popoverOpen=".operatorChooser" className="subtitleBox centerText">
+      <Link popoverOpen=".operatorChooser" onClick={props.showOperatorChooser} className="subtitleBox centerText">
         <div className="subtitle">{name}</div>
         {props.currentCameras && props.currentCameras.length > 0 ? (
           <span>CA {props.currentCameras.map((camera) =>
             <NameDisplayer key={camera} collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />)}</span>
-        ) : <span>&nbsp;</span>}
+        ) : <span>Showing all cameras</span>}
       </Link>
-      <Popover className="operatorChooser">
+      <Popover className="operatorChooser" opened={props.isOperatorChooserVisible}>
         <List>
           <ListItem onClick={props.changeOperator("")} popoverClose=".operatorChooser">
             <div slot="title">No one
