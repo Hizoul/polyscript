@@ -1,4 +1,4 @@
-import { BlockTitle, Card, CardContent, CardHeader, Icon, List, ListItem, Popup, Row } from "framework7-react"
+import { BlockTitle, Card, CardContent, CardHeader, Icon, List, ListItem, Page, Popup, Row } from "framework7-react"
 import SharedCameraMapping, { SharedCameraMappingProps } from "isofw-shared/src/components/project/cameraMapping"
 import val from "isofw-shared/src/globals/val"
 import { MailField } from "isofw-shared/src/util/xpfwuishared"
@@ -46,8 +46,10 @@ const webCameraMapping: React.FunctionComponent<SharedCameraMappingProps> = (pro
         iconFa="camera"
       />
       <Popup opened={props.showPopUp} onPopupClosed={props.togglePop}>
+        <Page>
         <BlockTitle>select which operator handles which cameras</BlockTitle>
         {props.operators.map((operator) => <OperatorCamera {...props} key={operator} operator={operator} />)}
+        </Page>
       </Popup>
     </div>
   )
@@ -55,4 +57,3 @@ const webCameraMapping: React.FunctionComponent<SharedCameraMappingProps> = (pro
 
 const WrappedCameraMapping = SharedCameraMapping(webCameraMapping)
 export default WrappedCameraMapping
-

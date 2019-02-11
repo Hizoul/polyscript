@@ -4,6 +4,7 @@ import {
   OperatorRelation, ProjectCameras, ProjectOperatorCameraMapping,
   ProjectOperators, ProjectProgram, ShotCamera, ShotPreset
 } from "isofw-shared/src/xpfwDefs/project"
+import { ProjectShot } from "isofw-shared/src/xpfwDefs/project"
 import { cloneDeep, find, get } from "lodash"
 import * as React from "react"
 import { ComponentBase } from "resub"
@@ -28,6 +29,7 @@ export interface WrapperOperatorAndProps {
 export interface SharedOperatorInfoProps extends WrapperOperatorAndProps {
   currentOperator: string
   currentCameras: string[]
+  currentPreset: any
   changeOperator: any
   useScriptView: any
   usePresetView: any
@@ -52,7 +54,8 @@ React.ComponentType<WrapperOperatorAndProps> = (Container: React.ComponentType<S
       const mappings = find(get(item, ProjectOperatorCameraMapping.mapTo, []),
         [OperatorRelation.mapTo, this.state.currentOperator])
       const currentCameras = mappings && mappings[ProjectCameras.mapTo] ? mappings[ProjectCameras.mapTo] : []
-      let filteredList = get(item, ProjectProgram.mapTo, [])
+      const program = get(item, ProjectProgram.mapTo, [])
+      let filteredList = program
       const presetByCameraObj: any = {}
       filteredList.forEach((subItem: any) => {
         if (presetByCameraObj[subItem[ShotCamera.mapTo]] == null) {
@@ -69,6 +72,7 @@ React.ComponentType<WrapperOperatorAndProps> = (Container: React.ComponentType<S
       if (currentCameras.length > 0) {
         filteredList = filteredList.filter((subItem: any) => currentCameras.indexOf(subItem[ShotCamera.mapTo]) !== -1)
       }
+      const currentPreset = program[get(item, ProjectShot.mapTo, 0)]
       return (
         <Container
           {...this.props}
@@ -81,6 +85,7 @@ React.ComponentType<WrapperOperatorAndProps> = (Container: React.ComponentType<S
           presetByCamera={presetByCamera}
           currentCameras={currentCameras}
           filteredList={filteredList}
+          currentPreset={currentPreset}
         />
       )
     }

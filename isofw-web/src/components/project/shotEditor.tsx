@@ -1,7 +1,9 @@
 import { FormStore } from "@xpfw/form-shared"
 import { DbStore, IFormEditProps, SharedFormEdit } from "@xpfw/ui-shared"
 import sharedDirectorComponent, { DirectorComponentProps } from "isofw-shared/src/components/project/directorSheet"
-import { ProjectForm, ProjectShot } from "isofw-shared/src/xpfwDefs/project"
+import val from "isofw-shared/src/globals/val"
+import { ProjectForm, ProjectName, ProjectShot, ShotCamera } from "isofw-shared/src/xpfwDefs/project"
+import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
 import * as React from "react"
 import WebButton from "../button"
@@ -20,7 +22,14 @@ const ShotEditor = (props: DirectorComponentProps) => {
         <div className="currentBox">
           <span className="shotNumber">{get(props, "original.result.shot")}</span>
           <br />
-          <span>CA ?</span>
+          <span>CA&nbsp;
+            <NameDisplayer
+              collection={val.service.camera}
+              id={get(props, `original.result.program[${get(props, "original.result.shot")}].${ShotCamera.mapTo}`)}
+              getNameFrom={ProjectName.mapTo}
+              placeholder=""
+            />
+          </span>
         </div>
       </div>
       {props.loading ? <LoadingPage /> : null}

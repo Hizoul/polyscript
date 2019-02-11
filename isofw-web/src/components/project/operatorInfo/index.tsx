@@ -3,8 +3,10 @@ import { Block, Col, Icon, Link, Row } from "framework7-react"
 import SharedOperatorInfo, {
   SharedOperatorInfoProps } from "isofw-shared/src/components/project/operatorInfo"
 import urls from "isofw-shared/src/globals/url"
-import { ProjectShot } from "isofw-shared/src/xpfwDefs/project"
+import val from "isofw-shared/src/globals/val"
+import { ProjectName, ProjectShot, ShotCamera, ShotName } from "isofw-shared/src/xpfwDefs/project"
 import WebButton from "isofw-web/src/components/button"
+import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
 import * as React from "react"
 import LoadingPage from "../../loading"
@@ -85,7 +87,17 @@ class OperatorInfo extends React.Component<IFormEditProps & SharedOperatorInfoPr
           <Col>
             <div className="subtitleBox withPadding">
               <div className="subtitle">Current shot</div>
-              3
+              {props.currentPreset ? (
+                <div>
+                  <NameDisplayer
+                    collection={val.service.camera}
+                    id={get(props.currentPreset, ShotCamera.mapTo)}
+                    getNameFrom={ProjectName.mapTo}
+                    placeholder=""
+                  /> &nbsp;
+                  {get(props.currentPreset, ShotName.mapTo, "")}
+                </div>
+              ) : null}
             </div>
           </Col>
         </Row>
