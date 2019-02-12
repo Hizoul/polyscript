@@ -28,7 +28,7 @@ const getCameraMock = async () => {
     } else if (cmd.startsWith("R")) {
       type = cameraCommand.goToPreset
     } else if (cmd.startsWith("Z")) {
-      type = cameraCommand.startZoom
+      type = cameraCommand.doZoom
     }
     switch (type) {
       case cameraCommand.goToPreset: {
@@ -37,10 +37,8 @@ const getCameraMock = async () => {
       case cameraCommand.updatePreset: {
         response.send("s" + cmd.substring(1))
       }
-      case cameraCommand.startZoom: {
+      case cameraCommand.doZoom: {
         response.send("zS" + cmd.substring(1))
-      }
-      case cameraCommand.stopZoom: {
       }
     }
     response.send(" empty ")

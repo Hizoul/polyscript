@@ -64,11 +64,8 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
         case cameraCommand.updatePreset: {
           return cameraApi.updatePreset(cameraIp, data[PresetNumberField.mapTo])
         }
-        case cameraCommand.startZoom: {
-          return cameraApi.startZoom(cameraIp)
-        }
-        case cameraCommand.stopZoom: {
-          return cameraApi.stopZoom(cameraIp)
+        case cameraCommand.doZoom: {
+          return cameraApi.doZoom(cameraIp, data[PresetNumberField.mapTo])
         }
         default: {
           return Promise.resolve(" unknown command ")
