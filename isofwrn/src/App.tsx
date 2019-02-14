@@ -11,6 +11,7 @@ import LogInPage from "./pages/login"
 import NativeDirectorPage from "./pages/project/directorSheet"
 import NativeOperatorInfo from "./pages/project/operatorInfo"
 import NativeProjectOverview from "./pages/project/overview"
+import NativeProgramPage from "./pages/project/program"
 
 const navigated = createDrawerNavigator({
   root: {
@@ -22,7 +23,8 @@ const navigated = createDrawerNavigator({
       [urls.operatorInfo]: {screen: NativeOperatorInfo},
       [urls.create]: {screen: NativeCreatePage},
       [urls.edit]: {screen: NativeEditPage},
-      [urls.directorPage]: {screen: NativeDirectorPage}
+      [urls.directorPage]: {screen: NativeDirectorPage},
+      [urls.programPage]: {screen: NativeProgramPage}
     }, {
       headerMode: "none"
     })
