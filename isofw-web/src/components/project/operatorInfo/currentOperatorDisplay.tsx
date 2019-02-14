@@ -23,7 +23,7 @@ const CurrentOperatorDisplay: React.FunctionComponent<SharedOperatorInfoProps> =
       <Popover className="operatorChooser" opened={props.isOperatorChooserVisible}>
         <List>
           <ListItem onClick={props.changeOperator("")} popoverClose=".operatorChooser">
-            <div slot="title">No one
+            <div slot="title">All
             </div>
             <div slot="footer">
               All cameras

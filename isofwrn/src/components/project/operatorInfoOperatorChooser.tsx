@@ -12,7 +12,7 @@ import { ListItem, Overlay } from "react-native-elements"
 
 const CurrentOperatorDisplay: React.FunctionComponent<SharedOperatorInfoProps> = (props) => {
   const name = props.currentOperator && props.currentOperator.length > 0 ?
-  <NativeNameDisplayer collection={val.service.user} id={props.currentOperator} getNameFrom={MailField.mapTo} /> : <Text>No one</Text>
+  <NativeNameDisplayer collection={val.service.user} id={props.currentOperator} getNameFrom={MailField.mapTo} /> : <Text>All</Text>
   return (
     <View>
       <TouchableHighlight onPress={props.showOperatorChooser}>
