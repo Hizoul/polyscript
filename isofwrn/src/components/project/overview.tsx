@@ -16,6 +16,20 @@ const Actions: React.FunctionComponent<any> = (props) => {
   return (
     <View>
       <NativeButton
+        title="director"
+        iconRight={true}
+        icon={{name: "info"}}
+        href={urls.directorPage}
+        hrefParams={{id: get(props, "item._id")}}
+      />
+      <NativeButton
+        title="program"
+        iconRight={true}
+        icon={{name: "info"}}
+        href={urls.programPage}
+        hrefParams={{id: get(props, "item._id")}}
+      />
+      <NativeButton
         title="Operator"
         iconRight={true}
         icon={{name: "info"}}

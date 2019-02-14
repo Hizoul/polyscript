@@ -1,5 +1,5 @@
-import { FormStore } from "@xpfw/form-shared"
-import { DbStore, IFormEditProps, SharedFormEdit } from "@xpfw/ui-shared"
+import { FormStore } from "isofw-shared/src/util/xpfwformshared"
+import { DbStore, IFormEditProps, SharedFormEdit } from "isofw-shared/src/util/xpfwuishared"
 import { ProjectForm, ProjectShot } from "isofw-shared/src/xpfwDefs/project"
 import * as React from "react"
 
@@ -9,7 +9,7 @@ const increaseShotNumber = (thisRef: any, decrease?: boolean) => {
     return async () => {
         const currentValue = FormStore.getValue(`${directorPrefix}.${ProjectShot.mapTo}`)
         FormStore.setValue(`${directorPrefix}.${ProjectShot.mapTo}`, Number(currentValue) + (decrease ? -1 : 1))
-        await DbStore.patch(thisRef.props.id, ProjectForm, directorPrefix)
+        return DbStore.patch(thisRef.props.id, ProjectForm, directorPrefix)
     }
 }
 export interface DirectorComponentProps extends IFormEditProps {
