@@ -1,8 +1,18 @@
 import navigatorRefHolder from "isofwrn/src/components/globalNavigator"
 import { get } from "lodash"
 import * as React from "react"
-import { View } from "react-native"
-import { Header, Icon, Text } from "react-native-elements"
+import { Platform, View } from "react-native"
+import { colors, Header, Icon, ThemeProvider } from "react-native-elements"
+
+const theme = {
+  colors: {
+    ...Platform.select({
+      default: colors.platform.android,
+      ios: colors.platform.ios
+    })
+  }
+}
+
 export interface IPageContainer {
   requireLoggedIn?: boolean
   title: string
@@ -38,14 +48,16 @@ const MenuAndBack: React.FunctionComponent<any> = (props) => {
 const NativePageContained: React.FunctionComponent<IPageContainer> = (props) => {
   navigatorRefHolder.ref = get(props, "navigation")
   return (
-    <View style={{flex: 1}}>
-      <Header
-        backgroundColor="rgb(247, 247, 248)"
-        leftComponent={<MenuAndBack {...props} />}
-        centerComponent={{text: props.title, style: {marginTop: -5, fontSize: 34, color: "black"}}}
-      />
-      {props.children}
-    </View>
+    <ThemeProvider theme={theme}>
+      <View style={{flex: 1}}>
+          <Header
+            backgroundColor="rgb(247, 247, 248)"
+            leftComponent={<MenuAndBack {...props} />}
+            centerComponent={{text: props.title, style: {marginTop: -5, fontSize: 34, color: "black"}}}
+          />
+          {props.children}
+      </View>
+    </ThemeProvider>
   )
 }
 
