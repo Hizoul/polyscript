@@ -1,4 +1,7 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import { AppRegistry, YellowBox } from "react-native";
+import App from "./App";
 
-AppRegistry.registerComponent('isofwrn', () => App);
+YellowBox.ignoreWarnings([
+    "Unrecognized WebSocket connection option(s) `agent`, `perMessageDeflate`, `pfx`, `key`, `passphrase`, `cert`, `ca`, `ciphers`, `rejectUnauthorized`. Did you mean to put these under `headers`?"
+])
+AppRegistry.registerComponent("isofwrn", () => App)
