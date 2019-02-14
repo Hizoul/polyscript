@@ -4,6 +4,7 @@ import * as React from "react"
 
 export interface IButton extends F7Button.Props {
   text: string
+  className?: string
   loading?: boolean
   disabled?: boolean
 }
@@ -15,7 +16,6 @@ class WebButton extends React.Component<IButton, any> {
       buttonProps.onClick = undefined
       buttonProps.outline = true
     }
-
     if (this.props.loading) {
       buttonProps.text = "Loading..."
     }

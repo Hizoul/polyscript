@@ -11,6 +11,8 @@
     "rnad": "adb shell input keyevent 82"
   },
   "dependencies": {
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
     "react": "16.7.0",
     "react-native": "0.57.8",
     "react-native-elements": "^1.0.0",

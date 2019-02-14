@@ -13,7 +13,10 @@ const i18n = toInitWith.init({
   resources: {
     en: {
       main: {
-        home: "Home"
+        home: "Home",
+        loggedInNavigate: "Already logged in. Do you want to navigate somewhere?",
+        loggedInLogout: "Or do you wish to log out?",
+        askLogin: "Please log in"
       }
     }
   }
