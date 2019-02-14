@@ -9,7 +9,8 @@ const theme = {
     ...Platform.select({
       default: colors.platform.android,
       ios: colors.platform.ios
-    })
+    }),
+    grey3: "#ccc"
   }
 }
 
@@ -48,7 +49,6 @@ const MenuAndBack: React.FunctionComponent<any> = (props) => {
 const NativePageContained: React.FunctionComponent<IPageContainer> = (props) => {
   navigatorRefHolder.ref = get(props, "navigation")
   return (
-    <ThemeProvider theme={theme}>
       <View style={{flex: 1}}>
           <Header
             backgroundColor="rgb(247, 247, 248)"
@@ -57,7 +57,6 @@ const NativePageContained: React.FunctionComponent<IPageContainer> = (props) => 
           />
           {props.children}
       </View>
-    </ThemeProvider>
   )
 }
 
