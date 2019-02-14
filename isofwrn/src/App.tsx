@@ -4,6 +4,7 @@ import "isofwrn/src/components/form"
 import { createAppContainer, createDrawerNavigator, createStackNavigator } from "react-navigation"
 import MenuPanel from "./components/menu"
 import NativeCameraOverview from "./pages/camera/overview"
+import NativeCreatePage from "./pages/collection/create"
 import NativeEditPage from "./pages/collection/edit"
 import HomePage from "./pages/home"
 import LogInPage from "./pages/login"
@@ -18,6 +19,7 @@ const navigated = createDrawerNavigator({
       [urls.cameraOverview]: {screen: NativeCameraOverview},
       [urls.projectOverview]: {screen: NativeProjectOverview},
       [urls.operatorInfo]: {screen: NativeOperatorInfo},
+      [urls.create]: {screen: NativeCreatePage},
       [urls.edit]: {screen: NativeEditPage}
     }, {
       headerMode: "none"
