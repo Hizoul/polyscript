@@ -39,4 +39,4 @@ export {
   ISharedRelationshipField, ISharedRelationshipFieldProps
 }
 
-export default RelationShipWrapper(NativeRelationshipSingleField)
+export default RelationShipWrapper<{}>(NativeRelationshipSingleField)

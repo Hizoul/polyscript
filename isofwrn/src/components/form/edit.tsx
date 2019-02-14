@@ -34,8 +34,8 @@ class MiniEdit extends React.Component<IFormEditProps, any> {
       )
     }
     return (
-      <View>
-        <ScrollView>
+      <View style={{flex: 1}}>
+        <ScrollView style={{flex: 1}}>
           {fields}
         </ScrollView>
         <NativeButton
