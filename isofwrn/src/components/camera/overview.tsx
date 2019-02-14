@@ -9,9 +9,23 @@ import { get } from "lodash"
 import * as React from "react"
 import { Text, View } from "react-native"
 import { Card } from "react-native-elements"
+import val from "isofw-shared/src/globals/val";
 
 const B: React.FunctionComponent<any> = (props) => {
-  return <NativeButton title="Edit" iconRight={true} icon={{name: "edit"}} />
+  if (props.isHeader) {return <View key="b" />}
+  return (
+    <NativeButton
+      key="b"
+      title="Edit"
+      iconRight={true}
+      icon={{name: "edit"}}
+      href={urls.edit}
+      hrefParams={{
+        collection: val.service.camera,
+        id: props.item._id
+      }}
+    />
+  )
 }
 
 const NativeCameraOverview: React.FunctionComponent<IFormListProps> = (props) => {

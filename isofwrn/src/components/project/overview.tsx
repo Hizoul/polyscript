@@ -1,4 +1,5 @@
 import urls from "isofw-shared/src/globals/url"
+import val from "isofw-shared/src/globals/val"
 import { SharedField } from "isofw-shared/src/util/xpfwformshared"
 import { IFormListProps, IFormShowProps, SharedFormList } from "isofw-shared/src/util/xpfwuishared"
 import { CameraForm, CameraIp } from "isofw-shared/src/xpfwDefs/camera"
@@ -21,7 +22,16 @@ const Actions: React.FunctionComponent<any> = (props) => {
         href={urls.operatorInfo}
         hrefParams={{id: get(props, "item._id")}}
       />
-      <NativeButton title="Edit" iconRight={true} icon={{name: "edit"}} />
+      <NativeButton
+        title="Edit"
+        iconRight={true}
+        icon={{name: "edit"}}
+        href={urls.edit}
+        hrefParams={{
+          collection: val.service.project,
+          id: props.item._id
+        }}
+      />
     </View>
   )
 }

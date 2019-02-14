@@ -17,6 +17,7 @@ const textAlignmentStyle: any = {flex: 1, alignItems: "center", justifyContent: 
 const viewWrapStyle = {paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1, borderColor: "rgb(142, 142, 147);"}
 
 const NativeTable: React.FunctionComponent<INativeTable> = (props) => {
+  let i = 0
   return (
     <View style={{flexDirection: "column", maxHeight: 220}}>
       <View style={{flexDirection: "row"}}>
@@ -27,7 +28,8 @@ const NativeTable: React.FunctionComponent<INativeTable> = (props) => {
             </View>
           }
           if (isFunction(Item)) {
-            return <View style={[viewWrapStyle, {flex: 1}]}><Item key={Item} isHeader={true} /></View>
+            i++
+            return <View style={[viewWrapStyle, {flex: 1}]}><Item key={i} isHeader={true} /></View>
           }
           return <View key={Item} />
         })}
