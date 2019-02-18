@@ -1,5 +1,4 @@
 import { IFieldProps } from "@xpfw/form-shared"
-import { setFromEvent } from "@xpfw/form-web"
 import { get } from "lodash"
 import * as React from "react"
 import FieldContainer from "./fieldWrapper"
@@ -8,7 +7,7 @@ class BulmaBooleanField extends React.Component<IFieldProps, any> {
   private onChange: any
   constructor(props: any) {
     super(props)
-    this.onChange = setFromEvent(this, "nativeEvent.target.checked")
+    this.onChange = () => {}
   }
   public render() {
     const gotErr = get(this.props, "error.errors.length", 0) > 0

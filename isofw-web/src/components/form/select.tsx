@@ -1,15 +1,14 @@
 import { IFieldProps } from "@xpfw/form-shared"
-import { setFromEvent } from "@xpfw/form-web"
 import { ListInput } from "framework7-react"
 import { get, isFunction } from "lodash"
 import * as React from "react"
-import i18n from "../../../../isofw-shared/src/util/i18n"
+import i18n from "isofw-shared/src/util/i18n"
 
 class SelectField extends React.Component<IFieldProps, any> {
   private onChange: any
   constructor(props: any) {
     super(props)
-    this.onChange = setFromEvent(this, "nativeEvent.target.value")
+    this.onChange = ()=> {}
   }
   public render() {
     let selOpts = get(this.props, "field.selectOptions", [])

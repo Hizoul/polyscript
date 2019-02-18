@@ -1,19 +1,20 @@
 import "isofw-web/src/components/form"
 
-import { SharedField } from "@xpfw/form-shared"
-import { IFormAuthProps, MailField, PwField, SharedFormAuth } from "@xpfw/ui-shared"
-import { Block, BlockTitle, Icon, List } from "framework7-react"
+import { AuthForm, MailField, PwField, useAuth } from "@xpfw/data"
+import { SharedField } from "@xpfw/form"
+import { BlockTitle, List } from "framework7-react"
 import WebButton from "isofw-web/src/components/button"
 import TranslatedText from "isofw-web/src/components/i18n"
 import { WrappedMenuEntries } from "isofw-web/src/components/menuPanel"
 import WebPageContainer from "isofw-web/src/components/pageContainer"
 import { get } from "lodash"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 
-const WebLogin: React.FunctionComponent<IFormAuthProps> = (props) => {
-
+const WebLogin: React.FunctionComponent<any> = (props) => {
+  const authProps = useAuth()
   let msg
-  if (props.error) {
+  if (authProps.error) {
     msg = (
       <div className="notification is-danger">
         {get(props, "error.message", "Error")}
@@ -23,9 +24,9 @@ const WebLogin: React.FunctionComponent<IFormAuthProps> = (props) => {
   return (
     <WebPageContainer name="login" title="login" backLink={true}>
     <BlockTitle>
-      <TranslatedText text={props.loggedIn ? "loggedInNavigate" : "askLogin"} />
+      <TranslatedText text={authProps.loggedIn ? "loggedInNavigate" : "askLogin"} />
     </BlockTitle>
-    {props.loggedIn ? (
+    {authProps.loggedIn ? (
       <div>
       <WrappedMenuEntries />
         <BlockTitle><TranslatedText text="loggedInLogout" /></BlockTitle>
@@ -33,24 +34,24 @@ const WebLogin: React.FunctionComponent<IFormAuthProps> = (props) => {
     ) : (
       <List form={true}>
         <ul>
-        <SharedField field={MailField} />
-        <SharedField field={PwField} />
+        <SharedField schema={MailField} prefix={AuthForm.title} />
+        <SharedField schema={PwField} prefix={AuthForm.title} />
         </ul>
       </List>
     )}
     <WebButton
       className="is-primary is-fullwidth"
-      onClick={props.loggedIn ? props.submitLogout : props.submitLogin}
-      loading={props.loading}
-      text={props.loggedIn ? "logout" : "login"}
+      onClick={authProps.loggedIn ? authProps.submitLogout : authProps.submitLogin}
+      loading={authProps.loading}
+      text={authProps.loggedIn ? "logout" : "login"}
       iconFa="sign-in-alt"
       fill={true}
     />
-    {props.loggedIn ? null : (
+    {authProps.loggedIn ? null : (
       <WebButton
         className="marginTop is-info is-outlined is-fullwidth"
-        onClick={props.submitRegister}
-        loading={props.loading}
+        onClick={authProps.submitRegister}
+        loading={authProps.loading}
         text="register"
         iconFa="plus"
       />
@@ -60,5 +61,5 @@ const WebLogin: React.FunctionComponent<IFormAuthProps> = (props) => {
   )
 }
 
-const WrappedWebLogin = SharedFormAuth<{}>(WebLogin)
+const WrappedWebLogin = observer(WebLogin)
 export default WrappedWebLogin

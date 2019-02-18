@@ -1,27 +1,24 @@
-import { ComponentRegistry } from "@xpfw/form-shared"
+import { ComponentRegistry } from "@xpfw/form"
 import { registerComponents as registerWeb } from "@xpfw/form-web"
-import { FieldType } from "@xpfw/validate"
-import { ProjectOperatorCameraMapping } from "isofw-shared/src/xpfwDefs/project"
-import BulmaArrayField from "isofw-web/src/components/form/array"
-import ObjectField from "isofw-web/src/components/form/object"
-import MultiRelationship from "isofw-web/src/components/form/relationshipMulti"
-import SingleRelationship from "isofw-web/src/components/form/relationshipSingle"
-import SearchField from "isofw-web/src/components/form/search"
-import SelectField from "isofw-web/src/components/form/select"
+// import { ProjectOperatorCameraMapping } from "isofw-shared/src/xpfwDefs/project"
+// import BulmaArrayField from "isofw-web/src/components/form/array"
+// import ObjectField from "isofw-web/src/components/form/object"
+// import MultiRelationship from "isofw-web/src/components/form/relationshipMulti"
+// import SingleRelationship from "isofw-web/src/components/form/relationshipSingle"
+// import SearchField from "isofw-web/src/components/form/search"
+// import SelectField from "isofw-web/src/components/form/select"
 import TextField from "isofw-web/src/components/form/text"
-import CameraMapInField from "isofw-web/src/components/project/cameraMapping"
+// import CameraMapInField from "isofw-web/src/components/project/cameraMapping"
 
-const b: any = CameraMapInField
+// const b: any = CameraMapInField
 
 registerWeb()
-ComponentRegistry.registerComponent(FieldType.Text, TextField)
-ComponentRegistry.registerComponent(FieldType.Text, SearchField, "search")
-ComponentRegistry.registerComponent(FieldType.Password, TextField)
-ComponentRegistry.registerComponent(FieldType.Number, TextField)
-ComponentRegistry.registerComponent(FieldType.Date, TextField)
-ComponentRegistry.registerComponent(FieldType.Select, SelectField)
-ComponentRegistry.registerComponent(FieldType.Array, BulmaArrayField)
-ComponentRegistry.registerComponent(FieldType.Object, ObjectField)
-ComponentRegistry.registerComponent(FieldType.RelationshipMulti, MultiRelationship)
-ComponentRegistry.registerComponent(FieldType.RelationshipSingle, SingleRelationship)
-ComponentRegistry.registerComponent(FieldType.Array, b, ProjectOperatorCameraMapping.theme)
+ComponentRegistry.registerComponent("string", TextField)
+// ComponentRegistry.registerComponent(FieldType.Text, SearchField, "search")
+ComponentRegistry.registerComponent("number", TextField)
+// ComponentRegistry.registerComponent(FieldType.Select, SelectField)
+// ComponentRegistry.registerComponent(FieldType.Array, BulmaArrayField)
+// ComponentRegistry.registerComponent(FieldType.Object, ObjectField)
+// ComponentRegistry.registerComponent(FieldType.RelationshipMulti, MultiRelationship)
+// ComponentRegistry.registerComponent(FieldType.RelationshipSingle, SingleRelationship)
+// ComponentRegistry.registerComponent(FieldType.Array, b, ProjectOperatorCameraMapping.theme)

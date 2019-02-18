@@ -1,5 +1,4 @@
 import { IFieldProps } from "@xpfw/form-shared"
-import { setFromEvent } from "@xpfw/form-web"
 import { globals, IField } from "@xpfw/validate"
 import { Icon, ListInput, Searchbar } from "framework7-react"
 import { get } from "lodash"
@@ -32,7 +31,7 @@ class TextField extends React.Component<IFieldProps, any> {
   private onChangeDate: any
   constructor(props: IFieldProps) {
     super(props)
-    this.onChange = setFromEvent(this, "nativeEvent.target.value")
+    this.onChange = () => {}
     this.onChangeDate = setDate(this, "nativeEvent.target.value")
   }
   public render() {

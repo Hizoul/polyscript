@@ -1,8 +1,8 @@
-import { IFieldProps } from "@xpfw/form-shared"
-import { setFromEvent } from "@xpfw/form-web"
-import { globals, IField } from "@xpfw/validate"
+import { getMapToFromProps, IFieldProps, memo, useFieldWithValidation } from "@xpfw/form"
+import { setDate } from "@xpfw/form-web"
 import { Icon, ListInput } from "framework7-react"
 import { get } from "lodash"
+import { observer } from "mobx-react-lite";
 import * as momentA from "moment"
 import * as React from "react"
 
@@ -19,76 +19,59 @@ const getOriginalFormatFromType = (dateType: number) => {
   return momentParseFrom
 }
 
-const setDate = (thisRef: {props: {field: IField, setValue: any}}, eventKey: string) => {
-  return (e: any) => {
-    const value = get(e, eventKey)
-    const dateType = get(thisRef.props, "field.validate.type")
-    thisRef.props.setValue(moment(value, getOriginalFormatFromType(dateType)).toDate())
+const F7TextField: React.FunctionComponent<IFieldProps> = (props) => {
+  const format = get(props, "schema.format")
+  const isDate = format === "date" || format === "date-time" || format === "time"
+  const fieldHelper = useFieldWithValidation(props.schema, getMapToFromProps(props), props.prefix, {
+    valueEventKey: "nativeEvent.target.value"
+  })
+  const fieldType = get(props, "schema.type")
+  let value = fieldHelper.value
+  let type = "text"
+  let min
+  let max
+  let step
+  let onChange = fieldHelper.setValue
+  if (fieldType === "number") {
+    type = "number"
+    min = get(props, "schema.minimum")
+    max = get(props, "schema.maximum")
+    step = get(props, "schema.step")
   }
+  if (format === "slider") {
+    type = "range"
+  } else if (format === "password") {
+    type = "password"
+  } else if (isDate) {
+    onChange = memo(setDate(fieldHelper.setValue, props.schema, "nativeEvent.target.value"),
+      ["setDate", JSON.stringify(props.schema), props.mapTo, props.prefix])
+    if (format === "date") {
+      type = "date"
+    } else if (format === "time") {
+      type = "time"
+    } else  {
+      type = "datetime-local"
+    }
+    value = moment(value).format(getOriginalFormatFromType(format))
+  }
+  return (
+    <ListInput
+      type={type}
+      id={get(props, "id")}
+      className={get(props, "className")}
+      value={value}
+      label={get(props, "schema.title")}
+      step={step}
+      min={min}
+      max={max}
+      onChange={onChange}
+      onInputClear={() => {fieldHelper.setValue({nativeEvent: {target: {value: ""}}})}}
+      clearButton={true}
+    />
+  )
 }
 
-class TextField extends React.Component<IFieldProps, any> {
-  private onChange: any
-  private onChangeDate: any
-  constructor(props: IFieldProps) {
-    super(props)
-    this.onChange = setFromEvent(this, "nativeEvent.target.value")
-    this.onChangeDate = setDate(this, "nativeEvent.target.value")
-  }
-  public render() {
-    const gotErr = get(this.props, "error.errors.length", 0) > 0
-    const fieldType = get(this.props, "field.type")
-    let value = this.props.value
-    let type = "text"
-    let min
-    let max
-    let step
-    let onChange = this.onChange
-    if (fieldType === globals.FieldType.Number || fieldType === globals.FieldType.Slider) {
-      type = "number"
-      min = get(this.props.field, "validate.min")
-      max = get(this.props.field, "validate.max")
-      step = get(this.props.field, "validate.step")
-    }
-    if (fieldType === globals.FieldType.Number) {
-      type = "number"
-    } else if (fieldType === globals.FieldType.Slider) {
-      type = "range"
-    } else if (fieldType === globals.FieldType.Password) {
-      type = "password"
-    } else if (fieldType === globals.FieldType.Date) {
-      onChange = this.onChangeDate
-      const dateType = get(this.props, "field.validate.type")
-      if (dateType === 3) {
-        type = "date"
-      } else if (dateType === 4) {
-        type = "time"
-      } else  {
-        type = "datetime-local"
-      }
-      value = moment(value).format(getOriginalFormatFromType(dateType))
-    }
-    value = value == null ? "" : value
-    return (
-      <ListInput
-        type={type}
-        id={get(this.props, "id")}
-        className={this.props.className}
-        value={value}
-        label={get(this.props, "field.mapTo")}
-        step={step}
-        min={min}
-        max={max}
-        onChange={onChange}
-        onInputClear={() => {this.props.setValue("")}}
-        clearButton={true}
-      >
-      </ListInput>
-    )
-  }
-}
-
-export default TextField
+export default observer(F7TextField)
 export {
   setDate
 }

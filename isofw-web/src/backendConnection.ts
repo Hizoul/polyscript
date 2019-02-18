@@ -1,5 +1,5 @@
-import { FeathersClient } from "@xpfw/ui-feathers"
-import { BackendClient, DbStore, UserStore } from "@xpfw/ui-shared"
+import { BackendClient, DbStore, UserStore } from "@xpfw/data"
+import { FeathersClient } from "@xpfw/data-feathers"
 import url from "isofw-shared/src/globals/url"
 import collections from "isofw-shared/src/xpfwDefs/collections"
 import { get } from "lodash"
