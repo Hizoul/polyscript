@@ -1,11 +1,11 @@
-import { MailField, PwField } from "@xpfw/ui-shared"
+import { MailField, PwField } from "@xpfw/data"
 import isServerParams from "isofw-shared/src/globals/isServerParams"
 import val from "isofw-shared/src/globals/val"
 
 const testUsers = [
-  {_id: "u1", [MailField.mapTo]: "u1", [PwField.mapTo]: "u1"},
-  {_id: "u2", [MailField.mapTo]: "u2", [PwField.mapTo]: "u2"},
-  {_id: "u3", [MailField.mapTo]: "u3", [PwField.mapTo]: "u3"}
+  {_id: "u1", [String(MailField.title)]: "u1", [String(PwField.title)]: "u1"},
+  {_id: "u2", [String(MailField.title)]: "u2", [String(PwField.title)]: "u2"},
+  {_id: "u3", [String(MailField.title)]: "u3", [String(PwField.title)]: "u3"}
 ]
 
 const createTestUsers = async (app: any) => {

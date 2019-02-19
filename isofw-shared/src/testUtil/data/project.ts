@@ -9,63 +9,63 @@ import { testCameras } from "./camera"
 import { testUsers } from "./users"
 
 const testProjects: any[] = [
-  {_id: "b19999999999999999999999", [ProjectName.mapTo]: "pn1", [ProjectShot.mapTo]: 1, [IsActiveField.mapTo]: true},
-  {_id: "b29999999999999999999999", [ProjectName.mapTo]: "pn2", [ProjectShot.mapTo]: 8, [IsActiveField.mapTo]: true},
-  {_id: "b39999999999999999999999", [ProjectName.mapTo]: "pn3", [ProjectShot.mapTo]: 6, [IsActiveField.mapTo]: true}
+  {_id: "b19999999999999999999999", [String(ProjectName.title)]: "pn1", [String(ProjectShot.title)]: 1, [String(IsActiveField.title)]: true},
+  {_id: "b29999999999999999999999", [String(ProjectName.title)]: "pn2", [String(ProjectShot.title)]: 8, [String(IsActiveField.title)]: true},
+  {_id: "b39999999999999999999999", [String(ProjectName.title)]: "pn3", [String(ProjectShot.title)]: 6, [String(IsActiveField.title)]: true}
 ]
 8
 const createTestProjects = async (app: any, andMappings: boolean = false, andProgram: boolean = false) => {
   if (andMappings) {
-    testProjects[0][ProjectOperators.mapTo] = [testUsers[0]._id, testUsers[1]._id]
-    testProjects[0][ProjectCameras.mapTo] = [testCameras[0]._id, testCameras[1]._id, testCameras[2]._id]
-    testProjects[0][ProjectOperatorCameraMapping.mapTo] = [
-      {[OperatorRelation.mapTo]: testUsers[0]._id, [ProjectCameras.mapTo]: [testCameras[0]._id, testCameras[2]._id]},
-      {[OperatorRelation.mapTo]: testUsers[1]._id, [ProjectCameras.mapTo]: [testCameras[1]._id]}
+    testProjects[0][String(ProjectOperators.title)] = [testUsers[0]._id, testUsers[1]._id]
+    testProjects[0][String(ProjectCameras.title)] = [testCameras[0]._id, testCameras[1]._id, testCameras[2]._id]
+    testProjects[0][String(ProjectOperatorCameraMapping.title)] = [
+      {[String(OperatorRelation.title)]: testUsers[0]._id, [String(ProjectCameras.title)]: [testCameras[0]._id, testCameras[2]._id]},
+      {[String(OperatorRelation.title)]: testUsers[1]._id, [String(ProjectCameras.title)]: [testCameras[1]._id]}
     ]
-    testProjects[1][ProjectOperators.mapTo] = [testUsers[0]._id, testUsers[2]._id]
-    testProjects[1][ProjectCameras.mapTo] = [testCameras[0]._id, testCameras[1]._id]
-    testProjects[1][ProjectOperatorCameraMapping.mapTo] = [
-      {[OperatorRelation.mapTo]: testUsers[2]._id, [ProjectCameras.mapTo]: [testCameras[0]._id]},
-      {[OperatorRelation.mapTo]: testUsers[0]._id, [ProjectCameras.mapTo]: [testCameras[1]._id]}
+    testProjects[1][String(ProjectOperators.title)] = [testUsers[0]._id, testUsers[2]._id]
+    testProjects[1][String(ProjectCameras.title)] = [testCameras[0]._id, testCameras[1]._id]
+    testProjects[1][String(ProjectOperatorCameraMapping.title)] = [
+      {[String(OperatorRelation.title)]: testUsers[2]._id, [String(ProjectCameras.title)]: [testCameras[0]._id]},
+      {[String(OperatorRelation.title)]: testUsers[0]._id, [String(ProjectCameras.title)]: [testCameras[1]._id]}
     ]
-    testProjects[2][ProjectOperators.mapTo] = [testUsers[1]._id, testUsers[2]._id]
-    testProjects[2][ProjectCameras.mapTo] = [testCameras[0]._id, testCameras[2]._id]
-    testProjects[2][ProjectOperatorCameraMapping.mapTo] = [
-      {[OperatorRelation.mapTo]: testUsers[2]._id, [ProjectCameras.mapTo]: [testCameras[0]._id]},
-      {[OperatorRelation.mapTo]: testUsers[1]._id, [ProjectCameras.mapTo]: [testCameras[2]._id]}
+    testProjects[2][String(ProjectOperators.title)] = [testUsers[1]._id, testUsers[2]._id]
+    testProjects[2][String(ProjectCameras.title)] = [testCameras[0]._id, testCameras[2]._id]
+    testProjects[2][String(ProjectOperatorCameraMapping.title)] = [
+      {[String(OperatorRelation.title)]: testUsers[2]._id, [String(ProjectCameras.title)]: [testCameras[0]._id]},
+      {[String(OperatorRelation.title)]: testUsers[1]._id, [String(ProjectCameras.title)]: [testCameras[2]._id]}
     ]
   }
   if (andProgram) {
-    testProjects[0][ProjectProgram.mapTo] = [
+    testProjects[0][String(ProjectProgram.title)] = [
       {
-        [ShotName.mapTo]: "S#1", [ShotMovement.mapTo]: "m#1",  [ShotMovementTowards.mapTo]: "mt#1",
-        [ShotDuration.mapTo]: 5, [ShotRemarksDirector.mapTo]: "rd#1", [ShotRemarksOperator.mapTo]: "ro#1",
-        [ShotCamera.mapTo]: testCameras[0]._id
+        [String(ShotName.title)]: "S#1", [String(ShotMovement.title)]: "m#1",  [String(ShotMovementTowards.title)]: "mt#1",
+        [String(ShotDuration.title)]: 5, [String(ShotRemarksDirector.title)]: "rd#1", [String(ShotRemarksOperator.title)]: "ro#1",
+        [String(ShotCamera.title)]: testCameras[0]._id
       },
       {
-        [ShotName.mapTo]: "S#2", [ShotMovement.mapTo]: "m#2",  [ShotMovementTowards.mapTo]: "mt#2",
-        [ShotDuration.mapTo]: 6, [ShotRemarksDirector.mapTo]: "rd#2", [ShotRemarksOperator.mapTo]: "ro#2",
-        [ShotCamera.mapTo]: testCameras[2]._id, [ShotImportance.mapTo]: "r"
+        [String(ShotName.title)]: "S#2", [String(ShotMovement.title)]: "m#2",  [String(ShotMovementTowards.title)]: "mt#2",
+        [String(ShotDuration.title)]: 6, [String(ShotRemarksDirector.title)]: "rd#2", [String(ShotRemarksOperator.title)]: "ro#2",
+        [String(ShotCamera.title)]: testCameras[2]._id, [String(ShotImportance.title)]: "r"
       },
       {
-        [ShotName.mapTo]: "S#3", [ShotMovement.mapTo]: "m#3",  [ShotMovementTowards.mapTo]: "mt#3",
-        [ShotDuration.mapTo]: 1, [ShotRemarksDirector.mapTo]: "rd#3", [ShotRemarksOperator.mapTo]: "ro#3",
-        [ShotCamera.mapTo]: testCameras[1]._id
+        [String(ShotName.title)]: "S#3", [String(ShotMovement.title)]: "m#3",  [String(ShotMovementTowards.title)]: "mt#3",
+        [String(ShotDuration.title)]: 1, [String(ShotRemarksDirector.title)]: "rd#3", [String(ShotRemarksOperator.title)]: "ro#3",
+        [String(ShotCamera.title)]: testCameras[1]._id
       },
       {
-        [ShotName.mapTo]: "S#4", [ShotMovement.mapTo]: "m#4",  [ShotMovementTowards.mapTo]: "mt#4",
-        [ShotDuration.mapTo]: 3, [ShotRemarksDirector.mapTo]: "rd#4", [ShotRemarksOperator.mapTo]: "ro#4",
-        [ShotCamera.mapTo]: testCameras[0]._id, [ShotImportance.mapTo]: "m"
+        [String(ShotName.title)]: "S#4", [String(ShotMovement.title)]: "m#4",  [String(ShotMovementTowards.title)]: "mt#4",
+        [String(ShotDuration.title)]: 3, [String(ShotRemarksDirector.title)]: "rd#4", [String(ShotRemarksOperator.title)]: "ro#4",
+        [String(ShotCamera.title)]: testCameras[0]._id, [String(ShotImportance.title)]: "m"
       },
       {
-        [ShotName.mapTo]: "S#5", [ShotMovement.mapTo]: "m#5",  [ShotMovementTowards.mapTo]: "mt#5",
-        [ShotDuration.mapTo]: 2, [ShotRemarksDirector.mapTo]: "rd#5", [ShotRemarksOperator.mapTo]: "ro#5",
-        [ShotCamera.mapTo]: testCameras[1]._id
+        [String(ShotName.title)]: "S#5", [String(ShotMovement.title)]: "m#5",  [String(ShotMovementTowards.title)]: "mt#5",
+        [String(ShotDuration.title)]: 2, [String(ShotRemarksDirector.title)]: "rd#5", [String(ShotRemarksOperator.title)]: "ro#5",
+        [String(ShotCamera.title)]: testCameras[1]._id
       },
       {
-        [ShotName.mapTo]: "S#6", [ShotMovement.mapTo]: "m#6",  [ShotMovementTowards.mapTo]: "mt#6",
-        [ShotDuration.mapTo]: 2, [ShotRemarksDirector.mapTo]: "rd#6", [ShotRemarksOperator.mapTo]: "ro#6",
-        [ShotCamera.mapTo]: testCameras[2]._id
+        [String(ShotName.title)]: "S#6", [String(ShotMovement.title)]: "m#6",  [String(ShotMovementTowards.title)]: "mt#6",
+        [String(ShotDuration.title)]: 2, [String(ShotRemarksDirector.title)]: "rd#6", [String(ShotRemarksOperator.title)]: "ro#6",
+        [String(ShotCamera.title)]: testCameras[2]._id
       }
     ]
   }
