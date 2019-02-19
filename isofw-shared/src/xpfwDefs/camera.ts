@@ -1,5 +1,7 @@
 import { ExtendedJSONSchema } from "@xpfw/form"
 import val from "isofw-shared/src/globals/val"
+import { cloneDeep } from "lodash"
+import { changeValToRegex } from "../util/valToRegex"
 import { IDField } from "./commonFields"
 import { ProjectName } from "./project"
 
@@ -7,7 +9,6 @@ const CameraIp: ExtendedJSONSchema = {
   type: "string",
   title: "ip"
 }
-
 const CameraForm: ExtendedJSONSchema = {
   title: "cameraModel",
   collection: val.service.camera,
@@ -17,7 +18,8 @@ const CameraForm: ExtendedJSONSchema = {
     [String(CameraIp.title)]: CameraIp
   },
   modify: {
-    addCreatedAt: true
+    addCreatedAt: true,
+    queryModifier: changeValToRegex(String(ProjectName.title))
   }
 }
 
