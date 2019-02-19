@@ -6,12 +6,12 @@ import * as React from "react"
 import WebRelationshipItem from "./relationshipItem"
 
 const WebRelationshipSearch: React.FunctionComponent<any> = (props) => {
-  const searchField = get(props, `searchForm.properties[${get(props.schema, "relationship.namePath")}]`)
+  const searchField = get(props, `searchForm.properties[${get(props, "schema.relationship.namePath")}]`)
   const nameObjs: any = []
   const addId = get(props, "addId")
   const removeId = get(props, "removeId")
-  const field = get(props, "field")
-  const relList = useList(props.seachForm, undefined, props.prefix)
+  const field = get(props, "schema")
+  const relList = useList(props.searchForm, undefined, props.prefix)
   for (const child of get(relList, "list.data", [])) {
     nameObjs.push(<WebRelationshipItem schema={field} item={child} addId={addId} removeId={removeId} isAdd={true} />)
   }
@@ -20,7 +20,7 @@ const WebRelationshipSearch: React.FunctionComponent<any> = (props) => {
       <BlockTitle>Search for {props.searchForm.collection}</BlockTitle>
       <List>
         <ul>
-          <SharedField schema={searchField} prefix={props.prefix} />
+          <SharedField schema={searchField} theme="search" prefix={props.prefix} />
         </ul>
       </List>
       <Card>

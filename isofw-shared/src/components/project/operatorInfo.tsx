@@ -6,6 +6,7 @@ import {
 } from "isofw-shared/src/xpfwDefs/project"
 import { ProjectShot } from "isofw-shared/src/xpfwDefs/project"
 import { find, get } from "lodash"
+import { toJS } from "mobx"
 
 const currentOperatorKey = `current${ProjectOperators.title}`
 const whichViewIsActiveKey = `operatorInView`
@@ -57,6 +58,7 @@ const useOperatorInfo = (id: string, mapTo?: string, prefix?: string, reset?: bo
     currentCameras,
     presetByCamera,
     filteredList,
+    item,
     isPresetView: FormStore.getValue(whichViewIsActiveKey, prefix) === 1,
     isOperatorChooserVisible: FormStore.getValue(isOperatorChooserVisibleKey, prefix) === true,
     changeOperator: changeValue(currentOperatorKey, prefix, true),

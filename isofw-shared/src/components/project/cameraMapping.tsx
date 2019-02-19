@@ -4,7 +4,7 @@ import {
 } from "isofw-shared/src/util/xpfwform"
 import { OperatorRelation, ProjectCameras, ProjectOperators } from "isofw-shared/src/xpfwDefs/project"
 import { cloneDeep, findIndex, get } from "lodash"
-
+import { toJS } from "mobx"
 const changeMapping = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: string) => {
   return (operator: string, camera: string) => {
     return (event?: any) => {
@@ -30,17 +30,19 @@ const changeMapping = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: stri
 }
 const popupVisibilityKey = "cameraMappingPopup"
 
-const togglePop = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: string) => {
+const togglePop = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: string, newValue?: boolean) => {
   if (mapTo == null) { mapTo = getMapTo(schema, mapTo)}
-  return (newValue?: any) => {
-    if (newValue && newValue.type === "popup:closed") {
-      newValue = false
+  return (ev?: any) => {
+    let valueToSet = newValue
+    if (ev && ev.type === "popup:closed") {
+      valueToSet = false
     }
-    FormStore.setValue(mapTo, newValue, prependPrefix(prefix, popupVisibilityKey))
+    FormStore.setValue(mapTo, valueToSet, prependPrefix(popupVisibilityKey, prefix))
   }
 }
 
 export interface CameraMappingUtils {
+  value: any
   cameras: string[]
   operators: string[]
   showPopUp: boolean
@@ -50,18 +52,21 @@ export interface CameraMappingUtils {
 }
 
 const useCameraMapping = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: string) => {
+  if (mapTo == null) { mapTo = getMapTo(schema, mapTo) }
+  const field = useFieldWithValidation(schema, mapTo, prefix)
   let cameras = FormStore.getValue(ProjectCameras.title, prefix)
   cameras = cameras ? cameras : []
   let operators = FormStore.getValue(ProjectOperators.title, prefix)
   operators = operators ? operators : []
   const ret: CameraMappingUtils = {
+    value: field.value,
     cameras,
     operators,
-    showPopUp: FormStore.getValue(`${prefix}${popupVisibilityKey}`),
+    showPopUp: FormStore.getValue(mapTo, prependPrefix(popupVisibilityKey, prefix)),
     changeMapping: memo(() => changeMapping(schema, mapTo, prefix),
       ["changeMapping", mapTo, prefix, JSON.stringify(schema)]),
-    hidePop: memo(() => togglePop(schema, mapTo, prefix)(0), ["hidePop", mapTo, prefix]),
-    showPop: memo(() => togglePop(schema, mapTo, prefix)(1), ["showPop", mapTo, prefix])
+    hidePop: memo(() => togglePop(schema, mapTo, prefix, false), ["hidePop", mapTo, prefix]),
+    showPop: memo(() => togglePop(schema, mapTo, prefix, true), ["showPop", mapTo, prefix])
   }
   return ret
 }

@@ -1,9 +1,9 @@
 import urls from "isofw-shared/src/globals/url"
-import { IListHookProps, useList } from "isofw-shared/src/util/xpfwdata";
+import { IListHookProps, useList } from "isofw-shared/src/util/xpfwdata"
 import { CameraForm, CameraIp } from "isofw-shared/src/xpfwDefs/camera"
 import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import { get } from "lodash"
-import { observer } from "mobx-react-lite";
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 import WebButton from "../button"
 

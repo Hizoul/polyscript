@@ -24,7 +24,7 @@ const nativeCameraMapping: React.FunctionComponent<SharedCameraChoiceProps> = (p
       <Overlay isVisible={props.showPopUp === true} onBackdropPress={props.togglePop}>
         <View>
           <Text>Choose a camera {props.field.mapTo}</Text>
-            {props.cameras.map((camera) => (
+            {props.cameras ? props.cameras.map((camera) => (
                 <ListItem
                   key={camera}
                   onPress={() => {
@@ -34,7 +34,7 @@ const nativeCameraMapping: React.FunctionComponent<SharedCameraChoiceProps> = (p
                   rightIcon={{name: "chevron"}}
                   title={<NameDisplayer collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />}
                 />
-              ))}
+              )) : undefined}
         </View>
       </Overlay>
     </View>

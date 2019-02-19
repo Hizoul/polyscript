@@ -53,6 +53,7 @@ const PresetForm: ExtendedJSONSchema = {
 }
 
 const PresetAssistantForm: ExtendedJSONSchema = cloneDeep(PresetForm)
+PresetAssistantForm.title = "assistantForm"
 PresetAssistantForm.collection = val.service.presetAssistant
 
 export {

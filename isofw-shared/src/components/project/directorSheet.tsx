@@ -7,8 +7,8 @@ const schema = ProjectForm
 const increaseShotNumber = (id: string, decrease?: boolean) => {
     return async () => {
       const valueHelper = useField(String(ProjectShot.title), prependPrefix(ProjectForm.title, directorPrefix))
-      valueHelper.setValue(Number(valueHelper.value) + (decrease ? -1 : 1))
-      return DbStore.patch(id, ProjectForm, directorPrefix)
+      valueHelper.setValue(Math.max(0, Number(valueHelper.value)) + (decrease ? -1 : 1))
+      return DbStore.patch(id, ProjectForm, undefined, directorPrefix)
     }
 }
 
@@ -16,8 +16,8 @@ const useDirector = (id: string, reset?: boolean) => {
   const directorEdit = useEdit(id, schema, undefined, directorPrefix, reset)
   return {
     ...directorEdit,
-    increase: memo(increaseShotNumber(id, true), [id, true]),
-    decrease: memo(increaseShotNumber(id, false), [id, false])
+    increase: memo(() => increaseShotNumber(id, false), ["increaser", id, false]),
+    decrease: memo(() => increaseShotNumber(id, true), ["increaser", id, true])
   }
 }
 

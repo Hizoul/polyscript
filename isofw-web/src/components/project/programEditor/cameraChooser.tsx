@@ -4,10 +4,11 @@ import val from "isofw-shared/src/globals/val"
 import { IFieldProps } from "isofw-shared/src/util/xpfwform"
 import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 import "../style.sass"
 
-const CameraChooser: React.FunctionComponent<IFieldProps> = (props) => {
+const CameraChooser: React.FunctionComponent<IFieldProps> = observer((props) => {
   const chooserHelper = useCameraChooser(props.schema, props.mapTo, props.prefix)
   return (
     <div>
@@ -41,6 +42,6 @@ const CameraChooser: React.FunctionComponent<IFieldProps> = (props) => {
       </Popup>
     </div>
   )
-}
+})
 
 export default CameraChooser

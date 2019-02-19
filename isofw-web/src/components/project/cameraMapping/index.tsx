@@ -7,9 +7,9 @@ import { OperatorRelation, ProjectCameras, ProjectName } from "isofw-shared/src/
 import WebButton from "isofw-web/src/components/button"
 import NameDisplayer from "isofw-web/src/components/displayName"
 import { find, get } from "lodash"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 import "../style.sass"
-import { observer } from "mobx-react-lite";
 
 const OperatorCamera: React.FunctionComponent<any & {
   operator: string
@@ -22,10 +22,10 @@ const OperatorCamera: React.FunctionComponent<any & {
       </CardHeader>
       <List className="noMargin">
         <ul>
-          {props.cameras.map((camera: any) => {
-            const operatorCameras = find(props.value, [OperatorRelation.title, props.operator])
+          {props.mapper.cameras.map((camera: any) => {
+            const operatorCameras = find(props.mapper.value, [OperatorRelation.title, props.operator])
             const selected = get(operatorCameras, String(ProjectCameras.title), []).indexOf(camera) !== -1
-            return <ListItem key={camera} onClick={props.changeMapping(props.operator, camera)}>
+            return <ListItem key={camera} onClick={props.mapper.changeMapping(props.operator, camera)}>
               <div slot="title">
                 <NameDisplayer collection={val.service.camera} id={camera} getNameFrom={String(ProjectName.title)} />
               </div>

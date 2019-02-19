@@ -8,11 +8,11 @@ export interface INameDisplayer extends IGetHookProps {
   placeholder?: string
 }
 
-const NameDisplayer: React.FunctionComponent<INameDisplayer> = (props) => {
+const NameDisplayer: React.FunctionComponent<INameDisplayer> = observer((props) => {
   const gotten = useGetWithProps(props)
   return (
     <span>{get(gotten.item, props.getNameFrom, props.placeholder)}</span>
   )
-}
+})
 
-export default observer(NameDisplayer)
+export default NameDisplayer

@@ -75,7 +75,7 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
               <Link href={urls.projectOverview} className="flex">
                 <div className="flex1 column">
                   <div className="subtitle">active project</div>
-                  {get(props, "original.result.name")}
+                  {get(operatorHelper, "original.name")}
                 </div>
                 <Icon fa="th-list" />
               </Link>

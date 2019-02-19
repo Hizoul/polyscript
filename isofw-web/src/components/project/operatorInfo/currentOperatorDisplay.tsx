@@ -8,7 +8,7 @@ import { get } from "lodash"
 import * as React from "react"
 
 const CurrentOperatorDisplay: React.FunctionComponent<any> = (props) => {
-  const name = props.operatorHelpercurrentOperator && props.currentOperator.length > 0 ?
+  const name = props.currentOperator && props.currentOperator.length > 0 ?
   <NameDisplayer collection={val.service.user} id={props.currentOperator} getNameFrom={String(MailField.title)} /> : "No one"
   return (
     <div>

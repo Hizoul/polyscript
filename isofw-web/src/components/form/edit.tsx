@@ -1,15 +1,16 @@
 import { Block, BlockTitle, List } from "framework7-react"
 import { dataOptions, IEditHookProps, useEditWithProps } from "isofw-shared/src/util/xpfwdata"
-import { iterateSubFields, SharedField } from "isofw-shared/src/util/xpfwform"
+import { getMapToFromProps, iterateSubFields, prependPrefix, SharedField } from "isofw-shared/src/util/xpfwform"
 import { get } from "lodash"
+import { observer } from "mobx-react-lite";
 import * as React from "react"
 import WebButton from "../button"
 
-const Frameowrk7Edit: React.FunctionComponent<IEditHookProps> = (props) => {
+const Frameowrk7Edit: React.FunctionComponent<IEditHookProps> = observer((props) => {
   const editProps = useEditWithProps(props)
   const fields: any[] = []
   iterateSubFields(props.schema, (key, schema) => {
-    fields.push(<SharedField key={key} schema={schema} prefix={props.prefix} />)
+    fields.push(<SharedField key={key} schema={schema} prefix={prependPrefix(getMapToFromProps(props), props.prefix)} />)
   })
   const gotErr = editProps != null
   const result = editProps.state
@@ -51,6 +52,6 @@ const Frameowrk7Edit: React.FunctionComponent<IEditHookProps> = (props) => {
       {msg}
     </div>
   )
-}
+})
 
 export default Frameowrk7Edit

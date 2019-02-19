@@ -1,31 +1,32 @@
 import useDirector, { DirectorProps } from "isofw-shared/src/components/project/directorSheet"
 import val from "isofw-shared/src/globals/val"
-import { ProjectName, ShotCamera } from "isofw-shared/src/xpfwDefs/project"
+import { useEdit } from "isofw-shared/src/util/xpfwdata"
+import { ProjectForm, ProjectName, ShotCamera } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
-import { observer } from "mobx-react-lite";
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 import WebButton from "../button"
 import LoadingPage from "../loading"
 import "./style.sass"
 
-const ShotEditor = (props: DirectorProps) => {
-  const directorProps = useDirector(props.id, props.reset)
+const ShotEditor = observer((props: DirectorProps) => {
+  const directorProps: any = useDirector(props.id, props.reset)
   return (
     <div className="flex1 column">
       <div className="flex center">
         <div className="titleBox">
-          {get(props, "original.name")}
+          {get(directorProps, "original.name")}
         </div>
       </div>
       <div className="flex center">
         <div className="currentBox">
-          <span className="shotNumber">{get(props, "original.shot")}</span>
+          <span className="shotNumber">{get(directorProps, "original.shot")}</span>
           <br />
           <span>CA&nbsp;
             <NameDisplayer
               collection={val.service.camera}
-              id={get(props, `original.program[${get(props, "original.shot")}].${ShotCamera.title}`)}
+              id={get(directorProps, `original.program[${get(directorProps, "original.shot")}].${ShotCamera.title}`)}
               getNameFrom={String(ProjectName.title)}
               placeholder=""
             />
@@ -60,6 +61,6 @@ const ShotEditor = (props: DirectorProps) => {
       </div>
     </div>
   )
-}
+})
 
-export default observer(ShotEditor)
+export default ShotEditor

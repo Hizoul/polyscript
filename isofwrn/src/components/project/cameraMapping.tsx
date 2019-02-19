@@ -14,7 +14,7 @@ const OperatorCamera: React.FunctionComponent<SharedCameraMappingProps & {operat
     <Card>
       <NameDisplayer collection={val.service.user} id={props.operator} getNameFrom={MailField.mapTo} />
 
-        {props.cameras.map((camera) => {
+        {props.cameras ? props.cameras.map((camera) => {
           const operatorCameras = find(props.value, [OperatorRelation.mapTo, props.operator])
           const selected = get(operatorCameras, ProjectCameras.mapTo, []).indexOf(camera) !== -1
           return (
@@ -28,7 +28,7 @@ const OperatorCamera: React.FunctionComponent<SharedCameraMappingProps & {operat
               }}
             />
           )
-        })}
+        }) : undefined}
     </Card>
   )
 }

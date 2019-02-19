@@ -13,7 +13,6 @@ const CameraForm: ExtendedJSONSchema = {
   collection: val.service.camera,
   type: "object",
   properties: {
-    [String(IDField.title)]: IDField,
     [String(ProjectName.title)]: ProjectName,
     [String(CameraIp.title)]: CameraIp
   },

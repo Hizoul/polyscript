@@ -1,5 +1,5 @@
 import { List } from "framework7-react"
-import { getMapToFromProps, IFieldProps, SharedField, useArray, useFieldWithValidation } from "isofw-shared/src/util/xpfwform";
+import { getMapToFromProps, IFieldProps, SharedField, useArray, useFieldWithValidation } from "isofw-shared/src/util/xpfwform"
 import {
   ShotCamera, ShotDuration, ShotImportance, ShotMovement,
   ShotMovementTowards, ShotName, ShotPreset, ShotRemarksDirector, ShotRemarksOperator, ShotType
@@ -8,6 +8,7 @@ import WebButton from "isofw-web/src/components/button"
 import { cloneDeep, get, map } from "lodash"
 import * as React from "react"
 import "../style.sass"
+import { observer } from "mobx-react-lite";
 
 const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards,
   ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset, ShotImportance]
@@ -58,7 +59,7 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
       </div>
       <span className="shotNumber">
         {attentionItem}
-        RELIABLENUMBER
+        R
         {attentionItem}
       </span>
       <List form={true} className="noMargin">
@@ -78,7 +79,7 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
   )
 }
 
-const ProgramArray: React.FunctionComponent<IFieldProps> = (props) => {
+const ProgramArray: React.FunctionComponent<IFieldProps> = observer((props) => {
   const arrayHelper = useArray(props.schema, props.mapTo, props.prefix)
   return (
     <div className="flex1">
@@ -91,6 +92,6 @@ const ProgramArray: React.FunctionComponent<IFieldProps> = (props) => {
       )}
     </div>
   )
-}
+})
 
 export default ProgramArray

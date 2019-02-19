@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, List, Popup } from "framework7-react"
 import { useRelationship } from "isofw-shared/src/util/xpfwdata"
 import { IFieldProps } from "isofw-shared/src/util/xpfwform"
 import { get } from "lodash"
-import { observer } from "mobx-react-lite";
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 import WebButton from "../button"
 import WebRelationshipItem from "./relationshipItem"
@@ -20,7 +20,7 @@ const WebRelationshipMulti: React.FunctionComponent<IFieldProps> = observer((pro
   content = (
     <Card>
       <CardHeader className="flex1 row" style={{marginTop: "1.4rem"}}>
-        <div className="flex1">{get(props, "field.mapTo", "RelationshipField")}</div>
+        <div className="flex1">{get(props, "schema.title", "RelationshipField")}</div>
         <WebButton
           style={{width: "auto", display: "inline-block", marginRight: "-1.5rem", marginTop: "-1.4rem"}}
           fill={true}
@@ -41,10 +41,10 @@ const WebRelationshipMulti: React.FunctionComponent<IFieldProps> = observer((pro
   return (
     <div>
       {content}
-      <Popup opened={relationHelper.displayMode === 1} onPopupClosed={relationHelper.hideDisplay}>
+      <Popup opened={relationHelper.displayMode} onPopupClosed={relationHelper.hideDisplay}>
         <WebRelationshipSearch
-          {...props}
           {...relationHelper}
+          {...props}
         />
       </Popup>
     </div>

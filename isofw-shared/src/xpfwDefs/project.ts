@@ -98,9 +98,9 @@ const ProjectProgram: ExtendedJSONSchema = {
 }
 
 const ProjectCameras: ExtendedJSONSchema = {
-  type: "string",
+  type: "array",
   title: "cameras",
-  theme: "single",
+  theme: "multi",
   relationship: {
     namePath: ProjectName.title,
     collection: "cameras",
@@ -162,7 +162,6 @@ const ProjectForm: ExtendedJSONSchema = {
     [String(ProjectCameras.title)]: ProjectCameras,
     [String(ProjectOperators.title)]: ProjectOperators,
     [String(ProjectOperatorCameraMapping.title)]: ProjectOperatorCameraMapping,
-    [String(ProjectProgram.title)]: ProjectProgram,
     [String(IsActiveField.title)]: IsActiveField
   },
   modify: {

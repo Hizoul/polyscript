@@ -5,16 +5,18 @@ import { get, isNil } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
 import WebButton from "../button"
+import NameDisplayer from "../displayName";
 import WebRelationshipItem from "./relationshipItem"
 import WebRelationshipSearch from "./relationshipSearch"
 
 const WebRelationshipSingle: React.FunctionComponent<IFieldProps> = observer((props) => {
   const relationHelper = useRelationship(props.schema, props.mapTo, props.prefix)
+  console.log("SHOW DISPLAY IS", relationHelper.displayMode)
   return (
     <div>
     <Card>
       <CardHeader className="flex1 row" style={{marginTop: "1.4rem"}}>
-        <div className="flex1">{get(props, "field.mapTo", "RelationshipField")}</div>
+        <div className="flex1">{get(props, "schema.title", "RelationshipField")}</div>
         <WebButton
           style={{width: "auto", display: "inline-block", marginRight: "-1.5rem", marginTop: "-1.4rem"}}
           fill={true}
@@ -27,14 +29,18 @@ const WebRelationshipSingle: React.FunctionComponent<IFieldProps> = observer((pr
       </CardHeader>
       <CardContent>
         <List>
-          NEED TO INSERT
+          <NameDisplayer
+            collection={get(props, "schema.relationship.collection")}
+            id={relationHelper.value}
+            getNameFrom={get(props, "schema.relationship.namePath")}
+          />
         </List>
       </CardContent>
     </Card>
-    <Popup opened={relationHelper.displayMode === 1} onPopupClosed={relationHelper.hideDisplay}>
+    <Popup opened={relationHelper.displayMode} onPopupClosed={relationHelper.hideDisplay}>
       <WebRelationshipSearch
-        {...props}
         {...relationHelper}
+        {...props}
       />
     </Popup>
     </div>
