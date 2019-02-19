@@ -1,88 +1,74 @@
-import { MailField } from "@xpfw/ui-shared"
-import ValidationRegistry, { FieldType, IField, IForm, Permission } from "@xpfw/validate"
+import { MailField } from "@xpfw/data"
+import { ExtendedJSONSchema } from "@xpfw/form"
 import val from "isofw-shared/src/globals/val"
 import { IDField } from "./commonFields"
 
-const convertTextToMongoRegex: any = (value: any) => {
-  if (value == null || value.length === 0) {
-    return null
-  }
-  return {
-      $regex: `(.*?)${value}(.*?)`,
-      $options: "isg"
-  }
+const ProjectName: ExtendedJSONSchema = {
+  type: "string",
+  title: "name"
 }
 
-const ProjectName: IField = {
-  type: FieldType.Text,
-  mapTo: "name",
-  validate: {
-    convert: {
-      find: convertTextToMongoRegex
-    }
-  }
+const ProjectShot: ExtendedJSONSchema = {
+  type: "number",
+  title: "shot"
 }
 
-const ProjectShot: IField = {
-  type: FieldType.Number,
-  mapTo: "shot"
+const ShotName: ExtendedJSONSchema = {
+  type: "string",
+  title: "pname"
 }
 
-const ShotName: IField = {
-  type: FieldType.Text,
-  mapTo: "pname"
+const ShotMovement: ExtendedJSONSchema = {
+  type: "string",
+  title: "movement"
 }
 
-const ShotMovement: IField = {
-  type: FieldType.Text,
-  mapTo: "movement"
+const ShotMovementTowards: ExtendedJSONSchema = {
+  type: "string",
+  title: "movementTowards"
 }
 
-const ShotMovementTowards: IField = {
-  type: FieldType.Text,
-  mapTo: "movementTowards"
+const ShotDuration: ExtendedJSONSchema = {
+  type: "number",
+  title: "duration"
 }
 
-const ShotDuration: IField = {
-  type: FieldType.Number,
-  mapTo: "duration"
+const ShotType: ExtendedJSONSchema = {
+  type: "string",
+  title: "type"
 }
 
-const ShotType: IField = {
-  type: FieldType.Text,
-  mapTo: "type"
+const ShotRemarksDirector: ExtendedJSONSchema = {
+  type: "string",
+  title: "directorRemarks"
 }
 
-const ShotRemarksDirector: IField = {
-  type: FieldType.Text,
-  mapTo: "directorRemarks"
+const ShotRemarksOperator: ExtendedJSONSchema = {
+  type: "string",
+  title: "operatorRemarks"
 }
 
-const ShotRemarksOperator: IField = {
-  type: FieldType.Text,
-  mapTo: "operatorRemarks"
-}
-
-const ShotCamera: IField = {
-  type: FieldType.RelationshipSingle,
-  mapTo: "camera",
+const ShotCamera: ExtendedJSONSchema = {
+  type: "string",
+  title: "camera",
   theme: "program",
-  validate: {
-    relationshipNamePath: ProjectName.mapTo,
-    relationshipCollection: "cameras",
-    relationshipIdPath: "_id"
+  relationship: {
+    namePath: ProjectName.title,
+    collection: "cameras",
+    idPath: "_id"
   }
 }
 
-const ShotPreset: IField = {
-  type: FieldType.RelationshipSingle,
-  mapTo: "preset",
+const ShotPreset: ExtendedJSONSchema = {
+  type: "string",
+  title: "preset",
   theme: "presetNumberDisplay"
 }
 
-const ShotImportance: any = {
-  type: FieldType.Select,
-  mapTo: "importance",
+const ShotImportance: ExtendedJSONSchema = {
+  type: "string",
+  title: "importance",
+  theme: "select",
   selectOptions: [
     {label: "Normal", value: "n"},
     {label: "Raised", value: "r"},
@@ -90,94 +76,97 @@ const ShotImportance: any = {
   ]
 }
 
-const ProjectProgram: IField = {
-  type: FieldType.Array,
-  mapTo: "program",
-  validate: {
-    type: FieldType.Object,
-    validate: {objectDef: [
-      ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration,
-      ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset,
-      ShotImportance
-    ]},
-    hide: {update: true, create: true}
-  }
-}
-
-const ProjectCameras: IField = {
-  type: FieldType.RelationshipMulti,
-  mapTo: "cameras",
-  validate: {
-    relationshipNamePath: ProjectName.mapTo,
-    relationshipCollection: "cameras",
-    relationshipIdPath: "_id"
-  }
-}
-
-const ProjectOperators: IField = {
-  type: FieldType.RelationshipMulti,
-  mapTo: "operators",
-  validate: {
-    relationshipNamePath: MailField.mapTo,
-    relationshipCollection: "users",
-    relationshipIdPath: "_id"
-  }
-}
-
-const OperatorRelation: IField = {
-  type: FieldType.RelationshipSingle,
-  mapTo: "operator",
-  validate: {
-    relationshipNamePath: MailField.mapTo,
-    relationshipCollection: "users",
-    relationshipIdPath: "_id"
-  }
-}
-
-const ProjectOperatorCameraMapping: IField = {
-  type: FieldType.Array,
-  mapTo: "operatorCameraMapping",
-  theme: "cameraMapping",
-  validate: {
-    type: FieldType.Object,
-    validate: {objectDef: [
-      OperatorRelation, ProjectCameras
-    ]}
-  }
-}
-
-const IsActiveField: IField = {
-  type: FieldType.Boolean,
-  mapTo: "isActive",
-  validate: {
-    hide: {create: false, update: false},
-    defaultValue: true
-  }
-}
-
-const ProjectForm: IForm = {
-  model: "projectModel",
-  collection: val.service.project,
-  sections: [{fields: [
-    IDField, ProjectName, ProjectShot, ProjectCameras, ProjectOperators,
-    ProjectOperatorCameraMapping, ProjectProgram, IsActiveField
-  ]}],
-  permissions: {
-    required: {
-      create: Permission.User,
-      find: Permission.User,
-      get: Permission.User,
-      update: Permission.User,
-      remove: Permission.Server
+const ProjectProgram: ExtendedJSONSchema = {
+  type: "array",
+  title: "program",
+  items: {
+    type: "object",
+    properties: {
+      [String(ShotName.title)]: ShotName,
+      [String(ShotType.title)]: ShotType,
+      [String(ShotMovement.title)]: ShotMovement,
+      [String(ShotMovementTowards.title)]: ShotMovementTowards,
+      [String(ShotDuration.title)]: ShotDuration,
+      [String(ShotRemarksDirector.title)]: ShotRemarksDirector,
+      [String(ShotRemarksOperator.title)]: ShotRemarksOperator,
+      [String(ShotCamera.title)]: ShotCamera,
+      [String(ShotPreset.title)]: ShotPreset,
+      [String(ShotImportance.title)]: ShotImportance
     }
   },
-  options: {
-    addCreatedAt: true,
+  hide: {update: true, create: true}
+}
+
+const ProjectCameras: ExtendedJSONSchema = {
+  type: "string",
+  title: "cameras",
+  relationship: {
+    namePath: ProjectName.title,
+    collection: "cameras",
     idPath: "_id"
   }
 }
 
-ValidationRegistry.registerForm(ProjectForm)
+const ProjectOperators: ExtendedJSONSchema = {
+  type: "array",
+  title: "operators",
+  items: {type: "string"},
+  relationship: {
+    namePath: MailField.title,
+    collection: "users",
+    idPath: "_id"
+  }
+}
+
+const OperatorRelation: ExtendedJSONSchema = {
+  type: "string",
+  title: "operator",
+  relationship: {
+    namePath: MailField.title,
+    collection: "users",
+    idPath: "_id"
+  }
+}
+
+const ProjectOperatorCameraMapping: ExtendedJSONSchema = {
+  type: "array",
+  title: "operatorCameraMapping",
+  theme: "cameraMapping",
+  items: {
+    type: "object",
+    properties: {
+      [String(OperatorRelation.title)]: OperatorRelation,
+      [String(ProjectCameras.title)]: ProjectCameras
+    }
+  }
+}
+
+const IsActiveField: ExtendedJSONSchema = {
+  type: "boolean",
+  title: "isActive",
+  default: true,
+  hide: {create: false, update: false}
+}
+
+const ProjectForm: ExtendedJSONSchema = {
+  title: "projectModel",
+  collection: val.service.project,
+  type: "object",
+  properties: {
+    [String(IDField.title)]: IDField,
+    [String(ProjectName.title)]: ProjectName,
+    [String(ProjectShot.title)]: ProjectShot,
+    [String(ProjectCameras.title)]: ProjectCameras,
+    [String(ProjectOperators.title)]: ProjectOperators,
+    [String(ProjectOperatorCameraMapping.title)]: ProjectOperatorCameraMapping,
+    [String(ProjectProgram.title)]: ProjectProgram,
+    [String(IsActiveField.title)]: IsActiveField
+  },
+  modify: {
+    addCreatedAt: true
+  }
+}
+
 export {
   ProjectForm, ProjectName, ProjectShot, ProjectProgram, ShotCamera, ShotPreset, ShotImportance,
   ProjectOperators, ProjectOperatorCameraMapping, OperatorRelation, ProjectCameras, IsActiveField,

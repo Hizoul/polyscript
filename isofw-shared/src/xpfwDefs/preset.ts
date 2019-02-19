@@ -1,69 +1,59 @@
-import ValidationRegistry, { FieldType, IField, IForm, Permission } from "@xpfw/validate"
+import { ExtendedJSONSchema } from "@xpfw/form"
 import val from "isofw-shared/src/globals/val"
 import { cloneDeep } from "lodash"
 import { IDField } from "./commonFields"
 
 const EMPTY_PRESET = "-"
 
-const PresetNumberField: IField = {
-  type: FieldType.Number,
-  mapTo: "number"
+const PresetNumberField: ExtendedJSONSchema = {
+  type: "number",
+  title: "number"
 }
 
-const PresetProjectField: IField = {
-  type: FieldType.Text,
-  mapTo: "project"
+const PresetProjectField: ExtendedJSONSchema = {
+  type: "string",
+  title: "project"
 }
 
-const PresetCameraField: IField = {
-  type: FieldType.Text,
-  mapTo: "camera"
+const PresetCameraField: ExtendedJSONSchema = {
+  type: "string",
+  title: "camera"
 }
-const PresetActionTypeField: IField = {
-  type: FieldType.Number,
-  mapTo: "type"
-}
-
-const PresetIsReadyField: IField = {
-  type: FieldType.Boolean,
-  mapTo: "isReady",
-  validate: {
-    hide: {create: false},
-    defaultValue: false
-  }
+const PresetActionTypeField: ExtendedJSONSchema = {
+  type: "number",
+  title: "type"
 }
 
-const PresetForm: IForm = {
-  model: "presetModel",
+const PresetIsReadyField: ExtendedJSONSchema = {
+  type: "boolean",
+  title: "isReady",
+  hide: {create: false},
+  default: false
+}
+
+const PresetForm: ExtendedJSONSchema = {
+  title: "presetModel",
   collection: val.service.preset,
-  sections: [{fields: [
-    IDField, PresetNumberField, PresetProjectField, PresetCameraField, PresetIsReadyField, PresetActionTypeField
-  ]}],
-  permissions: {
-    required: {
-      create: Permission.User,
-      find: Permission.User,
-      get: Permission.User,
-      update: Permission.User,
-      remove: Permission.User
-    }
+  type: "object",
+  properties: {
+    [String(IDField.title)]: IDField,
+    [String(PresetNumberField.title)]: PresetNumberField,
+    [String(PresetProjectField.title)]: PresetProjectField,
+    [String(PresetCameraField.title)]: PresetCameraField,
+    [String(PresetIsReadyField.title)]: PresetIsReadyField,
+    [String(PresetActionTypeField.title)]: PresetActionTypeField
   },
-  options: {
+  modify: {
     addCreatedAt: true,
-    idPath: "_id",
     defaultSort: {
-      [PresetCameraField.mapTo]: 1,
-      [PresetNumberField.mapTo]: 1
+      [String(PresetCameraField.title)]: 1,
+      [String(PresetNumberField.title)]: 1
     }
   }
 }
 
-ValidationRegistry.registerForm(PresetForm)
-
-const PresetAssistantForm: IForm = cloneDeep(PresetForm)
-// PresetAssistantForm.sections[0].fields.push(PresetActionTypeField)
+const PresetAssistantForm: ExtendedJSONSchema = cloneDeep(PresetForm)
 PresetAssistantForm.collection = val.service.presetAssistant
-ValidationRegistry.registerForm(PresetAssistantForm)
 
 export {
   PresetForm, PresetNumberField, PresetProjectField, PresetCameraField, EMPTY_PRESET, PresetAssistantForm,

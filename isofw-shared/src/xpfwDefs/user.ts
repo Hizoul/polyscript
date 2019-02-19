@@ -1,29 +1,15 @@
-import { MailField, OwnerField, PwField } from "@xpfw/ui-shared"
-import ValidationRegistry, { FieldType, IField, IForm, Permission } from "@xpfw/validate"
+import { MailField, OwnerField, PwField } from "@xpfw/data"
+import { ExtendedJSONSchema } from "@xpfw/form";
 import val from "isofw-shared/src/globals/val"
-import collections from "isofw-shared/src/xpfwDefs/collections"
 
-const UserForm: IForm = {
-  model: "userModel",
+const UserForm: ExtendedJSONSchema = {
+  title: "userModel",
   collection: val.service.user,
-  sections: [{fields: [
-    MailField, PwField
-  ]}],
-  permissions: {
-    required: {
-      create: Permission.Server,
-      find: Permission.User,
-      get: Permission.User,
-      update: Permission.Server,
-      remove: Permission.Server
-    },
-    requireOwner: OwnerField.mapTo
-  },
-  options: {
-    addBelongsTo: true,
-    addCreatedAt: true,
-    idPath: "_id"
+  type: "object",
+  properties: {
+    [String(MailField.title)]: MailField,
+    [String(PwField.title)]: PwField
   }
 }
 
-ValidationRegistry.registerForm(UserForm)
+export default UserForm

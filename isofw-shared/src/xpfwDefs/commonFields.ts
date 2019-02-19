@@ -1,11 +1,9 @@
-import { FieldType, IField } from "@xpfw/validate"
+import { ExtendedJSONSchema } from "@xpfw/form"
 
-const IDField: IField = {
-  type: FieldType.Text,
-  mapTo: "_id",
-  validate: {
-    hide: {create: false, update: false}
-  }
+const IDField: ExtendedJSONSchema = {
+  type: "string",
+  title: "_id",
+  hide: {create: false, update: false}
 }
 
 export {
