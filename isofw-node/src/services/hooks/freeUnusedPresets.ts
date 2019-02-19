@@ -9,8 +9,8 @@ const freePresetsOfProject = async (app: Application, projectId: any, deleteAll?
   const presetIdsInUse = []
   if (!deleteAll) {
     const project = await app.service(val.service.project).get(projectId, isServerParams)
-    for (const programItem of get(project, ProjectProgram.mapTo, [])) {
-      const id = programItem[ShotPreset.mapTo]
+    for (const programItem of get(project, String(ProjectProgram.title), [])) {
+      const id = programItem[String(ShotPreset.title)]
       if (id) {
         presetIdsInUse.push(id)
       }
@@ -19,14 +19,14 @@ const freePresetsOfProject = async (app: Application, projectId: any, deleteAll?
   const presets = await app.service(val.service.preset).find({
     ...isServerParams, query: {
       $limit: val.maximumPresetAmount,
-      [PresetProjectField.mapTo]: projectId,
+      [String(PresetProjectField.title)]: projectId,
       _id: {$nin: presetIdsInUse}
     }
   })
   for (const preset of presets.data) {
     console.log("Freeing up unused preset", preset._id)
     await app.service(val.service.preset).patch(preset._id, {
-      [PresetProjectField.mapTo]: EMPTY_PRESET
+      [String(PresetProjectField.title)]: EMPTY_PRESET
     }, isServerParams)
   }
 }

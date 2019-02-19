@@ -11,9 +11,9 @@ const presetCreator: Hook = async (hook) => {
     const presetId = `${cameraId.substring(0, cameraId.length - String(index).length - 5)}${index}98765`
     hook.app.service(val.service.preset).create({
       _id: presetId,
-      [PresetNumberField.mapTo]: index,
-      [PresetCameraField.mapTo]: cameraId,
-      [PresetProjectField.mapTo]: EMPTY_PRESET
+      [String(PresetNumberField.title)]: index,
+      [String(PresetCameraField.title)]: cameraId,
+      [String(PresetProjectField.title)]: EMPTY_PRESET
     }, isServerParams)
   }
   return hook

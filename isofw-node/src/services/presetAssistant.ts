@@ -15,19 +15,19 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
   app.service(val.service.project).hooks({after: {patch: freeUnusedPresets}})
   const presentAssistanceService = {
     create: async (data: any) => {
-      const cameraId = get(data, PresetCameraField.mapTo, " not findable ")
-      const projectId = get(data, PresetProjectField.mapTo)
+      const cameraId = get(data, String(PresetCameraField.title), " not findable ")
+      const projectId = get(data, String(PresetProjectField.title))
       if (!cameraId || !projectId) {
         return Promise.reject("need project id and camera id")
       }
       const availablePresets = await app.service(val.service.preset).find({...isServerParams, query: {
-        [PresetCameraField.mapTo]: cameraId,
-        [PresetProjectField.mapTo]: EMPTY_PRESET
+        [String(PresetCameraField.title)]: cameraId,
+        [String(PresetProjectField.title)]: EMPTY_PRESET
       }})
       if (availablePresets && availablePresets.data && availablePresets.data.length > 0) {
         const foundId = availablePresets.data[0]._id
         await app.service(val.service.preset).patch(foundId, {
-          [PresetProjectField.mapTo]: projectId
+          [String(PresetProjectField.title)]: projectId
         }, isServerParams)
         return foundId
       }
@@ -35,19 +35,19 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
     },
     get: async (id: string) => {
       const project = await app.service(val.service.project).get(id, isServerParams)
-      const newProgram = project[ProjectProgram.mapTo]
-      const isActive = project[IsActiveField.mapTo]
+      const newProgram = project[String(ProjectProgram.title)]
+      const isActive = project[String(IsActiveField.title)]
       if (isActive) {
         await freePresetsOfProject(app, id, true)
         if (Array.isArray(newProgram)) {
           newProgram.forEach((item: any) => {
-            delete item[ShotPreset.mapTo]
+            delete item[String(ShotPreset.title)]
           })
         }
       }
       return app.service(val.service.project).patch(id, {
-        [IsActiveField.mapTo]: !isActive,
-        [ProjectProgram.mapTo]: newProgram
+        [String(IsActiveField.title)]: !isActive,
+        [String(ProjectProgram.title)]: newProgram
       }, isServerParams)
     },
     patch: async (id: string, data: any) => {
@@ -56,16 +56,16 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
         return Promise.reject(" unknown Camera ")
       }
       console.log("CAMERA WAS FOUND", data)
-      const cameraIp = camera[CameraIp.mapTo]
-      switch (data[PresetActionTypeField.mapTo]) {
+      const cameraIp = camera[String(CameraIp.title)]
+      switch (data[String(PresetActionTypeField.title)]) {
         case cameraCommand.goToPreset: {
-          return cameraApi.goToPreset(cameraIp, data[PresetNumberField.mapTo])
+          return cameraApi.goToPreset(cameraIp, data[String(PresetNumberField.title)])
         }
         case cameraCommand.updatePreset: {
-          return cameraApi.updatePreset(cameraIp, data[PresetNumberField.mapTo])
+          return cameraApi.updatePreset(cameraIp, data[String(PresetNumberField.title)])
         }
         case cameraCommand.doZoom: {
-          return cameraApi.doZoom(cameraIp, data[PresetNumberField.mapTo])
+          return cameraApi.doZoom(cameraIp, data[String(PresetNumberField.title)])
         }
         default: {
           return Promise.resolve(" unknown command ")
