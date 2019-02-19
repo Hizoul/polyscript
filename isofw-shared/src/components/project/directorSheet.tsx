@@ -7,7 +7,7 @@ const schema = ProjectForm
 const increaseShotNumber = (id: string, decrease?: boolean) => {
     return async () => {
       const valueHelper = useField(String(ProjectShot.title), prependPrefix(ProjectForm.title, directorPrefix))
-      valueHelper.setValue(Math.max(0, Number(valueHelper.value)) + (decrease ? -1 : 1))
+      valueHelper.setValue(valueHelper.value + (decrease ? -1 : 1))
       return DbStore.patch(id, ProjectForm, undefined, directorPrefix)
     }
 }
