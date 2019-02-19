@@ -1,11 +1,12 @@
-import { IFormAuthProps, SharedFormAuth } from "@xpfw/ui-shared"
 import { Block, Icon, Link, List, ListItem, Page, Panel, View } from "framework7-react"
 import { menuLoggedIn, menuLoggedOut } from "isofw-shared/src/globals/menu"
-import urls from "isofw-shared/src/globals/url"
+import { useAuth } from "isofw-shared/src/util/xpfwdata"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 
-const MenuEntries: React.FunctionComponent<IFormAuthProps> = (props) => {
-  const entries = props.loggedIn ? menuLoggedIn : menuLoggedOut
+const MenuEntries: React.FunctionComponent<any> = observer((props) => {
+  const authprops = useAuth()
+  const entries = authprops.loggedIn ? menuLoggedIn : menuLoggedOut
   return (
     <List>
       {entries.map((item) =>
@@ -20,8 +21,8 @@ const MenuEntries: React.FunctionComponent<IFormAuthProps> = (props) => {
       )}
     </List>
   )
-}
-const WrappedMenuEntries = SharedFormAuth<{}>(MenuEntries)
+})
+
 const MenuPanel: React.FunctionComponent<any> = (props) => {
   return (
     <Panel left={true} reveal={true}>
@@ -29,7 +30,7 @@ const MenuPanel: React.FunctionComponent<any> = (props) => {
           <Block>
             PolyScript
           </Block>
-          <WrappedMenuEntries />
+          <MenuEntries />
         </Page>
     </Panel>
   )
@@ -37,5 +38,5 @@ const MenuPanel: React.FunctionComponent<any> = (props) => {
 
 export default MenuPanel
 export {
-  WrappedMenuEntries
+  MenuEntries
 }

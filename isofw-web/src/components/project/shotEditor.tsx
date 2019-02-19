@@ -1,32 +1,32 @@
-import { FormStore } from "@xpfw/form-shared"
-import { DbStore, IFormEditProps, SharedFormEdit } from "@xpfw/ui-shared"
-import sharedDirectorComponent, { DirectorComponentProps } from "isofw-shared/src/components/project/directorSheet"
+import useDirector, { DirectorProps } from "isofw-shared/src/components/project/directorSheet"
 import val from "isofw-shared/src/globals/val"
-import { ProjectForm, ProjectName, ProjectShot, ShotCamera } from "isofw-shared/src/xpfwDefs/project"
+import { ProjectName, ShotCamera } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
+import { observer } from "mobx-react-lite";
 import * as React from "react"
 import WebButton from "../button"
 import LoadingPage from "../loading"
 import "./style.sass"
 
-const ShotEditor = (props: DirectorComponentProps) => {
+const ShotEditor = (props: DirectorProps) => {
+  const directorProps = useDirector(props.id, props.reset)
   return (
     <div className="flex1 column">
       <div className="flex center">
         <div className="titleBox">
-          {get(props, "original.result.name")}
+          {get(props, "original.name")}
         </div>
       </div>
       <div className="flex center">
         <div className="currentBox">
-          <span className="shotNumber">{get(props, "original.result.shot")}</span>
+          <span className="shotNumber">{get(props, "original.shot")}</span>
           <br />
           <span>CA&nbsp;
             <NameDisplayer
               collection={val.service.camera}
-              id={get(props, `original.result.program[${get(props, "original.result.shot")}].${ShotCamera.mapTo}`)}
-              getNameFrom={ProjectName.mapTo}
+              id={get(props, `original.program[${get(props, "original.shot")}].${ShotCamera.title}`)}
+              getNameFrom={String(ProjectName.title)}
               placeholder=""
             />
           </span>
@@ -37,29 +37,29 @@ const ShotEditor = (props: DirectorComponentProps) => {
           text={"previous shot"}
           big={true}
           iconFa="step-backward"
-          onClick={props.decrease}
-          loading={props.loading}
-          disabled={props.loading}
+          onClick={directorProps.decrease}
+          loading={directorProps.loading}
+          disabled={directorProps.loading}
         />
         <WebButton
           text={"next shot"}
           big={true}
           iconFa="step-forward"
           fill={true}
-          onClick={props.increase}
-          loading={props.loading}
-          disabled={props.loading}
+          onClick={directorProps.increase}
+          loading={directorProps.loading}
+          disabled={directorProps.loading}
         />
         <WebButton
           big={true}
           iconFa="sync"
           text={"placeholder"}
-          loading={props.loading}
-          disabled={props.loading}
+          loading={directorProps.loading}
+          disabled={directorProps.loading}
         />
       </div>
     </div>
   )
 }
 
-export default sharedDirectorComponent(ShotEditor)
+export default observer(ShotEditor)

@@ -1,59 +1,54 @@
-import { SharedField } from "@xpfw/form-shared"
-import { ISharedRelationshipField, ISharedRelationshipFieldProps, RelationShipWrapper } from "@xpfw/ui-shared"
-import { getFieldsFromForm, IField } from "@xpfw/validate"
-import { Block, BlockTitle, Card, CardContent, CardHeader, List, Popup } from "framework7-react"
-import { get, isNil } from "lodash"
+import { Card, CardContent, CardHeader, List, Popup } from "framework7-react"
+import { useRelationship } from "isofw-shared/src/util/xpfwdata"
+import { IFieldProps } from "isofw-shared/src/util/xpfwform"
+import { get } from "lodash"
+import { observer } from "mobx-react-lite";
 import * as React from "react"
 import WebButton from "../button"
 import WebRelationshipItem from "./relationshipItem"
 import WebRelationshipSearch from "./relationshipSearch"
 
-class WebRelationshipMulti extends React.Component<ISharedRelationshipFieldProps, any> {
-  public render() {
-    let content
-    const gotVal = Array.isArray(this.props.value) && this.props.value.length > 0
-    const relationItems = []
-    let i = 0
-    for (const child of get(this.props, "relatedObject", [])) {
-      relationItems.push(<WebRelationshipItem field={this.props.field} item={child} key={i} addId={this.props.addId} removeId={this.props.removeId} isAdd={false} />)
-      i++
-    }
-    content = (
-      <Card>
-        <CardHeader className="flex1 row" style={{marginTop: "1.4rem"}}>
-          <div className="flex1">{get(this.props, "field.mapTo", "RelationshipField")}</div>
-          <WebButton
-            style={{width: "auto", display: "inline-block", marginRight: "-1.5rem", marginTop: "-1.4rem"}}
-            fill={true}
-            round={true}
-            raised={true}
-            onClick={this.props.setDisplayMode.bind(this, 1)}
-            text=""
-            iconFa="plus"
-          />
-        </CardHeader>
-        <CardContent>
-          <List>
-            {relationItems}
-          </List>
-        </CardContent>
-      </Card>
-    )
-    return (
-      <div>
-        {content}
-        <Popup opened={this.props.displayMode === 1} onPopupClosed={() => this.props.setDisplayMode(0)}>
-          <WebRelationshipSearch {...this.props} prefix={get(this.props, "field.mapTo")} />
-        </Popup>
-      </div>
-    )
+const WebRelationshipMulti: React.FunctionComponent<IFieldProps> = observer((props) => {
+  const relationHelper = useRelationship(props.schema, props.mapTo, props.prefix)
+  let content
+  const relationItems = []
+  let i = 0
+  for (const child of get(relationHelper, "relatedObject", [])) {
+    relationItems.push(<WebRelationshipItem schema={props.schema} item={child} key={i} addId={relationHelper.addId} removeId={relationHelper.removeId} isAdd={false} />)
+    i++
   }
-}
+  content = (
+    <Card>
+      <CardHeader className="flex1 row" style={{marginTop: "1.4rem"}}>
+        <div className="flex1">{get(props, "field.mapTo", "RelationshipField")}</div>
+        <WebButton
+          style={{width: "auto", display: "inline-block", marginRight: "-1.5rem", marginTop: "-1.4rem"}}
+          fill={true}
+          round={true}
+          raised={true}
+          onClick={relationHelper.showDisplay}
+          text=""
+          iconFa="plus"
+        />
+      </CardHeader>
+      <CardContent>
+        <List>
+          {relationItems}
+        </List>
+      </CardContent>
+    </Card>
+  )
+  return (
+    <div>
+      {content}
+      <Popup opened={relationHelper.displayMode === 1} onPopupClosed={relationHelper.hideDisplay}>
+        <WebRelationshipSearch
+          {...props}
+          {...relationHelper}
+        />
+      </Popup>
+    </div>
+  )
+})
 
-const WrappedWebRelationshipMulti: React.ComponentType<ISharedRelationshipField> =
-RelationShipWrapper<{}>(WebRelationshipMulti)
-
-export default WrappedWebRelationshipMulti
-export {
-  ISharedRelationshipField, ISharedRelationshipFieldProps
-}
+export default WebRelationshipMulti

@@ -1,62 +1,38 @@
-import { FormStore } from "@xpfw/form-shared"
-import { DbStore, IFormShowProps, SharedFormShow } from "@xpfw/ui-shared"
-import { prefixMaker } from "@xpfw/validate"
+import { DbStore } from "@xpfw/data"
+import { FormStore, memo, useField } from "@xpfw/form"
 import val from "isofw-shared/src/globals/val"
 import { PresetForm, PresetIsReadyField } from "isofw-shared/src/xpfwDefs/preset"
 import { get } from "lodash"
 import * as React from "react"
-import { ComponentBase } from "resub"
 
-export interface PresetUpdaterState {
-  item: any
-}
-
-export interface PresetUpdaterProps extends PresetUpdaterState {
-  setReady: any
-  setNotReady: any
-  isReady: boolean
-}
 const updatePrefix = "presetUpdater"
+const presetFormHelper = useField(String(PresetForm.title), updatePrefix)
+const presetIsReadyHelper = useField(String(PresetIsReadyField.title), updatePrefix)
 
-const updatePreset = (thisref: any, newValue: any) => {
+const updatePreset = (presetId: string, isReady: boolean) => {
   return async () => {
-    FormStore.resetForm(PresetForm, updatePrefix)
-    FormStore.setValue(`${prefixMaker(updatePrefix)}${PresetIsReadyField.mapTo}`, newValue)
-    const updateRes = await DbStore.patch(thisref.props.id, PresetForm, updatePrefix)
+    presetFormHelper.setValue({})
+    presetIsReadyHelper.setValue(isReady)
+    const updateRes = await DbStore.patch(presetId, PresetForm, updatePrefix)
     return updateRes
   }
 }
 
-const sharedPresetUpdater = (Container: React.ComponentType<PresetUpdaterProps>) => {
-  return class extends ComponentBase<any, PresetUpdaterState> {
-    private setReady: any
-    private setNotReady: any
-    constructor(props: any) {
-      super(props)
-      this.setReady = updatePreset(this, true)
-      this.setNotReady = updatePreset(this, false)
-    }
-    public render() {
-      return (
-        <Container
-          {...this.props}
-          {...this.state}
-          setReady={this.setReady}
-          setNotReady={this.setNotReady}
-          isReady={get(this.state.item, PresetIsReadyField.mapTo, false)}
-        />
-      )
-    }
-    protected _buildState(props: any, initialBuild: boolean): PresetUpdaterState {
-      const item = get(DbStore.getGetState(props.id, val.service.preset, true), "result")
-      return {
-        item
-      }
-    }
+const usePresetUpdater = (id: string) => {
+  const item = DbStore.getGetState(id, val.service.preset, true)
+  return {
+    item,
+    isReady: get(item, String(PresetIsReadyField.title), false),
+    setReady: memo(() => updatePreset(id, true), [updatePrefix, id, true]),
+    setNotReady: memo(() => updatePreset(id, false), [updatePrefix, id, false])
   }
 }
 
-export default sharedPresetUpdater
+export interface IPresetUpdaterProps {id: string}
+
+const usePresetUpdaterWithProps = (props: IPresetUpdaterProps) => usePresetUpdater(props.id)
+
+export default usePresetUpdater
 export {
-  updatePreset
+  updatePreset, usePresetUpdaterWithProps
 }

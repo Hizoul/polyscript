@@ -17,8 +17,8 @@ class NativeRelationshipItem extends React.Component<{
     let id
     const obj = this.props.item
     if (!isNil(obj)) {
-      name = get(obj, get(this.props, "field.validate.relationshipNamePath", "id"), "NOTFOUND")
-      id = get(obj, get(this.props, "field.validate.relationshipIdPath", "id"), "NOTFOUND")
+      name = get(obj, get(this.props, "field.validate.namePath", "id"), "NOTFOUND")
+      id = get(obj, get(this.props, "field.validate.idPath", "id"), "NOTFOUND")
     }
     const actionBtn = this.props.isAdd ? (
       <Button

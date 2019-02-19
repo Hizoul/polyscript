@@ -1,30 +1,31 @@
-import { IArrayProps, IFieldProps, SharedArray, SharedField } from "@xpfw/form-shared"
-import { IField } from "@xpfw/validate"
+import { IFieldProps, SharedField, useArray } from "isofw-shared/src/util/xpfwform"
 import WebButton from "isofw-web/src/components/button"
-import { cloneDeep, get, map } from "lodash"
+import { map } from "lodash"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 
-const Rayfield: React.FunctionComponent<IArrayProps> = (props) => {
+const ArrayField: React.FunctionComponent<IFieldProps> = observer((props) => {
+  const arrayHelper = useArray(props.schema, props.mapTo, props.prefix)
   return (
     <div>
-      {map(props.subFields, (field: any, index: any) => {
+      {map(arrayHelper.fields, (field, index: any) => {
         return (
         <div className="flex flex1 center">
-          <SharedField field={field} prefix={props.prefix} />
+          <SharedField schema={field.schema} mapTo={field.mapTo} prefix={props.prefix} />
           <WebButton
-            onClick={props.removeItem(index)}
+            onClick={field.decreaseSize}
             text="delete"
           />
         </div>
       )})}
       <div className="flex center">
         <WebButton
-          onClick={props.increaseSize}
+          onClick={arrayHelper.increaseSize}
           text="Add"
         />
       </div>
     </div >
   )
-}
+})
 
-export default SharedArray(Rayfield)
+export default ArrayField

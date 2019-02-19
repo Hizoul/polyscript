@@ -15,14 +15,14 @@ const routes: any = [
   }, {
     path: urls.login,
     async: routeResolver(() => import("./login"))
+  }, {
+    path: `${urls.directorPage}/:id`,
+    async: routeResolver(() => import("./project/directorSheet"))
   }
   // {
   //   path: `${urls.projectOverview}`,
   //   async: routeResolver(() => import("./project/overview"))
-  // }, {
-  //   path: `${urls.directorPage}/:id`,
-  //   async: routeResolver(() => import("./project/directorSheet"))
-  // }, {
+  // },  {
   //   path: `${urls.programPage}/:id`,
   //   async: routeResolver(() => import("./project/program"))
   // }, {

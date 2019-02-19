@@ -1,6 +1,6 @@
-import { SharedField } from "@xpfw/form-shared"
+import { SharedField } from "isofw-shared/src/util/xpfwform"
 import { CameraForm } from "isofw-shared/src/xpfwDefs/camera"
-import { ProjectForm, ProjectName } from "isofw-shared/src/xpfwDefs/project"
+import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import CameraOverviewComponent from "isofw-web/src/components/camera/overview"
 import "isofw-web/src/components/form"
 import WebPageContainer from "isofw-web/src/components/pageContainer"
@@ -13,9 +13,9 @@ const CameraOverview: React.FunctionComponent<any> = (props) => {
       requireLoggedIn={true}
       name="cameraOverview"
       title="Cameras"
-      subContent={<SharedField field={ProjectName} prefix="cameraOverview" theme="search" />}
+      subContent={<SharedField schema={ProjectName} prefix="cameraOverview" theme="search" />}
     >
-      <CameraOverviewComponent form={CameraForm} prefix="cameraOverview" />
+      <CameraOverviewComponent schema={CameraForm} prefix="cameraOverview" />
     </WebPageContainer>
   )
 }

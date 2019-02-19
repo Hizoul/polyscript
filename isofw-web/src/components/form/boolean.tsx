@@ -1,29 +1,23 @@
-import { IFieldProps } from "@xpfw/form-shared"
+import { IFieldProps, useFieldWithValidation } from "@xpfw/form"
 import { get } from "lodash"
+import { observer } from "mobx-react-lite";
 import * as React from "react"
-import FieldContainer from "./fieldWrapper"
 
-class BulmaBooleanField extends React.Component<IFieldProps, any> {
-  private onChange: any
-  constructor(props: any) {
-    super(props)
-    this.onChange = () => {}
-  }
-  public render() {
-    const gotErr = get(this.props, "error.errors.length", 0) > 0
-    const classNames = `input ${gotErr ? "is-danger" : "is-success"}`
-    return (
-      <label className="checkbox flex inline center marginTop" style={{transform: "scale(1.2)"}}>
-        <input
-          type="checkbox"
-          style={{marginRight: "0.3rem"}}
-          checked={this.props.value}
-          onChange={this.onChange}
-        />
-        {this.props.field.mapTo === "showMine" ? "Alleen mijn afspraken" : this.props.field.mapTo}
-      </label>
-    )
-  }
-}
+const BooleanField: React.FunctionComponent<IFieldProps> = observer((props) => {
+  const boolHelper = useFieldWithValidation(props.schema, props.mapTo, props.prefix, {
+    valueEventKey: "nativeEvent.target.value"
+  })
+  return (
+    <label className="checkbox flex inline center marginTop" style={{transform: "scale(1.2)"}}>
+      <input
+        type="checkbox"
+        style={{marginRight: "0.3rem"}}
+        checked={boolHelper.value}
+        onChange={boolHelper.setValue}
+      />
+      {props.schema.title}
+    </label>
+  )
+})
 
-export default BulmaBooleanField
+export default BooleanField

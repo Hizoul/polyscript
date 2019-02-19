@@ -1,53 +1,56 @@
-import { FormStore, SharedField } from "@xpfw/form-shared"
-import { IFormEditProps, ISharedFormEdit, ListStore, SharedFormEdit } from "@xpfw/ui-shared"
-import { getFieldsFromForm,  IField } from "@xpfw/validate"
-import { Block, BlockTitle, Button, List } from "framework7-react"
+import { Block, BlockTitle, List } from "framework7-react"
+import { dataOptions, IEditHookProps, useEditWithProps } from "isofw-shared/src/util/xpfwdata"
+import { iterateSubFields, SharedField } from "isofw-shared/src/util/xpfwform"
 import { get } from "lodash"
 import * as React from "react"
 import WebButton from "../button"
 
-class MiniEdit extends React.Component<IFormEditProps, any> {
-  public render() {
-    const fields = this.props.fields.map((field: IField) => {
-      return <SharedField key={field.mapTo} field={field} prefix={this.props.prefix} user={this.props.user} />
-    })
-    const gotErr = get(this.props, "error.errors.length", 0)
-    const result = get(this.props, "state.result")
-    let msg: any
-    if (gotErr) {
-      msg = (
-        <div>
-          <BlockTitle>Error</BlockTitle>
-          <Block strong={true} inset={true}>
-            <p>please recheck your inputs or connection {JSON.stringify(get(this.props, "error"))}</p>
-          </Block>
-        </div>
-      )
-    }
-    if (result) {
-      msg = (
-        <div>
-          <BlockTitle>Success</BlockTitle>
-          <Block strong={true} inset={true}>
-            <p>Saved changes to {get(result, get(this.props.form, "options.idPath", "_id"))}</p>
-          </Block>
-        </div>
-      )
-    }
-    return (
+const Frameowrk7Edit: React.FunctionComponent<IEditHookProps> = (props) => {
+  const editProps = useEditWithProps(props)
+  const fields: any[] = []
+  iterateSubFields(props.schema, (key, schema) => {
+    fields.push(<SharedField key={key} schema={schema} prefix={props.prefix} />)
+  })
+  const gotErr = editProps != null
+  const result = editProps.state
+  let msg: any
+  if (gotErr) {
+    msg = (
       <div>
-        <List form={true} style={{margin: "0pt"}}>
-          <ul>
-            {fields}
-          </ul>
-        </List>
-        <WebButton className="marginTopBottom" onClick={this.props.submitEdit} iconFa="save" fill={true} text="Save" loading={this.props.loading} />
-        {msg}
+        <BlockTitle>Error</BlockTitle>
+        <Block strong={true} inset={true}>
+          <p>please recheck your inputs or connection {JSON.stringify(editProps.error)}</p>
+        </Block>
       </div>
     )
   }
+  if (result) {
+    msg = (
+      <div>
+        <BlockTitle>Success</BlockTitle>
+        <Block strong={true} inset={true}>
+          <p>saved changes to {get(editProps.state, dataOptions.idPath)}</p>
+        </Block>
+      </div>
+    )
+  }
+  return (
+    <div>
+      <List form={true} style={{margin: "0pt"}}>
+        <ul>
+          {fields}
+        </ul>
+      </List>
+      <WebButton
+        onClick={editProps.submitEdit}
+        iconFa="save"
+        fill={true}
+        loading={editProps.loading}
+        text="Save"
+      />
+      {msg}
+    </div>
+  )
 }
 
-const Framework7Edit: React.ComponentType<ISharedFormEdit> = SharedFormEdit<{}>(MiniEdit)
-
-export default Framework7Edit
+export default Frameowrk7Edit

@@ -162,10 +162,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@xpfw/data@1.0.0-beta.2":
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.2.tgz#bea42b158d54c401f8c020de93e405008bc82d95"
-  integrity sha512-lCJlB8xWD0Zh+ug0TIINSE/F9iV4QM+FqLH4McBfu+506tPVMlN0Wskbv45STocCNje1JWqaTWCLJklM5CDUqg==
+"@xpfw/data@1.0.0-beta.3":
+  version "1.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.3.tgz#b48d41f7fa5d38242229fccebf968e4793dc4cb2"
+  integrity sha512-8HYSsdZLg7/KULww/a3rh9+De+NeKGDpHhJ10B+TZh7tlpNzKV6X6u6kQBKOe5ZrouYS8skGNa/Io6/WFq+HZQ==
 
 "@xpfw/form-shared@^0.1.5":
   version "0.1.5"

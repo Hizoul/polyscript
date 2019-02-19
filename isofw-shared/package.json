@@ -8,7 +8,7 @@
     "@feathersjs/rest-client": "^1.4.7",
     "@feathersjs/socketio-client": "^1.2.1",
     "@types/query-string": "^6.2.0",
-    "@xpfw/data": "1.0.0-beta.2",
+    "@xpfw/data": "1.0.0-beta.3",
     "@xpfw/form": "1.0.0-beta.2",
     "@xpfw/form-shared": "^0.1.5",
     "@xpfw/ui-feathers": "^0.1.1",

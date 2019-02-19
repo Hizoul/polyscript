@@ -100,6 +100,7 @@ const ProjectProgram: ExtendedJSONSchema = {
 const ProjectCameras: ExtendedJSONSchema = {
   type: "string",
   title: "cameras",
+  theme: "single",
   relationship: {
     namePath: ProjectName.title,
     collection: "cameras",
@@ -111,6 +112,7 @@ const ProjectOperators: ExtendedJSONSchema = {
   type: "array",
   title: "operators",
   items: {type: "string"},
+  theme: "multi",
   relationship: {
     namePath: MailField.title,
     collection: "users",
@@ -121,6 +123,7 @@ const ProjectOperators: ExtendedJSONSchema = {
 const OperatorRelation: ExtendedJSONSchema = {
   type: "string",
   title: "operator",
+  theme: "single",
   relationship: {
     namePath: MailField.title,
     collection: "users",

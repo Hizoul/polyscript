@@ -1,18 +1,18 @@
-import { IFormShowProps, SharedFormShow } from "@xpfw/ui-shared"
+import { IGetHookProps, useGet, useGetWithProps } from "@xpfw/data"
 import { get } from "lodash"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 
-export interface INameDisplayer {
+export interface INameDisplayer extends IGetHookProps {
   getNameFrom: string
   placeholder?: string
 }
 
-class WebRelationshipItem extends React.Component<IFormShowProps & INameDisplayer, any> {
-  public render() {
-    return (
-      <span>{get(this.props.item, this.props.getNameFrom, this.props.placeholder)}</span>
-    )
-  }
+const NameDisplayer: React.FunctionComponent<INameDisplayer> = (props) => {
+  const gotten = useGetWithProps(props)
+  return (
+    <span>{get(gotten.item, props.getNameFrom, props.placeholder)}</span>
+  )
 }
 
-export default SharedFormShow<INameDisplayer>(WebRelationshipItem)
+export default observer(NameDisplayer)

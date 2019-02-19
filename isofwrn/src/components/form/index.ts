@@ -13,13 +13,13 @@ import Slider from "isofwrn/src/components/form/slider"
 import TextField from "isofwrn/src/components/form/text"
 import NativeCameraMapping from "../project/cameraMapping";
 
-ComponentRegistry.registerComponent(FieldType.Text, TextField)
-ComponentRegistry.registerComponent(FieldType.Text, SearchTextField, "search")
+ComponentRegistry.registerComponent("string", TextField)
+ComponentRegistry.registerComponent("string", SearchTextField, "search")
 ComponentRegistry.registerComponent(FieldType.Number, TextField)
 ComponentRegistry.registerComponent(FieldType.Date, DateField)
 ComponentRegistry.registerComponent(FieldType.Password, TextField)
 ComponentRegistry.registerComponent(FieldType.Slider, Slider)
-ComponentRegistry.registerComponent(FieldType.Boolean, BooleanField)
+ComponentRegistry.registerComponent("boolean", BooleanField)
 ComponentRegistry.registerComponent(FieldType.Select, SelectField)
 ComponentRegistry.registerComponent(FieldType.Object, ObjectField)
 ComponentRegistry.registerComponent(FieldType.RelationshipSingle, relationshipSingle)

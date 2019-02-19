@@ -48,7 +48,7 @@ const webpackConfig: webpack.Configuration = {
         test: /\.tsx?$/,
         loader: "awesome-typescript-loader"
       },
-      { test: /\.(woff|woff2|eot|ttf)$/, loader: 'url-loader?limit=100000' }
+      { test: /\.(woff|woff2|eot|ttf)$/, loader: "url-loader?limit=100000" }
     ]
   },
   resolve: {
@@ -62,11 +62,13 @@ const webpackConfig: webpack.Configuration = {
       "resub":  path.resolve(__dirname, `./node_modules/resub`),
       "resub-persist":  path.resolve(__dirname, `./node_modules/resub-persist`),
       "@xpfw/validate": path.resolve(__dirname, `./node_modules/@xpfw/validate`),
+      "@xpfw/form": path.resolve(__dirname, `./node_modules/@xpfw/form`),
       "@xpfw/form-shared": path.resolve(__dirname, `./node_modules/@xpfw/form-shared`),
       "@xpfw/form-web": path.resolve(__dirname, `./node_modules/@xpfw/form-web`),
       "@xpfw/form-bulma": path.resolve(__dirname, `./node_modules/@xpfw/form-bulma`),
       "@xpfw/ui-bulma": path.resolve(__dirname, `./node_modules/@xpfw/ui-bulma`),
       "@xpfw/ui-shared": path.resolve(__dirname, `./node_modules/@xpfw/ui-shared`),
+      "@xpfw/data": path.resolve(__dirname, `./node_modules/@xpfw/data`),
       "@xpfw/dm-shared": path.resolve(__dirname, `./node_modules/@xpfw/dm-shared`),
       "@xpfw/dm": path.resolve(__dirname, `./node_modules/@xpfw/dm`)
     }

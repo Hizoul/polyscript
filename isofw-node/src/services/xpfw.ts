@@ -1,5 +1,4 @@
 import * as authentication from "@feathersjs/authentication"
-import { permission, validate } from "@xpfw/feathers"
 import * as memdb from "feathers-memory"
 import * as mongoService from "feathers-mongodb"
 import convertIds from "isofw-node/src/services/hooks/convertIds"
@@ -26,44 +25,29 @@ const pluginCollections = (db: any) => {
       app.use(collection, service)
       console.log(`Registered XPFW-Collection ${collection}`)
       const servic = app.service(collection)
-      const form: any = ValidationRegistry.forms[collection]
-      const opts: any = {
-        idPath: "_id", serviceName: collection
-      }
       servic.hooks({
         before: {
           create: [
             auth.hooks.authenticate("jwt"),
-            permission.create(form, opts),
-            validate.general(form, "create", opts),
             convertIds("_id", false)
           ],
           update: [
             auth.hooks.authenticate("jwt"),
-            permission.update(form, opts),
-            validate.general(form, "update", opts),
             convertIds("_id", false)
           ],
           get: [
-            auth.hooks.authenticate("jwt"),
-            permission.general(form, "get", {...opts, docIdPath: "params.user._id"})
+            auth.hooks.authenticate("jwt")
           ],
           find: [
             auth.hooks.authenticate("jwt"),
-            permission.general(form, "find", opts),
-            validate.general(form, "find", opts),
             convertIds("_id", true)
           ],
           patch: [
             auth.hooks.authenticate("jwt"),
-            permission.general(form, "patch", opts),
-            validate.general(form, "path", opts),
             convertIds("_id", false)
           ],
           remove: [
-            auth.hooks.authenticate("jwt"),
-            permission.general(form, "remove", opts),
-            validate.general(form, "remove", opts)
+            auth.hooks.authenticate("jwt")
           ]
         }
       })

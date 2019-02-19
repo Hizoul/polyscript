@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.6.3",
-    "@xpfw/data": "1.0.0-beta.2",
+    "@xpfw/data": "1.0.0-beta.3",
     "@xpfw/data-feathers": "1.0.0-beta.2",
     "@xpfw/form": "1.0.0-beta.2",
     "@xpfw/form-shared": "^0.1.5",

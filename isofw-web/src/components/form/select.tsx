@@ -1,39 +1,34 @@
-import { IFieldProps } from "@xpfw/form-shared"
 import { ListInput } from "framework7-react"
-import { get, isFunction } from "lodash"
-import * as React from "react"
 import i18n from "isofw-shared/src/util/i18n"
+import { IFieldProps, useFieldWithValidation } from "isofw-shared/src/util/xpfwform";
+import { get, isFunction } from "lodash"
+import { observer } from "mobx-react-lite";
+import * as React from "react"
 
-class SelectField extends React.Component<IFieldProps, any> {
-  private onChange: any
-  constructor(props: any) {
-    super(props)
-    this.onChange = ()=> {}
+const SelectField: React.FunctionComponent<IFieldProps> = observer((props) => {
+  const fieldHelper = useFieldWithValidation(props.schema, props.mapTo, props.prefix)
+  let selOpts = get(props, "schema.selectOptions", [])
+  if (isFunction(selOpts)) {
+    selOpts = selOpts(fieldHelper.value, props.schema, props)
   }
-  public render() {
-    let selOpts = get(this.props, "field.selectOptions", [])
-    if (isFunction(selOpts)) {
-      selOpts = selOpts(this.props.value, this.props.field, this.props)
-    }
-    const options = selOpts.map((option: any) => {
-      return (
-        <option key={option.value} value={option.value}>
-          {option.label}
-        </option>
-      )
-    })
+  const options = selOpts.map((option: any) => {
     return (
-      <ListInput
-        type="select"
-        label={i18n.t(get(this.props, "field.mapTo"))}
-        className={this.props.className}
-        value={this.props.value ? this.props.value : "n"}
-        onChange={this.onChange}
-      >
-        {options}
-      </ListInput>
+      <option key={option.value} value={option.value}>
+        {option.label}
+      </option>
     )
-  }
-}
+  })
+  return (
+    <ListInput
+      type="select"
+      label={i18n.t(get(props, "schema.title"))}
+      className={get(props, "className")}
+      value={fieldHelper.value ? fieldHelper.value : "n"}
+      onChange={fieldHelper.setValue}
+    >
+      {options}
+    </ListInput>
+  )
+})
 
 export default SelectField

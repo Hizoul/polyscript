@@ -1,82 +1,48 @@
-import { FormStore, IArrayProps, IFieldProps } from "@xpfw/form-shared"
-import { DbStore } from "@xpfw/ui-shared"
-import { IField, prefixMaker } from "@xpfw/validate"
+import { DbStore } from "isofw-shared/src/util/xpfwdata"
+import { ExtendedJSONSchema, FormStore, getMapTo, memo, prependPrefix } from "isofw-shared/src/util/xpfwform"
 import { PresetAssistantForm, PresetCameraField, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset"
 import { ProjectCameras, ShotPreset } from "isofw-shared/src/xpfwDefs/project"
-import { cloneDeep, get, isBoolean } from "lodash"
-import * as React from "react"
-import { ComponentBase } from "resub"
 
-const popupVisibilityKey = "cameraChoice."
+const popupVisibilityKey = "cameraChoice"
+const freePresetKey = "freePresetGetter"
 
-const togglePop = (thisRef: any) => {
+const togglePop = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: string) => {
+  if (mapTo == null) { mapTo = getMapTo(schema, mapTo)}
   return (newValue?: any) => {
     if (newValue && newValue.type === "popup:closed") {
       newValue = false
     }
-    const currentValue = get(thisRef, "state.showPopUp", false)
-    const mapTo = get(thisRef, "props.field.mapTo", false)
-    const prefix = prefixMaker(get(thisRef.props, "prefix", ""))
-    FormStore.setValue(prefix + popupVisibilityKey + mapTo, isBoolean(newValue) ? newValue : !currentValue)
+    FormStore.setValue(mapTo, newValue, prependPrefix(prefix, popupVisibilityKey))
   }
 }
 const untypedDbStore: any = DbStore
-const indexRegularExpression = /.*?\[(.*?)\].*?/g
 
-const setValueWithPreset = (thisRef: any) => {
+const setValueWithPreset = (schema: ExtendedJSONSchema, mapTo?: any, prefix?: string) => {
+  if (mapTo == null) { mapTo = getMapTo(schema, mapTo)}
   return async (newValue?: any) => {
-    const prefix = get(thisRef.props, "prefix", "")
-    const creationPrefix = prefix + "freePresetGetter"
-    thisRef.props.setValue(newValue)
-    FormStore.setValue(`${prefixMaker(creationPrefix)}${PresetCameraField.mapTo}`, newValue)
-    FormStore.setValue(`${prefixMaker(creationPrefix)}${PresetProjectField.mapTo}`, untypedDbStore.currentlyEditing)
+    const creationPrefix = prependPrefix(prefix, `${freePresetKey}${PresetAssistantForm.title}`)
+    FormStore.setValue(schema.title, newValue, prefix)
+    FormStore.setValue(PresetAssistantForm.title, {}, prependPrefix(prefix, freePresetKey))
+    FormStore.setValue(PresetCameraField.title, newValue, creationPrefix)
+    FormStore.setValue(PresetProjectField.title, untypedDbStore.currentlyEditing, creationPrefix)
     const freeId: any = await DbStore.create(PresetAssistantForm, creationPrefix)
-    let mapTo = get(thisRef.props, "field.mapTo", "")
     mapTo = mapTo.substring(0, mapTo.indexOf("]") + 1)
-    FormStore.setValue(`${prefixMaker(prefix)}${mapTo}.${ShotPreset.mapTo}`, freeId.result)
-    return freeId.result
+    FormStore.setValue(`${prependPrefix(mapTo, prefix)}.${ShotPreset.title}`, freeId)
+    return freeId
   }
 }
 
-export interface SharedCameraChoiceProps extends IFieldProps {
-  cameras: string[]
-  showPopUp: boolean
-  togglePop: any
-  setValueWithPreset: any
-}
-
-const SharedCameraChoice = (Container: React.ComponentType<SharedCameraChoiceProps>) => {
-  return class extends ComponentBase<IFieldProps, any> {
-    private togglePop: any
-    private setValueWithPreset: any
-    constructor(props: any) {
-      super(props)
-      this.togglePop = togglePop(this)
-      this.setValueWithPreset = setValueWithPreset(this)
-    }
-    public render() {
-      return (
-        <Container
-          {...this.props}
-          cameras={this.state.cameras}
-          showPopUp={this.state.showPopUp}
-          togglePop={this.togglePop}
-          setValueWithPreset={this.setValueWithPreset}
-        />
-      )
-    }
-    protected _buildState(props: IFieldProps, initialBuild: boolean): any {
-      const prefix = prefixMaker(get(props, "prefix", ""))
-      const mapTo = get(props, "field.mapTo", false)
-      let cameras = FormStore.getValue(`${prefix}${ProjectCameras.mapTo}`)
-      cameras = cameras ? cameras : []
-      return {
-        cameras,
-        showPopUp: FormStore.getValue(`${prefix}${popupVisibilityKey}${mapTo}`)
-      }
-    }
+const useCameraChooser = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: string) => {
+  let cameras = FormStore.getValue(ProjectCameras.title, prefix)
+  cameras = cameras ? cameras : []
+  return {
+    cameras,
+    showPopUp: FormStore.getValue(mapTo, prependPrefix(popupVisibilityKey, prefix)),
+    hidePop: memo(() => togglePop(schema, mapTo, prefix)(0), ["hidePop", mapTo, prefix]),
+    showPop: memo(() => togglePop(schema, mapTo, prefix)(1), ["showPop", mapTo, prefix]),
+    setValueWithPreset: memo(() => setValueWithPreset(schema, mapTo, prefix), ["setValueWithPreset", JSON.stringify(schema), mapTo, prefix])
   }
 }
 
-export default SharedCameraChoice
+export default useCameraChooser
 export { togglePop, setValueWithPreset }

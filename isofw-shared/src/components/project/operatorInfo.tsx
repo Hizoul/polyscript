@@ -1,120 +1,70 @@
-import { FormStore, IArrayProps, IFieldProps } from "@xpfw/form-shared"
-import { IField, prefixMaker } from "@xpfw/validate"
+import { useEdit } from "isofw-shared/src/util/xpfwdata"
+import { FormStore } from "isofw-shared/src/util/xpfwform"
 import {
-  OperatorRelation, ProjectCameras, ProjectOperatorCameraMapping,
-  ProjectOperators, ProjectProgram, ShotCamera, ShotPreset
+  OperatorRelation, ProjectCameras, ProjectForm,
+  ProjectOperatorCameraMapping, ProjectOperators, ProjectProgram, ShotCamera, ShotPreset
 } from "isofw-shared/src/xpfwDefs/project"
 import { ProjectShot } from "isofw-shared/src/xpfwDefs/project"
-import { cloneDeep, find, get } from "lodash"
-import * as React from "react"
-import { ComponentBase } from "resub"
+import { find, get } from "lodash"
 
-const currentOperatorKey = `current${ProjectOperators.mapTo}`
-
+const currentOperatorKey = `current${ProjectOperators.title}`
 const whichViewIsActiveKey = `operatorInView`
 const isOperatorChooserVisibleKey = `operatorChooserVisible`
-const changeValue = (thisRef: any, keyToUse: string, toggleChooser?: boolean) => {
+
+const changeValue = (keyToUse: string, prefix?: string, toggleChooser?: boolean) => {
   return (operator: any) => {
     return () => {
-      const prefix = prefixMaker(get(thisRef.props, "prefix", ""))
-      FormStore.setValue(prefix + keyToUse,  operator)
+      FormStore.setValue(keyToUse, operator, prefix)
       if (toggleChooser) {
-        thisRef.hideOperatorChooser()
+        FormStore.setValue(isOperatorChooserVisibleKey, false, prefix)
       }
     }
   }
 }
 
-export interface WrapperOperatorAndProps {
-  item: any
-}
-
-export interface SharedOperatorInfoProps extends WrapperOperatorAndProps {
-  currentOperator: string
-  currentCameras: string[]
-  currentPreset: any
-  changeOperator: any
-  useScriptView: any
-  usePresetView: any
-  presetByCamera: any
-  filteredList: any
-  isPresetView: boolean
-  isOperatorChooserVisible: boolean
-  showOperatorChooser: any
-  hideOperatorChooser: any
-}
-const SharedOperatorInfo: (Container: React.ComponentType<SharedOperatorInfoProps>) =>
-React.ComponentType<WrapperOperatorAndProps> = (Container: React.ComponentType<SharedOperatorInfoProps>) => {
-  const b: any = class extends ComponentBase<any, any> {
-    private changeOperator: any
-    private useScriptView: any
-    private usePresetView: any
-    private showOperatorChooser: any
-    private hideOperatorChooser: any
-    constructor(props: any) {
-      super(props)
-      this.changeOperator = changeValue(this, currentOperatorKey, true)
-      this.useScriptView = changeValue(this, whichViewIsActiveKey)(0)
-      this.usePresetView = changeValue(this, whichViewIsActiveKey)(1)
-      this.showOperatorChooser = changeValue(this, isOperatorChooserVisibleKey)(true)
-      this.hideOperatorChooser = changeValue(this, isOperatorChooserVisibleKey)(false)
+const useOperatorInfo = (id: string, mapTo?: string, prefix?: string, reset?: boolean, defItem?: any) => {
+  const editHelper = useEdit(id, ProjectForm, mapTo, prefix, reset)
+  const currentOperator = FormStore.getValue(currentOperatorKey, prefix)
+  const item = get(editHelper, "original", defItem)
+  const mappings: any = find(get(item, String(ProjectOperatorCameraMapping.title), []),
+    [OperatorRelation.title, currentOperator])
+  const currentCameras = mappings && mappings[String(ProjectCameras.title)] ?
+    mappings[String(ProjectCameras.title)] : []
+  const program = get(item, String(ProjectProgram.title), [])
+  let filteredList = program
+  const presetByCameraObj: any = {}
+  filteredList.forEach((subItem: any) => {
+    if (presetByCameraObj[subItem[String(ShotCamera.title)]] == null) {
+      presetByCameraObj[subItem[String(ShotCamera.title)]] = []
     }
-    public render() {
-      const item = get(this.props, "original.result", this.props.item)
-      const mappings = find(get(item, ProjectOperatorCameraMapping.mapTo, []),
-        [OperatorRelation.mapTo, this.state.currentOperator])
-      const currentCameras = mappings && mappings[ProjectCameras.mapTo] ? mappings[ProjectCameras.mapTo] : []
-      const program = get(item, ProjectProgram.mapTo, [])
-      let filteredList = program
-      const presetByCameraObj: any = {}
-      filteredList.forEach((subItem: any) => {
-        if (presetByCameraObj[subItem[ShotCamera.mapTo]] == null) {
-          presetByCameraObj[subItem[ShotCamera.mapTo]] = []
-        }
-        presetByCameraObj[subItem[ShotCamera.mapTo]].push(subItem[ShotPreset.mapTo])
-      })
-      const presetByCamera: any[] = []
-      for (const k of Object.keys(presetByCameraObj)) {
-        presetByCamera.push({
-          camera: k, presets: presetByCameraObj[k]
-        })
-      }
-      if (currentCameras.length > 0) {
-        filteredList = filteredList.filter((subItem: any) => currentCameras.indexOf(subItem[ShotCamera.mapTo]) !== -1)
-      }
-      const currentPreset = program[get(item, ProjectShot.mapTo, 0)]
-      return (
-        <Container
-          {...this.props}
-          item={item}
-          currentOperator={this.state.currentOperator}
-          isPresetView={this.state.isPresetView}
-          changeOperator={this.changeOperator}
-          useScriptView={this.useScriptView}
-          usePresetView={this.usePresetView}
-          presetByCamera={presetByCamera}
-          currentCameras={currentCameras}
-          filteredList={filteredList}
-          currentPreset={currentPreset}
-          isOperatorChooserVisible={this.state.isOperatorChooserVisible}
-          hideOperatorChooser={this.hideOperatorChooser}
-          showOperatorChooser={this.showOperatorChooser}
-        />
-      )
-    }
-    protected _buildState(props: any, initialBuild: boolean): any {
-      const prefix = prefixMaker(get(props, "prefix", ""))
-      return {
-        currentOperator: FormStore.getValue(`${prefix}${currentOperatorKey}`),
-        isPresetView: FormStore.getValue(`${prefix}${whichViewIsActiveKey}`) === 1,
-        isOperatorChooserVisible: FormStore.getValue(`${prefix}${isOperatorChooserVisibleKey}`) === true
-      }
-    }
+    presetByCameraObj[subItem[String(ShotCamera.title)]].push(subItem[String(ShotPreset.title)])
+  })
+  const presetByCamera: any[] = []
+  for (const k of Object.keys(presetByCameraObj)) {
+    presetByCamera.push({
+      camera: k, presets: presetByCameraObj[k]
+    })
   }
-  return b
+  if (currentCameras.length > 0) {
+    filteredList = filteredList.filter(
+      (subItem: any) => currentCameras.indexOf(subItem[String(ShotCamera.title)]) !== -1)
+  }
+  const currentPreset = program[get(item, String(ProjectShot.title), 0)]
+  return {
+    ...editHelper,
+    currentOperator,
+    currentPreset,
+    isPresetView: FormStore.getValue(whichViewIsActiveKey, prefix) === 1,
+    isOperatorChooserVisible: FormStore.getValue(isOperatorChooserVisibleKey, prefix) === true,
+    changeOperator: changeValue(currentOperatorKey, prefix, true),
+    useScriptView: changeValue(whichViewIsActiveKey, prefix)(0),
+    usePresetView: changeValue(whichViewIsActiveKey, prefix)(1),
+    showOperatorChooser: changeValue(isOperatorChooserVisibleKey, prefix)(true),
+    hideOperatorChooser: changeValue(isOperatorChooserVisibleKey, prefix)(false)
+  }
 }
 
-export default SharedOperatorInfo
+export default useOperatorInfo
 export {
   changeValue, currentOperatorKey, whichViewIsActiveKey
 }

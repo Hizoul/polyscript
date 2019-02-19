@@ -1,29 +1,30 @@
-import { SharedField } from "@xpfw/form-shared"
 import urls from "isofw-shared/src/globals/url"
-import { IFormListProps, IFormShowProps, SharedFormList } from "isofw-shared/src/util/xpfwuishared"
+import { IListHookProps, useList } from "isofw-shared/src/util/xpfwdata"
 import { ProjectForm, ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import ProjectActiveButton from "isofw-web/src/components/project/activityButton"
 import { get } from "lodash"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 import WebButton from "../button"
 
-const ItemProject: React.FunctionComponent<IFormShowProps> = (props) => {
+const ItemProject: React.FunctionComponent<any> = (props) => {
   return (
     <tr>
-      <td>{get(props.item, ProjectName.mapTo)}</td>
+      <td>{get(props.item, String(ProjectName.title))}</td>
       <td>
         <WebButton text="director" href={`${urls.directorPage}/${get(props.item, "_id")}`} />
         <WebButton text="program" href={`${urls.programPage}/${get(props.item, "_id")}`} />
         <WebButton text="operator" href={`${urls.operatorInfo}/${get(props.item, "_id")}`} />
         <WebButton text="edit" href={`${urls.edit}/${ProjectForm.collection}/${get(props.item, "_id")}`} />
-        <ProjectActiveButton id={get(props.item, "_id")} collection={ProjectForm.collection} loading={false} />
+        <ProjectActiveButton id={get(props.item, "_id")} />
       </td>
     </tr>
   )
 }
 
-const ProjectOverviewComponent: React.FunctionComponent<IFormListProps> = (props) => {
-  const items = get(props, "list.result", []).map((item: any) => <ItemProject loading={false} item={item} key={item._id} />)
+const ProjectOverviewComponent: React.FunctionComponent<IListHookProps> = observer((props) => {
+  const listHelper = useList(ProjectForm, undefined, props.prefix, props.options)
+  const items = get(listHelper, "list.data", []).map((item: any) => <ItemProject loading={false} item={item} key={item._id} />)
   return (
     <div className="data-table card">
       <table>
@@ -40,6 +41,6 @@ const ProjectOverviewComponent: React.FunctionComponent<IFormListProps> = (props
       <WebButton text="Create" iconFa="plus" fill={true} href={`${urls.create}/${ProjectForm.collection}`} style={{margin: "0.5rem"}} />
     </div>
   )
-}
+})
 
-export default SharedFormList<{}>(ProjectOverviewComponent)
+export default ProjectOverviewComponent

@@ -5,7 +5,7 @@ import { SharedField } from "@xpfw/form"
 import { BlockTitle, List } from "framework7-react"
 import WebButton from "isofw-web/src/components/button"
 import TranslatedText from "isofw-web/src/components/i18n"
-import { WrappedMenuEntries } from "isofw-web/src/components/menuPanel"
+import { MenuEntries } from "isofw-web/src/components/menuPanel"
 import WebPageContainer from "isofw-web/src/components/pageContainer"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
@@ -28,7 +28,7 @@ const WebLogin: React.FunctionComponent<any> = (props) => {
     </BlockTitle>
     {authProps.loggedIn ? (
       <div>
-      <WrappedMenuEntries />
+        <MenuEntries />
         <BlockTitle><TranslatedText text="loggedInLogout" /></BlockTitle>
       </div>
     ) : (
