@@ -40,12 +40,13 @@ const togglePop = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: string) 
   }
 }
 
-export interface SharedCameraMappingProps extends IFieldProps {
+export interface CameraMappingUtils {
   cameras: string[]
   operators: string[]
   showPopUp: boolean
   changeMapping: (operator: string, camera: string) => () => void
-  togglePop: () => void
+  showPop: () => void
+  hidePop: () => void
 }
 
 const useCameraMapping = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: string) => {
@@ -53,7 +54,7 @@ const useCameraMapping = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: s
   cameras = cameras ? cameras : []
   let operators = FormStore.getValue(ProjectOperators.title, prefix)
   operators = operators ? operators : []
-  return {
+  const ret: CameraMappingUtils = {
     cameras,
     operators,
     showPopUp: FormStore.getValue(`${prefix}${popupVisibilityKey}`),
@@ -62,6 +63,7 @@ const useCameraMapping = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: s
     hidePop: memo(() => togglePop(schema, mapTo, prefix)(0), ["hidePop", mapTo, prefix]),
     showPop: memo(() => togglePop(schema, mapTo, prefix)(1), ["showPop", mapTo, prefix])
   }
+  return ret
 }
 
 export default useCameraMapping

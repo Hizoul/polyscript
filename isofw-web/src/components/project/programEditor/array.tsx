@@ -1,5 +1,5 @@
-import { IArrayProps, IFieldProps, SharedArray, SharedField } from "@xpfw/form-shared"
 import { List } from "framework7-react"
+import { getMapToFromProps, IFieldProps, SharedField, useArray, useFieldWithValidation } from "isofw-shared/src/util/xpfwform";
 import {
   ShotCamera, ShotDuration, ShotImportance, ShotMovement,
   ShotMovementTowards, ShotName, ShotPreset, ShotRemarksDirector, ShotRemarksOperator, ShotType
@@ -12,21 +12,24 @@ import "../style.sass"
 const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards,
   ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset, ShotImportance]
 
-const ProgramObject: React.FunctionComponent<IArrayProps & {
-  index: number, size: number, remove: any, value: any
+const ProgramObject: React.FunctionComponent<IFieldProps & {
+  decreaseSize: any
+  increaseSize: any
 }> = (props) => {
+  const mapTo = getMapToFromProps(props)
+  const fieldHelper = useFieldWithValidation(props.schema, props.mapTo, props.prefix)
   const convertedFields = []
   for (const field of fieldsToConvert) {
     const newField = cloneDeep(field)
-    newField.mapTo = `${props.field.mapTo}[${props.index}].${field.mapTo}`
+    newField.title = `${mapTo}.${field.title}`
     convertedFields.push(newField)
   }
   let classes = "currentBox withMargin"
   let attentionItem: any
-  if (props.value && props.value[ShotImportance.mapTo] === "r") {
+  if (fieldHelper.value && fieldHelper.value[String(ShotImportance.title)] === "r") {
     classes += " raised"
     attentionItem = <span className="attentionText">!</span>
-  } else if (props.value && props.value[ShotImportance.mapTo] === "m") {
+  } else if (fieldHelper.value && fieldHelper.value[String(ShotImportance.title)] === "m") {
     classes += " raised2"
     attentionItem = <span className="attentionText">!!</span>
   }
@@ -35,7 +38,7 @@ const ProgramObject: React.FunctionComponent<IArrayProps & {
       <div className="flex1" style={{marginBottom: "-2rem"}}>
         <WebButton
           className="boxTopLeft"
-          onClick={props.removeItem(props.index)}
+          onClick={props.decreaseSize}
           text=""
           color="red"
           fill={true}
@@ -45,7 +48,7 @@ const ProgramObject: React.FunctionComponent<IArrayProps & {
         <div className="flex1">&nbsp;</div>
         <WebButton
           className="boxTopRight"
-          onClick={() => props.increaseSize(props.index + 1)}
+          onClick={props.increaseSize}
           text=""
           color="green"
           fill={true}
@@ -55,42 +58,39 @@ const ProgramObject: React.FunctionComponent<IArrayProps & {
       </div>
       <span className="shotNumber">
         {attentionItem}
-        {props.index}
+        RELIABLENUMBER
         {attentionItem}
       </span>
       <List form={true} className="noMargin">
         <ul>
-          <SharedField field={convertedFields[7]}  prefix={props.prefix} />
-          <SharedField field={convertedFields[0]}  prefix={props.prefix} />
-          <SharedField field={convertedFields[1]}  prefix={props.prefix} />
-          <SharedField field={convertedFields[2]}  prefix={props.prefix} />
-          <SharedField field={convertedFields[4]}  prefix={props.prefix} />
-          <SharedField field={convertedFields[5]}  prefix={props.prefix} />
-          <SharedField field={convertedFields[6]}  prefix={props.prefix} />
-          <SharedField field={convertedFields[8]}  prefix={props.prefix} />
-          <SharedField field={convertedFields[9]}  prefix={props.prefix} />
+          <SharedField schema={convertedFields[7]}  prefix={props.prefix} />
+          <SharedField schema={convertedFields[0]}  prefix={props.prefix} />
+          <SharedField schema={convertedFields[1]}  prefix={props.prefix} />
+          <SharedField schema={convertedFields[2]}  prefix={props.prefix} />
+          <SharedField schema={convertedFields[4]}  prefix={props.prefix} />
+          <SharedField schema={convertedFields[5]}  prefix={props.prefix} />
+          <SharedField schema={convertedFields[6]}  prefix={props.prefix} />
+          <SharedField schema={convertedFields[8]}  prefix={props.prefix} />
+          <SharedField schema={convertedFields[9]}  prefix={props.prefix} />
         </ul>
       </List>
     </div>
   )
 }
 
-const ProgramArray: React.FunctionComponent<IArrayProps> = (props) => {
-  let arraySize = 1
-  if (Array.isArray(props.value) && props.value.length > 0) {
-    arraySize = props.value.length
-  }
-  const subFields = []
-  for (let i = 0; i < arraySize; i++) {
-    subFields.push(
-    <ProgramObject {...props} key={i} index={i} size={arraySize} remove={props.removeItem(i)} value={props.value ? props.value[i] : null} />)
-  }
-  console.log(" Array item is ",  props)
+const ProgramArray: React.FunctionComponent<IFieldProps> = (props) => {
+  const arrayHelper = useArray(props.schema, props.mapTo, props.prefix)
   return (
     <div className="flex1">
-      {subFields}
+      {arrayHelper.fields.map((subField) =>
+        <ProgramObject
+          {...props}
+          key={subField.mapTo}
+          {...subField}
+        />
+      )}
     </div>
   )
 }
 
-export default SharedArray(ProgramArray)
+export default ProgramArray

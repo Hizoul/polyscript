@@ -37,6 +37,7 @@ const useCameraChooser = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: s
   cameras = cameras ? cameras : []
   return {
     cameras,
+    value: FormStore.getValue(schema.title, prefix),
     showPopUp: FormStore.getValue(mapTo, prependPrefix(popupVisibilityKey, prefix)),
     hidePop: memo(() => togglePop(schema, mapTo, prefix)(0), ["hidePop", mapTo, prefix]),
     showPop: memo(() => togglePop(schema, mapTo, prefix)(1), ["showPop", mapTo, prefix]),

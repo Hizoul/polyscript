@@ -1,37 +1,37 @@
 import { BlockTitle, Card, CardContent, CardHeader, Icon, List, ListItem, Popup, Row } from "framework7-react"
-import SharedCameraChoice, { SharedCameraChoiceProps } from "isofw-shared/src/components/project/cameraChooser"
+import useCameraChooser from "isofw-shared/src/components/project/cameraChooser"
 import val from "isofw-shared/src/globals/val"
-import { MailField } from "isofw-shared/src/util/xpfwuishared"
-import { OperatorRelation, ProjectCameras, ProjectName } from "isofw-shared/src/xpfwDefs/project"
-import WebButton from "isofw-web/src/components/button"
+import { IFieldProps } from "isofw-shared/src/util/xpfwform"
+import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
-import { find, get } from "lodash"
 import * as React from "react"
 import "../style.sass"
 
-const webCameraMapping: React.FunctionComponent<SharedCameraChoiceProps> = (props) => {
+const CameraChooser: React.FunctionComponent<IFieldProps> = (props) => {
+  const chooserHelper = useCameraChooser(props.schema, props.mapTo, props.prefix)
   return (
     <div>
       <ListItem
-        onClick={props.togglePop}
+        onClick={chooserHelper.showPop}
       >
         <div slot="title">
           Camera:&nbsp;
-          <NameDisplayer collection={val.service.camera} id={props.value} getNameFrom={ProjectName.mapTo} placeholder="not yet selected" />
+          <NameDisplayer collection={val.service.camera} id={chooserHelper.value} getNameFrom={String(ProjectName.title)} placeholder="not yet selected" />
         </div>
         <div slot="inner">
           <Icon fa={"camera"} />
         </div>
       </ListItem>
-      <Popup opened={props.showPopUp} onPopupClosed={props.togglePop}>
-        <BlockTitle>Choose a camera {props.field.mapTo}</BlockTitle>
+      <Popup opened={chooserHelper.showPopUp} onPopupClosed={chooserHelper.hidePop}>
+        <BlockTitle>Choose a camera {props.schema.title}</BlockTitle>
         <List>
-          {props.cameras.map((camera) => <ListItem key={camera} onClick={() => {
-            props.togglePop(false)
-            props.setValueWithPreset(camera)
+          {chooserHelper.cameras.map((camera: any) => <ListItem key={camera} onClick={() => {
+            // TODO: do this in the hook itself instead of an onClick
+            chooserHelper.hidePop()
+            chooserHelper.setValueWithPreset(camera)
           }}>
                 <div slot="title">
-                  <NameDisplayer collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />
+                  <NameDisplayer collection={val.service.camera} id={camera} getNameFrom={String(ProjectName.title)} />
                 </div>
                 <div slot="inner">
                   <Icon fa={"chevron"} />
@@ -43,6 +43,4 @@ const webCameraMapping: React.FunctionComponent<SharedCameraChoiceProps> = (prop
   )
 }
 
-const WrappedCameraChooser = SharedCameraChoice(webCameraMapping)
-export default WrappedCameraChooser
-
+export default CameraChooser

@@ -1,4 +1,4 @@
-import ValidationRegistry from "@xpfw/validate"
+import getForm from "isofw-shared/src/util/getForm"
 import "isofw-web/src/components/form"
 import WebPageContainer from "isofw-web/src/components/pageContainer"
 import { get } from "lodash"
@@ -6,7 +6,7 @@ import * as React from "react"
 
 const ListPage: React.FunctionComponent<any> = (props) => {
   const collection = get(props, "collection")
-  const form = ValidationRegistry.forms[collection]
+  const form = getForm(collection)
   if (form == null) {
     return (
       <WebPageContainer requireLoggedIn={true} name="Error" title="Error">Collection not found</WebPageContainer>

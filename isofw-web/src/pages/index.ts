@@ -18,26 +18,25 @@ const routes: any = [
   }, {
     path: `${urls.directorPage}/:id`,
     async: routeResolver(() => import("./project/directorSheet"))
+  }, {
+    path: `${urls.projectOverview}`,
+    async: routeResolver(() => import("./project/overview"))
+  },  {
+    path: `${urls.programPage}/:id`,
+    async: routeResolver(() => import("./project/program"))
+  }, {
+    path: `${urls.operatorInfo}/:id`,
+    async: routeResolver(() => import("./project/operatorInfo"))
+  }, {
+    path: `${urls.cameraOverview}`,
+    async: routeResolver(() => import("./camera/overview"))
+  }, {
+    path: `${urls.create}/:collection`,
+    async: routeResolver(() => import("./collections/create"))
+  }, {
+    path: `${urls.edit}/:collection/:id`,
+    async: routeResolver(() => import("./collections/edit"))
   }
-  // {
-  //   path: `${urls.projectOverview}`,
-  //   async: routeResolver(() => import("./project/overview"))
-  // },  {
-  //   path: `${urls.programPage}/:id`,
-  //   async: routeResolver(() => import("./project/program"))
-  // }, {
-  //   path: `${urls.operatorInfo}/:id`,
-  //   async: routeResolver(() => import("./project/operatorInfo"))
-  // }, {
-  //   path: `${urls.cameraOverview}`,
-  //   async: routeResolver(() => import("./camera/overview"))
-  // }, {
-  //   path: `${urls.create}/:collection`,
-  //   async: routeResolver(() => import("./collections/create"))
-  // }, {
-  //   path: `${urls.edit}/:collection/:id`,
-  //   async: routeResolver(() => import("./collections/edit"))
-  // }
 ]
 
 export default routes

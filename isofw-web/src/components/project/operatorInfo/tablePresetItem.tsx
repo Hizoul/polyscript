@@ -1,4 +1,3 @@
-import { DbStore, IFormEditProps, IFormShowProps, SharedFormEdit } from "@xpfw/ui-shared"
 import val from "isofw-shared/src/globals/val"
 import { PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
 import { ProjectForm, ProjectName, ProjectProgram, ProjectShot, ShotCamera,
@@ -8,9 +7,9 @@ import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
 import * as React from "react"
 
-const TablePresetItem: React.FunctionComponent<IFormShowProps & {index: number}> = (props) => {
+const TablePresetItem: React.FunctionComponent<{item: any, index: number}> = (props) => {
   let importance = ""
-  const importanceValue = get(props.item, ShotImportance.mapTo)
+  const importanceValue = get(props.item, String(ShotImportance.title))
   if (importanceValue === "r") {
     importance = "!"
   } else if (importanceValue === "m") {
@@ -20,21 +19,21 @@ const TablePresetItem: React.FunctionComponent<IFormShowProps & {index: number}>
     <tr id={`presetPositioner${props.index}`}>
       <td>{props.index}</td>
       <td>
-        <NameDisplayer collection={val.service.camera} id={get(props.item, ShotCamera.mapTo)} getNameFrom={ProjectName.mapTo} placeholder="" />
+        <NameDisplayer collection={val.service.camera} id={get(props.item, String(ShotCamera.title))} getNameFrom={String(ProjectName.title)} placeholder="" />
       </td>
       <td>
-        <NameDisplayer collection={val.service.preset} id={get(props.item, ShotPreset.mapTo)} getNameFrom={PresetNumberField.mapTo} placeholder="" />
+        <NameDisplayer collection={val.service.preset} id={get(props.item, String(ShotPreset.title))} getNameFrom={String(PresetNumberField.title)} placeholder="" />
       </td>
       <td>{importance}</td>
-      <td>{get(props.item, ShotName.mapTo)}</td>
-      <td>{get(props.item, ShotType.mapTo)}</td>
-      <td>{get(props.item, ShotMovement.mapTo)}</td>
-      <td>{get(props.item, ShotMovementTowards.mapTo)}</td>
-      <td>{get(props.item, ShotDuration.mapTo)}</td>
+      <td>{get(props.item, String(ShotName.title))}</td>
+      <td>{get(props.item, String(ShotType.title))}</td>
+      <td>{get(props.item, String(ShotMovement.title))}</td>
+      <td>{get(props.item, String(ShotMovementTowards.title))}</td>
+      <td>{get(props.item, String(ShotDuration.title))}</td>
       <td>placeholder</td>
       <td>
-        {get(props.item, ShotRemarksDirector.mapTo)}<br />
-        {get(props.item, ShotRemarksOperator.mapTo)}
+        {get(props.item, String(ShotRemarksDirector.title))}<br />
+        {get(props.item, String(ShotRemarksOperator.title))}
       </td>
     </tr>
   )

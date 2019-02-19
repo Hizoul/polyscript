@@ -8,7 +8,7 @@ const DirectorSheetPage: React.FunctionComponent<any> = (props) => {
   const id = get(props, "id")
   return (
     <WebPageContainer backLink={true} requireLoggedIn={true} name="directorSheet" title="Director">
-      <ShotEditor schema={ProjectForm} id={id} reset={true} prefix="shotEdit" />
+      <ShotEditor id={id} reset={true} prefix="shotEdit" />
     </WebPageContainer>
   )
 }

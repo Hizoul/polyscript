@@ -1,6 +1,6 @@
 import { DbStore, IFormEditProps, IFormShowProps, SharedFormEdit } from "@xpfw/ui-shared"
 import { BlockTitle, Card, CardFooter, CardHeader, Link } from "framework7-react"
-import sharedPresetUpdater, { PresetUpdaterProps } from "isofw-shared/src/components/preset/updater"
+import usePresetUpdater from "isofw-shared/src/components/preset/updater"
 import val from "isofw-shared/src/globals/val"
 import { PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
 import { ProjectForm, ProjectName, ProjectProgram, ProjectShot, ShotCamera,
@@ -9,33 +9,35 @@ import { ProjectForm, ProjectName, ProjectProgram, ProjectShot, ShotCamera,
 import WebButton from "isofw-web/src/components/button"
 import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 
-const PresetCard: React.FunctionComponent<PresetUpdaterProps> = (props) => {
+const PresetCard: React.FunctionComponent<{id: string}> = observer((props) => {
+  const presetUpdater = usePresetUpdater(props.id)
   return (
     <Card>
       <CardHeader>
-        <span>Preset #{get(props.item, PresetNumberField.mapTo)}</span>
+        <span>Preset #{get(presetUpdater.item, String(PresetNumberField.title))}</span>
       </CardHeader>
       <CardFooter>
         <Link text="Update" />
         <Link
-          text={props.isReady ? "un-ready" : "ready"}
-          onClick={props.isReady ? props.setNotReady : props.setReady}
+          text={presetUpdater.isReady ? "un-ready" : "ready"}
+          onClick={presetUpdater.isReady ? presetUpdater.setNotReady : presetUpdater.setReady}
         />
       </CardFooter>
     </Card>
   )
-}
-const WrappedPresetCard = sharedPresetUpdater(PresetCard)
-const CameraPresets: React.FunctionComponent<IFormShowProps> = (props) => {
+})
+
+const CameraPresets: React.FunctionComponent<any> = (props) => {
   return (
     <div>
       <BlockTitle>
-        <NameDisplayer collection={val.service.camera} id={get(props.item, "camera")} getNameFrom={ProjectName.mapTo} placeholder="" />
+        <NameDisplayer collection={val.service.camera} id={get(props.item, "camera")} getNameFrom={String(ProjectName.title)} placeholder="" />
       </BlockTitle>
       <div className="presetCards">
-        {get(props.item, "presets", []).map((preset: any) => <WrappedPresetCard key={preset} id={preset} />)}
+        {get(props.item, "presets", []).map((preset: any) => <PresetCard key={preset} id={preset} />)}
       </div>
     </div>
   )

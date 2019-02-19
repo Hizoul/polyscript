@@ -21,7 +21,7 @@ const useDirector = (id: string, reset?: boolean) => {
   }
 }
 
-export interface DirectorProps {id: string, reset?: boolean}
+export interface DirectorProps {id: string, reset?: boolean, prefix?: string}
 
 export default useDirector
 export {
