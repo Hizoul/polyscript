@@ -369,10 +369,10 @@
     "@webassemblyjs/wast-parser" "1.7.11"
     "@xtuc/long" "4.2.1"
 
-"@xpfw/data-feathers@^1.0.0-beta.0":
-  version "1.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@xpfw/data-feathers/-/data-feathers-1.0.0-beta.0.tgz#5b5c1cb42e96406dc0aeb82e58619a10c1b3652c"
-  integrity sha512-McdV1J87678TalOtFX1v/BWgCTCFKx4uFE5CEEjNkvMp+Iy6siOCjR15YSYWd9h2EkPYR4u/gABGAJnL9EInUA==
+"@xpfw/data-feathers@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@xpfw/data-feathers/-/data-feathers-1.0.0-beta.2.tgz#d5a5f69aeb0232d6291a1998fdec2baceb3300dc"
+  integrity sha512-sT3qsy4oQeA1c5bSmN4/4ehDbDLuqBk2L+H0/0vXGG9ln9aPUjAHzZuSaJPBqqNNJcDml2kR77B9wpK1d/pxxA==
   dependencies:
     "@feathersjs/authentication-client" "^1.0.10"
     "@feathersjs/feathers" "^3.3.1"
@@ -380,25 +380,25 @@
     "@feathersjs/socketio-client" "^1.2.1"
     socket.io-client "^2.2.0"
 
-"@xpfw/data@^1.0.0-beta.0":
-  version "1.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.0.tgz#41155be799d9c640ac01ce3c0ebd63d63e341b91"
-  integrity sha512-EkQ3/XwL/H9s4Zjy8sjJpJCaYOR4A6LfE/Tv+NL8VaSrVLQLUdeDoz6Fq+fg6XFHzxZjS4A2fOAQSNn4ZpPu8A==
+"@xpfw/data@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.2.tgz#bea42b158d54c401f8c020de93e405008bc82d95"
+  integrity sha512-lCJlB8xWD0Zh+ug0TIINSE/F9iV4QM+FqLH4McBfu+506tPVMlN0Wskbv45STocCNje1JWqaTWCLJklM5CDUqg==
 
 "@xpfw/form-shared@^0.1.5":
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/@xpfw/form-shared/-/form-shared-0.1.5.tgz#51456f6653960db2b793dcc13f8e675d16720c44"
   integrity sha512-8EOTqPosZWVKis77ZZXra7aGPRFUe7vnP9OAyh9BMYCZjEPpEYAGNAFQieuTeT2JLlxsJZI8pZ8gOAi1Xn95qw==
 
-"@xpfw/form-web@1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@xpfw/form-web/-/form-web-1.0.0-beta.1.tgz#5feae6655791456f6e881c26dc4db74d232f19d2"
-  integrity sha512-Iij6Pj7hsDeKlpiEWD7oKAGNUbRi13pK05hbQwxx5+dD4qcHInHbANwc+oZnlp6A0kHQFIpToxMwlch9q30Brw==
+"@xpfw/form-web@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@xpfw/form-web/-/form-web-1.0.0-beta.2.tgz#3b4e30d60f0298004c0754b0fe8c41896257884b"
+  integrity sha512-zub53cpUMZvF+1l2VQXPIj7G2mxyDI4ZjyN+Fm2SvD31MobG/LGKmj4FT85Sd84Fb5AuAOHxzOjBdCwIsm0dtA==
 
-"@xpfw/form@1.0.0-beta.1":
-  version "1.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@xpfw/form/-/form-1.0.0-beta.1.tgz#8952614de6cb6547197463fbc1da0ae865c54384"
-  integrity sha512-QkZyhQCOTc9eoQLjqahr74P3BbpmwrZVO43vlpac8Aq+6GjngbBSOcre5l7eVN4SiKXwjxGcrU2Eh19e6Smd/g==
+"@xpfw/form@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@xpfw/form/-/form-1.0.0-beta.2.tgz#9489e86102eda0668baa608998f2c00398f34f7b"
+  integrity sha512-URXSs8I3QGtzeniCMV071u0MQKgckxeDtdi3bwOQcJ9Bk6nNtYUELINteqhVZqO2jBhuT3U1HAIKPxEMruXjGw==
 
 "@xpfw/ui-feathers@^0.1.1":
   version "0.1.1"

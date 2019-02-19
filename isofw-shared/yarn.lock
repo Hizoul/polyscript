@@ -162,20 +162,20 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@xpfw/data@^1.0.0-beta.0":
-  version "1.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.0.tgz#41155be799d9c640ac01ce3c0ebd63d63e341b91"
-  integrity sha512-EkQ3/XwL/H9s4Zjy8sjJpJCaYOR4A6LfE/Tv+NL8VaSrVLQLUdeDoz6Fq+fg6XFHzxZjS4A2fOAQSNn4ZpPu8A==
+"@xpfw/data@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.2.tgz#bea42b158d54c401f8c020de93e405008bc82d95"
+  integrity sha512-lCJlB8xWD0Zh+ug0TIINSE/F9iV4QM+FqLH4McBfu+506tPVMlN0Wskbv45STocCNje1JWqaTWCLJklM5CDUqg==
 
 "@xpfw/form-shared@^0.1.5":
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/@xpfw/form-shared/-/form-shared-0.1.5.tgz#51456f6653960db2b793dcc13f8e675d16720c44"
   integrity sha512-8EOTqPosZWVKis77ZZXra7aGPRFUe7vnP9OAyh9BMYCZjEPpEYAGNAFQieuTeT2JLlxsJZI8pZ8gOAi1Xn95qw==
 
-"@xpfw/form@^1.0.0-beta.0":
-  version "1.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@xpfw/form/-/form-1.0.0-beta.0.tgz#ef21a1fa7c8a24eb496240737d03c8200604bd2f"
-  integrity sha512-OrGZdMS5MjZaLYZMFix/rSvnkx980YSKvvt0XEvcysJcGG/+Bl8oQAQD6+lA8G3oRuvWiqoZwAi4cSvKcPMqxg==
+"@xpfw/form@1.0.0-beta.2":
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@xpfw/form/-/form-1.0.0-beta.2.tgz#9489e86102eda0668baa608998f2c00398f34f7b"
+  integrity sha512-URXSs8I3QGtzeniCMV071u0MQKgckxeDtdi3bwOQcJ9Bk6nNtYUELINteqhVZqO2jBhuT3U1HAIKPxEMruXjGw==
 
 "@xpfw/ui-feathers@^0.1.1":
   version "0.1.1"
