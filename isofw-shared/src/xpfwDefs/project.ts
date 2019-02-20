@@ -1,6 +1,7 @@
 import { MailField } from "@xpfw/data"
 import { ExtendedJSONSchema } from "@xpfw/form"
 import val from "isofw-shared/src/globals/val"
+import { changeValToRegex } from "isofw-shared/src/util/valToRegex";
 import { IDField } from "./commonFields"
 
 const ProjectName: ExtendedJSONSchema = {
@@ -165,7 +166,8 @@ const ProjectForm: ExtendedJSONSchema = {
     [String(IsActiveField.title)]: IsActiveField
   },
   modify: {
-    addCreatedAt: true
+    addCreatedAt: true,
+    queryModifier: changeValToRegex(String(ProjectName.title))
   }
 }
 

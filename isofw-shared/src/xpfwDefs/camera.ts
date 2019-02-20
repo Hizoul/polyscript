@@ -1,8 +1,6 @@
 import { ExtendedJSONSchema } from "@xpfw/form"
 import val from "isofw-shared/src/globals/val"
-import { cloneDeep } from "lodash"
-import { changeValToRegex } from "../util/valToRegex"
-import { IDField } from "./commonFields"
+import { changeValToRegex } from "isofw-shared/src/util/valToRegex"
 import { ProjectName } from "./project"
 
 const CameraIp: ExtendedJSONSchema = {

@@ -1,4 +1,4 @@
-import { SharedField } from "@xpfw/form"
+import { prependPrefix, SharedField } from "@xpfw/form"
 import { ProjectForm, ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import "isofw-web/src/components/form"
 import WebPageContainer from "isofw-web/src/components/pageContainer"
@@ -12,7 +12,7 @@ const ProjectOverview: React.FunctionComponent<any> = (props) => {
       requireLoggedIn={true}
       name="projectOverview"
       title="Projects"
-      subContent={<SharedField schema={ProjectName} prefix="projectOverview" theme="search" />}
+      subContent={<SharedField schema={ProjectName} prefix={prependPrefix(ProjectForm.title, "projectOverview")} theme="search" />}
     >
       <ProjectOverviewComponent schema={ProjectForm} prefix="projectOverview" />
     </WebPageContainer>

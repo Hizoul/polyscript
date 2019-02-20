@@ -2,7 +2,7 @@ import { cloneDeep } from "lodash"
 
 const valToRegex = (val: any) => {
   if (val == null || val.length === 0) {
-    return null
+    return undefined
   }
   return {
     $regex: `(.*?)${val}(.*?)`,
@@ -12,11 +12,12 @@ const valToRegex = (val: any) => {
 
 const changeValToRegex = (path: string) => {
   return (value: any) => {
-    const newValue = cloneDeep(value)
-    if (newValue[path]) {
+    if (value[path] != null) {
+      const newValue = cloneDeep(value)
       newValue[path] = valToRegex(newValue[path])
+      return newValue
     }
-    return newValue
+    return value
   }
 }
 
