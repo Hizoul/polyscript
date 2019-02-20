@@ -1,26 +1,29 @@
-import SharedCameraMapping, { SharedCameraMappingProps } from "isofw-shared/src/components/project/cameraMapping"
+import useCameraMapping, { CameraMappingUtils } from "isofw-shared/src/components/project/cameraMapping"
 import val from "isofw-shared/src/globals/val"
-import { MailField } from "isofw-shared/src/util/xpfwuishared"
 import { OperatorRelation, ProjectCameras, ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofwrn/src/components/displayName"
 import { find, get } from "lodash"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
-import { Text, View, ScrollView } from "react-native"
+import { ScrollView, Text, View } from "react-native"
 import { Card, ListItem, Overlay } from "react-native-elements"
+import { IFieldProps } from "../../../../isofw-shared/src/util/xpfwform"
 import NativeButton from "../button"
 
-const OperatorCamera: React.FunctionComponent<SharedCameraMappingProps & {operator: string}> = (props) => {
+const OperatorCamera: React.FunctionComponent<{
+  operator: string
+  mapper: CameraMappingUtils
+}> = (props) => {
   return (
     <Card>
       <NameDisplayer collection={val.service.user} id={props.operator} getNameFrom={MailField.mapTo} />
-
-        {props.cameras ? props.cameras.map((camera) => {
-          const operatorCameras = find(props.value, [OperatorRelation.mapTo, props.operator])
-          const selected = get(operatorCameras, ProjectCameras.mapTo, []).indexOf(camera) !== -1
+        {props.mapper.cameras.map((camera) => {
+          const operatorCameras = find(props.mapper.value, [OperatorRelation.title, props.operator])
+          const selected = get(operatorCameras, String(ProjectCameras.title), []).indexOf(camera) !== -1
           return (
             <ListItem
               key={camera}
-              onPress={props.changeMapping(props.operator, camera)}
+              onPress={props.mapper.changeMapping(props.operator, camera)}
               title={<NameDisplayer collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />}
               rightIcon={{
                 name: selected ? "times" : "plus", type: "font-awesome",
@@ -28,28 +31,29 @@ const OperatorCamera: React.FunctionComponent<SharedCameraMappingProps & {operat
               }}
             />
           )
-        }) : undefined}
+        })}
     </Card>
   )
 }
 
-const nativeCameraMapping: React.FunctionComponent<SharedCameraMappingProps> = (props) => {
+const NativeCameraMapping: React.FunctionComponent<IFieldProps> = observer((props) => {
+  const mapper = useCameraMapping(props.schema, props.mapTo, props.prefix)
   return (
     <View>
       <NativeButton
-        onPress={props.togglePop}
+        onPress={mapper.showPop}
         title="operator to camera mapping"
         icon={{name: "camera", type: "font-awesome"}}
       />
-      <Overlay isVisible={props.showPopUp === true} onBackdropPress={props.togglePop}>
+      <Overlay isVisible={mapper.showPopUp === true} onBackdropPress={mapper.hidePop}>
         <ScrollView>
           <Text>select which operator handles which cameras</Text>
-          {props.operators.map((operator) => <OperatorCamera {...props} key={operator} operator={operator} />)}
+          {mapper.operators.map((operator) =>
+            <OperatorCamera {...props} key={operator} operator={operator} mapper={mapper} />)}
         </ScrollView>
       </Overlay>
     </View>
   )
-}
+})
 
-const NativeCameraMapping = SharedCameraMapping(nativeCameraMapping)
 export default NativeCameraMapping

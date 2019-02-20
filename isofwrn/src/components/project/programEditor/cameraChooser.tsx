@@ -1,6 +1,6 @@
-import SharedCameraChoice, { SharedCameraChoiceProps } from "isofw-shared/src/components/project/cameraChooser"
+import useCameraChooser from "isofw-shared/src/components/project/cameraChooser"
 import val from "isofw-shared/src/globals/val"
-import { MailField } from "isofw-shared/src/util/xpfwuishared"
+import { IFieldProps } from "isofw-shared/src/util/xpfwform";
 import { OperatorRelation, ProjectCameras, ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import WebButton from "isofw-web/src/components/button"
 import NameDisplayer from "isofwrn/src/components/displayName"
@@ -9,37 +9,37 @@ import * as React from "react"
 import { Text, View } from "react-native"
 import { ListItem, Overlay } from "react-native-elements"
 
-const nativeCameraMapping: React.FunctionComponent<SharedCameraChoiceProps> = (props) => {
+const NativeCameraMapping: React.FunctionComponent<IFieldProps> = (props) => {
+  const chooserHelper = useCameraChooser(props.schema, props.mapTo, props.prefix)
   return (
     <View>
       <ListItem
-        onPress={props.togglePop}
+        onPress={chooserHelper.showPop}
         rightIcon={{name: "camera", type: "font-awesome"}}
         title={
           <View>
             <Text>Camera:&nbsp;</Text>
-            <NameDisplayer collection={val.service.camera} id={props.value} getNameFrom={ProjectName.mapTo} placeholder="not yet selected" />
+            <NameDisplayer collection={val.service.camera} id={chooserHelper.value} getNameFrom={ProjectName.mapTo} placeholder="not yet selected" />
           </View>}
       />
-      <Overlay isVisible={props.showPopUp === true} onBackdropPress={props.togglePop}>
+      <Overlay isVisible={chooserHelper.showPopUp} onBackdropPress={chooserHelper.hidePop}>
         <View>
-          <Text>Choose a camera {props.field.mapTo}</Text>
-            {props.cameras ? props.cameras.map((camera) => (
+          <Text>Choose a camera {props.schema.title}</Text>
+            {chooserHelper.cameras.map((camera: any) => (
                 <ListItem
                   key={camera}
                   onPress={() => {
-                    props.togglePop(false)
-                    props.setValueWithPreset(camera)
+                    chooserHelper.hidePop()
+                    chooserHelper.setValueWithPreset(camera)
                   }}
                   rightIcon={{name: "chevron"}}
                   title={<NameDisplayer collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />}
                 />
-              )) : undefined}
+              ))}
         </View>
       </Overlay>
     </View>
   )
 }
 
-const WrappedCameraChooser = SharedCameraChoice(nativeCameraMapping)
-export default WrappedCameraChooser
+export default NativeCameraMapping

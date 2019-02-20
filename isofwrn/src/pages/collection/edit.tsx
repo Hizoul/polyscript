@@ -1,4 +1,4 @@
-import { ValidationRegistry } from "isofw-shared/src/util/xpfwvalidate"
+import getForm from "isofw-shared/src/util/getForm"
 import NativeEdit from "isofwrn/src/components/form/edit"
 import NativePageContained from "isofwrn/src/components/pageContainer"
 import * as React from "react"
@@ -7,7 +7,7 @@ import { Text } from "react-native"
 const NativeEditPage: React.FunctionComponent<any> = (props) => {
   const collection = props.navigation.getParam("collection", "none")
   const id = props.navigation.getParam("id", "none")
-  const form = ValidationRegistry.forms[collection]
+  const form = getForm(collection)
   if (form == null) {
     return (
       <NativePageContained {...props} title="edit" backLink={true} requireLoggedIn={true}>
@@ -17,7 +17,7 @@ const NativeEditPage: React.FunctionComponent<any> = (props) => {
   }
   return (
     <NativePageContained {...props} title="edit">
-      <NativeEdit form={form} id={id} resetState={true} prefix="edits" />
+      <NativeEdit schema={form} id={id} reset={true} prefix="edits" />
     </NativePageContained>
   )
 }

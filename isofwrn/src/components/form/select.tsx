@@ -1,25 +1,26 @@
 
-import { IFieldProps } from "isofw-shared/src/util/xpfwformshared"
+import { IFieldProps, useFieldWithValidation } from "isofw-shared/src/util/xpfwform"
 import { get, map } from "lodash"
 import * as React from "react"
-declare const require: any
 import { Picker } from "react-native"
+import { observer } from "mobx-react-lite";
 
-export default class NativeSelectField extends React.Component<IFieldProps, any> {
-  public render() {
-    const selOpts = get(this.props, "field.selectOptions", [])
-    const options = map(selOpts, (option: any) => {
-      return (
-        <Picker.Item key={option.value} value={option.value} label={option.label} />
-      )
-    })
+const NativeSelectField: React.FunctionComponent<IFieldProps> = observer((props) => {
+  const fieldHelper = useFieldWithValidation(props)
+  const selOpts = get(props, "schema.selectOptions", [])
+  const options = map(selOpts, (option: any) => {
     return (
-      <Picker
-        selectedValue={this.props.value}
-        onValueChange={this.props.setValue}
-      >
-        {options}
-      </Picker>
+      <Picker.Item key={option.value} value={option.value} label={option.label} />
     )
-  }
-}
+  })
+  return (
+    <Picker
+      selectedValue={fieldHelper.value}
+      onValueChange={fieldHelper.setValue}
+    >
+      {options}
+    </Picker>
+  )
+})
+
+export default NativeSelectField

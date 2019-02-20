@@ -1,19 +1,17 @@
 
-import { IFieldProps } from "isofw-shared/src/util/xpfwformshared"
-import { get } from "lodash"
+import { IFieldProps, useFieldWithValidation } from "isofw-shared/src/util/xpfwform"
 import * as React from "react"
 import { Switch } from "react-native"
-declare const require: any
+import { observer } from "mobx-react-lite";
 
-export default class NativeBooleanField extends React.Component<IFieldProps, any> {
-  public render() {
-    const gotErr = get(this.props, "error.errors.length", 0) > 0
-    const fieldType = get(this.props, "field.type")
-    return (
-      <Switch
-        value={this.props.value}
-        onValueChange={this.props.setValue}
-      />
-    )
-  }
-}
+const NativeBooleanField: React.FunctionComponent<IFieldProps> = observer((props) => {
+  const fieldHelper = useFieldWithValidation(props)
+  return (
+    <Switch
+      value={fieldHelper.value}
+      onValueChange={fieldHelper.setValue}
+    />
+  )
+})
+
+export default NativeBooleanField

@@ -1,8 +1,8 @@
-import { BlockTitle } from "framework7-react";
+import { BlockTitle } from "framework7-react"
 import getForm from "isofw-shared/src/util/getForm"
 import "isofw-web/src/components/form"
-import WrappedFramework7Create from "isofw-web/src/components/form/create";
-import WebPageContainer from "isofw-web/src/components/pageContainer";
+import WrappedFramework7Create from "isofw-web/src/components/form/create"
+import WebPageContainer from "isofw-web/src/components/pageContainer"
 import { get } from "lodash"
 import * as React from "react"
 

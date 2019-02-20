@@ -1,7 +1,7 @@
-import {
-  ISharedRelationshipField, ISharedRelationshipFieldProps, RelationShipWrapper
-} from "isofw-shared/src/util/xpfwuishared"
+import { useRelationship } from "isofw-shared/src/util/xpfwdata"
+import { IFieldProps } from "isofw-shared/src/util/xpfwform"
 import { get } from "lodash"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 import { View } from "react-native"
 import { Button } from "react-native-elements"
@@ -9,52 +9,47 @@ import NativeFieldContainer from "./field"
 import NativeRelationshipItem from "./relationshipItem"
 import NativeRelationshipSearch from "./relationshipSearch"
 
-class NativeRelationshipMulti extends React.Component<ISharedRelationshipFieldProps & {
-  buttonProps?: any
-}, any> {
-  public render() {
-    let content
-    const gotVal = Array.isArray(this.props.value) && this.props.value.length > 0
-    if (!gotVal || this.props.displayMode === 1) {
-      content = (
-          <NativeRelationshipSearch {...this.props} prefix={get(this.props, "field.mapTo")} />
-      )
-    } else {
-      const name = "loading"
-      const obj = this.props.relatedObject
-      const relationItems = []
-      for (const child of this.props.relatedObject) {
-        relationItems.push(
-          <NativeRelationshipItem
-            key={get(this.props, "field.mapTo")}
-            field={this.props.field}
-            item={child}
-            addId={this.props.addId}
-            removeId={this.props.removeId}
-            isAdd={false}
-          />)
-      }
-      content = (
-        <View>
-          <Button
-            title="Search"
-            {...this.props.buttonProps}
-            onPress={this.props.setDisplayMode.bind(this, 1)}
-            icon={{name: "search"}}
-          />
-          {relationItems}
-        </View>
-      )
+const NativeRelationshipMulti: React.FunctionComponent<IFieldProps> = observer((props) => {
+  const relationHelper = useRelationship(props.schema, props.mapTo, props.prefix)
+  let content
+  const gotVal = Array.isArray(relationHelper.value) && relationHelper.value.length > 0
+  if (!gotVal || relationHelper.displayMode === 1) {
+    content = (
+        <NativeRelationshipSearch
+          {...relationHelper}
+          {...props}
+        />
+    )
+  } else {
+    const name = "loading"
+    const obj = relationHelper.relatedObject
+    const relationItems = []
+    for (const child of relationHelper.relatedObject) {
+      relationItems.push(
+        <NativeRelationshipItem
+          key={get(props, "field.mapTo")}
+          schema={props.schema}
+          item={child}
+          addId={relationHelper.addId}
+          removeId={relationHelper.removeId}
+          isAdd={false}
+        />)
     }
-    return (
-      <NativeFieldContainer>
-        {content}
-      </NativeFieldContainer>
+    content = (
+      <View>
+        <Button
+          title="Search"
+          onPress={relationHelper.showDisplay}
+          icon={{name: "search"}}
+        />
+        {relationItems}
+      </View>
     )
   }
-}
-
-export {
-  ISharedRelationshipField, ISharedRelationshipFieldProps
-}
-export default RelationShipWrapper(NativeRelationshipMulti)
+  return (
+    <NativeFieldContainer>
+      {content}
+    </NativeFieldContainer>
+  )
+})
+export default NativeRelationshipMulti

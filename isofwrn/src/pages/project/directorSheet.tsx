@@ -9,7 +9,7 @@ const NativeDirectorPage: React.FunctionComponent<any> = (props) => {
   const id = props.navigation.getParam("id", "none")
   return (
     <NativePageContained {...props} title="director">
-      <ShotEditor form={ProjectForm} id={id} resetState={true} prefix={directorPrefix} />
+      <ShotEditor id={id} reset={true} prefix="shotEdit" />
     </NativePageContained>
   )
 }

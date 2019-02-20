@@ -1,16 +1,14 @@
-import SharedOperatorInfo, { SharedOperatorInfoProps } from "isofw-shared/src/components/project/operatorInfo"
 import val from "isofw-shared/src/globals/val"
-import { MailField } from "isofw-shared/src/util/xpfwuishared"
+import { MailField } from "isofw-shared/src/util/xpfwdata"
 import { OperatorRelation, ProjectCameras, ProjectName,
   ProjectOperatorCameraMapping } from "isofw-shared/src/xpfwDefs/project"
 import NativeNameDisplayer from "isofwrn/src/components/displayName"
-import NativeLink from "isofwrn/src/components/link"
 import { get } from "lodash"
 import * as React from "react"
 import { Text, TouchableHighlight, View } from "react-native"
 import { ListItem, Overlay } from "react-native-elements"
 
-const CurrentOperatorDisplay: React.FunctionComponent<SharedOperatorInfoProps> = (props) => {
+const CurrentOperatorDisplay: React.FunctionComponent<any> = (props) => {
   const name = props.currentOperator && props.currentOperator.length > 0 ?
   <NativeNameDisplayer collection={val.service.user} id={props.currentOperator} getNameFrom={MailField.mapTo} /> : <Text>All</Text>
   return (
@@ -21,7 +19,7 @@ const CurrentOperatorDisplay: React.FunctionComponent<SharedOperatorInfoProps> =
         {props.currentCameras && props.currentCameras.length > 0 ? (
           <View>
             <Text>CA</Text>
-            {props.currentCameras.map((camera) =>
+            {props.currentCameras.map((camera: any) =>
             <NativeNameDisplayer key={camera} collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />)}
           </View>
         ) : <Text>Showing all cameras</Text>}
@@ -34,19 +32,19 @@ const CurrentOperatorDisplay: React.FunctionComponent<SharedOperatorInfoProps> =
             title="No one"
             subtitle="All cameras"
           />
-          {get(props.item, ProjectOperatorCameraMapping.mapTo, []).map((mapping: any) => {
-            const cameras = mapping[ProjectCameras.mapTo]
+          {get(props.item, String(ProjectOperatorCameraMapping.title), []).map((mapping: any) => {
+            const cameras = mapping[String(ProjectCameras.title)]
             return (
               <ListItem
-                key={mapping[OperatorRelation.mapTo]}
-                onPress={props.changeOperator(mapping[OperatorRelation.mapTo])}
+                key={mapping[String(OperatorRelation.title)]}
+                onPress={props.changeOperator(mapping[String(OperatorRelation.title)])}
                 leftElement={
                   <View>
-                    <NativeNameDisplayer collection={val.service.user} id={mapping[OperatorRelation.mapTo]} getNameFrom={MailField.mapTo} />
+                    <NativeNameDisplayer collection={val.service.user} id={mapping[String(OperatorRelation.title)]} getNameFrom={String(MailField.title)} />
                     <View style={{flexDirection: "row"}}>
                       <Text>Cameras </Text>
                       {cameras.map((camera: any) =>
-                        <NativeNameDisplayer key={camera} collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />)}
+                        <NativeNameDisplayer key={camera} collection={val.service.camera} id={camera} getNameFrom={String(ProjectName.title)} />)}
                     </View>
                   </View>
                 }

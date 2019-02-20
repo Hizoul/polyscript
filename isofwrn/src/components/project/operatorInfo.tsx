@@ -1,8 +1,6 @@
-import SharedOperatorInfo, {
-  SharedOperatorInfoProps
-} from "isofw-shared/src/components/project/operatorInfo"
+import useOperatorInfo from "isofw-shared/src/components/project/operatorInfo"
 import val from "isofw-shared/src/globals/val"
-import { DbStore, IFormEditProps, IFormShowProps, SharedFormEdit } from "isofw-shared/src/util/xpfwuishared"
+import { IEditHookProps } from "isofw-shared/src/util/xpfwdata"
 import { PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
 import {
   ProjectName, ProjectShot, ShotCamera, ShotDuration, ShotImportance,
@@ -15,14 +13,15 @@ import { get } from "lodash"
 import * as React from "react"
 import { StyleSheet, Text, View } from "react-native"
 import { Card, Overlay } from "react-native-elements"
+import { observer } from "mobx-react-lite";
 
 const CamName: React.FunctionComponent<any> = (props) => {
   if (props.isHeader) {return <Text>Camera</Text>}
   return (
     <NativeNameDisplayer
       collection={val.service.camera}
-      id={get(props.item, ShotCamera.mapTo)}
-      getNameFrom={ProjectName.mapTo}
+      id={get(props.item, String(ShotCamera.title))}
+      getNameFrom={String(ProjectName.title)}
       placeholder=""
     />
   )
@@ -32,8 +31,8 @@ const PresetName: React.FunctionComponent<any> = (props) => {
   return (
     <NativeNameDisplayer
       collection={val.service.preset}
-      id={get(props.item, ShotPreset.mapTo)}
-      getNameFrom={PresetNumberField.mapTo}
+      id={get(props.item, String(ShotPreset.title))}
+      getNameFrom={String(PresetNumberField.title)}
       placeholder=""
     />
   )
@@ -63,71 +62,67 @@ const TopBarStyle = StyleSheet.create({
   }
 })
 
-class OperatorInfo extends React.Component<IFormEditProps & SharedOperatorInfoProps> {
-  private previousPosition: number = 0
-  private scrollViewRef: any = undefined
-  public componentDidUpdate() {
-    if (this.scrollViewRef != null) {
-      const newPosition = get(this.props, "original.result." + ProjectShot.mapTo)
-      if (newPosition !== this.previousPosition) {
-        this.previousPosition = newPosition
-        if (this.scrollViewRef != null) {
-          this.scrollViewRef.scrollToOffset({
-            offset: newPosition * 33
-          })
-        }
+const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) => {
+  const scrollViewRef: any = React.useRef(undefined)
+  const previousPosition = React.useState(0)
+  const operatorHelper = useOperatorInfo(props.id, props.mapTo, props.prefix, props.reset)
+  React.useEffect(() => {
+    if (scrollViewRef != null && scrollViewRef.current != null) {
+      const newPosition = get(props, "original.result." + ProjectShot.title)
+      if (newPosition !== previousPosition) {
+        previousPosition[1](newPosition)
+        scrollViewRef.current.scrollToOffset({
+          offset: newPosition * 33
+        })
       }
     }
-  }
-  public render() {
-    const props = this.props
-    let i = 0
-    const content = props.isPresetView ? null : (
-      <Card containerStyle={{maxHeight: 250}}>
-        <NativeTable
-          data={props.filteredList}
-          keyExtractor={(item) => String(++i)}
-          rows={[
-            PresetNumber, CamName, PresetName, ShotImportance.mapTo,
-            ShotName.mapTo, ShotType.mapTo, ShotMovement.mapTo, ShotMovementTowards.mapTo,
-            ShotDuration.mapTo, ShotRemarksDirector.mapTo
-          ]}
-          refGetter={(newRef: any) => this.scrollViewRef = newRef}
-        />
-      </Card>
-    )
-    return (
-      <View>
-        <View style={{flexDirection: "row"}}>
-          <View style={TopBarStyle.box}>
-            <Text>Current project</Text>
-            <Text style={TopBarStyle.title}>{get(props, "original.result.name")}</Text>
-          </View>
-          <View style={[TopBarStyle.box, TopBarStyle.middleBox]}>
-            <CurrentOperatorDisplay {...props} />
-          </View>
-          <View style={[TopBarStyle.box, TopBarStyle.rightBox]}>
-            <Text>Current Preset</Text>
-            {props.currentPreset ? (
-                <View style={{flexDirection: "row"}}>
-                  <NativeNameDisplayer
-                    collection={val.service.camera}
-                    id={get(props.currentPreset, ShotCamera.mapTo)}
-                    getNameFrom={ProjectName.mapTo}
-                    placeholder=""
-                    style={TopBarStyle.title}
-                  />
-                  <Text style={TopBarStyle.title}>&nbsp;{get(props.currentPreset, ShotName.mapTo, "")}</Text>
-                </View>
-              ) : null}
-          </View>
+  })
+
+  let i = 0
+  const content = operatorHelper.isPresetView ? null : (
+    <Card containerStyle={{maxHeight: 250}}>
+      <NativeTable
+        data={operatorHelper.filteredList}
+        keyExtractor={(item) => String(++i)}
+        rows={[
+          PresetNumber, CamName, PresetName, String(ShotImportance.title),
+          String(ShotName.title), String(ShotType.title), String(ShotMovement.title),
+          String(ShotMovementTowards.title), String(ShotDuration.title), String(ShotRemarksDirector.title)
+        ]}
+        refGetter={scrollViewRef}
+      />
+    </Card>
+  )
+  return (
+    <View>
+      <View style={{flexDirection: "row"}}>
+        <View style={TopBarStyle.box}>
+          <Text>Current project</Text>
+          <Text style={TopBarStyle.title}>{get(props, "original.result.name")}</Text>
         </View>
-        {content}
-        {props.loading ? <View /> : null}
+        <View style={[TopBarStyle.box, TopBarStyle.middleBox]}>
+          <CurrentOperatorDisplay {...props} />
+        </View>
+        <View style={[TopBarStyle.box, TopBarStyle.rightBox]}>
+          <Text>Current Preset</Text>
+          {operatorHelper.currentPreset ? (
+              <View style={{flexDirection: "row"}}>
+                <NativeNameDisplayer
+                  collection={val.service.camera}
+                  id={get(operatorHelper.currentPreset, String(ShotCamera.title))}
+                  getNameFrom={String(ProjectName.title)}
+                  placeholder=""
+                  style={TopBarStyle.title}
+                />
+                <Text style={TopBarStyle.title}>&nbsp;{get(operatorHelper.currentPreset, String(ShotName.title), "")}</Text>
+              </View>
+            ) : null}
+        </View>
       </View>
-    )
-  }
-}
-const c: any = OperatorInfo
-const b: any = SharedOperatorInfo(c)
-export default SharedFormEdit<any>(b)
+      {content}
+      {operatorHelper.loading ? <View /> : null}
+    </View>
+  )
+})
+
+export default OperatorInfo

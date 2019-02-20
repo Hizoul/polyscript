@@ -1,32 +1,29 @@
-import { IFieldProps } from "isofw-shared/src/util/xpfwformshared"
-import { globals } from "isofw-shared/src/util/xpfwvalidate"
+import { IFieldProps, useFieldWithValidation } from "isofw-shared/src/util/xpfwform"
 import { get } from "lodash"
+import { observer } from "mobx-react-lite";
 import * as React from "react"
-import NativeFieldContainer from "./field"
-declare const require: any
 import { Input } from "react-native-elements"
 
-class NativeTextField extends React.Component<IFieldProps, any> {
-  public render() {
-    const fieldType = get(this.props, "field.type")
-    let secureTextEntry = false
-    let keyboardType: any = "default"
-    if (fieldType === globals.FieldType.Number) {
-      keyboardType = "numeric"
-    } else if (fieldType === globals.FieldType.Password) {
-      secureTextEntry = true
-    }
-    return (
-      <Input
-        {...this.props}
-        label={get(this.props, "field.mapTo")}
-        secureTextEntry={secureTextEntry}
-        value={this.props.value}
-        keyboardType={keyboardType}
-        onChangeText={this.props.setValue}
-      />
-    )
+const NativeTextField: React.FunctionComponent<IFieldProps> = observer((props) => {
+  const fieldHelper = useFieldWithValidation(props)
+  const fieldType = get(props, "schema.type")
+  let secureTextEntry = false
+  let keyboardType: any = "default"
+  if (fieldType === "number") {
+    keyboardType = "numeric"
+  } else if (get(props, "schema.format") === "password") {
+    secureTextEntry = true
   }
-}
+  return (
+    <Input
+      {...props}
+      label={get(props, "field.mapTo")}
+      secureTextEntry={secureTextEntry}
+      value={fieldHelper.value}
+      keyboardType={keyboardType}
+      onChangeText={fieldHelper.setValue}
+    />
+  )
+})
 
 export default NativeTextField

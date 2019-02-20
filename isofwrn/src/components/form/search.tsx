@@ -1,24 +1,19 @@
-import { IFieldProps } from "isofw-shared/src/util/xpfwformshared"
-import { globals } from "isofw-shared/src/util/xpfwvalidate"
+import { IFieldProps, useFieldWithValidation } from "isofw-shared/src/util/xpfwform"
 import { get } from "lodash"
 import * as React from "react"
-import NativeFieldContainer from "./field"
-declare const require: any
-import { Input, SearchBar } from "react-native-elements"
+import {  SearchBar } from "react-native-elements"
 
-class NativeTextField extends React.Component<IFieldProps, any> {
-  public render() {
-    const fieldType = get(this.props, "field.type")
-    return (
-      <SearchBar
-        {...this.props}
-        platform="ios"
-        placeholder={get(this.props, "field.mapTo")}
-        value={this.props.value}
-        onChangeText={this.props.setValue}
-      />
-    )
-  }
+const NativeSearchField: React.FunctionComponent<IFieldProps> = (props) => {
+  const fieldHelper = useFieldWithValidation(props)
+  return (
+    <SearchBar
+      {...props}
+      platform="ios"
+      placeholder={get(props, "schema.title")}
+      value={fieldHelper.value}
+      onChangeText={fieldHelper.setValue}
+    />
+  )
 }
 
-export default NativeTextField
+export default NativeSearchField

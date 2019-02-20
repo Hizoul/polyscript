@@ -6,7 +6,7 @@ import * as React from "react"
 const NativeCameraOverview: React.FunctionComponent<any> = (props) => {
   return (
     <NativePageContained {...props} title="Projects">
-      <NativeProjectOverviewComponent form={ProjectForm} />
+      <NativeProjectOverviewComponent schema={ProjectForm} prefix="projectOverview" />
     </NativePageContained>
   )
 }

@@ -11,7 +11,6 @@ import WebRelationshipSearch from "./relationshipSearch"
 
 const WebRelationshipSingle: React.FunctionComponent<IFieldProps> = observer((props) => {
   const relationHelper = useRelationship(props.schema, props.mapTo, props.prefix)
-  console.log("SHOW DISPLAY IS", relationHelper.displayMode)
   return (
     <div>
     <Card>

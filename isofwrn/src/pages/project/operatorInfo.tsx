@@ -8,7 +8,7 @@ const NativeOperatorInfoPage: React.FunctionComponent<any> = (props) => {
   const id = props.navigation.getParam("id", "none")
   return (
     <NativePageContained {...props} title="Operator info">
-      <NativeOperatorInfo form={ProjectForm} id={id} resetState={true} prefix="operatorInfo" />
+      <NativeOperatorInfo schema={{}} id={id} reset={true} prefix="operatorInfo" />
     </NativePageContained>
   )
 }

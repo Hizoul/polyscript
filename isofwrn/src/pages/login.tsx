@@ -1,36 +1,38 @@
-import { SharedField } from "isofw-shared/src/util/xpfwformshared"
-import { IFormAuthProps, MailField, PwField, SharedFormAuth } from "isofw-shared/src/util/xpfwuishared"
+import { AuthForm, MailField, PwField, useAuth } from "isofw-shared/src/util/xpfwdata"
+import { SharedField } from "isofw-shared/src/util/xpfwform"
 import NativeButton from "isofwrn/src/components/button"
 import TranslatedText from "isofwrn/src/components/i18n"
-import { WrappedMenuDisplayer } from "isofwrn/src/components/menu"
+import { MenuList } from "isofwrn/src/components/menu"
 import NativePageContained from "isofwrn/src/components/pageContainer"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 import { Text, View } from "react-native"
 
-const LogInPage: React.FunctionComponent<IFormAuthProps> = (props) => {
+const LogInPage: React.FunctionComponent<{}> = observer((props) => {
+  const authProps = useAuth()
   return (
     <NativePageContained {...props} title="log in">
-      {props.loggedIn ? (
+      {authProps.loggedIn ? (
         <View>
           <TranslatedText text="loggedInNavigate" />
-          <WrappedMenuDisplayer />
+          <MenuList />
           <TranslatedText text="loggedInLogout" />
         </View>
       ) : (
         <View>
           <TranslatedText text="askLogin" />
-          <SharedField field={MailField} />
-          <SharedField field={PwField} />
+          <SharedField schema={MailField} prefix={AuthForm.title} />
+          <SharedField schema={PwField} prefix={AuthForm.title} />
         </View>
       )}
       <NativeButton
-        title={props.loggedIn ? "logout" : "login"}
-        onPress={props.loggedIn ? props.submitLogout : props.submitLogin}
-        loading={props.loading}
-        disabled={props.loading}
+        title={authProps.loggedIn ? "logout" : "login"}
+        onPress={authProps.loggedIn ? authProps.submitLogout : authProps.submitLogin}
+        loading={authProps.loading}
+        disabled={authProps.loading}
       />
     </NativePageContained>
   )
-}
+})
 
-export default SharedFormAuth<{}>(LogInPage)
+export default LogInPage

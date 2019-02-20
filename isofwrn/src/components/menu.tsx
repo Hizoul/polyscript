@@ -1,13 +1,15 @@
 import { menuLoggedIn, menuLoggedOut } from "isofw-shared/src/globals/menu"
 import urls from "isofw-shared/src/globals/url"
-import { IFormAuthProps, SharedFormAuth } from "isofw-shared/src/util/xpfwuishared"
 import * as React from "react"
 import { FlatList, View } from "react-native"
 import { Text } from "react-native-elements"
 import ListItemLink from "./listItemLink"
+import { observer } from "mobx-react-lite";
+import { useAuth } from "isofw-shared/src/util/xpfwdata";
 
-const MenuLinks: React.FunctionComponent<IFormAuthProps> = (props) => {
-  const entries = props.loggedIn ? menuLoggedIn : menuLoggedOut
+const MenuList: React.FunctionComponent<{}> = observer((props) => {
+  const authProps = useAuth()
+  const entries = authProps.loggedIn ? menuLoggedIn : menuLoggedOut
   return (
     <View>
       <FlatList
@@ -25,11 +27,9 @@ const MenuLinks: React.FunctionComponent<IFormAuthProps> = (props) => {
       />
     </View>
   )
-}
-const WrappedMenuDisplayer: any = SharedFormAuth<{}>(MenuLinks)
+})
 
-const MenuPanel: React.FunctionComponent<IFormAuthProps> = (props) => {
-  const entries = props.loggedIn ? menuLoggedIn : menuLoggedOut
+const MenuPanel: React.FunctionComponent<{}> = (props) => {
   return (
     <View>
       <View
@@ -41,12 +41,12 @@ const MenuPanel: React.FunctionComponent<IFormAuthProps> = (props) => {
       >
         <Text h2={true}>PolyScript</Text>
       </View>
-      <WrappedMenuDisplayer {...props} />
+      <MenuList {...props} />
     </View>
   )
 }
 
 export default MenuPanel
 export {
-  WrappedMenuDisplayer
+  MenuList
 }

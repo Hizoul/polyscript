@@ -1,32 +1,31 @@
-import { IArrayProps, IFieldProps, SharedArray, SharedField } from "isofw-shared/src/util/xpfwformshared"
-import { cloneDeep, get, map } from "lodash"
+import { IFieldProps, SharedField, useArray } from "isofw-shared/src/util/xpfwform"
 import * as React from "react"
 import { View } from "react-native"
 import { Button } from "react-native-elements"
+import { observer } from "mobx-react-lite";
 
-class NativeArrayField extends React.Component<IArrayProps, any> {
-  public render() {
-    return (
-      <View>
-        {map(this.props.subFields, (field: any, index: any) => {
-          return (
-          <View style={{flex: 1, flexDirection: "row", alignItems: "center"}}>
-            <SharedField field={field} prefix={this.props.prefix} />
-            <Button
-              onPress={this.props.removeItem(index)}
-              title="Delete"
-            />
-          </View>
-        )})}
-        <View style={{marginTop: 5}}>
+const NativeArrayField: React.FunctionComponent<IFieldProps> = observer((props) => {
+  const arrayHelper = useArray(props.schema, props.mapTo, props.prefix)
+  return (
+    <View>
+      {arrayHelper.fields.map((field) => {
+        return (
+        <View key={field.mapTo} style={{flex: 1, flexDirection: "row", alignItems: "center"}}>
+          <SharedField {...field} />
           <Button
-            onPress={this.props.increaseSize}
-            title="Add"
+            onPress={field.decreaseSize}
+            title="Delete"
           />
         </View>
+      )})}
+      <View style={{marginTop: 5}}>
+        <Button
+          onPress={arrayHelper.increaseSize}
+          title="Add"
+        />
       </View>
-    )
-  }
-}
+    </View>
+  )
+})
 
-export default SharedArray(NativeArrayField)
+export default NativeArrayField
