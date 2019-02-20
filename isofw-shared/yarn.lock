@@ -25,7 +25,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@feathersjs/authentication-client@^1.0.8":
+"@feathersjs/authentication-client@^1.0.10", "@feathersjs/authentication-client@^1.0.8":
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/@feathersjs/authentication-client/-/authentication-client-1.0.11.tgz#86352bf4c7179b905c9a977b26f389830c974e72"
   integrity sha512-4CWQdmdRINMMqHT1/g0N5jqw16u1RjaSPhlZtJZ0OLdqgN3tl5wL+Lb8ThPxihvt1WHiOdwGt141LvWQ446Bsw==
@@ -162,20 +162,31 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@xpfw/data@1.0.0-beta.3":
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.3.tgz#b48d41f7fa5d38242229fccebf968e4793dc4cb2"
-  integrity sha512-8HYSsdZLg7/KULww/a3rh9+De+NeKGDpHhJ10B+TZh7tlpNzKV6X6u6kQBKOe5ZrouYS8skGNa/Io6/WFq+HZQ==
+"@xpfw/data-feathers@^1.0.0-beta.0":
+  version "1.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@xpfw/data-feathers/-/data-feathers-1.0.0-beta.0.tgz#5b5c1cb42e96406dc0aeb82e58619a10c1b3652c"
+  integrity sha512-McdV1J87678TalOtFX1v/BWgCTCFKx4uFE5CEEjNkvMp+Iy6siOCjR15YSYWd9h2EkPYR4u/gABGAJnL9EInUA==
+  dependencies:
+    "@feathersjs/authentication-client" "^1.0.10"
+    "@feathersjs/feathers" "^3.3.1"
+    "@feathersjs/rest-client" "^1.4.7"
+    "@feathersjs/socketio-client" "^1.2.1"
+    socket.io-client "^2.2.0"
+
+"@xpfw/data@1.0.0-beta.4":
+  version "1.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.4.tgz#5ba0154093a520623392c97e54e81ddab2ee9f87"
+  integrity sha512-g55Vx4U+/nBev2UpDt+ng0txM5wqjM70cOYKAFEhf7tbkri5o1o5fLHBQ4MgVMHeEf+/MmyKjMiADtlbFYA7vQ==
 
 "@xpfw/form-shared@^0.1.5":
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/@xpfw/form-shared/-/form-shared-0.1.5.tgz#51456f6653960db2b793dcc13f8e675d16720c44"
   integrity sha512-8EOTqPosZWVKis77ZZXra7aGPRFUe7vnP9OAyh9BMYCZjEPpEYAGNAFQieuTeT2JLlxsJZI8pZ8gOAi1Xn95qw==
 
-"@xpfw/form@1.0.0-beta.2":
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@xpfw/form/-/form-1.0.0-beta.2.tgz#9489e86102eda0668baa608998f2c00398f34f7b"
-  integrity sha512-URXSs8I3QGtzeniCMV071u0MQKgckxeDtdi3bwOQcJ9Bk6nNtYUELINteqhVZqO2jBhuT3U1HAIKPxEMruXjGw==
+"@xpfw/form@1.0.0-beta.4":
+  version "1.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@xpfw/form/-/form-1.0.0-beta.4.tgz#122eac03b225c8f761b383aea8b2be026ef14f33"
+  integrity sha512-YmQQIjMsAbeIwjIHAjm+equA7IFHrHOga/HsZQF7NJ8zE2Z+3nYSLzahggkHRYHw1xst+hcxP1moXt36eAlWYQ==
 
 "@xpfw/ui-feathers@^0.1.1":
   version "0.1.1"

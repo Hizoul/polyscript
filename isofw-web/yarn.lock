@@ -369,7 +369,7 @@
     "@webassemblyjs/wast-parser" "1.7.11"
     "@xtuc/long" "4.2.1"
 
-"@xpfw/data-feathers@1.0.0-beta.2":
+"@xpfw/data-feathers@^1.0.0-beta.2":
   version "1.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@xpfw/data-feathers/-/data-feathers-1.0.0-beta.2.tgz#d5a5f69aeb0232d6291a1998fdec2baceb3300dc"
   integrity sha512-sT3qsy4oQeA1c5bSmN4/4ehDbDLuqBk2L+H0/0vXGG9ln9aPUjAHzZuSaJPBqqNNJcDml2kR77B9wpK1d/pxxA==
@@ -380,25 +380,25 @@
     "@feathersjs/socketio-client" "^1.2.1"
     socket.io-client "^2.2.0"
 
-"@xpfw/data@1.0.0-beta.3":
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.3.tgz#b48d41f7fa5d38242229fccebf968e4793dc4cb2"
-  integrity sha512-8HYSsdZLg7/KULww/a3rh9+De+NeKGDpHhJ10B+TZh7tlpNzKV6X6u6kQBKOe5ZrouYS8skGNa/Io6/WFq+HZQ==
+"@xpfw/data@1.0.0-beta.4":
+  version "1.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.4.tgz#5ba0154093a520623392c97e54e81ddab2ee9f87"
+  integrity sha512-g55Vx4U+/nBev2UpDt+ng0txM5wqjM70cOYKAFEhf7tbkri5o1o5fLHBQ4MgVMHeEf+/MmyKjMiADtlbFYA7vQ==
 
 "@xpfw/form-shared@^0.1.5":
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/@xpfw/form-shared/-/form-shared-0.1.5.tgz#51456f6653960db2b793dcc13f8e675d16720c44"
   integrity sha512-8EOTqPosZWVKis77ZZXra7aGPRFUe7vnP9OAyh9BMYCZjEPpEYAGNAFQieuTeT2JLlxsJZI8pZ8gOAi1Xn95qw==
 
-"@xpfw/form-web@1.0.0-beta.2":
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@xpfw/form-web/-/form-web-1.0.0-beta.2.tgz#3b4e30d60f0298004c0754b0fe8c41896257884b"
-  integrity sha512-zub53cpUMZvF+1l2VQXPIj7G2mxyDI4ZjyN+Fm2SvD31MobG/LGKmj4FT85Sd84Fb5AuAOHxzOjBdCwIsm0dtA==
+"@xpfw/form-web@1.0.0-beta.4":
+  version "1.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@xpfw/form-web/-/form-web-1.0.0-beta.4.tgz#708d80748a671245c80ecd734acd5d5145b49def"
+  integrity sha512-rLEVugg1b3DEKA/TmIw1vNNYcMVqywVKXT1sQ1gTcv1bIOpkDVnLyFL5iPfVcpGRfXv4YKRNy1mM/uOffpQRQg==
 
-"@xpfw/form@1.0.0-beta.2":
-  version "1.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@xpfw/form/-/form-1.0.0-beta.2.tgz#9489e86102eda0668baa608998f2c00398f34f7b"
-  integrity sha512-URXSs8I3QGtzeniCMV071u0MQKgckxeDtdi3bwOQcJ9Bk6nNtYUELINteqhVZqO2jBhuT3U1HAIKPxEMruXjGw==
+"@xpfw/form@1.0.0-beta.4":
+  version "1.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@xpfw/form/-/form-1.0.0-beta.4.tgz#122eac03b225c8f761b383aea8b2be026ef14f33"
+  integrity sha512-YmQQIjMsAbeIwjIHAjm+equA7IFHrHOga/HsZQF7NJ8zE2Z+3nYSLzahggkHRYHw1xst+hcxP1moXt36eAlWYQ==
 
 "@xpfw/ui-feathers@^0.1.1":
   version "0.1.1"
