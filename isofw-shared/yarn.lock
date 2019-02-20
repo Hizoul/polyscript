@@ -173,6 +173,11 @@
     "@feathersjs/socketio-client" "^1.2.1"
     socket.io-client "^2.2.0"
 
+"@xpfw/data-tests@1.0.0-beta.4":
+  version "1.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@xpfw/data-tests/-/data-tests-1.0.0-beta.4.tgz#17959f9760d7fa90ae60e373b7c5d5cdb566f87c"
+  integrity sha512-lbujkygM6pN4uy6INFHeLq7PCnj5KOxeZVL4WWNzFKSEoSbp3zcqIPwiJiTQHxdpz5X7wslou/jvMc+BczaYTg==
+
 "@xpfw/data@1.0.0-beta.4":
   version "1.0.0-beta.4"
   resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.4.tgz#5ba0154093a520623392c97e54e81ddab2ee9f87"
@@ -182,6 +187,11 @@
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/@xpfw/form-shared/-/form-shared-0.1.5.tgz#51456f6653960db2b793dcc13f8e675d16720c44"
   integrity sha512-8EOTqPosZWVKis77ZZXra7aGPRFUe7vnP9OAyh9BMYCZjEPpEYAGNAFQieuTeT2JLlxsJZI8pZ8gOAi1Xn95qw==
+
+"@xpfw/form-tests@1.0.0-beta.4":
+  version "1.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@xpfw/form-tests/-/form-tests-1.0.0-beta.4.tgz#f243a34b3a6177b0e0f9844e498fbbd19b888ead"
+  integrity sha512-FPYhebGrR9m9ocd7airon80+i8r1PkWhq409A+ES7e0zpo4YHQFZpPLMdoLG7RSq5nDsjsyXHwOHHh56s1IjeA==
 
 "@xpfw/form@1.0.0-beta.4":
   version "1.0.0-beta.4"

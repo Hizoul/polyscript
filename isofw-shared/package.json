@@ -40,6 +40,8 @@
     "@types/react-dom": "^16.0.11",
     "@types/react-native": "^0.57.25",
     "@types/react-test-renderer": "^16.0.3",
+    "@xpfw/data-tests": "1.0.0-beta.4",
+    "@xpfw/form-tests": "1.0.0-beta.4",
     "jest": "^23.6.0",
     "lodash": "^4.17.11",
     "react-dom": "^16.7.0",
