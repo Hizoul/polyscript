@@ -6,8 +6,7 @@ exports[`free unused presets after program Update works as planned: Before anyth
 >
   {
   "text": "Re-activate",
-  "iconFa": "step-backward",
-  "loading": false
+  "iconFa": "step-backward"
 }
 </div>
 `;

@@ -11,6 +11,7 @@ exports[`Preset Update works as planned:  after setting 2 falls  1`] = `
     {}
     <span>
       Preset #
+      0
     </span>
   </div>
   <div
@@ -46,6 +47,7 @@ exports[`Preset Update works as planned:  after setting to true  1`] = `
     {}
     <span>
       Preset #
+      0
     </span>
   </div>
   <div
@@ -63,7 +65,7 @@ exports[`Preset Update works as planned:  after setting to true  1`] = `
       className="Link"
     >
       {
-  "text": "ready"
+  "text": "un-ready"
 }
     </div>
   </div>

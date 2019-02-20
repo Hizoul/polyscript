@@ -9,9 +9,7 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
   >
     <div
       className="titleBox"
-    >
-      pn1
-    </div>
+    />
   </div>
   <div
     className="flex center"
@@ -21,12 +19,13 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
     >
       <span
         className="shotNumber"
-      >
-        42
-      </span>
+      />
       <br />
       <span>
-        CA ?
+        CA 
+        <span>
+          
+        </span>
       </span>
     </div>
   </div>
@@ -38,6 +37,7 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
     >
       {
   "text": "previous shot",
+  "big": true,
   "iconFa": "step-backward"
 }
     </div>
@@ -46,14 +46,16 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
     >
       {
   "text": "next shot",
-  "className": "flex1 center forwardButton",
-  "iconFa": "step-forward"
+  "big": true,
+  "iconFa": "step-forward",
+  "fill": true
 }
     </div>
     <div
       className="Button"
     >
       {
+  "big": true,
   "iconFa": "sync",
   "text": "placeholder"
 }
@@ -65,34 +67,39 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
 exports[` direct a test   can increase number :  project Edited by client 1`] = `
 Object {
   "createState": Object {},
+  "currentlyEditing": "b19999999999999999999999",
+  "fetching": Object {
+    "undefined": false,
+  },
+  "getFromServer": [Function],
   "getState": Object {
+    "cameras": Object {},
     "projects": Object {
       "b19999999999999999999999": Object {
-        "result": Object {
-          "_id": "b19999999999999999999999",
-          "isActive": true,
-          "name": "pn1",
-          "shot": 43,
-        },
-      },
-    },
-    "users": Object {
-      "u1": Object {
-        "result": Object {
-          "_id": "u1",
-          "email": "u1",
-        },
-      },
-    },
-  },
-  "updateState": Object {
-    "shotEdit.b19999999999999999999999projectModel": Object {
-      "result": Object {
         "_id": "b19999999999999999999999",
         "isActive": true,
         "name": "pn1",
         "shot": 43,
       },
+    },
+    "users": Object {
+      "u1": Object {
+        "_id": "u1",
+        "email": "u1",
+      },
+    },
+  },
+  "lastFetch": Object {
+    "b19999999999999999999999": -2077750800000,
+    "undefined": -2077750800000,
+  },
+  "removeState": Object {},
+  "updateState": Object {
+    "shotEdit.projectModelb19999999999999999999999": Object {
+      "_id": "b19999999999999999999999",
+      "isActive": true,
+      "name": "pn1",
+      "shot": 43,
     },
   },
 }
@@ -101,26 +108,29 @@ Object {
 exports[` direct a test   can increase number :  project pushed by server  1`] = `
 Object {
   "createState": Object {},
+  "currentlyEditing": "",
+  "fetching": Object {},
+  "getFromServer": [Function],
   "getState": Object {
     "projects": Object {
       "b19999999999999999999999": Object {
-        "result": Object {
-          "_id": "b19999999999999999999999",
-          "isActive": true,
-          "name": "pn1",
-          "shot": 42,
-        },
+        "_id": "b19999999999999999999999",
+        "isActive": true,
+        "name": "pn1",
+        "shot": 42,
       },
     },
     "users": Object {
       "u1": Object {
-        "result": Object {
-          "_id": "u1",
-          "email": "u1",
-        },
+        "_id": "u1",
+        "email": "u1",
       },
     },
   },
+  "lastFetch": Object {
+    "b19999999999999999999999": -2077750800000,
+  },
+  "removeState": Object {},
   "updateState": Object {},
 }
 `;
@@ -151,7 +161,10 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
       </span>
       <br />
       <span>
-        CA ?
+        CA 
+        <span>
+          
+        </span>
       </span>
     </div>
   </div>
@@ -163,7 +176,10 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
     >
       {
   "text": "previous shot",
-  "iconFa": "step-backward"
+  "big": true,
+  "iconFa": "step-backward",
+  "loading": false,
+  "disabled": false
 }
     </div>
     <div
@@ -171,16 +187,22 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
     >
       {
   "text": "next shot",
-  "className": "flex1 center forwardButton",
-  "iconFa": "step-forward"
+  "big": true,
+  "iconFa": "step-forward",
+  "fill": true,
+  "loading": false,
+  "disabled": false
 }
     </div>
     <div
       className="Button"
     >
       {
+  "big": true,
   "iconFa": "sync",
-  "text": "placeholder"
+  "text": "placeholder",
+  "loading": false,
+  "disabled": false
 }
     </div>
   </div>
@@ -196,9 +218,7 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
   >
     <div
       className="titleBox"
-    >
-      pn1
-    </div>
+    />
   </div>
   <div
     className="flex center"
@@ -208,12 +228,13 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
     >
       <span
         className="shotNumber"
-      >
-        42
-      </span>
+      />
       <br />
       <span>
-        CA ?
+        CA 
+        <span>
+          
+        </span>
       </span>
     </div>
   </div>
@@ -225,6 +246,7 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
     >
       {
   "text": "previous shot",
+  "big": true,
   "iconFa": "step-backward"
 }
     </div>
@@ -233,14 +255,16 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
     >
       {
   "text": "next shot",
-  "className": "flex1 center forwardButton",
-  "iconFa": "step-forward"
+  "big": true,
+  "iconFa": "step-forward",
+  "fill": true
 }
     </div>
     <div
       className="Button"
     >
       {
+  "big": true,
   "iconFa": "sync",
   "text": "placeholder"
 }
