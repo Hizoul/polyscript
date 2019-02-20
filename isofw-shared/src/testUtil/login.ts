@@ -3,7 +3,7 @@ import { useFieldWithValidation } from "@xpfw/form"
 import { testUsers } from "isofw-shared/src/testUtil/data/users"
 
 const mailHelper = useFieldWithValidation(MailField, undefined, AuthForm.title)
-const pwHelper = useFieldWithValidation(MailField, undefined, AuthForm.title)
+const pwHelper = useFieldWithValidation(PwField, undefined, AuthForm.title)
 const logIntoUser = async (userIndex: number = 0) => {
   const userToUse = testUsers[userIndex]
   mailHelper.setValue(userToUse[String(MailField.title)])

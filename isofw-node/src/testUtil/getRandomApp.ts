@@ -9,7 +9,7 @@ import * as sios from "@feathersjs/socketio"
 import { convertIds } from "@xpfw/feathers";
 import * as memdb from "feathers-memory"
 import * as mongoService from "feathers-mongodb"
-import { DbStore, UserStore } from "isofw-shared/src/util/xpfwuishared"
+import { DbStore, UserStore } from "isofw-shared/src/util/xpfwdata"
 import collections from "isofw-shared/src/xpfwDefs/collections"
 import { isString } from "lodash"
 import { MongoClient } from "mongodb"
