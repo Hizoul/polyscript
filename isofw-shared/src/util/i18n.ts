@@ -3,7 +3,9 @@ import * as sprintf from "i18next-sprintf-postprocessor"
 import val from "isofw-shared/src/globals/val"
 
 const i18nA: any = i18next
-const toInitWith = i18nA
+// TODO: fix for react native
+const toInitWith: any = {init: () => {t: () => "bla"}}
+
 const i18n = toInitWith.init({
   lng: "en",
   ns: [val.i18nNameSpace],
