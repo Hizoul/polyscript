@@ -5,288 +5,10 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
   className="DirectorEle"
 >
   {
-  "form": {
-    "model": "projectModel",
-    "collection": "projects",
-    "sections": [
-      {
-        "fields": [
-          {
-            "type": 2,
-            "mapTo": "_id",
-            "validate": {
-              "hide": {
-                "create": false,
-                "update": false
-              }
-            }
-          },
-          {
-            "type": 2,
-            "mapTo": "name",
-            "validate": {
-              "convert": {}
-            }
-          },
-          {
-            "type": 3,
-            "mapTo": "shot"
-          },
-          {
-            "type": 14,
-            "mapTo": "cameras",
-            "validate": {
-              "relationshipNamePath": "name",
-              "relationshipCollection": "cameras",
-              "relationshipIdPath": "_id",
-              "type": 2
-            }
-          },
-          {
-            "type": 14,
-            "mapTo": "operators",
-            "validate": {
-              "relationshipNamePath": "email",
-              "relationshipCollection": "users",
-              "relationshipIdPath": "_id",
-              "type": 2
-            }
-          },
-          {
-            "type": 10,
-            "mapTo": "operatorCameraMapping",
-            "theme": "cameraMapping",
-            "validate": {
-              "type": 12,
-              "validate": {
-                "objectDef": [
-                  {
-                    "type": 13,
-                    "mapTo": "operator",
-                    "validate": {
-                      "relationshipNamePath": "email",
-                      "relationshipCollection": "users",
-                      "relationshipIdPath": "_id"
-                    }
-                  },
-                  {
-                    "type": 14,
-                    "mapTo": "cameras",
-                    "validate": {
-                      "relationshipNamePath": "name",
-                      "relationshipCollection": "cameras",
-                      "relationshipIdPath": "_id",
-                      "type": 2
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          {
-            "type": 10,
-            "mapTo": "program",
-            "validate": {
-              "type": 12,
-              "validate": {
-                "objectDef": [
-                  {
-                    "type": 2,
-                    "mapTo": "pname"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "type"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "movement"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "movementTowards"
-                  },
-                  {
-                    "type": 3,
-                    "mapTo": "duration"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "directorRemarks"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "operatorRemarks"
-                  },
-                  {
-                    "type": 13,
-                    "mapTo": "camera",
-                    "theme": "program",
-                    "validate": {
-                      "relationshipNamePath": "name",
-                      "relationshipCollection": "cameras",
-                      "relationshipIdPath": "_id"
-                    }
-                  },
-                  {
-                    "type": 13,
-                    "mapTo": "preset",
-                    "theme": "presetNumberDisplay"
-                  },
-                  {
-                    "type": 6,
-                    "mapTo": "importance",
-                    "selectOptions": [
-                      {
-                        "label": "Normal",
-                        "value": "n"
-                      },
-                      {
-                        "label": "Raised",
-                        "value": "r"
-                      },
-                      {
-                        "label": "Maximum",
-                        "value": "m"
-                      }
-                    ]
-                  }
-                ]
-              },
-              "hide": {
-                "update": true,
-                "create": true
-              }
-            }
-          },
-          {
-            "type": 4,
-            "mapTo": "isActive",
-            "validate": {
-              "hide": {
-                "create": false,
-                "update": false
-              },
-              "defaultValue": true
-            }
-          }
-        ]
-      }
-    ],
-    "permissions": {
-      "required": {
-        "create": "user",
-        "find": "user",
-        "get": "user",
-        "update": "user",
-        "remove": "server"
-      }
-    },
-    "options": {
-      "addCreatedAt": true,
-      "idPath": "_id"
-    }
-  },
-  "id": "b19999999999999999999999",
-  "prefix": "shotEdit",
-  "loading": false,
-  "original": {
-    "result": {
-      "_id": "b19999999999999999999999",
-      "name": "pn1",
-      "shot": 42,
-      "isActive": true
-    }
-  },
   "user": {
     "_id": "u1",
     "email": "u1"
-  },
-  "fields": [
-    {
-      "type": 2,
-      "mapTo": "_id",
-      "validate": {
-        "hide": {
-          "create": false,
-          "update": false
-        }
-      }
-    },
-    {
-      "type": 2,
-      "mapTo": "name",
-      "validate": {
-        "convert": {}
-      }
-    },
-    {
-      "type": 3,
-      "mapTo": "shot"
-    },
-    {
-      "type": 14,
-      "mapTo": "cameras",
-      "validate": {
-        "relationshipNamePath": "name",
-        "relationshipCollection": "cameras",
-        "relationshipIdPath": "_id",
-        "type": 2
-      }
-    },
-    {
-      "type": 14,
-      "mapTo": "operators",
-      "validate": {
-        "relationshipNamePath": "email",
-        "relationshipCollection": "users",
-        "relationshipIdPath": "_id",
-        "type": 2
-      }
-    },
-    {
-      "type": 10,
-      "mapTo": "operatorCameraMapping",
-      "theme": "cameraMapping",
-      "validate": {
-        "type": 12,
-        "validate": {
-          "objectDef": [
-            {
-              "type": 13,
-              "mapTo": "operator",
-              "validate": {
-                "relationshipNamePath": "email",
-                "relationshipCollection": "users",
-                "relationshipIdPath": "_id"
-              }
-            },
-            {
-              "type": 14,
-              "mapTo": "cameras",
-              "validate": {
-                "relationshipNamePath": "name",
-                "relationshipCollection": "cameras",
-                "relationshipIdPath": "_id",
-                "type": 2
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "type": 4,
-      "mapTo": "isActive",
-      "validate": {
-        "hide": {
-          "create": false,
-          "update": false
-        },
-        "defaultValue": true
-      }
-    }
-  ]
+  }
 }
 </div>
 `;
@@ -294,34 +16,35 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
 exports[` direct a test   can increase number :  project Edited by client 1`] = `
 Object {
   "createState": Object {},
+  "currentlyEditing": "b19999999999999999999999",
+  "fetching": Object {},
+  "getFromServer": [Function],
   "getState": Object {
     "projects": Object {
       "b19999999999999999999999": Object {
-        "result": Object {
-          "_id": "b19999999999999999999999",
-          "isActive": true,
-          "name": "pn1",
-          "shot": 43,
-        },
-      },
-    },
-    "users": Object {
-      "u1": Object {
-        "result": Object {
-          "_id": "u1",
-          "email": "u1",
-        },
-      },
-    },
-  },
-  "updateState": Object {
-    "shotEdit.b19999999999999999999999projectModel": Object {
-      "result": Object {
         "_id": "b19999999999999999999999",
         "isActive": true,
         "name": "pn1",
         "shot": 43,
       },
+    },
+    "users": Object {
+      "u1": Object {
+        "_id": "u1",
+        "email": "u1",
+      },
+    },
+  },
+  "lastFetch": Object {
+    "b19999999999999999999999": -2077750800000,
+  },
+  "removeState": Object {},
+  "updateState": Object {
+    "shotEdit.projectModelb19999999999999999999999": Object {
+      "_id": "b19999999999999999999999",
+      "isActive": true,
+      "name": "pn1",
+      "shot": 43,
     },
   },
 }
@@ -330,26 +53,29 @@ Object {
 exports[` direct a test   can increase number :  project pushed by server  1`] = `
 Object {
   "createState": Object {},
+  "currentlyEditing": "",
+  "fetching": Object {},
+  "getFromServer": [Function],
   "getState": Object {
     "projects": Object {
       "b19999999999999999999999": Object {
-        "result": Object {
-          "_id": "b19999999999999999999999",
-          "isActive": true,
-          "name": "pn1",
-          "shot": 42,
-        },
+        "_id": "b19999999999999999999999",
+        "isActive": true,
+        "name": "pn1",
+        "shot": 42,
       },
     },
     "users": Object {
       "u1": Object {
-        "result": Object {
-          "_id": "u1",
-          "email": "u1",
-        },
+        "_id": "u1",
+        "email": "u1",
       },
     },
   },
+  "lastFetch": Object {
+    "b19999999999999999999999": -2077750800000,
+  },
+  "removeState": Object {},
   "updateState": Object {},
 }
 `;
@@ -359,296 +85,23 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
   className="DirectorEle"
 >
   {
-  "form": {
-    "model": "projectModel",
-    "collection": "projects",
-    "sections": [
-      {
-        "fields": [
-          {
-            "type": 2,
-            "mapTo": "_id",
-            "validate": {
-              "hide": {
-                "create": false,
-                "update": false
-              }
-            }
-          },
-          {
-            "type": 2,
-            "mapTo": "name",
-            "validate": {
-              "convert": {}
-            }
-          },
-          {
-            "type": 3,
-            "mapTo": "shot"
-          },
-          {
-            "type": 14,
-            "mapTo": "cameras",
-            "validate": {
-              "relationshipNamePath": "name",
-              "relationshipCollection": "cameras",
-              "relationshipIdPath": "_id",
-              "type": 2
-            }
-          },
-          {
-            "type": 14,
-            "mapTo": "operators",
-            "validate": {
-              "relationshipNamePath": "email",
-              "relationshipCollection": "users",
-              "relationshipIdPath": "_id",
-              "type": 2
-            }
-          },
-          {
-            "type": 10,
-            "mapTo": "operatorCameraMapping",
-            "theme": "cameraMapping",
-            "validate": {
-              "type": 12,
-              "validate": {
-                "objectDef": [
-                  {
-                    "type": 13,
-                    "mapTo": "operator",
-                    "validate": {
-                      "relationshipNamePath": "email",
-                      "relationshipCollection": "users",
-                      "relationshipIdPath": "_id"
-                    }
-                  },
-                  {
-                    "type": 14,
-                    "mapTo": "cameras",
-                    "validate": {
-                      "relationshipNamePath": "name",
-                      "relationshipCollection": "cameras",
-                      "relationshipIdPath": "_id",
-                      "type": 2
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          {
-            "type": 10,
-            "mapTo": "program",
-            "validate": {
-              "type": 12,
-              "validate": {
-                "objectDef": [
-                  {
-                    "type": 2,
-                    "mapTo": "pname"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "type"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "movement"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "movementTowards"
-                  },
-                  {
-                    "type": 3,
-                    "mapTo": "duration"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "directorRemarks"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "operatorRemarks"
-                  },
-                  {
-                    "type": 13,
-                    "mapTo": "camera",
-                    "theme": "program",
-                    "validate": {
-                      "relationshipNamePath": "name",
-                      "relationshipCollection": "cameras",
-                      "relationshipIdPath": "_id"
-                    }
-                  },
-                  {
-                    "type": 13,
-                    "mapTo": "preset",
-                    "theme": "presetNumberDisplay"
-                  },
-                  {
-                    "type": 6,
-                    "mapTo": "importance",
-                    "selectOptions": [
-                      {
-                        "label": "Normal",
-                        "value": "n"
-                      },
-                      {
-                        "label": "Raised",
-                        "value": "r"
-                      },
-                      {
-                        "label": "Maximum",
-                        "value": "m"
-                      }
-                    ]
-                  }
-                ]
-              },
-              "hide": {
-                "update": true,
-                "create": true
-              }
-            }
-          },
-          {
-            "type": 4,
-            "mapTo": "isActive",
-            "validate": {
-              "hide": {
-                "create": false,
-                "update": false
-              },
-              "defaultValue": true
-            }
-          }
-        ]
-      }
-    ],
-    "permissions": {
-      "required": {
-        "create": "user",
-        "find": "user",
-        "get": "user",
-        "update": "user",
-        "remove": "server"
-      }
-    },
-    "options": {
-      "addCreatedAt": true,
-      "idPath": "_id"
-    }
-  },
-  "id": "b19999999999999999999999",
-  "prefix": "shotEdit",
   "state": {
-    "result": {
-      "_id": "b19999999999999999999999",
-      "name": "pn1",
-      "shot": 43,
-      "isActive": true
-    }
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 43,
+    "isActive": true
   },
   "loading": false,
   "original": {
-    "result": {
-      "_id": "b19999999999999999999999",
-      "name": "pn1",
-      "shot": 43,
-      "isActive": true
-    }
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 43,
+    "isActive": true
   },
   "user": {
     "_id": "u1",
     "email": "u1"
-  },
-  "fields": [
-    {
-      "type": 2,
-      "mapTo": "_id",
-      "validate": {
-        "hide": {
-          "create": false,
-          "update": false
-        }
-      }
-    },
-    {
-      "type": 2,
-      "mapTo": "name",
-      "validate": {
-        "convert": {}
-      }
-    },
-    {
-      "type": 3,
-      "mapTo": "shot"
-    },
-    {
-      "type": 14,
-      "mapTo": "cameras",
-      "validate": {
-        "relationshipNamePath": "name",
-        "relationshipCollection": "cameras",
-        "relationshipIdPath": "_id",
-        "type": 2
-      }
-    },
-    {
-      "type": 14,
-      "mapTo": "operators",
-      "validate": {
-        "relationshipNamePath": "email",
-        "relationshipCollection": "users",
-        "relationshipIdPath": "_id",
-        "type": 2
-      }
-    },
-    {
-      "type": 10,
-      "mapTo": "operatorCameraMapping",
-      "theme": "cameraMapping",
-      "validate": {
-        "type": 12,
-        "validate": {
-          "objectDef": [
-            {
-              "type": 13,
-              "mapTo": "operator",
-              "validate": {
-                "relationshipNamePath": "email",
-                "relationshipCollection": "users",
-                "relationshipIdPath": "_id"
-              }
-            },
-            {
-              "type": 14,
-              "mapTo": "cameras",
-              "validate": {
-                "relationshipNamePath": "name",
-                "relationshipCollection": "cameras",
-                "relationshipIdPath": "_id",
-                "type": 2
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "type": 4,
-      "mapTo": "isActive",
-      "validate": {
-        "hide": {
-          "create": false,
-          "update": false
-        },
-        "defaultValue": true
-      }
-    }
-  ]
+  }
 }
 </div>
 `;
@@ -658,288 +111,10 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
   className="DirectorEle"
 >
   {
-  "form": {
-    "model": "projectModel",
-    "collection": "projects",
-    "sections": [
-      {
-        "fields": [
-          {
-            "type": 2,
-            "mapTo": "_id",
-            "validate": {
-              "hide": {
-                "create": false,
-                "update": false
-              }
-            }
-          },
-          {
-            "type": 2,
-            "mapTo": "name",
-            "validate": {
-              "convert": {}
-            }
-          },
-          {
-            "type": 3,
-            "mapTo": "shot"
-          },
-          {
-            "type": 14,
-            "mapTo": "cameras",
-            "validate": {
-              "relationshipNamePath": "name",
-              "relationshipCollection": "cameras",
-              "relationshipIdPath": "_id",
-              "type": 2
-            }
-          },
-          {
-            "type": 14,
-            "mapTo": "operators",
-            "validate": {
-              "relationshipNamePath": "email",
-              "relationshipCollection": "users",
-              "relationshipIdPath": "_id",
-              "type": 2
-            }
-          },
-          {
-            "type": 10,
-            "mapTo": "operatorCameraMapping",
-            "theme": "cameraMapping",
-            "validate": {
-              "type": 12,
-              "validate": {
-                "objectDef": [
-                  {
-                    "type": 13,
-                    "mapTo": "operator",
-                    "validate": {
-                      "relationshipNamePath": "email",
-                      "relationshipCollection": "users",
-                      "relationshipIdPath": "_id"
-                    }
-                  },
-                  {
-                    "type": 14,
-                    "mapTo": "cameras",
-                    "validate": {
-                      "relationshipNamePath": "name",
-                      "relationshipCollection": "cameras",
-                      "relationshipIdPath": "_id",
-                      "type": 2
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          {
-            "type": 10,
-            "mapTo": "program",
-            "validate": {
-              "type": 12,
-              "validate": {
-                "objectDef": [
-                  {
-                    "type": 2,
-                    "mapTo": "pname"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "type"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "movement"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "movementTowards"
-                  },
-                  {
-                    "type": 3,
-                    "mapTo": "duration"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "directorRemarks"
-                  },
-                  {
-                    "type": 2,
-                    "mapTo": "operatorRemarks"
-                  },
-                  {
-                    "type": 13,
-                    "mapTo": "camera",
-                    "theme": "program",
-                    "validate": {
-                      "relationshipNamePath": "name",
-                      "relationshipCollection": "cameras",
-                      "relationshipIdPath": "_id"
-                    }
-                  },
-                  {
-                    "type": 13,
-                    "mapTo": "preset",
-                    "theme": "presetNumberDisplay"
-                  },
-                  {
-                    "type": 6,
-                    "mapTo": "importance",
-                    "selectOptions": [
-                      {
-                        "label": "Normal",
-                        "value": "n"
-                      },
-                      {
-                        "label": "Raised",
-                        "value": "r"
-                      },
-                      {
-                        "label": "Maximum",
-                        "value": "m"
-                      }
-                    ]
-                  }
-                ]
-              },
-              "hide": {
-                "update": true,
-                "create": true
-              }
-            }
-          },
-          {
-            "type": 4,
-            "mapTo": "isActive",
-            "validate": {
-              "hide": {
-                "create": false,
-                "update": false
-              },
-              "defaultValue": true
-            }
-          }
-        ]
-      }
-    ],
-    "permissions": {
-      "required": {
-        "create": "user",
-        "find": "user",
-        "get": "user",
-        "update": "user",
-        "remove": "server"
-      }
-    },
-    "options": {
-      "addCreatedAt": true,
-      "idPath": "_id"
-    }
-  },
-  "id": "b19999999999999999999999",
-  "prefix": "shotEdit",
-  "loading": false,
-  "original": {
-    "result": {
-      "_id": "b19999999999999999999999",
-      "name": "pn1",
-      "shot": 42,
-      "isActive": true
-    }
-  },
   "user": {
     "_id": "u1",
     "email": "u1"
-  },
-  "fields": [
-    {
-      "type": 2,
-      "mapTo": "_id",
-      "validate": {
-        "hide": {
-          "create": false,
-          "update": false
-        }
-      }
-    },
-    {
-      "type": 2,
-      "mapTo": "name",
-      "validate": {
-        "convert": {}
-      }
-    },
-    {
-      "type": 3,
-      "mapTo": "shot"
-    },
-    {
-      "type": 14,
-      "mapTo": "cameras",
-      "validate": {
-        "relationshipNamePath": "name",
-        "relationshipCollection": "cameras",
-        "relationshipIdPath": "_id",
-        "type": 2
-      }
-    },
-    {
-      "type": 14,
-      "mapTo": "operators",
-      "validate": {
-        "relationshipNamePath": "email",
-        "relationshipCollection": "users",
-        "relationshipIdPath": "_id",
-        "type": 2
-      }
-    },
-    {
-      "type": 10,
-      "mapTo": "operatorCameraMapping",
-      "theme": "cameraMapping",
-      "validate": {
-        "type": 12,
-        "validate": {
-          "objectDef": [
-            {
-              "type": 13,
-              "mapTo": "operator",
-              "validate": {
-                "relationshipNamePath": "email",
-                "relationshipCollection": "users",
-                "relationshipIdPath": "_id"
-              }
-            },
-            {
-              "type": 14,
-              "mapTo": "cameras",
-              "validate": {
-                "relationshipNamePath": "name",
-                "relationshipCollection": "cameras",
-                "relationshipIdPath": "_id",
-                "type": 2
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "type": 4,
-      "mapTo": "isActive",
-      "validate": {
-        "hide": {
-          "create": false,
-          "update": false
-        },
-        "defaultValue": true
-      }
-    }
-  ]
+  }
 }
 </div>
 `;

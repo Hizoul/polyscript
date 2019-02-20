@@ -13,6 +13,8 @@ import { FormStore, prependPrefix, SharedField, useField } from "isofw-shared/sr
 import { ProjectCameras, ShotCamera } from "isofw-shared/src/xpfwDefs/project"
 import * as React from "react"
 BackendClient.client = FeathersClient
+import * as MockDate from "mockdate"
+MockDate.set(new Date(4, 2, 0))
 
 const cameraChooserTest = () => {
   describe(" camera mapping test ", () => {

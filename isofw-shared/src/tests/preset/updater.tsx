@@ -9,7 +9,9 @@ import renderSnapshot from "isofw-shared/src/testUtil/renderSnapshot"
 import promiseTimeout from "isofw-shared/src/util/promiseTimeout"
 import { BackendClient, DbStore, ListStore, toJS } from "isofw-shared/src/util/xpfwdata"
 import { PresetForm } from "isofw-shared/src/xpfwDefs/preset"
+import * as MockDate from "mockdate"
 import * as React from "react"
+MockDate.set(new Date(4, 2, 0))
 
 BackendClient.client = FeathersClient
 const untypedDbStore: any = DbStore
@@ -18,13 +20,13 @@ const presetUpdaterTest = (Component?: any) => {
   describe("Preset Update", () => {
     it("works as planned", async () => {
       const appRef = await getRandomApp(" not important ", true, BackendClient.client, false)
-      const userResults = await createTestUsers(appRef.app)
+      await createTestUsers(appRef.app)
       await logIntoUser()
-      const cameraResult = await createTestCameras(appRef.app)
+      await createTestCameras(appRef.app)
       const projectResults = await createTestProjects(appRef.app, true)
       const presetList = await ListStore.getList(PresetForm, undefined, undefined, true)
-      untypedDbStore.currentlyEditing = projectResults[0]._id
-      const presetId = presetList.result[0]._id
+      untypedDbStore.currentlyEditing = projectResults[0]._id.toHexString()
+      const presetId = presetList.data[0]._id
       if (Component) {
         renderSnapshot(<Component id={presetId} />, "Before anything")
       } else {

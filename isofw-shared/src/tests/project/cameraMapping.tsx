@@ -11,6 +11,8 @@ import { BackendClient } from "isofw-shared/src/util/xpfwdata"
 import { FormStore, prependPrefix, SharedField } from "isofw-shared/src/util/xpfwform"
 import { ProjectCameras, ProjectOperatorCameraMapping, ProjectOperators } from "isofw-shared/src/xpfwDefs/project"
 import * as React from "react"
+import * as MockDate from "mockdate"
+MockDate.set(new Date(4, 2, 0))
 
 BackendClient.client = FeathersClient
 

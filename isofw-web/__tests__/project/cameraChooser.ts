@@ -1,8 +1,7 @@
 import cameraChooserTest from "isofw-shared/src/tests/project/cameraChooser"
-import WebCameraChoice from "isofw-web/src/components/project/programEditor/cameraChooser";
-import { ComponentRegistry } from "@xpfw/form-shared";
-import { FieldType } from "@xpfw/validate";
+import { ComponentRegistry } from "isofw-shared/src/util/xpfwform"
 import { ShotCamera } from "isofw-shared/src/xpfwDefs/project"
+import WebCameraChoice from "isofw-web/src/components/project/programEditor/cameraChooser"
 
-ComponentRegistry.registerComponent(FieldType.RelationshipSingle, WebCameraChoice, ShotCamera.theme)
+ComponentRegistry.registerComponent("string", WebCameraChoice, ShotCamera.theme)
 cameraChooserTest()

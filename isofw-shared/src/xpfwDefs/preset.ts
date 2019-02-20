@@ -46,8 +46,8 @@ const PresetForm: ExtendedJSONSchema = {
   modify: {
     addCreatedAt: true,
     defaultSort: {
-      [String(PresetCameraField.title)]: 1,
-      [String(PresetNumberField.title)]: 1
+      [String(PresetNumberField.title)]: 1,
+      [String(PresetCameraField.title)]: 1
     }
   }
 }

@@ -3,16 +3,19 @@
 exports[`free unused presets after program Update works as planned: Before anything 1`] = `
 Object {
   "createState": Object {},
+  "currentlyEditing": "",
+  "fetching": Object {},
+  "getFromServer": [Function],
   "getState": Object {
     "users": Object {
       "u1": Object {
-        "result": Object {
-          "_id": "u1",
-          "email": "u1",
-        },
+        "_id": "u1",
+        "email": "u1",
       },
     },
   },
+  "lastFetch": Object {},
+  "removeState": Object {},
   "updateState": Object {},
 }
 `;
@@ -20,71 +23,50 @@ Object {
 exports[`free unused presets after program Update works as planned: after All having been freed up again 1`] = `
 Object {
   "createState": Object {
-    "freePresetGetter.presetModel": Object {
-      "result": "c1bbbbbbbbbbbbbbbb398765",
-    },
+    "freePresetGetter.assistantForm": "c1bbbbbbbbbbbbbbbb398765",
   },
+  "currentlyEditing": "b19999999999999999999999",
+  "fetching": Object {
+    "b19999999999999999999999": false,
+  },
+  "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
       "b19999999999999999999999": Object {
-        "result": Object {
-          "_id": "b19999999999999999999999",
-          "cameras": Array [
-            "c1bbbbbbbbbbbbbbbbbbbbbb",
-            "c2bbbbbbbbbbbbbbbbbbbbbb",
-            "c3bbbbbbbbbbbbbbbbbbbbbb",
-          ],
-          "isActive": false,
-          "name": "pn1",
-          "operatorCameraMapping": Array [
-            Object {
-              "cameras": Array [
-                "c1bbbbbbbbbbbbbbbbbbbbbb",
-                "c3bbbbbbbbbbbbbbbbbbbbbb",
-              ],
-              "operator": "u1",
-            },
-            Object {
-              "cameras": Array [
-                "c2bbbbbbbbbbbbbbbbbbbbbb",
-              ],
-              "operator": "u2",
-            },
-          ],
-          "operators": Array [
-            "u1",
-            "u2",
-          ],
-          "shot": 1,
-        },
+        "_id": "b19999999999999999999999",
+        "cameras": Array [
+          "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "c3bbbbbbbbbbbbbbbbbbbbbb",
+        ],
+        "isActive": false,
+        "name": "pn1",
+        "operatorCameraMapping": Array [
+          Object {
+            "cameras": Array [
+              "c1bbbbbbbbbbbbbbbbbbbbbb",
+              "c3bbbbbbbbbbbbbbbbbbbbbb",
+            ],
+            "operator": "u1",
+          },
+          Object {
+            "cameras": Array [
+              "c2bbbbbbbbbbbbbbbbbbbbbb",
+            ],
+            "operator": "u2",
+          },
+        ],
+        "operators": Array [
+          "u1",
+          "u2",
+        ],
+        "program": null,
+        "shot": 1,
       },
+      "undefined": "c1bbbbbbbbbbbbbbbb398765",
     },
     "presets": Object {
-      "c1bbbbbbbbbbbbbbbb098765": Object {
-        "result": Object {
-          "_id": "c1bbbbbbbbbbbbbbbb098765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 0,
-          "project": "-",
-        },
-      },
-      "c1bbbbbbbbbbbbbbbb198765": Object {
-        "result": Object {
-          "_id": "c1bbbbbbbbbbbbbbbb198765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 1,
-          "project": "-",
-        },
-      },
-      "c1bbbbbbbbbbbbbbbb298765": Object {
-        "result": Object {
-          "_id": "c1bbbbbbbbbbbbbbbb298765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 2,
-          "project": "-",
-        },
-      },
-      "c1bbbbbbbbbbbbbbbb398765": Object {
+      "undefined": Object {
         "result": Object {
           "_id": "c1bbbbbbbbbbbbbbbb398765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
@@ -95,6 +77,36 @@ Object {
     },
     "projects": Object {
       "b19999999999999999999999": Object {
+        "_id": "b19999999999999999999999",
+        "cameras": Array [
+          "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "c3bbbbbbbbbbbbbbbbbbbbbb",
+        ],
+        "isActive": true,
+        "name": "pn1",
+        "operatorCameraMapping": Array [
+          Object {
+            "cameras": Array [
+              "c1bbbbbbbbbbbbbbbbbbbbbb",
+              "c3bbbbbbbbbbbbbbbbbbbbbb",
+            ],
+            "operator": "u1",
+          },
+          Object {
+            "cameras": Array [
+              "c2bbbbbbbbbbbbbbbbbbbbbb",
+            ],
+            "operator": "u2",
+          },
+        ],
+        "operators": Array [
+          "u1",
+          "u2",
+        ],
+        "shot": 1,
+      },
+      "undefined": Object {
         "result": Object {
           "_id": "b19999999999999999999999",
           "cameras": Array [
@@ -123,32 +135,82 @@ Object {
             "u1",
             "u2",
           ],
+          "program": null,
           "shot": 1,
         },
       },
     },
     "users": Object {
       "u1": Object {
-        "result": Object {
-          "_id": "u1",
-          "email": "u1",
-        },
+        "_id": "u1",
+        "email": "u1",
       },
     },
   },
-  "updateState": Object {},
+  "lastFetch": Object {
+    "b19999999999999999999999": -2077750800000,
+    "undefined": -2077750800000,
+  },
+  "removeState": Object {},
+  "updateState": Object {
+    "projectModelb19999999999999999999999": Object {
+      "_id": "b19999999999999999999999",
+      "cameras": Array [
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "c3bbbbbbbbbbbbbbbbbbbbbb",
+      ],
+      "isActive": true,
+      "name": "pn1",
+      "operatorCameraMapping": Array [
+        Object {
+          "cameras": Array [
+            "c1bbbbbbbbbbbbbbbbbbbbbb",
+            "c3bbbbbbbbbbbbbbbbbbbbbb",
+          ],
+          "operator": "u1",
+        },
+        Object {
+          "cameras": Array [
+            "c2bbbbbbbbbbbbbbbbbbbbbb",
+          ],
+          "operator": "u2",
+        },
+      ],
+      "operators": Array [
+        "u1",
+        "u2",
+      ],
+      "shot": 1,
+    },
+  },
 }
 `;
 
 exports[`free unused presets after program Update works as planned: after All having been freed up again 2`] = `
 Object {
+  "currentPage": Object {},
+  "doingQuery": Object {
+    "undefinedpresets{\\"$limit\\":15,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
+  },
   "lists": Object {
     "list.presetModel": Object {
-      "limit": 5,
-      "result": Array [
+      "data": Array [
         Object {
           "_id": "c1bbbbbbbbbbbbbbbb098765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 0,
+          "project": "-",
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb098765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 0,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb098765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
           "number": 0,
           "project": "-",
         },
@@ -159,14 +221,50 @@ Object {
           "project": "-",
         },
         Object {
+          "_id": "c2bbbbbbbbbbbbbbbb198765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 1,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb198765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 1,
+          "project": "-",
+        },
+        Object {
           "_id": "c1bbbbbbbbbbbbbbbb298765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 2,
           "project": "-",
         },
         Object {
+          "_id": "c2bbbbbbbbbbbbbbbb298765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb298765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
+          "project": "-",
+        },
+        Object {
           "_id": "c1bbbbbbbbbbbbbbbb398765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 3,
+          "project": "-",
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb398765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 3,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb398765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
           "number": 3,
           "project": "-",
         },
@@ -176,58 +274,88 @@ Object {
           "number": 4,
           "project": "-",
         },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb498765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 4,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb498765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 4,
+          "project": "-",
+        },
       ],
+      "limit": 15,
       "skip": 0,
-      "total": 100,
+      "total": 300,
     },
   },
+  "makeQuery": [Function],
+  "maxPage": Object {
+    "list.presetModel": 20,
+  },
+  "pageSize": 15,
 }
 `;
 
 exports[`free unused presets after program Update works as planned: after reservation of four presets 1`] = `
 Object {
   "createState": Object {
-    "freePresetGetter.presetModel": Object {
-      "result": "c1bbbbbbbbbbbbbbbb398765",
-    },
+    "freePresetGetter.assistantForm": "c1bbbbbbbbbbbbbbbb398765",
   },
+  "currentlyEditing": "b19999999999999999999999",
+  "fetching": Object {
+    "b19999999999999999999999": false,
+  },
+  "getFromServer": [Function],
   "getState": Object {
+    "presetAssistant": Object {
+      "undefined": "c1bbbbbbbbbbbbbbbb398765",
+    },
     "presets": Object {
-      "c1bbbbbbbbbbbbbbbb098765": Object {
-        "result": Object {
-          "_id": "c1bbbbbbbbbbbbbbbb098765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 0,
-          "project": "b19999999999999999999999",
-        },
-      },
-      "c1bbbbbbbbbbbbbbbb198765": Object {
-        "result": Object {
-          "_id": "c1bbbbbbbbbbbbbbbb198765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 1,
-          "project": "b19999999999999999999999",
-        },
-      },
-      "c1bbbbbbbbbbbbbbbb298765": Object {
-        "result": Object {
-          "_id": "c1bbbbbbbbbbbbbbbb298765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 2,
-          "project": "b19999999999999999999999",
-        },
-      },
-      "c1bbbbbbbbbbbbbbbb398765": Object {
+      "undefined": Object {
         "result": Object {
           "_id": "c1bbbbbbbbbbbbbbbb398765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 3,
-          "project": "b19999999999999999999999",
+          "project": "-",
         },
       },
     },
     "projects": Object {
       "b19999999999999999999999": Object {
+        "_id": "b19999999999999999999999",
+        "cameras": Array [
+          "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "c3bbbbbbbbbbbbbbbbbbbbbb",
+        ],
+        "isActive": true,
+        "name": "pn1",
+        "operatorCameraMapping": Array [
+          Object {
+            "cameras": Array [
+              "c1bbbbbbbbbbbbbbbbbbbbbb",
+              "c3bbbbbbbbbbbbbbbbbbbbbb",
+            ],
+            "operator": "u1",
+          },
+          Object {
+            "cameras": Array [
+              "c2bbbbbbbbbbbbbbbbbbbbbb",
+            ],
+            "operator": "u2",
+          },
+        ],
+        "operators": Array [
+          "u1",
+          "u2",
+        ],
+        "shot": 1,
+      },
+      "undefined": Object {
         "result": Object {
           "_id": "b19999999999999999999999",
           "cameras": Array [
@@ -262,46 +390,131 @@ Object {
     },
     "users": Object {
       "u1": Object {
-        "result": Object {
-          "_id": "u1",
-          "email": "u1",
-        },
+        "_id": "u1",
+        "email": "u1",
       },
     },
   },
-  "updateState": Object {},
+  "lastFetch": Object {
+    "b19999999999999999999999": -2077750800000,
+    "undefined": -2077750800000,
+  },
+  "removeState": Object {},
+  "updateState": Object {
+    "projectModelb19999999999999999999999": Object {
+      "_id": "b19999999999999999999999",
+      "cameras": Array [
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "c3bbbbbbbbbbbbbbbbbbbbbb",
+      ],
+      "isActive": true,
+      "name": "pn1",
+      "operatorCameraMapping": Array [
+        Object {
+          "cameras": Array [
+            "c1bbbbbbbbbbbbbbbbbbbbbb",
+            "c3bbbbbbbbbbbbbbbbbbbbbb",
+          ],
+          "operator": "u1",
+        },
+        Object {
+          "cameras": Array [
+            "c2bbbbbbbbbbbbbbbbbbbbbb",
+          ],
+          "operator": "u2",
+        },
+      ],
+      "operators": Array [
+        "u1",
+        "u2",
+      ],
+      "shot": 1,
+    },
+  },
 }
 `;
 
 exports[`free unused presets after program Update works as planned: after reservation of four presets 2`] = `
 Object {
+  "currentPage": Object {},
+  "doingQuery": Object {
+    "undefinedpresets{\\"$limit\\":15,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
+  },
   "lists": Object {
     "list.presetModel": Object {
-      "limit": 5,
-      "result": Array [
+      "data": Array [
         Object {
           "_id": "c1bbbbbbbbbbbbbbbb098765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 0,
-          "project": "b19999999999999999999999",
+          "project": "-",
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb098765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 0,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb098765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 0,
+          "project": "-",
         },
         Object {
           "_id": "c1bbbbbbbbbbbbbbbb198765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 1,
-          "project": "b19999999999999999999999",
+          "project": "-",
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb198765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 1,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb198765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 1,
+          "project": "-",
         },
         Object {
           "_id": "c1bbbbbbbbbbbbbbbb298765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 2,
-          "project": "b19999999999999999999999",
+          "project": "-",
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb298765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb298765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
+          "project": "-",
         },
         Object {
           "_id": "c1bbbbbbbbbbbbbbbb398765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 3,
-          "project": "b19999999999999999999999",
+          "project": "-",
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb398765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 3,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb398765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 3,
+          "project": "-",
         },
         Object {
           "_id": "c1bbbbbbbbbbbbbbbb498765",
@@ -309,23 +522,56 @@ Object {
           "number": 4,
           "project": "-",
         },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb498765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 4,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb498765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 4,
+          "project": "-",
+        },
       ],
+      "limit": 15,
       "skip": 0,
-      "total": 100,
+      "total": 300,
     },
   },
+  "makeQuery": [Function],
+  "maxPage": Object {
+    "list.presetModel": 20,
+  },
+  "pageSize": 15,
 }
 `;
 
 exports[`free unused presets after program Update works as planned: before anything 1`] = `
 Object {
+  "currentPage": Object {},
+  "doingQuery": Object {
+    "undefinedpresets{\\"$limit\\":15,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
+  },
   "lists": Object {
     "list.presetModel": Object {
-      "limit": 5,
-      "result": Array [
+      "data": Array [
         Object {
           "_id": "c1bbbbbbbbbbbbbbbb098765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 0,
+          "project": "-",
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb098765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 0,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb098765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
           "number": 0,
           "project": "-",
         },
@@ -336,8 +582,32 @@ Object {
           "project": "-",
         },
         Object {
+          "_id": "c2bbbbbbbbbbbbbbbb198765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 1,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb198765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 1,
+          "project": "-",
+        },
+        Object {
           "_id": "c1bbbbbbbbbbbbbbbb298765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
+          "project": "-",
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb298765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb298765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
           "number": 2,
           "project": "-",
         },
@@ -348,15 +618,45 @@ Object {
           "project": "-",
         },
         Object {
+          "_id": "c2bbbbbbbbbbbbbbbb398765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 3,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb398765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 3,
+          "project": "-",
+        },
+        Object {
           "_id": "c1bbbbbbbbbbbbbbbb498765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 4,
           "project": "-",
         },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb498765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 4,
+          "project": "-",
+        },
+        Object {
+          "_id": "c3bbbbbbbbbbbbbbbb498765",
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 4,
+          "project": "-",
+        },
       ],
+      "limit": 15,
       "skip": 0,
-      "total": 100,
+      "total": 300,
     },
   },
+  "makeQuery": [Function],
+  "maxPage": Object {
+    "list.presetModel": 20,
+  },
+  "pageSize": 15,
 }
 `;

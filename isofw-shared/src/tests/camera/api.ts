@@ -10,6 +10,8 @@ import logIntoUser from "isofw-shared/src/testUtil/login"
 import { BackendClient, DbStore, toJS, UserStore } from "isofw-shared/src/util/xpfwdata"
 import { CameraIp } from "isofw-shared/src/xpfwDefs/camera"
 import { PresetActionTypeField, PresetAssistantForm, PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
+import * as MockDate from "mockdate"
+MockDate.set(new Date(4, 2, 0))
 
 BackendClient.client = FeathersClient
 

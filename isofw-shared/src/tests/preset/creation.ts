@@ -1,5 +1,5 @@
+import { FeathersClient } from "@xpfw/data-feathers"
 import { makeSubFields } from "@xpfw/form-tests"
-import { FeathersClient } from "@xpfw/ui-feathers"
 import getRandomApp from "isofw-node/src/testUtil/getRandomApp"
 import { setValueWithPreset } from "isofw-shared/src/components/project/cameraChooser"
 import createTestCameras from "isofw-shared/src/testUtil/data/camera"
@@ -10,15 +10,17 @@ import { BackendClient, DbStore, ListStore, toJS } from "isofw-shared/src/util/x
 import { FormStore } from "isofw-shared/src/util/xpfwform"
 import { PresetAssistantForm, PresetCameraField,
   PresetForm, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset"
+import * as MockDate from "mockdate"
+MockDate.set(new Date(4, 2, 0))
+
 BackendClient.client = FeathersClient
 const untypedDbStore: any = DbStore
 
 const presetCreationTest = () => {
   describe("Preset creation", () => {
     it("works as planned", async () => {
-      const prefix = "presetCreationPrefix"
       const appRef = await getRandomApp(" not important ", true, BackendClient.client, false)
-      const userResults = await createTestUsers(appRef.app)
+      await createTestUsers(appRef.app)
       await logIntoUser()
       const cameraResult = await createTestCameras(appRef.app)
       expect(cameraResult).toMatchSnapshot(" creation of Cameras")
@@ -28,16 +30,15 @@ const presetCreationTest = () => {
       await ListStore.getList(PresetForm, undefined, undefined, true)
       expect(toJS(ListStore)).toMatchSnapshot(" fetched presets ")
       const prFields = makeSubFields(PresetAssistantForm)
-      prFields[String(PresetCameraField.title)].setValue(cameraResult[0]._id)
-      prFields[String(PresetProjectField.title)].setValue(projectResults[0]._id)
+      prFields[String(PresetCameraField.title)].setValue(cameraResult[0]._id.toHexString())
+      prFields[String(PresetProjectField.title)].setValue(projectResults[0]._id.toHexString())
       expect(toJS(DbStore)).toMatchSnapshot("Before preset is being pushed via real-time")
-      const iDFetchedResults = await DbStore.create(PresetAssistantForm, prefix)
+      const iDFetchedResults = await DbStore.create(PresetAssistantForm)
       expect(iDFetchedResults).toMatchSnapshot(" first available ID ")
       expect(toJS(DbStore)).toMatchSnapshot("after preset has been pushed via real-time")
       expect(toJS(DbStore)).toMatchSnapshot("Before using the utility function")
-      expect(toJS(FormStore)).toMatchSnapshot("Before using the utility function")
-      untypedDbStore.currentlyEditing = projectResults[0]._id
-      await setValueWithPreset(PresetCameraField, undefined, undefined)(cameraResult[1]._id)
+      untypedDbStore.currentlyEditing = projectResults[0]._id.toHexString()
+      await setValueWithPreset(PresetCameraField, undefined, undefined)(cameraResult[1]._id.toHexString())
       expect(toJS(DbStore)).toMatchSnapshot("After using the utility function")
       expect(toJS(FormStore)).toMatchSnapshot("After using the utility function")
       await appRef.cleanUp()

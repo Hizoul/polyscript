@@ -5,49 +5,21 @@ exports[` camera mapping test  works as planned:  Hiding pop-up 1`] = `
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 10,
-    "mapTo": "operatorCameraMapping",
-    "theme": "cameraMapping",
-    "validate": {
-      "type": 12,
-      "validate": {
-        "objectDef": [
-          {
-            "type": 13,
-            "mapTo": "operator",
-            "validate": {
-              "relationshipNamePath": "email",
-              "relationshipCollection": "users",
-              "relationshipIdPath": "_id"
-            }
-          },
-          {
-            "type": 14,
-            "mapTo": "cameras",
-            "validate": {
-              "relationshipNamePath": "name",
-              "relationshipCollection": "cameras",
-              "relationshipIdPath": "_id",
-              "type": 2
-            }
-          }
-        ]
-      }
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "cameraMapping",
   "value": [
     {
       "operator": "u1",
       "cameras": [
-        "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "c1bbbbbbbbbbbbbbbbbbbbbb"
       ]
     },
     {
       "operator": "u2",
-      "cameras": []
+      "cameras": [
+        "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "c3bbbbbbbbbbbbbbbbbbbbbb"
+      ]
     }
   ],
   "cameras": [
@@ -70,39 +42,6 @@ exports[` camera mapping test  works as planned:  One Operator with 2 camera 1`]
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 10,
-    "mapTo": "operatorCameraMapping",
-    "theme": "cameraMapping",
-    "validate": {
-      "type": 12,
-      "validate": {
-        "objectDef": [
-          {
-            "type": 13,
-            "mapTo": "operator",
-            "validate": {
-              "relationshipNamePath": "email",
-              "relationshipCollection": "users",
-              "relationshipIdPath": "_id"
-            }
-          },
-          {
-            "type": 14,
-            "mapTo": "cameras",
-            "validate": {
-              "relationshipNamePath": "name",
-              "relationshipCollection": "cameras",
-              "relationshipIdPath": "_id",
-              "type": 2
-            }
-          }
-        ]
-      }
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "cameraMapping",
   "value": [
     {
       "operator": "u1",
@@ -132,39 +71,6 @@ exports[` camera mapping test  works as planned:  One Operator with 2 camera And
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 10,
-    "mapTo": "operatorCameraMapping",
-    "theme": "cameraMapping",
-    "validate": {
-      "type": 12,
-      "validate": {
-        "objectDef": [
-          {
-            "type": 13,
-            "mapTo": "operator",
-            "validate": {
-              "relationshipNamePath": "email",
-              "relationshipCollection": "users",
-              "relationshipIdPath": "_id"
-            }
-          },
-          {
-            "type": 14,
-            "mapTo": "cameras",
-            "validate": {
-              "relationshipNamePath": "name",
-              "relationshipCollection": "cameras",
-              "relationshipIdPath": "_id",
-              "type": 2
-            }
-          }
-        ]
-      }
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "cameraMapping",
   "value": [
     {
       "operator": "u1",
@@ -200,39 +106,6 @@ exports[` camera mapping test  works as planned:  One Operator with one camera 1
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 10,
-    "mapTo": "operatorCameraMapping",
-    "theme": "cameraMapping",
-    "validate": {
-      "type": 12,
-      "validate": {
-        "objectDef": [
-          {
-            "type": 13,
-            "mapTo": "operator",
-            "validate": {
-              "relationshipNamePath": "email",
-              "relationshipCollection": "users",
-              "relationshipIdPath": "_id"
-            }
-          },
-          {
-            "type": 14,
-            "mapTo": "cameras",
-            "validate": {
-              "relationshipNamePath": "name",
-              "relationshipCollection": "cameras",
-              "relationshipIdPath": "_id",
-              "type": 2
-            }
-          }
-        ]
-      }
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "cameraMapping",
   "value": [
     {
       "operator": "u1",
@@ -261,39 +134,6 @@ exports[` camera mapping test  works as planned:  Showing pop-up 1`] = `
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 10,
-    "mapTo": "operatorCameraMapping",
-    "theme": "cameraMapping",
-    "validate": {
-      "type": 12,
-      "validate": {
-        "objectDef": [
-          {
-            "type": 13,
-            "mapTo": "operator",
-            "validate": {
-              "relationshipNamePath": "email",
-              "relationshipCollection": "users",
-              "relationshipIdPath": "_id"
-            }
-          },
-          {
-            "type": 14,
-            "mapTo": "cameras",
-            "validate": {
-              "relationshipNamePath": "name",
-              "relationshipCollection": "cameras",
-              "relationshipIdPath": "_id",
-              "type": 2
-            }
-          }
-        ]
-      }
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "cameraMapping",
   "cameras": [
     "c1bbbbbbbbbbbbbbbbbbbbbb",
     "c2bbbbbbbbbbbbbbbbbbbbbb",
@@ -314,39 +154,6 @@ exports[` camera mapping test  works as planned:  after preparing operators and 
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 10,
-    "mapTo": "operatorCameraMapping",
-    "theme": "cameraMapping",
-    "validate": {
-      "type": 12,
-      "validate": {
-        "objectDef": [
-          {
-            "type": 13,
-            "mapTo": "operator",
-            "validate": {
-              "relationshipNamePath": "email",
-              "relationshipCollection": "users",
-              "relationshipIdPath": "_id"
-            }
-          },
-          {
-            "type": 14,
-            "mapTo": "cameras",
-            "validate": {
-              "relationshipNamePath": "name",
-              "relationshipCollection": "cameras",
-              "relationshipIdPath": "_id",
-              "type": 2
-            }
-          }
-        ]
-      }
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "cameraMapping",
   "cameras": [
     "c1bbbbbbbbbbbbbbbbbbbbbb",
     "c2bbbbbbbbbbbbbbbbbbbbbb",
@@ -366,44 +173,13 @@ exports[` camera mapping test  works as planned:  two Operator with one camera 1
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 10,
-    "mapTo": "operatorCameraMapping",
-    "theme": "cameraMapping",
-    "validate": {
-      "type": 12,
-      "validate": {
-        "objectDef": [
-          {
-            "type": 13,
-            "mapTo": "operator",
-            "validate": {
-              "relationshipNamePath": "email",
-              "relationshipCollection": "users",
-              "relationshipIdPath": "_id"
-            }
-          },
-          {
-            "type": 14,
-            "mapTo": "cameras",
-            "validate": {
-              "relationshipNamePath": "name",
-              "relationshipCollection": "cameras",
-              "relationshipIdPath": "_id",
-              "type": 2
-            }
-          }
-        ]
-      }
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "cameraMapping",
   "value": [
     {
       "operator": "u1",
       "cameras": [
-        "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "c1bbbbbbbbbbbbbbbbbbbbbb"
       ]
     },
     {
@@ -433,38 +209,6 @@ exports[` camera mapping test  works as planned: Before anything 1`] = `
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 10,
-    "mapTo": "operatorCameraMapping",
-    "theme": "cameraMapping",
-    "validate": {
-      "type": 12,
-      "validate": {
-        "objectDef": [
-          {
-            "type": 13,
-            "mapTo": "operator",
-            "validate": {
-              "relationshipNamePath": "email",
-              "relationshipCollection": "users",
-              "relationshipIdPath": "_id"
-            }
-          },
-          {
-            "type": 14,
-            "mapTo": "cameras",
-            "validate": {
-              "relationshipNamePath": "name",
-              "relationshipCollection": "cameras",
-              "relationshipIdPath": "_id"
-            }
-          }
-        ]
-      }
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "cameraMapping",
   "cameras": [],
   "operators": []
 }
@@ -476,49 +220,21 @@ exports[` camera mapping test  works as planned: remove all camearas of one oper
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 10,
-    "mapTo": "operatorCameraMapping",
-    "theme": "cameraMapping",
-    "validate": {
-      "type": 12,
-      "validate": {
-        "objectDef": [
-          {
-            "type": 13,
-            "mapTo": "operator",
-            "validate": {
-              "relationshipNamePath": "email",
-              "relationshipCollection": "users",
-              "relationshipIdPath": "_id"
-            }
-          },
-          {
-            "type": 14,
-            "mapTo": "cameras",
-            "validate": {
-              "relationshipNamePath": "name",
-              "relationshipCollection": "cameras",
-              "relationshipIdPath": "_id",
-              "type": 2
-            }
-          }
-        ]
-      }
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "cameraMapping",
   "value": [
     {
       "operator": "u1",
       "cameras": [
-        "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "c1bbbbbbbbbbbbbbbbbbbbbb"
       ]
     },
     {
       "operator": "u2",
-      "cameras": []
+      "cameras": [
+        "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "c3bbbbbbbbbbbbbbbbbbbbbb"
+      ]
     }
   ],
   "cameras": [

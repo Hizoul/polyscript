@@ -113,10 +113,13 @@ Array [
 
 exports[`Preset creation works as planned:  fetched presets  1`] = `
 Object {
+  "currentPage": Object {},
+  "doingQuery": Object {
+    "undefinedpresets{\\"$limit\\":400,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
+  },
   "lists": Object {
     "presetModel": Object {
-      "limit": 400,
-      "result": Array [
+      "data": Array [
         Object {
           "_id": "c1bbbbbbbbbbbbbbbb098765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
@@ -1918,85 +1921,96 @@ Object {
           "project": "-",
         },
       ],
+      "limit": 400,
       "skip": 0,
       "total": 300,
     },
   },
+  "makeQuery": [Function],
+  "maxPage": Object {
+    "presetModel": 1,
+  },
+  "pageSize": 400,
 }
 `;
 
-exports[`Preset creation works as planned:  first available ID  1`] = `
-Object {
-  "result": "c1bbbbbbbbbbbbbbbb098765",
-}
-`;
+exports[`Preset creation works as planned:  first available ID  1`] = `"c1bbbbbbbbbbbbbbbb098765"`;
 
 exports[`Preset creation works as planned: After using the utility function 1`] = `
 Object {
   "createState": Object {
-    "presetCreationPrefix.presetModel": Object {
-      "result": "c1bbbbbbbbbbbbbbbb098765",
-    },
-    "presetCreationPrefixfreePresetGetter.presetModel": Object {
-      "result": "c2bbbbbbbbbbbbbbbb098765",
-    },
+    "assistantForm": "c1bbbbbbbbbbbbbbbb098765",
+    "freePresetGetter.assistantForm": "c2bbbbbbbbbbbbbbbb098765",
   },
+  "currentlyEditing": "b19999999999999999999999",
+  "fetching": Object {},
+  "getFromServer": [Function],
   "getState": Object {
+    "presetAssistant": Object {
+      "undefined": "c2bbbbbbbbbbbbbbbb098765",
+    },
     "presets": Object {
       "c1bbbbbbbbbbbbbbbb098765": Object {
-        "result": Object {
-          "_id": "c1bbbbbbbbbbbbbbbb098765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 0,
-          "project": "b19999999999999999999999",
-        },
+        "_id": "c1bbbbbbbbbbbbbbbb098765",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "number": 0,
+        "project": "b19999999999999999999999",
       },
       "c2bbbbbbbbbbbbbbbb098765": Object {
-        "result": Object {
-          "_id": "c2bbbbbbbbbbbbbbbb098765",
-          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 0,
-          "project": "b19999999999999999999999",
-        },
+        "_id": "c2bbbbbbbbbbbbbbbb098765",
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "number": 0,
+        "project": "b19999999999999999999999",
       },
     },
     "users": Object {
       "u1": Object {
-        "result": Object {
-          "_id": "u1",
-          "email": "u1",
-        },
+        "_id": "u1",
+        "email": "u1",
       },
     },
   },
+  "lastFetch": Object {
+    "c1bbbbbbbbbbbbbbbb098765": -2077750800000,
+    "c2bbbbbbbbbbbbbbbb098765": -2077750800000,
+  },
+  "removeState": Object {},
   "updateState": Object {},
 }
 `;
 
 exports[`Preset creation works as planned: After using the utility function 2`] = `
 Object {
+  "errors": Object {},
   "formData": Object {
-    "email": "u1",
-    "password": "",
-    "presetCreationPrefix": Object {
+    "": Object {
+      "preset": "c2bbbbbbbbbbbbbbbb098765",
+    },
+    "assistantForm": Object {
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-      "program": Array [
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        Object {
-          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
-          "preset": "c2bbbbbbbbbbbbbbbb098765",
-        },
-      ],
+      "createdAt": 1904-02-28T23:00:00.000Z,
       "project": "b19999999999999999999999",
     },
-    "presetCreationPrefixfreePresetGetter": Object {
-      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
-      "project": "b19999999999999999999999",
+    "authForm": Object {
+      "email": "u1",
+      "password": "",
+      "strategy": "local",
     },
+    "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "freePresetGetter": Object {
+      "assistantForm": Object {
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "createdAt": 1904-02-28T23:00:00.000Z,
+        "project": "b19999999999999999999999",
+      },
+    },
+  },
+  "loading": Object {
+    "assistantForm": false,
+    "freePresetGetter": Object {
+      "assistantForm": false,
+    },
+    "presetModel": false,
   },
 }
 `;
@@ -2004,16 +2018,19 @@ Object {
 exports[`Preset creation works as planned: Before preset is being pushed via real-time 1`] = `
 Object {
   "createState": Object {},
+  "currentlyEditing": "",
+  "fetching": Object {},
+  "getFromServer": [Function],
   "getState": Object {
     "users": Object {
       "u1": Object {
-        "result": Object {
-          "_id": "u1",
-          "email": "u1",
-        },
+        "_id": "u1",
+        "email": "u1",
       },
     },
   },
+  "lastFetch": Object {},
+  "removeState": Object {},
   "updateState": Object {},
 }
 `;
@@ -2021,74 +2038,69 @@ Object {
 exports[`Preset creation works as planned: Before using the utility function 1`] = `
 Object {
   "createState": Object {
-    "presetCreationPrefix.presetModel": Object {
-      "result": "c1bbbbbbbbbbbbbbbb098765",
-    },
+    "assistantForm": "c1bbbbbbbbbbbbbbbb098765",
   },
+  "currentlyEditing": "",
+  "fetching": Object {},
+  "getFromServer": [Function],
   "getState": Object {
+    "presetAssistant": Object {
+      "undefined": "c1bbbbbbbbbbbbbbbb098765",
+    },
     "presets": Object {
       "c1bbbbbbbbbbbbbbbb098765": Object {
-        "result": Object {
-          "_id": "c1bbbbbbbbbbbbbbbb098765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 0,
-          "project": "b19999999999999999999999",
-        },
+        "_id": "c1bbbbbbbbbbbbbbbb098765",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "number": 0,
+        "project": "b19999999999999999999999",
       },
     },
     "users": Object {
       "u1": Object {
-        "result": Object {
-          "_id": "u1",
-          "email": "u1",
-        },
+        "_id": "u1",
+        "email": "u1",
       },
     },
   },
-  "updateState": Object {},
-}
-`;
-
-exports[`Preset creation works as planned: Before using the utility function 2`] = `
-Object {
-  "formData": Object {
-    "email": "u1",
-    "password": "",
-    "presetCreationPrefix": Object {
-      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-      "project": "b19999999999999999999999",
-    },
+  "lastFetch": Object {
+    "c1bbbbbbbbbbbbbbbb098765": -2077750800000,
   },
+  "removeState": Object {},
+  "updateState": Object {},
 }
 `;
 
 exports[`Preset creation works as planned: after preset has been pushed via real-time 1`] = `
 Object {
   "createState": Object {
-    "presetCreationPrefix.presetModel": Object {
-      "result": "c1bbbbbbbbbbbbbbbb098765",
-    },
+    "assistantForm": "c1bbbbbbbbbbbbbbbb098765",
   },
+  "currentlyEditing": "",
+  "fetching": Object {},
+  "getFromServer": [Function],
   "getState": Object {
+    "presetAssistant": Object {
+      "undefined": "c1bbbbbbbbbbbbbbbb098765",
+    },
     "presets": Object {
       "c1bbbbbbbbbbbbbbbb098765": Object {
-        "result": Object {
-          "_id": "c1bbbbbbbbbbbbbbbb098765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 0,
-          "project": "b19999999999999999999999",
-        },
+        "_id": "c1bbbbbbbbbbbbbbbb098765",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "number": 0,
+        "project": "b19999999999999999999999",
       },
     },
     "users": Object {
       "u1": Object {
-        "result": Object {
-          "_id": "u1",
-          "email": "u1",
-        },
+        "_id": "u1",
+        "email": "u1",
       },
     },
   },
+  "lastFetch": Object {
+    "c1bbbbbbbbbbbbbbbb098765": -2077750800000,
+  },
+  "removeState": Object {},
   "updateState": Object {},
 }
 `;

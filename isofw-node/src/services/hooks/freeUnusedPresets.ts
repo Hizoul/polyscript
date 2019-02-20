@@ -9,7 +9,11 @@ const freePresetsOfProject = async (app: Application, projectId: any, deleteAll?
   const presetIdsInUse = []
   if (!deleteAll) {
     const project = await app.service(val.service.project).get(projectId, isServerParams)
-    for (const programItem of get(project, String(ProjectProgram.title), [])) {
+    let projectProgram = get(project, String(ProjectProgram.title), [])
+    if (projectProgram == null) {
+      projectProgram = []
+    }
+    for (const programItem of projectProgram) {
       const id = programItem[String(ShotPreset.title)]
       if (id) {
         presetIdsInUse.push(id)

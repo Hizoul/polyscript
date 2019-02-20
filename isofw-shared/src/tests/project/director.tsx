@@ -10,6 +10,8 @@ import promiseTimeout from "isofw-shared/src/util/promiseTimeout"
 import { BackendClient, DbStore, toJS } from "isofw-shared/src/util/xpfwdata"
 import { ProjectForm, ProjectShot } from "isofw-shared/src/xpfwDefs/project"
 import * as React from "react"
+import * as MockDate from "mockdate"
+MockDate.set(new Date(4, 2, 0))
 
 BackendClient.client = FeathersClient
 
@@ -33,11 +35,7 @@ const directorTest = (Component: any) => {
       expect(toJS(DbStore)).toMatchSnapshot(" project pushed by server ")
       renderSnapshot(<Component schema={ProjectForm} id={projectId.toHexString()} prefix={directorPrefix}/>, " info pushed by Server ")
       // Shop number edited via client
-      const artificialThis = {
-        props: {id: projectId}
-      }
       const withThis = increaseShotNumber(projectResults[0]._id, false)
-      console.log("Client patch Projects")
       await DbStore.getEditOriginal(projectId, ProjectForm, undefined, directorPrefix, true)
       renderSnapshot(<Component schema={ProjectForm} id={projectId.toHexString()} prefix={directorPrefix}/>, "Before manual edits")
       await withThis()

@@ -5,24 +5,12 @@ exports[` camera mapping test  works as planned:  after Closing pop up  1`] = `
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 13,
-    "mapTo": "camera",
-    "theme": "program",
-    "validate": {
-      "relationshipNamePath": "name",
-      "relationshipCollection": "cameras",
-      "relationshipIdPath": "_id"
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "program",
-  "value": "c2bbbbbbbbbbbbbbbbbbbbbb",
   "cameras": [
     "c1bbbbbbbbbbbbbbbbbbbbbb",
     "c2bbbbbbbbbbbbbbbbbbbbbb",
     "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
+  "value": "c2bbbbbbbbbbbbbbbbbbbbbb",
   "showPopUp": false
 }
 </div>
@@ -33,24 +21,12 @@ exports[` camera mapping test  works as planned:  after Fetching cameras  1`] = 
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 13,
-    "mapTo": "camera",
-    "theme": "program",
-    "validate": {
-      "relationshipNamePath": "name",
-      "relationshipCollection": "cameras",
-      "relationshipIdPath": "_id"
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "program",
-  "value": "c2bbbbbbbbbbbbbbbbbbbbbb",
   "cameras": [
     "c1bbbbbbbbbbbbbbbbbbbbbb",
     "c2bbbbbbbbbbbbbbbbbbbbbb",
     "c3bbbbbbbbbbbbbbbbbbbbbb"
-  ]
+  ],
+  "value": "c2bbbbbbbbbbbbbbbbbbbbbb"
 }
 </div>
 `;
@@ -60,24 +36,12 @@ exports[` camera mapping test  works as planned:  after Opening pop up  1`] = `
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 13,
-    "mapTo": "camera",
-    "theme": "program",
-    "validate": {
-      "relationshipNamePath": "name",
-      "relationshipCollection": "cameras",
-      "relationshipIdPath": "_id"
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "program",
-  "value": "c2bbbbbbbbbbbbbbbbbbbbbb",
   "cameras": [
     "c1bbbbbbbbbbbbbbbbbbbbbb",
     "c2bbbbbbbbbbbbbbbbbbbbbb",
     "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
+  "value": "c2bbbbbbbbbbbbbbbbbbbbbb",
   "showPopUp": true
 }
 </div>
@@ -88,24 +52,12 @@ exports[` camera mapping test  works as planned:  after Setting Camera  1`] = `
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 13,
-    "mapTo": "camera",
-    "theme": "program",
-    "validate": {
-      "relationshipNamePath": "name",
-      "relationshipCollection": "cameras",
-      "relationshipIdPath": "_id"
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "program",
-  "value": "c2bbbbbbbbbbbbbbbbbbbbbb",
   "cameras": [
     "c1bbbbbbbbbbbbbbbbbbbbbb",
     "c2bbbbbbbbbbbbbbbbbbbbbb",
     "c3bbbbbbbbbbbbbbbbbbbbbb"
-  ]
+  ],
+  "value": "c2bbbbbbbbbbbbbbbbbbbbbb"
 }
 </div>
 `;
@@ -115,18 +67,6 @@ exports[` camera mapping test  works as planned:  after preparing cameras  1`] =
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 13,
-    "mapTo": "camera",
-    "theme": "program",
-    "validate": {
-      "relationshipNamePath": "name",
-      "relationshipCollection": "cameras",
-      "relationshipIdPath": "_id"
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "program",
   "cameras": [
     "c1bbbbbbbbbbbbbbbbbbbbbb",
     "c2bbbbbbbbbbbbbbbbbbbbbb",
@@ -141,18 +81,6 @@ exports[` camera mapping test  works as planned: Before anything 1`] = `
   className="DirectorEle"
 >
   {
-  "field": {
-    "type": 13,
-    "mapTo": "camera",
-    "theme": "program",
-    "validate": {
-      "relationshipNamePath": "name",
-      "relationshipCollection": "cameras",
-      "relationshipIdPath": "_id"
-    }
-  },
-  "prefix": "shotEdit",
-  "theme": "program",
   "cameras": []
 }
 </div>

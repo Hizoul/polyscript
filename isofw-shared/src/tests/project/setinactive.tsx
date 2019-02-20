@@ -12,14 +12,16 @@ import promiseTimeout from "isofw-shared/src/util/promiseTimeout"
 import { BackendClient, DbStore, ListStore, toJS } from "isofw-shared/src/util/xpfwdata"
 import { PresetCameraField, PresetForm } from "isofw-shared/src/xpfwDefs/preset"
 import { ProjectForm, ProjectProgram } from "isofw-shared/src/xpfwDefs/project"
+import * as MockDate from "mockdate"
 import * as React from "react"
+MockDate.set(new Date(4, 2, 0))
 
 BackendClient.client = FeathersClient
 
 const setCameraAtIndex = (index: number, cameraId: string) => {
   const schema = {
     type: "string",
-    title: `${ProjectProgram.title}[${index}]${PresetCameraField.title}`
+    title: `${ProjectForm.title}${ProjectProgram.title}[${index}]${PresetCameraField.title}`
   }
   return setValueWithPreset(schema, undefined, undefined)(cameraId)
 }
@@ -33,7 +35,8 @@ const freeUnusedPresets = (Component?: any) => {
       const cameraResult = await createTestCameras(appRef.app)
       const projectResults = await createTestProjects(appRef.app, true)
       const projectId = projectResults[0]._id.toHexString()
-      ListStore.pageSize = 5
+      const cameraId = cameraResult[0]._id.toHexString()
+      ListStore.pageSize = 15
       FormStore.setValue(`list.${PresetForm.title}.${PresetCameraField.title}`, cameraResult[0]._id)
       await ListStore.getList(PresetForm, undefined, "list", true)
       if (Component) {
@@ -44,10 +47,11 @@ const freeUnusedPresets = (Component?: any) => {
       }
 
       await DbStore.getEditOriginal(projectId, ProjectForm, undefined, undefined, true)
-      await setCameraAtIndex(0, cameraResult[0]._id)
-      await setCameraAtIndex(1, cameraResult[0]._id)
-      await setCameraAtIndex(2, cameraResult[0]._id)
-      await setCameraAtIndex(3, cameraResult[0]._id)
+      await setCameraAtIndex(0, cameraId)
+      await setCameraAtIndex(1, cameraId)
+      await setCameraAtIndex(2, cameraId)
+      await setCameraAtIndex(3, cameraId)
+      await DbStore.patch(projectId, ProjectForm, undefined, undefined)
       await ListStore.getList(PresetForm, undefined, "list", true)
       if (Component) {
         renderSnapshot(<Component id={projectId} collection={ProjectForm.collection} />,
@@ -56,7 +60,9 @@ const freeUnusedPresets = (Component?: any) => {
         expect(toJS(DbStore)).toMatchSnapshot("after reservation of four presets")
         expect(toJS(ListStore)).toMatchSnapshot("after reservation of four presets")
       }
-      await DbStore.getGetState(projectId, val.service.presetAssistant, true)
+      const u: any = DbStore
+      u.lastFetch = {}
+      console.log("INACTIVERES", await DbStore.getFromServer(projectId, val.service.presetAssistant))
       await promiseTimeout(1000)
       await ListStore.getList(PresetForm, undefined, "list", true)
       if (Component) {

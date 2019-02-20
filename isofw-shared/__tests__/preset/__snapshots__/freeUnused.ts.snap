@@ -2,10 +2,13 @@
 
 exports[`free unused presets after program Update works as planned:  before aanything  1`] = `
 Object {
+  "currentPage": Object {},
+  "doingQuery": Object {
+    "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
+  },
   "lists": Object {
-    "list.presetModel": Object {
-      "limit": 5,
-      "result": Array [
+    "presetModel": Object {
+      "data": Array [
         Object {
           "_id": "c1bbbbbbbbbbbbbbbb098765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
@@ -37,63 +40,28 @@ Object {
           "project": "-",
         },
       ],
-      "skip": 0,
-      "total": 100,
-    },
-  },
-}
-`;
-
-exports[`free unused presets after program Update works as planned: after 2 having been freed up again 1`] = `
-Object {
-  "lists": Object {
-    "list.presetModel": Object {
       "limit": 5,
-      "result": Array [
-        Object {
-          "_id": "c1bbbbbbbbbbbbbbbb098765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 0,
-          "project": "b19999999999999999999999",
-        },
-        Object {
-          "_id": "c1bbbbbbbbbbbbbbbb198765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 1,
-          "project": "-",
-        },
-        Object {
-          "_id": "c1bbbbbbbbbbbbbbbb298765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 2,
-          "project": "-",
-        },
-        Object {
-          "_id": "c1bbbbbbbbbbbbbbbb398765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 3,
-          "project": "b19999999999999999999999",
-        },
-        Object {
-          "_id": "c1bbbbbbbbbbbbbbbb498765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 4,
-          "project": "-",
-        },
-      ],
       "skip": 0,
       "total": 100,
     },
   },
+  "makeQuery": [Function],
+  "maxPage": Object {
+    "presetModel": 20,
+  },
+  "pageSize": 5,
 }
 `;
 
 exports[`free unused presets after program Update works as planned: after reservation of four presets 1`] = `
 Object {
+  "currentPage": Object {},
+  "doingQuery": Object {
+    "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
+  },
   "lists": Object {
-    "list.presetModel": Object {
-      "limit": 5,
-      "result": Array [
+    "presetModel": Object {
+      "data": Array [
         Object {
           "_id": "c1bbbbbbbbbbbbbbbb098765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
@@ -125,9 +93,122 @@ Object {
           "project": "-",
         },
       ],
+      "limit": 5,
       "skip": 0,
       "total": 100,
     },
   },
+  "makeQuery": [Function],
+  "maxPage": Object {
+    "presetModel": 20,
+  },
+  "pageSize": 5,
+}
+`;
+
+exports[`free unused presets after program Update works as planned: presets of camera 1 are all free again again 1`] = `
+Object {
+  "currentPage": Object {},
+  "doingQuery": Object {
+    "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
+  },
+  "lists": Object {
+    "presetModel": Object {
+      "data": Array [
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbb098765",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 0,
+          "project": "-",
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbb198765",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 1,
+          "project": "-",
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbb298765",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
+          "project": "-",
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbb398765",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 3,
+          "project": "-",
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbb498765",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 4,
+          "project": "-",
+        },
+      ],
+      "limit": 5,
+      "skip": 0,
+      "total": 100,
+    },
+  },
+  "makeQuery": [Function],
+  "maxPage": Object {
+    "presetModel": 20,
+  },
+  "pageSize": 5,
+}
+`;
+
+exports[`free unused presets after program Update works as planned: two presets of camera 1 are now reserved 1`] = `
+Object {
+  "currentPage": Object {},
+  "doingQuery": Object {
+    "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
+    "undefinedpresets{\\"camera\\":\\"c2bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
+  },
+  "lists": Object {
+    "presetModel": Object {
+      "data": Array [
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb098765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 0,
+          "project": "-",
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb198765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 1,
+          "project": "-",
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb298765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
+          "project": "-",
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb398765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 3,
+          "project": "-",
+        },
+        Object {
+          "_id": "c2bbbbbbbbbbbbbbbb498765",
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 4,
+          "project": "-",
+        },
+      ],
+      "limit": 5,
+      "skip": 0,
+      "total": 100,
+    },
+  },
+  "makeQuery": [Function],
+  "maxPage": Object {
+    "presetModel": 20,
+  },
+  "pageSize": 5,
 }
 `;

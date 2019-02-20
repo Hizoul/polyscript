@@ -10,6 +10,9 @@ const changeMapping = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: stri
     return (event?: any) => {
       const fieldHelper = useFieldWithValidation(schema, mapTo, prefix)
       let currentArray = fieldHelper.value
+      if (currentArray == null) {
+        currentArray = []
+      }
       const operatorIndex = findIndex(currentArray, [String(OperatorRelation.title), operator])
       if (operatorIndex === -1) {
         currentArray.push({[String(OperatorRelation.title)]: operator, [String(ProjectCameras.title)]: [camera]})
