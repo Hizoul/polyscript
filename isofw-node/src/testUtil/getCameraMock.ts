@@ -23,25 +23,31 @@ const getCameraMock = async () => {
     requests.push({query: request.query, params: request.params})
     let type: any
     const cmd: string = get(request, "query.cmd", "")
-    if (cmd.startsWith("M")) {
+    if (cmd.startsWith("#M")) {
       type = cameraCommand.updatePreset
-    } else if (cmd.startsWith("R")) {
+    } else if (cmd.startsWith("#R")) {
       type = cameraCommand.goToPreset
-    } else if (cmd.startsWith("Z")) {
+    } else if (cmd.startsWith("#Z")) {
       type = cameraCommand.doZoom
     }
     switch (type) {
       case cameraCommand.goToPreset: {
-        response.send("s" + cmd.substring(1))
+        response.send("s" + cmd.substring(2))
+        return
       }
       case cameraCommand.updatePreset: {
-        response.send("s" + cmd.substring(1))
+        response.send("s" + cmd.substring(2))
+        return
       }
       case cameraCommand.doZoom: {
-        response.send("zS" + cmd.substring(1))
+        response.send("zS" + cmd.substring(2))
+        return
+      }
+      default: {
+        response.send(" empty ")
+        return
       }
     }
-    response.send(" empty ")
   })
   let server: any
   const port = await emptyPort()

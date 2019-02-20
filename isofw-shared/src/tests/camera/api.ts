@@ -7,7 +7,7 @@ import val from "isofw-shared/src/globals/val"
 import createTestCameras from "isofw-shared/src/testUtil/data/camera"
 import createTestUsers from "isofw-shared/src/testUtil/data/users"
 import logIntoUser from "isofw-shared/src/testUtil/login"
-import { BackendClient, DbStore, toJS } from "isofw-shared/src/util/xpfwdata"
+import { BackendClient, DbStore, toJS, UserStore } from "isofw-shared/src/util/xpfwdata"
 import { CameraIp } from "isofw-shared/src/xpfwDefs/camera"
 import { PresetActionTypeField, PresetAssistantForm, PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
 
@@ -19,6 +19,7 @@ const cameraApiTest = () => {
       const appRef = await getRandomApp(" not important ", true, BackendClient.client, false)
       const userResults = await createTestUsers(appRef.app)
       await logIntoUser()
+      console.log("AFTER LOGIN USER IS", UserStore.getLoggedIn(), UserStore.user)
       const cameraResult = await createTestCameras(appRef.app)
       const mockCamera = await getCameraMock()
       await appRef.app.service(val.service.camera).patch(
