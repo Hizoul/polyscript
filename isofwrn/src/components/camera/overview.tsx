@@ -1,7 +1,6 @@
 import urls from "isofw-shared/src/globals/url"
 import val from "isofw-shared/src/globals/val";
-import { SharedField } from "isofw-shared/src/util/xpfwformshared"
-import { IFormListProps, IFormShowProps, SharedFormList } from "isofw-shared/src/util/xpfwuishared"
+import { SharedField, prependPrefix } from "isofw-shared/src/util/xpfwform"
 import { CameraForm, CameraIp } from "isofw-shared/src/xpfwDefs/camera"
 import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import NativeButton from "isofwrn/src/components/button"
@@ -11,7 +10,7 @@ import { observer } from "mobx-react-lite";
 import * as React from "react"
 import { Text, View } from "react-native"
 import { Card } from "react-native-elements"
-import { IListHookProps, useList } from "../../../../isofw-shared/src/util/xpfwdata";
+import { IListHookProps, useList } from "isofw-shared/src/util/xpfwdata";
 
 const B: React.FunctionComponent<any> = (props) => {
   if (props.isHeader) {return <View key="b" />}
@@ -34,7 +33,7 @@ const NativeCameraOverview: React.FunctionComponent<IListHookProps> = observer((
   const listHelper = useList(CameraForm, undefined, props.prefix, props.options)
   return (
     <View style={{flex: 1}}>
-      <SharedField field={ProjectName} prefix="cameraOverview" theme="search" />
+      <SharedField schema={ProjectName} prefix={prependPrefix(CameraForm.title, "cameraOverview")} theme="search" />
       <Card containerStyle={{padding:  0}}>
         <NativeTable
           data={get(listHelper, "list.data", [])}
@@ -54,4 +53,4 @@ const NativeCameraOverview: React.FunctionComponent<IListHookProps> = observer((
   )
 })
 
-export default SharedFormList<{}>(NativeCameraOverview)
+export default NativeCameraOverview
