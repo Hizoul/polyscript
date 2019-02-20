@@ -1,11 +1,12 @@
 import { BlockTitle, Card, List } from "framework7-react"
 import { useList } from "isofw-shared/src/util/xpfwdata"
-import { SharedField } from "isofw-shared/src/util/xpfwform"
+import { prependPrefix, SharedField } from "isofw-shared/src/util/xpfwform"
 import { get, isNil } from "lodash"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 import WebRelationshipItem from "./relationshipItem"
 
-const WebRelationshipSearch: React.FunctionComponent<any> = (props) => {
+const WebRelationshipSearch: React.FunctionComponent<any> = observer((props) => {
   const searchField = get(props, `searchForm.properties[${get(props, "schema.relationship.namePath")}]`)
   const nameObjs: any = []
   const addId = get(props, "addId")
@@ -20,7 +21,7 @@ const WebRelationshipSearch: React.FunctionComponent<any> = (props) => {
       <BlockTitle>Search for {props.searchForm.collection}</BlockTitle>
       <List>
         <ul>
-          <SharedField schema={searchField} theme="search" prefix={props.prefix} />
+          <SharedField schema={searchField} theme="search" prefix={prependPrefix(props.searchForm.title, props.prefix)} />
         </ul>
       </List>
       <Card>
@@ -32,6 +33,6 @@ const WebRelationshipSearch: React.FunctionComponent<any> = (props) => {
       </Card>
     </div>
   )
-}
+})
 
 export default WebRelationshipSearch
