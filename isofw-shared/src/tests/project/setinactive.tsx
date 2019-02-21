@@ -1,5 +1,5 @@
-import { FormStore } from "@xpfw/form-shared"
-import { FeathersClient } from "@xpfw/ui-feathers"
+import { FeathersClient } from "@xpfw/data-feathers"
+import { FormStore } from "@xpfw/form"
 import getRandomApp from "isofw-node/src/testUtil/getRandomApp"
 import { setValueWithPreset } from "isofw-shared/src/components/project/cameraChooser"
 import val from "isofw-shared/src/globals/val"

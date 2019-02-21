@@ -1,12 +1,8 @@
-import { DbStore, IFormEditProps, IFormShowProps, SharedFormEdit } from "@xpfw/ui-shared"
 import { BlockTitle, Card, CardFooter, CardHeader, Link } from "framework7-react"
 import usePresetUpdater from "isofw-shared/src/components/preset/updater"
 import val from "isofw-shared/src/globals/val"
 import { PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
-import { ProjectForm, ProjectName, ProjectProgram, ProjectShot, ShotCamera,
-  ShotDuration, ShotMovement, ShotMovementTowards, ShotName,
-  ShotPreset, ShotRemarksDirector, ShotRemarksOperator, ShotType } from "isofw-shared/src/xpfwDefs/project"
-import WebButton from "isofw-web/src/components/button"
+import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
@@ -34,7 +30,12 @@ const CameraPresets: React.FunctionComponent<any> = (props) => {
   return (
     <div>
       <BlockTitle>
-        <NameDisplayer collection={val.service.camera} id={get(props.item, "camera")} getNameFrom={String(ProjectName.title)} placeholder="" />
+        <NameDisplayer
+          collection={val.service.camera}
+          id={get(props.item, "camera")}
+          getNameFrom={String(ProjectName.title)}
+          placeholder=""
+        />
       </BlockTitle>
       <div className="presetCards">
         {get(props.item, "presets", []).map((preset: any) => <PresetCard key={preset} id={preset} />)}

@@ -1,5 +1,5 @@
-import { Permission } from "@xpfw/validate"
 
-const isServerParams = {user: {_id: Permission.Server}, authenticated: true}
+
+const isServerParams = {user: {_id: "sersver"}, authenticated: true}
 
 export default isServerParams

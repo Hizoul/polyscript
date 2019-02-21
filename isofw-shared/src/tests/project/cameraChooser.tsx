@@ -31,15 +31,6 @@ const cameraChooserTest = () => {
       cameraIdsField.setValue(cameraIds)
       renderSnapshot(<SharedField schema={ShotCamera} prefix={directorPrefix} theme={ShotCamera.theme} />,
         " after preparing cameras ")
-      const thisRef = {
-        props: {
-          prefix: directorPrefix,
-          field: ShotCamera,
-          setValue: (newValue: any) => FormStore.setValue(`${prefixMaker(directorPrefix)}${ShotCamera.mapTo}`, newValue)
-        }, state: {
-          showPopUp: false
-        }
-      }
       FormStore.setValue(prependPrefix(ShotCamera.title, directorPrefix), cameraIds[1])
       renderSnapshot(<SharedField schema={ShotCamera} prefix={directorPrefix} theme={ShotCamera.theme} />,
         " after Setting Camera ")
