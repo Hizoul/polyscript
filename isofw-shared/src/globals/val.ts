@@ -7,6 +7,7 @@ const val = {
     realtime: "realtime"
   },
   service: {
+    batch: "/batch",
     user: "/users",
     project: "projects",
     camera: "cameras",

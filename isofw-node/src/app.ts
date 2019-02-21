@@ -6,12 +6,13 @@ import * as express from "@feathersjs/express"
 import * as rest from "@feathersjs/express/rest"
 import feathers, { Application, Service } from "@feathersjs/feathers"
 import * as socketio from "@feathersjs/socketio"
+import * as batcher from "feathers-batch"
 import * as memory from "feathers-memory"
 import * as mongoServic from "feathers-mongodb"
 import val from "isofw-shared/src/globals/val"
 import * as path from "path"
-import convertIds from "./services/hooks/convertIds";
-import disableInProd from "./services/hooks/disableInProd";
+import convertIds from "./services/hooks/convertIds"
+import disableInProd from "./services/hooks/disableInProd"
 import customServiceConfigurator from "./services/index"
 
 const hooks = local.hooks
@@ -77,6 +78,7 @@ const makeApp: (prerender?: Service<any>, db?: any) => Application<any> = (prere
   // Register a nicer error handler than the default Express one
   const untypedHandler: any = handler
   app.use(untypedHandler())
+  app.use(val.service.batch, batcher({limit: 100}))
   return app
 }
 

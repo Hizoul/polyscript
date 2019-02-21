@@ -16,7 +16,7 @@
     "i18next-sprintf-postprocessor": "^0.2.2",
     "isomorphic-fetch": "^2.2.1",
     "lodash-es": "^4.17.11",
-    "mobx": "^5.9.0",
+    "mobx": "5",
     "mobx-react-lite": "^1.0.1",
     "mockdate": "^2.0.2",
     "moment": "^2.23.0",

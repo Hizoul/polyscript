@@ -10,7 +10,6 @@ const programTheme = "program"
 
 const ProgramEditor: React.FunctionComponent<IEditHookProps> = observer((props) => {
   const editHelper = useEditWithProps(props)
-  console.log("IN program editor with EDITOR WITH", toJS(editHelper))
   return (
     <div className="flex1 column">
       <div className="flex center">
