@@ -9,7 +9,7 @@ const ProgramPage: React.FunctionComponent<any> = (props) => {
   const id = get(props, "id")
   return (
     <WebPageContainer backLink={true} requireLoggedIn={true} name="programEditor" title="Review presets">
-      <ProgramEditor schema={ProjectForm} id={id} reset={true} prefix="programEdit" />
+      <ProgramEditor schema={ProjectForm} id={id} prefix="edit" />
     </WebPageContainer>
   )
 }

@@ -1,5 +1,5 @@
 import { Block, BlockTitle, List } from "framework7-react"
-import { dataOptions, IEditHookProps, useEditWithProps } from "isofw-shared/src/util/xpfwdata"
+import { dataOptions, IEditHookProps, useEditWithProps, toJS } from "isofw-shared/src/util/xpfwdata"
 import { getMapToFromProps, iterateSubFields, prependPrefix, SharedField } from "isofw-shared/src/util/xpfwform"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
@@ -8,6 +8,7 @@ import WebButton from "../button"
 
 const Frameowrk7Edit: React.FunctionComponent<IEditHookProps> = observer((props) => {
   const editProps = useEditWithProps(props)
+  console.log("In edith with", toJS(editProps))
   const fields: any[] = []
   iterateSubFields(props.schema, (key, schema) => {
     fields.push(<SharedField key={key} schema={schema} prefix={prependPrefix(getMapToFromProps(props), props.prefix)} />)

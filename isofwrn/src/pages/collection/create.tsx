@@ -16,7 +16,7 @@ const NativeCreatePage: React.FunctionComponent<any> = (props) => {
   }
   return (
     <NativePageContained {...props} title="create">
-      <NativeCreate schema={form} reset={true} prefix="create" />
+      <NativeCreate schema={form} prefix="create" />
     </NativePageContained>
   )
 }

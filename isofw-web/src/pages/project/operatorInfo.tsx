@@ -9,7 +9,7 @@ const OperatorInfoPage: React.FunctionComponent<any> = (props) => {
   const id = get(props, "id")
   return (
     <WebPageContainer backLink={true} requireLoggedIn={true} name="operatorInfo" title="Operator info's">
-      <OperatorInfo schema={{}} id={id} reset={true} prefix="operatorInfo" />
+      <OperatorInfo schema={{}} id={id} prefix="edit" />
     </WebPageContainer>
   )
 }

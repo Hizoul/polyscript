@@ -9,7 +9,7 @@ const NativeProgramPage: React.FunctionComponent<any> = (props) => {
   const id = props.navigation.getParam("id", "none")
   return (
     <NativePageContained {...props} title="director">
-      <NativeProgramEditor schema={ProjectForm} id={id} reset={true} prefix="programEdit" />
+      <NativeProgramEditor schema={ProjectForm} id={id} prefix="edit" />
     </NativePageContained>
   )
 }

@@ -1,17 +1,16 @@
 import useDirector, { DirectorProps } from "isofw-shared/src/components/project/directorSheet"
 import val from "isofw-shared/src/globals/val"
-import { useEdit } from "isofw-shared/src/util/xpfwdata"
-import { ProjectForm, ProjectName, ShotCamera } from "isofw-shared/src/xpfwDefs/project"
+import {  toJS } from "isofw-shared/src/util/xpfwdata"
+import { ProjectName, ShotCamera } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
 import WebButton from "../button"
-import LoadingPage from "../loading"
 import "./style.sass"
 
 const ShotEditor = observer((props: DirectorProps) => {
-  const directorProps: any = useDirector(props.id, props.reset)
+  const directorProps: any = useDirector(props.id)
   return (
     <div className="flex1 column">
       <div className="flex center">

@@ -9,7 +9,7 @@ import * as React from "react"
 import { Text, View } from "react-native"
 
 const ShotEditor = observer((props: DirectorProps) => {
-  const directorProps = useDirector(props.id, props.reset)
+  const directorProps = useDirector(props.id)
   return (
     <View>
       <Text>
