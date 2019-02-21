@@ -25,7 +25,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@feathersjs/authentication-client@^1.0.10", "@feathersjs/authentication-client@^1.0.8":
+"@feathersjs/authentication-client@^1.0.10":
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/@feathersjs/authentication-client/-/authentication-client-1.0.11.tgz#86352bf4c7179b905c9a977b26f389830c974e72"
   integrity sha512-4CWQdmdRINMMqHT1/g0N5jqw16u1RjaSPhlZtJZ0OLdqgN3tl5wL+Lb8ThPxihvt1WHiOdwGt141LvWQ446Bsw==
@@ -46,7 +46,7 @@
   dependencies:
     debug "^4.0.0"
 
-"@feathersjs/feathers@^3.2.3", "@feathersjs/feathers@^3.3.1":
+"@feathersjs/feathers@^3.3.1":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@feathersjs/feathers/-/feathers-3.3.1.tgz#fcba030847f8418d711135112f01fad64bfb277c"
   integrity sha512-Mb7Maz03TIIksomXeInmXNb5ykxgsAyBCuJDQHK+oIDrDRR9m+ZbUrslCkMk/s0nr6cW5DmVbWz9s11SCXFW5A==
@@ -56,7 +56,7 @@
     events "^3.0.0"
     uberproto "^2.0.2"
 
-"@feathersjs/rest-client@^1.4.5", "@feathersjs/rest-client@^1.4.7":
+"@feathersjs/rest-client@^1.4.7":
   version "1.4.7"
   resolved "https://registry.yarnpkg.com/@feathersjs/rest-client/-/rest-client-1.4.7.tgz#6fb556721b661f7aa73f27173925b17274fae164"
   integrity sha512-Eybe9iTMz2r1J8ITRZH4/WGfIhwSIzP9kiTpwAVESo6NGE6rgwvN95FmtI5AtCABV5v4C2Cy/tVDsMMa9Dgs+A==
@@ -65,7 +65,7 @@
     "@feathersjs/errors" "^3.3.6"
     qs "^6.5.0"
 
-"@feathersjs/socketio-client@^1.1.5", "@feathersjs/socketio-client@^1.2.1":
+"@feathersjs/socketio-client@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@feathersjs/socketio-client/-/socketio-client-1.2.1.tgz#2480cb113b2c7c7fb8f49442bf8b764dc20931f6"
   integrity sha512-OJUVhRc2nNxNS5XdEHWJDHES/wFmhpNYSakBcqCeTKwXXyxhN41U4u8C6qOeSFhb8iZA4pOGmpPWF1MOp1rfFA==
@@ -121,6 +121,11 @@
   version "4.14.120"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.120.tgz#cf265d06f6c7a710db087ed07523ab8c1a24047b"
   integrity sha512-jQ21kQ120mo+IrDs1nFNVm/AsdFxIx2+vZ347DbogHJPd/JzKNMOqU6HCYin1W6v8l5R9XSO2/e9cxmn7HAnVw==
+
+"@types/mockdate@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/mockdate/-/mockdate-2.0.0.tgz#aaf388a1ead3b0f5ed6dc1611956ea7b40a57d3c"
+  integrity sha1-qvOIoerTsPXtbcFhGVbqe0ClfTw=
 
 "@types/prop-types@*":
   version "15.5.8"
@@ -183,11 +188,6 @@
   resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.5.tgz#4400bc8e0564d1ca90727687503efa025510dc02"
   integrity sha512-EEhnBw73YaSCXqoBr8NQq1nmLdrVsF+JlAlwobAa8sUbH1zR9C91yb3W81Sc3lS2XatZ+jlnjHwrWhZ6RmpXWw==
 
-"@xpfw/form-shared@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@xpfw/form-shared/-/form-shared-0.1.5.tgz#51456f6653960db2b793dcc13f8e675d16720c44"
-  integrity sha512-8EOTqPosZWVKis77ZZXra7aGPRFUe7vnP9OAyh9BMYCZjEPpEYAGNAFQieuTeT2JLlxsJZI8pZ8gOAi1Xn95qw==
-
 "@xpfw/form-tests@1.0.0-beta.5":
   version "1.0.0-beta.5"
   resolved "https://registry.yarnpkg.com/@xpfw/form-tests/-/form-tests-1.0.0-beta.5.tgz#3015463d0382f7e2cdba1e18b0e7a6bbf58fc02f"
@@ -197,28 +197,6 @@
   version "1.0.0-beta.4"
   resolved "https://registry.yarnpkg.com/@xpfw/form/-/form-1.0.0-beta.4.tgz#122eac03b225c8f761b383aea8b2be026ef14f33"
   integrity sha512-YmQQIjMsAbeIwjIHAjm+equA7IFHrHOga/HsZQF7NJ8zE2Z+3nYSLzahggkHRYHw1xst+hcxP1moXt36eAlWYQ==
-
-"@xpfw/ui-feathers@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@xpfw/ui-feathers/-/ui-feathers-0.1.1.tgz#74c0d4dc0ab0f0c5cea6358df4a4be70eef2ba60"
-  integrity sha512-ptJQACJJ2Y1elZSa3Lm8qymZytsfY291GDl8/3oNOwugIyzPUr7MF8pt6zf0I74XA3sXI4Y6IvFwaluxrzHA8g==
-  dependencies:
-    "@feathersjs/authentication-client" "^1.0.8"
-    "@feathersjs/feathers" "^3.2.3"
-    "@feathersjs/rest-client" "^1.4.5"
-    "@feathersjs/socketio-client" "^1.1.5"
-    resub-persist "^1.2.8"
-    socket.io-client "^2.1.1"
-
-"@xpfw/ui-shared@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@xpfw/ui-shared/-/ui-shared-0.1.1.tgz#2e40228c4430b692126bc8aeb879cb8a6b82e20b"
-  integrity sha512-51bXJNsQSDvoEmmEiht5aXGiJm47jtxxZgJU+Mmjpr2yD02HTS0BiPKg3ydyLrM/x5lVGVFq69M7/LecQTQqyQ==
-
-"@xpfw/validate@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@xpfw/validate/-/validate-0.1.1.tgz#45a3b0c01fda31355ad0954f44c05e2b284a8cc8"
-  integrity sha512-zFpeMxZSz4YXyti+Re9jMgznV04cYb4uCcUDgf2amVXrWjHiUuf9A1H6qBZx6vfh7acADXr9TuT4ap7JbNbYxQ==
 
 abab@^2.0.0:
   version "2.0.0"
@@ -3627,7 +3605,7 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-socket.io-client@^2.1.1, socket.io-client@^2.2.0:
+socket.io-client@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/socket.io-client/-/socket.io-client-2.2.0.tgz#84e73ee3c43d5020ccc1a258faeeb9aec2723af7"
   integrity sha512-56ZrkTDbdTLmBIyfFYesgOxsjcLnwAKoN4CiPyTVkMQj3zTUh0QAx3GbvIvLpFEOvQWu92yyWICxB0u7wkVbYA==
