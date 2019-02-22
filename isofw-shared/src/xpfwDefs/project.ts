@@ -1,7 +1,8 @@
 import { MailField } from "@xpfw/data"
 import { ExtendedJSONSchema } from "@xpfw/form"
 import val from "isofw-shared/src/globals/val"
-import { changeValToRegex } from "isofw-shared/src/util/valToRegex";
+import { changeValToRegex } from "isofw-shared/src/util/valToRegex"
+import { cloneDeep } from "lodash"
 import { IDField } from "./commonFields"
 
 const ProjectName: ExtendedJSONSchema = {
@@ -109,6 +110,10 @@ const ProjectCameras: ExtendedJSONSchema = {
   }
 }
 
+const DisabledCameras: ExtendedJSONSchema = cloneDeep(ProjectCameras)
+DisabledCameras.title = "disabledCameras"
+DisabledCameras.theme = "cameraDisabler"
+
 const ProjectOperators: ExtendedJSONSchema = {
   type: "array",
   title: "operators",
@@ -163,7 +168,8 @@ const ProjectForm: ExtendedJSONSchema = {
     [String(ProjectCameras.title)]: ProjectCameras,
     [String(ProjectOperators.title)]: ProjectOperators,
     [String(ProjectOperatorCameraMapping.title)]: ProjectOperatorCameraMapping,
-    [String(IsActiveField.title)]: IsActiveField
+    [String(IsActiveField.title)]: IsActiveField,
+    [String(DisabledCameras.title)]: DisabledCameras
   },
   modify: {
     addCreatedAt: true,
@@ -174,5 +180,6 @@ const ProjectForm: ExtendedJSONSchema = {
 export {
   ProjectForm, ProjectName, ProjectShot, ProjectProgram, ShotCamera, ShotPreset, ShotImportance,
   ProjectOperators, ProjectOperatorCameraMapping, OperatorRelation, ProjectCameras, IsActiveField,
-  ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator
+  ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator,
+  DisabledCameras
 }

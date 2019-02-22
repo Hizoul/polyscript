@@ -40,7 +40,7 @@ Object {
   },
   "removeState": Object {},
   "updateState": Object {
-    "shotEdit.projectModelb19999999999999999999999": Object {
+    "edit.projectModelb19999999999999999999999": Object {
       "_id": "b19999999999999999999999",
       "isActive": true,
       "name": "pn1",

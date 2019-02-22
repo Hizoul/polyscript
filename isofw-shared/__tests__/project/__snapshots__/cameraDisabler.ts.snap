@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` camera disabler test  works as planned:  after disabling one different individual camera 1`] = `
+<div
+  className="disabler"
+>
+  {
+  "value": [
+    "c2bbbbbbbbbbbbbbbbbbbbbb"
+  ],
+  "operatorCameraMapping": [
+    {
+      "operator": "u1",
+      "cameras": [
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c3bbbbbbbbbbbbbbbbbbbbbb"
+      ]
+    },
+    {
+      "operator": "u2",
+      "cameras": [
+        "c2bbbbbbbbbbbbbbbbbbbbbb"
+      ]
+    }
+  ],
+  "isActive": {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": true,
+    "c3bbbbbbbbbbbbbbbbbbbbbb": true,
+    "u1": true,
+    "c2bbbbbbbbbbbbbbbbbbbbbb": false,
+    "u2": false
+  },
+  "cameraToggles": {},
+  "operatorToggles": {}
+}
+</div>
+`;
+
+exports[` camera disabler test  works as planned:  after disabling one individual camera 1`] = `
+<div
+  className="disabler"
+>
+  {
+  "value": [
+    "c1bbbbbbbbbbbbbbbbbbbbbb"
+  ],
+  "operatorCameraMapping": [
+    {
+      "operator": "u1",
+      "cameras": [
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c3bbbbbbbbbbbbbbbbbbbbbb"
+      ]
+    },
+    {
+      "operator": "u2",
+      "cameras": [
+        "c2bbbbbbbbbbbbbbbbbbbbbb"
+      ]
+    }
+  ],
+  "isActive": {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": false,
+    "c3bbbbbbbbbbbbbbbbbbbbbb": true,
+    "u1": true,
+    "c2bbbbbbbbbbbbbbbbbbbbbb": true,
+    "u2": true
+  },
+  "cameraToggles": {},
+  "operatorToggles": {}
+}
+</div>
+`;
+
+exports[` camera disabler test  works as planned:  after disabling two individual camera 1`] = `
+<div
+  className="disabler"
+>
+  {
+  "value": [
+    "c2bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
+  ],
+  "operatorCameraMapping": [
+    {
+      "operator": "u1",
+      "cameras": [
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c3bbbbbbbbbbbbbbbbbbbbbb"
+      ]
+    },
+    {
+      "operator": "u2",
+      "cameras": [
+        "c2bbbbbbbbbbbbbbbbbbbbbb"
+      ]
+    }
+  ],
+  "isActive": {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": true,
+    "c3bbbbbbbbbbbbbbbbbbbbbb": false,
+    "u1": true,
+    "c2bbbbbbbbbbbbbbbbbbbbbb": false,
+    "u2": false
+  },
+  "cameraToggles": {},
+  "operatorToggles": {}
+}
+</div>
+`;
+
+exports[` camera disabler test  works as planned:  after one reenabled through toggle operator 1`] = `
+<div
+  className="disabler"
+>
+  {
+  "value": [
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
+  ],
+  "operatorCameraMapping": [
+    {
+      "operator": "u1",
+      "cameras": [
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c3bbbbbbbbbbbbbbbbbbbbbb"
+      ]
+    },
+    {
+      "operator": "u2",
+      "cameras": [
+        "c2bbbbbbbbbbbbbbbbbbbbbb"
+      ]
+    }
+  ],
+  "isActive": {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": true,
+    "c3bbbbbbbbbbbbbbbbbbbbbb": false,
+    "u1": true,
+    "c2bbbbbbbbbbbbbbbbbbbbbb": true,
+    "u2": true
+  },
+  "cameraToggles": {},
+  "operatorToggles": {}
+}
+</div>
+`;
+
+exports[` camera disabler test  works as planned:  after preparing operators and camera mapping 1`] = `
+<div
+  className="disabler"
+>
+  {
+  "value": [],
+  "operatorCameraMapping": [
+    {
+      "operator": "u1",
+      "cameras": [
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c3bbbbbbbbbbbbbbbbbbbbbb"
+      ]
+    },
+    {
+      "operator": "u2",
+      "cameras": [
+        "c2bbbbbbbbbbbbbbbbbbbbbb"
+      ]
+    }
+  ],
+  "isActive": {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": true,
+    "c3bbbbbbbbbbbbbbbbbbbbbb": true,
+    "u1": true,
+    "c2bbbbbbbbbbbbbbbbbbbbbb": true,
+    "u2": true
+  },
+  "cameraToggles": {},
+  "operatorToggles": {}
+}
+</div>
+`;
+
+exports[` camera disabler test  works as planned:  after using toggle operator to turn all cameras back on 1`] = `
+<div
+  className="disabler"
+>
+  {
+  "value": [],
+  "operatorCameraMapping": [
+    {
+      "operator": "u1",
+      "cameras": [
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c3bbbbbbbbbbbbbbbbbbbbbb"
+      ]
+    },
+    {
+      "operator": "u2",
+      "cameras": [
+        "c2bbbbbbbbbbbbbbbbbbbbbb"
+      ]
+    }
+  ],
+  "isActive": {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": true,
+    "c3bbbbbbbbbbbbbbbbbbbbbb": true,
+    "u1": true,
+    "c2bbbbbbbbbbbbbbbbbbbbbb": true,
+    "u2": true
+  },
+  "cameraToggles": {},
+  "operatorToggles": {}
+}
+</div>
+`;
+
+exports[` camera disabler test  works as planned:  after using toggle operator to turn off the remaining one 1`] = `
+<div
+  className="disabler"
+>
+  {
+  "value": [
+    "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "c3bbbbbbbbbbbbbbbbbbbbbb"
+  ],
+  "operatorCameraMapping": [
+    {
+      "operator": "u1",
+      "cameras": [
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c3bbbbbbbbbbbbbbbbbbbbbb"
+      ]
+    },
+    {
+      "operator": "u2",
+      "cameras": [
+        "c2bbbbbbbbbbbbbbbbbbbbbb"
+      ]
+    }
+  ],
+  "isActive": {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": false,
+    "c3bbbbbbbbbbbbbbbbbbbbbb": false,
+    "u1": false,
+    "c2bbbbbbbbbbbbbbbbbbbbbb": true,
+    "u2": true
+  },
+  "cameraToggles": {},
+  "operatorToggles": {}
+}
+</div>
+`;
+
+exports[` camera disabler test  works as planned: Before anything 1`] = `
+<div
+  className="disabler"
+>
+  {
+  "value": [],
+  "operatorCameraMapping": [],
+  "isActive": {},
+  "cameraToggles": {},
+  "operatorToggles": {}
+}
+</div>
+`;
