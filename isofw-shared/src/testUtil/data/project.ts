@@ -3,7 +3,7 @@ import val from "isofw-shared/src/globals/val"
 import {
   IsActiveField, OperatorRelation, ProjectCameras, ProjectForm,
   ProjectName, ProjectOperatorCameraMapping, ProjectOperators, ProjectProgram,
-  ProjectShot, ShotCamera, ShotDuration, ShotImportance, ShotMovement, ShotMovementTowards, ShotName, ShotRemarksDirector, ShotRemarksOperator
+  ProjectShot, ShotCamera, ShotDuration, ShotImportance, ShotMovement, ShotMovementTowards, ShotName, ShotPreset, ShotRemarksDirector, ShotRemarksOperator
 } from "isofw-shared/src/xpfwDefs/project"
 import { testCameras } from "./camera"
 import { testUsers } from "./users"
@@ -40,32 +40,32 @@ const createTestProjects = async (app: any, andMappings: boolean = false, andPro
       {
         [String(ShotName.title)]: "S#1", [String(ShotMovement.title)]: "m#1",  [String(ShotMovementTowards.title)]: "mt#1",
         [String(ShotDuration.title)]: 5, [String(ShotRemarksDirector.title)]: "rd#1", [String(ShotRemarksOperator.title)]: "ro#1",
-        [String(ShotCamera.title)]: testCameras[0]._id
+        [String(ShotCamera.title)]: testCameras[0]._id, [String(ShotPreset.title)]: "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         [String(ShotName.title)]: "S#2", [String(ShotMovement.title)]: "m#2",  [String(ShotMovementTowards.title)]: "mt#2",
         [String(ShotDuration.title)]: 6, [String(ShotRemarksDirector.title)]: "rd#2", [String(ShotRemarksOperator.title)]: "ro#2",
-        [String(ShotCamera.title)]: testCameras[2]._id, [String(ShotImportance.title)]: "r"
+        [String(ShotCamera.title)]: testCameras[2]._id, [String(ShotImportance.title)]: "r", [String(ShotPreset.title)]: "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         [String(ShotName.title)]: "S#3", [String(ShotMovement.title)]: "m#3",  [String(ShotMovementTowards.title)]: "mt#3",
         [String(ShotDuration.title)]: 1, [String(ShotRemarksDirector.title)]: "rd#3", [String(ShotRemarksOperator.title)]: "ro#3",
-        [String(ShotCamera.title)]: testCameras[1]._id
+        [String(ShotCamera.title)]: testCameras[1]._id, [String(ShotPreset.title)]: "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         [String(ShotName.title)]: "S#4", [String(ShotMovement.title)]: "m#4",  [String(ShotMovementTowards.title)]: "mt#4",
         [String(ShotDuration.title)]: 3, [String(ShotRemarksDirector.title)]: "rd#4", [String(ShotRemarksOperator.title)]: "ro#4",
-        [String(ShotCamera.title)]: testCameras[0]._id, [String(ShotImportance.title)]: "m"
+        [String(ShotCamera.title)]: testCameras[0]._id, [String(ShotImportance.title)]: "m", [String(ShotPreset.title)]: "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         [String(ShotName.title)]: "S#5", [String(ShotMovement.title)]: "m#5",  [String(ShotMovementTowards.title)]: "mt#5",
         [String(ShotDuration.title)]: 2, [String(ShotRemarksDirector.title)]: "rd#5", [String(ShotRemarksOperator.title)]: "ro#5",
-        [String(ShotCamera.title)]: testCameras[1]._id
+        [String(ShotCamera.title)]: testCameras[1]._id, [String(ShotPreset.title)]: "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         [String(ShotName.title)]: "S#6", [String(ShotMovement.title)]: "m#6",  [String(ShotMovementTowards.title)]: "mt#6",
         [String(ShotDuration.title)]: 2, [String(ShotRemarksDirector.title)]: "rd#6", [String(ShotRemarksOperator.title)]: "ro#6",
-        [String(ShotCamera.title)]: testCameras[2]._id
+        [String(ShotCamera.title)]: testCameras[2]._id, [String(ShotPreset.title)]: "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   }

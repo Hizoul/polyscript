@@ -4,15 +4,20 @@ import cameraApi, { cameraCommand } from "isofw-shared/src/cameraApi"
 import isServerParams from "isofw-shared/src/globals/isServerParams"
 import val from "isofw-shared/src/globals/val"
 import { CameraIp } from "isofw-shared/src/xpfwDefs/camera"
-import { EMPTY_PRESET, PresetActionTypeField, PresetCameraField, PresetNumberField, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset"
+import {
+  EMPTY_PRESET, PresetActionTypeField, PresetCameraField, PresetNumberField, PresetProjectField
+} from "isofw-shared/src/xpfwDefs/preset"
+import { IsActiveField, ProjectProgram, ShotPreset } from "isofw-shared/src/xpfwDefs/project"
 import { get } from "lodash"
-import { IsActiveField, ProjectProgram, ShotPreset } from "../../../isofw-shared/src/xpfwDefs/project"
+import activateNextPresets from "./hooks/activateNextPresets"
 import freeUnusedPresets, { freePresetsOfProject } from "./hooks/freeUnusedPresets"
 import requireAuthentication from "./hooks/requireAuthentication"
 
 const presetAssistantConfigurator: any = (app: feathers.Application) => {
+
   app.service(val.service.camera).hooks({after: {create: presetCreator}})
-  app.service(val.service.project).hooks({after: {patch: freeUnusedPresets}})
+  app.service(val.service.project).hooks({after: {patch: [activateNextPresets, freeUnusedPresets]}})
+
   const presentAssistanceService = {
     create: async (data: any) => {
       const cameraId = get(data, String(PresetCameraField.title), " not findable ")
@@ -55,7 +60,6 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
       if (!camera) {
         return Promise.reject(" unknown Camera ")
       }
-      console.log("CAMERA WAS FOUND", data)
       const cameraIp = camera[String(CameraIp.title)]
       switch (data[String(PresetActionTypeField.title)]) {
         case cameraCommand.goToPreset: {
