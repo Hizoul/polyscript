@@ -4,7 +4,7 @@ import * as React from "react"
 import {  SearchBar } from "react-native-elements"
 
 const NativeSearchField: React.FunctionComponent<IFieldProps> = (props) => {
-  const fieldHelper = useFieldWithValidation(props)
+  const fieldHelper = useFieldWithValidation(props.schema, props.mapTo, props.prefix)
   return (
     <SearchBar
       {...props}
