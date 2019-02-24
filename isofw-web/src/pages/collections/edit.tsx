@@ -20,7 +20,7 @@ const EditPage: React.FunctionComponent<any> = (props) => {
   return (
     <WebPageContainer backLink={true} requireLoggedIn={true} name="Edit" title="Edit">
       <BlockTitle>Adjust information of {id} in {collection.substring(0, collection.length - 1)}</BlockTitle>
-      <Framework7Edit schema={form} id={id} reset={true} />
+      <Framework7Edit schema={form} id={id} prefix={"edit"} />
     </WebPageContainer>
   )
 }

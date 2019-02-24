@@ -6,3 +6,5 @@ declare module "@feathersjs/authentication-local" {
 declare module "@feathersjs/authentication" {
     export = localauth;
 }
+
+declare module "feathers-batch" 

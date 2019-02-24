@@ -1,19 +1,31 @@
 import { DbStore } from "@xpfw/data"
-import { FormStore, memo, useField } from "@xpfw/form"
+import { memo, useField } from "@xpfw/form"
+import { cameraCommand } from "isofw-shared/src/cameraApi"
 import val from "isofw-shared/src/globals/val"
-import { PresetForm, PresetIsReadyField } from "isofw-shared/src/xpfwDefs/preset"
+import { PresetActionTypeField, PresetAssistantForm, PresetCameraField, PresetForm, PresetIsReadyField } from "isofw-shared/src/xpfwDefs/preset"
 import { get } from "lodash"
-import * as React from "react"
 
 const updatePrefix = "presetUpdater"
 const presetFormHelper = useField(String(PresetForm.title), updatePrefix)
+const presetAssistantFormHelper = useField(String(PresetAssistantForm.title), updatePrefix)
 const presetIsReadyHelper = useField(String(PresetIsReadyField.title), updatePrefix)
 
-const updatePreset = (presetId: string, isReady: boolean) => {
+const updatePresetReadiness = (presetId: string, isReady: boolean) => {
   return async () => {
     presetFormHelper.setValue({})
     presetIsReadyHelper.setValue(isReady)
     const updateRes = await DbStore.patch(presetId, PresetForm, updatePrefix)
+    return updateRes
+  }
+}
+const savePresetData = (presetId: string) => {
+  return async () => {
+    presetAssistantFormHelper.setValue({
+      [String(PresetActionTypeField.title)]: cameraCommand.updatePreset,
+      [String(PresetCameraField)]: presetId
+    })
+    const preset = await DbStore.getFromServer(presetId, val.service.preset)
+    const updateRes = await DbStore.patch(preset[String(PresetCameraField.title)], PresetAssistantForm, updatePrefix)
     return updateRes
   }
 }
@@ -23,8 +35,9 @@ const usePresetUpdater = (id: string) => {
   return {
     item,
     isReady: get(item, String(PresetIsReadyField.title), false),
-    setReady: memo(() => updatePreset(id, true), [updatePrefix, id, true]),
-    setNotReady: memo(() => updatePreset(id, false), [updatePrefix, id, false])
+    setReady: memo(() => updatePresetReadiness(id, true), [updatePrefix, id, true]),
+    setNotReady: memo(() => updatePresetReadiness(id, false), [updatePrefix, id, false]),
+    savePreset: memo(() => savePresetData(id), ["savePreset", updatePrefix, id])
   }
 }
 
@@ -34,5 +47,5 @@ const usePresetUpdaterWithProps = (props: IPresetUpdaterProps) => usePresetUpdat
 
 export default usePresetUpdater
 export {
-  updatePreset, usePresetUpdaterWithProps
+  updatePresetReadiness as updatePreset, usePresetUpdaterWithProps
 }

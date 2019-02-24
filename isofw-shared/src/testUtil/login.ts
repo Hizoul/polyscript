@@ -8,7 +8,7 @@ const logIntoUser = async (userIndex: number = 0) => {
   const userToUse = testUsers[userIndex]
   mailHelper.setValue(userToUse[String(MailField.title)])
   pwHelper.setValue(userToUse[String(PwField.title)])
-  await UserStore.login()
+  return UserStore.login()
 }
 
 export default logIntoUser

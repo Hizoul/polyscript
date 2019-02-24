@@ -1,17 +1,19 @@
 import useDirector, { DirectorProps } from "isofw-shared/src/components/project/directorSheet"
 import val from "isofw-shared/src/globals/val"
-import { useEdit } from "isofw-shared/src/util/xpfwdata"
-import { ProjectForm, ProjectName, ShotCamera } from "isofw-shared/src/xpfwDefs/project"
+import {  toJS } from "isofw-shared/src/util/xpfwdata"
+import { DisabledCameras, ProjectForm, ProjectName, ShotCamera } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
+import { prependPrefix } from "../../../../isofw-shared/src/util/xpfwform";
 import WebButton from "../button"
-import LoadingPage from "../loading"
+import WebCameraDisabler from "./cameraDisabler";
 import "./style.sass"
+import { BlockTitle } from "framework7-react";
 
 const ShotEditor = observer((props: DirectorProps) => {
-  const directorProps: any = useDirector(props.id, props.reset)
+  const directorProps: any = useDirector(props.id)
   return (
     <div className="flex1 column">
       <div className="flex center">
@@ -59,6 +61,8 @@ const ShotEditor = observer((props: DirectorProps) => {
           disabled={directorProps.loading}
         />
       </div>
+      <BlockTitle className="centerText">Automatically controlled cameras</BlockTitle>
+      <WebCameraDisabler schema={DisabledCameras} prefix={prependPrefix(ProjectForm.title, props.prefix)} autoSave={true} />
     </div>
   )
 })

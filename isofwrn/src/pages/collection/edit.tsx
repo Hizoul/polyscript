@@ -17,7 +17,7 @@ const NativeEditPage: React.FunctionComponent<any> = (props) => {
   }
   return (
     <NativePageContained {...props} title="edit">
-      <NativeEdit schema={form} id={id} reset={true} prefix="edits" />
+      <NativeEdit schema={form} id={id} prefix="edit" />
     </NativePageContained>
   )
 }

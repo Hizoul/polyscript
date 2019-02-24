@@ -9,7 +9,9 @@ import createTestUsers from "isofw-shared/src/testUtil/data/users"
 import logIntoUser from "isofw-shared/src/testUtil/login"
 import { BackendClient, DbStore, toJS, UserStore } from "isofw-shared/src/util/xpfwdata"
 import { CameraIp } from "isofw-shared/src/xpfwDefs/camera"
-import { PresetActionTypeField, PresetAssistantForm, PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
+import {
+  PresetActionTypeField, PresetAssistantForm, PresetCameraField, PresetNumberField
+} from "isofw-shared/src/xpfwDefs/preset"
 import * as MockDate from "mockdate"
 MockDate.set(new Date(4, 2, 0))
 
@@ -58,6 +60,22 @@ const cameraApiTest = () => {
       await DbStore.patch(cameraResult[0]._id, PresetAssistantForm)
       expect(toJS(DbStore)).toMatchSnapshot(" after Going to preset")
       expect(mockCamera.requests).toMatchSnapshot("requests after going to preset")
+
+      mockCamera.requests.splice(0, mockCamera.requests.length)
+      val.handlePresetsSelf = true
+      const presetId = "c1bbbbbbbbbbbbbbbb098765"
+      prFields[String(PresetActionTypeField.title)].setValue(cameraCommand.updatePreset)
+      prFields[String(PresetCameraField.title)].setValue(presetId)
+      await DbStore.patch(cameraResult[0]._id, PresetAssistantForm)
+      expect(toJS(await DbStore.getFromServer(presetId, val.service.preset)))
+        .toMatchSnapshot("Preset after saving custom data")
+      expect(mockCamera.requests).toMatchSnapshot("requests after getting and saving preset data")
+      mockCamera.requests.splice(0, mockCamera.requests.length)
+      prFields[String(PresetActionTypeField.title)].setValue(cameraCommand.goToPreset)
+      prFields[String(PresetCameraField.title)].setValue(presetId)
+      await DbStore.patch(cameraResult[0]._id, PresetAssistantForm)
+      expect(mockCamera.requests).toMatchSnapshot("requests after restoring custom saved preset")
+
       await mockCamera.cleanUp()
       await appRef.cleanUp()
     }, 100000)

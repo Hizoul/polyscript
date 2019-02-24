@@ -2,7 +2,6 @@ import * as authentication from "@feathersjs/authentication"
 import * as memdb from "feathers-memory"
 import * as mongoService from "feathers-mongodb"
 import convertIds from "isofw-node/src/services/hooks/convertIds"
-import { ValidationRegistry } from "isofw-shared/src/util/xpfwvalidate"
 import "isofw-shared/src/xpfwDefs"
 import collections from "isofw-shared/src/xpfwDefs/collections"
 
@@ -20,7 +19,7 @@ const pluginCollections = (db: any) => {
           default: 10,
           max: 10000
         },
-        whitelist: ["$regex", "$options"]
+        whitelist: ["$regex", "$options", "$skip", "$limit", "$sort"]
       })
       app.use(collection, service)
       console.log(`Registered XPFW-Collection ${collection}`)

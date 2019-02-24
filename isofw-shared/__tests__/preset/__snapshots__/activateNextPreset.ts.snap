@@ -1,0 +1,672 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Preset Update works as planned: Before anything 1`] = `
+Object {
+  "createState": Object {},
+  "currentlyEditing": "",
+  "fetching": Object {},
+  "getFromServer": [Function],
+  "getState": Object {
+    "users": Object {
+      "u1": Object {
+        "_id": "u1",
+        "email": "u1",
+      },
+    },
+  },
+  "lastFetch": Object {},
+  "removeState": Object {},
+  "updateState": Object {},
+}
+`;
+
+exports[`Preset Update works as planned: after decrease shot to 0 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after decrease shot to 0 2`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after decrease shot to 0 3`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after decrease to 0 1`] = `
+Object {
+  "createState": Object {},
+  "currentlyEditing": "b19999999999999999999999",
+  "fetching": Object {
+    "b19999999999999999999999": false,
+  },
+  "getFromServer": [Function],
+  "getState": Object {
+    "projects": Object {
+      "b19999999999999999999999": Object {
+        "_id": "b19999999999999999999999",
+        "cameras": Array [
+          "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "c3bbbbbbbbbbbbbbbbbbbbbb",
+        ],
+        "isActive": true,
+        "name": "pn1",
+        "operatorCameraMapping": Array [
+          Object {
+            "cameras": Array [
+              "c1bbbbbbbbbbbbbbbbbbbbbb",
+              "c3bbbbbbbbbbbbbbbbbbbbbb",
+            ],
+            "operator": "u1",
+          },
+          Object {
+            "cameras": Array [
+              "c2bbbbbbbbbbbbbbbbbbbbbb",
+            ],
+            "operator": "u2",
+          },
+        ],
+        "operators": Array [
+          "u1",
+          "u2",
+        ],
+        "program": Array [
+          Object {
+            "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+            "directorRemarks": "rd#1",
+            "duration": 5,
+            "movement": "m#1",
+            "movementTowards": "mt#1",
+            "operatorRemarks": "ro#1",
+            "pname": "S#1",
+            "preset": "c1bbbbbbbbbbbbbbbb098765",
+          },
+          Object {
+            "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+            "directorRemarks": "rd#2",
+            "duration": 6,
+            "importance": "r",
+            "movement": "m#2",
+            "movementTowards": "mt#2",
+            "operatorRemarks": "ro#2",
+            "pname": "S#2",
+            "preset": "c3bbbbbbbbbbbbbbbb098765",
+          },
+          Object {
+            "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+            "directorRemarks": "rd#3",
+            "duration": 1,
+            "movement": "m#3",
+            "movementTowards": "mt#3",
+            "operatorRemarks": "ro#3",
+            "pname": "S#3",
+            "preset": "c2bbbbbbbbbbbbbbbb098765",
+          },
+          Object {
+            "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+            "directorRemarks": "rd#4",
+            "duration": 3,
+            "importance": "m",
+            "movement": "m#4",
+            "movementTowards": "mt#4",
+            "operatorRemarks": "ro#4",
+            "pname": "S#4",
+            "preset": "c1bbbbbbbbbbbbbbbb198765",
+          },
+          Object {
+            "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+            "directorRemarks": "rd#5",
+            "duration": 2,
+            "movement": "m#5",
+            "movementTowards": "mt#5",
+            "operatorRemarks": "ro#5",
+            "pname": "S#5",
+            "preset": "c2bbbbbbbbbbbbbbbb198765",
+          },
+          Object {
+            "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+            "directorRemarks": "rd#6",
+            "duration": 2,
+            "movement": "m#6",
+            "movementTowards": "mt#6",
+            "operatorRemarks": "ro#6",
+            "pname": "S#6",
+            "preset": "c3bbbbbbbbbbbbbbbb198765",
+          },
+        ],
+        "shot": 0,
+      },
+    },
+    "users": Object {
+      "u1": Object {
+        "_id": "u1",
+        "email": "u1",
+      },
+    },
+  },
+  "lastFetch": Object {
+    "b19999999999999999999999": -2077750800000,
+  },
+  "removeState": Object {},
+  "updateState": Object {
+    "edit.projectModelb19999999999999999999999": Object {
+      "_id": "b19999999999999999999999",
+      "cameras": Array [
+        "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "c3bbbbbbbbbbbbbbbbbbbbbb",
+      ],
+      "isActive": true,
+      "name": "pn1",
+      "operatorCameraMapping": Array [
+        Object {
+          "cameras": Array [
+            "c1bbbbbbbbbbbbbbbbbbbbbb",
+            "c3bbbbbbbbbbbbbbbbbbbbbb",
+          ],
+          "operator": "u1",
+        },
+        Object {
+          "cameras": Array [
+            "c2bbbbbbbbbbbbbbbbbbbbbb",
+          ],
+          "operator": "u2",
+        },
+      ],
+      "operators": Array [
+        "u1",
+        "u2",
+      ],
+      "program": Array [
+        Object {
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "directorRemarks": "rd#1",
+          "duration": 5,
+          "movement": "m#1",
+          "movementTowards": "mt#1",
+          "operatorRemarks": "ro#1",
+          "pname": "S#1",
+          "preset": "c1bbbbbbbbbbbbbbbb098765",
+        },
+        Object {
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "directorRemarks": "rd#2",
+          "duration": 6,
+          "importance": "r",
+          "movement": "m#2",
+          "movementTowards": "mt#2",
+          "operatorRemarks": "ro#2",
+          "pname": "S#2",
+          "preset": "c3bbbbbbbbbbbbbbbb098765",
+        },
+        Object {
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "directorRemarks": "rd#3",
+          "duration": 1,
+          "movement": "m#3",
+          "movementTowards": "mt#3",
+          "operatorRemarks": "ro#3",
+          "pname": "S#3",
+          "preset": "c2bbbbbbbbbbbbbbbb098765",
+        },
+        Object {
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "directorRemarks": "rd#4",
+          "duration": 3,
+          "importance": "m",
+          "movement": "m#4",
+          "movementTowards": "mt#4",
+          "operatorRemarks": "ro#4",
+          "pname": "S#4",
+          "preset": "c1bbbbbbbbbbbbbbbb198765",
+        },
+        Object {
+          "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+          "directorRemarks": "rd#5",
+          "duration": 2,
+          "movement": "m#5",
+          "movementTowards": "mt#5",
+          "operatorRemarks": "ro#5",
+          "pname": "S#5",
+          "preset": "c2bbbbbbbbbbbbbbbb198765",
+        },
+        Object {
+          "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+          "directorRemarks": "rd#6",
+          "duration": 2,
+          "movement": "m#6",
+          "movementTowards": "mt#6",
+          "operatorRemarks": "ro#6",
+          "pname": "S#6",
+          "preset": "c3bbbbbbbbbbbbbbbb198765",
+        },
+      ],
+      "shot": 0,
+    },
+    "edit.undefinedb19999999999999999999999": null,
+  },
+}
+`;
+
+exports[`Preset Update works as planned: after increase shot to 1 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 1 2`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 1 3`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 2 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 2 2`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 2 3`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 3 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 3 2`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 3 3`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 4 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 4 2`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 4 3`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 5 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 5 2`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 5 3`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 6 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 6 2`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: after increase shot to 6 3`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R00",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#R01",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: before anything 1`] = `Array []`;
+
+exports[`Preset Update works as planned: before anything 2`] = `Array []`;
+
+exports[`Preset Update works as planned: before anything 3`] = `Array []`;

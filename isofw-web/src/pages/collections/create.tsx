@@ -11,13 +11,15 @@ const CreatePage: React.FunctionComponent<any> = (props) => {
   const form = getForm(collection)
   if (form == null) {
     return (
-      <WebPageContainer backLink={true} requireLoggedIn={true} name="Error" title="Error">Collection not found</WebPageContainer>
+      <WebPageContainer backLink={true} requireLoggedIn={true} name="Error" title="Error">
+        Collection not found
+      </WebPageContainer>
     )
   }
   return (
     <WebPageContainer backLink={true} requireLoggedIn={true} name="Create" title="Create">
       <BlockTitle>Fill in {collection.substring(0, collection.length - 1)} information</BlockTitle>
-      <WrappedFramework7Create schema={form} reset={true} />
+      <WrappedFramework7Create schema={form} prefix={"create"} />
     </WebPageContainer>
   )
 }

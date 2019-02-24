@@ -19,6 +19,32 @@ const PresetCameraField: ExtendedJSONSchema = {
   type: "string",
   title: "camera"
 }
+
+const PresetPanField: ExtendedJSONSchema = {
+  type: "string",
+  title: "pan"
+}
+
+const PresetTiltField: ExtendedJSONSchema = {
+  type: "string",
+  title: "tilt"
+}
+
+const PresetZoomField: ExtendedJSONSchema = {
+  type: "string",
+  title: "zoom"
+}
+
+const PresetFocusField: ExtendedJSONSchema = {
+  type: "string",
+  title: "focus"
+}
+
+const PresetIrisField: ExtendedJSONSchema = {
+  type: "string",
+  title: "iris"
+}
+
 const PresetActionTypeField: ExtendedJSONSchema = {
   type: "number",
   title: "type"
@@ -41,7 +67,12 @@ const PresetForm: ExtendedJSONSchema = {
     [String(PresetProjectField.title)]: PresetProjectField,
     [String(PresetCameraField.title)]: PresetCameraField,
     [String(PresetIsReadyField.title)]: PresetIsReadyField,
-    [String(PresetActionTypeField.title)]: PresetActionTypeField
+    [String(PresetActionTypeField.title)]: PresetActionTypeField,
+    [String(PresetPanField.title)]: PresetPanField,
+    [String(PresetTiltField.title)]: PresetTiltField,
+    [String(PresetZoomField.title)]: PresetZoomField,
+    [String(PresetFocusField.title)]: PresetFocusField,
+    [String(PresetIrisField.title)]: PresetIrisField
   },
   modify: {
     addCreatedAt: true,
@@ -58,5 +89,6 @@ PresetAssistantForm.collection = val.service.presetAssistant
 
 export {
   PresetForm, PresetNumberField, PresetProjectField, PresetCameraField, EMPTY_PRESET, PresetAssistantForm,
-  PresetIsReadyField, PresetActionTypeField
+  PresetIsReadyField, PresetActionTypeField, PresetPanField, PresetTiltField, PresetZoomField,
+  PresetFocusField, PresetIrisField
 }

@@ -1,10 +1,9 @@
 import { IEditHookProps, useEditWithProps } from "isofw-shared/src/util/xpfwdata"
 import { ComponentRegistry, prependPrefix, SharedField } from "isofw-shared/src/util/xpfwform"
-import { FieldType } from "isofw-shared/src/util/xpfwvalidate"
 import { ProjectForm, ProjectProgram, ShotPreset } from "isofw-shared/src/xpfwDefs/project"
 import NativeButton from "isofwrn/src/components/button"
 import { get } from "lodash"
-import { observer } from "mobx-react-lite";
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 import { Text, View } from "react-native"
 import ProgramArray from "./array"
@@ -12,9 +11,9 @@ import WrappedCameraChooser from "./cameraChooser"
 import PresetNumberDisplay from "./presetNumberDisplay"
 
 const programTheme = "program"
-ComponentRegistry.registerComponent(FieldType.Array, ProgramArray, programTheme)
-ComponentRegistry.registerComponent(FieldType.RelationshipSingle, WrappedCameraChooser, programTheme)
-ComponentRegistry.registerComponent(FieldType.RelationshipSingle, PresetNumberDisplay, ShotPreset.theme)
+ComponentRegistry.registerComponent("array", ProgramArray, programTheme)
+ComponentRegistry.registerComponent("string", WrappedCameraChooser, programTheme)
+ComponentRegistry.registerComponent("string", PresetNumberDisplay, ShotPreset.theme)
 
 const ProgramEditor: React.FunctionComponent<IEditHookProps> = observer((props) => {
   const editHelper = useEditWithProps(props)
