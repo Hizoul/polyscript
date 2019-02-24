@@ -5,7 +5,14 @@ const cameraCommand = {
   goToPreset: 2,
   updatePreset: 3,
   doZoom: 4,
-  doPanTilt: 5
+  doPanTilt: 5,
+  zoomToPoint: 6,
+  getZoom: 7,
+  getFocus: 8,
+  getIris: 9,
+  focusToPoint: 10,
+  irisToPoint: 11,
+  getPanTilt: 12
 }
 
 const ue70handler = {
@@ -19,6 +26,10 @@ const ue70handler = {
   tilt: "T",
   zoomToPoint: "AXZ",
   getZoom: "GZ",
+  getFocus: "GF",
+  getIris: "GI",
+  focusToPoint: "AXF",
+  irisToPoint: "AXI",
   mjpegStream: "/cgi-bin/mjpeg?resolution=1920x1080&quality=1",
   additionalCommands: {
     res: 1
@@ -98,6 +109,26 @@ const cameraApi = {
     const result = await toBeFetched.text()
     return result
   },
+  /** pan: value between -175 and 175; tilt: value betwwen -30 and 210 */
+  doFocusToPosition: async (cameraIp: string, focusPoint: any) => {
+    const requestParameters = stringify({
+      ...ue70handler.additionalCommands,
+      cmd: `${ue70handler.commandEscape}${ue70handler.focusToPoint}${focusPoint}`
+    })
+    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const result = await toBeFetched.text()
+    return result
+  },
+  /** pan: value between -175 and 175; tilt: value betwwen -30 and 210 */
+  doIrisToPosition: async (cameraIp: string, irisPoint: any) => {
+    const requestParameters = stringify({
+      ...ue70handler.additionalCommands,
+      cmd: `${ue70handler.commandEscape}${ue70handler.irisToPoint}${irisPoint}`
+    })
+    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const result = await toBeFetched.text()
+    return result
+  },
   /** pan: value between -175 and 175; tilt: value between -30 and 210 */
   getPanTilt: async (cameraIp: string) => {
     const requestParameters = stringify({
@@ -113,6 +144,26 @@ const cameraApi = {
     const requestParameters = stringify({
       ...ue70handler.additionalCommands,
       cmd: `${ue70handler.commandEscape}${ue70handler.getZoom}`
+    })
+    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const result = await toBeFetched.text()
+    return result
+  },
+  /** pan: value between -175 and 175; tilt: value betwwen -30 and 210 */
+  getFocus: async (cameraIp: string) => {
+    const requestParameters = stringify({
+      ...ue70handler.additionalCommands,
+      cmd: `${ue70handler.commandEscape}${ue70handler.getFocus}`
+    })
+    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const result = await toBeFetched.text()
+    return result
+  },
+  /** pan: value between -175 and 175; tilt: value betwwen -30 and 210 */
+  getIris: async (cameraIp: string) => {
+    const requestParameters = stringify({
+      ...ue70handler.additionalCommands,
+      cmd: `${ue70handler.commandEscape}${ue70handler.getIris}`
     })
     const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
     const result = await toBeFetched.text()

@@ -14,7 +14,8 @@ const val = {
     preset: "presets",
     presetAssistant: "presetAssistant"
   },
-  maximumPresetAmount: 100
+  maximumPresetAmount: 100,
+  handlePresetsSelf: false
 }
 
 export default val

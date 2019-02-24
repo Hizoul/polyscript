@@ -145,6 +145,20 @@ Object {
 }
 `;
 
+exports[`Preset Update works as planned: Preset after saving custom data 1`] = `
+Object {
+  "_id": "c1bbbbbbbbbbbbbbbb098765",
+  "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+  "focus": "FFF",
+  "iris": "FFF",
+  "number": 0,
+  "pan": "7FFF",
+  "project": "-",
+  "tilt": "7FFF",
+  "zoom": "FFF",
+}
+`;
+
 exports[`Preset Update works as planned: requests after Starting zoom in 1`] = `
 Array [
   Object {
@@ -232,6 +246,56 @@ Array [
 ]
 `;
 
+exports[`Preset Update works as planned: requests after getting and saving preset data 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#APC",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#GZ",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#GF",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#GI",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#M09",
+      "res": "1",
+    },
+  },
+]
+`;
+
 exports[`Preset Update works as planned: requests after going to preset 1`] = `
 Array [
   Object {
@@ -276,6 +340,47 @@ Array [
     },
     "query": Object {
       "cmd": "#R09",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Preset Update works as planned: requests after restoring custom saved preset 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#APC7FFF7FFF",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#AXZFFF",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#AXFFFF",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#AXIFFF",
       "res": "1",
     },
   },
