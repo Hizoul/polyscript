@@ -21,6 +21,7 @@ const LogInPage: React.FunctionComponent<{}> = observer((props) => {
       ) : (
         <View>
           <TranslatedText text="askLogin" />
+          <Text>{MailField.title} vs {PwField.title} {AuthForm.title}</Text>
           <SharedField schema={MailField} prefix={AuthForm.title} />
           <SharedField schema={PwField} prefix={AuthForm.title} />
         </View>
@@ -31,6 +32,14 @@ const LogInPage: React.FunctionComponent<{}> = observer((props) => {
         loading={authProps.loading}
         disabled={authProps.loading}
       />
+      {authProps.loggedIn ? undefined :
+        <NativeButton
+          title={"register"}
+          onPress={authProps.submitRegister}
+          loading={authProps.loading}
+          disabled={authProps.loading}
+        />
+      }
     </NativePageContained>
   )
 })
