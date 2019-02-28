@@ -21,7 +21,9 @@
     "typeRoots": [
       "@types",
       "src/@types",
-      "node_modules/@types"
+      "node_modules/@types",
+      "../isofw-shared/src/@types",
+      "../isofw-shared/node_modules/@types"
     ]
   },
   "exclude": [

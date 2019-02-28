@@ -7,7 +7,7 @@ import val from "../globals/val"
 
 const connect = (storage: any) => {
   BackendClient.client = FeathersClient
-  feathersClientOptions.batchService = val.service.batch
+  // feathersClientOptions.batchService = val.service.batch
   BackendClient.client.connectTo(`${url.webPrefix}${url.mainServer}`, {
       authOptions: {storage},
       makeAuth: true,

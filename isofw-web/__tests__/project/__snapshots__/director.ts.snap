@@ -37,7 +37,7 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
     >
       {
   "text": "previous shot",
-  "big": true,
+  "large": true,
   "iconFa": "step-backward"
 }
     </div>
@@ -46,7 +46,7 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
     >
       {
   "text": "next shot",
-  "big": true,
+  "large": true,
   "iconFa": "step-forward",
   "fill": true
 }
@@ -55,12 +55,23 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
       className="Button"
     >
       {
-  "big": true,
+  "large": true,
   "iconFa": "sync",
   "text": "placeholder"
 }
     </div>
   </div>
+  <div
+    className="BlockTitle"
+  >
+    {
+  "className": "centerText"
+}
+    Automatically controlled cameras
+  </div>
+  <div
+    className="flex row center"
+  />
 </div>
 `;
 
@@ -95,12 +106,13 @@ Object {
   },
   "removeState": Object {},
   "updateState": Object {
-    "shotEdit.projectModelb19999999999999999999999": Object {
+    "edit.projectModelb19999999999999999999999": Object {
       "_id": "b19999999999999999999999",
       "isActive": true,
       "name": "pn1",
       "shot": 43,
     },
+    "edit.undefinedb19999999999999999999999": null,
   },
 }
 `;
@@ -176,7 +188,7 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
     >
       {
   "text": "previous shot",
-  "big": true,
+  "large": true,
   "iconFa": "step-backward",
   "loading": false,
   "disabled": false
@@ -187,7 +199,7 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
     >
       {
   "text": "next shot",
-  "big": true,
+  "large": true,
   "iconFa": "step-forward",
   "fill": true,
   "loading": false,
@@ -198,7 +210,7 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
       className="Button"
     >
       {
-  "big": true,
+  "large": true,
   "iconFa": "sync",
   "text": "placeholder",
   "loading": false,
@@ -206,6 +218,17 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
 }
     </div>
   </div>
+  <div
+    className="BlockTitle"
+  >
+    {
+  "className": "centerText"
+}
+    Automatically controlled cameras
+  </div>
+  <div
+    className="flex row center"
+  />
 </div>
 `;
 
@@ -246,7 +269,7 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
     >
       {
   "text": "previous shot",
-  "big": true,
+  "large": true,
   "iconFa": "step-backward"
 }
     </div>
@@ -255,7 +278,7 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
     >
       {
   "text": "next shot",
-  "big": true,
+  "large": true,
   "iconFa": "step-forward",
   "fill": true
 }
@@ -264,11 +287,22 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
       className="Button"
     >
       {
-  "big": true,
+  "large": true,
   "iconFa": "sync",
   "text": "placeholder"
 }
     </div>
   </div>
+  <div
+    className="BlockTitle"
+  >
+    {
+  "className": "centerText"
+}
+    Automatically controlled cameras
+  </div>
+  <div
+    className="flex row center"
+  />
 </div>
 `;

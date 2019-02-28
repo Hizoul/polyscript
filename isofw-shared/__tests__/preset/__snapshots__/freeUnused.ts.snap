@@ -3,6 +3,7 @@
 exports[`free unused presets after program Update works as planned:  before aanything  1`] = `
 Object {
   "currentPage": Object {},
+  "dirtyCollections": Object {},
   "doingQuery": Object {
     "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
   },
@@ -50,12 +51,26 @@ Object {
     "presetModel": 20,
   },
   "pageSize": 5,
+  "previousQuery": Object {
+    "presetModel": Object {
+      "$limit": 5,
+      "$skip": 0,
+      "$sort": Object {
+        "camera": 1,
+        "number": 1,
+      },
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+    },
+  },
 }
 `;
 
 exports[`free unused presets after program Update works as planned: after reservation of four presets 1`] = `
 Object {
   "currentPage": Object {},
+  "dirtyCollections": Object {
+    "presetAssistant": true,
+  },
   "doingQuery": Object {
     "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
   },
@@ -103,12 +118,27 @@ Object {
     "presetModel": 20,
   },
   "pageSize": 5,
+  "previousQuery": Object {
+    "presetModel": Object {
+      "$limit": 5,
+      "$skip": 0,
+      "$sort": Object {
+        "camera": 1,
+        "number": 1,
+      },
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+    },
+  },
 }
 `;
 
 exports[`free unused presets after program Update works as planned: presets of camera 1 are all free again again 1`] = `
 Object {
   "currentPage": Object {},
+  "dirtyCollections": Object {
+    "presetAssistant": true,
+    "projects": true,
+  },
   "doingQuery": Object {
     "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
   },
@@ -156,12 +186,27 @@ Object {
     "presetModel": 20,
   },
   "pageSize": 5,
+  "previousQuery": Object {
+    "presetModel": Object {
+      "$limit": 5,
+      "$skip": 0,
+      "$sort": Object {
+        "camera": 1,
+        "number": 1,
+      },
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+    },
+  },
 }
 `;
 
 exports[`free unused presets after program Update works as planned: two presets of camera 1 are now reserved 1`] = `
 Object {
   "currentPage": Object {},
+  "dirtyCollections": Object {
+    "presetAssistant": true,
+    "projects": true,
+  },
   "doingQuery": Object {
     "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
     "undefinedpresets{\\"camera\\":\\"c2bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
@@ -210,5 +255,16 @@ Object {
     "presetModel": 20,
   },
   "pageSize": 5,
+  "previousQuery": Object {
+    "presetModel": Object {
+      "$limit": 5,
+      "$skip": 0,
+      "$sort": Object {
+        "camera": 1,
+        "number": 1,
+      },
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+    },
+  },
 }
 `;

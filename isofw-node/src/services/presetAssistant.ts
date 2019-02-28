@@ -1,7 +1,7 @@
 import * as feathers from "@feathersjs/feathers"
 import presetCreator from "isofw-node/src/services/hooks/presetCreator"
 import cameraApi, { cameraCommand } from "isofw-shared/src/cameraApi"
-import { getPresetDataUE70 } from "isofw-shared/src/cameraApi/ue70";
+import { getPresetDataUE70 } from "isofw-shared/src/cameraApi/ue70"
 import isServerParams from "isofw-shared/src/globals/isServerParams"
 import val from "isofw-shared/src/globals/val"
 import { CameraIp } from "isofw-shared/src/xpfwDefs/camera"
@@ -63,7 +63,6 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
         return Promise.reject(" unknown Camera ")
       }
       const cameraIp = camera[String(CameraIp.title)]
-      console.log("IN PRESET ASSISTANT WITH", data)
       switch (data[String(PresetActionTypeField.title)]) {
         case cameraCommand.goToPreset: {
           if (val.handlePresetsSelf) {

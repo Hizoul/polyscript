@@ -46,7 +46,7 @@ const webCameraMapping: React.FunctionComponent<IFieldProps> = observer((props) 
     <div>
       <WebButton
         fill={true}
-        big={true}
+        large={true}
         onClick={mapper.showPop}
         text="operator to camera mapping"
         iconFa="camera"

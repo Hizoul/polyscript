@@ -371,7 +371,7 @@ Array [
       "0": "/cgi-bin/aw_ptz",
     },
     "query": Object {
-      "cmd": "#AXFFFF",
+      "cmd": "#AXIFFF",
       "res": "1",
     },
   },
@@ -380,7 +380,7 @@ Array [
       "0": "/cgi-bin/aw_ptz",
     },
     "query": Object {
-      "cmd": "#AXIFFF",
+      "cmd": "#AXFFFF",
       "res": "1",
     },
   },

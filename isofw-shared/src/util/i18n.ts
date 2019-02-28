@@ -1,15 +1,16 @@
-import * as i18next from "i18next"
+import i18next from "i18next"
 import * as sprintf from "i18next-sprintf-postprocessor"
 import val from "isofw-shared/src/globals/val"
-
 const i18nA: any = i18next
 const toInitWith = i18nA
+
+const toExport: any = {t: () => ""}
 const i18n = toInitWith.init({
   lng: "en",
   ns: [val.i18nNameSpace],
   overloadTranslationOptionHandler: sprintf.overloadTranslationOptionHandler,
   defaultNS: val.i18nNameSpace,
-  initImmediate: true,
+  initImmediate: false,
   resources: {
     en: {
       main: {
@@ -20,6 +21,8 @@ const i18n = toInitWith.init({
       }
     }
   }
+}).then((t: any) => {
+  toExport.t = t
 })
 
-export default i18n
+export default toExport

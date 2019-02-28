@@ -38,7 +38,7 @@ const ShotEditor = observer((props: DirectorProps) => {
       <div className="flex center">
         <WebButton
           text={"previous shot"}
-          big={true}
+          large={true}
           iconFa="step-backward"
           onClick={directorProps.decrease}
           loading={directorProps.loading}
@@ -46,7 +46,7 @@ const ShotEditor = observer((props: DirectorProps) => {
         />
         <WebButton
           text={"next shot"}
-          big={true}
+          large={true}
           iconFa="step-forward"
           fill={true}
           onClick={directorProps.increase}
@@ -54,7 +54,7 @@ const ShotEditor = observer((props: DirectorProps) => {
           disabled={directorProps.loading}
         />
         <WebButton
-          big={true}
+          large={true}
           iconFa="sync"
           text={"placeholder"}
           loading={directorProps.loading}

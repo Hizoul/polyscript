@@ -11,19 +11,21 @@ const activateNextPrestsOfProject = async (project: any, app: Application) => {
   const program = get(project, String(ProjectProgram.title), [])
   const currentShot = get(project, String(ProjectShot.title), 0)
   const cameras = get(project, String(ProjectCameras.title), [])
-  for (const camera of cameras) {
-    cameraShot: for (let i = currentShot; i < program.length; i++) {
-      if (program[i][String(ShotCamera.title)] === camera) {
-        const presetToGoTo = program[i][String(ShotPreset.title)]
-        if (camerasPreset[camera] !== presetToGoTo) {
-          camerasPreset[camera] = presetToGoTo
-          const preset = await app.service(val.service.preset).get(presetToGoTo)
-          await app.service(val.service.presetAssistant).patch(camera, {
-            [String(PresetNumberField.title)]: preset[String(PresetNumberField.title)],
-            [String(PresetActionTypeField.title)]: cameraCommand.goToPreset
-          })
+  if (program != null) {
+    for (const camera of cameras) {
+      cameraShot: for (let i = currentShot; i < program.length; i++) {
+        if (program[i][String(ShotCamera.title)] === camera) {
+          const presetToGoTo = program[i][String(ShotPreset.title)]
+          if (camerasPreset[camera] !== presetToGoTo) {
+            camerasPreset[camera] = presetToGoTo
+            const preset = await app.service(val.service.preset).get(presetToGoTo)
+            await app.service(val.service.presetAssistant).patch(camera, {
+              [String(PresetNumberField.title)]: preset[String(PresetNumberField.title)],
+              [String(PresetActionTypeField.title)]: cameraCommand.goToPreset
+            })
+          }
+          break cameraShot
         }
-        break cameraShot
       }
     }
   }

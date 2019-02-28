@@ -3,91 +3,419 @@
 exports[` operator info test  works as planned: 2nd user selected 1`] = `
 <div>
   <div
-    className="Link"
+    className="Row"
   >
-    {
-  "popoverOpen": ".operatorChooser",
-  "className": "subtitleBox centerText"
-}
+    {}
     <div
-      className="subtitle"
-    >
-      <span />
-    </div>
-    <span>
-      CA 
-      <span />
-    </span>
-  </div>
-  <div
-    className="Popover"
-  >
-    {
-  "className": "operatorChooser"
-}
-    <div
-      className="List"
+      className="Col"
     >
       {}
       <div
-        className="ListItem"
+        className="subtitleBox withPadding"
       >
-        {
-  "popoverClose": ".operatorChooser"
+        <div
+          className="Link"
+        >
+          {
+  "href": "/projectOverview",
+  "className": "flex"
 }
-        <div
-          slot="title"
-        >
-          No one
-        </div>
-        <div
-          slot="footer"
-        >
-          All cameras
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
+          <div
+            className="flex1 column"
+          >
+            <div
+              className="subtitle"
+            >
+              active project
+            </div>
+            pn1
+          </div>
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "th-list"
 }
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-            <span />
-          </span>
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
-}
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-          </span>
+          </div>
         </div>
       </div>
     </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div>
+        <div
+          className="Link"
+        >
+          {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+          <div
+            className="subtitle"
+          >
+            <span />
+          </div>
+          <span>
+            CA 
+            <span />
+          </span>
+        </div>
+        <div
+          className="Popover"
+        >
+          {
+  "className": "operatorChooser",
+  "opened": false
+}
+          <div
+            className="List"
+          >
+            {}
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": ".operatorChooser"
+}
+              <div
+                slot="title"
+              >
+                All
+              </div>
+              <div
+                slot="footer"
+              >
+                All cameras
+              </div>
+            </div>
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": true
+}
+              <div
+                slot="title"
+              >
+                <span />
+              </div>
+              <div
+                slot="footer"
+              >
+                <span>
+                  Cameras: 
+                  <span />
+                  <span />
+                </span>
+              </div>
+            </div>
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": true
+}
+              <div
+                slot="title"
+              >
+                <span />
+              </div>
+              <div
+                slot="footer"
+              >
+                <span>
+                  Cameras: 
+                  <span />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="subtitleBox withPadding"
+      >
+        <div
+          className="subtitle"
+        >
+          Current shot
+        </div>
+        <div>
+          <span>
+            
+          </span>
+            
+          S#2
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Row"
+  >
+    {
+  "className": "marginTopBottom"
+}
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "shot ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "update preset",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "wide",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "stop zoom",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "tele",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "not ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "following position",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "preset view",
+  "iconFa": "images"
+}
+      </div>
+    </div>
+  </div>
+  <div
+    className="data-table card"
+    style={
+      Object {
+        "marginLeft": "0pt",
+        "marginRight": "0pt",
+      }
+    }
+  >
+    <table>
+      <thead>
+        <tr>
+          <th>
+            shot
+          </th>
+          <th>
+            CA
+          </th>
+          <th>
+            Preset
+          </th>
+          <th>
+            !
+          </th>
+          <th>
+            name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Movement
+          </th>
+          <th>
+            Towards
+          </th>
+          <th>
+            Duration
+          </th>
+          <th>
+            picture
+          </th>
+          <th>
+            remarks
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          id="presetPositioner1"
+        >
+          <td>
+            1
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            S#3
+          </td>
+          <td />
+          <td>
+            m#3
+          </td>
+          <td>
+            mt#3
+          </td>
+          <td>
+            1
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#3
+            <br />
+            ro#3
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner2"
+        >
+          <td>
+            2
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            S#5
+          </td>
+          <td />
+          <td>
+            m#5
+          </td>
+          <td>
+            mt#5
+          </td>
+          <td>
+            2
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#5
+            <br />
+            ro#5
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;
@@ -95,90 +423,286 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
 exports[` operator info test  works as planned: Before anything 1`] = `
 <div>
   <div
-    className="Link"
+    className="Row"
   >
-    {
-  "popoverOpen": ".operatorChooser",
-  "className": "subtitleBox centerText"
-}
+    {}
     <div
-      className="subtitle"
-    >
-      none selected
-    </div>
-    <span>
-       
-    </span>
-  </div>
-  <div
-    className="Popover"
-  >
-    {
-  "className": "operatorChooser"
-}
-    <div
-      className="List"
+      className="Col"
     >
       {}
       <div
-        className="ListItem"
+        className="subtitleBox withPadding"
       >
-        {
-  "popoverClose": ".operatorChooser"
+        <div
+          className="Link"
+        >
+          {
+  "href": "/projectOverview",
+  "className": "flex"
 }
-        <div
-          slot="title"
-        >
-          No one
-        </div>
-        <div
-          slot="footer"
-        >
-          All cameras
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
+          <div
+            className="flex1 column"
+          >
+            <div
+              className="subtitle"
+            >
+              active project
+            </div>
+          </div>
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "th-list"
 }
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-            <span />
-          </span>
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
-}
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-          </span>
+          </div>
         </div>
       </div>
     </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div>
+        <div
+          className="Link"
+        >
+          {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+          <div
+            className="subtitle"
+          >
+            No one
+          </div>
+          <span>
+            Showing all cameras
+          </span>
+        </div>
+        <div
+          className="Popover"
+        >
+          {
+  "className": "operatorChooser",
+  "opened": false
+}
+          <div
+            className="List"
+          >
+            {}
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": ".operatorChooser"
+}
+              <div
+                slot="title"
+              >
+                All
+              </div>
+              <div
+                slot="footer"
+              >
+                All cameras
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="subtitleBox withPadding"
+      >
+        <div
+          className="subtitle"
+        >
+          Current shot
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Row"
+  >
+    {
+  "className": "marginTopBottom"
+}
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "shot ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "update preset",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "wide",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "stop zoom",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "tele",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "not ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "following position",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "preset view",
+  "iconFa": "images"
+}
+      </div>
+    </div>
+  </div>
+  <div
+    className="data-table card"
+    style={
+      Object {
+        "marginLeft": "0pt",
+        "marginRight": "0pt",
+      }
+    }
+  >
+    <table>
+      <thead>
+        <tr>
+          <th>
+            shot
+          </th>
+          <th>
+            CA
+          </th>
+          <th>
+            Preset
+          </th>
+          <th>
+            !
+          </th>
+          <th>
+            name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Movement
+          </th>
+          <th>
+            Towards
+          </th>
+          <th>
+            Duration
+          </th>
+          <th>
+            picture
+          </th>
+          <th>
+            remarks
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
   </div>
 </div>
 `;
@@ -186,90 +710,582 @@ exports[` operator info test  works as planned: Before anything 1`] = `
 exports[` operator info test  works as planned: Invalid user selected 1`] = `
 <div>
   <div
-    className="Link"
+    className="Row"
   >
-    {
-  "popoverOpen": ".operatorChooser",
-  "className": "subtitleBox centerText"
-}
+    {}
     <div
-      className="subtitle"
-    >
-      <span />
-    </div>
-    <span>
-       
-    </span>
-  </div>
-  <div
-    className="Popover"
-  >
-    {
-  "className": "operatorChooser"
-}
-    <div
-      className="List"
+      className="Col"
     >
       {}
       <div
-        className="ListItem"
+        className="subtitleBox withPadding"
       >
-        {
-  "popoverClose": ".operatorChooser"
+        <div
+          className="Link"
+        >
+          {
+  "href": "/projectOverview",
+  "className": "flex"
 }
-        <div
-          slot="title"
-        >
-          No one
-        </div>
-        <div
-          slot="footer"
-        >
-          All cameras
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
+          <div
+            className="flex1 column"
+          >
+            <div
+              className="subtitle"
+            >
+              active project
+            </div>
+            pn1
+          </div>
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "th-list"
 }
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-            <span />
-          </span>
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
-}
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-          </span>
+          </div>
         </div>
       </div>
     </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div>
+        <div
+          className="Link"
+        >
+          {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+          <div
+            className="subtitle"
+          >
+            <span />
+          </div>
+          <span>
+            Showing all cameras
+          </span>
+        </div>
+        <div
+          className="Popover"
+        >
+          {
+  "className": "operatorChooser",
+  "opened": false
+}
+          <div
+            className="List"
+          >
+            {}
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": ".operatorChooser"
+}
+              <div
+                slot="title"
+              >
+                All
+              </div>
+              <div
+                slot="footer"
+              >
+                All cameras
+              </div>
+            </div>
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": true
+}
+              <div
+                slot="title"
+              >
+                <span />
+              </div>
+              <div
+                slot="footer"
+              >
+                <span>
+                  Cameras: 
+                  <span />
+                  <span />
+                </span>
+              </div>
+            </div>
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": true
+}
+              <div
+                slot="title"
+              >
+                <span />
+              </div>
+              <div
+                slot="footer"
+              >
+                <span>
+                  Cameras: 
+                  <span />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="subtitleBox withPadding"
+      >
+        <div
+          className="subtitle"
+        >
+          Current shot
+        </div>
+        <div>
+          <span>
+            
+          </span>
+            
+          S#2
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Row"
+  >
+    {
+  "className": "marginTopBottom"
+}
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "shot ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "update preset",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "wide",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "stop zoom",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "tele",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "not ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "following position",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "preset view",
+  "iconFa": "images"
+}
+      </div>
+    </div>
+  </div>
+  <div
+    className="data-table card"
+    style={
+      Object {
+        "marginLeft": "0pt",
+        "marginRight": "0pt",
+      }
+    }
+  >
+    <table>
+      <thead>
+        <tr>
+          <th>
+            shot
+          </th>
+          <th>
+            CA
+          </th>
+          <th>
+            Preset
+          </th>
+          <th>
+            !
+          </th>
+          <th>
+            name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Movement
+          </th>
+          <th>
+            Towards
+          </th>
+          <th>
+            Duration
+          </th>
+          <th>
+            picture
+          </th>
+          <th>
+            remarks
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          id="presetPositioner1"
+        >
+          <td>
+            1
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            S#1
+          </td>
+          <td />
+          <td>
+            m#1
+          </td>
+          <td>
+            mt#1
+          </td>
+          <td>
+            5
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#1
+            <br />
+            ro#1
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner2"
+        >
+          <td>
+            2
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            !
+          </td>
+          <td>
+            S#2
+          </td>
+          <td />
+          <td>
+            m#2
+          </td>
+          <td>
+            mt#2
+          </td>
+          <td>
+            6
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#2
+            <br />
+            ro#2
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner3"
+        >
+          <td>
+            3
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            S#3
+          </td>
+          <td />
+          <td>
+            m#3
+          </td>
+          <td>
+            mt#3
+          </td>
+          <td>
+            1
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#3
+            <br />
+            ro#3
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner4"
+        >
+          <td>
+            4
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            !!
+          </td>
+          <td>
+            S#4
+          </td>
+          <td />
+          <td>
+            m#4
+          </td>
+          <td>
+            mt#4
+          </td>
+          <td>
+            3
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#4
+            <br />
+            ro#4
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner5"
+        >
+          <td>
+            5
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            S#5
+          </td>
+          <td />
+          <td>
+            m#5
+          </td>
+          <td>
+            mt#5
+          </td>
+          <td>
+            2
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#5
+            <br />
+            ro#5
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner6"
+        >
+          <td>
+            6
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            S#6
+          </td>
+          <td />
+          <td>
+            m#6
+          </td>
+          <td>
+            mt#6
+          </td>
+          <td>
+            2
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#6
+            <br />
+            ro#6
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;
@@ -277,87 +1293,518 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
 exports[` operator info test  works as planned: Preset view active No user selected 1`] = `
 <div>
   <div
-    className="Link"
+    className="Row"
   >
-    {
-  "popoverOpen": ".operatorChooser",
-  "className": "subtitleBox centerText"
-}
+    {}
     <div
-      className="subtitle"
-    >
-      none selected
-    </div>
-    <span>
-       
-    </span>
-  </div>
-  <div
-    className="Popover"
-  >
-    {
-  "className": "operatorChooser"
-}
-    <div
-      className="List"
+      className="Col"
     >
       {}
       <div
-        className="ListItem"
+        className="subtitleBox withPadding"
       >
-        {
+        <div
+          className="Link"
+        >
+          {
+  "href": "/projectOverview",
+  "className": "flex"
+}
+          <div
+            className="flex1 column"
+          >
+            <div
+              className="subtitle"
+            >
+              active project
+            </div>
+            pn1
+          </div>
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "th-list"
+}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div>
+        <div
+          className="Link"
+        >
+          {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+          <div
+            className="subtitle"
+          >
+            No one
+          </div>
+          <span>
+            Showing all cameras
+          </span>
+        </div>
+        <div
+          className="Popover"
+        >
+          {
+  "className": "operatorChooser",
+  "opened": false
+}
+          <div
+            className="List"
+          >
+            {}
+            <div
+              className="ListItem"
+            >
+              {
   "popoverClose": ".operatorChooser"
 }
-        <div
-          slot="title"
-        >
-          No one
-        </div>
-        <div
-          slot="footer"
-        >
-          All cameras
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
+              <div
+                slot="title"
+              >
+                All
+              </div>
+              <div
+                slot="footer"
+              >
+                All cameras
+              </div>
+            </div>
+            <div
+              className="ListItem"
+            >
+              {
   "popoverClose": true
 }
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-            <span />
-          </span>
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
+              <div
+                slot="title"
+              >
+                <span />
+              </div>
+              <div
+                slot="footer"
+              >
+                <span>
+                  Cameras: 
+                  <span />
+                  <span />
+                </span>
+              </div>
+            </div>
+            <div
+              className="ListItem"
+            >
+              {
   "popoverClose": true
 }
+              <div
+                slot="title"
+              >
+                <span />
+              </div>
+              <div
+                slot="footer"
+              >
+                <span>
+                  Cameras: 
+                  <span />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="subtitleBox withPadding"
+      >
         <div
-          slot="title"
+          className="subtitle"
         >
-          <span />
+          Current shot
+        </div>
+        <div>
+          <span>
+            
+          </span>
+            
+          S#2
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Row"
+  >
+    {
+  "className": "marginTopBottom"
+}
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "shot ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "update preset",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "wide",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "stop zoom",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "tele",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "not ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "following position",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "script view",
+  "iconFa": "list-ol"
+}
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div
+        className="BlockTitle"
+      >
+        {}
+        <span>
+          
+        </span>
+      </div>
+      <div
+        className="presetCards"
+      >
+        <div
+          className="Card"
+        >
+          {}
+          <div
+            className="CardHeader"
+          >
+            {}
+            <span>
+              Preset #
+            </span>
+          </div>
+          <div
+            className="CardFooter"
+          >
+            {}
+            <div
+              className="Link"
+            >
+              {
+  "text": "Update"
+}
+            </div>
+            <div
+              className="Link"
+            >
+              {
+  "text": "ready"
+}
+            </div>
+          </div>
         </div>
         <div
-          slot="footer"
+          className="Card"
         >
-          <span>
-            Cameras: 
-            <span />
-          </span>
+          {}
+          <div
+            className="CardHeader"
+          >
+            {}
+            <span>
+              Preset #
+            </span>
+          </div>
+          <div
+            className="CardFooter"
+          >
+            {}
+            <div
+              className="Link"
+            >
+              {
+  "text": "Update"
+}
+            </div>
+            <div
+              className="Link"
+            >
+              {
+  "text": "ready"
+}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="BlockTitle"
+      >
+        {}
+        <span>
+          
+        </span>
+      </div>
+      <div
+        className="presetCards"
+      >
+        <div
+          className="Card"
+        >
+          {}
+          <div
+            className="CardHeader"
+          >
+            {}
+            <span>
+              Preset #
+            </span>
+          </div>
+          <div
+            className="CardFooter"
+          >
+            {}
+            <div
+              className="Link"
+            >
+              {
+  "text": "Update"
+}
+            </div>
+            <div
+              className="Link"
+            >
+              {
+  "text": "ready"
+}
+            </div>
+          </div>
+        </div>
+        <div
+          className="Card"
+        >
+          {}
+          <div
+            className="CardHeader"
+          >
+            {}
+            <span>
+              Preset #
+            </span>
+          </div>
+          <div
+            className="CardFooter"
+          >
+            {}
+            <div
+              className="Link"
+            >
+              {
+  "text": "Update"
+}
+            </div>
+            <div
+              className="Link"
+            >
+              {
+  "text": "ready"
+}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="BlockTitle"
+      >
+        {}
+        <span>
+          
+        </span>
+      </div>
+      <div
+        className="presetCards"
+      >
+        <div
+          className="Card"
+        >
+          {}
+          <div
+            className="CardHeader"
+          >
+            {}
+            <span>
+              Preset #
+            </span>
+          </div>
+          <div
+            className="CardFooter"
+          >
+            {}
+            <div
+              className="Link"
+            >
+              {
+  "text": "Update"
+}
+            </div>
+            <div
+              className="Link"
+            >
+              {
+  "text": "ready"
+}
+            </div>
+          </div>
+        </div>
+        <div
+          className="Card"
+        >
+          {}
+          <div
+            className="CardHeader"
+          >
+            {}
+            <span>
+              Preset #
+            </span>
+          </div>
+          <div
+            className="CardFooter"
+          >
+            {}
+            <div
+              className="Link"
+            >
+              {
+  "text": "Update"
+}
+            </div>
+            <div
+              className="Link"
+            >
+              {
+  "text": "ready"
+}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -368,89 +1815,442 @@ exports[` operator info test  works as planned: Preset view active No user selec
 exports[` operator info test  works as planned: Preset view active first user selected 1`] = `
 <div>
   <div
-    className="Link"
+    className="Row"
   >
-    {
-  "popoverOpen": ".operatorChooser",
-  "className": "subtitleBox centerText"
-}
+    {}
     <div
-      className="subtitle"
-    >
-      <span />
-    </div>
-    <span>
-      CA 
-      <span />
-      <span />
-    </span>
-  </div>
-  <div
-    className="Popover"
-  >
-    {
-  "className": "operatorChooser"
-}
-    <div
-      className="List"
+      className="Col"
     >
       {}
       <div
-        className="ListItem"
+        className="subtitleBox withPadding"
       >
-        {
+        <div
+          className="Link"
+        >
+          {
+  "href": "/projectOverview",
+  "className": "flex"
+}
+          <div
+            className="flex1 column"
+          >
+            <div
+              className="subtitle"
+            >
+              active project
+            </div>
+            pn1
+          </div>
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "th-list"
+}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div>
+        <div
+          className="Link"
+        >
+          {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+          <div
+            className="subtitle"
+          >
+            <span />
+          </div>
+          <span>
+            CA 
+            <span />
+            <span />
+          </span>
+        </div>
+        <div
+          className="Popover"
+        >
+          {
+  "className": "operatorChooser",
+  "opened": false
+}
+          <div
+            className="List"
+          >
+            {}
+            <div
+              className="ListItem"
+            >
+              {
   "popoverClose": ".operatorChooser"
 }
-        <div
-          slot="title"
-        >
-          No one
-        </div>
-        <div
-          slot="footer"
-        >
-          All cameras
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
+              <div
+                slot="title"
+              >
+                All
+              </div>
+              <div
+                slot="footer"
+              >
+                All cameras
+              </div>
+            </div>
+            <div
+              className="ListItem"
+            >
+              {
   "popoverClose": true
 }
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-            <span />
-          </span>
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
+              <div
+                slot="title"
+              >
+                <span />
+              </div>
+              <div
+                slot="footer"
+              >
+                <span>
+                  Cameras: 
+                  <span />
+                  <span />
+                </span>
+              </div>
+            </div>
+            <div
+              className="ListItem"
+            >
+              {
   "popoverClose": true
 }
+              <div
+                slot="title"
+              >
+                <span />
+              </div>
+              <div
+                slot="footer"
+              >
+                <span>
+                  Cameras: 
+                  <span />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="subtitleBox withPadding"
+      >
         <div
-          slot="title"
+          className="subtitle"
         >
-          <span />
+          Current shot
+        </div>
+        <div>
+          <span>
+            
+          </span>
+            
+          S#2
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Row"
+  >
+    {
+  "className": "marginTopBottom"
+}
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "shot ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "update preset",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "wide",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "stop zoom",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "tele",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "not ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "following position",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "script view",
+  "iconFa": "list-ol"
+}
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div
+        className="BlockTitle"
+      >
+        {}
+        <span>
+          
+        </span>
+      </div>
+      <div
+        className="presetCards"
+      >
+        <div
+          className="Card"
+        >
+          {}
+          <div
+            className="CardHeader"
+          >
+            {}
+            <span>
+              Preset #
+            </span>
+          </div>
+          <div
+            className="CardFooter"
+          >
+            {}
+            <div
+              className="Link"
+            >
+              {
+  "text": "Update"
+}
+            </div>
+            <div
+              className="Link"
+            >
+              {
+  "text": "ready"
+}
+            </div>
+          </div>
         </div>
         <div
-          slot="footer"
+          className="Card"
         >
-          <span>
-            Cameras: 
-            <span />
-          </span>
+          {}
+          <div
+            className="CardHeader"
+          >
+            {}
+            <span>
+              Preset #
+            </span>
+          </div>
+          <div
+            className="CardFooter"
+          >
+            {}
+            <div
+              className="Link"
+            >
+              {
+  "text": "Update"
+}
+            </div>
+            <div
+              className="Link"
+            >
+              {
+  "text": "ready"
+}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="BlockTitle"
+      >
+        {}
+        <span>
+          
+        </span>
+      </div>
+      <div
+        className="presetCards"
+      >
+        <div
+          className="Card"
+        >
+          {}
+          <div
+            className="CardHeader"
+          >
+            {}
+            <span>
+              Preset #
+            </span>
+          </div>
+          <div
+            className="CardFooter"
+          >
+            {}
+            <div
+              className="Link"
+            >
+              {
+  "text": "Update"
+}
+            </div>
+            <div
+              className="Link"
+            >
+              {
+  "text": "ready"
+}
+            </div>
+          </div>
+        </div>
+        <div
+          className="Card"
+        >
+          {}
+          <div
+            className="CardHeader"
+          >
+            {}
+            <span>
+              Preset #
+            </span>
+          </div>
+          <div
+            className="CardFooter"
+          >
+            {}
+            <div
+              className="Link"
+            >
+              {
+  "text": "Update"
+}
+            </div>
+            <div
+              className="Link"
+            >
+              {
+  "text": "ready"
+}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -461,92 +2261,502 @@ exports[` operator info test  works as planned: Preset view active first user se
 exports[` operator info test  works as planned: Preset view disabled 1`] = `
 <div>
   <div
-    className="Link"
+    className="Row"
   >
-    {
-  "popoverOpen": ".operatorChooser",
-  "className": "subtitleBox centerText"
-}
+    {}
     <div
-      className="subtitle"
-    >
-      <span />
-    </div>
-    <span>
-      CA 
-      <span />
-      <span />
-    </span>
-  </div>
-  <div
-    className="Popover"
-  >
-    {
-  "className": "operatorChooser"
-}
-    <div
-      className="List"
+      className="Col"
     >
       {}
       <div
-        className="ListItem"
+        className="subtitleBox withPadding"
       >
-        {
-  "popoverClose": ".operatorChooser"
+        <div
+          className="Link"
+        >
+          {
+  "href": "/projectOverview",
+  "className": "flex"
 }
-        <div
-          slot="title"
-        >
-          No one
-        </div>
-        <div
-          slot="footer"
-        >
-          All cameras
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
+          <div
+            className="flex1 column"
+          >
+            <div
+              className="subtitle"
+            >
+              active project
+            </div>
+            pn1
+          </div>
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "th-list"
 }
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-            <span />
-          </span>
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
-}
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-          </span>
+          </div>
         </div>
       </div>
     </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div>
+        <div
+          className="Link"
+        >
+          {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+          <div
+            className="subtitle"
+          >
+            <span />
+          </div>
+          <span>
+            CA 
+            <span />
+            <span />
+          </span>
+        </div>
+        <div
+          className="Popover"
+        >
+          {
+  "className": "operatorChooser",
+  "opened": false
+}
+          <div
+            className="List"
+          >
+            {}
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": ".operatorChooser"
+}
+              <div
+                slot="title"
+              >
+                All
+              </div>
+              <div
+                slot="footer"
+              >
+                All cameras
+              </div>
+            </div>
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": true
+}
+              <div
+                slot="title"
+              >
+                <span />
+              </div>
+              <div
+                slot="footer"
+              >
+                <span>
+                  Cameras: 
+                  <span />
+                  <span />
+                </span>
+              </div>
+            </div>
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": true
+}
+              <div
+                slot="title"
+              >
+                <span />
+              </div>
+              <div
+                slot="footer"
+              >
+                <span>
+                  Cameras: 
+                  <span />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="subtitleBox withPadding"
+      >
+        <div
+          className="subtitle"
+        >
+          Current shot
+        </div>
+        <div>
+          <span>
+            
+          </span>
+            
+          S#2
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Row"
+  >
+    {
+  "className": "marginTopBottom"
+}
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "shot ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "update preset",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "wide",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "stop zoom",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "tele",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "not ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "following position",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "preset view",
+  "iconFa": "images"
+}
+      </div>
+    </div>
+  </div>
+  <div
+    className="data-table card"
+    style={
+      Object {
+        "marginLeft": "0pt",
+        "marginRight": "0pt",
+      }
+    }
+  >
+    <table>
+      <thead>
+        <tr>
+          <th>
+            shot
+          </th>
+          <th>
+            CA
+          </th>
+          <th>
+            Preset
+          </th>
+          <th>
+            !
+          </th>
+          <th>
+            name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Movement
+          </th>
+          <th>
+            Towards
+          </th>
+          <th>
+            Duration
+          </th>
+          <th>
+            picture
+          </th>
+          <th>
+            remarks
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          id="presetPositioner1"
+        >
+          <td>
+            1
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            S#1
+          </td>
+          <td />
+          <td>
+            m#1
+          </td>
+          <td>
+            mt#1
+          </td>
+          <td>
+            5
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#1
+            <br />
+            ro#1
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner2"
+        >
+          <td>
+            2
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            !
+          </td>
+          <td>
+            S#2
+          </td>
+          <td />
+          <td>
+            m#2
+          </td>
+          <td>
+            mt#2
+          </td>
+          <td>
+            6
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#2
+            <br />
+            ro#2
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner3"
+        >
+          <td>
+            3
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            !!
+          </td>
+          <td>
+            S#4
+          </td>
+          <td />
+          <td>
+            m#4
+          </td>
+          <td>
+            mt#4
+          </td>
+          <td>
+            3
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#4
+            <br />
+            ro#4
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner4"
+        >
+          <td>
+            4
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            S#6
+          </td>
+          <td />
+          <td>
+            m#6
+          </td>
+          <td>
+            mt#6
+          </td>
+          <td>
+            2
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#6
+            <br />
+            ro#6
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;
@@ -554,90 +2764,582 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
 exports[` operator info test  works as planned: Removed user selection 1`] = `
 <div>
   <div
-    className="Link"
+    className="Row"
   >
-    {
-  "popoverOpen": ".operatorChooser",
-  "className": "subtitleBox centerText"
-}
+    {}
     <div
-      className="subtitle"
-    >
-      none selected
-    </div>
-    <span>
-       
-    </span>
-  </div>
-  <div
-    className="Popover"
-  >
-    {
-  "className": "operatorChooser"
-}
-    <div
-      className="List"
+      className="Col"
     >
       {}
       <div
-        className="ListItem"
+        className="subtitleBox withPadding"
       >
-        {
-  "popoverClose": ".operatorChooser"
+        <div
+          className="Link"
+        >
+          {
+  "href": "/projectOverview",
+  "className": "flex"
 }
-        <div
-          slot="title"
-        >
-          No one
-        </div>
-        <div
-          slot="footer"
-        >
-          All cameras
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
+          <div
+            className="flex1 column"
+          >
+            <div
+              className="subtitle"
+            >
+              active project
+            </div>
+            pn1
+          </div>
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "th-list"
 }
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-            <span />
-          </span>
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
-}
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-          </span>
+          </div>
         </div>
       </div>
     </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div>
+        <div
+          className="Link"
+        >
+          {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+          <div
+            className="subtitle"
+          >
+            No one
+          </div>
+          <span>
+            Showing all cameras
+          </span>
+        </div>
+        <div
+          className="Popover"
+        >
+          {
+  "className": "operatorChooser",
+  "opened": false
+}
+          <div
+            className="List"
+          >
+            {}
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": ".operatorChooser"
+}
+              <div
+                slot="title"
+              >
+                All
+              </div>
+              <div
+                slot="footer"
+              >
+                All cameras
+              </div>
+            </div>
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": true
+}
+              <div
+                slot="title"
+              >
+                <span />
+              </div>
+              <div
+                slot="footer"
+              >
+                <span>
+                  Cameras: 
+                  <span />
+                  <span />
+                </span>
+              </div>
+            </div>
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": true
+}
+              <div
+                slot="title"
+              >
+                <span />
+              </div>
+              <div
+                slot="footer"
+              >
+                <span>
+                  Cameras: 
+                  <span />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="subtitleBox withPadding"
+      >
+        <div
+          className="subtitle"
+        >
+          Current shot
+        </div>
+        <div>
+          <span>
+            
+          </span>
+            
+          S#2
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Row"
+  >
+    {
+  "className": "marginTopBottom"
+}
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "shot ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "update preset",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "wide",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "stop zoom",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "tele",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "not ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "following position",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "preset view",
+  "iconFa": "images"
+}
+      </div>
+    </div>
+  </div>
+  <div
+    className="data-table card"
+    style={
+      Object {
+        "marginLeft": "0pt",
+        "marginRight": "0pt",
+      }
+    }
+  >
+    <table>
+      <thead>
+        <tr>
+          <th>
+            shot
+          </th>
+          <th>
+            CA
+          </th>
+          <th>
+            Preset
+          </th>
+          <th>
+            !
+          </th>
+          <th>
+            name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Movement
+          </th>
+          <th>
+            Towards
+          </th>
+          <th>
+            Duration
+          </th>
+          <th>
+            picture
+          </th>
+          <th>
+            remarks
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          id="presetPositioner1"
+        >
+          <td>
+            1
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            S#1
+          </td>
+          <td />
+          <td>
+            m#1
+          </td>
+          <td>
+            mt#1
+          </td>
+          <td>
+            5
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#1
+            <br />
+            ro#1
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner2"
+        >
+          <td>
+            2
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            !
+          </td>
+          <td>
+            S#2
+          </td>
+          <td />
+          <td>
+            m#2
+          </td>
+          <td>
+            mt#2
+          </td>
+          <td>
+            6
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#2
+            <br />
+            ro#2
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner3"
+        >
+          <td>
+            3
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            S#3
+          </td>
+          <td />
+          <td>
+            m#3
+          </td>
+          <td>
+            mt#3
+          </td>
+          <td>
+            1
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#3
+            <br />
+            ro#3
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner4"
+        >
+          <td>
+            4
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            !!
+          </td>
+          <td>
+            S#4
+          </td>
+          <td />
+          <td>
+            m#4
+          </td>
+          <td>
+            mt#4
+          </td>
+          <td>
+            3
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#4
+            <br />
+            ro#4
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner5"
+        >
+          <td>
+            5
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            S#5
+          </td>
+          <td />
+          <td>
+            m#5
+          </td>
+          <td>
+            mt#5
+          </td>
+          <td>
+            2
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#5
+            <br />
+            ro#5
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner6"
+        >
+          <td>
+            6
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            S#6
+          </td>
+          <td />
+          <td>
+            m#6
+          </td>
+          <td>
+            mt#6
+          </td>
+          <td>
+            2
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#6
+            <br />
+            ro#6
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;
@@ -645,92 +3347,502 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
 exports[` operator info test  works as planned: first user selected 1`] = `
 <div>
   <div
-    className="Link"
+    className="Row"
   >
-    {
-  "popoverOpen": ".operatorChooser",
-  "className": "subtitleBox centerText"
-}
+    {}
     <div
-      className="subtitle"
-    >
-      <span />
-    </div>
-    <span>
-      CA 
-      <span />
-      <span />
-    </span>
-  </div>
-  <div
-    className="Popover"
-  >
-    {
-  "className": "operatorChooser"
-}
-    <div
-      className="List"
+      className="Col"
     >
       {}
       <div
-        className="ListItem"
+        className="subtitleBox withPadding"
       >
-        {
-  "popoverClose": ".operatorChooser"
+        <div
+          className="Link"
+        >
+          {
+  "href": "/projectOverview",
+  "className": "flex"
 }
-        <div
-          slot="title"
-        >
-          No one
-        </div>
-        <div
-          slot="footer"
-        >
-          All cameras
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
+          <div
+            className="flex1 column"
+          >
+            <div
+              className="subtitle"
+            >
+              active project
+            </div>
+            pn1
+          </div>
+          <div
+            className="Icon"
+          >
+            {
+  "fa": "th-list"
 }
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-            <span />
-          </span>
-        </div>
-      </div>
-      <div
-        className="ListItem"
-      >
-        {
-  "popoverClose": true
-}
-        <div
-          slot="title"
-        >
-          <span />
-        </div>
-        <div
-          slot="footer"
-        >
-          <span>
-            Cameras: 
-            <span />
-          </span>
+          </div>
         </div>
       </div>
     </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div>
+        <div
+          className="Link"
+        >
+          {
+  "popoverOpen": ".operatorChooser",
+  "className": "subtitleBox centerText"
+}
+          <div
+            className="subtitle"
+          >
+            <span />
+          </div>
+          <span>
+            CA 
+            <span />
+            <span />
+          </span>
+        </div>
+        <div
+          className="Popover"
+        >
+          {
+  "className": "operatorChooser",
+  "opened": false
+}
+          <div
+            className="List"
+          >
+            {}
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": ".operatorChooser"
+}
+              <div
+                slot="title"
+              >
+                All
+              </div>
+              <div
+                slot="footer"
+              >
+                All cameras
+              </div>
+            </div>
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": true
+}
+              <div
+                slot="title"
+              >
+                <span />
+              </div>
+              <div
+                slot="footer"
+              >
+                <span>
+                  Cameras: 
+                  <span />
+                  <span />
+                </span>
+              </div>
+            </div>
+            <div
+              className="ListItem"
+            >
+              {
+  "popoverClose": true
+}
+              <div
+                slot="title"
+              >
+                <span />
+              </div>
+              <div
+                slot="footer"
+              >
+                <span>
+                  Cameras: 
+                  <span />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="subtitleBox withPadding"
+      >
+        <div
+          className="subtitle"
+        >
+          Current shot
+        </div>
+        <div>
+          <span>
+            
+          </span>
+            
+          S#2
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="Row"
+  >
+    {
+  "className": "marginTopBottom"
+}
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "shot ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "update preset",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "wide",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "stop zoom",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "tele",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "not ready",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "following position",
+  "iconFa": "check"
+}
+      </div>
+    </div>
+    <div
+      className="Col"
+    >
+      {}
+      <div
+        className="Button"
+      >
+        {
+  "large": true,
+  "fill": true,
+  "text": "preset view",
+  "iconFa": "images"
+}
+      </div>
+    </div>
+  </div>
+  <div
+    className="data-table card"
+    style={
+      Object {
+        "marginLeft": "0pt",
+        "marginRight": "0pt",
+      }
+    }
+  >
+    <table>
+      <thead>
+        <tr>
+          <th>
+            shot
+          </th>
+          <th>
+            CA
+          </th>
+          <th>
+            Preset
+          </th>
+          <th>
+            !
+          </th>
+          <th>
+            name
+          </th>
+          <th>
+            Type
+          </th>
+          <th>
+            Movement
+          </th>
+          <th>
+            Towards
+          </th>
+          <th>
+            Duration
+          </th>
+          <th>
+            picture
+          </th>
+          <th>
+            remarks
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          id="presetPositioner1"
+        >
+          <td>
+            1
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            S#1
+          </td>
+          <td />
+          <td>
+            m#1
+          </td>
+          <td>
+            mt#1
+          </td>
+          <td>
+            5
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#1
+            <br />
+            ro#1
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner2"
+        >
+          <td>
+            2
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            !
+          </td>
+          <td>
+            S#2
+          </td>
+          <td />
+          <td>
+            m#2
+          </td>
+          <td>
+            mt#2
+          </td>
+          <td>
+            6
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#2
+            <br />
+            ro#2
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner3"
+        >
+          <td>
+            3
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            !!
+          </td>
+          <td>
+            S#4
+          </td>
+          <td />
+          <td>
+            m#4
+          </td>
+          <td>
+            mt#4
+          </td>
+          <td>
+            3
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#4
+            <br />
+            ro#4
+          </td>
+        </tr>
+        <tr
+          id="presetPositioner4"
+        >
+          <td>
+            4
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            <span>
+              
+            </span>
+          </td>
+          <td>
+            
+          </td>
+          <td>
+            S#6
+          </td>
+          <td />
+          <td>
+            m#6
+          </td>
+          <td>
+            mt#6
+          </td>
+          <td>
+            2
+          </td>
+          <td>
+            placeholder
+          </td>
+          <td>
+            rd#6
+            <br />
+            ro#6
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 `;

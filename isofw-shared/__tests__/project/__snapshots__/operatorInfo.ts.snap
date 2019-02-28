@@ -5,6 +5,7 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
   className="operatorinfo"
 >
   {
+  "state": null,
   "original": {
     "_id": "b19999999999999999999999",
     "name": "pn1",
@@ -42,7 +43,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
         "duration": 5,
         "directorRemarks": "rd#1",
         "operatorRemarks": "ro#1",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#2",
@@ -52,7 +54,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
         "directorRemarks": "rd#2",
         "operatorRemarks": "ro#2",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "r"
+        "importance": "r",
+        "preset": "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#3",
@@ -61,7 +64,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
         "duration": 1,
         "directorRemarks": "rd#3",
         "operatorRemarks": "ro#3",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#4",
@@ -71,7 +75,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
         "directorRemarks": "rd#4",
         "operatorRemarks": "ro#4",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "m"
+        "importance": "m",
+        "preset": "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#5",
@@ -80,7 +85,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
         "duration": 2,
         "directorRemarks": "rd#5",
         "operatorRemarks": "ro#5",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#6",
@@ -89,7 +95,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
         "duration": 2,
         "directorRemarks": "rd#6",
         "operatorRemarks": "ro#6",
-        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   },
@@ -106,7 +113,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
     "directorRemarks": "rd#2",
     "operatorRemarks": "ro#2",
     "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-    "importance": "r"
+    "importance": "r",
+    "preset": "c3bbbbbbbbbbbbbbbb098765"
   },
   "currentCameras": [
     "c2bbbbbbbbbbbbbbbbbbbbbb"
@@ -115,22 +123,22 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
     {
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c1bbbbbbbbbbbbbbbb098765",
+        "c1bbbbbbbbbbbbbbbb198765"
       ]
     },
     {
       "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c3bbbbbbbbbbbbbbbb098765",
+        "c3bbbbbbbbbbbbbbbb198765"
       ]
     },
     {
       "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c2bbbbbbbbbbbbbbbb098765",
+        "c2bbbbbbbbbbbbbbbb198765"
       ]
     }
   ],
@@ -142,7 +150,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
       "duration": 1,
       "directorRemarks": "rd#3",
       "operatorRemarks": "ro#3",
-      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c2bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#5",
@@ -151,7 +160,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
       "duration": 2,
       "directorRemarks": "rd#5",
       "operatorRemarks": "ro#5",
-      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c2bbbbbbbbbbbbbbbb198765"
     }
   ],
   "item": {
@@ -191,7 +201,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
         "duration": 5,
         "directorRemarks": "rd#1",
         "operatorRemarks": "ro#1",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#2",
@@ -201,7 +212,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
         "directorRemarks": "rd#2",
         "operatorRemarks": "ro#2",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "r"
+        "importance": "r",
+        "preset": "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#3",
@@ -210,7 +222,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
         "duration": 1,
         "directorRemarks": "rd#3",
         "operatorRemarks": "ro#3",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#4",
@@ -220,7 +233,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
         "directorRemarks": "rd#4",
         "operatorRemarks": "ro#4",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "m"
+        "importance": "m",
+        "preset": "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#5",
@@ -229,7 +243,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
         "duration": 2,
         "directorRemarks": "rd#5",
         "operatorRemarks": "ro#5",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#6",
@@ -238,7 +253,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
         "duration": 2,
         "directorRemarks": "rd#6",
         "operatorRemarks": "ro#6",
-        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   },
@@ -271,6 +287,7 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
   className="operatorinfo"
 >
   {
+  "state": null,
   "original": {
     "_id": "b19999999999999999999999",
     "name": "pn1",
@@ -308,7 +325,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
         "duration": 5,
         "directorRemarks": "rd#1",
         "operatorRemarks": "ro#1",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#2",
@@ -318,7 +336,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
         "directorRemarks": "rd#2",
         "operatorRemarks": "ro#2",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "r"
+        "importance": "r",
+        "preset": "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#3",
@@ -327,7 +346,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
         "duration": 1,
         "directorRemarks": "rd#3",
         "operatorRemarks": "ro#3",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#4",
@@ -337,7 +357,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
         "directorRemarks": "rd#4",
         "operatorRemarks": "ro#4",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "m"
+        "importance": "m",
+        "preset": "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#5",
@@ -346,7 +367,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
         "duration": 2,
         "directorRemarks": "rd#5",
         "operatorRemarks": "ro#5",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#6",
@@ -355,7 +377,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
         "duration": 2,
         "directorRemarks": "rd#6",
         "operatorRemarks": "ro#6",
-        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   },
@@ -372,29 +395,30 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
     "directorRemarks": "rd#2",
     "operatorRemarks": "ro#2",
     "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-    "importance": "r"
+    "importance": "r",
+    "preset": "c3bbbbbbbbbbbbbbbb098765"
   },
   "currentCameras": [],
   "presetByCamera": [
     {
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c1bbbbbbbbbbbbbbbb098765",
+        "c1bbbbbbbbbbbbbbbb198765"
       ]
     },
     {
       "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c3bbbbbbbbbbbbbbbb098765",
+        "c3bbbbbbbbbbbbbbbb198765"
       ]
     },
     {
       "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c2bbbbbbbbbbbbbbbb098765",
+        "c2bbbbbbbbbbbbbbbb198765"
       ]
     }
   ],
@@ -406,7 +430,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
       "duration": 5,
       "directorRemarks": "rd#1",
       "operatorRemarks": "ro#1",
-      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c1bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#2",
@@ -416,7 +441,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
       "directorRemarks": "rd#2",
       "operatorRemarks": "ro#2",
       "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-      "importance": "r"
+      "importance": "r",
+      "preset": "c3bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#3",
@@ -425,7 +451,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
       "duration": 1,
       "directorRemarks": "rd#3",
       "operatorRemarks": "ro#3",
-      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c2bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#4",
@@ -435,7 +462,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
       "directorRemarks": "rd#4",
       "operatorRemarks": "ro#4",
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-      "importance": "m"
+      "importance": "m",
+      "preset": "c1bbbbbbbbbbbbbbbb198765"
     },
     {
       "pname": "S#5",
@@ -444,7 +472,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
       "duration": 2,
       "directorRemarks": "rd#5",
       "operatorRemarks": "ro#5",
-      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c2bbbbbbbbbbbbbbbb198765"
     },
     {
       "pname": "S#6",
@@ -453,7 +482,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
       "duration": 2,
       "directorRemarks": "rd#6",
       "operatorRemarks": "ro#6",
-      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c3bbbbbbbbbbbbbbbb198765"
     }
   ],
   "item": {
@@ -493,7 +523,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
         "duration": 5,
         "directorRemarks": "rd#1",
         "operatorRemarks": "ro#1",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#2",
@@ -503,7 +534,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
         "directorRemarks": "rd#2",
         "operatorRemarks": "ro#2",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "r"
+        "importance": "r",
+        "preset": "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#3",
@@ -512,7 +544,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
         "duration": 1,
         "directorRemarks": "rd#3",
         "operatorRemarks": "ro#3",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#4",
@@ -522,7 +555,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
         "directorRemarks": "rd#4",
         "operatorRemarks": "ro#4",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "m"
+        "importance": "m",
+        "preset": "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#5",
@@ -531,7 +565,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
         "duration": 2,
         "directorRemarks": "rd#5",
         "operatorRemarks": "ro#5",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#6",
@@ -540,7 +575,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
         "duration": 2,
         "directorRemarks": "rd#6",
         "operatorRemarks": "ro#6",
-        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   },
@@ -555,6 +591,7 @@ exports[` operator info test  works as planned: Preset view active No user selec
   className="operatorinfo"
 >
   {
+  "state": null,
   "original": {
     "_id": "b19999999999999999999999",
     "name": "pn1",
@@ -592,7 +629,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
         "duration": 5,
         "directorRemarks": "rd#1",
         "operatorRemarks": "ro#1",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#2",
@@ -602,7 +640,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
         "directorRemarks": "rd#2",
         "operatorRemarks": "ro#2",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "r"
+        "importance": "r",
+        "preset": "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#3",
@@ -611,7 +650,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
         "duration": 1,
         "directorRemarks": "rd#3",
         "operatorRemarks": "ro#3",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#4",
@@ -621,7 +661,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
         "directorRemarks": "rd#4",
         "operatorRemarks": "ro#4",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "m"
+        "importance": "m",
+        "preset": "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#5",
@@ -630,7 +671,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
         "duration": 2,
         "directorRemarks": "rd#5",
         "operatorRemarks": "ro#5",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#6",
@@ -639,7 +681,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
         "duration": 2,
         "directorRemarks": "rd#6",
         "operatorRemarks": "ro#6",
-        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   },
@@ -656,29 +699,30 @@ exports[` operator info test  works as planned: Preset view active No user selec
     "directorRemarks": "rd#2",
     "operatorRemarks": "ro#2",
     "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-    "importance": "r"
+    "importance": "r",
+    "preset": "c3bbbbbbbbbbbbbbbb098765"
   },
   "currentCameras": [],
   "presetByCamera": [
     {
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c1bbbbbbbbbbbbbbbb098765",
+        "c1bbbbbbbbbbbbbbbb198765"
       ]
     },
     {
       "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c3bbbbbbbbbbbbbbbb098765",
+        "c3bbbbbbbbbbbbbbbb198765"
       ]
     },
     {
       "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c2bbbbbbbbbbbbbbbb098765",
+        "c2bbbbbbbbbbbbbbbb198765"
       ]
     }
   ],
@@ -690,7 +734,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
       "duration": 5,
       "directorRemarks": "rd#1",
       "operatorRemarks": "ro#1",
-      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c1bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#2",
@@ -700,7 +745,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
       "directorRemarks": "rd#2",
       "operatorRemarks": "ro#2",
       "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-      "importance": "r"
+      "importance": "r",
+      "preset": "c3bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#3",
@@ -709,7 +755,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
       "duration": 1,
       "directorRemarks": "rd#3",
       "operatorRemarks": "ro#3",
-      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c2bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#4",
@@ -719,7 +766,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
       "directorRemarks": "rd#4",
       "operatorRemarks": "ro#4",
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-      "importance": "m"
+      "importance": "m",
+      "preset": "c1bbbbbbbbbbbbbbbb198765"
     },
     {
       "pname": "S#5",
@@ -728,7 +776,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
       "duration": 2,
       "directorRemarks": "rd#5",
       "operatorRemarks": "ro#5",
-      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c2bbbbbbbbbbbbbbbb198765"
     },
     {
       "pname": "S#6",
@@ -737,7 +786,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
       "duration": 2,
       "directorRemarks": "rd#6",
       "operatorRemarks": "ro#6",
-      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c3bbbbbbbbbbbbbbbb198765"
     }
   ],
   "item": {
@@ -777,7 +827,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
         "duration": 5,
         "directorRemarks": "rd#1",
         "operatorRemarks": "ro#1",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#2",
@@ -787,7 +838,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
         "directorRemarks": "rd#2",
         "operatorRemarks": "ro#2",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "r"
+        "importance": "r",
+        "preset": "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#3",
@@ -796,7 +848,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
         "duration": 1,
         "directorRemarks": "rd#3",
         "operatorRemarks": "ro#3",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#4",
@@ -806,7 +859,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
         "directorRemarks": "rd#4",
         "operatorRemarks": "ro#4",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "m"
+        "importance": "m",
+        "preset": "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#5",
@@ -815,7 +869,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
         "duration": 2,
         "directorRemarks": "rd#5",
         "operatorRemarks": "ro#5",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#6",
@@ -824,7 +879,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
         "duration": 2,
         "directorRemarks": "rd#6",
         "operatorRemarks": "ro#6",
-        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   },
@@ -839,6 +895,7 @@ exports[` operator info test  works as planned: Preset view active first user se
   className="operatorinfo"
 >
   {
+  "state": null,
   "original": {
     "_id": "b19999999999999999999999",
     "name": "pn1",
@@ -876,7 +933,8 @@ exports[` operator info test  works as planned: Preset view active first user se
         "duration": 5,
         "directorRemarks": "rd#1",
         "operatorRemarks": "ro#1",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#2",
@@ -886,7 +944,8 @@ exports[` operator info test  works as planned: Preset view active first user se
         "directorRemarks": "rd#2",
         "operatorRemarks": "ro#2",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "r"
+        "importance": "r",
+        "preset": "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#3",
@@ -895,7 +954,8 @@ exports[` operator info test  works as planned: Preset view active first user se
         "duration": 1,
         "directorRemarks": "rd#3",
         "operatorRemarks": "ro#3",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#4",
@@ -905,7 +965,8 @@ exports[` operator info test  works as planned: Preset view active first user se
         "directorRemarks": "rd#4",
         "operatorRemarks": "ro#4",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "m"
+        "importance": "m",
+        "preset": "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#5",
@@ -914,7 +975,8 @@ exports[` operator info test  works as planned: Preset view active first user se
         "duration": 2,
         "directorRemarks": "rd#5",
         "operatorRemarks": "ro#5",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#6",
@@ -923,7 +985,8 @@ exports[` operator info test  works as planned: Preset view active first user se
         "duration": 2,
         "directorRemarks": "rd#6",
         "operatorRemarks": "ro#6",
-        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   },
@@ -940,7 +1003,8 @@ exports[` operator info test  works as planned: Preset view active first user se
     "directorRemarks": "rd#2",
     "operatorRemarks": "ro#2",
     "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-    "importance": "r"
+    "importance": "r",
+    "preset": "c3bbbbbbbbbbbbbbbb098765"
   },
   "currentCameras": [
     "c1bbbbbbbbbbbbbbbbbbbbbb",
@@ -950,22 +1014,22 @@ exports[` operator info test  works as planned: Preset view active first user se
     {
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c1bbbbbbbbbbbbbbbb098765",
+        "c1bbbbbbbbbbbbbbbb198765"
       ]
     },
     {
       "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c3bbbbbbbbbbbbbbbb098765",
+        "c3bbbbbbbbbbbbbbbb198765"
       ]
     },
     {
       "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c2bbbbbbbbbbbbbbbb098765",
+        "c2bbbbbbbbbbbbbbbb198765"
       ]
     }
   ],
@@ -977,7 +1041,8 @@ exports[` operator info test  works as planned: Preset view active first user se
       "duration": 5,
       "directorRemarks": "rd#1",
       "operatorRemarks": "ro#1",
-      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c1bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#2",
@@ -987,7 +1052,8 @@ exports[` operator info test  works as planned: Preset view active first user se
       "directorRemarks": "rd#2",
       "operatorRemarks": "ro#2",
       "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-      "importance": "r"
+      "importance": "r",
+      "preset": "c3bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#4",
@@ -997,7 +1063,8 @@ exports[` operator info test  works as planned: Preset view active first user se
       "directorRemarks": "rd#4",
       "operatorRemarks": "ro#4",
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-      "importance": "m"
+      "importance": "m",
+      "preset": "c1bbbbbbbbbbbbbbbb198765"
     },
     {
       "pname": "S#6",
@@ -1006,7 +1073,8 @@ exports[` operator info test  works as planned: Preset view active first user se
       "duration": 2,
       "directorRemarks": "rd#6",
       "operatorRemarks": "ro#6",
-      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c3bbbbbbbbbbbbbbbb198765"
     }
   ],
   "item": {
@@ -1046,7 +1114,8 @@ exports[` operator info test  works as planned: Preset view active first user se
         "duration": 5,
         "directorRemarks": "rd#1",
         "operatorRemarks": "ro#1",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#2",
@@ -1056,7 +1125,8 @@ exports[` operator info test  works as planned: Preset view active first user se
         "directorRemarks": "rd#2",
         "operatorRemarks": "ro#2",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "r"
+        "importance": "r",
+        "preset": "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#3",
@@ -1065,7 +1135,8 @@ exports[` operator info test  works as planned: Preset view active first user se
         "duration": 1,
         "directorRemarks": "rd#3",
         "operatorRemarks": "ro#3",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#4",
@@ -1075,7 +1146,8 @@ exports[` operator info test  works as planned: Preset view active first user se
         "directorRemarks": "rd#4",
         "operatorRemarks": "ro#4",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "m"
+        "importance": "m",
+        "preset": "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#5",
@@ -1084,7 +1156,8 @@ exports[` operator info test  works as planned: Preset view active first user se
         "duration": 2,
         "directorRemarks": "rd#5",
         "operatorRemarks": "ro#5",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#6",
@@ -1093,7 +1166,8 @@ exports[` operator info test  works as planned: Preset view active first user se
         "duration": 2,
         "directorRemarks": "rd#6",
         "operatorRemarks": "ro#6",
-        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   },
@@ -1108,6 +1182,7 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
   className="operatorinfo"
 >
   {
+  "state": null,
   "original": {
     "_id": "b19999999999999999999999",
     "name": "pn1",
@@ -1145,7 +1220,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
         "duration": 5,
         "directorRemarks": "rd#1",
         "operatorRemarks": "ro#1",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#2",
@@ -1155,7 +1231,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
         "directorRemarks": "rd#2",
         "operatorRemarks": "ro#2",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "r"
+        "importance": "r",
+        "preset": "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#3",
@@ -1164,7 +1241,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
         "duration": 1,
         "directorRemarks": "rd#3",
         "operatorRemarks": "ro#3",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#4",
@@ -1174,7 +1252,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
         "directorRemarks": "rd#4",
         "operatorRemarks": "ro#4",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "m"
+        "importance": "m",
+        "preset": "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#5",
@@ -1183,7 +1262,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
         "duration": 2,
         "directorRemarks": "rd#5",
         "operatorRemarks": "ro#5",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#6",
@@ -1192,7 +1272,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
         "duration": 2,
         "directorRemarks": "rd#6",
         "operatorRemarks": "ro#6",
-        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   },
@@ -1209,7 +1290,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
     "directorRemarks": "rd#2",
     "operatorRemarks": "ro#2",
     "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-    "importance": "r"
+    "importance": "r",
+    "preset": "c3bbbbbbbbbbbbbbbb098765"
   },
   "currentCameras": [
     "c1bbbbbbbbbbbbbbbbbbbbbb",
@@ -1219,22 +1301,22 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
     {
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c1bbbbbbbbbbbbbbbb098765",
+        "c1bbbbbbbbbbbbbbbb198765"
       ]
     },
     {
       "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c3bbbbbbbbbbbbbbbb098765",
+        "c3bbbbbbbbbbbbbbbb198765"
       ]
     },
     {
       "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c2bbbbbbbbbbbbbbbb098765",
+        "c2bbbbbbbbbbbbbbbb198765"
       ]
     }
   ],
@@ -1246,7 +1328,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
       "duration": 5,
       "directorRemarks": "rd#1",
       "operatorRemarks": "ro#1",
-      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c1bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#2",
@@ -1256,7 +1339,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
       "directorRemarks": "rd#2",
       "operatorRemarks": "ro#2",
       "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-      "importance": "r"
+      "importance": "r",
+      "preset": "c3bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#4",
@@ -1266,7 +1350,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
       "directorRemarks": "rd#4",
       "operatorRemarks": "ro#4",
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-      "importance": "m"
+      "importance": "m",
+      "preset": "c1bbbbbbbbbbbbbbbb198765"
     },
     {
       "pname": "S#6",
@@ -1275,7 +1360,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
       "duration": 2,
       "directorRemarks": "rd#6",
       "operatorRemarks": "ro#6",
-      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c3bbbbbbbbbbbbbbbb198765"
     }
   ],
   "item": {
@@ -1315,7 +1401,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
         "duration": 5,
         "directorRemarks": "rd#1",
         "operatorRemarks": "ro#1",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#2",
@@ -1325,7 +1412,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
         "directorRemarks": "rd#2",
         "operatorRemarks": "ro#2",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "r"
+        "importance": "r",
+        "preset": "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#3",
@@ -1334,7 +1422,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
         "duration": 1,
         "directorRemarks": "rd#3",
         "operatorRemarks": "ro#3",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#4",
@@ -1344,7 +1433,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
         "directorRemarks": "rd#4",
         "operatorRemarks": "ro#4",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "m"
+        "importance": "m",
+        "preset": "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#5",
@@ -1353,7 +1443,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
         "duration": 2,
         "directorRemarks": "rd#5",
         "operatorRemarks": "ro#5",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#6",
@@ -1362,7 +1453,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
         "duration": 2,
         "directorRemarks": "rd#6",
         "operatorRemarks": "ro#6",
-        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   },
@@ -1377,6 +1469,7 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
   className="operatorinfo"
 >
   {
+  "state": null,
   "original": {
     "_id": "b19999999999999999999999",
     "name": "pn1",
@@ -1414,7 +1507,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
         "duration": 5,
         "directorRemarks": "rd#1",
         "operatorRemarks": "ro#1",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#2",
@@ -1424,7 +1518,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
         "directorRemarks": "rd#2",
         "operatorRemarks": "ro#2",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "r"
+        "importance": "r",
+        "preset": "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#3",
@@ -1433,7 +1528,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
         "duration": 1,
         "directorRemarks": "rd#3",
         "operatorRemarks": "ro#3",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#4",
@@ -1443,7 +1539,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
         "directorRemarks": "rd#4",
         "operatorRemarks": "ro#4",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "m"
+        "importance": "m",
+        "preset": "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#5",
@@ -1452,7 +1549,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
         "duration": 2,
         "directorRemarks": "rd#5",
         "operatorRemarks": "ro#5",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#6",
@@ -1461,7 +1559,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
         "duration": 2,
         "directorRemarks": "rd#6",
         "operatorRemarks": "ro#6",
-        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   },
@@ -1478,29 +1577,30 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
     "directorRemarks": "rd#2",
     "operatorRemarks": "ro#2",
     "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-    "importance": "r"
+    "importance": "r",
+    "preset": "c3bbbbbbbbbbbbbbbb098765"
   },
   "currentCameras": [],
   "presetByCamera": [
     {
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c1bbbbbbbbbbbbbbbb098765",
+        "c1bbbbbbbbbbbbbbbb198765"
       ]
     },
     {
       "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c3bbbbbbbbbbbbbbbb098765",
+        "c3bbbbbbbbbbbbbbbb198765"
       ]
     },
     {
       "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c2bbbbbbbbbbbbbbbb098765",
+        "c2bbbbbbbbbbbbbbbb198765"
       ]
     }
   ],
@@ -1512,7 +1612,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
       "duration": 5,
       "directorRemarks": "rd#1",
       "operatorRemarks": "ro#1",
-      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c1bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#2",
@@ -1522,7 +1623,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
       "directorRemarks": "rd#2",
       "operatorRemarks": "ro#2",
       "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-      "importance": "r"
+      "importance": "r",
+      "preset": "c3bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#3",
@@ -1531,7 +1633,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
       "duration": 1,
       "directorRemarks": "rd#3",
       "operatorRemarks": "ro#3",
-      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c2bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#4",
@@ -1541,7 +1644,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
       "directorRemarks": "rd#4",
       "operatorRemarks": "ro#4",
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-      "importance": "m"
+      "importance": "m",
+      "preset": "c1bbbbbbbbbbbbbbbb198765"
     },
     {
       "pname": "S#5",
@@ -1550,7 +1654,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
       "duration": 2,
       "directorRemarks": "rd#5",
       "operatorRemarks": "ro#5",
-      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c2bbbbbbbbbbbbbbbb198765"
     },
     {
       "pname": "S#6",
@@ -1559,7 +1664,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
       "duration": 2,
       "directorRemarks": "rd#6",
       "operatorRemarks": "ro#6",
-      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c3bbbbbbbbbbbbbbbb198765"
     }
   ],
   "item": {
@@ -1599,7 +1705,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
         "duration": 5,
         "directorRemarks": "rd#1",
         "operatorRemarks": "ro#1",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#2",
@@ -1609,7 +1716,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
         "directorRemarks": "rd#2",
         "operatorRemarks": "ro#2",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "r"
+        "importance": "r",
+        "preset": "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#3",
@@ -1618,7 +1726,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
         "duration": 1,
         "directorRemarks": "rd#3",
         "operatorRemarks": "ro#3",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#4",
@@ -1628,7 +1737,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
         "directorRemarks": "rd#4",
         "operatorRemarks": "ro#4",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "m"
+        "importance": "m",
+        "preset": "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#5",
@@ -1637,7 +1747,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
         "duration": 2,
         "directorRemarks": "rd#5",
         "operatorRemarks": "ro#5",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#6",
@@ -1646,7 +1757,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
         "duration": 2,
         "directorRemarks": "rd#6",
         "operatorRemarks": "ro#6",
-        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   },
@@ -1661,6 +1773,7 @@ exports[` operator info test  works as planned: first user selected 1`] = `
   className="operatorinfo"
 >
   {
+  "state": null,
   "original": {
     "_id": "b19999999999999999999999",
     "name": "pn1",
@@ -1698,7 +1811,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
         "duration": 5,
         "directorRemarks": "rd#1",
         "operatorRemarks": "ro#1",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#2",
@@ -1708,7 +1822,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
         "directorRemarks": "rd#2",
         "operatorRemarks": "ro#2",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "r"
+        "importance": "r",
+        "preset": "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#3",
@@ -1717,7 +1832,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
         "duration": 1,
         "directorRemarks": "rd#3",
         "operatorRemarks": "ro#3",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#4",
@@ -1727,7 +1843,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
         "directorRemarks": "rd#4",
         "operatorRemarks": "ro#4",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "m"
+        "importance": "m",
+        "preset": "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#5",
@@ -1736,7 +1853,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
         "duration": 2,
         "directorRemarks": "rd#5",
         "operatorRemarks": "ro#5",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#6",
@@ -1745,7 +1863,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
         "duration": 2,
         "directorRemarks": "rd#6",
         "operatorRemarks": "ro#6",
-        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   },
@@ -1762,7 +1881,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
     "directorRemarks": "rd#2",
     "operatorRemarks": "ro#2",
     "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-    "importance": "r"
+    "importance": "r",
+    "preset": "c3bbbbbbbbbbbbbbbb098765"
   },
   "currentCameras": [
     "c1bbbbbbbbbbbbbbbbbbbbbb",
@@ -1772,22 +1892,22 @@ exports[` operator info test  works as planned: first user selected 1`] = `
     {
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c1bbbbbbbbbbbbbbbb098765",
+        "c1bbbbbbbbbbbbbbbb198765"
       ]
     },
     {
       "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c3bbbbbbbbbbbbbbbb098765",
+        "c3bbbbbbbbbbbbbbbb198765"
       ]
     },
     {
       "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
       "presets": [
-        null,
-        null
+        "c2bbbbbbbbbbbbbbbb098765",
+        "c2bbbbbbbbbbbbbbbb198765"
       ]
     }
   ],
@@ -1799,7 +1919,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
       "duration": 5,
       "directorRemarks": "rd#1",
       "operatorRemarks": "ro#1",
-      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c1bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#2",
@@ -1809,7 +1930,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
       "directorRemarks": "rd#2",
       "operatorRemarks": "ro#2",
       "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-      "importance": "r"
+      "importance": "r",
+      "preset": "c3bbbbbbbbbbbbbbbb098765"
     },
     {
       "pname": "S#4",
@@ -1819,7 +1941,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
       "directorRemarks": "rd#4",
       "operatorRemarks": "ro#4",
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-      "importance": "m"
+      "importance": "m",
+      "preset": "c1bbbbbbbbbbbbbbbb198765"
     },
     {
       "pname": "S#6",
@@ -1828,7 +1951,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
       "duration": 2,
       "directorRemarks": "rd#6",
       "operatorRemarks": "ro#6",
-      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+      "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+      "preset": "c3bbbbbbbbbbbbbbbb198765"
     }
   ],
   "item": {
@@ -1868,7 +1992,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
         "duration": 5,
         "directorRemarks": "rd#1",
         "operatorRemarks": "ro#1",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c1bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#2",
@@ -1878,7 +2003,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
         "directorRemarks": "rd#2",
         "operatorRemarks": "ro#2",
         "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "r"
+        "importance": "r",
+        "preset": "c3bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#3",
@@ -1887,7 +2013,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
         "duration": 1,
         "directorRemarks": "rd#3",
         "operatorRemarks": "ro#3",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb098765"
       },
       {
         "pname": "S#4",
@@ -1897,7 +2024,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
         "directorRemarks": "rd#4",
         "operatorRemarks": "ro#4",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "importance": "m"
+        "importance": "m",
+        "preset": "c1bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#5",
@@ -1906,7 +2034,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
         "duration": 2,
         "directorRemarks": "rd#5",
         "operatorRemarks": "ro#5",
-        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c2bbbbbbbbbbbbbbbb198765"
       },
       {
         "pname": "S#6",
@@ -1915,7 +2044,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
         "duration": 2,
         "directorRemarks": "rd#6",
         "operatorRemarks": "ro#6",
-        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb"
+        "camera": "c3bbbbbbbbbbbbbbbbbbbbbb",
+        "preset": "c3bbbbbbbbbbbbbbbb198765"
       }
     ]
   },

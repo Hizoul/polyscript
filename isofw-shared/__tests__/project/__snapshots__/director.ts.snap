@@ -46,6 +46,7 @@ Object {
       "name": "pn1",
       "shot": 43,
     },
+    "edit.undefinedb19999999999999999999999": null,
   },
 }
 `;
@@ -111,6 +112,7 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
   className="DirectorEle"
 >
   {
+  "state": null,
   "user": {
     "_id": "u1",
     "email": "u1"

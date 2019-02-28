@@ -114,6 +114,7 @@ Array [
 exports[`Preset creation works as planned:  fetched presets  1`] = `
 Object {
   "currentPage": Object {},
+  "dirtyCollections": Object {},
   "doingQuery": Object {
     "undefinedpresets{\\"$limit\\":400,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
   },
@@ -1931,6 +1932,16 @@ Object {
     "presetModel": 1,
   },
   "pageSize": 400,
+  "previousQuery": Object {
+    "presetModel": Object {
+      "$limit": 400,
+      "$skip": 0,
+      "$sort": Object {
+        "camera": 1,
+        "number": 1,
+      },
+    },
+  },
 }
 `;
 

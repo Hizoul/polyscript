@@ -12,9 +12,10 @@ const Icon = makeMockElement("Icon")
 const Button = makeMockElement("Button")
 const BlockTitle = makeMockElement("BlockTitle")
 const Row = makeMockElement("Row")
+const Col = makeMockElement("Col")
 const Link = makeMockElement("Link")
 
 export {
   List, Popover, ListItem, Link, Popup, Card, CardHeader, CardContent, Icon, BlockTitle, Row, Button,
-  CardFooter
+  CardFooter, Col
 }

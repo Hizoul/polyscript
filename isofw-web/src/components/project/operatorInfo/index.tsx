@@ -17,7 +17,7 @@ import TablePresetItem from "./tablePresetItem"
 
 const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) => {
   const previousPosition = React.useState(0)
-  const operatorHelper = useOperatorInfo(props.id, props.mapTo, props.prefix, props.reset)
+  const operatorHelper = useOperatorInfo(props.id, props.mapTo, props.prefix)
   React.useEffect(() => {
     const newPosition = get(operatorHelper.original, String(ProjectShot.title))
     if (newPosition !== previousPosition[0]) {
@@ -103,29 +103,29 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
       </Row>
       <Row className="marginTopBottom">
         <Col>
-          <WebButton big={true} fill={true} text="shot ready" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
+          <WebButton large={true} fill={true} text="shot ready" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
         </Col>
         <Col>
-          <WebButton big={true} fill={true} text="update preset" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
+          <WebButton large={true} fill={true} text="update preset" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
         </Col>
         <Col>
-          <WebButton big={true} fill={true} text="wide" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
+          <WebButton large={true} fill={true} text="wide" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
         </Col>
         <Col>
-          <WebButton big={true} fill={true} text="stop zoom" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
+          <WebButton large={true} fill={true} text="stop zoom" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
         </Col>
         <Col>
-          <WebButton big={true} fill={true} text="tele" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
+          <WebButton large={true} fill={true} text="tele" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
         </Col>
         <Col>
-          <WebButton big={true} fill={true} text="not ready" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
+          <WebButton large={true} fill={true} text="not ready" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
         </Col>
         <Col>
-          <WebButton big={true} fill={true} text="following position" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
+          <WebButton large={true} fill={true} text="following position" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
         </Col>
         <Col>
           <WebButton
-            big={true}
+            large={true}
             fill={true}
             text={operatorHelper.isPresetView ? "script view" : "preset view"}
             iconFa={operatorHelper.isPresetView ? "list-ol" : "images"}

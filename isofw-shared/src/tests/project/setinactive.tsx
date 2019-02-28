@@ -37,7 +37,7 @@ const freeUnusedPresets = (Component?: any) => {
       const projectId = projectResults[0]._id.toHexString()
       const cameraId = cameraResult[0]._id.toHexString()
       ListStore.pageSize = 15
-      FormStore.setValue(`list.${PresetForm.title}.${PresetCameraField.title}`, cameraResult[0]._id)
+      FormStore.setValue(`list.${PresetForm.title}.${PresetCameraField.title}`, cameraId)
       await ListStore.getList(PresetForm, undefined, "list", true)
       if (Component) {
         renderSnapshot(<Component id={projectId} collection={ProjectForm.collection} />, "Before anything")

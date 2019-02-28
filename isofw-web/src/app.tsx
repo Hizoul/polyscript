@@ -1,7 +1,6 @@
 import "@fortawesome/fontawesome-free/css/all.css"
 import Framework7React, { App, Block,  List, ListItem, Page, Panel, View } from "framework7-react"
-import "framework7/css/framework7.ios.min.css"
-import "framework7/css/framework7.min.css"
+import "framework7/css/framework7.bundle.min.css"
 import Framework7 from "framework7/framework7.esm.bundle.js"
 import "isofw-shared/src/xpfwDefs"
 import "isofw-web/src/backendConnection"

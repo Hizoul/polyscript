@@ -23,8 +23,8 @@ const changeValue = (keyToUse: string, prefix?: string, toggleChooser?: boolean)
   }
 }
 
-const useOperatorInfo = (id: string, mapTo?: string, prefix?: string, reset?: boolean, defItem?: any) => {
-  const editHelper = useEdit(id, ProjectForm, mapTo, prefix, reset)
+const useOperatorInfo = (id: string, mapTo?: string, prefix?: string, defItem?: any) => {
+  const editHelper = useEdit(id, ProjectForm, mapTo, prefix)
   const currentOperator = FormStore.getValue(currentOperatorKey, prefix)
   const item = get(editHelper, "original", defItem)
   const mappings: any = find(get(item, String(ProjectOperatorCameraMapping.title), []),
