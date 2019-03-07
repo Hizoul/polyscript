@@ -14,6 +14,7 @@ import { get } from "lodash"
 import activateNextPresets from "./hooks/activateNextPresets"
 import freeUnusedPresets, { freePresetsOfProject } from "./hooks/freeUnusedPresets"
 import requireAuthentication from "./hooks/requireAuthentication"
+import console = require("console");
 
 const presetAssistantConfigurator: any = (app: feathers.Application) => {
 
@@ -95,7 +96,11 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
     }
   }
   app.use(val.service.presetAssistant, presentAssistanceService)
-  app.service(val.service.presetAssistant).hooks(requireAuthentication)
+  app.service(val.service.presetAssistant).hooks({before: {create: [(hook) => {
+    console.log("HOOK PARAMS ARE", hook.params)
+    return hook
+  }]}})
+  // app.service(val.service.presetAssistant).hooks(requireAuthentication)
   return app
 }
 

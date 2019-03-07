@@ -1,18 +1,19 @@
+import console = require("console")
 import { createServer } from "net"
+import serverRequestHandler from "./handler"
 
-const initiateTcp = async (port: number) => {
+const initiateTcp = async (port: number, app: any) => {
   return new Promise((resolve) => {
     const server = createServer()
-    server.on("connected", (sock) => {
+    server.on("connection", (sock) => {
           // We have a connection - a socket object is assigned to the connection automatically
-      console.log("CONNECTED: " + sock.remoteAddress + ":" + sock.remotePort)
+      console.log("TCP Connection from " + sock.remoteAddress + ":" + sock.remotePort)
 
       // Add a 'data' event handler to this instance of socket
-      sock.on("data", function(data: any) {
-
-          console.log("DATA " + sock.remoteAddress + ": " + data)
+      sock.on("data", async (data: any) => {
+          const result = await serverRequestHandler(data, app)
           // Write the data back to the socket, the client will receive it as data from the server
-          sock.write('You said "' + data + '"')
+          sock.write(JSON.stringify(result))
 
       })
 
@@ -22,7 +23,7 @@ const initiateTcp = async (port: number) => {
       })
 
     })
-    server.listen(port, undefined, undefined, resolve)
+    server.listen(port, "localhost", undefined, () => resolve(server))
   })
 }
 

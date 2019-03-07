@@ -15,7 +15,12 @@ const val = {
     presetAssistant: "presetAssistant"
   },
   maximumPresetAmount: 100,
-  handlePresetsSelf: false
+  handlePresetsSelf: false,
+  network: {
+    websocket: 0,
+    tcp: 1,
+    udp: 2
+  }
 }
 
 export default val

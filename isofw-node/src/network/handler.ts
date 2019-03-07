@@ -1,15 +1,53 @@
 import { Application } from "@feathersjs/feathers"
+import console = require("console")
+import { isString } from "lodash"
 
-const serverRequestHandler = (message: any, app: any) => {
-  if (message != null && message.type != null) {
+const serverRequestHandler = async (rawMessage: any, app: any) => {
+  const message = JSON.parse(isString(rawMessage) ? rawMessage : rawMessage.toString("utf8"))
+  if (message != null && message.method != null) {
     if (message.collection != null) {
       if (Array.isArray(message.data)) {
-        return app.service(message.collection)[message.type](...message.data)
+        let args: any[] = []
+        const baseParams = {
+          provider: "TCP",
+          headers: {
+            Authorization: message.currentToken
+          }
+        }
+        switch (message.method) {
+          case "find": {
+            args = [{
+              ...baseParams,
+              query: message.data[0].query
+            }]
+            break
+          }
+          case "get":
+          case "create":
+          case "remove": {
+            args = [message.data[0], {
+              ...baseParams
+            }]
+            break
+          }
+          case "patch":
+          case "update": {
+            args = [message.data[0], message.data[1], {
+              ...baseParams
+            }]
+            break
+          }
+        }
+        console.log("SENDING ARGS", args)
+        const result = await app.service(message.collection)[message.method](...args)
+        return {
+          trackId: message.trackId, result
+        }
       }
     }
-    return Promise.reject({error: "no collection specified"})
+    return Promise.resolve({trackId: message.trackId, error: "no collection specified"})
   }
-  return Promise.reject({error: "no type specified"})
+  return Promise.resolve({trackId: message.trackId, error: "no method specified"})
 }
 
 export default serverRequestHandler

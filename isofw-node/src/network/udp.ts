@@ -1,4 +1,4 @@
-import console = require("console");
+import console = require("console")
 import { createSocket } from "dgram"
 
 const initiateUdp = async (port: number) => {
@@ -21,7 +21,7 @@ const initiateUdp = async (port: number) => {
       })
       resolve()
     })
-    server.bind(port, undefined)
+    server.bind(port, undefined, () => resolve(server))
   })
 }
 

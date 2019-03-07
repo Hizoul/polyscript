@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tcp client test should work: After Login 1`] = `
+Object {
+  "authErr": Object {},
+  "connected": true,
+  "loading": false,
+  "loggedIn": false,
+  "user": null,
+}
+`;
+
+exports[`tcp client test should work: Before Login 1`] = `
+Object {
+  "authErr": null,
+  "connected": true,
+  "loading": false,
+  "loggedIn": false,
+  "user": null,
+}
+`;
