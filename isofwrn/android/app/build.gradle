@@ -148,6 +148,8 @@ android {
 }
 
 dependencies {
+    implementation project(':@hawkingnetwork_react-native-tcp')
+    implementation project(':react-native-udp')
     compile project(':react-native-vector-icons')
     compile project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])

@@ -3,6 +3,8 @@ package com.isofwrn;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.peel.react.TcpSocketsModule;
+import com.tradle.react.UdpSocketsModule;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
@@ -25,6 +27,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new TcpSocketsModule(),
+            new UdpSocketsModule(),
             new VectorIconsPackage(),
             new RNGestureHandlerPackage()
       );
