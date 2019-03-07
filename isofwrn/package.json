@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "postinstall": "rn-nodeify --install stream,process,util --hack",
     "test": "jest",
     "dev": "./node_modules/.bin/react-native start",
     "buildAndroid": "cd android && ./gradlew assembleRelease",
@@ -11,6 +12,7 @@
     "rnad": "adb shell input keyevent 82"
   },
   "dependencies": {
+    "@hawkingnetwork/react-native-tcp": "^3.3.2",
     "ajv": "^6.9.2",
     "lodash": "^4.17.11",
     "metro-react-native-babel-preset": "^0.52.0",
@@ -23,7 +25,10 @@
     "react-native-gesture-handler": "^1.0.16",
     "react-native-udp": "^2.5.0",
     "react-native-vector-icons": "^6.3.0",
-    "react-navigation": "^3.3.2"
+    "react-navigation": "^3.3.2",
+    "readable-stream": "^1.0.33",
+    "stream-browserify": "^1.0.0",
+    "util": "^0.10.4"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -82,6 +87,25 @@
     ]
   },
   "browser": {
-    "dgram": "react-native-udp"
+    "dgram": "react-native-udp",
+    "net": "@hawkingnetwork/react-native-tcp",
+    "tls": "@hawkingnetwork/react-native-tcp/tls",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "stream": "stream-browserify"
+  },
+  "react-native": {
+    "dgram": "react-native-udp",
+    "net": "@hawkingnetwork/react-native-tcp",
+    "tls": "@hawkingnetwork/react-native-tcp/tls",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "stream": "stream-browserify"
   }
 }
