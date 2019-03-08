@@ -56,6 +56,8 @@ const makeApp: (prerender?: Service<any>, db?: any) => Application<any> = (prere
       create: [
         hooks.hashPassword({ passwordField: "password" }),
         disableInProd
+      ], get: [
+        authentication.hooks.authenticate(["jwt"])
       ]
     }
   })
