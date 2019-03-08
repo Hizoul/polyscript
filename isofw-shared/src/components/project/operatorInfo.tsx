@@ -2,11 +2,10 @@ import { useEdit } from "isofw-shared/src/util/xpfwdata"
 import { FormStore } from "isofw-shared/src/util/xpfwform"
 import {
   OperatorRelation, ProjectCameras, ProjectForm,
-  ProjectOperatorCameraMapping, ProjectOperators, ProjectProgram, ShotCamera, ShotPreset
+  ProjectOperatorCameraMapping, ProjectOperators, ProjectProgram,
+  ProjectShot, ShotCamera, ShotPreset
 } from "isofw-shared/src/xpfwDefs/project"
-import { ProjectShot } from "isofw-shared/src/xpfwDefs/project"
 import { find, get } from "lodash"
-import { toJS } from "mobx"
 
 const currentOperatorKey = `current${ProjectOperators.title}`
 const whichViewIsActiveKey = `operatorInView`
