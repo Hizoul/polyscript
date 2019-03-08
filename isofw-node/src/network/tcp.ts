@@ -1,6 +1,5 @@
 import collections from " isofw-shared/src/xpfwDefs/collections"
 import val from "isofw-shared/src/globals/val"
-import { isObject } from "lodash"
 import { createServer, Socket } from "net"
 import serverRequestHandler from "./handler"
 
@@ -26,12 +25,13 @@ const initiateTcp = async (port: number, app: any) => {
       sock.on("data", async (data: any) => {
         let start: any, end: any, startAt
         if (val.network.addServerTimeInfo) {
-          start = performance.now()
           startAt = Date.now()
+          start = performance.now()
         }
         const result: any = await serverRequestHandler(data, app)
         if (val.network.addServerTimeInfo) {
           end = performance.now()
+          result.sent = Date.now()
           result.pend = end - start
           result.start = start
           result.end = end

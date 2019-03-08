@@ -24,9 +24,9 @@ const customServiceConfigurator: any = (db: any) => {
           after: {
             all: [
               perfDiff("pend", "pstart"),
-              stampHook("leave"),
+              stampHook("sent"),
               paramToResult("arrive"),
-              paramToResult("leave"),
+              paramToResult("sent"),
               paramToResult("pend")
             ]
           }

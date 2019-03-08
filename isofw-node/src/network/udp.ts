@@ -10,12 +10,13 @@ const initiateUdp = async (port: number, app: any) => {
       server.on("message", async (data, remote) => {
           let start: any, end: any, startAt
           if (val.network.addServerTimeInfo) {
-            start = performance.now()
             startAt = Date.now()
+            start = performance.now()
           }
           const result: any = await serverRequestHandler(data, app)
           if (val.network.addServerTimeInfo) {
             end = performance.now()
+            result.sent = Date.now()
             result.pend = end - start
             result.start = start
             result.end = end
