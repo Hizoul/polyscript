@@ -1,27 +1,21 @@
-import console = require("console")
 import { createSocket } from "dgram"
+import serverRequestHandler from "./handler"
 
-const initiateUdp = async (port: number) => {
+const initiateUdp = async (port: number, app: any) => {
   return new Promise((resolve) => {
     const server = createSocket("udp4")
     server.on("listening", () => {
-          // We have a connection - a socket object is assigned to the connection automatically
-      console.log("UDP LIstening: ")
-
-      // Add a 'data' event handler to this instance of socket
-      server.on("message", (data, remote) => {
-
-          console.log("DATA " + remote.address + ": ", data)
+      resolve(server)
+      server.on("message", async (data, remote) => {
+          const result = await serverRequestHandler(data, app)
           // Write the data back to the socket, the client will receive it as data from the server
-          const responseData = "serverresponse"
-          server.send(responseData, remote.port, remote.address, (e, b) => {
-            console.log("SEND CALLBACK", e, b)
-          })
+          const responseData = Buffer.from(JSON.stringify(result))
+          server.send(responseData, 0, responseData.length, remote.port, remote.address)
 
       })
       resolve()
     })
-    server.bind(port, undefined, () => resolve(server))
+    server.bind(port)
   })
 }
 

@@ -1,5 +1,4 @@
 import { makeSubFields } from "@xpfw/form-tests"
-import TCPClient from "isofw-node/src/network/tcpClient"
 import getNetworkTestApp from "isofw-node/src/testUtil/getNetworkTestApp"
 import { setValueWithPreset } from "isofw-shared/src/components/project/cameraChooser"
 import val from "isofw-shared/src/globals/val"
@@ -16,12 +15,12 @@ import {
 } from "isofw-shared/src/xpfwDefs/preset"
 import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
 
-BackendClient.client = TCPClient
 const untypedDbStore: any = DbStore
-const networkTest = (useNetwork: number) => {
+const networkTest = (useNetwork: number, client: any) => {
+  BackendClient.client = client
   describe("network client test", () => {
     it("should work", async () => {
-      const tcpServer = await getNetworkTestApp(useNetwork, TCPClient)
+      const tcpServer = await getNetworkTestApp(useNetwork, client)
       await createTestUsers(tcpServer.app)
       expect(toJS(UserStore)).toMatchSnapshot("Before Login")
       await logIntoUser()

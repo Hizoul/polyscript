@@ -1,5 +1,3 @@
-import { Application } from "@feathersjs/feathers"
-import console = require("console")
 import { isString } from "lodash"
 
 const serverRequestHandler = async (rawMessage: any, app: any) => {
