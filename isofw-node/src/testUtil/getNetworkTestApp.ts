@@ -29,7 +29,6 @@ const getNetworkTestApp = async (networkType: number, ClientHolder?: any) => {
     if (networkType === val.network.tcp) {
       app.setup()
       server = await initiateTcp(port, app)
-      console.log("INITIATED TCP")
     } else {
       server = await promisifyListen(app, port)
     }

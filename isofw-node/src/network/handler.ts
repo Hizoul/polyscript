@@ -38,7 +38,6 @@ const serverRequestHandler = async (rawMessage: any, app: any) => {
             break
           }
         }
-        console.log("SENDING ARGS", args)
         const result = await app.service(message.collection)[message.method](...args)
         return {
           trackId: message.trackId, result

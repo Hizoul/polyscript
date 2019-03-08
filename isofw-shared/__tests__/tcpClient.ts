@@ -1,22 +1,47 @@
-import console = require("console");
+import { makeSubFields } from "@xpfw/form-tests"
 import TCPClient from "isofw-node/src/network/client"
 import getNetworkTestApp from "isofw-node/src/testUtil/getNetworkTestApp"
+import { setValueWithPreset } from "isofw-shared/src/components/project/cameraChooser"
 import val from "isofw-shared/src/globals/val"
+import createTestCameras from "isofw-shared/src/testUtil/data/camera"
+import createTestProjects from "isofw-shared/src/testUtil/data/project"
 import createTestUsers from "isofw-shared/src/testUtil/data/users"
 import logIntoUser from "isofw-shared/src/testUtil/login"
-import { BackendClient, DbStore, toJS, UserStore } from "isofw-shared/src/util/xpfwdata"
+import { BackendClient, DbStore, ListStore, toJS, UserStore } from "isofw-shared/src/util/xpfwdata"
+import { FormStore } from "isofw-shared/src/util/xpfwform"
+import {
+  PresetAssistantForm, PresetCameraField, PresetForm, PresetProjectField
+} from "isofw-shared/src/xpfwDefs/preset"
 
 BackendClient.client = TCPClient
+const untypedDbStore: any = DbStore
 describe("tcp client test", () => {
   it("should work", async () => {
-    console.log("PREPARING TCP SERVER")
     const tcpServer = await getNetworkTestApp(val.network.tcp, TCPClient)
-    console.log("PREPARING TCP USER")
-    const userResults = await createTestUsers(tcpServer.app)
+    await createTestUsers(tcpServer.app)
     expect(toJS(UserStore)).toMatchSnapshot("Before Login")
-    console.log("PREPARING TCP LOGIn")
     await logIntoUser()
     expect(toJS(UserStore)).toMatchSnapshot("After Login")
+
+    const cameraResult = await createTestCameras(tcpServer.app)
+    expect(cameraResult).toMatchSnapshot(" creation of Cameras")
+    const projectResults = await createTestProjects(tcpServer.app, true)
+    expect(projectResults).toMatchSnapshot(" creation of Projects ")
+    ListStore.pageSize = 400
+    await ListStore.getList(PresetForm, undefined, undefined, true)
+    expect(toJS(ListStore)).toMatchSnapshot(" fetched presets ")
+    const prFields = makeSubFields(PresetAssistantForm)
+    prFields[String(PresetCameraField.title)].setValue(cameraResult[0]._id.toHexString())
+    prFields[String(PresetProjectField.title)].setValue(projectResults[0]._id.toHexString())
+    expect(toJS(DbStore)).toMatchSnapshot("Before preset is being pushed via real-time")
+    const iDFetchedResults = await DbStore.create(PresetAssistantForm)
+    expect(iDFetchedResults).toMatchSnapshot(" first available ID ")
+    expect(toJS(DbStore)).toMatchSnapshot("after preset has been pushed via real-time")
+    expect(toJS(DbStore)).toMatchSnapshot("Before using the utility function")
+    untypedDbStore.currentlyEditing = projectResults[0]._id.toHexString()
+    await setValueWithPreset(PresetCameraField, undefined, undefined)(cameraResult[1]._id.toHexString())
+    expect(toJS(DbStore)).toMatchSnapshot("After using the utility function")
+    expect(toJS(FormStore)).toMatchSnapshot("After using the utility function")
     await tcpServer.cleanUp()
   }, 8000)
 })
