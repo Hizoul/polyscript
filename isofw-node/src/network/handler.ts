@@ -9,9 +9,9 @@ const serverRequestHandler = async (rawMessage: any, app: any) => {
       if (Array.isArray(message.data)) {
         let args: any[] = []
         const baseParams = {
-          provider: "TCP",
+          provider: "rest",
           headers: {
-            Authorization: message.currentToken
+            authorization: message.currentToken
           }
         }
         switch (message.method) {

@@ -95,10 +95,11 @@ const TCPClient: IUiClient = {
   },
   login: async (loginData: any) => {
     const loginRes: any = await makeCall("authentication", "create", [loginData])
-    const parsedData = JSON.parse(parseJwt(loginRes.accessToken))
+    const parsedData = parseJwt(loginRes.accessToken)
     currentToken = loginRes.accessToken
+    const user = await TCPClient.get(dataOptions.userCollection, get(parsedData, "userId"))
     return {
-      user: await TCPClient.get(dataOptions.userCollection, get(parsedData, "userId")),
+      user,
       accessToken: loginRes.accessToken
     }
   },
