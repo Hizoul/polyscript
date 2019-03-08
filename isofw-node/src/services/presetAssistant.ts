@@ -96,11 +96,7 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
     }
   }
   app.use(val.service.presetAssistant, presentAssistanceService)
-  app.service(val.service.presetAssistant).hooks({before: {create: [(hook) => {
-    console.log("HOOK PARAMS ARE", hook.params)
-    return hook
-  }]}})
-  // app.service(val.service.presetAssistant).hooks(requireAuthentication)
+  app.service(val.service.presetAssistant).hooks(requireAuthentication)
   return app
 }
 
