@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`tcp client test should work:  creation of Cameras 1`] = `
+exports[`network client test should work:  creation of Cameras 1`] = `
 Array [
   Object {
     "_id": "c1bbbbbbbbbbbbbbbbbbbbbb",
@@ -20,7 +20,7 @@ Array [
 ]
 `;
 
-exports[`tcp client test should work:  creation of Projects  1`] = `
+exports[`network client test should work:  creation of Projects  1`] = `
 Array [
   Object {
     "_id": "b19999999999999999999999",
@@ -111,7 +111,7 @@ Array [
 ]
 `;
 
-exports[`tcp client test should work:  fetched presets  1`] = `
+exports[`network client test should work:  fetched presets  1`] = `
 Object {
   "currentPage": Object {},
   "dirtyCollections": Object {},
@@ -2545,9 +2545,9 @@ Object {
 }
 `;
 
-exports[`tcp client test should work:  first available ID  1`] = `"c1bbbbbbbbbbbbbbbb098765"`;
+exports[`network client test should work:  first available ID  1`] = `"c1bbbbbbbbbbbbbbbb098765"`;
 
-exports[`tcp client test should work: After Log in And after real-time 1`] = `
+exports[`network client test should work: After Log in And after real-time 1`] = `
 Object {
   "createState": Object {},
   "currentlyEditing": "",
@@ -2567,7 +2567,7 @@ Object {
 }
 `;
 
-exports[`tcp client test should work: After Log in but before real-time 1`] = `
+exports[`network client test should work: After Log in but before real-time 1`] = `
 Object {
   "createState": Object {},
   "currentlyEditing": "",
@@ -2587,7 +2587,7 @@ Object {
 }
 `;
 
-exports[`tcp client test should work: After Login 1`] = `
+exports[`network client test should work: After Login 1`] = `
 Object {
   "authErr": null,
   "connected": true,
@@ -2600,7 +2600,7 @@ Object {
 }
 `;
 
-exports[`tcp client test should work: After using the utility function 1`] = `
+exports[`network client test should work: After using the utility function 1`] = `
 Object {
   "createState": Object {
     "assistantForm": "c1bbbbbbbbbbbbbbbb098765",
@@ -2626,7 +2626,7 @@ Object {
 }
 `;
 
-exports[`tcp client test should work: After using the utility function 2`] = `
+exports[`network client test should work: After using the utility function 2`] = `
 Object {
   "errors": Object {},
   "formData": Object {
@@ -2662,7 +2662,7 @@ Object {
 }
 `;
 
-exports[`tcp client test should work: Before Login 1`] = `
+exports[`network client test should work: Before Login 1`] = `
 Object {
   "authErr": null,
   "connected": true,
@@ -2672,7 +2672,7 @@ Object {
 }
 `;
 
-exports[`tcp client test should work: Before preset is being pushed via real-time 1`] = `
+exports[`network client test should work: Before preset is being pushed via real-time 1`] = `
 Object {
   "createState": Object {},
   "currentlyEditing": "",
@@ -2692,7 +2692,7 @@ Object {
 }
 `;
 
-exports[`tcp client test should work: Before using the utility function 1`] = `
+exports[`network client test should work: Before using the utility function 1`] = `
 Object {
   "createState": Object {
     "assistantForm": "c1bbbbbbbbbbbbbbbb098765",
@@ -2717,7 +2717,7 @@ Object {
 }
 `;
 
-exports[`tcp client test should work: after preset has been pushed via real-time 1`] = `
+exports[`network client test should work: after preset has been pushed via real-time 1`] = `
 Object {
   "createState": Object {
     "assistantForm": "c1bbbbbbbbbbbbbbbb098765",

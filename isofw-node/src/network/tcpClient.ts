@@ -1,15 +1,8 @@
-
-import console = require("console")
+import parseJwt from "isofw-shared/src/util/parseJwt"
 import { dataOptions, IUiClient } from "isofw-shared/src/util/xpfwdata"
 import { get, isString } from "lodash"
 import { Socket } from "net"
 import clientMessageHandler from "./clientHandler"
-
-const parseJwt = (token: any) => {
-  const base64Url = token.split(".")[1]
-  const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/")
-  return JSON.parse(window.atob(base64))
-}
 
 let trackId = 0
 export interface IResolver {
@@ -55,12 +48,6 @@ const TCPClient: IUiClient = {
           store.setConnected(false)
         }
       })
-      if (get(options, "userStore")) {
-        //
-      }
-      if (get(options, "makeAuth")) {
-        // return app.authenticate()
-      }
     })
   },
   disconnect: () => {
