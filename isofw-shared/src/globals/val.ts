@@ -12,7 +12,8 @@ const val = {
     project: "projects",
     camera: "cameras",
     preset: "presets",
-    presetAssistant: "presetAssistant"
+    presetAssistant: "presetAssistant",
+    benchmarkResults: "benchmarkResults"
   },
   maximumPresetAmount: 100,
   handlePresetsSelf: false,
