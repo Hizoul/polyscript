@@ -27,14 +27,12 @@ const clientMessageHandler = (data: any, promises: any, options: any, giveOrigin
           }
         }
       } catch (e) {
-        console.log("UNABLE TO PARSE", unparsedMessage)
         unparseable += unparsedMessage
         tries++
         if (tries > 1) {
           tries = 0
           const toTry = unparseable
           unparseable = ""
-          console.log("TRYING TO PARSE UNPARSEABLE", toTry)
           clientMessageHandler(toTry, promises, options)
         }
       }

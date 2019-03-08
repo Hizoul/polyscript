@@ -9,12 +9,16 @@ const presetCreator: Hook = async (hook) => {
   console.log(" created camera with ID ",  cameraId)
   for (let index = 0; index < val.maximumPresetAmount; index++) {
     const presetId = `${cameraId.substring(0, cameraId.length - String(index).length - 5)}${index}98765`
-    hook.app.service(val.service.preset).create({
-      _id: presetId,
-      [String(PresetNumberField.title)]: index,
-      [String(PresetCameraField.title)]: cameraId,
-      [String(PresetProjectField.title)]: EMPTY_PRESET
-    }, isServerParams)
+    try {
+      await hook.app.service(val.service.preset).get(presetId)
+    } catch (e) {
+      hook.app.service(val.service.preset).create({
+        _id: presetId,
+        [String(PresetNumberField.title)]: index,
+        [String(PresetCameraField.title)]: cameraId,
+        [String(PresetProjectField.title)]: EMPTY_PRESET
+      }, isServerParams)
+    }
   }
   return hook
 }

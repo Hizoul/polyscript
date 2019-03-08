@@ -1,6 +1,5 @@
-import console = require("console")
+import val from "isofw-shared/src/globals/val"
 import { IUiClient } from "isofw-shared/src/util/xpfwdata"
-import val from "src/globals/val"
 
 export interface IMeasurement {
   time: number

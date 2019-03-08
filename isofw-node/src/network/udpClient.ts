@@ -1,4 +1,5 @@
 import { createSocket } from "dgram"
+import val from "isofw-shared/src/globals/val"
 import parseJwt from "isofw-shared/src/util/parseJwt"
 import { dataOptions, IUiClient } from "isofw-shared/src/util/xpfwdata"
 import { get } from "lodash"
@@ -19,7 +20,7 @@ const makeCall = (collection: string, method: string, data: any[]) => {
     promises[trackId] = {resolve, reject}
     const msg = Buffer.from(JSON.stringify({
       collection, method, data, trackId, currentToken
-    }))
+    }) + val.network.packetDelimiter)
     UDPClient.client.send(msg, 0, msg.length, UDPClient.port, UDPClient.url)
   })
 }

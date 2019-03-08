@@ -22,22 +22,25 @@ const initiateTcp = async (port: number, app: any) => {
     }
     server.on("connection", (sock) => {
       activeSockets.push(sock)
-      sock.on("data", async (data: any) => {
-        let start: any, end: any, startAt
-        if (val.network.addServerTimeInfo) {
-          startAt = Date.now()
-          start = performance.now()
-        }
-        const result: any = await serverRequestHandler(data, app)
-        if (val.network.addServerTimeInfo) {
-          end = performance.now()
-          result.sent = Date.now()
-          result.pend = end - start
-          result.start = start
-          result.end = end
-          result.arrive = startAt
-        }
-        sock.write(JSON.stringify(result) + val.network.packetDelimiter)
+      sock.on("data", (data: any) => {
+        serverRequestHandler(data, app, (result: any, timeStuff: any) => {
+          if (val.network.addServerTimeInfo) {
+            const end = performance.now()
+            result.sent = Date.now()
+            result.pend = end - timeStuff.start
+            result.start = timeStuff.start
+            result.end = end
+            result.arrive = timeStuff.startAt
+          }
+          sock.write(JSON.stringify(result) + val.network.packetDelimiter)
+        }, () => {
+          let start: any, startAt: any
+          if (val.network.addServerTimeInfo) {
+            startAt = Date.now()
+            start = performance.now()
+          }
+          return {startAt, start}
+        })
       })
       sock.on("close", function(data: any) {
           console.log("CLOSED: " + sock.remoteAddress + " " + sock.remotePort)

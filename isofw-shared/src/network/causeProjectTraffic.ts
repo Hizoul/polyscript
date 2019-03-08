@@ -1,6 +1,7 @@
 import val from "isofw-shared/src/globals/val"
-import { randomInRange, randomString } from "src/util/predictableRandomness"
+import { randomInRange, randomString } from "isofw-shared/src/util/predictableRandomness"
 import { IBenchmarkClient } from "./clientBenchmarker"
+import { writeFileSync } from "fs";
 
 const makeRandomProgrmanEntry = () => {
   return {
@@ -24,7 +25,7 @@ const makeRandomDisabledCameras = () => {
   return ret
 }
 
-const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string) => {
+const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string, type?: number) => {
   const program = []
   for (let i = 0; i < 250; i++) {
     program.push(makeRandomProgrmanEntry())
@@ -58,6 +59,7 @@ const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string) 
       }
     }
   }
+  writeFileSync(`network${type}${projectId}.txt`, JSON.stringify(client.measurements))
   await client.persistResults()
 }
 

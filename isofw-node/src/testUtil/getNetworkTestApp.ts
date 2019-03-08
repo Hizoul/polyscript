@@ -23,6 +23,8 @@ const getNetworkTestApp = async (networkType: number, ClientHolder?: any) => {
 
   c = await MongoClient.connect(`mongodb://localhost:27017/`)
   db  = c.db("feathersxpfwvalidatetests" + port)
+  await db.dropDatabase()
+  db  = c.db("feathersxpfwvalidatetests" + port)
   const app: any = makeApp(undefined, db)
   if (ClientHolder) {
     if (networkType === val.network.tcp) {
@@ -34,7 +36,7 @@ const getNetworkTestApp = async (networkType: number, ClientHolder?: any) => {
     } else {
       server = await promisifyListen(app, port)
     }
-    await ClientHolder.connectTo(`localhost`, {
+    await ClientHolder.connectTo(networkType === val.network.websocket ? `http://localhost:${port}` : `localhost`, {
       port,
       useRest: false,
       userStore: UserStore,
