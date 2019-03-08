@@ -2,11 +2,14 @@
 
 exports[`tcp client test should work: After Login 1`] = `
 Object {
-  "authErr": Object {},
+  "authErr": null,
   "connected": true,
   "loading": false,
-  "loggedIn": false,
-  "user": null,
+  "loggedIn": true,
+  "user": Object {
+    "_id": "u1",
+    "email": "u1",
+  },
 }
 `;
 
