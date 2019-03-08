@@ -5,22 +5,6 @@ import { get, isString } from "lodash"
 import { Socket } from "net"
 import clientMessageHandler from "./clientHandler"
 
-const listenToSocketConnection = (app: any, store: any) => {
-  const updateStatus = (state: boolean, login?: boolean) => () => {
-    store.setConnected(state)
-  }
-}
-
-const listenToFeathersServiceEvents = (store: any) => {
-  const idPath = dataOptions.idPath
-  const collection = ""
-  const eventHandler = (isRemove?: boolean) => {
-    return (eventData: any) => {
-      store.setItem(get(eventData, idPath), collection, isRemove ? null : eventData)
-    }
-  }
-}
-
 const parseJwt = (token: any) => {
   const base64Url = token.split(".")[1]
   const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/")
@@ -36,14 +20,13 @@ let currentToken: any
 const makeCall = (collection: string, method: string, data: any[]) => {
   return new Promise((resolve, reject) => {
     trackId++
+    if (trackId > 999999999) {
+      trackId = 1
+    }
     promises[trackId] = {resolve, reject}
-    console.log("ABOUT TO WRITE", JSON.stringify({
-      collection, method, data, trackId
-    }))
     TCPClient.client.write(JSON.stringify({
       collection, method, data, trackId, currentToken
     }))
-    console.log("WRITTEN TO SOCKET")
   })
 }
 
@@ -51,7 +34,6 @@ const TCPClient: IUiClient = {
   client: null,
   connectTo: (url: any, options: any) => {
     return new Promise((resolve) => {
-
       TCPClient.client = new Socket()
       TCPClient.client.connect(options.port, url)
 
@@ -64,12 +46,7 @@ const TCPClient: IUiClient = {
         }
       })
       TCPClient.client.on("data", (data: any) => {
-        const message = JSON.parse(isString(data) ? data : data.toString("utf8"))
-        console.log("CLIENT GOT DATA", message)
-        const res = clientMessageHandler(message, promises)
-        if (get(options, "dbStore") && get(options, "collections")) {
-          // listenToFeathersServiceEvents(get(options, "dbStore"))
-        }
+        clientMessageHandler(data, promises, options)
       })
 
       TCPClient.client.on("close", () => {

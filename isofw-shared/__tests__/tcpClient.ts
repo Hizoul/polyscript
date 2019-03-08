@@ -7,11 +7,14 @@ import createTestCameras from "isofw-shared/src/testUtil/data/camera"
 import createTestProjects from "isofw-shared/src/testUtil/data/project"
 import createTestUsers from "isofw-shared/src/testUtil/data/users"
 import logIntoUser from "isofw-shared/src/testUtil/login"
+import promiseTimeout from "isofw-shared/src/util/promiseTimeout"
 import { BackendClient, DbStore, ListStore, toJS, UserStore } from "isofw-shared/src/util/xpfwdata"
 import { FormStore } from "isofw-shared/src/util/xpfwform"
+import { CameraIp } from "isofw-shared/src/xpfwDefs/camera"
 import {
   PresetAssistantForm, PresetCameraField, PresetForm, PresetProjectField
 } from "isofw-shared/src/xpfwDefs/preset"
+import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
 
 BackendClient.client = TCPClient
 const untypedDbStore: any = DbStore
@@ -23,6 +26,14 @@ describe("tcp client test", () => {
     await logIntoUser()
     expect(toJS(UserStore)).toMatchSnapshot("After Login")
 
+    expect(toJS(DbStore)).toMatchSnapshot("After Log in but before real-time")
+    await tcpServer.app.service(val.service.camera).create({
+      _id: "t9bbbbbbbbbbbbbbbbbbbbbb",
+      [String (ProjectName.title)]: " real-time created camera ",
+      [String (CameraIp.title)]: "What an IP"
+    })
+    await promiseTimeout(1000)
+    expect(toJS(DbStore)).toMatchSnapshot("After Log in And after real-time")
     const cameraResult = await createTestCameras(tcpServer.app)
     expect(cameraResult).toMatchSnapshot(" creation of Cameras")
     const projectResults = await createTestProjects(tcpServer.app, true)
@@ -43,5 +54,6 @@ describe("tcp client test", () => {
     expect(toJS(DbStore)).toMatchSnapshot("After using the utility function")
     expect(toJS(FormStore)).toMatchSnapshot("After using the utility function")
     await tcpServer.cleanUp()
-  }, 8000)
+    await promiseTimeout(1000)
+  }, 16000)
 })

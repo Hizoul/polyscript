@@ -19,7 +19,8 @@ const val = {
   network: {
     websocket: 0,
     tcp: 1,
-    udp: 2
+    udp: 2,
+    packetDelimiter: "_MSG_END_"
   }
 }
 
