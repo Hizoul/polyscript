@@ -28,7 +28,7 @@ describe("tcp client test", () => {
 
     expect(toJS(DbStore)).toMatchSnapshot("After Log in but before real-time")
     await tcpServer.app.service(val.service.camera).create({
-      _id: "t9bbbbbbbbbbbbbbbbbbbbbb",
+      _id: "c9bbbbbbbbbbbbbbbbbbbbbb",
       [String (ProjectName.title)]: " real-time created camera ",
       [String (CameraIp.title)]: "What an IP"
     })
