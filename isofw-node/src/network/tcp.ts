@@ -30,12 +30,13 @@ const initiateTcp = async (port: number, app: any) => {
           startAt = Date.now()
         }
         const result: any = await serverRequestHandler(data, app)
-        end = performance.now()
-        result.pend = end - start
-        result.start = start
-        result.end = end
-        result.arrive = startAt
-        console.log("SENDING", JSON.stringify(result))
+        if (val.network.addServerTimeInfo) {
+          end = performance.now()
+          result.pend = end - start
+          result.start = start
+          result.end = end
+          result.arrive = startAt
+        }
         sock.write(JSON.stringify(result) + val.network.packetDelimiter)
       })
       sock.on("close", function(data: any) {

@@ -21,7 +21,8 @@ const val = {
     tcp: 1,
     udp: 2,
     packetDelimiter: "_MSG_END_",
-    addServerTimeInfo: true
+    addServerTimeInfo: true,
+    addServerTimeInfoForWebSockets: false
   }
 }
 

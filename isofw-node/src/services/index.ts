@@ -11,6 +11,28 @@ const customServiceConfigurator: any = (db: any) => {
     app.configure(pluginCollections(db))
     app.configure(realTimeUpdate)
     app.configure(presetAssistantConfigurator)
+    if (val.network.addServerTimeInfoForWebSockets) {
+      const cols = [...collections, val.service.user, "presetAssistant", "authentication"]
+      for (const col of cols) {
+        app.service(col).hooks({
+          before: {
+            all: [
+              stampHook("arrive"),
+              perfHook("pstart")
+            ]
+          },
+          after: {
+            all: [
+              perfDiff("pend", "pstart"),
+              stampHook("leave"),
+              paramToResult("arrive"),
+              paramToResult("leave"),
+              paramToResult("pend")
+            ]
+          }
+        })
+      }
+    }
     return app
   }
 }

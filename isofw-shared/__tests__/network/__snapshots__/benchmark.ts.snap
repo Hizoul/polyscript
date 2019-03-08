@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`network benchmark test should collect numeric data: After Log in but before real-time 1`] = `
+Object {
+  "createState": Object {},
+  "currentlyEditing": "",
+  "fetching": Object {},
+  "getFromServer": [Function],
+  "getState": Object {
+    "users": Object {
+      "-1": undefined,
+    },
+  },
+  "lastFetch": Object {},
+  "removeState": Object {},
+  "updateState": Object {},
+}
+`;
+
+exports[`network benchmark test should collect numeric data: After Log in but before real-time 2`] = `
+Object {
+  "createState": Object {},
+  "currentlyEditing": "",
+  "fetching": Object {},
+  "getFromServer": [Function],
+  "getState": Object {
+    "users": Object {
+      "-1": undefined,
+    },
+  },
+  "lastFetch": Object {},
+  "removeState": Object {},
+  "updateState": Object {},
+}
+`;
+
+exports[`network benchmark test should collect numeric data: After Login 1`] = `
+Object {
+  "authErr": null,
+  "connected": true,
+  "loading": false,
+  "loggedIn": true,
+  "user": undefined,
+}
+`;
+
+exports[`network benchmark test should collect numeric data: After Login 2`] = `
+Object {
+  "authErr": Object {},
+  "connected": true,
+  "loading": false,
+  "loggedIn": false,
+  "user": null,
+}
+`;
+
+exports[`network benchmark test should collect numeric data: Before Login 1`] = `
+Object {
+  "authErr": null,
+  "connected": true,
+  "loading": false,
+  "loggedIn": false,
+  "user": null,
+}
+`;
+
+exports[`network benchmark test should collect numeric data: Before Login 2`] = `
+Object {
+  "authErr": null,
+  "connected": true,
+  "loading": false,
+  "loggedIn": true,
+  "user": undefined,
+}
+`;
