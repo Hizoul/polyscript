@@ -14,7 +14,6 @@ import { get } from "lodash"
 import activateNextPresets from "./hooks/activateNextPresets"
 import freeUnusedPresets, { freePresetsOfProject } from "./hooks/freeUnusedPresets"
 import requireAuthentication from "./hooks/requireAuthentication"
-import console = require("console");
 
 const presetAssistantConfigurator: any = (app: feathers.Application) => {
 
