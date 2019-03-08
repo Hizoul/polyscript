@@ -24,9 +24,10 @@ const makeCall = (collection: string, method: string, data: any[]) => {
   })
 }
 
-const UDPClient: IUiClient & {url: string, port: number} = {
+const UDPClient: IUiClient & {url: string, port: number, giveOriginal: boolean} = {
   url: "",
   port: -1,
+  giveOriginal: false,
   client: null,
   connectTo: (url: any, options: any) => {
     return new Promise((resolve) => {
@@ -44,7 +45,7 @@ const UDPClient: IUiClient & {url: string, port: number} = {
         }
       })
       UDPClient.client.on("message", (data: any) => {
-        clientMessageHandler(data, promises, options)
+        clientMessageHandler(data, promises, options, UDPClient.giveOriginal)
       })
 
       UDPClient.client.on("error", () => {

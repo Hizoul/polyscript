@@ -2,25 +2,42 @@ import val from "isofw-shared/src/globals/val"
 import { dataOptions } from "isofw-shared/src/util/xpfwdata"
 import { get, isString } from "lodash"
 
-const clientMessageHandler = (data: any, promises: any, options: any) => {
+let unparseable = ""
+let tries = 0
+
+const clientMessageHandler = (data: any, promises: any, options: any, giveOriginal?: boolean) => {
   const toSplit = isString(data) ? data : data.toString("utf8")
   const messages = toSplit.split(val.network.packetDelimiter)
   for (const unparsedMessage of messages) {
     if (unparsedMessage.length > 0) {
-      const message = JSON.parse(unparsedMessage)
-      if (promises[message.trackId]) {
-        if (promises[message.trackId] === -1) {
-          const dbStore = get(options, "dbStore")
-          if (dbStore != null) {
-            const isRemoved = get(message, `method`) === "removed"
-            const result = get(message, `result`)
-            dbStore.setItem(get(result, dataOptions.idPath), get(message, `collection`), isRemoved ? null : result)
+      try {
+        const message = JSON.parse(unparsedMessage)
+        if (promises[message.trackId]) {
+          if (promises[message.trackId] === -1) {
+            const dbStore = get(options, "dbStore")
+            if (dbStore != null) {
+              const isRemoved = get(message, `method`) === "removed"
+              const result = get(message, `result`)
+              console.log("SAVED RESULT", result.arrive, result.leave)
+              dbStore.setItem(get(result, dataOptions.idPath), get(message, `collection`), isRemoved ? null : result)
+            }
+          } else {
+            promises[message.trackId].resolve(giveOriginal === true ? message : message.result)
+            delete promises[message.trackId]
           }
-        } else {
-          promises[message.trackId].resolve(message.result)
-          delete promises[message.trackId]
         }
-    }
+      } catch (e) {
+        console.log("UNABLE TO PARSE", unparsedMessage)
+        unparseable += unparsedMessage
+        tries++
+        if (tries > 1) {
+          tries = 0
+          const toTry = unparseable
+          unparseable = ""
+          console.log("TRYING TO PARSE UNPARSEABLE", toTry)
+          clientMessageHandler(toTry, promises, options)
+        }
+      }
     }
   }
 }

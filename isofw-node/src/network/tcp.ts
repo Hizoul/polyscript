@@ -1,7 +1,9 @@
-import collections from " isofw-shared/src/xpfwDefs/collections";
-import val from "isofw-shared/src/globals/val";
+import collections from " isofw-shared/src/xpfwDefs/collections"
+import val from "isofw-shared/src/globals/val"
+import { isObject } from "lodash"
 import { createServer, Socket } from "net"
 import serverRequestHandler from "./handler"
+
 const methods = ["created", "patched", "removed", "updated"]
 const initiateTcp = async (port: number, app: any) => {
   return new Promise((resolve) => {
@@ -22,8 +24,19 @@ const initiateTcp = async (port: number, app: any) => {
     server.on("connection", (sock) => {
       activeSockets.push(sock)
       sock.on("data", async (data: any) => {
-          const result = await serverRequestHandler(data, app)
-          sock.write(JSON.stringify(result) + val.network.packetDelimiter)
+        let start: any, end: any, startAt
+        if (val.network.addServerTimeInfo) {
+          start = performance.now()
+          startAt = Date.now()
+        }
+        const result: any = await serverRequestHandler(data, app)
+        end = performance.now()
+        result.pend = end - start
+        result.start = start
+        result.end = end
+        result.arrive = startAt
+        console.log("SENDING", JSON.stringify(result))
+        sock.write(JSON.stringify(result) + val.network.packetDelimiter)
       })
       sock.on("close", function(data: any) {
           console.log("CLOSED: " + sock.remoteAddress + " " + sock.remotePort)

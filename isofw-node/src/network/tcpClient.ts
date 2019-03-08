@@ -23,8 +23,9 @@ const makeCall = (collection: string, method: string, data: any[]) => {
   })
 }
 
-const TCPClient: IUiClient = {
+const TCPClient: IUiClient & {giveOriginal?: boolean} = {
   client: null,
+  giveOriginal: false,
   connectTo: (url: any, options: any) => {
     return new Promise((resolve) => {
       TCPClient.client = new Socket()
@@ -39,7 +40,7 @@ const TCPClient: IUiClient = {
         }
       })
       TCPClient.client.on("data", (data: any) => {
-        clientMessageHandler(data, promises, options)
+        clientMessageHandler(data, promises, options, TCPClient.giveOriginal)
       })
 
       TCPClient.client.on("close", () => {
@@ -59,10 +60,14 @@ const TCPClient: IUiClient = {
   },
   login: async (loginData: any) => {
     const loginRes: any = await makeCall("authentication", "create", [loginData])
-    const parsedData = parseJwt(loginRes.accessToken)
-    currentToken = loginRes.accessToken
+    currentToken = TCPClient.giveOriginal === true ? loginRes.result.accessToken : loginRes.accessToken
+    const parsedData = parseJwt(currentToken)
     const user = await TCPClient.get(dataOptions.userCollection, get(parsedData, "userId"))
-    return {
+    return TCPClient.giveOriginal === true ? {
+      ...loginRes,
+      user,
+      accessToken: loginRes.accessToken
+    } : {
       user,
       accessToken: loginRes.accessToken
     }

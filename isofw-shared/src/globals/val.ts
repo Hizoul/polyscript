@@ -20,7 +20,8 @@ const val = {
     websocket: 0,
     tcp: 1,
     udp: 2,
-    packetDelimiter: "_MSG_END_"
+    packetDelimiter: "_MSG_END_",
+    addServerTimeInfo: true
   }
 }
 

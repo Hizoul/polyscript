@@ -55,6 +55,7 @@ const networkTest = (useNetwork: number, client: any) => {
       expect(toJS(FormStore)).toMatchSnapshot("After using the utility function")
       await tcpServer.cleanUp()
       await promiseTimeout(1000)
+      console.log("THE MEASUREMENTS ARE", client.measurements)
     }, 16000)
   })
 
