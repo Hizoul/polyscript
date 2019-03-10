@@ -66,6 +66,10 @@ const webpackConfig: webpack.Configuration = {
       "@xpfw/dm-shared": path.resolve(__dirname, `./node_modules/@xpfw/dm-shared`),
       "@xpfw/dm": path.resolve(__dirname, `./node_modules/@xpfw/dm`)
     }
+  },
+  node: {
+    dgram: "empty",
+    net: "empty"
   }
 }
 
