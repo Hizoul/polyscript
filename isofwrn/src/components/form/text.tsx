@@ -17,7 +17,7 @@ const NativeTextField: React.FunctionComponent<IFieldProps> = observer((props) =
   return (
     <Input
       {...props}
-      label={get(props, "field.mapTo")}
+      label={get(props, "field.title")}
       secureTextEntry={secureTextEntry}
       value={fieldHelper.value}
       keyboardType={keyboardType}
