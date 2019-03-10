@@ -34,6 +34,7 @@ const makeBenchmarkClient = (originalClient: IUiClient, networkType?: number) =>
       })
     },
     measureCall: async (method: string, data: any[]) => {
+      try {
       const clientSent = Date.now()
       const start = performance.now()
       const res = await oc[method](...data)
@@ -45,7 +46,10 @@ const makeBenchmarkClient = (originalClient: IUiClient, networkType?: number) =>
         serverProcessTime: res.pend,
         clientSent, clientArrive
       })
-      return res.result
+      return val.network.networkToUse === val.network.websocket ? res : res.result
+    } catch (e) {
+      return e
+    }
     },
     connectTo: async (url, options) => {
       const start = performance.now()

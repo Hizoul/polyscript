@@ -1,5 +1,5 @@
 import { Hook } from "@feathersjs/feathers"
-import console = require("console")
+import { performance } from "perf_hooks"
 
 const stampHook = (stampAt: string) => {
   const retHook: Hook = (hook) => {

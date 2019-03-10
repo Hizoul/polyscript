@@ -51,9 +51,9 @@ const serverRequestHandler = async (data: any, app: any, cb: any, timeStuffMaker
               }, timeStuff)
             }
           }
-          return Promise.resolve({trackId: message.trackId, error: "no collection specified"})
+          cb({trackId: message.trackId, error: "no collection specified"})
         }
-        return Promise.resolve({trackId: message.trackId, error: "no method specified"})
+        cb({trackId: message.trackId, error: "no method specified"})
       } catch (e)  {
         unparseable += unparsedMessage
         tries++

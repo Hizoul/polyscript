@@ -1,4 +1,5 @@
 import { BlockTitle } from "framework7-react"
+import BenchmarkComponent from "isofw-web/src/components/benchmark"
 import { MenuEntries } from "isofw-web/src/components/menuPanel"
 import WebPageContainer from "isofw-web/src/components/pageContainer"
 import * as React from "react"

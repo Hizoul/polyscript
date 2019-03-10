@@ -35,6 +35,7 @@ const Frameowrk7Create: React.FunctionComponent<ICreateHookProps> = observer((pr
       </div>
     )
   }
+  console.log("GOT CREATE PROPS", createProps.loading)
   return (
     <div>
       <List form={true} style={{margin: "0pt"}}>
@@ -46,7 +47,6 @@ const Frameowrk7Create: React.FunctionComponent<ICreateHookProps> = observer((pr
         onClick={createProps.submitCreate}
         iconFa="plus"
         fill={true}
-        loading={createProps.loading}
         text="Create"
       />
       {msg}

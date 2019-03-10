@@ -11,7 +11,7 @@ const customServiceConfigurator: any = (db: any) => {
     app.configure(pluginCollections(db))
     app.configure(realTimeUpdate)
     app.configure(presetAssistantConfigurator)
-    if (val.network.addServerTimeInfoForWebSockets) {
+    if (val.network.benchmarkEnabled) {
       const cols = [...collections, val.service.user, "presetAssistant", "authentication"]
       for (const col of cols) {
         app.service(col).hooks({

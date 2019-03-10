@@ -1,7 +1,7 @@
 import val from "isofw-shared/src/globals/val"
 import { randomInRange, randomString } from "isofw-shared/src/util/predictableRandomness"
+import BenchmarkStore from "./benchmarkStore"
 import { IBenchmarkClient } from "./clientBenchmarker"
-import { writeFileSync } from "fs";
 
 const makeRandomProgrmanEntry = () => {
   return {
@@ -24,13 +24,17 @@ const makeRandomDisabledCameras = () => {
   }
   return ret
 }
-
+const amountOfCalls = 150
 const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string, type?: number) => {
+  BenchmarkStore.uploaded = false
+  client.measurements = []
   const program = []
   for (let i = 0; i < 250; i++) {
     program.push(makeRandomProgrmanEntry())
   }
-  for (let i = 0; i < 1500; i++) {
+  BenchmarkStore.total = amountOfCalls
+  for (let i = 1; i <= amountOfCalls; i++) {
+    BenchmarkStore.currentlyAt = i
     switch (randomInRange(0, 3)) {
       case 0: {
         await client.patch(val.service.project, projectId, {
@@ -59,8 +63,9 @@ const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string, 
       }
     }
   }
-  writeFileSync(`network${type}${projectId}.txt`, JSON.stringify(client.measurements))
+  // writeFileSync(`network${type}${projectId}.txt`, JSON.stringify(client.measurements))
   await client.persistResults()
+  BenchmarkStore.uploaded = true
 }
 
 export default causeProjectTraffic

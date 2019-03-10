@@ -25,6 +25,13 @@ const initiateUdp = async (port: number, app: any) => {
             // Write the data back to the socket, the client will receive it as data from the server
             const responseData = Buffer.from(JSON.stringify(result))
             server.send(responseData, 0, responseData.length, remote.port, remote.address)
+          }, () => {
+            let start: any, startAt: any
+            if (val.network.addServerTimeInfo) {
+              startAt = Date.now()
+              start = performance.now()
+            }
+            return {startAt, start}
           })
       })
       resolve()

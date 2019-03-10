@@ -107,7 +107,8 @@ const ProjectCameras: ExtendedJSONSchema = {
     namePath: ProjectName.title,
     collection: "cameras",
     idPath: "_id"
-  }
+  },
+  items: {type: "string"}
 }
 
 const DisabledCameras: ExtendedJSONSchema = cloneDeep(ProjectCameras)

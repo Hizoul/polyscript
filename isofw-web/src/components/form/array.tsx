@@ -9,6 +9,7 @@ const ArrayField: React.FunctionComponent<IFieldProps> = observer((props) => {
   return (
     <div>
       {map(arrayHelper.fields, (field: any, index: any) => {
+        console.log("GOT ARRAY FIELD", field)
         return (
         <div className="flex flex1 center">
           <SharedField schema={field.schema} mapTo={field.mapTo} prefix={props.prefix} />
