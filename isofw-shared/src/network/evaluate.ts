@@ -1,5 +1,7 @@
 import { get } from "lodash"
 
+const sortNumAscending = (a: any, b: any) => a - b
+
 const evaluateMeasurements = async (measurements: any[]) => {
   const result: any = {}
   for (const measurement of measurements) {
@@ -36,24 +38,6 @@ const evaluateMeasurements = async (measurements: any[]) => {
       result[user][networkType].totalClientTime += measure.clientProcessTime - measure.serverProcessTime
       result[user][networkType].totalClientToServer += clientToServer
       result[user][networkType].totalServerToClient += serverToClient
-      if (result[user][networkType].fastestRoundTrip > measure.clientProcessTime) {
-        result[user][networkType].fastestRoundTrip = measure.clientProcessTime
-      }
-      if (result[user][networkType].slowestRoundTrip < measure.clientProcessTime) {
-        result[user][networkType].slowestRoundTrip = measure.clientProcessTime
-      }
-      if (result[user][networkType].fastestClientToServer > clientToServer) {
-        result[user][networkType].fastestClientToServer = clientToServer
-      }
-      if (result[user][networkType].slowestClientToServer < clientToServer) {
-        result[user][networkType].slowestClientToServer = clientToServer
-      }
-      if (result[user][networkType].fastestServerToClient > serverToClient) {
-        result[user][networkType].fastestServerToClient = serverToClient
-      }
-      if (result[user][networkType].slowestServerToClient < serverToClient) {
-        result[user][networkType].slowestServerToClient = serverToClient
-      }
     }
   }
   const finalResult: any = {}
@@ -72,7 +56,13 @@ const evaluateMeasurements = async (measurements: any[]) => {
         avgClientToServer: r.totalClientToServer / r.total,
         avgServerToClient: r.totalServerToClient / r.total,
         avgBytesPerMs: r.totalBytes / r.totalProcessTime,
-        avgMbytePerSecond: ((r.totalBytes / 1024) / 1024) / (r.totalProcessTime / 1000)
+        avgMbytePerSecond: ((r.totalBytes / 1024) / 1024) / (r.totalProcessTime / 1000),
+        medianRoundTrip: r.roundTrip.sort(sortNumAscending)[Math.round(r.roundTrip.length / 2)],
+        medianClientToServer: r.clientToServer.sort(sortNumAscending)[Math.round(r.clientToServer.length / 2)],
+        medianServerToClient: r.serverToClient.sort(sortNumAscending)[Math.round(r.serverToClient.length / 2)],
+        slowestServerToClient: r.serverToClient[r.serverToClient.length - 1], fastestServerToClient: r.serverToClient[0],
+        slowestRoundTrip: r.roundTrip[r.roundTrip.length - 1], fastestRoundTrip: r.roundTrip[0],
+        slowestClientToServer: r.clientToServer[r.clientToServer.length - 1], fastestClientToServer: r.clientToServer[0]
       }
     }
   }
