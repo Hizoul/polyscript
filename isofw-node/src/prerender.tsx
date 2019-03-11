@@ -1,7 +1,6 @@
 import * as fs from "fs"
 import val from "isofw-shared/src/globals/val"
 import notNull from "isofw-shared/src/util/notNull"
-import BaseApp from "isofw-web/src/comp"
 import * as React from "react"
 import * as ReactDOMServer from "react-dom/server"
 
@@ -33,7 +32,7 @@ const prerenderMaker: (webpackResults: {
   .replace(`<script src="./isoapp.js"><\/script>`, replaceWith)
 
   const handleRender = (req: any, res: any) => {
-    const renderedHtml = ReactDOMServer.renderToString(<BaseApp />)
+    const renderedHtml = ReactDOMServer.renderToString(<div />)
     const document = indexFile.replace(indexReplaceRegex,
     `<div id="root">${renderedHtml}</div>`)
     res.send(document)
