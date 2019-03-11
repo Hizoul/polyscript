@@ -14,9 +14,11 @@ const freePresetsOfProject = async (app: Application, projectId: any, deleteAll?
       projectProgram = []
     }
     for (const programItem of projectProgram) {
-      const id = programItem[String(ShotPreset.title)]
-      if (id) {
-        presetIdsInUse.push(id)
+      if (programItem != null) {
+        const id = programItem[String(ShotPreset.title)]
+        if (id) {
+          presetIdsInUse.push(id)
+        }
       }
     }
   }

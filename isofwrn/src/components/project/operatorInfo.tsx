@@ -10,10 +10,10 @@ import NativeNameDisplayer from "isofwrn/src/components/displayName"
 import CurrentOperatorDisplay from "isofwrn/src/components/project/operatorInfoOperatorChooser"
 import NativeTable from "isofwrn/src/components/table"
 import { get } from "lodash"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 import { StyleSheet, Text, View } from "react-native"
 import { Card, Overlay } from "react-native-elements"
-import { observer } from "mobx-react-lite";
 
 const CamName: React.FunctionComponent<any> = (props) => {
   if (props.isHeader) {return <Text>Camera</Text>}
@@ -65,10 +65,10 @@ const TopBarStyle = StyleSheet.create({
 const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) => {
   const scrollViewRef: any = React.useRef(undefined)
   const previousPosition = React.useState(0)
-  const operatorHelper = useOperatorInfo(props.id, props.mapTo, props.prefix, props.reset)
+  const operatorHelper = useOperatorInfo(props.id, props.mapTo, props.prefix)
   React.useEffect(() => {
     if (scrollViewRef != null && scrollViewRef.current != null) {
-      const newPosition = get(props, "original.result." + ProjectShot.title)
+      const newPosition = get(operatorHelper.original, String(ProjectShot.title))
       if (newPosition !== previousPosition) {
         previousPosition[1](newPosition)
         scrollViewRef.current.scrollToOffset({

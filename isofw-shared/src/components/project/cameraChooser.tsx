@@ -10,7 +10,7 @@ const freePresetKey = "freePresetGetter"
 const togglePop = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: string, newValue?: any) => {
   if (mapTo == null) { mapTo = getMapTo(schema, mapTo)}
   return () => {
-    FormStore.setValue(mapTo, newValue, prependPrefix(popupVisibilityKey, prefix))
+    FormStore.setValue(mapTo, newValue, prependPrefix(prefix, popupVisibilityKey))
   }
 }
 const untypedDbStore: any = DbStore
@@ -43,14 +43,14 @@ const useCameraChooser = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: s
   let cameras = FormStore.getValue(ProjectCameras.title, prefix)
   cameras = cameras ? cameras : []
   const arr = mapTo.substring(0, mapTo.indexOf("["))
-  const pop = FormStore.getValue(arr, prependPrefix(popupVisibilityKey, prefix))
+  const pop = FormStore.getValue(arr, prependPrefix(prefix, popupVisibilityKey))
   if (pop == null || pop.length < 600) {
-    FormStore.setValue(arr, emptyArray(602), prependPrefix(popupVisibilityKey, prefix))
+    FormStore.setValue(arr, emptyArray(602), prependPrefix(prefix, popupVisibilityKey))
   }
   return {
     cameras,
     value: FormStore.getValue(getMapTo(schema, mapTo), prefix),
-    showPopUp: FormStore.getValue(getMapTo(schema, mapTo), prependPrefix(popupVisibilityKey, prefix)),
+    showPopUp: FormStore.getValue(getMapTo(schema, mapTo), prependPrefix(prefix, popupVisibilityKey)),
     hidePop: memo(() => togglePop(schema, mapTo, prefix, false), ["hidePop", mapTo, prefix, JSON.stringify(schema)]),
     showPop: memo(() => togglePop(schema, mapTo, prefix, true), ["showPop", mapTo, prefix, JSON.stringify(schema)]),
     setValueWithPreset: memo(() => setValueWithPreset(schema, mapTo, prefix), ["setValueWithPreset", JSON.stringify(schema), mapTo, prefix])
