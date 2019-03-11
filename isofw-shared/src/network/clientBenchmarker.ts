@@ -1,15 +1,19 @@
 import val from "isofw-shared/src/globals/val"
-import { IUiClient } from "isofw-shared/src/util/xpfwdata"
+import { get } from "lodash"
+import { IUiClient, UserStore } from "isofw-shared/src/util/xpfwdata"
 
 export interface IMeasurement {
-  time: number
+  clientProcessTime: number
   method: string
   collection: string
+  userId: string
   clientSent?: number
   clientArrive?: number
   serverArrive?: number
   serverSent?: number
   serverProcessTime?: number
+  serverMsgSize?: number
+  clientMsgSize?: number
 }
 
 export interface IBenchmarkClient extends IUiClient {
@@ -41,10 +45,13 @@ const makeBenchmarkClient = (originalClient: IUiClient, networkType?: number) =>
       const end = performance.now()
       const clientArrive = Date.now()
       newClient.measurements.push({
-        method, collection: data[0], time: end - start,
+        userId: get(UserStore, "user.email", "notLoggedIn"),
+        method, collection: data[0], clientProcessTime: end - start,
         serverArrive: res.arrive, serverSent: res.sent,
         serverProcessTime: res.pend,
-        clientSent, clientArrive
+        clientSent, clientArrive,
+        clientMsgSize: Buffer.from(JSON.stringify(data) + val.network.packetDelimiter).byteLength,
+        serverMsgSize: Buffer.from(JSON.stringify(res) + val.network.packetDelimiter).byteLength
       })
       return val.network.networkToUse === val.network.websocket ? res : res.result
     } catch (e) {
