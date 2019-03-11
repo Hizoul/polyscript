@@ -7,13 +7,18 @@ const schema = ProjectForm
 const increaseShotNumber = (id: string, decrease?: boolean) => {
     return async () => {
       const valueHelper = useField(String(ProjectShot.title), prependPrefix(ProjectForm.title, directorPrefix))
+      console.log("VALUE HELPER IS", valueHelper.value)
       valueHelper.setValue(valueHelper.value + (decrease ? -1 : 1))
-      return DbStore.patch(id, ProjectForm, undefined, directorPrefix)
+      console.log("ABOUT TO PATCH", toJS(FormStore.getValue(ProjectForm.title, directorPrefix)))
+      const res = await DbStore.patch(id, ProjectForm, undefined, directorPrefix)
+      console.log("after patch IS", JSON.stringify(res))
+      return res
     }
 }
 
 const useDirector = (id: string) => {
   const directorEdit = useEdit(id, schema, undefined, directorPrefix)
+  console.log("IN DIRECTOR WITH", toJS(directorEdit.original))
   return {
     ...directorEdit,
     increase: memo(() => increaseShotNumber(id, false), ["increaser", id, false]),

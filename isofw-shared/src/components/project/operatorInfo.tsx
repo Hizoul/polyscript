@@ -34,10 +34,12 @@ const useOperatorInfo = (id: string, mapTo?: string, prefix?: string, defItem?: 
   let filteredList = program
   const presetByCameraObj: any = {}
   filteredList.forEach((subItem: any) => {
-    if (presetByCameraObj[subItem[String(ShotCamera.title)]] == null) {
-      presetByCameraObj[subItem[String(ShotCamera.title)]] = []
+    if (subItem != null) {
+      if (presetByCameraObj[subItem[String(ShotCamera.title)]] == null) {
+        presetByCameraObj[subItem[String(ShotCamera.title)]] = []
+      }
+      presetByCameraObj[subItem[String(ShotCamera.title)]].push(subItem[String(ShotPreset.title)])
     }
-    presetByCameraObj[subItem[String(ShotCamera.title)]].push(subItem[String(ShotPreset.title)])
   })
   const presetByCamera: any[] = []
   for (const k of Object.keys(presetByCameraObj)) {
