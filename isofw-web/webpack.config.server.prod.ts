@@ -10,13 +10,13 @@ gracefulFs.gracefulify(fs)
 const untypedConfiguration: any = configuration
 untypedConfiguration.mode = "production"
 untypedConfiguration.plugins.push(new webpack.optimize.ModuleConcatenationPlugin())
-untypedConfiguration.plugins.push(new UglifyJs())
+// untypedConfiguration.plugins.push(new UglifyJs())
 
-const serverPath = path.resolve(__dirname, `../isofw-node`)
-untypedConfiguration.plugins.push(
-  new CopyWebpackPlugin([
-    {from: `${serverPath}/node_modules`, to: `${serverPath}/webpackDist/node_modules` }
-  ])
-)
+// const serverPath = path.resolve(__dirname, `../isofw-node`)
+// untypedConfiguration.plugins.push(
+//   new CopyWebpackPlugin([
+//     {from: `${serverPath}/node_modules`, to: `${serverPath}/webpackDist/node_modules` }
+//   ])
+// )
 
 export default untypedConfiguration

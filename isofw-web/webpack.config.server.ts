@@ -25,6 +25,9 @@ const webpackServerConfig: webpack.Configuration = {
   },
   plugins: [
     new CopyWebpackPlugin([{
+      from: "./package.json", to: path.resolve(__dirname, `../isofw-node/webpackDist/package.json`)
+    }]),
+    new CopyWebpackPlugin([{
       from: "webpackDist/app", to: path.resolve(__dirname, `../isofw-node/webpackDist/app`)
     }]),
     new MiniCssExtractPlugin({filename: "app/isofwwebstyles.css"})
