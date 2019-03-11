@@ -275,10 +275,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@xpfw/data-feathers@1.0.0-beta.6":
-  version "1.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/@xpfw/data-feathers/-/data-feathers-1.0.0-beta.6.tgz#f9359c12910f5004224497cd50d0237a52575ae4"
-  integrity sha512-7KSpKliajPgPXBHQsv346JcG5hnNinZfzq3MH/gk/MdWnGjM7vKalYSwwm+OOdcnJO+2erB/5gz6uCeq+0kOwg==
+"@xpfw/data-feathers@1.0.0-beta.7":
+  version "1.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/@xpfw/data-feathers/-/data-feathers-1.0.0-beta.7.tgz#f57554ba9c447fa73df4b9d4fa6cf1118a64e4ee"
+  integrity sha512-1/VRXwPn0SRtCakDkokxoh8iQtzWqr82XltCtv2V1EMFYasIv2bEbMnh9mrb88nFzoOWGdQx02L8PYbRQcCZaw==
   dependencies:
     "@feathersjs/authentication-client" "^1.0.10"
     "@feathersjs/feathers" "^3.3.1"
@@ -286,25 +286,25 @@
     "@feathersjs/socketio-client" "^1.2.1"
     socket.io-client "^2.2.0"
 
-"@xpfw/data-tests@1.0.0-beta.6":
-  version "1.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/@xpfw/data-tests/-/data-tests-1.0.0-beta.6.tgz#288f8de779a4d3c7200e95ad10d965be33259c3b"
-  integrity sha512-z3RQ4WUv6T2J0xY/72bvVVxfKsXp77UTrTWR8536oEEVIj5cjAwGfXKu01PF2PbNO9J0M8NifCQspqDF2xp5ig==
+"@xpfw/data-tests@1.0.0-beta.7":
+  version "1.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/@xpfw/data-tests/-/data-tests-1.0.0-beta.7.tgz#e3b885ae5f105e28dfe6641ef3676d58d46a849a"
+  integrity sha512-ebOuNpKvvKkT/z5yn/8vJtu2ZrFLrka1Lbd8zvPwXQadRxQrBZJoHD2QVh4rmwELgplq68BJOoiUha51fWlXGQ==
 
-"@xpfw/data@1.0.0-beta.6":
-  version "1.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.6.tgz#06c969d127fda67f3526b65743c5fbe40cbb9293"
-  integrity sha512-PkREyUwHpc15b7Z3hXk8M2zd9NQqMHsuYhLUUaovvoaCqWIJXNuh7PCPsu3iMyW1DwldeVGpfAl25c4Ip7vG8g==
+"@xpfw/data@1.0.0-beta.7":
+  version "1.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.7.tgz#ee98592b62a1aa5eea9833428c10233a721fc93f"
+  integrity sha512-3efwYANrHIbAvdXPzP5Du9ltMyBWKfKF17czXvaRiXPsmxxwCOXvhdUZ5sZ2XL1SGKVUZXz3luMyaFu8q+snxA==
 
-"@xpfw/form-tests@1.0.0-beta.6":
-  version "1.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/@xpfw/form-tests/-/form-tests-1.0.0-beta.6.tgz#f9e2a7176908a2ed3360c16866052179e040f357"
-  integrity sha512-4Q55R+wkQIT8zKU8pbPMhJ5fzkpDY+T4y7lEVE54sOJAZMsPrqkJQTcxokAZHGHCWMWyf4vsdBvtkUkA/NjMjQ==
+"@xpfw/form-tests@1.0.0-beta.7":
+  version "1.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/@xpfw/form-tests/-/form-tests-1.0.0-beta.7.tgz#a127e8cccece27b5b311d16e98e3d68618437215"
+  integrity sha512-EbKtx1Mxs2aKDRJsU76GYvVPWhDtk+/G2bkfVhiNAiBge/MVoxKNTQU8jpvoE6NncB6lJnEU/ztXp/LgbbgmGA==
 
-"@xpfw/form@1.0.0-beta.6":
-  version "1.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/@xpfw/form/-/form-1.0.0-beta.6.tgz#b8729b9f2259b3b3a82f557c691e456d0b7dfa35"
-  integrity sha512-8HVIqH61b5GJGZxt3uBWWsgvMba7vaS70o+4OM9iAMwXGD1WJCj2aa+xFi8Hg8u96wCecXxYpe34HvJhahP3sw==
+"@xpfw/form@1.0.0-beta.7":
+  version "1.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/@xpfw/form/-/form-1.0.0-beta.7.tgz#4d5fbdf15eb63023035f0d9e8ff16ed9b1de6cae"
+  integrity sha512-4f5wSf8tdHdDCCkf28xfm9WmDuf/RpTGk7Pn4Ou+WMSrfiuHCioQuE48vfGPj00BeOJX+jj1QeOr4/ivRLBRog==
 
 abab@^2.0.0:
   version "2.0.0"
