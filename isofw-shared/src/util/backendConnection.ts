@@ -1,6 +1,6 @@
 import { FeathersClient } from "@xpfw/data-feathers"
-import TCPClient from "isofw-node/src/network/tcpClient";
-import UDPClient from "isofw-node/src/network/udpClient";
+// import TCPClient from "isofw-shared/src/network/tcpClient";
+// import UDPClient from "isofw-shared/src/network/udpClient";
 import url from "isofw-shared/src/globals/url"
 import val from "isofw-shared/src/globals/val"
 import makeBenchmarkClient from "isofw-shared/src/network/clientBenchmarker"
@@ -9,11 +9,11 @@ import collections from "isofw-shared/src/xpfwDefs/collections"
 
 const connect = (storage: any) => {
   let clientToUse = FeathersClient
-  if (val.network.networkToUse === val.network.tcp) {
-    clientToUse = TCPClient
-  } else if (val.network.networkToUse === val.network.udp) {
-    clientToUse = UDPClient
-  }
+  // if (val.network.networkToUse === val.network.tcp) {
+  //   clientToUse = TCPClient
+  // } else if (val.network.networkToUse === val.network.udp) {
+  //   clientToUse = UDPClient
+  // }
   BackendClient.client = clientToUse
   if (val.network.benchmarkEnabled) {
     BackendClient.client = makeBenchmarkClient(clientToUse, val.network.networkToUse)

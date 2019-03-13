@@ -1,7 +1,7 @@
-import val from "isofw-shared/src/globals/val";
+import val from "isofw-shared/src/globals/val"
 import parseJwt from "isofw-shared/src/util/parseJwt"
 import { dataOptions, IUiClient } from "isofw-shared/src/util/xpfwdata"
-import { get, isString } from "lodash"
+import { get } from "lodash"
 import { Socket } from "net"
 import clientMessageHandler from "./clientHandler"
 
