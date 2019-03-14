@@ -3,7 +3,7 @@ import useOperatorInfo from "isofw-shared/src/components/project/operatorInfo"
 import urls from "isofw-shared/src/globals/url"
 import val from "isofw-shared/src/globals/val"
 import { IEditHookProps } from "isofw-shared/src/util/xpfwdata"
-import { ProjectName, ProjectShot, ShotCamera, ShotName } from "isofw-shared/src/xpfwDefs/project"
+import { ProjectName, ProjectShot, ShotCamera, ShotName, ShotNumber } from "isofw-shared/src/xpfwDefs/project"
 import WebButton from "isofw-web/src/components/button"
 import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
@@ -41,7 +41,7 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
           })}
     </div>
   ) : (
-    <div className="data-table card" style={{marginLeft: "0pt", marginRight: "0pt"}}>
+    <div className="data-table card" style={{overflowY: "scroll", marginLeft: "0pt", marginRight: "0pt"}}>
       <table>
         <thead>
           <tr>
@@ -68,7 +68,7 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
     </div>
   )
   return (
-    <div>
+    <div className="flex1 column" style={{maxHeight: "100%"}}>
       <Row>
         <Col>
             <div className="subtitleBox withPadding">
@@ -89,12 +89,7 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
             <div className="subtitle">Current shot</div>
             {operatorHelper.currentPreset ? (
               <div>
-                <NameDisplayer
-                  collection={val.service.camera}
-                  id={get(operatorHelper.currentPreset, String(ShotCamera.title))}
-                  getNameFrom={String(ProjectName.title)}
-                  placeholder=""
-                /> &nbsp;
+                {get(operatorHelper.currentPreset, String(ShotNumber.title), "")} &nbsp;
                 {get(operatorHelper.currentPreset, String(ShotName.title), "")}
               </div>
             ) : null}

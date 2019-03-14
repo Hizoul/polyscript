@@ -20,7 +20,7 @@ const viewWrapStyle = {paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1, 
 const NativeTable: React.FunctionComponent<INativeTable> = (props) => {
   let i = 0
   return (
-    <View style={{flexDirection: "column", maxHeight: 220}}>
+    <View style={{flexDirection: "column"}}>
       <View style={{flexDirection: "row"}}>
         {props.rows.map((Item: any) => {
           if (isString(Item)) {

@@ -15,6 +15,7 @@ const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards,
 
 const ProgramObject: React.FunctionComponent<IFieldProps & {
   decreaseSize: any
+  index: number
   increaseSize: any
 }> = (props) => {
   const mapTo = getMapToFromProps(props)
@@ -59,7 +60,7 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
       </div>
       <span className="shotNumber">
         {attentionItem}
-        R
+        {get(props, "index")}
         {attentionItem}
       </span>
       <List form={true} className="noMargin">
@@ -81,6 +82,7 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
 
 const ProgramArray: React.FunctionComponent<IFieldProps> = observer((props) => {
   const arrayHelper = useArray(props.schema, props.mapTo, props.prefix)
+  let i = 0
   return (
     <div className="flex1">
       {arrayHelper.fields.map((subField) =>
@@ -88,6 +90,7 @@ const ProgramArray: React.FunctionComponent<IFieldProps> = observer((props) => {
           {...props}
           key={subField.mapTo}
           {...subField}
+          index={++i}
         />
       )}
     </div>

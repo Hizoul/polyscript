@@ -8,7 +8,12 @@ import * as React from "react"
 const OperatorInfoPage: React.FunctionComponent<any> = (props) => {
   const id = get(props, "id")
   return (
-    <WebPageContainer backLink={true} requireLoggedIn={true} name="operatorInfo" title="Operator info's">
+    <WebPageContainer
+      backLink={true}
+      requireLoggedIn={true}
+      name="operatorInfo"
+      title="Operator info's"
+    >
       <OperatorInfo schema={{}} id={id} prefix="edit" />
     </WebPageContainer>
   )

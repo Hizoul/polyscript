@@ -47,15 +47,14 @@ const TopBarStyle = StyleSheet.create({
     flex: 1,
     borderWidth: 1,
     borderTopWidth: 0,
-    borderColor: "#c4c4c4"
+    borderColor: "#c4c4c4",
+    paddingLeft: 5,
+    paddingRight: 5
   },
   middleBox: {
     marginRight: 20, marginLeft: 20, alignItems: "center"
   },
   rightBox: {
-    alignContent: "flex-end",
-    justifyContent: "flex-end",
-    alignItems: "flex-end"
   },
   title: {
     fontSize: 24
@@ -81,7 +80,7 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
 
   let i = 0
   const content = operatorHelper.isPresetView ? null : (
-    <Card containerStyle={{maxHeight: 250}}>
+    <Card containerStyle={{flex: 1, marginBottom: 5}}>
       <NativeTable
         data={operatorHelper.filteredList}
         keyExtractor={(item) => String(++i)}
@@ -96,11 +95,11 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
     </Card>
   )
   return (
-    <View>
+    <View style={{flex: 1}}>
       <View style={{flexDirection: "row"}}>
         <View style={TopBarStyle.box}>
           <Text>Current project</Text>
-          <Text style={TopBarStyle.title}>{get(props, "original.result.name")}</Text>
+          <Text style={TopBarStyle.title}>{get(operatorHelper, "original.name")}</Text>
         </View>
         <View style={[TopBarStyle.box, TopBarStyle.middleBox]}>
           <CurrentOperatorDisplay {...props} {...operatorHelper} />
