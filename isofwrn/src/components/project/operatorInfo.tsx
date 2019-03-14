@@ -39,7 +39,7 @@ const PresetName: React.FunctionComponent<any> = (props) => {
 }
 const PresetNumber: React.FunctionComponent <any> = (props) => {
   if (props.isHeader) {return <Text>#</Text>}
-  return <Text>{props.index}</Text>
+  return <Text>{get(props.item, ShotNumber.title, -1)}</Text>
 }
 
 const TopBarStyle = StyleSheet.create({
@@ -68,12 +68,12 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
   const operatorHelper = useOperatorInfo(props.id, props.mapTo, props.prefix)
   React.useEffect(() => {
     if (scrollViewRef != null && scrollViewRef.current != null) {
-      const currentShot = get(operatorHelper.original, String(ProjectShot.title))
+      const currentShot = operatorHelper.currentShot
       const newPosition = findIndex(operatorHelper.filteredList, [String(ShotNumber.title), currentShot])
       if (newPosition !== previousPosition[0]) {
         previousPosition[1](newPosition)
         scrollViewRef.current.scrollToOffset({
-          offset: newPosition * 41
+          offset: newPosition * 36
         })
       }
     }
@@ -85,6 +85,7 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
       <NativeTable
         data={operatorHelper.filteredList}
         keyExtractor={(item) => String(++i)}
+        currentEntry={operatorHelper.currentShot}
         rows={[
           PresetNumber, CamName, PresetName, String(ShotImportance.title),
           String(ShotName.title), String(ShotType.title), String(ShotMovement.title),

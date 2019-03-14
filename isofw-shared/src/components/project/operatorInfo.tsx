@@ -54,11 +54,13 @@ const useOperatorInfo = (id: string, mapTo?: string, prefix?: string, defItem?: 
       (subItem: any) => currentCameras.indexOf(subItem[String(ShotCamera.title)]) !== -1)
   }
   const currentPreset = program[get(item, String(ProjectShot.title), 0)]
+  const currentShot = get(item, String(ProjectShot.title))
   return {
     ...editHelper,
     currentOperator,
     currentPreset,
     currentCameras,
+    currentShot,
     presetByCamera,
     filteredList,
     item,

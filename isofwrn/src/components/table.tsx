@@ -1,4 +1,4 @@
-import i18n from "isofw-shared/src/util/i18n"
+import { ShotNumber } from "isofw-shared/src/xpfwDefs/project"
 import { get, isFunction, isString } from "lodash"
 import * as React from "react"
 import { FlatList, Text, View } from "react-native"
@@ -9,6 +9,7 @@ export interface INativeTable {
   data: any[]
   rows: RowContent[]
   refGetter?: any
+  currentEntry?: number
   keyExtractor: (item: any) => string
 }
 
@@ -40,7 +41,7 @@ const NativeTable: React.FunctionComponent<INativeTable> = (props) => {
         contentContainerStyle={{flexDirection: "column"}}
         ref={props.refGetter}
         renderItem={({item, index}) => {
-          return <View style={{flexDirection: "row"}}>
+          return <View style={{flexDirection: "row", backgroundColor: props.currentEntry === get(item, ShotNumber.title, -1) ? "rgba(255, 0, 0, 0.1)" : "rgba(255, 255, 255, 1)"}}>
             {props.rows.map((WantedContent: any) => {
               if (isString(WantedContent)) {
                 return <View key={WantedContent} style={[viewWrapStyle, textAlignmentStyle]}><Text>{get(item, WantedContent)}</Text></View>

@@ -19,7 +19,7 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
   const previousPosition = React.useState(0)
   const operatorHelper = useOperatorInfo(props.id, props.mapTo, props.prefix)
   React.useEffect(() => {
-    const newPosition = get(operatorHelper.original, String(ProjectShot.title))
+    const newPosition = operatorHelper.currentShot
     if (newPosition !== previousPosition[0]) {
       previousPosition[1](newPosition)
       const element = document.getElementById(`presetPositioner${newPosition}`)
@@ -61,7 +61,7 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
         <tbody>
           {operatorHelper.filteredList.map((item: any) => {
             i++
-            return <TablePresetItem item={item} key={i} />
+            return <TablePresetItem item={item} key={i} currentShot={operatorHelper.currentShot} />
           })}
         </tbody>
       </table>
