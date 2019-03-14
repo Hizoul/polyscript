@@ -15,6 +15,7 @@
     "ciInit": "yarn && ./node_modules/.bin/ts-node src/init",
     "setPackageVersions": "./node_modules/.bin/ts-node src/setPackageVersions",
     "rns": "adb reverse tcp:4202 tcp:4202",
+    "rnd": "adb reverse tcp:8081 tcp:8081",
     "rnad": "adb shell input keyevent 82"
   },
   "devDependencies": {
