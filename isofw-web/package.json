@@ -7,7 +7,6 @@
     "start": "npm run dev",
     "build": "./node_modules/.bin/webpack --config ./webpack.config.prod.ts || true",
     "buildSsr": "./node_modules/.bin/webpack --config ./webpack.config.server.prod.ts  || true",
-    "buildElectron": "./node_modules/.bin/webpack --config ./webpack.config.electron.ts  || true",
     "dev": "cross-env ../ci/node_modules/.bin/webpack-dev-server --config ./webpack.config.ts --port 4201 --host '0.0.0.0' --content-base webpackDist",
     "devSsr": "./node_modules/.bin/webpack -w --config ./webpack.config.server.ts"
   },

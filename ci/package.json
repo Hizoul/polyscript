@@ -8,7 +8,7 @@
     "web": "cd ../isofw-web && npm run dev",
     "server": "cd ../isofw-node && npm run dev",
     "test": "./node_modules/.bin/ts-node src/test",
-    "testDev": "cd .. && ./ci/node_modules/.bin/jest --watchAll --coverage --projects isofw-node isofw-shared isofw-web isofw-rn isofw-electron",
+    "testDev": "cd .. && ./ci/node_modules/.bin/jest --watchAll --coverage --projects isofw-node isofw-shared isofw-web isofw-rn",
     "ssr": "./node_modules/.bin/ts-node src/ssrDev",
     "update": "./node_modules/.bin/ts-node src/upgradeDeps",
     "init": "npm install && ./node_modules/.bin/ts-node src/init",

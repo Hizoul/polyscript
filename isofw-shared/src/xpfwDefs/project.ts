@@ -67,6 +67,11 @@ const ShotPreset: ExtendedJSONSchema = {
   theme: "presetNumberDisplay"
 }
 
+const ShotNumber: ExtendedJSONSchema = {
+  type: "number",
+  title: "number"
+}
+
 const ShotImportance: ExtendedJSONSchema = {
   type: "string",
   title: "importance",
@@ -93,7 +98,8 @@ const ProjectProgram: ExtendedJSONSchema = {
       [String(ShotRemarksOperator.title)]: ShotRemarksOperator,
       [String(ShotCamera.title)]: ShotCamera,
       [String(ShotPreset.title)]: ShotPreset,
-      [String(ShotImportance.title)]: ShotImportance
+      [String(ShotImportance.title)]: ShotImportance,
+      [String(ShotNumber.title)]: ShotNumber
     }
   },
   hide: {update: true, create: true}
@@ -182,5 +188,5 @@ export {
   ProjectForm, ProjectName, ProjectShot, ProjectProgram, ShotCamera, ShotPreset, ShotImportance,
   ProjectOperators, ProjectOperatorCameraMapping, OperatorRelation, ProjectCameras, IsActiveField,
   ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator,
-  DisabledCameras
+  DisabledCameras, ShotNumber
 }

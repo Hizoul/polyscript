@@ -5,8 +5,7 @@ const projectDirectories: {[index: string]: string}  = {
     rn: path.resolve(__dirname, `../../isofwrn`),
     web: path.resolve(__dirname, `../../isofw-web`),
     ssr: path.resolve(__dirname, `../../isofw-node`),
-    shared: path.resolve(__dirname, `../../isofw-shared`),
-    electron: path.resolve(__dirname, `../../isofw-electron`)
+    shared: path.resolve(__dirname, `../../isofw-shared`)
 }
 
 export default projectDirectories
