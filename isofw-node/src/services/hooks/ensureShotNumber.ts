@@ -9,13 +9,15 @@ const fixProjectShots = async (hook: HookContext, app: Application, project: any
   let needToPushFix = false
   if (program != null && Array.isArray(program)) {
     for (let i = 0; i < program.length; i++) {
-      const programEntry = program[i]
+      let programEntry = program[i]
       const newNumber = i + 1
-      if (programEntry != null) {
-        if (programEntry[String(ShotNumber.title)] !== newNumber) {
-          needToPushFix = true
-          programEntry[String(ShotNumber.title)] = newNumber
-        }
+      if (programEntry == null) {
+        programEntry = {}
+        program[i] = programEntry
+      }
+      if (programEntry[String(ShotNumber.title)] !== newNumber) {
+        needToPushFix = true
+        programEntry[String(ShotNumber.title)] = newNumber
       }
     }
     project[String(ProjectProgram.title)] = program

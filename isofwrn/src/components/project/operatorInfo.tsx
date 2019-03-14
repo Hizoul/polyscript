@@ -4,12 +4,12 @@ import { IEditHookProps } from "isofw-shared/src/util/xpfwdata"
 import { PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
 import {
   ProjectName, ProjectShot, ShotCamera, ShotDuration, ShotImportance,
-  ShotMovement, ShotMovementTowards, ShotName, ShotPreset, ShotRemarksDirector, ShotType
+  ShotMovement, ShotMovementTowards, ShotName, ShotNumber, ShotPreset, ShotRemarksDirector, ShotType
 } from "isofw-shared/src/xpfwDefs/project"
 import NativeNameDisplayer from "isofwrn/src/components/displayName"
 import CurrentOperatorDisplay from "isofwrn/src/components/project/operatorInfoOperatorChooser"
 import NativeTable from "isofwrn/src/components/table"
-import { get } from "lodash"
+import { findIndex, get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
 import { StyleSheet, Text, View } from "react-native"
@@ -68,11 +68,12 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
   const operatorHelper = useOperatorInfo(props.id, props.mapTo, props.prefix)
   React.useEffect(() => {
     if (scrollViewRef != null && scrollViewRef.current != null) {
-      const newPosition = get(operatorHelper.original, String(ProjectShot.title))
-      if (newPosition !== previousPosition) {
+      const currentShot = get(operatorHelper.original, String(ProjectShot.title))
+      const newPosition = findIndex(operatorHelper.filteredList, [String(ShotNumber.title), currentShot])
+      if (newPosition !== previousPosition[0]) {
         previousPosition[1](newPosition)
         scrollViewRef.current.scrollToOffset({
-          offset: newPosition * 33
+          offset: newPosition * 41
         })
       }
     }
@@ -101,7 +102,7 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
           <Text style={TopBarStyle.title}>{get(props, "original.result.name")}</Text>
         </View>
         <View style={[TopBarStyle.box, TopBarStyle.middleBox]}>
-          <CurrentOperatorDisplay {...props} />
+          <CurrentOperatorDisplay {...props} {...operatorHelper} />
         </View>
         <View style={[TopBarStyle.box, TopBarStyle.rightBox]}>
           <Text>Current Preset</Text>

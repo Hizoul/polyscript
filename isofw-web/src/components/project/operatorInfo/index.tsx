@@ -1,4 +1,4 @@
-import { Block, Col, Icon, Link, Row } from "framework7-react"
+import { Col, Icon, Link, Row } from "framework7-react"
 import useOperatorInfo from "isofw-shared/src/components/project/operatorInfo"
 import urls from "isofw-shared/src/globals/url"
 import val from "isofw-shared/src/globals/val"
@@ -61,7 +61,7 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
         <tbody>
           {operatorHelper.filteredList.map((item: any) => {
             i++
-            return <TablePresetItem item={item} key={i} index={i} />
+            return <TablePresetItem item={item} key={i} />
           })}
         </tbody>
       </table>
