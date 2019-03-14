@@ -16,7 +16,7 @@ exports[`free unused presets after program Update works as planned: after All ha
   className="Button"
 >
   {
-  "text": "Deactivate",
+  "text": "Re-activate",
   "iconFa": "step-backward",
   "loading": false
 }

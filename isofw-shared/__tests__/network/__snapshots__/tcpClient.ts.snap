@@ -2555,7 +2555,10 @@ Object {
   "getFromServer": [Function],
   "getState": Object {
     "users": Object {
-      "-1": undefined,
+      "u1": Object {
+        "_id": "u1",
+        "email": "u1",
+      },
     },
   },
   "lastFetch": Object {},
@@ -2572,7 +2575,10 @@ Object {
   "getFromServer": [Function],
   "getState": Object {
     "users": Object {
-      "-1": undefined,
+      "u1": Object {
+        "_id": "u1",
+        "email": "u1",
+      },
     },
   },
   "lastFetch": Object {},
@@ -2587,7 +2593,10 @@ Object {
   "connected": true,
   "loading": false,
   "loggedIn": true,
-  "user": undefined,
+  "user": Object {
+    "_id": "u1",
+    "email": "u1",
+  },
 }
 `;
 
@@ -2605,7 +2614,10 @@ Object {
       "undefined": "c2bbbbbbbbbbbbbbbb098765",
     },
     "users": Object {
-      "-1": undefined,
+      "u1": Object {
+        "_id": "u1",
+        "email": "u1",
+      },
     },
   },
   "lastFetch": Object {},
@@ -2668,7 +2680,10 @@ Object {
   "getFromServer": [Function],
   "getState": Object {
     "users": Object {
-      "-1": undefined,
+      "u1": Object {
+        "_id": "u1",
+        "email": "u1",
+      },
     },
   },
   "lastFetch": Object {},
@@ -2690,7 +2705,10 @@ Object {
       "undefined": "c1bbbbbbbbbbbbbbbb098765",
     },
     "users": Object {
-      "-1": undefined,
+      "u1": Object {
+        "_id": "u1",
+        "email": "u1",
+      },
     },
   },
   "lastFetch": Object {},
@@ -2712,7 +2730,10 @@ Object {
       "undefined": "c1bbbbbbbbbbbbbbbb098765",
     },
     "users": Object {
-      "-1": undefined,
+      "u1": Object {
+        "_id": "u1",
+        "email": "u1",
+      },
     },
   },
   "lastFetch": Object {},
