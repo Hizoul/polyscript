@@ -12,7 +12,11 @@ import NativeDirectorPage from "./pages/project/directorSheet"
 import NativeOperatorInfo from "./pages/project/operatorInfo"
 import NativeProjectOverview from "./pages/project/overview"
 import NativeProgramPage from "./pages/project/program"
-import "./pages/test"
+
+const drawerConfig: any = {
+  contentComponent: MenuPanel
+}
+
 const navigated = createDrawerNavigator({
   root: {
     screen: createStackNavigator({
@@ -29,8 +33,6 @@ const navigated = createDrawerNavigator({
       headerMode: "none"
     })
   }
-}, {
-  contentComponent: MenuPanel
-})
+}, drawerConfig)
 
 export default createAppContainer(navigated)
