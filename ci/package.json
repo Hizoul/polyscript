@@ -19,14 +19,14 @@
     "rnad": "adb shell input keyevent 82"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.9",
-    "@types/lodash": "^4.14.121",
-    "jest": "^24.1.0",
+    "@types/jest": "^24.0.11",
+    "@types/lodash": "^4.14.123",
+    "jest": "^24.5.0",
     "nodemon": "^1.18.10",
-    "npm-check-updates": "^2.15.0",
-    "ts-node": "^8.0.2",
+    "npm-check-updates": "^3.0.8",
+    "ts-node": "^8.0.3",
     "typescript": "^3.3.3333",
-    "webpack": "^4.29.5",
+    "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1",
     "yarn": "^1.13.0"
