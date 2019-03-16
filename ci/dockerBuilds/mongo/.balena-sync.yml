@@ -1,0 +1,5 @@
+local_balenaos:
+  app-name: mongodb
+  build-triggers:
+    - Dockerfile: ca225f7d945ee2f242363f1db0158dcb33c6dd1a38a6a8acd358533df6922be1
+  environment: []
