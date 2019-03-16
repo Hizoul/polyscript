@@ -4,7 +4,7 @@ import makeApp from "isofw-node/src/app"
 import { get, isObject, isString } from "lodash"
 import { MongoClient } from "mongodb"
 
-let mongoUrl = `mongodb://localhost:27017/`
+let mongoUrl: any = `mongodb://localhost:27017/`
 
 if (isObject(global.process) && isString(process.env.MONGO_URL)) {
   mongoUrl = process.env.MONGO_URL
