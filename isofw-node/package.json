@@ -24,9 +24,7 @@
     "feathers-mongodb": "^4.0.4",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
-    "mongodb": "^3.1.13",
-    "preact": "^8.4.2",
-    "preact-compat": "^3.18.4"
+    "mongodb": "^3.1.13"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
