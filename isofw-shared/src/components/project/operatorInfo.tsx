@@ -1,5 +1,5 @@
 import { useEdit } from "isofw-shared/src/util/xpfwdata"
-import { FormStore } from "isofw-shared/src/util/xpfwform"
+import { FormStore, memo } from "isofw-shared/src/util/xpfwform"
 import {
   OperatorRelation, ProjectCameras, ProjectForm,
   ProjectOperatorCameraMapping, ProjectOperators, ProjectProgram,
@@ -10,6 +10,8 @@ import { find, get } from "lodash"
 const currentOperatorKey = `current${ProjectOperators.title}`
 const whichViewIsActiveKey = `operatorInView`
 const isOperatorChooserVisibleKey = `operatorChooserVisible`
+
+const memoKey = "operatorInfo"
 
 const changeValue = (keyToUse: string, prefix?: string, toggleChooser?: boolean) => {
   return (operator: any) => {
@@ -51,22 +53,27 @@ const useOperatorInfo = (id: string, mapTo?: string, prefix?: string, defItem?: 
     filteredList = filteredList.filter(
       (subItem: any) => currentCameras.indexOf(subItem[String(ShotCamera.title)]) !== -1)
   }
-  const currentPreset = program[get(item, String(ProjectShot.title), 0)]
+  const currentPreset = program[get(item, String(ProjectShot.title), 0) - 1]
+  const currentShot = get(item, String(ProjectShot.title))
   return {
     ...editHelper,
     currentOperator,
     currentPreset,
     currentCameras,
+    currentShot,
     presetByCamera,
     filteredList,
     item,
     isPresetView: FormStore.getValue(whichViewIsActiveKey, prefix) === 1,
     isOperatorChooserVisible: FormStore.getValue(isOperatorChooserVisibleKey, prefix) === true,
-    changeOperator: changeValue(currentOperatorKey, prefix, true),
-    useScriptView: changeValue(whichViewIsActiveKey, prefix)(0),
-    usePresetView: changeValue(whichViewIsActiveKey, prefix)(1),
-    showOperatorChooser: changeValue(isOperatorChooserVisibleKey, prefix)(true),
-    hideOperatorChooser: changeValue(isOperatorChooserVisibleKey, prefix)(false)
+    changeOperator: memo(() => changeValue(currentOperatorKey, prefix, true),
+      [memoKey, currentOperatorKey, prefix, true]),
+    useScriptView: memo(() => changeValue(whichViewIsActiveKey, prefix)(0), [memoKey, whichViewIsActiveKey, prefix, 0]),
+    usePresetView: memo(() => changeValue(whichViewIsActiveKey, prefix)(1), [memoKey, whichViewIsActiveKey, prefix, 1]),
+    showOperatorChooser: memo(() => changeValue(isOperatorChooserVisibleKey, prefix)(true),
+      [memoKey, isOperatorChooserVisibleKey, prefix, true]),
+    hideOperatorChooser: memo(() => changeValue(isOperatorChooserVisibleKey, prefix)(false),
+      [memoKey, isOperatorChooserVisibleKey, prefix, false])
   }
 }
 

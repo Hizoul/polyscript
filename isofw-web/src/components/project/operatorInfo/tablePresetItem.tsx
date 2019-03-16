@@ -1,13 +1,16 @@
 import val from "isofw-shared/src/globals/val"
 import { PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
-import { ProjectForm, ProjectName, ProjectProgram, ProjectShot, ShotCamera,
+import {
+  ProjectName, ShotCamera,
   ShotDuration, ShotImportance, ShotMovement, ShotMovementTowards,
-  ShotName, ShotPreset, ShotRemarksDirector, ShotRemarksOperator, ShotType } from "isofw-shared/src/xpfwDefs/project"
+  ShotName, ShotNumber, ShotPreset, ShotRemarksDirector,
+  ShotRemarksOperator, ShotType
+} from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
 import * as React from "react"
 
-const TablePresetItem: React.FunctionComponent<{item: any, index: number}> = (props) => {
+const TablePresetItem: React.FunctionComponent<{item: any, currentShot: number}> = (props) => {
   let importance = ""
   const importanceValue = get(props.item, String(ShotImportance.title))
   if (importanceValue === "r") {
@@ -15,9 +18,10 @@ const TablePresetItem: React.FunctionComponent<{item: any, index: number}> = (pr
   } else if (importanceValue === "m") {
     importance = "!!"
   }
+  const shotNumber = get(props.item, String(ShotNumber.title), 999)
   return (
-    <tr id={`presetPositioner${props.index}`}>
-      <td>{props.index}</td>
+    <tr id={`presetPositioner${shotNumber}`} className={props.currentShot === shotNumber ? "isActive" : ""}>
+      <td>{shotNumber}</td>
       <td>
         <NameDisplayer collection={val.service.camera} id={get(props.item, String(ShotCamera.title))} getNameFrom={String(ProjectName.title)} placeholder="" />
       </td>

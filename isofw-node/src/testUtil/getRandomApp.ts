@@ -12,8 +12,8 @@ import { DbStore, UserStore } from "isofw-shared/src/util/xpfwdata"
 import collections from "isofw-shared/src/xpfwDefs/collections"
 import { isString } from "lodash"
 import { MongoClient } from "mongodb"
-import convertIds from "./convertIds"
 import customServiceConfigurator from "../services/index"
+import convertIds from "./convertIds"
 import emptyPort from "./emptyPort"
 
 const sio: any = sios
@@ -42,7 +42,7 @@ const getRandomApp = async (memoryServiceName: string,
   const port = await emptyPort()
   app.configure(useRest ? res() : sio())
   if (useMongo) {
-    c = await MongoClient.connect(`mongodb://localhost:27017/`)
+    c = await MongoClient.connect(`mongodb://localhost:27017/`, {useNewUrlParser: true})
     db  = c.db("feathersxpfwvalidatetests" + port)
     col = db.collection(`testFor${memoryServiceName}`)
     app.use(memoryServiceName, mongoServic({

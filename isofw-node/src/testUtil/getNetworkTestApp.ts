@@ -21,7 +21,7 @@ const getNetworkTestApp = async (networkType: number, ClientHolder?: any) => {
   let c: any
   const port = await emptyPort()
 
-  c = await MongoClient.connect(`mongodb://localhost:27017/`)
+  c = await MongoClient.connect(`mongodb://localhost:27017/`, {useNewUrlParser: true})
   db  = c.db("feathersxpfwvalidatetests" + port)
   await db.dropDatabase()
   db  = c.db("feathersxpfwvalidatetests" + port)

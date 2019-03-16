@@ -1,3 +1,5 @@
+import urls from "./url"
+
 const val = {
   isDebug: true,
   isNative: true,
@@ -22,10 +24,16 @@ const val = {
     tcp: 1,
     udp: 2,
     packetDelimiter: "_MSG_END_",
-    addServerTimeInfo: true,
+    addServerTimeInfo: false,
     addServerTimeInfoForWebSockets: false,
-    benchmarkEnabled: true,
+    benchmarkEnabled: false,
     networkToUse: 0
+  },
+  // can be set to an object with {url: string, params: any, navigated: false} so rn will immediately go to the page
+  navigateTo: {
+    url: undefined,
+    params: undefined,
+    navigated: false
   }
 }
 

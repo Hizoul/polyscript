@@ -1,5 +1,8 @@
+import val from "isofw-shared/src/globals/val"
+import { useAuth } from "isofw-shared/src/util/xpfwdata";
 import navigatorRefHolder from "isofwrn/src/components/globalNavigator"
 import { get } from "lodash"
+import { observer } from "mobx-react-lite";
 import * as React from "react"
 import { Platform, View } from "react-native"
 import { colors, Header, Icon, ThemeProvider } from "react-native-elements"
@@ -46,8 +49,14 @@ const MenuAndBack: React.FunctionComponent<any> = (props) => {
     </View>
   )
 }
-const NativePageContained: React.FunctionComponent<IPageContainer> = (props) => {
+const NativePageContained: React.FunctionComponent<IPageContainer> = observer((props) => {
+  const authProps = useAuth()
   navigatorRefHolder.ref = get(props, "navigation")
+  if (val.navigateTo != null && val.navigateTo.navigated === false && authProps.loggedIn) {
+    val.navigateTo.navigated = true
+    setTimeout(() => navigatorRefHolder.ref.navigate(val.navigateTo.url, val.navigateTo.params)
+    , 100)
+  }
   return (
       <View style={{flex: 1}}>
           <Header
@@ -58,6 +67,6 @@ const NativePageContained: React.FunctionComponent<IPageContainer> = (props) => 
           {props.children}
       </View>
   )
-}
+})
 
 export default NativePageContained

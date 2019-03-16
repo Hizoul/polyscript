@@ -14,15 +14,15 @@ const CurrentOperatorDisplay: React.FunctionComponent<any> = (props) => {
   return (
     <View>
       <TouchableHighlight onPress={props.showOperatorChooser}>
-      <View>
-        <View>{name}</View>
-        {props.currentCameras && props.currentCameras.length > 0 ? (
-          <View>
-            <Text>CA</Text>
-            {props.currentCameras.map((camera: any) =>
-            <NativeNameDisplayer key={camera} collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />)}
-          </View>
-        ) : <Text>Showing all cameras</Text>}
+        <View style={{alignItems: "center"}}>
+          <View>{name}</View>
+          {props.currentCameras && props.currentCameras.length > 0 ? (
+            <View>
+              <Text>CA</Text>
+              {props.currentCameras.map((camera: any) =>
+              <NativeNameDisplayer key={camera} collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />)}
+            </View>
+          ) : <Text>Showing all cameras</Text>}
         </View>
       </TouchableHighlight>
       <Overlay isVisible={props.isOperatorChooserVisible} onBackdropPress={props.hideOperatorChooser}>

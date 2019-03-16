@@ -18,7 +18,6 @@ const increaseShotNumber = (id: string, decrease?: boolean) => {
 
 const useDirector = (id: string) => {
   const directorEdit = useEdit(id, schema, undefined, directorPrefix)
-  console.log("IN DIRECTOR WITH", toJS(directorEdit.original))
   return {
     ...directorEdit,
     increase: memo(() => increaseShotNumber(id, false), ["increaser", id, false]),
