@@ -1,7 +1,9 @@
+import { Buffer as b } from "buffer"
 import val from "isofw-shared/src/globals/val"
-import { get } from "lodash"
 import { IUiClient, UserStore } from "isofw-shared/src/util/xpfwdata"
-
+import { get } from "lodash"
+import now from "./now"
+const buffer: any = b
 export interface IMeasurement {
   clientProcessTime: number
   method: string
@@ -40,9 +42,9 @@ const makeBenchmarkClient = (originalClient: IUiClient, networkType?: number) =>
     measureCall: async (method: string, data: any[]) => {
       try {
       const clientSent = Date.now()
-      const start = performance.now()
+      const start = now()
       const res = await oc[method](...data)
-      const end = performance.now()
+      const end = now()
       const clientArrive = Date.now()
       newClient.measurements.push({
         userId: get(UserStore, "user.email", "notLoggedIn"),
@@ -50,8 +52,8 @@ const makeBenchmarkClient = (originalClient: IUiClient, networkType?: number) =>
         serverArrive: res.arrive, serverSent: res.sent,
         serverProcessTime: res.pend,
         clientSent, clientArrive,
-        clientMsgSize: Buffer.from(JSON.stringify(data) + val.network.packetDelimiter).byteLength,
-        serverMsgSize: Buffer.from(JSON.stringify(res) + val.network.packetDelimiter).byteLength
+        clientMsgSize: buffer.byteLength(JSON.stringify(data) + val.network.packetDelimiter),
+        serverMsgSize: buffer.byteLength(JSON.stringify(res) + val.network.packetDelimiter)
       })
       return val.network.networkToUse === val.network.websocket ? res : res.result
     } catch (e) {
@@ -59,10 +61,10 @@ const makeBenchmarkClient = (originalClient: IUiClient, networkType?: number) =>
     }
     },
     connectTo: async (url, options) => {
-      const start = performance.now()
+      const start = now()
       await originalClient.connectTo(url, options)
       newClient.client = originalClient.client
-      const end = performance.now()
+      const end = now()
       newClient.measurements.push({time: end - start, method: "connect", collection: "none"})
     },
     disconnect: () => originalClient.disconnect(),
