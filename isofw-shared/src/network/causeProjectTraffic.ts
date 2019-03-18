@@ -35,6 +35,7 @@ const makeRandomDisabledCameras = () => {
 const amountOfCalls = 150
 const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string, type?: number) => {
   BenchmarkStore.uploaded = false
+  BenchmarkStore.loading = true
   client.measurements = []
   const program = makeRandomProgram()
   BenchmarkStore.total = amountOfCalls
@@ -71,6 +72,7 @@ const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string, 
   // writeFileSync(`network${type}${projectId}.txt`, JSON.stringify(client.measurements))
   await client.persistResults()
   BenchmarkStore.uploaded = true
+  BenchmarkStore.loading = false
 }
 
 export default causeProjectTraffic

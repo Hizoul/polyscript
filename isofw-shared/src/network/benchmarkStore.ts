@@ -8,6 +8,8 @@ import causeProjectTraffic from "./causeProjectTraffic"
  */
 export class BenchmarkStoreClass {
   @observable
+  public loading: boolean = false
+  @observable
   public total: number = 0
   @observable
   public currentlyAt: number = 0

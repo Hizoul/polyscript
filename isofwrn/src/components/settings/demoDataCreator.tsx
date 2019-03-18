@@ -1,5 +1,6 @@
 import { useDemoData } from "isofw-shared/src/util/createDemoData"
 import i18n from "isofw-shared/src/util/i18n"
+import { textCenter } from "isofwrn/src/styles/text";
 import { observer } from "mobx-react-lite"
 import * as React from "react"
 import { ActivityIndicator, View } from "react-native"
@@ -12,7 +13,7 @@ const NativeDemoDataCreator: React.FunctionComponent<any> = observer((props) => 
     <Card
       title={i18n.t("demoDataHeader")}
     >
-      <Text style={{textAlign: "center"}}>{i18n.t("demoDataProgress", [demoHelper.progress, demoHelper.total])}</Text>
+      <Text style={textCenter}>{i18n.t("demoDataProgress", [demoHelper.progress, demoHelper.total])}</Text>
       {demoHelper.loading ? <ActivityIndicator /> : null}
       <View style={{flexDirection: "row"}}>
         <NativeButton

@@ -9,7 +9,6 @@ const DirectorSheetPage: React.FunctionComponent<any> = (props) => {
   return (
     <WebPageContainer backLink={true} requireLoggedIn={true} name="directorSheet" title="Director">
       <ShotEditor id={id} prefix="edit" />
-      <BenchmarkComponent projectId={id} />
     </WebPageContainer>
   )
 }

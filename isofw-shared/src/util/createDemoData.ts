@@ -3,7 +3,7 @@ import { FormStore, memo } from "@xpfw/form"
 import val from "isofw-shared/src/globals/val"
 import { makeRandomProgram } from "isofw-shared/src/network/causeProjectTraffic"
 import { testCameras } from "isofw-shared/src/testUtil/data/camera"
-import { testProjects } from "isofw-shared/src/testUtil/data/project"
+import { addMappings, testProjects } from "isofw-shared/src/testUtil/data/project"
 import { testUsers } from "isofw-shared/src/testUtil/data/users"
 
 const demoLoadingKey = "demoData"
@@ -19,7 +19,7 @@ for (const create of toCreate) {
   totalLength += create.data.length
 }
 FormStore.setValue(demoTotalKey, totalLength)
-
+addMappings()
 const createDemoData = (onlyRemove: boolean) => {
   return async () => {
     FormStore.setLoading(demoLoadingKey, true)
@@ -28,7 +28,7 @@ const createDemoData = (onlyRemove: boolean) => {
     for (const create of toCreate) {
       for (const entry of create.data) {
         try {
-          const removeRes = await DbStore.remove(create.collection, entry._id)
+          const removeRes = await DbStore.remove(entry._id, create.collection)
           console.log("REMOVERES IS", removeRes)
         } catch (e) {
           console.log("ERROR removing DEMODATA ", create.collection, entry, e)

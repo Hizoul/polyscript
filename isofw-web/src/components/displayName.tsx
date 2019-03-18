@@ -1,9 +1,9 @@
-import { IGetHookProps, useGet, useGetWithProps, MailField } from "@xpfw/data"
+import { IGetHookProps, MailField, useGetWithProps } from "@xpfw/data"
+import val from "isofw-shared/src/globals/val"
+import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
-import val from "../../../isofw-shared/src/globals/val";
-import { ProjectName } from "../../../isofw-shared/src/xpfwDefs/project";
 
 export interface INameDisplayer extends IGetHookProps {
   getNameFrom: string

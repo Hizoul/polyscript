@@ -13,27 +13,31 @@ const testProjects: any[] = [
   {_id: "b29999999999999999999999", [String(ProjectName.title)]: "pn2", [String(ProjectShot.title)]: 8, [String(IsActiveField.title)]: true},
   {_id: "b39999999999999999999999", [String(ProjectName.title)]: "pn3", [String(ProjectShot.title)]: 6, [String(IsActiveField.title)]: true}
 ]
-8
+
+const addMappings = () => {
+  testProjects[0][String(ProjectOperators.title)] = [testUsers[0]._id, testUsers[1]._id]
+  testProjects[0][String(ProjectCameras.title)] = [testCameras[0]._id, testCameras[1]._id, testCameras[2]._id]
+  testProjects[0][String(ProjectOperatorCameraMapping.title)] = [
+    {[String(OperatorRelation.title)]: testUsers[0]._id, [String(ProjectCameras.title)]: [testCameras[0]._id, testCameras[2]._id]},
+    {[String(OperatorRelation.title)]: testUsers[1]._id, [String(ProjectCameras.title)]: [testCameras[1]._id]}
+  ]
+  testProjects[1][String(ProjectOperators.title)] = [testUsers[0]._id, testUsers[2]._id]
+  testProjects[1][String(ProjectCameras.title)] = [testCameras[0]._id, testCameras[1]._id]
+  testProjects[1][String(ProjectOperatorCameraMapping.title)] = [
+    {[String(OperatorRelation.title)]: testUsers[2]._id, [String(ProjectCameras.title)]: [testCameras[0]._id]},
+    {[String(OperatorRelation.title)]: testUsers[0]._id, [String(ProjectCameras.title)]: [testCameras[1]._id]}
+  ]
+  testProjects[2][String(ProjectOperators.title)] = [testUsers[1]._id, testUsers[2]._id]
+  testProjects[2][String(ProjectCameras.title)] = [testCameras[0]._id, testCameras[2]._id]
+  testProjects[2][String(ProjectOperatorCameraMapping.title)] = [
+    {[String(OperatorRelation.title)]: testUsers[2]._id, [String(ProjectCameras.title)]: [testCameras[0]._id]},
+    {[String(OperatorRelation.title)]: testUsers[1]._id, [String(ProjectCameras.title)]: [testCameras[2]._id]}
+  ]
+}
+
 const createTestProjects = async (app: any, andMappings: boolean = false, andProgram: boolean = false) => {
   if (andMappings) {
-    testProjects[0][String(ProjectOperators.title)] = [testUsers[0]._id, testUsers[1]._id]
-    testProjects[0][String(ProjectCameras.title)] = [testCameras[0]._id, testCameras[1]._id, testCameras[2]._id]
-    testProjects[0][String(ProjectOperatorCameraMapping.title)] = [
-      {[String(OperatorRelation.title)]: testUsers[0]._id, [String(ProjectCameras.title)]: [testCameras[0]._id, testCameras[2]._id]},
-      {[String(OperatorRelation.title)]: testUsers[1]._id, [String(ProjectCameras.title)]: [testCameras[1]._id]}
-    ]
-    testProjects[1][String(ProjectOperators.title)] = [testUsers[0]._id, testUsers[2]._id]
-    testProjects[1][String(ProjectCameras.title)] = [testCameras[0]._id, testCameras[1]._id]
-    testProjects[1][String(ProjectOperatorCameraMapping.title)] = [
-      {[String(OperatorRelation.title)]: testUsers[2]._id, [String(ProjectCameras.title)]: [testCameras[0]._id]},
-      {[String(OperatorRelation.title)]: testUsers[0]._id, [String(ProjectCameras.title)]: [testCameras[1]._id]}
-    ]
-    testProjects[2][String(ProjectOperators.title)] = [testUsers[1]._id, testUsers[2]._id]
-    testProjects[2][String(ProjectCameras.title)] = [testCameras[0]._id, testCameras[2]._id]
-    testProjects[2][String(ProjectOperatorCameraMapping.title)] = [
-      {[String(OperatorRelation.title)]: testUsers[2]._id, [String(ProjectCameras.title)]: [testCameras[0]._id]},
-      {[String(OperatorRelation.title)]: testUsers[1]._id, [String(ProjectCameras.title)]: [testCameras[2]._id]}
-    ]
+    addMappings()
   }
   if (andProgram) {
     testProjects[0][String(ProjectProgram.title)] = [
@@ -78,5 +82,5 @@ const createTestProjects = async (app: any, andMappings: boolean = false, andPro
 
 export default createTestProjects
 export {
-  testProjects
+  testProjects, addMappings
 }

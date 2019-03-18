@@ -1,3 +1,4 @@
+import { BlockTitle } from "framework7-react";
 import useDirector, { DirectorProps } from "isofw-shared/src/components/project/directorSheet"
 import val from "isofw-shared/src/globals/val"
 import {  toJS } from "isofw-shared/src/util/xpfwdata"
@@ -7,10 +8,10 @@ import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
 import { prependPrefix } from "../../../../isofw-shared/src/util/xpfwform";
+import BenchmarkComponent from "../benchmark";
 import WebButton from "../button"
 import WebCameraDisabler from "./cameraDisabler";
 import "./style.sass"
-import { BlockTitle } from "framework7-react";
 
 const ShotEditor = observer((props: DirectorProps) => {
   const directorProps: any = useDirector(props.id)
@@ -63,6 +64,7 @@ const ShotEditor = observer((props: DirectorProps) => {
       </div>
       <BlockTitle className="centerText">Automatically controlled cameras</BlockTitle>
       <WebCameraDisabler schema={DisabledCameras} prefix={prependPrefix(ProjectForm.title, props.prefix)} autoSave={true} />
+      {val.network.benchmarkEnabled ? <BenchmarkComponent projectId={props.id} /> : undefined}
     </div>
   )
 })

@@ -7,7 +7,8 @@ const useBenchmark = (projectId: string) => {
     currentlyAt: BenchmarkStore.currentlyAt,
     causeProjectTraffic: causer,
     total: BenchmarkStore.total,
-    uploaded: BenchmarkStore.uploaded
+    uploaded: BenchmarkStore.uploaded,
+    loading: BenchmarkStore.loading
   }
 }
 

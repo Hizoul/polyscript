@@ -1,14 +1,14 @@
 import i18n from "isofw-shared/src/util/i18n"
 import * as React from "react"
 
-const TranslatedText: React.FunctionComponent<{text: string, style?: any}> = (props) => {
+const I18n: React.FunctionComponent<{text: string, textParams?: any[], style?: any}> = (props) => {
   return (
     <span
       {...props}
     >
-      {i18n.t(props.text)}
+      {i18n.t(props.text, props.textParams)}
     </span>
   )
 }
 
-export default TranslatedText
+export default I18n

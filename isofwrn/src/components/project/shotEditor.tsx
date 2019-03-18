@@ -1,12 +1,17 @@
 import useDirector, { DirectorProps } from "isofw-shared/src/components/project/directorSheet"
 import val from "isofw-shared/src/globals/val"
-import { ProjectName, ShotCamera } from "isofw-shared/src/xpfwDefs/project"
+import { prependPrefix } from "isofw-shared/src/util/xpfwform"
+import { DisabledCameras, ProjectForm, ProjectName, ShotCamera } from "isofw-shared/src/xpfwDefs/project"
 import NativeButton from "isofwrn/src/components/button"
 import NameDisplayer from "isofwrn/src/components/displayName"
+import { textCenter } from "isofwrn/src/styles/text";
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
 import { Text, View } from "react-native"
+import NativeBenchmarkComponent from "../benchmark"
+import I18n from "../i18n";
+import NativeCameraDisabler from "./cameraDisabler"
 
 const ShotEditor = observer((props: DirectorProps) => {
   const directorProps = useDirector(props.id)
@@ -28,14 +33,14 @@ const ShotEditor = observer((props: DirectorProps) => {
       <View style={{flexDirection: "row"}}>
         <NativeButton
           type={"outline"}
-          title={"previous shot"}
+          title={"shotEditor.previous"}
           icon={{name: "step-backward", type: "font-awesome"}}
           onPress={directorProps.decrease}
           loading={directorProps.loading}
           disabled={directorProps.loading}
         />
         <NativeButton
-          title={"next shot"}
+          title={"shotEditor.next"}
           icon={{name: "step-forward", type: "font-awesome"}}
           onPress={directorProps.increase}
           loading={directorProps.loading}
@@ -49,6 +54,9 @@ const ShotEditor = observer((props: DirectorProps) => {
           disabled={directorProps.loading}
         />
       </View>
+      <I18n text="shotEditor.cameraControl" style={[textCenter, {fontSize: 30}]} />
+      <NativeCameraDisabler schema={DisabledCameras} prefix={prependPrefix(ProjectForm.title, props.prefix)} autoSave={true} />
+      {val.network.benchmarkEnabled ? <NativeBenchmarkComponent projectId={props.id} /> : undefined}
     </View>
   )
 })
