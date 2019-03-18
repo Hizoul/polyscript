@@ -8,7 +8,7 @@ import { BackendClient, DbStore, UserStore } from "isofw-shared/src/util/xpfwdat
 import collections from "isofw-shared/src/xpfwDefs/collections"
 
 const connect = (storage: any) => {
-  let clientToUse = FeathersClient
+  const clientToUse = FeathersClient
   // if (val.network.networkToUse === val.network.tcp) {
   //   clientToUse = TCPClient
   // } else if (val.network.networkToUse === val.network.udp) {
@@ -20,7 +20,7 @@ const connect = (storage: any) => {
   }
   // feathersClientOptions.batchService = val.service.batch
   BackendClient.client.connectTo(`${url.webPrefix}${url.mainServer}`, {
-      authOptions: {storage},
+      authOptions: {storage, timeout: 40000},
       makeAuth: true,
       useRest: false,
       userStore: UserStore,
