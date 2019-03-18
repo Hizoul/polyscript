@@ -3,7 +3,9 @@ import val from "isofw-shared/src/globals/val"
 import { IUiClient, UserStore } from "isofw-shared/src/util/xpfwdata"
 import { get } from "lodash"
 import now from "./now"
+
 const buffer: any = b
+
 export interface IMeasurement {
   clientProcessTime: number
   method: string
