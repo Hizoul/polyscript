@@ -5,7 +5,16 @@ const translations = {
   home: "Home",
   loggedInNavigate: "Already logged in. Do you want to navigate somewhere?",
   loggedInLogout: "Or do you wish to log out?",
-  askLogin: "Please log in"
+  askLogin: "Please log in",
+  name: "Name",
+  ip: "IP-Address",
+  create: "Create",
+  save: "Save",
+  error: "Error",
+  success: "Success",
+  inputError: "Your Input is faulty and cannot be submitted. This is a list of the problems: %s",
+  created: "Successfully created entry with ID %s",
+  saved: "Successfully saved entry with ID %s"
 }
 
 const i18n: {

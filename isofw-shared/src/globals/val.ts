@@ -31,8 +31,8 @@ const val = {
   },
   // can be set to an object with {url: string, params: any, navigated: false} so rn will immediately go to the page
   navigateTo: {
-    url: undefined,
-    params: undefined,
+    url: urls.create,
+    params: {collection: "cameras"},
     navigated: false
   }
 }
