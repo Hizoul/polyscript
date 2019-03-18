@@ -52,7 +52,7 @@ const MenuAndBack: React.FunctionComponent<any> = (props) => {
 const NativePageContained: React.FunctionComponent<IPageContainer> = observer((props) => {
   const authProps = useAuth()
   navigatorRefHolder.ref = get(props, "navigation")
-  if (val.navigateTo != null && val.navigateTo.navigated === false && authProps.loggedIn) {
+  if (val.navigateTo.url != null && val.navigateTo.navigated === false && authProps.loggedIn) {
     val.navigateTo.navigated = true
     setTimeout(() => navigatorRefHolder.ref.navigate(val.navigateTo.url, val.navigateTo.params)
     , 100)
