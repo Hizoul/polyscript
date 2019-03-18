@@ -1,5 +1,4 @@
 import { Application, Hook, HookContext } from "@feathersjs/feathers"
-import console = require("console")
 import val from "isofw-shared/src/globals/val"
 import { ProjectProgram, ShotNumber } from "isofw-shared/src/xpfwDefs/project"
 import { get } from "lodash"

@@ -4,6 +4,7 @@ import val from "isofw-shared/src/globals/val"
 import { OperatorRelation, ProjectCameras, ProjectName,
   ProjectOperatorCameraMapping } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
+import I18n from "isofw-web/src/components/i18n"
 import { get } from "lodash"
 import * as React from "react"
 
@@ -17,15 +18,15 @@ const CurrentOperatorDisplay: React.FunctionComponent<any> = (props) => {
         {props.currentCameras && props.currentCameras.length > 0 ? (
           <span>CA {props.currentCameras.map((camera: any) =>
             <NameDisplayer key={camera} collection={val.service.camera} id={camera} getNameFrom={String(ProjectName.title)} />)}</span>
-        ) : <span>Showing all cameras</span>}
+        ) : <I18n text="operator.cameras.showAll" />}
       </Link>
       <Popover className="operatorChooser" opened={props.isOperatorChooserVisible}>
         <List>
           <ListItem onClick={props.changeOperator("")} popoverClose=".operatorChooser">
-            <div slot="title">All
+            <div slot="title"><I18n text="operator.cameras.all" />
             </div>
             <div slot="footer">
-              All cameras
+              <I18n text="operator.cameras.allCameras" />
             </div>
           </ListItem>
           {get(props.item, String(ProjectOperatorCameraMapping.title), []).map((mapping: any) => {
@@ -37,7 +38,7 @@ const CurrentOperatorDisplay: React.FunctionComponent<any> = (props) => {
                 </div>
                 <div slot="footer">
                   {cameras && cameras.length > 0 ? (
-                    <span>Cameras: {cameras.map((camera: any) =>
+                    <span><I18n text="operator.cameras.list" />{cameras.map((camera: any) =>
                       <NameDisplayer key={camera} collection={val.service.camera} id={camera} getNameFrom={String(ProjectName.title)} />)}
                     </span>
                   ) : undefined}

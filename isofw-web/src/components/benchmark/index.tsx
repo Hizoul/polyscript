@@ -9,18 +9,18 @@ const BenchmarkComponent: React.FunctionComponent<{projectId: string}> = observe
   const benchmarkResults = useBenchmark(props.projectId)
   return (
     <Card>
-      <CardHeader><I18n text="benchmarkHeader" /></CardHeader>
+      <CardHeader><I18n text="benchmark.header" /></CardHeader>
       <CardContent>
         <div className="text-align-center">
           <I18n
-            text="benchmarkProgress"
+            text="benchmark.progress"
             textParams={[benchmarkResults.currentlyAt, benchmarkResults.total]}
           />
         </div>
         <Progressbar progress={Math.round(benchmarkResults.currentlyAt / benchmarkResults.total) * 100} />
       </CardContent>
       <CardFooter>
-        <WebButton text="benchmarkStart" onClick={benchmarkResults.causeProjectTraffic} />
+        <WebButton text="benchmark.start" onClick={benchmarkResults.causeProjectTraffic} />
       </CardFooter>
     </Card>
   )

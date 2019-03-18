@@ -23,6 +23,7 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
   const convertedFields = []
   for (const field of fieldsToConvert) {
     const newField = cloneDeep(field)
+    newField.label = field.title
     newField.title = `${mapTo}.${field.title}`
     convertedFields.push(newField)
   }

@@ -43,12 +43,12 @@ const OperatorCamera: React.FunctionComponent<any & {
 const webCameraMapping: React.FunctionComponent<IFieldProps> = observer((props) => {
   const mapper = useCameraMapping(props.schema, props.mapTo, props.prefix)
   return (
-    <div>
+    <div style={{marginBottom: "0.5rem"}}>
       <WebButton
         fill={true}
         large={true}
         onClick={mapper.showPop}
-        text="operator to camera mapping"
+        text="operatorToCamera"
         iconFa="camera"
       />
       <Popup opened={mapper.showPopUp} onPopupClosed={mapper.hidePop}>

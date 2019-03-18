@@ -2,6 +2,7 @@ import { ShotNumber } from "isofw-shared/src/xpfwDefs/project"
 import { get, isFunction, isString } from "lodash"
 import * as React from "react"
 import { FlatList, Text, View } from "react-native"
+import I18n from "./i18n"
 
 export type RowContent = string | React.FunctionComponent<{item: any, isHeader?: boolean}>
 
@@ -25,7 +26,7 @@ const NativeTable: React.FunctionComponent<INativeTable> = (props) => {
         {props.rows.map((Item: any) => {
           if (isString(Item)) {
             return <View key={Item} style={[viewWrapStyle, textAlignmentStyle]}>
-              <Text>{Item}</Text>
+              <I18n text={Item} />
             </View>
           }
           if (isFunction(Item)) {

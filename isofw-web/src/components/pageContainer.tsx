@@ -3,6 +3,8 @@ import { Block, Link, Navbar, NavLeft, NavTitle,
 import { useAuth } from "isofw-shared/src/util/xpfwdata"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
+import i18n from "../../../isofw-shared/src/util/i18n"
+import I18n from "./i18n"
 import Loading from "./loading"
 
 export interface IPageContainer {
@@ -24,7 +26,10 @@ const WebPageContainer: React.FunctionComponent<IPageContainer> = observer((prop
           {props.backLink ? <Link back={true} iconFa="chevron-left" /> : null}
           <Link panelOpen="left" iconFa="bars" style={{marginLeft: "0pt"}} />
         </NavLeft>
-        <NavTitle subtitle={props.subtitle} title={props.title} />
+        <NavTitle
+          subtitle={props.subtitle != null ? i18n.t(props.subtitle) : undefined}
+          title={i18n.t(props.title)}
+        />
         {props.subContent ? (
           <Subnavbar inner={false}>
             {props.subContent}
@@ -34,7 +39,7 @@ const WebPageContainer: React.FunctionComponent<IPageContainer> = observer((prop
       {props.requireLoggedIn && !authProps.loggedIn ? (
         <Block>
           {authProps.loading ? <Loading /> : null}
-          Je moet ingeloggt zijn om dit te zien.
+          <I18n text="login.required" />
         </Block>
       ) : props.children}
     </Page>

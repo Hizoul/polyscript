@@ -14,13 +14,13 @@ const LogInPage: React.FunctionComponent<{}> = observer((props) => {
     <NativePageContained {...props} title="log in">
       {authProps.loggedIn ? (
         <View>
-          <TranslatedText text="loggedInNavigate" />
+          <TranslatedText text="login.navigate" />
           <MenuList />
-          <TranslatedText text="loggedInLogout" />
+          <TranslatedText text="login.logout" />
         </View>
       ) : (
         <View>
-          <TranslatedText text="askLogin" />
+          <TranslatedText text="login.ask" />
           <Text>{MailField.title} vs {PwField.title} {AuthForm.title}</Text>
           <SharedField schema={MailField} prefix={AuthForm.title} />
           <SharedField schema={PwField} prefix={AuthForm.title} />

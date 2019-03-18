@@ -11,9 +11,9 @@ const NativeDemoDataCreator: React.FunctionComponent<any> = observer((props) => 
   const demoHelper = useDemoData()
   return (
     <Card
-      title={i18n.t("demoDataHeader")}
+      title={i18n.t("demoData.header")}
     >
-      <Text style={textCenter}>{i18n.t("demoDataProgress", [demoHelper.progress, demoHelper.total])}</Text>
+      <Text style={textCenter}>{i18n.t("demoData.progress", [demoHelper.progress, demoHelper.total])}</Text>
       {demoHelper.loading ? <ActivityIndicator /> : null}
       <View style={{flexDirection: "row"}}>
         <NativeButton

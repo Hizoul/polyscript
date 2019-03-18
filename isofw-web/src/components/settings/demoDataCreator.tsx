@@ -9,9 +9,9 @@ const DemoDataCreator: React.FunctionComponent<any> = observer((props) => {
   const demoHelper = useDemoData()
   return (
     <Card>
-      <CardHeader>{i18n.t("demoDataHeader")}</CardHeader>
+      <CardHeader>{i18n.t("demoData.header")}</CardHeader>
       <CardContent>
-        <div className="text-align-center">{i18n.t("demoDataProgress", [demoHelper.progress, demoHelper.total])}</div>
+        <div className="text-align-center">{i18n.t("demoData.progress", [demoHelper.progress, demoHelper.total])}</div>
         <Progressbar progress={Math.round(demoHelper.progress / demoHelper.total) * 100} />
       </CardContent>
       <CardFooter>

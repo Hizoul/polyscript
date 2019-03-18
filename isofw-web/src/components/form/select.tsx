@@ -23,7 +23,7 @@ const SelectField: React.FunctionComponent<IFieldProps> = observer((props) => {
   return (
     <ListInput
       type="select"
-      label={i18n.t(get(props, "schema.title"))}
+      label={i18n.t(get(props, "schema.label", get(props, "schema.title")))}
       className={get(props, "className")}
       value={fieldHelper.value ? fieldHelper.value : "n"}
       onChange={fieldHelper.setValue}

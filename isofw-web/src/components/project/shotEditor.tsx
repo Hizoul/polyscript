@@ -1,4 +1,4 @@
-import { BlockTitle } from "framework7-react";
+import { BlockTitle } from "framework7-react"
 import useDirector, { DirectorProps } from "isofw-shared/src/components/project/directorSheet"
 import val from "isofw-shared/src/globals/val"
 import {  toJS } from "isofw-shared/src/util/xpfwdata"
@@ -7,10 +7,11 @@ import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
-import { prependPrefix } from "../../../../isofw-shared/src/util/xpfwform";
-import BenchmarkComponent from "../benchmark";
+import { prependPrefix } from "../../../../isofw-shared/src/util/xpfwform"
+import BenchmarkComponent from "../benchmark"
 import WebButton from "../button"
-import WebCameraDisabler from "./cameraDisabler";
+import I18n from "../i18n";
+import WebCameraDisabler from "./cameraDisabler"
 import "./style.sass"
 
 const ShotEditor = observer((props: DirectorProps) => {
@@ -38,7 +39,7 @@ const ShotEditor = observer((props: DirectorProps) => {
       </div>
       <div className="flex center">
         <WebButton
-          text={"previous shot"}
+          text={"director.previous"}
           large={true}
           iconFa="step-backward"
           onClick={directorProps.decrease}
@@ -46,7 +47,7 @@ const ShotEditor = observer((props: DirectorProps) => {
           disabled={directorProps.loading}
         />
         <WebButton
-          text={"next shot"}
+          text={"director.next"}
           large={true}
           iconFa="step-forward"
           fill={true}
@@ -62,7 +63,7 @@ const ShotEditor = observer((props: DirectorProps) => {
           disabled={directorProps.loading}
         />
       </div>
-      <BlockTitle className="centerText">Automatically controlled cameras</BlockTitle>
+      <BlockTitle className="centerText"><I18n text="director.cameras" /></BlockTitle>
       <WebCameraDisabler schema={DisabledCameras} prefix={prependPrefix(ProjectForm.title, props.prefix)} autoSave={true} />
       {val.network.benchmarkEnabled ? <BenchmarkComponent projectId={props.id} /> : undefined}
     </div>

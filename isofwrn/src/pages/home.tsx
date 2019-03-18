@@ -4,6 +4,7 @@ import * as React from "react"
 import { Text } from "react-native"
 
 const HomePage: React.FunctionComponent<any> = (props) => {
+  console.debug("RENDERING HOME")
   return (
     <NativePageContained {...props} title="PolyScript" hideBack={true}>
       <Text>

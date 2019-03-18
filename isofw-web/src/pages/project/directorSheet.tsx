@@ -7,7 +7,7 @@ import * as React from "react"
 const DirectorSheetPage: React.FunctionComponent<any> = (props) => {
   const id = get(props, "id")
   return (
-    <WebPageContainer backLink={true} requireLoggedIn={true} name="directorSheet" title="Director">
+    <WebPageContainer backLink={true} requireLoggedIn={true} name="directorSheet" title="director.title">
       <ShotEditor id={id} prefix="edit" />
     </WebPageContainer>
   )

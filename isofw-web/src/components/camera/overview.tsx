@@ -5,6 +5,7 @@ import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
+import i18n from "../../../../isofw-shared/src/util/i18n";
 import WebButton from "../button"
 
 const ItemCamera: React.FunctionComponent<any> = (props) => {
@@ -27,9 +28,9 @@ const CameraOverviewComponent: React.FunctionComponent<IListHookProps> = observe
       <table>
         <thead>
           <tr>
-            <th>name</th>
-            <th>IP</th>
-            <th>actions</th>
+            <th>{i18n.t("name")}</th>
+            <th>{i18n.t("ip")}</th>
+            <th>{i18n.t("actions")}</th>
           </tr>
         </thead>
         <tbody>

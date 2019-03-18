@@ -1,8 +1,9 @@
 import { getMapToFromProps, IFieldProps, memo, useFieldWithValidation } from "@xpfw/form"
 import { setDate } from "@xpfw/form-web"
 import { Icon, ListInput } from "framework7-react"
+import i18n from "isofw-shared/src/util/i18n"
 import { get } from "lodash"
-import { observer } from "mobx-react-lite";
+import { observer } from "mobx-react-lite"
 import * as momentA from "moment"
 import * as React from "react"
 
@@ -60,7 +61,7 @@ const F7TextField: React.FunctionComponent<IFieldProps> = (props) => {
       id={get(props, "id")}
       className={get(props, "className")}
       value={value}
-      label={get(props, "schema.title")}
+      label={i18n.t(get(props, "schema.label", get(props, "schema.title")))}
       step={step}
       min={min}
       max={max}

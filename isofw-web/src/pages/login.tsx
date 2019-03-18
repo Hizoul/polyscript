@@ -22,14 +22,14 @@ const WebLogin: React.FunctionComponent<any> = (props) => {
     )
   }
   return (
-    <WebPageContainer name="login" title="login" backLink={true}>
+    <WebPageContainer name="login" title="login.btnLogin" backLink={true}>
     <BlockTitle>
-      <TranslatedText text={authProps.loggedIn ? "loggedInNavigate" : "askLogin"} />
+      <TranslatedText text={authProps.loggedIn ? "login.navigate" : "login.ask"} />
     </BlockTitle>
     {authProps.loggedIn ? (
       <div>
         <MenuEntries />
-        <BlockTitle><TranslatedText text="loggedInLogout" /></BlockTitle>
+        <BlockTitle><TranslatedText text="login.logout" /></BlockTitle>
       </div>
     ) : (
       <List form={true}>
@@ -43,7 +43,7 @@ const WebLogin: React.FunctionComponent<any> = (props) => {
       className="is-primary is-fullwidth"
       onClick={authProps.loggedIn ? authProps.submitLogout : authProps.submitLogin}
       loading={authProps.loading}
-      text={authProps.loggedIn ? "logout" : "login"}
+      text={authProps.loggedIn ? "login.btnLogout" : "login.btnLogin"}
       iconFa="sign-in-alt"
       fill={true}
     />
@@ -52,7 +52,7 @@ const WebLogin: React.FunctionComponent<any> = (props) => {
         className="marginTop is-info is-outlined is-fullwidth"
         onClick={authProps.submitRegister}
         loading={authProps.loading}
-        text="register"
+        text="login.register"
         iconFa="plus"
       />
     )}

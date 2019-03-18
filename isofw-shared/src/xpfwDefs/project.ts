@@ -184,9 +184,26 @@ const ProjectForm: ExtendedJSONSchema = {
   }
 }
 
+const StrippedProjectForm: ExtendedJSONSchema = {
+  title: "projectModel",
+  collection: val.service.project,
+  type: "object",
+  properties: {
+    [String(ProjectName.title)]: ProjectName,
+    [String(ProjectShot.title)]: ProjectShot,
+    [String(ProjectCameras.title)]: ProjectCameras,
+    [String(ProjectOperators.title)]: ProjectOperators,
+    [String(ProjectOperatorCameraMapping.title)]: ProjectOperatorCameraMapping
+  },
+  modify: {
+    addCreatedAt: true,
+    queryModifier: changeValToRegex(String(ProjectName.title))
+  }
+}
+
 export {
   ProjectForm, ProjectName, ProjectShot, ProjectProgram, ShotCamera, ShotPreset, ShotImportance,
   ProjectOperators, ProjectOperatorCameraMapping, OperatorRelation, ProjectCameras, IsActiveField,
   ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator,
-  DisabledCameras, ShotNumber
+  DisabledCameras, ShotNumber, StrippedProjectForm
 }
