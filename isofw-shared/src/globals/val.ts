@@ -31,8 +31,8 @@ const val = {
   },
   // can be set to an object with {url: string, params: any, navigated: false} so rn will go to the page after login
   navigateTo: {
-    url: urls.settings,
-    params: {collection: "cameras"},
+    url: undefined,
+    params: undefined,
     navigated: false
   }
 }
