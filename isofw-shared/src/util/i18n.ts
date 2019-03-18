@@ -14,7 +14,10 @@ const translations = {
   success: "Success",
   inputError: "Your Input is faulty and cannot be submitted. This is a list of the problems: %s",
   created: "Successfully created entry with ID %s",
-  saved: "Successfully saved entry with ID %s"
+  saved: "Successfully saved entry with ID %s",
+  demoDataHeader: "Manage Demo Data",
+  demoDataProgress: "Created %i of %i Data Entries",
+  remove: "Remove"
 }
 
 const i18n: {

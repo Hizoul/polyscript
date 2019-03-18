@@ -29,9 +29,9 @@ const val = {
     benchmarkEnabled: false,
     networkToUse: 0
   },
-  // can be set to an object with {url: string, params: any, navigated: false} so rn will immediately go to the page
+  // can be set to an object with {url: string, params: any, navigated: false} so rn will go to the page after login
   navigateTo: {
-    url: urls.create,
+    url: urls.settings,
     params: {collection: "cameras"},
     navigated: false
   }

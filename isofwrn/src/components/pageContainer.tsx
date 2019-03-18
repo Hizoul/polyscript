@@ -1,8 +1,9 @@
 import val from "isofw-shared/src/globals/val"
-import { useAuth } from "isofw-shared/src/util/xpfwdata";
+import i18n from "isofw-shared/src/util/i18n"
+import { useAuth } from "isofw-shared/src/util/xpfwdata"
 import navigatorRefHolder from "isofwrn/src/components/globalNavigator"
 import { get } from "lodash"
-import { observer } from "mobx-react-lite";
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 import { Platform, View } from "react-native"
 import { colors, Header, Icon, ThemeProvider } from "react-native-elements"
@@ -62,7 +63,7 @@ const NativePageContained: React.FunctionComponent<IPageContainer> = observer((p
           <Header
             backgroundColor="rgb(247, 247, 248)"
             leftComponent={<MenuAndBack {...props} />}
-            centerComponent={{text: props.title, style: {marginTop: -5, fontSize: 34, color: "black"}}}
+            centerComponent={{text: i18n.t(props.title), style: {marginTop: -5, fontSize: 34, color: "black"}}}
           />
           {props.children}
       </View>

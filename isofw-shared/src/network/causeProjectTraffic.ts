@@ -17,6 +17,14 @@ const makeRandomProgrmanEntry = () => {
   }
 }
 
+const makeRandomProgram = () => {
+  const program = []
+  for (let i = 0; i < 250; i++) {
+    program.push(makeRandomProgrmanEntry())
+  }
+  return program
+}
+
 const makeRandomDisabledCameras = () => {
   const ret = []
   for (let i = 0; i < randomInRange(3, 25); i++) {
@@ -28,10 +36,7 @@ const amountOfCalls = 150
 const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string, type?: number) => {
   BenchmarkStore.uploaded = false
   client.measurements = []
-  const program = []
-  for (let i = 0; i < 250; i++) {
-    program.push(makeRandomProgrmanEntry())
-  }
+  const program = makeRandomProgram()
   BenchmarkStore.total = amountOfCalls
   for (let i = 1; i <= amountOfCalls; i++) {
     BenchmarkStore.currentlyAt = i
@@ -69,3 +74,6 @@ const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string, 
 }
 
 export default causeProjectTraffic
+export {
+  makeRandomProgram
+}

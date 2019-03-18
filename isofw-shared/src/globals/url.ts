@@ -7,6 +7,7 @@ const urls = {
   projectOverview: "/projectOverview",
   cameraOverview: "/cameraOverview",
   operatorInfo: "/operatorInfo",
+  settings: "/settings",
   create: "/create",
   edit: "/edit",
   login: "/login",

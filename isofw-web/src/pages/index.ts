@@ -36,6 +36,9 @@ const routes: any = [
   }, {
     path: `${urls.edit}/:collection/:id`,
     async: routeResolver(() => import("./collections/edit"))
+  }, {
+    path: urls.settings,
+    async: routeResolver(() => import("./settings"))
   }
 ]
 

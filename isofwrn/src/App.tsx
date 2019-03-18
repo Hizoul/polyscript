@@ -12,6 +12,7 @@ import NativeDirectorPage from "./pages/project/directorSheet"
 import NativeOperatorInfo from "./pages/project/operatorInfo"
 import NativeProjectOverview from "./pages/project/overview"
 import NativeProgramPage from "./pages/project/program"
+import SettingsPage from "./pages/settings"
 
 const drawerConfig: any = {
   contentComponent: MenuPanel
@@ -28,7 +29,8 @@ const navigated = createDrawerNavigator({
       [urls.create]: {screen: NativeCreatePage},
       [urls.edit]: {screen: NativeEditPage},
       [urls.directorPage]: {screen: NativeDirectorPage},
-      [urls.programPage]: {screen: NativeProgramPage}
+      [urls.programPage]: {screen: NativeProgramPage},
+      [urls.settings]: {screen: SettingsPage}
     }, {
       headerMode: "none"
     })
