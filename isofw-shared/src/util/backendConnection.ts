@@ -7,7 +7,7 @@ import makeBenchmarkClient from "isofw-shared/src/network/clientBenchmarker"
 import { BackendClient, DbStore, UserStore } from "isofw-shared/src/util/xpfwdata"
 import collections from "isofw-shared/src/xpfwDefs/collections"
 
-const connect = (storage: any) => {
+const connect = async (storage: any) => {
   const clientToUse = FeathersClient
   // if (val.network.networkToUse === val.network.tcp) {
   //   clientToUse = TCPClient
@@ -19,7 +19,7 @@ const connect = (storage: any) => {
     BackendClient.client = makeBenchmarkClient(clientToUse, val.network.networkToUse)
   }
   // feathersClientOptions.batchService = val.service.batch
-  BackendClient.client.connectTo(`${url.webPrefix}${url.mainServer}`, {
+  await BackendClient.client.connectTo(`${url.webPrefix}${url.mainServer}`, {
       authOptions: {storage, timeout: 40000},
       makeAuth: true,
       useRest: false,
