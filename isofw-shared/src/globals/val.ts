@@ -31,8 +31,8 @@ const val = {
   },
   // can be set to an object with {url: string, params: any, navigated: false} so rn will go to the page after login
   navigateTo: {
-    url: urls.edit,
-    params: {id: "5c84d43d78b67b36286ed522", collection: "projects"},
+    url: undefined,
+    params: undefined,
     navigated: false
   }
 }
