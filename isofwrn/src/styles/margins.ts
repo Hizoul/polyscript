@@ -1,19 +1,20 @@
+import { StyleSheet } from "react-native"
+
 const defaultMargin = 5
 
-const marginLeftRight = {
-  marginRight: defaultMargin,
-  marginLeft: defaultMargin
-}
+const margins = StyleSheet.create({
+  leftRight: {
+    marginRight: defaultMargin,
+    marginLeft: defaultMargin
+  },
+  top: {
+    marginTop: defaultMargin
+  },
+  topBot: {
+    marginTop: defaultMargin,
+    marginBottom: defaultMargin
+  },
+  noPadding: {padding: 0}
+})
 
-const marginTop = {
-  marginTop: defaultMargin
-}
-
-const marginTopBot = {
-  marginTop: defaultMargin,
-  marginBottom: defaultMargin
-}
-
-export {
-  defaultMargin, marginLeftRight, marginTop, marginTopBot
-}
+export default margins

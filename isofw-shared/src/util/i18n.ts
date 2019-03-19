@@ -18,8 +18,9 @@ const translations = {
   password: "Password",
   director: {
     title: "Director",
+    project: "Current Project: ",
     next: "Next",
-    previous: "Previous",
+    previous: "Prev",
     cameras: "Automatically controlled cameras"
   },
   login: {
@@ -48,7 +49,8 @@ const translations = {
       noOne: "No one",
       all: "All",
       allCameras: "All Cameras",
-      list: "Cameras: "
+      list: "Cameras: ",
+      singularCamera: "Camera: "
     },
     table: {
       shot: "Shot",

@@ -1,4 +1,4 @@
-import i18n from "isofw-shared/src/util/i18n";
+import i18n from "isofw-shared/src/util/i18n"
 import { IFieldProps, useFieldWithValidation } from "isofw-shared/src/util/xpfwform"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
@@ -18,7 +18,7 @@ const NativeTextField: React.FunctionComponent<IFieldProps> = observer((props) =
   return (
     <Input
       {...props}
-      label={i18n.t(get(props, "schema.title"))}
+      label={i18n.t(get(props, "schema.label", get(props, "schema.title")))}
       secureTextEntry={secureTextEntry}
       value={fieldHelper.value}
       keyboardType={keyboardType}

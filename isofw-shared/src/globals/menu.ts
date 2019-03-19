@@ -14,7 +14,7 @@ const menuLoggedIn: MenuEntry[] = [
   {title: "Home", link: urls.home, icon: {name: "home"}},
   {title: "Projects", link: urls.projectOverview, icon: {name: "folder"}},
   {title: "Cameras", link: urls.cameraOverview, icon: {name: "camera-retro", type: "font-awesome"}},
-  {title: "Settings", link: urls.settings, icon: {name: "sliders-h", type: "font-awesome"}},
+  {title: "Settings", link: urls.settings, icon: {name: "cogs", type: "font-awesome"}},
   {title: "Logout", link: urls.login, icon: {name: "sign-out", type: "font-awesome"}}
 ]
 const menuLoggedOut: MenuEntry[] = [

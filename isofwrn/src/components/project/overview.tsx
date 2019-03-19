@@ -5,41 +5,42 @@ import { prependPrefix, SharedField } from "isofw-shared/src/util/xpfwform"
 import { ProjectForm, ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import NativeButton from "isofwrn/src/components/button"
 import NativeTable from "isofwrn/src/components/table"
+import margins from "isofwrn/src/styles/margins"
 import { get } from "lodash"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
-import { Text, View } from "react-native"
+import { View } from "react-native"
 import { Card } from "react-native-elements"
-import { observer } from "mobx-react-lite";
 
 const Actions: React.FunctionComponent<any> = (props) => {
   if (props.isHeader) {return <View />}
   return (
     <View>
       <NativeButton
-        title="director"
+        title="directorr"
         iconRight={true}
-        icon={{name: "info"}}
+        icon={{name: "info", color: "white"}}
         href={urls.directorPage}
         hrefParams={{id: get(props, "item._id")}}
       />
       <NativeButton
-        title="program"
+        title="programm"
         iconRight={true}
-        icon={{name: "info"}}
+        icon={{name: "info", color: "white"}}
         href={urls.programPage}
         hrefParams={{id: get(props, "item._id")}}
       />
       <NativeButton
-        title="Operator"
+        title="Operatorr"
         iconRight={true}
-        icon={{name: "info"}}
+        icon={{name: "info", color: "white"}}
         href={urls.operatorInfo}
         hrefParams={{id: get(props, "item._id")}}
       />
       <NativeButton
-        title="Edit"
+        title="edit"
         iconRight={true}
-        icon={{name: "edit"}}
+        icon={{name: "edit", color: "white"}}
         href={urls.edit}
         hrefParams={{
           collection: val.service.project,
@@ -63,9 +64,9 @@ const NativeProjectOverview: React.FunctionComponent<IListHookProps> = observer(
         />
         <NativeButton
           title="Create"
-          icon={{name: "plus", type: "font-awesome"}}
+          icon={{name: "plus", type: "font-awesome", color: "white"}}
           iconRight={true}
-          style={{marginTop: 10}}
+          style={margins.top}
           href={`${urls.create}`}
           hrefParams={{collection: ProjectForm.collection}}
         />

@@ -7,8 +7,10 @@ import { observer } from "mobx-react-lite"
 import * as React from "react"
 import { ScrollView, Text, View } from "react-native"
 import { Card, ListItem, Overlay } from "react-native-elements"
-import { IFieldProps } from "../../../../isofw-shared/src/util/xpfwform"
+import { IFieldProps } from "isofw-shared/src/util/xpfwform"
+import { MailField } from "isofw-shared/src/util/xpfwdata"
 import NativeButton from "../button"
+import i18n from "isofw-shared/src/util/i18n"
 
 const OperatorCamera: React.FunctionComponent<{
   operator: string
@@ -16,7 +18,7 @@ const OperatorCamera: React.FunctionComponent<{
 }> = (props) => {
   return (
     <Card>
-      <NameDisplayer collection={val.service.user} id={props.operator} getNameFrom={MailField.mapTo} />
+      <NameDisplayer collection={val.service.user} id={props.operator} getNameFrom={MailField.title} />
         {props.mapper.cameras.map((camera) => {
           const operatorCameras = find(props.mapper.value, [OperatorRelation.title, props.operator])
           const selected = get(operatorCameras, String(ProjectCameras.title), []).indexOf(camera) !== -1
@@ -26,7 +28,7 @@ const OperatorCamera: React.FunctionComponent<{
               onPress={props.mapper.changeMapping(props.operator, camera)}
               title={<NameDisplayer collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />}
               rightIcon={{
-                name: selected ? "times" : "plus", type: "font-awesome",
+                name: selected ? "times" : "plus", type: "font-awesome", color: "white",
                 color: selected ? "red" : "green"
               }}
             />
@@ -42,12 +44,12 @@ const NativeCameraMapping: React.FunctionComponent<IFieldProps> = observer((prop
     <View>
       <NativeButton
         onPress={mapper.showPop}
-        title="operator to camera mapping"
-        icon={{name: "camera", type: "font-awesome"}}
+        title="operatorToCamera"
+        icon={{name: "camera", type: "font-awesome", color: "white"}}
       />
       <Overlay isVisible={mapper.showPopUp === true} onBackdropPress={mapper.hidePop}>
         <ScrollView>
-          <Text>select which operator handles which cameras</Text>
+          <Text>{i18n.t("operatorToCamera")}</Text>
           {mapper.operators.map((operator) =>
             <OperatorCamera {...props} key={operator} operator={operator} mapper={mapper} />)}
         </ScrollView>

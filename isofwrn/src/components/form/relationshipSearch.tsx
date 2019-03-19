@@ -4,8 +4,9 @@ import * as React from "react"
 import { FlatList, View } from "react-native"
 import { useList } from "../../../../isofw-shared/src/util/xpfwdata";
 import NativeRelationshipItem from "./relationshipItem"
+import { observer } from "mobx-react-lite"
 
-const NativeRelationshipSearch: React.FunctionComponent<any> = (props) => {
+const NativeRelationshipSearch: React.FunctionComponent<any> = observer((props) => {
   const searchField = get(props, `searchForm.properties[${get(props, "schema.relationship.namePath")}]`)
   const nameObjs: any = []
   const addId = get(props, "addId")
@@ -23,6 +24,6 @@ const NativeRelationshipSearch: React.FunctionComponent<any> = (props) => {
       />
     </View>
   )
-}
+})
 
 export default NativeRelationshipSearch

@@ -8,7 +8,7 @@ import * as React from "react"
 const NativeDirectorPage: React.FunctionComponent<any> = (props) => {
   const id = props.navigation.getParam("id", "none")
   return (
-    <NativePageContained {...props} title="director">
+    <NativePageContained {...props} title="director.title">
       <ShotEditor id={id} prefix="edit" />
     </NativePageContained>
   )

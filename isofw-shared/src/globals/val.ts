@@ -26,13 +26,13 @@ const val = {
     packetDelimiter: "_MSG_END_",
     addServerTimeInfo: false,
     addServerTimeInfoForWebSockets: false,
-    benchmarkEnabled: false,
+    benchmarkEnabled: true,
     networkToUse: 0
   },
   // can be set to an object with {url: string, params: any, navigated: false} so rn will go to the page after login
   navigateTo: {
-    url: undefined,
-    params: undefined,
+    url: urls.edit,
+    params: {id: "5c84d43d78b67b36286ed522", collection: "projects"},
     navigated: false
   }
 }

@@ -1,12 +1,12 @@
 import useCameraChooser from "isofw-shared/src/components/project/cameraChooser"
 import val from "isofw-shared/src/globals/val"
-import { IFieldProps } from "isofw-shared/src/util/xpfwform";
-import { OperatorRelation, ProjectCameras, ProjectName } from "isofw-shared/src/xpfwDefs/project"
-import WebButton from "isofw-web/src/components/button"
+import { IFieldProps } from "isofw-shared/src/util/xpfwform"
+import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
+import NativeButton from "isofwrn/src/components/button"
 import NameDisplayer from "isofwrn/src/components/displayName"
-import { find, get } from "lodash"
+import I18n from "isofwrn/src/components/i18n"
 import * as React from "react"
-import { Text, View } from "react-native"
+import { View } from "react-native"
 import { ListItem, Overlay } from "react-native-elements"
 
 const NativeCameraMapping: React.FunctionComponent<IFieldProps> = (props) => {
@@ -15,16 +15,18 @@ const NativeCameraMapping: React.FunctionComponent<IFieldProps> = (props) => {
     <View>
       <ListItem
         onPress={chooserHelper.showPop}
-        rightIcon={{name: "camera", type: "font-awesome"}}
+        rightIcon={{name: "camera", type: "font-awesome", color: "white"}}
         title={
           <View>
-            <Text>Camera:&nbsp;</Text>
-            <NameDisplayer collection={val.service.camera} id={chooserHelper.value} getNameFrom={ProjectName.mapTo} placeholder="not yet selected" />
-          </View>}
+            <I18n text="operator.cameras.singularCamera" />
+            <NameDisplayer collection={val.service.camera} id={chooserHelper.value} getNameFrom={String(ProjectName.title)} placeholder="not yet selected" />
+          </View>
+        }
       />
       <Overlay isVisible={chooserHelper.showPopUp} onBackdropPress={chooserHelper.hidePop}>
         <View>
-          <Text>Choose a camera {props.schema.title}</Text>
+            <I18n text="chooseCamera" />
+            <NativeButton title="close" onPress={chooserHelper.hidePop} />
             {chooserHelper.cameras.map((camera: any) => (
                 <ListItem
                   key={camera}
@@ -33,7 +35,7 @@ const NativeCameraMapping: React.FunctionComponent<IFieldProps> = (props) => {
                     chooserHelper.setValueWithPreset(camera)
                   }}
                   rightIcon={{name: "chevron"}}
-                  title={<NameDisplayer collection={val.service.camera} id={camera} getNameFrom={ProjectName.mapTo} />}
+                  title={<NameDisplayer collection={val.service.camera} id={camera} getNameFrom={String(ProjectName.title)} />}
                 />
               ))}
         </View>

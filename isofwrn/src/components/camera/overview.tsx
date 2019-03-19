@@ -19,7 +19,7 @@ const B: React.FunctionComponent<any> = (props) => {
       key="b"
       title="Edit"
       iconRight={true}
-      icon={{name: "edit"}}
+      icon={{name: "edit", color: "white"}}
       href={urls.edit}
       hrefParams={{
         collection: val.service.camera,
@@ -42,7 +42,7 @@ const NativeCameraOverview: React.FunctionComponent<IListHookProps> = observer((
         />
         <NativeButton
           title="Create"
-          icon={{name: "plus", type: "font-awesome"}}
+          icon={{name: "plus", type: "font-awesome", color: "white"}}
           iconRight={true}
           style={{marginTop: 10}}
           href={`${urls.create}`}

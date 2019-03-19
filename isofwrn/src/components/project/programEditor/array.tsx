@@ -39,12 +39,12 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
           <NativeButton
             onPress={props.decreaseSize}
             title=""
-            icon={{name: "times", type: "font-awesome", color: "red"}}
+            icon={{name: "times", type: "font-awesome", color: "white", color: "red"}}
           />
           <NativeButton
             onPress={props.increaseSize}
             title=""
-            icon={{name: "plus", type: "font-awesome", color: "green"}}
+            icon={{name: "plus", type: "font-awesome", color: "white", color: "green"}}
           />
         </View>
         <View style={{flexDirection: "row"}}>

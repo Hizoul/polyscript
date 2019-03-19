@@ -18,13 +18,13 @@ const NativeDemoDataCreator: React.FunctionComponent<any> = observer((props) => 
       <View style={{flexDirection: "row"}}>
         <NativeButton
           title="create"
-          icon={{name: "plus", type: "font-awesome"}}
+          icon={{name: "plus", type: "font-awesome", color: "white"}}
           onPress={demoHelper.createData}
         />
         <View style={{flex: 1}}/>
         <NativeButton
           title="remove"
-          icon={{name: "trash", type: "font-awesome"}}
+          icon={{name: "trash", type: "font-awesome", color: "white"}}
           onPress={demoHelper.removeDemoData}
         />
       </View>

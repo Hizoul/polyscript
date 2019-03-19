@@ -50,7 +50,7 @@ const useCameraChooser = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: s
   return {
     cameras,
     value: FormStore.getValue(getMapTo(schema, mapTo), prefix),
-    showPopUp: FormStore.getValue(getMapTo(schema, mapTo), prependPrefix(prefix, popupVisibilityKey)),
+    showPopUp: FormStore.getValue(getMapTo(schema, mapTo), prependPrefix(prefix, popupVisibilityKey), false) === true,
     hidePop: memo(() => togglePop(schema, mapTo, prefix, false), ["hidePop", mapTo, prefix, JSON.stringify(schema)]),
     showPop: memo(() => togglePop(schema, mapTo, prefix, true), ["showPop", mapTo, prefix, JSON.stringify(schema)]),
     setValueWithPreset: memo(() => setValueWithPreset(schema, mapTo, prefix), ["setValueWithPreset", JSON.stringify(schema), mapTo, prefix])

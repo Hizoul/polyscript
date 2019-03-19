@@ -1,6 +1,7 @@
-import { BlockTitle, Card, CardContent, CardHeader, Icon, List, ListItem, Page, Popup, Row } from "framework7-react"
+import { BlockTitle, Card, CardHeader, Icon, List, ListItem, Page, Popup } from "framework7-react"
 import useCameraMapping, { CameraMappingUtils } from "isofw-shared/src/components/project/cameraMapping"
 import val from "isofw-shared/src/globals/val"
+import i18n from "isofw-shared/src/util/i18n"
 import { MailField } from "isofw-shared/src/util/xpfwdata"
 import { IFieldProps } from "isofw-shared/src/util/xpfwform"
 import { OperatorRelation, ProjectCameras, ProjectName } from "isofw-shared/src/xpfwDefs/project"
@@ -53,7 +54,7 @@ const webCameraMapping: React.FunctionComponent<IFieldProps> = observer((props) 
       />
       <Popup opened={mapper.showPopUp} onPopupClosed={mapper.hidePop}>
         <Page>
-        <BlockTitle>select which operator handles which cameras</BlockTitle>
+        <BlockTitle>{i18n.t("operatorToCamera")}</BlockTitle>
         {mapper.operators.map((operator: any) =>
           <OperatorCamera {...props} key={operator} operator={operator} mapper={mapper} />)}
         </Page>

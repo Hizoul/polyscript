@@ -12,15 +12,15 @@ const NativeBenchmarkComponent: React.FunctionComponent<{projectId: string}> = o
   const benchmarkResults = useBenchmark(props.projectId)
   return (
     <Card
-      title={i18n.t("benchmarkHeader")}
+      title={i18n.t("benchmark.header")}
     >
       <TranslatedText
         style={textCenter}
-        text={"benchmarkProgress"}
+        text={"benchmark.progress"}
         textParams={[benchmarkResults.currentlyAt, benchmarkResults.total]}
       />
       <NativeButton
-        title="benchmarkStart"
+        title="benchmark.start"
         onPress={benchmarkResults.causeProjectTraffic}
         disabled={benchmarkResults.loading}
       />

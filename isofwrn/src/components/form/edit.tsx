@@ -1,10 +1,10 @@
-import i18n from "isofw-shared/src/util/i18n";
+import i18n from "isofw-shared/src/util/i18n"
 import { dataOptions, IEditHookProps, useEditWithProps } from "isofw-shared/src/util/xpfwdata"
 import { getMapToFromProps, iterateSubFields, prependPrefix, SharedField } from "isofw-shared/src/util/xpfwform"
 import { colorError, colorSuccess, errorBg, successBg } from "isofwrn/src/styles/color"
-import { marginLeftRight, marginTop, marginTopBot } from "isofwrn/src/styles/margins"
+import margins from "isofwrn/src/styles/margins"
 import { get } from "lodash"
-import { observer } from "mobx-react-lite";
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 import { ScrollView, Text, View } from "react-native"
 import { Card, Divider } from "react-native-elements"
@@ -24,35 +24,33 @@ const NativeEdit: React.FunctionComponent<IEditHookProps> = observer((props) => 
     const textColor = {color: gotErr ? colorError : colorSuccess}
     msg = (
       <View>
-        <Divider style={marginTopBot} />
+        <Divider style={margins.topBot} />
         <View>
           <Text style={[textColor, {fontSize: 24}]}>
             {gotErr ? i18n.t("error") : i18n.t("success")}
           </Text>
           <Text style={textColor}>{gotErr ?
             i18n.t("inputError", JSON.stringify(editProps.error)) :
-            i18n.t("created", get(result, dataOptions.idPath))}
+            i18n.t("saved", get(result, dataOptions.idPath))}
           </Text>
         </View>
       </View>
     )
   }
   return (
-    <View>
-      <Card>
-        <ScrollView>
-          {fields}
-        </ScrollView>
-        <NativeButton
-          onPress={editProps.submitEdit}
-          icon={{name: "save", type: "font-awesome"}}
-          title="save"
-          loading={editProps.loading}
-          containerStyle={marginTop}
-        />
-        {msg}
-      </Card>
-    </View>
+    <ScrollView>
+      <ScrollView>
+        {fields}
+      </ScrollView>
+      <NativeButton
+        onPress={editProps.submitEdit}
+        icon={{name: "save", type: "font-awesome", color: "white"}}
+        title="save"
+        loading={editProps.loading}
+        containerStyle={margins.top}
+      />
+      {msg}
+    </ScrollView>
   )
 })
 
