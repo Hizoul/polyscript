@@ -1,8 +1,14 @@
+import { DbStore } from "@xpfw/data/dist"
+import { FormStore, prependPrefix } from "@xpfw/form/dist"
 import val from "isofw-shared/src/globals/val"
 import { randomInRange, randomString } from "isofw-shared/src/util/predictableRandomness"
+import {
+  DisabledCameras, ProjectForm, ProjectName, ProjectProgram, ProjectShot
+} from "isofw-shared/src/xpfwDefs/project"
 import BenchmarkStore from "./benchmarkStore"
 import { IBenchmarkClient } from "./clientBenchmarker"
 
+const directorPrefix = "edit"
 const makeRandomProgrmanEntry = () => {
   return {
     pname: randomString(32),
@@ -19,7 +25,7 @@ const makeRandomProgrmanEntry = () => {
 
 const makeRandomProgram = () => {
   const program = []
-  for (let i = 0; i < 250; i++) {
+  for (let i = 0; i < BenchmarkStore.programSize; i++) {
     program.push(makeRandomProgrmanEntry())
   }
   return program
@@ -32,41 +38,49 @@ const makeRandomDisabledCameras = () => {
   }
   return ret
 }
-const amountOfCalls = 150
+const amountOfCalls = 10
 const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string, type?: number) => {
   BenchmarkStore.uploaded = false
   BenchmarkStore.loading = true
   client.measurements = []
   const program = makeRandomProgram()
   BenchmarkStore.total = amountOfCalls
+  const promises = []
   for (let i = 1; i <= amountOfCalls; i++) {
-    BenchmarkStore.currentlyAt = i
-    switch (randomInRange(0, 3)) {
+    switch (randomInRange(0, 4)) {
       case 0: {
-        await client.patch(val.service.project, projectId, {
-          title: randomString(64)
-        })
+        FormStore.setValue(ProjectName.title, randomString(64), prependPrefix(ProjectForm.title, directorPrefix))
         break
       }
       case 1: {
-        await client.patch(val.service.project, projectId, {
-          shot: randomInRange(0, 250)
-        })
+        FormStore.setValue(ProjectShot.title, randomInRange(0, 250), prependPrefix(ProjectForm.title, directorPrefix))
         break
       }
       case 2: {
-        await client.patch(val.service.project, projectId, {
-          disabledCameras: makeRandomDisabledCameras()
-        })
+        FormStore.setValue(DisabledCameras.title, makeRandomDisabledCameras(),
+          prependPrefix(ProjectForm.title, directorPrefix))
         break
       }
+      default:
       case 3: {
-        program[randomInRange(0, 249)] = makeRandomProgrmanEntry()
-        await client.patch(val.service.project, projectId, {
-          program
-        })
+        program[randomInRange(0, BenchmarkStore.programSize)] = makeRandomProgrmanEntry()
+        FormStore.setValue(ProjectProgram.title, program, prependPrefix(ProjectForm.title, directorPrefix))
         break
       }
+    }
+    const patchPromise = DbStore.patch(projectId, ProjectForm, ProjectForm.title, directorPrefix)
+    if (!BenchmarkStore.parallel) {
+      BenchmarkStore.currentlyAt = i
+      await patchPromise
+    } else {
+      promises.push(patchPromise)
+    }
+  }
+  if (BenchmarkStore.parallel) {
+    let i = 0
+    for (const promise of promises) {
+      await promise
+      BenchmarkStore.currentlyAt = ++i
     }
   }
   // writeFileSync(`network${type}${projectId}.txt`, JSON.stringify(client.measurements))

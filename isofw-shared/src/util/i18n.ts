@@ -35,7 +35,9 @@ const translations = {
   benchmark: {
     header: "Benchmark",
     progress: "Executed %i out of %i Actions",
-    start: "Begin Benchmark"
+    start: "Begin Benchmark",
+    onlyDiff: "Patch only Diffs: %t",
+    parallel: "Execute in parallel: %t"
   },
   demoData: {
     header: "Manage Demo Data",

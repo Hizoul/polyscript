@@ -14,7 +14,11 @@ export class BenchmarkStoreClass {
   @observable
   public currentlyAt: number = 0
   @observable
+  public programSize: number = 500
+  @observable
   public uploaded: boolean = false
+  @observable
+  public parallel: boolean = false
 
   public causeProjectTraffic(projectId: string) {
     return () => {
