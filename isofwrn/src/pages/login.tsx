@@ -11,7 +11,7 @@ import { Text, View } from "react-native"
 const LogInPage: React.FunctionComponent<{}> = observer((props) => {
   const authProps = useAuth()
   return (
-    <NativePageContained {...props} title="log in">
+    <NativePageContained {...props} title="login.btnLogin">
       {authProps.loggedIn ? (
         <View>
           <TranslatedText text="login.navigate" />
@@ -27,7 +27,7 @@ const LogInPage: React.FunctionComponent<{}> = observer((props) => {
         </View>
       )}
       <NativeButton
-        title={authProps.loggedIn ? "logout" : "login"}
+        title={authProps.loggedIn ? "login.btnLogout" : "login.btnLogin"}
         onPress={authProps.loggedIn ? authProps.submitLogout : authProps.submitLogin}
         loading={authProps.loading}
         disabled={authProps.loading}
