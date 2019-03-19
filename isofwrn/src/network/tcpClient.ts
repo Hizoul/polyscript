@@ -1,4 +1,7 @@
+import { Buffer } from "buffer"
 import val from "isofw-shared/src/globals/val"
+import lzString from "isofw-shared/src/util/lzString"
+import pako from "isofw-shared/src/util/pako"
 import parseJwt from "isofw-shared/src/util/parseJwt"
 import { AuthForm, dataOptions, IUiClient, UserStore } from "isofw-shared/src/util/xpfwdata"
 import { FormStore } from "isofw-shared/src/util/xpfwform"
@@ -18,9 +21,17 @@ const makeCall = (collection: string, method: string, data: any[]) => {
       trackId = 1
     }
     promises[trackId] = {resolve, reject}
-    TCPClient.client.write(JSON.stringify({
+    let toSend = JSON.stringify({
       collection, method, data, trackId
-    }) + val.network.packetDelimiter)
+    })
+    if (val.network.useCompression) {
+      if (val.network.useGzipCompression) {
+        toSend = pako.gzip(toSend, {to: "string"})
+      } else {
+        toSend = lzString.compressToBase64(toSend)
+      }
+    }
+    TCPClient.client.write(toSend + val.network.packetDelimiter)
   })
 }
 const accessTokenSaveKey = "accessToken"

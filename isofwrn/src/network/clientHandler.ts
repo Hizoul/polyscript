@@ -1,4 +1,6 @@
 import val from "isofw-shared/src/globals/val"
+import lzString from "isofw-shared/src/util/lzString"
+import pako from "isofw-shared/src/util/pako"
 import { dataOptions } from "isofw-shared/src/util/xpfwdata"
 import { get, isString } from "lodash"
 
@@ -8,10 +10,18 @@ const tries = 0
 const clientMessageHandler = (data: any, promises: any, options: any, giveOriginal?: boolean, retried?: boolean) => {
   const toSplit = isString(data) ? data : data.toString("utf8")
   const messages = toSplit.split(val.network.packetDelimiter)
+  try {
   for (const unparsedMessage of messages) {
     if (unparsedMessage.length > 0) {
-      try {
-        const message = JSON.parse(unparsedMessage)
+        let uncompressedMessage = unparsedMessage
+        if (val.network.useCompression) {
+          if (val.network.useGzipCompression) {
+            uncompressedMessage = pako.ungzip(unparsedMessage, {to: "string"})
+          } else {
+            uncompressedMessage = lzString.decompressFromBase64(unparsedMessage)
+          }
+        }
+        const message = JSON.parse(uncompressedMessage)
         unparseable = ""
         if (promises[message.trackId]) {
           if (promises[message.trackId] === -1) {
@@ -30,17 +40,17 @@ const clientMessageHandler = (data: any, promises: any, options: any, giveOrigin
             delete promises[message.trackId]
           }
         }
-      } catch (e) {
-        if (!retried) {
-          unparseable += unparsedMessage
-          console.log("UNPARSEABLE NOW", unparseable.length)
-          if (unparseable.length > 100000) {
-            console.log("LAST PART OF UNPARSEABLE IS", unparseable.substring(
-              unparseable.length - 100, unparseable.length
-            ))
-            console.log("PARSERRRO IS", e)
-          }
-        }
+      }
+    }
+  } catch (e) {
+    if (!retried) {
+      unparseable += toSplit
+      console.log("UNPARSEABLE NOW", unparseable.length)
+      if (unparseable.length > 100000) {
+        console.log("LAST PART OF UNPARSEABLE IS", unparseable.substring(
+          unparseable.length - 100, unparseable.length
+        ))
+        console.log("PARSERRRO IS", e)
       }
     }
   }

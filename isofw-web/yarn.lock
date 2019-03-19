@@ -657,10 +657,10 @@
     "@feathersjs/socketio-client" "^1.2.1"
     socket.io-client "^2.2.0"
 
-"@xpfw/data@1.0.0-beta.7":
-  version "1.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.7.tgz#ee98592b62a1aa5eea9833428c10233a721fc93f"
-  integrity sha512-3efwYANrHIbAvdXPzP5Du9ltMyBWKfKF17czXvaRiXPsmxxwCOXvhdUZ5sZ2XL1SGKVUZXz3luMyaFu8q+snxA==
+"@xpfw/data@1.0.0-beta.10":
+  version "1.0.0-beta.10"
+  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.10.tgz#8d780ed8828c2605e9c0998b3df10a39239b89fb"
+  integrity sha512-HGIZbgjJ2j8PeKk1ysMZD/yPd0g0WvqJVacCBt22dBJAI2FzHiTvi6StZLOjWegUD7PTE0BpDDuUc9qFHa3yjg==
 
 "@xpfw/form-web@1.0.0-beta.7":
   version "1.0.0-beta.7"

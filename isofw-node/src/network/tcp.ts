@@ -1,4 +1,6 @@
 import val from "isofw-shared/src/globals/val"
+import lzString from "isofw-shared/src/util/lzString"
+import pako from "isofw-shared/src/util/pako"
 import collections from "isofw-shared/src/xpfwDefs/collections"
 import { createServer, Socket } from "net"
 import { performance } from "perf_hooks"
@@ -37,7 +39,15 @@ const initiateTcp = async (port: number, app: any) => {
             result.end = end
             result.arrive = timeStuff.startAt
           }
-          sock.write(JSON.stringify(result) + val.network.packetDelimiter)
+          let toSend = JSON.stringify(result)
+          if (val.network.useCompression) {
+            if (val.network.useGzipCompression) {
+              toSend = pako.gzip(toSend, {to: "string"})
+            } else {
+              toSend = lzString.compressToBase64(toSend)
+            }
+          }
+          sock.write(toSend + val.network.packetDelimiter)
         }, () => {
           let start: any, startAt: any
           if (val.network.addServerTimeInfo) {
