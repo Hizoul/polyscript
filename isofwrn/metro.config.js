@@ -31,5 +31,13 @@ module.exports = {
   },
   getAssetRoots() {
     return getRoots();
+  },
+  extraNodeModules: {
+    "react-native": path.resolve(__dirname, "node_modules/react-native"),
+    "react": path.resolve(__dirname, "node_modules/react"),
+    "mobx": path.resolve(__dirname, "node_modules/mobx"),
+    "net": path.resolve(__dirname, "node_modules/@hawkingnetwork/react-native-tcp"),
+    "tls": path.resolve(__dirname, "node_modules/@hawkingnetwork/react-native-tcp/tls"),
+    "dgram": path.resolve(__dirname, "node_modules/react-native-udp")
   }
 };

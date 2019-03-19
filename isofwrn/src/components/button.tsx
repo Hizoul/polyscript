@@ -10,7 +10,7 @@ export interface ICustomNativeButton {
 }
 
 const NativeButton: React.FunctionComponent<ButtonProps & ICustomNativeButton> = (props) => {
-  const buttonProps = {...props, title: i18n.t(String(props.title), props.titleProps)}
+  const buttonProps = {...props, title: i18n.t(String(props.title), props.titleParams)}
   if (props.href != null) {
     buttonProps.onPress = () => {
       navigatorRefHolder.ref.navigate(props.href, props.hrefParams)

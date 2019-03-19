@@ -1,8 +1,9 @@
-import { createSocket } from "dgram"
 import val from "isofw-shared/src/globals/val"
 import parseJwt from "isofw-shared/src/util/parseJwt"
-import { dataOptions, IUiClient } from "isofw-shared/src/util/xpfwdata"
+import { AuthForm, dataOptions, IUiClient, UserStore } from "isofw-shared/src/util/xpfwdata"
+import { FormStore } from "isofw-shared/src/util/xpfwform"
 import { get } from "lodash"
+import { Socket } from "net"
 import clientMessageHandler from "./clientHandler"
 
 let trackId = 0
@@ -10,7 +11,6 @@ export interface IResolver {
   resolve: Function, reject: Function
 }
 const promises: {[index: number]: IResolver | undefined} = {}
-let currentToken: any
 const makeCall = (collection: string, method: string, data: any[]) => {
   return new Promise((resolve, reject) => {
     trackId++
@@ -18,62 +18,74 @@ const makeCall = (collection: string, method: string, data: any[]) => {
       trackId = 1
     }
     promises[trackId] = {resolve, reject}
-    const msg = Buffer.from(JSON.stringify({
-      collection, method, data, trackId, currentToken
+    TCPClient.client.write(JSON.stringify({
+      collection, method, data, trackId
     }) + val.network.packetDelimiter)
-    UDPClient.client.send(msg, 0, msg.length, UDPClient.port, UDPClient.url)
   })
 }
-
-const UDPClient: IUiClient & {url: string, port: number, giveOriginal: boolean} = {
-  url: "",
-  port: -1,
-  giveOriginal: false,
+const accessTokenSaveKey = "accessToken"
+const TCPClient: IUiClient & {giveOriginal?: boolean, storage?: any} = {
   client: null,
+  giveOriginal: false,
+  storage: null,
   connectTo: (url: any, options: any) => {
     return new Promise((resolve) => {
-      console.log("DOING UDP CONNECT")
-      UDPClient.client = createSocket("udp4")
-      UDPClient.port = options.port
-      UDPClient.url = url
+      TCPClient.storage = get(options, "authOptions.storage")
+      TCPClient.client = new Socket()
+      TCPClient.client.connect(options.port, url)
 
-      UDPClient.client.on("listening", () => {
-        console.log("UDPCLIENT CONNECTED")
+      TCPClient.client.on("connect", () => {
+        console.log("CLIENT CONNECTED")
         resolve()
         if (get(options, "userStore")) {
           const store = get(options, "userStore")
           store.setConnected(true)
         }
+        if (TCPClient.storage) {
+          TCPClient.storage.getItem(accessTokenSaveKey, (error: any, accessToken: any) => {
+            FormStore.setValue(String(AuthForm.title), {accessToken, strategy: "jwt"})
+            UserStore.login()
+          })
+        }
       })
-      UDPClient.client.on("message", (data: any) => {
-        clientMessageHandler(data, promises, options, UDPClient.giveOriginal)
+      TCPClient.client.on("data", (data: any) => {
+        clientMessageHandler(data, promises, options, TCPClient.giveOriginal)
       })
 
-      UDPClient.client.on("error", () => {
-        console.log("UDP GOT ERROR")
+      TCPClient.client.on("close", () => {
         if (get(options, "userStore")) {
           const store = get(options, "userStore")
           store.setConnected(false)
         }
       })
-      UDPClient.client.bind(0)
     })
   },
   disconnect: () => {
-    return new Promise((resolve) => {
-      const oldClient = UDPClient.client
-      if (oldClient != null) {
-        oldClient.close(resolve)
-      }
-      UDPClient.client = null
-    })
+    const oldClient = TCPClient.client
+    if (oldClient != null) {
+      oldClient.destroy()
+    }
+    TCPClient.client = null
   },
   login: async (loginData: any) => {
     const loginRes: any = await makeCall("authentication", "create", [loginData])
-    const parsedData = parseJwt(loginRes.accessToken)
-    currentToken = loginRes.accessToken
-    const user = await UDPClient.get(dataOptions.userCollection, get(parsedData, "userId"))
-    return {
+    console.log("LOGIN RES IS", loginRes)
+    let accessToken = TCPClient.giveOriginal === true ? loginRes.result.accessToken : loginRes.accessToken
+    if (TCPClient.storage && loginData.strategy !== "jwt") {
+      console.log("SAVING ACCESSTOKEN", accessToken)
+      TCPClient.storage.setItem(accessTokenSaveKey, accessToken)
+    } else {
+      accessToken = loginData.accessToken
+    }
+    const parsedData = parseJwt(accessToken)
+    console.log("PARSED DATA IS", parsedData)
+    const user = await TCPClient.get(dataOptions.userCollection, get(parsedData, "userId"))
+    console.log("FOUND USER IS", user)
+    return TCPClient.giveOriginal === true ? {
+      ...loginRes,
+      user,
+      accessToken: loginRes.accessToken
+    } : {
       user,
       accessToken: loginRes.accessToken
     }
@@ -102,4 +114,4 @@ const UDPClient: IUiClient & {url: string, port: number, giveOriginal: boolean} 
   }
 }
 
-export default UDPClient
+export default TCPClient

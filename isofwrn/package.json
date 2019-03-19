@@ -14,6 +14,7 @@
   "dependencies": {
     "@hawkingnetwork/react-native-tcp": "^3.3.2",
     "ajv": "^6.10.0",
+    "base-64": "^0.1.0",
     "fast-json-patch": "^2.0.7",
     "lodash": "^4.17.11",
     "metro-react-native-babel-preset": "^0.53.1",

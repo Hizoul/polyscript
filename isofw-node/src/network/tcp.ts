@@ -1,7 +1,10 @@
 import val from "isofw-shared/src/globals/val"
 import collections from "isofw-shared/src/xpfwDefs/collections"
 import { createServer, Socket } from "net"
-import serverRequestHandler from "./handler"
+import { performance } from "perf_hooks"
+import serverRequestHandler, {
+  connectionAuthTokens
+} from "./handler"
 
 const methods = ["created", "patched", "removed", "updated"]
 const initiateTcp = async (port: number, app: any) => {
@@ -21,9 +24,11 @@ const initiateTcp = async (port: number, app: any) => {
       }
     }
     server.on("connection", (sock) => {
+      console.log("GOT CONNECTION", sock.remoteAddress, sock.remotePort)
       activeSockets.push(sock)
+      const socketKey = `${sock.remoteAddress}:${sock.remotePort}`
       sock.on("data", (data: any) => {
-        serverRequestHandler(data, app, (result: any, timeStuff: any) => {
+        serverRequestHandler(data, app, socketKey, (result: any, timeStuff: any) => {
           if (val.network.addServerTimeInfo) {
             const end = performance.now()
             result.sent = Date.now()
@@ -46,9 +51,10 @@ const initiateTcp = async (port: number, app: any) => {
           console.log("CLOSED: " + sock.remoteAddress + " " + sock.remotePort)
           const index = activeSockets.indexOf(sock)
           activeSockets.splice(index, 1)
+          delete connectionAuthTokens[socketKey]
       })
     })
-    server.listen(port, "localhost", undefined, () => resolve(server))
+    server.listen(port, "0.0.0.0", undefined, () => resolve(server))
   })
 }
 

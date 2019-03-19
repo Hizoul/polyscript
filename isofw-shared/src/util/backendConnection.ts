@@ -1,32 +1,32 @@
 import { FeathersClient } from "@xpfw/data-feathers"
-// import TCPClient from "isofw-shared/src/network/tcpClient";
-// import UDPClient from "isofw-shared/src/network/udpClient";
 import url from "isofw-shared/src/globals/url"
 import val from "isofw-shared/src/globals/val"
 import makeBenchmarkClient from "isofw-shared/src/network/clientBenchmarker"
 import { BackendClient, DbStore, UserStore } from "isofw-shared/src/util/xpfwdata"
 import collections from "isofw-shared/src/xpfwDefs/collections"
 
-const connect = async (storage: any) => {
-  const clientToUse = FeathersClient
-  // if (val.network.networkToUse === val.network.tcp) {
-  //   clientToUse = TCPClient
-  // } else if (val.network.networkToUse === val.network.udp) {
-  //   clientToUse = UDPClient
-  // }
+const connect = async (storage: any, getClient?: any) => {
+  let clientToUse = getClient ? getClient() : FeathersClient
+  if (clientToUse == null) {
+    clientToUse = FeathersClient
+  }
   BackendClient.client = clientToUse
   if (val.network.benchmarkEnabled) {
     BackendClient.client = makeBenchmarkClient(clientToUse, val.network.networkToUse)
   }
   // feathersClientOptions.batchService = val.service.batch
-  await BackendClient.client.connectTo(`${url.webPrefix}${url.mainServer}`, {
-      authOptions: {storage, timeout: 40000},
-      makeAuth: true,
-      useRest: false,
-      userStore: UserStore,
-      dbStore: DbStore,
-      collections
-  })
+  const connectionOptions: any = {
+    authOptions: {storage, timeout: 40000},
+    port: url.port,
+    makeAuth: true,
+    useRest: false,
+    userStore: UserStore,
+    dbStore: DbStore,
+    collections
+}
+  await BackendClient.client.connectTo(
+    val.network.networkToUse === val.network.websocket ?
+    `${url.webPrefix}${url.mainServer}:${url.port}` : url.mainServer, connectionOptions)
 
   if (!val.network.benchmarkEnabled) {
     for (const collection of collections) {

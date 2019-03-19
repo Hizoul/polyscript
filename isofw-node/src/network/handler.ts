@@ -1,24 +1,30 @@
+import console = require("console")
 import val from "isofw-shared/src/globals/val"
 import { isString } from "lodash"
 
-let unparseable = ""
-let tries = 0
-const serverRequestHandler = async (data: any, app: any, cb: any, timeStuffMaker: any) => {
+const connectionAuthTokens: any = {}
+
+const unparseable: any = {}
+const tries = 0
+const serverRequestHandler = async (data: any, app: any, authTokenKey: any, cb: any, timeStuffMaker: any, retried?: boolean) => {
   const toSplit = isString(data) ? data : data.toString("utf8")
   const messages = toSplit.split(val.network.packetDelimiter)
   for (const unparsedMessage of messages) {
     if (unparsedMessage.length > 0) {
       try {
         const message = JSON.parse(unparsedMessage)
+        unparseable[authTokenKey] = ""
         const timeStuff = timeStuffMaker()
         if (message != null && message.method != null) {
           if (message.collection != null) {
             if (Array.isArray(message.data)) {
               let args: any[] = []
-              const baseParams = {
-                provider: "rest",
-                headers: {
-                  authorization: message.currentToken
+              const baseParams: any = {
+                provider: "rest"
+              }
+              if (connectionAuthTokens[authTokenKey] != null) {
+                baseParams.headers = {
+                  authorization: connectionAuthTokens[authTokenKey]
                 }
               }
               switch (message.method) {
@@ -45,27 +51,42 @@ const serverRequestHandler = async (data: any, app: any, cb: any, timeStuffMaker
                   break
                 }
               }
-              const result = await app.service(message.collection)[message.method](...args)
-              cb({
-                trackId: message.trackId, result
-              }, timeStuff)
+              try {
+                const result = await app.service(message.collection)[message.method](...args)
+                if (message.collection === "authentication" && message.method === "create") {
+                  connectionAuthTokens[authTokenKey] = result.accessToken
+                }
+                cb({
+                  trackId: message.trackId, result
+                }, timeStuff)
+              } catch (e) {
+                cb({trackId: message.trackId, error: e}, timeStuff)
+              }
+              return
             }
           }
-          cb({trackId: message.trackId, error: "no collection specified"})
+          cb({trackId: message.trackId, error: "no collection specified"}, timeStuff)
+          return
         }
-        cb({trackId: message.trackId, error: "no method specified"})
+        cb({trackId: message.trackId, error: "no method specified"}, timeStuff)
+        return
       } catch (e)  {
-        unparseable += unparsedMessage
-        tries++
-        if (tries > 1) {
-          tries = 0
-          const toTry = unparseable
-          unparseable = ""
-          serverRequestHandler(toTry, app, cb, timeStuffMaker)
+        if (!retried) {
+          console.log("COULDN'T PARSE")
+          if (unparseable[authTokenKey] == null) {
+            unparseable[authTokenKey] = ""
+          }
+          unparseable[authTokenKey] += unparsedMessage
         }
       }
     }
   }
+  if (unparseable[authTokenKey].length > 0 && !retried) {
+    await serverRequestHandler(unparseable[authTokenKey], app, authTokenKey, cb, timeStuffMaker, true)
+  }
 }
 
 export default serverRequestHandler
+export {
+  connectionAuthTokens
+}

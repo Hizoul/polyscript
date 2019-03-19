@@ -1,8 +1,8 @@
+import { createSocket } from "dgram"
 import val from "isofw-shared/src/globals/val"
 import parseJwt from "isofw-shared/src/util/parseJwt"
 import { dataOptions, IUiClient } from "isofw-shared/src/util/xpfwdata"
 import { get } from "lodash"
-import { Socket } from "net"
 import clientMessageHandler from "./clientHandler"
 
 let trackId = 0
@@ -18,57 +18,62 @@ const makeCall = (collection: string, method: string, data: any[]) => {
       trackId = 1
     }
     promises[trackId] = {resolve, reject}
-    TCPClient.client.write(JSON.stringify({
+    const msg = Buffer.from(JSON.stringify({
       collection, method, data, trackId, currentToken
     }) + val.network.packetDelimiter)
+    UDPClient.client.send(msg, 0, msg.length, UDPClient.port, UDPClient.url)
   })
 }
 
-const TCPClient: IUiClient & {giveOriginal?: boolean} = {
-  client: null,
+const UDPClient: IUiClient & {url: string, port: number, giveOriginal: boolean} = {
+  url: "",
+  port: -1,
   giveOriginal: false,
+  client: null,
   connectTo: (url: any, options: any) => {
     return new Promise((resolve) => {
-      TCPClient.client = new Socket()
-      TCPClient.client.connect(options.port, url)
+      console.log("DOING UDP CONNECT")
+      UDPClient.client = createSocket("udp4")
+      UDPClient.port = options.port
+      UDPClient.url = url
 
-      TCPClient.client.on("connect", () => {
-        console.log("CLIENT CONNECTED")
+      UDPClient.client.on("listening", () => {
+        console.log("UDPCLIENT CONNECTED")
         resolve()
         if (get(options, "userStore")) {
           const store = get(options, "userStore")
           store.setConnected(true)
         }
       })
-      TCPClient.client.on("data", (data: any) => {
-        clientMessageHandler(data, promises, options, TCPClient.giveOriginal)
+      UDPClient.client.on("message", (data: any) => {
+        clientMessageHandler(data, promises, options, UDPClient.giveOriginal)
       })
 
-      TCPClient.client.on("close", () => {
+      UDPClient.client.on("error", () => {
+        console.log("UDP GOT ERROR")
         if (get(options, "userStore")) {
           const store = get(options, "userStore")
           store.setConnected(false)
         }
       })
+      UDPClient.client.bind(0)
     })
   },
   disconnect: () => {
-    const oldClient = TCPClient.client
-    if (oldClient != null) {
-      oldClient.destroy()
-    }
-    TCPClient.client = null
+    return new Promise((resolve) => {
+      const oldClient = UDPClient.client
+      if (oldClient != null) {
+        oldClient.close(resolve)
+      }
+      UDPClient.client = null
+    })
   },
   login: async (loginData: any) => {
     const loginRes: any = await makeCall("authentication", "create", [loginData])
-    currentToken = TCPClient.giveOriginal === true ? loginRes.result.accessToken : loginRes.accessToken
-    const parsedData = parseJwt(currentToken)
-    const user = await TCPClient.get(dataOptions.userCollection, get(parsedData, "userId"))
-    return TCPClient.giveOriginal === true ? {
-      ...loginRes,
-      user,
-      accessToken: loginRes.accessToken
-    } : {
+    const parsedData = parseJwt(UDPClient.giveOriginal === true ? loginRes.result.accessToken : loginRes.accessToken)
+    currentToken = loginRes.accessToken
+    const user = await UDPClient.get(dataOptions.userCollection, get(parsedData, "userId"))
+    return {
       user,
       accessToken: loginRes.accessToken
     }
@@ -97,4 +102,4 @@ const TCPClient: IUiClient & {giveOriginal?: boolean} = {
   }
 }
 
-export default TCPClient
+export default UDPClient
