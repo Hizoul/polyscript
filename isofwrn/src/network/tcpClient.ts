@@ -45,8 +45,10 @@ const TCPClient: IUiClient & {giveOriginal?: boolean, storage?: any} = {
         }
         if (TCPClient.storage) {
           TCPClient.storage.getItem(accessTokenSaveKey, (error: any, accessToken: any) => {
-            FormStore.setValue(String(AuthForm.title), {accessToken, strategy: "jwt"})
-            UserStore.login()
+            if (accessToken != null && accessToken.length > 0) {
+              FormStore.setValue(String(AuthForm.title), {accessToken, strategy: "jwt"})
+              UserStore.login()
+            }
           })
         }
       })
