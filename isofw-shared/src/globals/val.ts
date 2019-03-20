@@ -1,7 +1,7 @@
 import urls from "./url"
 
 const val = {
-  isDebug: true,
+  isDebug: false,
   isNative: true,
   version: "0.1.0",
   i18nNameSpace: "main",
