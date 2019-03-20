@@ -475,10 +475,10 @@
   resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-12.0.9.tgz#693e76a52f61a2f1e7fb48c0eef167b95ea4ffd0"
   integrity sha512-sCZy4SxP9rN2w30Hlmg5dtdRwgYQfYRiLo9usw8X9cxlf+H4FqM1xX7+sNH7NNKVdbXMJWqva7iyy+fxh/V7fA==
 
-"@xpfw/data-feathers@1.0.0-beta.7":
-  version "1.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@xpfw/data-feathers/-/data-feathers-1.0.0-beta.7.tgz#f57554ba9c447fa73df4b9d4fa6cf1118a64e4ee"
-  integrity sha512-1/VRXwPn0SRtCakDkokxoh8iQtzWqr82XltCtv2V1EMFYasIv2bEbMnh9mrb88nFzoOWGdQx02L8PYbRQcCZaw==
+"@xpfw/data-feathers@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@xpfw/data-feathers/-/data-feathers-1.0.0-beta.11.tgz#63a0632cbf44c7be707569e373a895ebcce03b98"
+  integrity sha512-g6l2CrT6Bqwj5sveu3/Ws/9qX8mTKh3bLPWR37wqtiY7ak66S0qNw/ouRZf6BEgE0fAgG7DHta9Tl49WvgXdrw==
   dependencies:
     "@feathersjs/authentication-client" "^1.0.10"
     "@feathersjs/feathers" "^3.3.1"
@@ -491,10 +491,10 @@
   resolved "https://registry.yarnpkg.com/@xpfw/data-tests/-/data-tests-1.0.0-beta.7.tgz#e3b885ae5f105e28dfe6641ef3676d58d46a849a"
   integrity sha512-ebOuNpKvvKkT/z5yn/8vJtu2ZrFLrka1Lbd8zvPwXQadRxQrBZJoHD2QVh4rmwELgplq68BJOoiUha51fWlXGQ==
 
-"@xpfw/data@1.0.0-beta.10":
-  version "1.0.0-beta.10"
-  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.10.tgz#8d780ed8828c2605e9c0998b3df10a39239b89fb"
-  integrity sha512-HGIZbgjJ2j8PeKk1ysMZD/yPd0g0WvqJVacCBt22dBJAI2FzHiTvi6StZLOjWegUD7PTE0BpDDuUc9qFHa3yjg==
+"@xpfw/data@1.0.0-beta.11":
+  version "1.0.0-beta.11"
+  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.11.tgz#41c083ffd7787e97aab5561f1af130a1fea4e990"
+  integrity sha512-RQh6EuQfxXkX7NC78knPQesGyAegHrSqXQmUBJ57TlqoZol6XOQA7+/Z6+j2qf5nmaFo1mW/hkCj76wKMljx1A==
 
 "@xpfw/form-tests@1.0.0-beta.7":
   version "1.0.0-beta.7"
