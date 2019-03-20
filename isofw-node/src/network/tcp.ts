@@ -1,6 +1,7 @@
 import val from "isofw-shared/src/globals/val"
-import lzString from "isofw-shared/src/util/lzString"
-import pako from "isofw-shared/src/util/pako"
+import {
+  packMessage, unpackMessage
+} from "isofw-shared/src/network/compression"
 import collections from "isofw-shared/src/xpfwDefs/collections"
 import { createServer, Socket } from "net"
 import { performance } from "perf_hooks"
@@ -16,7 +17,8 @@ const initiateTcp = async (port: number, app: any) => {
     const pushEvent = (collection: string, method: string) => {
       return (result: any) => {
         for (const socket of activeSockets) {
-          socket.write(JSON.stringify({result, trackId: -1, collection, method}) + val.network.packetDelimiter)
+          socket.write(
+            packMessage(JSON.stringify({result, trackId: -1, collection, method})) + val.network.packetDelimiter)
         }
       }
     }
@@ -30,6 +32,7 @@ const initiateTcp = async (port: number, app: any) => {
       activeSockets.push(sock)
       const socketKey = `${sock.remoteAddress}:${sock.remotePort}`
       sock.on("data", (data: any) => {
+        console.log("GOT DATA")
         serverRequestHandler(data, app, socketKey, (result: any, timeStuff: any) => {
           if (val.network.addServerTimeInfo) {
             const end = performance.now()
@@ -39,15 +42,7 @@ const initiateTcp = async (port: number, app: any) => {
             result.end = end
             result.arrive = timeStuff.startAt
           }
-          let toSend = JSON.stringify(result)
-          if (val.network.useCompression) {
-            if (val.network.useGzipCompression) {
-              toSend = pako.gzip(toSend, {to: "string"})
-            } else {
-              toSend = lzString.compressToBase64(toSend)
-            }
-          }
-          sock.write(toSend + val.network.packetDelimiter)
+          sock.write(packMessage(JSON.stringify(result)) + val.network.packetDelimiter)
         }, () => {
           let start: any, startAt: any
           if (val.network.addServerTimeInfo) {

@@ -1,7 +1,6 @@
 import { Buffer } from "buffer"
 import val from "isofw-shared/src/globals/val"
-import lzString from "isofw-shared/src/util/lzString"
-import pako from "isofw-shared/src/util/pako"
+import { packMessage } from "isofw-shared/src/network/compression"
 import parseJwt from "isofw-shared/src/util/parseJwt"
 import { AuthForm, dataOptions, IUiClient, UserStore } from "isofw-shared/src/util/xpfwdata"
 import { FormStore } from "isofw-shared/src/util/xpfwform"
@@ -21,17 +20,9 @@ const makeCall = (collection: string, method: string, data: any[]) => {
       trackId = 1
     }
     promises[trackId] = {resolve, reject}
-    let toSend = JSON.stringify({
+    TCPClient.client.write(packMessage(JSON.stringify({
       collection, method, data, trackId
-    })
-    if (val.network.useCompression) {
-      if (val.network.useGzipCompression) {
-        toSend = pako.gzip(toSend, {to: "string"})
-      } else {
-        toSend = lzString.compressToBase64(toSend)
-      }
-    }
-    TCPClient.client.write(toSend + val.network.packetDelimiter)
+    })) + val.network.packetDelimiter)
   })
 }
 const accessTokenSaveKey = "accessToken"
@@ -80,18 +71,14 @@ const TCPClient: IUiClient & {giveOriginal?: boolean, storage?: any} = {
   },
   login: async (loginData: any) => {
     const loginRes: any = await makeCall("authentication", "create", [loginData])
-    console.log("LOGIN RES IS", loginRes)
     let accessToken = TCPClient.giveOriginal === true ? loginRes.result.accessToken : loginRes.accessToken
     if (TCPClient.storage && loginData.strategy !== "jwt") {
-      console.log("SAVING ACCESSTOKEN", accessToken)
       TCPClient.storage.setItem(accessTokenSaveKey, accessToken)
     } else {
       accessToken = loginData.accessToken
     }
     const parsedData = parseJwt(accessToken)
-    console.log("PARSED DATA IS", parsedData)
     const user = await TCPClient.get(dataOptions.userCollection, get(parsedData, "userId"))
-    console.log("FOUND USER IS", user)
     return TCPClient.giveOriginal === true ? {
       ...loginRes,
       user,
