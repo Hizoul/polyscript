@@ -13,18 +13,13 @@ const serverRequestHandler = async (data: any, app: any, authTokenKey: any, cb: 
   let cuttableSuccessLength = 0
   try {
     for (const unparsedMessage of messages) {
-      console.log("TRYING WITH", unparsedMessage.length)
       if (unparsedMessage.length > 0) {
-        console.log("trying parse")
         const message = JSON.parse(unpackMessage(unparsedMessage))
-        console.log("PARSED MSSG")
         if (message == null) {
           throw new Error("MSG IS NULL")
         }
-        console.log("SUCCESSFULLY PARSED", message.trackId, unparseable[authTokenKey].length)
         cuttableSuccessLength += unparsedMessage.length + val.network.packetDelimiter.length
         unparseable[authTokenKey] = unparseable[authTokenKey].substring(unparsedMessage.length + val.network.packetDelimiter.length)
-        console.log("AFTER SUCCESSFUL PARSE IS", unparseable[authTokenKey].length)
         const timeStuff = timeStuffMaker()
         if (message != null && message.method != null) {
           if (message.collection != null) {
@@ -71,7 +66,6 @@ const serverRequestHandler = async (data: any, app: any, authTokenKey: any, cb: 
                   trackId: message.trackId, result
                 }, timeStuff)
               } catch (e) {
-                console.log("ERROR DOING CALL", e)
                 cb({trackId: message.trackId, error: e}, timeStuff)
               }
               return
@@ -88,15 +82,11 @@ const serverRequestHandler = async (data: any, app: any, authTokenKey: any, cb: 
     if (unparseable[authTokenKey] == null) {
       unparseable[authTokenKey] = ""
     }
-    console.log("IN RETRY CAUGHT E", e, toSplit.substring(toSplit.length - 30, toSplit.length - 1))
     if (!retried) {
-      console.log("COULDN'T PARSE", e)
       unparseable[authTokenKey] += cuttableSuccessLength > 0 ? toSplit.substring(cuttableSuccessLength) : toSplit
-      console.log("UNPARSEABLE IS NOW", unparseable[authTokenKey].substring(unparseable[authTokenKey].length - 30, unparseable[authTokenKey].length - 1))
     }
   }
   if (unparseable[authTokenKey].length > 0 && !retried) {
-    console.log("retrying with", unparseable[authTokenKey].substring(unparseable[authTokenKey].length - 30, unparseable[authTokenKey].length - 1))
     await serverRequestHandler(unparseable[authTokenKey], app, authTokenKey, cb, timeStuffMaker, true)
   }
 }

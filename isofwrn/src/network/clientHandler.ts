@@ -12,7 +12,6 @@ const clientMessageHandler = (data: any, promises: any, options: any, giveOrigin
   let cuttableSuccessLength = 0
   try {
   for (const unparsedMessage of messages) {
-    console.log("trying to parse", unparsedMessage.length)
     if (unparsedMessage.length > 0) {
       const message = JSON.parse(unpackMessage(unparsedMessage))
       if (message == null) {
@@ -20,8 +19,7 @@ const clientMessageHandler = (data: any, promises: any, options: any, giveOrigin
       }
       unparseable = unparseable.substring(unparsedMessage.length + val.network.packetDelimiter.length)
       cuttableSuccessLength += unparsedMessage.length + val.network.packetDelimiter.length
-      console.log("AFTER SUCCESSFUL PARSE IS", unparseable.length)
-      console.log("MSSG IS", message.trackId)
+
       if (promises[message.trackId]) {
         if (promises[message.trackId] === -1) {
           const dbStore = get(options, "dbStore")
@@ -32,10 +30,8 @@ const clientMessageHandler = (data: any, promises: any, options: any, giveOrigin
           }
         } else {
           if (message.error) {
-            console.log("REJECTIN GMSG", message.trackId)
             promises[message.trackId].reject(giveOriginal === true ? message : message.error)
           } else {
-            console.log("RESOLVING MSG", message.trackId)
             promises[message.trackId].resolve(giveOriginal === true ? message : message.result)
           }
           delete promises[message.trackId]
@@ -44,14 +40,11 @@ const clientMessageHandler = (data: any, promises: any, options: any, giveOrigin
     }
   }
   } catch (e) {
-    console.log("ERROR PARSING", e, toSplit.substring(toSplit.length - 30, toSplit.length - 1))
     if (!retried) {
       unparseable += cuttableSuccessLength > 0 ? toSplit.substring(cuttableSuccessLength) : toSplit
-      console.log("UNPARSEABLE IS NOW", unparseable.substring(unparseable.length - 30, unparseable.length - 1))
     }
   }
   if (unparseable.length > 0 && !retried) {
-    console.log("retrying with", unparseable.substring(unparseable.length - 30, unparseable.length - 1))
     clientMessageHandler(unparseable, promises, options, giveOriginal, true)
   }
 }

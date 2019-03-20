@@ -32,7 +32,6 @@ const initiateTcp = async (port: number, app: any) => {
       activeSockets.push(sock)
       const socketKey = `${sock.remoteAddress}:${sock.remotePort}`
       sock.on("data", (data: any) => {
-        console.log("GOT DATA")
         serverRequestHandler(data, app, socketKey, (result: any, timeStuff: any) => {
           if (val.network.addServerTimeInfo) {
             const end = performance.now()
