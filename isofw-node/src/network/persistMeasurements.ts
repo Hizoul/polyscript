@@ -19,8 +19,8 @@ MongoClient.connect(mongoUrl, {useNewUrlParser: true}).then(async (c: any) => {
   const app: any = makeApp(undefined, db)
   const entries: any[] = []
   console.log("Attempting to collect entries")
-  await iterateEachInFind(val.service.benchmarkResults, {$limit: 9999}, (c, q) => {
-    return app.service(val.service.benchmarkResults).find(q)
+  await iterateEachInFind(val.service.benchmarkResults, undefined, (c, q) => {
+    return app.service(val.service.benchmarkResults).find({query: q})
   }, (obj: any) => {
     entries.push(obj)
     return Promise.resolve()

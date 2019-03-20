@@ -4,6 +4,7 @@ import val from "isofw-shared/src/globals/val"
 import makeBenchmarkClient from "isofw-shared/src/network/clientBenchmarker"
 import { BackendClient, DbStore, UserStore } from "isofw-shared/src/util/xpfwdata"
 import collections from "isofw-shared/src/xpfwDefs/collections"
+import { ProjectForm } from "isofw-shared/src/xpfwDefs/project"
 
 const connect = async (storage: any, getClient?: any) => {
   let clientToUse = getClient ? getClient() : FeathersClient
@@ -28,11 +29,15 @@ const connect = async (storage: any, getClient?: any) => {
     val.network.networkToUse === val.network.websocket ?
     `${url.webPrefix}${url.mainServer}:${url.port}` : url.mainServer, connectionOptions)
 
-  if (!val.network.benchmarkEnabled) {
-    for (const collection of collections) {
-      BackendClient.client.client.service(collection).timeout = 40000
-    }
+  for (const collection of collections) {
+    BackendClient.client.client.service(collection).timeout = 40000
   }
+
+  DbStore.formsToUpdate.push({
+    collection: val.service.project,
+    mapTo: String(ProjectForm.title),
+    prefix: "edit"
+  })
 }
 
 export default connect
