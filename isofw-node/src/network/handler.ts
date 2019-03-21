@@ -11,6 +11,9 @@ const serverRequestHandler = async (data: any, app: any, authTokenKey: any, cb: 
   const toSplit = isString(data) ? data : data.toString("utf8")
   const messages = toSplit.split(val.network.packetDelimiter)
   let cuttableSuccessLength = 0
+  if (unparseable[authTokenKey] == null) {
+    unparseable[authTokenKey] = ""
+  }
   try {
     for (const unparsedMessage of messages) {
       if (unparsedMessage.length > 0) {
@@ -18,8 +21,12 @@ const serverRequestHandler = async (data: any, app: any, authTokenKey: any, cb: 
         if (message == null) {
           throw new Error("MSG IS NULL")
         }
+        console.log("HANDLING", message.trackId)
         cuttableSuccessLength += unparsedMessage.length + val.network.packetDelimiter.length
-        unparseable[authTokenKey] = unparseable[authTokenKey].substring(unparsedMessage.length + val.network.packetDelimiter.length)
+        if (unparseable[authTokenKey].length > 0) {
+          unparseable[authTokenKey] = unparseable[authTokenKey]
+            .substring(unparsedMessage.length + val.network.packetDelimiter.length)
+        }
         const timeStuff = timeStuffMaker()
         if (message != null && message.method != null) {
           if (message.collection != null) {
@@ -79,9 +86,6 @@ const serverRequestHandler = async (data: any, app: any, authTokenKey: any, cb: 
       }
     }
   } catch (e)  {
-    if (unparseable[authTokenKey] == null) {
-      unparseable[authTokenKey] = ""
-    }
     if (!retried) {
       unparseable[authTokenKey] += cuttableSuccessLength > 0 ? toSplit.substring(cuttableSuccessLength) : toSplit
     }
