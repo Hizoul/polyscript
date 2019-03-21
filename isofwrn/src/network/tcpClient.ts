@@ -1,8 +1,8 @@
-import { Buffer } from "buffer"
 import val from "isofw-shared/src/globals/val"
 import { packMessage } from "isofw-shared/src/network/compression"
 import parseJwt from "isofw-shared/src/util/parseJwt"
-import { AuthForm, dataOptions, IUiClient, UserStore } from "isofw-shared/src/util/xpfwdata"
+import promiseTimeout from "isofw-shared/src/util/promiseTimeout"
+import { AuthForm, dataOptions, IUiClient, toJS, UserStore } from "isofw-shared/src/util/xpfwdata"
 import { FormStore } from "isofw-shared/src/util/xpfwform"
 import { get } from "lodash"
 import { Socket } from "net"
@@ -74,29 +74,31 @@ const TCPClient: IUiClient & {giveOriginal?: boolean, storage?: any} = {
     TCPClient.client = null
   },
   login: async (loginData: any) => {
-    const loginRes: any = await makeCall("authentication", "create", [loginData])
-    let accessToken = TCPClient.giveOriginal === true ? loginRes.result.accessToken : loginRes.accessToken
+    const loginRes: any = await makeCall("authentication", "create", [toJS(loginData)])
+    const accessToken = TCPClient.giveOriginal === true ? loginRes.result.accessToken : loginRes.accessToken
     if (TCPClient.storage && loginData.strategy !== "jwt") {
       TCPClient.storage.setItem(accessTokenSaveKey, accessToken)
-    } else {
-      accessToken = loginData.accessToken
     }
     const parsedData = parseJwt(accessToken)
     const user = await TCPClient.get(dataOptions.userCollection, get(parsedData, "userId"))
-    return TCPClient.giveOriginal === true ? {
-      ...loginRes,
-      user,
-      accessToken: loginRes.accessToken
+    const res: any = TCPClient.giveOriginal === true ? {
+      result: {
+        ...loginRes,
+        user: user.result,
+        accessToken: loginRes.accessToken
+      }
     } : {
       user,
       accessToken: loginRes.accessToken
     }
+    return res
   },
   register: (registerData: any) => {
     return makeCall(dataOptions.userCollection, "create", [registerData])
   },
   logout: () => {
     // return FeathersClient.client.logout()
+    TCPClient.storage.setItem(accessTokenSaveKey, "")
     return Promise.resolve()
   },
   get: (collection: string, id: any) => {
