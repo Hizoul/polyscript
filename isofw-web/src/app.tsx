@@ -3,7 +3,6 @@ import Framework7React, { App, Block,  List, ListItem, Page, Panel, View } from 
 import "framework7/css/framework7.bundle.min.css"
 import Framework7 from "framework7/framework7.esm.bundle.js"
 import "isofw-shared/src/xpfwDefs"
-import "isofw-web/src/backendConnection"
 import * as React from "react"
 import MenuPanel from "./components/menuPanel"
 import routes from "./pages"

@@ -1,6 +1,8 @@
-import { dataOptions } from "@xpfw/data"
+import { dataOptions, UserStore } from "@xpfw/data"
 import { memo } from "@xpfw/form"
-import { action } from "mobx"
+import { action, observable } from "mobx"
+import urls from "../globals/url"
+import val from "../globals/val"
 import BenchmarkStore from "./benchmarkStore"
 
 const togglePatchDiff = action(() => {
@@ -27,4 +29,38 @@ const useBenchmark = (projectId: string) => {
   }
 }
 
+const connectionStore = observable({
+  networkToUse: val.network.networkToUse,
+  useCompression: val.network.useCompression,
+  ip: urls.mainServer
+})
+
+const toggleNetworkToUse = action(() => {
+  connectionStore.networkToUse = connectionStore.networkToUse === 1 ? 0 : 1
+  val.network.networkToUse = connectionStore.networkToUse
+})
+
+const toggleCompression = action(() => {
+  connectionStore.useCompression = !connectionStore.useCompression
+  val.network.useCompression = connectionStore.useCompression
+})
+
+const setIp = action((newValue: any) => {
+  connectionStore.ip = newValue
+  urls.mainServer = connectionStore.ip
+})
+
+const useConnection = () => {
+  return {
+    networkToUse: connectionStore.networkToUse,
+    useCompression: connectionStore.useCompression,
+    toggleNetworkToUse, toggleCompression,
+    ip: connectionStore.ip, setIp,
+    connected: UserStore.getConnected()
+  }
+}
+
 export default useBenchmark
+export {
+  useConnection
+}
