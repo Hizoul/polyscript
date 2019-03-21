@@ -24,20 +24,20 @@ const connect = async (storage: any, getClient?: any) => {
     userStore: UserStore,
     dbStore: DbStore,
     collections
-}
+  }
   await BackendClient.client.connectTo(
     val.network.networkToUse === val.network.websocket ?
     `${url.webPrefix}${url.mainServer}:${url.port}` : url.mainServer, connectionOptions)
-
-  for (const collection of collections) {
-    BackendClient.client.client.service(collection).timeout = 40000
-  }
-
   DbStore.formsToUpdate.push({
     collection: val.service.project,
     mapTo: String(ProjectForm.title),
     prefix: "edit"
   })
+  if (val.network.networkToUse === val.network.websocket) {
+    for (const collection of collections) {
+      BackendClient.client.client.service(collection).timeout = 40000
+    }
+  }
 }
 
 export default connect

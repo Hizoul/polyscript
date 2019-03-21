@@ -20,6 +20,7 @@ const makeCall = (collection: string, method: string, data: any[]) => {
       trackId = 1
     }
     promises[trackId] = {resolve, reject}
+    console.log("MAKING CALL WITH ", trackId)
     TCPClient.client.write(packMessage(JSON.stringify({
       collection, method, data, trackId
     })) + val.network.packetDelimiter)
@@ -45,8 +46,10 @@ const TCPClient: IUiClient & {giveOriginal?: boolean, storage?: any} = {
         }
         if (TCPClient.storage) {
           TCPClient.storage.getItem(accessTokenSaveKey, (error: any, accessToken: any) => {
-            FormStore.setValue(String(AuthForm.title), {accessToken, strategy: "jwt"})
-            UserStore.login()
+            if (accessToken != null && accessToken.length > 0) {
+              FormStore.setValue(String(AuthForm.title), {accessToken, strategy: "jwt"})
+              UserStore.login()
+            }
           })
         }
       })
@@ -55,6 +58,7 @@ const TCPClient: IUiClient & {giveOriginal?: boolean, storage?: any} = {
       })
 
       TCPClient.client.on("close", () => {
+        console.log("SOCKET CLOSED")
         if (get(options, "userStore")) {
           const store = get(options, "userStore")
           store.setConnected(false)

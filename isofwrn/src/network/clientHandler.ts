@@ -17,7 +17,10 @@ const clientMessageHandler = (data: any, promises: any, options: any, giveOrigin
       if (message == null) {
         throw new Error("MSG IS NULL")
       }
-      unparseable = unparseable.substring(unparsedMessage.length + val.network.packetDelimiter.length)
+      console.log("GOT MESSAGE", message.trackId)
+      if (unparseable.length > 0) {
+        unparseable = unparseable.substring(unparsedMessage.length + val.network.packetDelimiter.length)
+      }
       cuttableSuccessLength += unparsedMessage.length + val.network.packetDelimiter.length
 
       if (promises[message.trackId]) {
