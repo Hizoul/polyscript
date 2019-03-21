@@ -33,12 +33,12 @@ const makeRandomProgram = () => {
 
 const makeRandomDisabledCameras = () => {
   const ret = []
-  for (let i = 0; i < randomInRange(3, 25); i++) {
+  for (let i = 0; i < 15; i++) {
     ret.push(randomString(32))
   }
   return ret
 }
-const amountOfCalls = 10
+const amountOfCalls = 50
 const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string, type?: number) => {
   BenchmarkStore.uploaded = false
   BenchmarkStore.loading = true
@@ -47,13 +47,14 @@ const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string, 
   BenchmarkStore.total = amountOfCalls
   const promises = []
   for (let i = 1; i <= amountOfCalls; i++) {
-    switch (randomInRange(0, 4)) {
+    switch (i % 4) {
       case 0: {
         FormStore.setValue(ProjectName.title, randomString(64), prependPrefix(ProjectForm.title, directorPrefix))
         break
       }
       case 1: {
-        FormStore.setValue(ProjectShot.title, randomInRange(0, 250), prependPrefix(ProjectForm.title, directorPrefix))
+        FormStore.setValue(ProjectShot.title,
+          randomInRange(1, BenchmarkStore.programSize), prependPrefix(ProjectForm.title, directorPrefix))
         break
       }
       case 2: {
@@ -63,7 +64,9 @@ const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string, 
       }
       default:
       case 3: {
-        program[randomInRange(0, BenchmarkStore.programSize)] = makeRandomProgrmanEntry()
+        for (let b = 0; b < Math.max(1, i % 10); b++) {
+          program[randomInRange(0, BenchmarkStore.programSize)] = makeRandomProgrmanEntry()
+        }
         FormStore.setValue(ProjectProgram.title, program, prependPrefix(ProjectForm.title, directorPrefix))
         break
       }
