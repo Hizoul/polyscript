@@ -10,7 +10,7 @@ import { textCenter } from "isofwrn/src/styles/text"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
-import { StyleSheet, Text, View } from "react-native"
+import { ScrollView, StyleSheet, Text, View } from "react-native"
 import NativeBenchmarkComponent from "../benchmark"
 import I18n from "../i18n"
 import NativeCameraDisabler from "./cameraDisabler"
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
 const ShotEditor = observer((props: DirectorProps) => {
   const directorProps = useDirector(props.id)
   return (
-    <View>
+    <ScrollView>
       <View style={styles.top}>
         <I18n text="director.project" />
         <Text>
@@ -86,7 +86,7 @@ const ShotEditor = observer((props: DirectorProps) => {
       <I18n text="director.cameras" style={[textCenter, {fontSize: 30}]} />
       <NativeCameraDisabler schema={DisabledCameras} prefix={prependPrefix(ProjectForm.title, props.prefix)} autoSave={true} />
       {val.network.benchmarkEnabled ? <NativeBenchmarkComponent projectId={props.id} /> : undefined}
-    </View>
+    </ScrollView>
   )
 })
 
