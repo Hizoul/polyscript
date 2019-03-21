@@ -26,7 +26,7 @@ const NativeBenchmarkComponent: React.FunctionComponent<{projectId: string}> = o
         text={"benchmark.progress"}
         textParams={[benchmarkResults.currentlyAt, benchmarkResults.total]}
       />
-      <View style={baseStyles.row}>
+      <View>
         <NativeButton
           title="benchmark.start"
           onPress={benchmarkResults.causeProjectTraffic}
