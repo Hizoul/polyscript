@@ -19,7 +19,7 @@ const randomInRange = (min: number, max: number) => {
 }
 
 const range = (from: number, to: number, step: number = 1) => {
-  const rangeArray = []
+  const rangeArray: any[] = []
   for (let i = from; i < to; i += step) {
     rangeArray.push(i)
   }

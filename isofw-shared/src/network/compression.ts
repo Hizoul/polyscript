@@ -16,7 +16,7 @@ const compress = (msg: any, asArray?: boolean) => {
 		c,
 		wc,
 		w = "",
-		result = [],
+		result: any[] = [],
 		ASCII = "",
 		dictSize = 256
 	for (i = 0; i < 256; i += 1) {
@@ -51,10 +51,10 @@ const compress = (msg: any, asArray?: boolean) => {
 const decompress = (msg: any) => {
 	// Build the dictionary.
 	let i, tmp: any = [],
-		dictionary = [],
+		dictionary: any[] = [],
 		compressed = msg,
 		w,
-		result,
+		result: any,
 		k,
 		entry = "",
 		dictSize = 256

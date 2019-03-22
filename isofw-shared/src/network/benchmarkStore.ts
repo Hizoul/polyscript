@@ -23,7 +23,7 @@ export class BenchmarkStoreClass {
   public causeProjectTraffic(projectId: string) {
     return () => {
       const client: any = BackendClient.client
-      causeProjectTraffic(client, projectId)
+      return causeProjectTraffic(client, projectId)
     }
   }
 }

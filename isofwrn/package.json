@@ -7,9 +7,10 @@
     "postinstall": "rn-nodeify --install stream,process,util --hack",
     "test": "jest",
     "dev": "./node_modules/.bin/react-native start",
-    "buildAndroid": "cd android && ./gradlew assembleRelease",
+    "buildAndroid": "cd android && gradlew clean &&gradlew assembleRelease",
     "rns": "adb reverse tcp:4202 tcp:4202",
-    "rnad": "adb shell input keyevent 82"
+    "rnad": "adb shell input keyevent 82",
+    "bench": "cross-env NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/ts-node src/network/nodeBenchmarker"
   },
   "dependencies": {
     "@hawkingnetwork/react-native-tcp": "^3.3.2",

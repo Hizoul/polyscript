@@ -24,7 +24,7 @@ const makeRandomProgrmanEntry = () => {
 }
 
 const makeRandomProgram = () => {
-  const program = []
+  const program: any[] = []
   for (let i = 0; i < BenchmarkStore.programSize; i++) {
     program.push(makeRandomProgrmanEntry())
   }
@@ -32,7 +32,7 @@ const makeRandomProgram = () => {
 }
 
 const makeRandomDisabledCameras = () => {
-  const ret = []
+  const ret: any[] = []
   for (let i = 0; i < 15; i++) {
     ret.push(randomString(32))
   }
@@ -45,7 +45,7 @@ const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string, 
   client.measurements = []
   const program = makeRandomProgram()
   BenchmarkStore.total = amountOfCalls
-  const promises = []
+  const promises: any[] = []
   for (let i = 1; i <= amountOfCalls; i++) {
     switch (i % 4) {
       case 0: {
