@@ -1,7 +1,7 @@
 import { BlockTitle, Card, List } from "framework7-react"
 import { useList } from "isofw-shared/src/util/xpfwdata"
 import { prependPrefix, SharedField } from "isofw-shared/src/util/xpfwform"
-import { get, isNil } from "lodash"
+import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
 import WebRelationshipItem from "./relationshipItem"
