@@ -7,6 +7,7 @@ import { isObject, isString } from "lodash"
 import { MongoClient } from "mongodb"
 import initiateUdp from "./network/udp"
 
+const useNedb = true // process != null && process.env != null && process.env.USE_NEDB != null
 let mongoUrl: any = `mongodb://localhost:27017/`
 let networkToUse = val.network.networkToUse
 
@@ -17,9 +18,7 @@ if (isObject(global.process) && isString(process.env.MONGO_URL)) {
 if (isObject(global.process) && isString(process.env.NETWORK_TO_USE)) {
   networkToUse = Number(process.env.NETWORK_TO_USE)
 }
-console.log("Attempting to connect to database")
-MongoClient.connect(mongoUrl, {useNewUrlParser: true}).then((c: any) => {
-  const db = c.db("poly-direct")
+const appStuff = (db?: any) => {
   console.log("Attempting to start Server")
   const app: any = makeApp(undefined, db)
   if (networkToUse === val.network.tcp) {
@@ -33,4 +32,15 @@ MongoClient.connect(mongoUrl, {useNewUrlParser: true}).then((c: any) => {
       console.log("Now listening on http://localhost:4202")
     })
   }
-})
+}
+
+console.log("Attempting to connect to database")
+if (useNedb) {
+  appStuff()
+} else {
+  MongoClient.connect(mongoUrl, {useNewUrlParser: true}).then((c: any) => {
+    const db = c.db("poly-direct")
+    appStuff(db)
+  })
+
+}

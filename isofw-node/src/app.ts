@@ -9,7 +9,9 @@ import * as socketio from "@feathersjs/socketio"
 import * as batcher from "feathers-batch"
 import * as memory from "feathers-memory"
 import * as mongoServic from "feathers-mongodb"
+import * as nedbService from "feathers-nedb"
 import val from "isofw-shared/src/globals/val"
+import * as NeDB from "nedb"
 import * as path from "path"
 import convertIds from "./services/hooks/convertIds"
 import disableInProd from "./services/hooks/disableInProd"
@@ -37,13 +39,20 @@ const makeApp: (prerender?: Service<any>, db?: any) => Application<any> = (prere
   // Register our JWT authentication plugin
   app.configure(jwt())
   // Register our memory "users" service
-  app.use("/users", new mongoServic({
-    Model: db.collection("users"),
+  app.use("/users", db != null ? new mongoServic({
+    Model:  db.collection("users"),
     paginate: {
       default: 10,
       max: 100
     },
     whitelist: ["$regex", "$options"]
+  }) : new nedbService({
+    Model: new NeDB({filename: "users", autoload: true}),
+    paginate: {
+      default: 10,
+      max: 10000
+    },
+    whitelist: ["$regex", "$options", "$skip", "$limit", "$sort"]
   }))
   app.service("users").hooks({
     // Make sure `password` never gets sent to the client

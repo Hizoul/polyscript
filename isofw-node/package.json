@@ -24,9 +24,11 @@
     "feathers-batch": "^0.2.1",
     "feathers-memory": "^3.0.2",
     "feathers-mongodb": "^4.0.4",
+    "feathers-nedb": "^4.0.1",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
-    "mongodb": "^3.1.13"
+    "mongodb": "^3.1.13",
+    "nedb": "^1.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -39,6 +41,7 @@
     "@types/feathersjs__socketio": "^3.0.4",
     "@types/jest": "^24.0.11",
     "@types/mongodb": "^3.1.22",
+    "@types/nedb": "^1.8.7",
     "@types/react": "^16.8.8",
     "@types/react-dom": "^16.8.2",
     "babel-jest": "^24.5.0",
