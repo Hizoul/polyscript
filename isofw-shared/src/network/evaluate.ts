@@ -12,14 +12,11 @@ const evaluateMeasurements = async (measurements: any[]) => {
     }
     if (result[user][networkType] == null) {
       result[user][networkType] = {
+        clientToServer: [], serverToClient: [], roundTrip: [], servertime: [],
         totalBytes: 0, total: 0,
         totalClientBytes: 0, totalServerBytes: 0,
         totalProcessTime: 0, totalServerTime: 0, totalClientTime: 0,
-        totalClientToServer: 0, totalServerToClient: 0,
-        fastestClientToServer: 999, slowestClientToServer: 0,
-        fastestServerToClient: 999, slowestServerToClient: 0,
-        fastestRoundtrip: 999, slowestRoundTrip: 0,
-        clientToServer: [], serverToClient: [], roundTrip: []
+        totalClientToServer: 0, totalServerToClient: 0
       }
     }
     for (const measure of get(measurement, "measurements", [])) {
@@ -28,6 +25,7 @@ const evaluateMeasurements = async (measurements: any[]) => {
       result[user][networkType].clientToServer.push(clientToServer)
       result[user][networkType].serverToClient.push(serverToClient)
       result[user][networkType].roundTrip.push(measure.clientProcessTime)
+      result[user][networkType].servertime.push(measure.serverProcessTime)
       result[user][networkType].total++
       result[user][networkType].totalBytes += measure.clientMsgSize
       result[user][networkType].totalBytes += measure.serverMsgSize
@@ -45,6 +43,7 @@ const evaluateMeasurements = async (measurements: any[]) => {
     finalResult[user] = {}
     for (const networkType of Object.keys(result[user])) {
       const r = result[user][networkType]
+      r.roundTrip.sort(sortNumAscending)
       finalResult[user][networkType] = {
         ...r,
         avgBytes: r.totalBytes / r.total,
@@ -57,12 +56,15 @@ const evaluateMeasurements = async (measurements: any[]) => {
         avgServerToClient: r.totalServerToClient / r.total,
         avgBytesPerMs: r.totalBytes / r.totalProcessTime,
         avgMbytePerSecond: ((r.totalBytes / 1024) / 1024) / (r.totalProcessTime / 1000),
-        medianRoundTrip: r.roundTrip.sort(sortNumAscending)[Math.round(r.roundTrip.length / 2)],
+        medianRoundTrip: r.roundTrip[Math.round(r.roundTrip.length / 2)],
         medianClientToServer: r.clientToServer.sort(sortNumAscending)[Math.round(r.clientToServer.length / 2)],
         medianServerToClient: r.serverToClient.sort(sortNumAscending)[Math.round(r.serverToClient.length / 2)],
+        medianServerProcessTime: r.servertime.sort(sortNumAscending)[Math.round(r.servertime.length / 2)],
         slowestServerToClient: r.serverToClient[r.serverToClient.length - 1], fastestServerToClient: r.serverToClient[0],
         slowestRoundTrip: r.roundTrip[r.roundTrip.length - 1], fastestRoundTrip: r.roundTrip[0],
-        slowestClientToServer: r.clientToServer[r.clientToServer.length - 1], fastestClientToServer: r.clientToServer[0]
+        slowestServerProcessTime: r.roundTrip[r.roundTrip.length - 1], fastestServerProcessTime: r.roundTrip[0],
+        slowestClientToServer: r.clientToServer[r.clientToServer.length - 1], fastestClientToServer: r.clientToServer[0],
+        clientToServer: [], serverToClient: [], servertime: []
       }
     }
   }
