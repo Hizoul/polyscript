@@ -9,6 +9,7 @@
     "dev": "cross-env NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/nodemon -e ts,tsx --watch src --watch ../isofw-shared/src --exec '../ci/node_modules/.bin/ts-node' src/debug",
     "start": "cross-env NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/ts-node src/debug",
     "devSsr": "NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/nodemon --watch webpackDist webpackDist/isoapp",
+    "eval": "cross-env NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/ts-node src/network/evaluate",
     "measure": "cross-env NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/ts-node src/network/persistMeasurements"
   },
   "dependencies": {
