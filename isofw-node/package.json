@@ -8,7 +8,7 @@
     "prod": "cd dist && NODE_PATH=$NODE_PATH:./ node isofw-node/src/universalWebpackRunner",
     "dev": "cross-env NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/nodemon -e ts,tsx --watch src --watch ../isofw-shared/src --exec '../ci/node_modules/.bin/ts-node' src/debug",
     "start": "cross-env NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/ts-node src/debug",
-    "devSsr": "NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/nodemon --watch webpackDist webpackDist/isoapp",
+    "devSsr": "cd webpackDist && cross-env NODE_PATH=$NODE_PATH:../:../../ ../../ci/node_modules/.bin/nodemon isoapp",
     "eval": "cross-env NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/ts-node src/network/evaluate",
     "measure": "cross-env NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/ts-node src/network/persistMeasurements"
   },
@@ -28,7 +28,8 @@
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "mongodb": "^3.1.13",
-    "nedb": "^1.8.0"
+    "nedb": "^1.8.0",
+    "tiny-worker": "^2.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",

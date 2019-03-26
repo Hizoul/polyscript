@@ -3,6 +3,7 @@ import val from "isofw-shared/src/globals/val"
 import { ProjectProgram, ShotNumber } from "isofw-shared/src/xpfwDefs/project"
 import { get } from "lodash"
 
+// TODO: move to client
 const fixProjectShots = async (hook: HookContext, app: Application, project: any) => {
   const program = get(project, ProjectProgram.title)
   let needToPushFix = false

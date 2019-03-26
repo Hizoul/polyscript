@@ -35,6 +35,10 @@ const webpackServerConfig: webpack.Configuration = {
   module: {
     rules: [
       {
+        test: /\.worker\.ts$/,
+        use: { loader: "worker-loader" }
+      },
+      {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: [

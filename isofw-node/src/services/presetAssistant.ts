@@ -13,13 +13,17 @@ import { IsActiveField, ProjectProgram, ShotPreset } from "isofw-shared/src/xpfw
 import { get } from "lodash"
 import activateNextPresets from "./hooks/activateNextPresets"
 import ensureShotNumber from "./hooks/ensureShotNumber"
+import forkedHooks from "./hooks/forkedHooks"
 import freeUnusedPresets, { freePresetsOfProject } from "./hooks/freeUnusedPresets"
 import requireAuthentication from "./hooks/requireAuthentication"
+
+const useAsyncHook = true // global.process != null && process.env.ASYNC_HOOKS != null
 
 const presetAssistantConfigurator: any = (app: feathers.Application) => {
 
   app.service(val.service.camera).hooks({after: {create: presetCreator}})
-  app.service(val.service.project).hooks({after: {patch: [activateNextPresets, freeUnusedPresets, ensureShotNumber]}})
+  app.service(val.service.project).hooks({after: {patch: useAsyncHook ? [forkedHooks()] :
+    [activateNextPresets, freeUnusedPresets, ensureShotNumber]}})
 
   const presentAssistanceService = {
     create: async (data: any) => {
