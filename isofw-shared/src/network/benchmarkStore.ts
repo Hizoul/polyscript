@@ -19,6 +19,8 @@ export class BenchmarkStoreClass {
   public uploaded: boolean = false
   @observable
   public parallel: boolean = false
+  @observable
+  public trafficType: number = -1
 
   public causeProjectTraffic(projectId: string) {
     return () => {

@@ -1,4 +1,5 @@
 import useBenchmark from "isofw-shared/src/network/benchmarkHook"
+import BenchmarkStore from "isofw-shared/src/network/benchmarkStore"
 import i18n from "isofw-shared/src/util/i18n"
 import baseStyles from "isofwrn/src/styles/base"
 import { textCenter } from "isofwrn/src/styles/text"
@@ -19,7 +20,13 @@ const NativeBenchmarkComponent: React.FunctionComponent<{projectId: string}> = o
         label="Program Size"
         value={String(benchmarkResults.programSize)}
         keyboardType="number-pad"
-        onChangeText={(value) => benchmarkResults.programSize = Number(value)}
+        onChangeText={(value) => BenchmarkStore.programSize = Number(value)}
+      />
+      <Input
+        label="Program Size"
+        value={String(BenchmarkStore.trafficType)}
+        keyboardType="number-pad"
+        onChangeText={(value) => BenchmarkStore.trafficType = Number(value)}
       />
       <TranslatedText
         style={textCenter}

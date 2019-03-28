@@ -21,6 +21,14 @@ const BenchmarkComponent: React.FunctionComponent<{projectId: string}> = observe
               BenchmarkStore.programSize = Number(event.nativeEvent.target.value)
             }}
           />
+          <ListInput
+            label="Traffic Type"
+            value={BenchmarkStore.trafficType}
+            type="number"
+            onChange={(event) => {
+              BenchmarkStore.trafficType = Number(event.nativeEvent.target.value)
+            }}
+          />
         </List>
         <div className="text-align-center">
           <I18n

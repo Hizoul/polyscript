@@ -47,8 +47,8 @@ const causeProjectTraffic = async (client: IBenchmarkClient, projectId: string, 
   BenchmarkStore.total = amountOfCalls
   const promises: any[] = []
   for (let i = 1; i <= amountOfCalls; i++) {
-    const val: any = 1
-    switch (val) {
+    const vale = BenchmarkStore.trafficType === -1 ? (i % 4) : BenchmarkStore.trafficType
+    switch (vale) {
       case 0: {
         FormStore.setValue(ProjectName.title, randomString(64), prependPrefix(ProjectForm.title, directorPrefix))
         break
