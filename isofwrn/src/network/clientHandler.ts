@@ -17,21 +17,20 @@ const clientMessageHandler = (data: any, promises: any, options: any, giveOrigin
       if (message == null) {
         throw new Error("MSG IS NULL")
       }
-      console.log("GOT MESSAGE", message.trackId)
       if (unparseable.length > 0) {
         unparseable = unparseable.substring(unparsedMessage.length + val.network.packetDelimiter.length)
       }
       cuttableSuccessLength += unparsedMessage.length + val.network.packetDelimiter.length
 
-      if (promises[message.trackId]) {
-        if (promises[message.trackId] === -1) {
-          const dbStore = get(options, "dbStore")
-          if (dbStore != null) {
-            const isRemoved = get(message, `method`) === "removed"
-            const result = get(message, `result`)
-            dbStore.setItem(get(result, dataOptions.idPath), get(message, `collection`), isRemoved ? null : result)
-          }
-        } else {
+      if (message.trackId === -1) {
+        const dbStore = get(options, "dbStore")
+        if (dbStore != null) {
+          const isRemoved = get(message, `method`) === "removed"
+          const result = get(message, `result`)
+          dbStore.setItem(get(result, dataOptions.idPath), get(message, `collection`), isRemoved ? null : result)
+        }
+      } else {
+        if (promises[message.trackId] != null) {
           if (message.error) {
             promises[message.trackId].reject(giveOriginal === true ? message : message.error)
           } else {
