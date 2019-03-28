@@ -1,5 +1,7 @@
 const m = require("mongodb")
+const performance = require("perf_hooks").performance
 
+const sortNumAscending = (a, b) => a - b
 const MongoClient = m.MongoClient
 
 const FullObj = require("./obj")
@@ -56,28 +58,40 @@ const makeRandomProgrmanEntry = () => {
 
 const projectId = "5c93963c1a18bd2c58a21736"
 
-const doTest = async () => {
+const doTest = async (type) => {
   const con = await MongoClient.connect("mongodb://localhost:27017", {useNewUrlParser: true})
   const db = con.db("poly-direct")
   const projects = db.collection("projects")
-  const type = process.argv[process.argv.length - 1]
-  switch (type) {
-    case "patchProgram": {
-      await projects.updateOne({_id: new m.ObjectId(projectId)}, {$set: {[`program.${randomInRange(0, 499)}`]: makeRandomProgrmanEntry()}})
-      break
+  let measurements = []
+  for (let i = 0; i < 50000; i++) {
+    const start = performance.now()
+    switch (type) {
+      case "patchProgram": {
+        await projects.updateOne({_id: new m.ObjectId(projectId)}, {$set: {[`program.${randomInRange(0, 499)}`]: makeRandomProgrmanEntry()}})
+        break
+      }
+      case "patchNr": {
+        await projects.updateOne({_id: new m.ObjectId(projectId)}, {$set: {shot: randomInRange(0, 499)}})
+        break
+      }
+      case "fullSet":
+      default: {
+        await projects.updateOne({_id: new m.ObjectId(projectId)}, {$set: FullObj})
+        break
+      }
     }
-    case "patchNr": {
-      await projects.updateOne({_id: new m.ObjectId(projectId)}, {$set: {shot: randomInRange(0, 499)}})
-      break
-    }
-    case "fullSet":
-    default: {
-      await projects.updateOne({_id: new m.ObjectId(projectId)}, {$set: FullObj})
-      break
-    }
+    measurements.push(performance.now() - start)
   }
   await con.close()
+  let sum = 0
+  for (const m of measurements) {
+    sum += m
+  }
+  measurements.sort(sortNumAscending)
+  console.log(`${type}: Average is ${sum / measurements.length} Median is ${measurements[Math.round(measurements.length / 2)]}. Fastest is ${measurements[0]} slowest was ${measurements[measurements.length - 1]}`)
 }
 
 
-doTest()
+doTest("patchNr")
+doTest("ptachProgram")
+doTest("fullSet")
