@@ -40,7 +40,3 @@ const init = async () => {
 }
 
 init()
-
-const b: any = {}
-
-export = b

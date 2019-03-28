@@ -1,7 +1,7 @@
 import { Hook } from "@feathersjs/feathers"
 import { get } from "lodash"
-import * as BgWorker from "./bg.worker"
-
+import * as BgWorkerA from "./bg.worker"
+const BgWorker: any = BgWorkerA
 const forkedHooks: () => Hook = () => {
   const hookWorker = new BgWorker()
   return (hook) => {

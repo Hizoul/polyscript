@@ -20,17 +20,20 @@ if (global.process != null && process.env.USE_COMPRESSION != null) {
 const appStuff = (db?: any, alsoListen?: boolean) => {
   console.log("Attempting to start Server")
   const app: any = makeApp(undefined, db)
-  app.setup()
   if (alsoListen) {
     if (networkToUse === val.network.tcp) {
+      app.setup()
       initiateTcp(4202, app)
     } else if (networkToUse === val.network.udp) {
+      app.setup()
       initiateUdp(4202, app)
     } else {
       app.listen(4202, () => {
         console.log("Now listening on http://localhost:4202")
       })
     }
+  } else {
+    app.setup()
   }
   return app
 }
