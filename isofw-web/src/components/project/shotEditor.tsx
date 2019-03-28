@@ -10,7 +10,7 @@ import * as React from "react"
 import { prependPrefix } from "../../../../isofw-shared/src/util/xpfwform"
 import BenchmarkComponent from "../benchmark"
 import WebButton from "../button"
-import I18n from "../i18n";
+import I18n from "../i18n"
 import WebCameraDisabler from "./cameraDisabler"
 import "./style.sass"
 

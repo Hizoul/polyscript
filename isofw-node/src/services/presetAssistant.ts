@@ -17,7 +17,7 @@ import forkedHooks from "./hooks/forkedHooks"
 import freeUnusedPresets, { freePresetsOfProject } from "./hooks/freeUnusedPresets"
 import requireAuthentication from "./hooks/requireAuthentication"
 
-const useAsyncHook = true // global.process != null && process.env.ASYNC_HOOKS != null
+const useAsyncHook = global.process != null && process.env.ASYNC_HOOKS != null
 
 const presetAssistantConfigurator: any = (app: feathers.Application) => {
 

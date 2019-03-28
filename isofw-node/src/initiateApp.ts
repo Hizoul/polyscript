@@ -10,9 +10,13 @@ import initiateUdp from "./network/udp"
 const useNedb = process != null && process.env != null && process.env.USE_NEDB != null
 let networkToUse = val.network.networkToUse
 
-if (isObject(global.process) && isString(process.env.NETWORK_TO_USE)) {
+if (global.process != null && isString(process.env.NETWORK_TO_USE)) {
   networkToUse = Number(process.env.NETWORK_TO_USE)
 }
+if (global.process != null && process.env.USE_COMPRESSION != null) {
+  val.network.useCompression = true
+}
+
 const appStuff = (db?: any, alsoListen?: boolean) => {
   console.log("Attempting to start Server")
   const app: any = makeApp(undefined, db)
