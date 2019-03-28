@@ -12,7 +12,7 @@ const evaluateMeasurements = async (measurements: any[]) => {
     }
     if (result[user][networkType] == null) {
       result[user][networkType] = {
-        clientToServer: [], serverToClient: [], roundTrip: [], servertime: [],
+        clientToServer: [], serverToClient: [], roundTrip: [], servertime: [], networkTime: [],
         totalBytes: 0, total: 0,
         totalClientBytes: 0, totalServerBytes: 0,
         totalProcessTime: 0, totalServerTime: 0, totalClientTime: 0,
@@ -26,6 +26,7 @@ const evaluateMeasurements = async (measurements: any[]) => {
       result[user][networkType].serverToClient.push(serverToClient)
       result[user][networkType].roundTrip.push(measure.clientProcessTime)
       result[user][networkType].servertime.push(measure.serverProcessTime)
+      result[user][networkType].networkTime.push(measure.clientProcessTime - measure.serverProcessTime)
       result[user][networkType].total++
       result[user][networkType].totalBytes += measure.clientMsgSize
       result[user][networkType].totalBytes += measure.serverMsgSize
@@ -44,6 +45,7 @@ const evaluateMeasurements = async (measurements: any[]) => {
     for (const networkType of Object.keys(result[user])) {
       const r = result[user][networkType]
       r.roundTrip.sort(sortNumAscending)
+      r.networkTime.sort(sortNumAscending)
       finalResult[user][networkType] = {
         ...r,
         avgBytes: r.totalBytes / r.total,
@@ -51,6 +53,7 @@ const evaluateMeasurements = async (measurements: any[]) => {
         avgServerBytes: r.totalServerBytes / r.total,
         avgProcessTime: r.totalProcessTime / r.total,
         avgServerTime: r.totalServerTime / r.total,
+        avgNetworkTime: (r.totalProcessTime - r.totalServerTime) / r.total,
         avgClientTime: r.totalClientTime / r.total,
         avgClientToServer: r.totalClientToServer / r.total,
         avgServerToClient: r.totalServerToClient / r.total,
@@ -64,7 +67,8 @@ const evaluateMeasurements = async (measurements: any[]) => {
         slowestRoundTrip: r.roundTrip[r.roundTrip.length - 1], fastestRoundTrip: r.roundTrip[0],
         slowestServerProcessTime: r.roundTrip[r.roundTrip.length - 1], fastestServerProcessTime: r.roundTrip[0],
         slowestClientToServer: r.clientToServer[r.clientToServer.length - 1], fastestClientToServer: r.clientToServer[0],
-        clientToServer: [], serverToClient: [], servertime: []
+        slowestNetworkTime: r.networkTime[r.networkTime.length - 1], fastestNetworkTime: r.networkTime[0],
+        clientToServer: [], serverToClient: [], servertime: [], roundTrip: [], networkTime: []
       }
     }
   }
