@@ -11,6 +11,7 @@
     "testDev": "cd .. && ./ci/node_modules/.bin/jest --watchAll --coverage --projects isofw-node isofw-shared isofw-web isofw-rn",
     "ssr": "./node_modules/.bin/ts-node src/ssrDev",
     "update": "./node_modules/.bin/ts-node src/upgradeDeps",
+    "count": "./node_modules/.bin/ts-node src/countLines",
     "init": "npm install && ./node_modules/.bin/ts-node src/init",
     "ciInit": "yarn && ./node_modules/.bin/ts-node src/init",
     "setPackageVersions": "./node_modules/.bin/ts-node src/setPackageVersions",
