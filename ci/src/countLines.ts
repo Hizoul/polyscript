@@ -23,7 +23,7 @@ const countLines = (directory: string, accountTowards: string) => {
   }
   return {files, count, chars}
 }
-const directories = [projectDirectories.shared, projectDirectories.rn, projectDirectories.web, projectDirectories.ssr]
+const directories = [projectDirectories.shared, projectDirectories.web, projectDirectories.rn,  projectDirectories.ssr]
 
 const result = []
 for (const directory of directories) {
@@ -31,3 +31,35 @@ for (const directory of directories) {
 }
 
 console.log("LINES ARE", result)
+let totalFiles = 0
+let totalCount = 0
+let totalChars = 0
+let totalFilesWithServer = 0
+let totalCountWithServer = 0
+let totalCharsWithServer = 0
+let i = 0
+for (const res of result) {
+  i++
+  totalFilesWithServer += res.files
+  totalCountWithServer += res.count
+  totalCharsWithServer += res.chars
+  if (i !== 4) {
+    totalFiles += res.files
+    totalCount += res.count
+    totalChars += res.chars
+  }
+}
+
+const percentOf = (amount: number, total: number) => {
+  return ((amount / total) * 100).toFixed(2)
+}
+
+console.log(`Percentages Frontend:´
+${percentOf(result[0].files, totalFiles)} Files,
+${percentOf(result[0].count, totalCount)} Lines,
+${percentOf(result[0].chars, totalChars)} Chars`)
+
+console.log(`Percentages All:´
+${percentOf(result[0].files, totalFilesWithServer)} Files,
+${percentOf(result[0].count, totalCountWithServer)} Lines,
+${percentOf(result[0].chars, totalCharsWithServer)} Chars`)
