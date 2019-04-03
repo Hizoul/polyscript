@@ -1,10 +1,10 @@
-import { IFieldProps, prependPrefix, SharedField } from "isofw-shared/src/util/xpfwform";
+import { useList } from "isofw-shared/src/util/xpfwdata"
+import { prependPrefix, SharedField } from "isofw-shared/src/util/xpfwform"
 import { get } from "lodash"
+import { observer } from "mobx-react-lite"
 import * as React from "react"
 import { FlatList, View } from "react-native"
-import { useList } from "../../../../isofw-shared/src/util/xpfwdata";
 import NativeRelationshipItem from "./relationshipItem"
-import { observer } from "mobx-react-lite"
 
 const NativeRelationshipSearch: React.FunctionComponent<any> = observer((props) => {
   const searchField = get(props, `searchForm.properties[${get(props, "schema.relationship.namePath")}]`)

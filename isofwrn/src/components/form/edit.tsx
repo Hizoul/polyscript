@@ -1,13 +1,13 @@
 import i18n from "isofw-shared/src/util/i18n"
 import { dataOptions, IEditHookProps, useEditWithProps } from "isofw-shared/src/util/xpfwdata"
 import { getMapToFromProps, iterateSubFields, prependPrefix, SharedField } from "isofw-shared/src/util/xpfwform"
-import { colorError, colorSuccess, errorBg, successBg } from "isofwrn/src/styles/color"
+import { colorError, colorSuccess } from "isofwrn/src/styles/color"
 import margins from "isofwrn/src/styles/margins"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
 import { ScrollView, Text, View } from "react-native"
-import { Card, Divider } from "react-native-elements"
+import { Divider } from "react-native-elements"
 import NativeButton from "../button"
 
 const NativeEdit: React.FunctionComponent<IEditHookProps> = observer((props) => {
