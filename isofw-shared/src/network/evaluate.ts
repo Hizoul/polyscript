@@ -60,6 +60,7 @@ const evaluateMeasurements = async (measurements: any[]) => {
         avgBytesPerMs: r.totalBytes / r.totalProcessTime,
         avgMbytePerSecond: ((r.totalBytes / 1024) / 1024) / (r.totalProcessTime / 1000),
         medianRoundTrip: r.roundTrip[Math.round(r.roundTrip.length / 2)],
+        medianNetworkTime: r.networkTime[Math.round(r.networkTime.length / 2)],
         medianClientToServer: r.clientToServer.sort(sortNumAscending)[Math.round(r.clientToServer.length / 2)],
         medianServerToClient: r.serverToClient.sort(sortNumAscending)[Math.round(r.serverToClient.length / 2)],
         medianServerProcessTime: r.servertime.sort(sortNumAscending)[Math.round(r.servertime.length / 2)],

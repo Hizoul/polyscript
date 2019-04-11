@@ -1,5 +1,6 @@
 import console = require("console")
-import { readFileSync, writeFileSync } from "fs"
+import { readFileSync } from "fs"
+import { get } from "lodash"
 
 export interface IConfig {
   avgName: string
@@ -7,6 +8,8 @@ export interface IConfig {
   fastestName: string
   slowestName: string
   sortBy: string
+  networkPc?: string
+  networkRpi?: string
 }
 
 const getGlobalSpeedRanking = async (pcFile: string, rpiFile: string, config: IConfig) => {
@@ -19,13 +22,14 @@ const getGlobalSpeedRanking = async (pcFile: string, rpiFile: string, config: IC
   let totalTimeRpi = 0
   let total = 0
   for (const device of Object.keys(res)) {
-    const v = res[device]["0"]
-    const rpi = resPi[device] != null ? resPi[device]["0"] : {[config.avgName]: 9999}
+    console.log("AT DEVVIC§", device)
+    const v = res[device][get(config, "networkPc", "0")]
+    const rpi = resPi[device] != null ? resPi[device][get(config, "networkRpi", "0")] : {[config.avgName]: v[config.avgName]}
     let avgDist = 0
     let medianDist = 0
     totalTime += v[config.avgName]
     totalTimeRpi += rpi[config.avgName]
-    if (rpi[config.avgName] !== 0) {
+    if (rpi[config.avgName] !== v[config.avgName]) {
       avgDist = rpi[config.avgName] - v[config.avgName]
       medianDist = rpi[config.medianName] - v[config.medianName]
       totalAvgDist += avgDist
@@ -81,10 +85,30 @@ const serverTimeConfig: IConfig = {
   fastestName: "fastestServerProcessTime",
   sortBy: "time"
 }
+const networkTimeConfig: IConfig = {
+  avgName: "avgNetworkTime",
+  medianName: "medianNetworkTime",
+  slowestName: "slowestNetworkTime",
+  fastestName: "fastestNetworkTime",
+  sortBy: "time"
+}
 
+// GLOBAL DEVICE RANKING
 // getGlobalSpeedRanking(`./result-pc-wss-nodiff-allDeviceConfigs.txt`,
 // `./result-rpilan-wss-nodiff-allDeviceConfigs.txt`, roundTripConfig)
-// speak about how rpi does not have the same sort as pc!
+// DB RANKING speak about how rpi does not have the same sort as pc!
 // getGlobalSpeedRanking(`./result-pc-wss-dbbench.txt`, `./result-rpilan-wss-dbbenchs.txt`, serverTimeConfig)
 // getGlobalSpeedRanking(`./result-rpilan-wss-dbbenchs.txt`, `./result-pc-wss-dbbench.txt`, serverTimeConfig)
-// getGlobalSpeedRanking(`./result-pc-wss-nodiff-allDeviceConfigs.txt`, `./result-rpilan-wss-nodiff-allDeviceConfigs.txt`)
+// TCP VS WSS
+// getGlobalSpeedRanking(`./result-pc-tcp-nocompress-nodiff.txt`,
+// `./result-pc-wss-nodiff-allDeviceConfigs.txt`, {...networkTimeConfig, networkPc: "1"})
+// getGlobalSpeedRanking(`./result-rpilan-tcp-nocompress-nodiff.txt`,
+// `./result-rpilan-wss-nodiff-allDeviceConfigs.txt`, {...networkTimeConfig, networkPc: "1"})
+// TCP compress vs nocompress
+// getGlobalSpeedRanking(`./result-rpilan-tcp-compress-nodiff.txt`,
+// `./result-rpilan-tcp-nocompress-nodiff.txt`, {...roundTripConfig, networkPc: "1", networkRpi: "1"})
+// stress breaks the RPI
+// getGlobalSpeedRanking(`./result-rpilan-wss-onlyDiff.txt`, `./result-rpilan-wss-onlyDiff-multiDevice.txt`, serverTimeConfig)
+// stress does not break the pc
+getGlobalSpeedRanking(`./result-pc-wss-onlyDiff.txt`, `./result-pc-wss-onlyDiff-multiDevice.txt`, serverTimeConfig)
+
