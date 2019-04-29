@@ -7,7 +7,7 @@
     "postinstall": "rn-nodeify --install stream,process,util --hack",
     "test": "jest",
     "dev": "./node_modules/.bin/react-native start",
-    "buildAndroid": "cd android && gradlew clean &&gradlew assembleRelease",
+    "buildAndroid": "cd android && gradlew clean && gradlew assembleRelease",
     "rns": "adb reverse tcp:4202 tcp:4202",
     "rnad": "adb shell input keyevent 82",
     "bench": "cross-env NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/ts-node src/network/nodeBenchmarker"
@@ -32,7 +32,8 @@
     "react-navigation": "^3.3.2",
     "readable-stream": "^3.2.0",
     "stream-browserify": "^2.0.2",
-    "util": "^0.11.1"
+    "util": "^0.11.1",
+    "window-mock": "^0.0.13"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
