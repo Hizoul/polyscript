@@ -49,7 +49,7 @@ const cameraApi = {
       ...ue70handler.additionalCommands,
       cmd: `${ue70handler.commandEscape}${ue70handler.goToPreset}${numberConverter(presetNumber)}`
     })
-    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const toBeFetched = await fetch(`http://${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
     const result = await toBeFetched.text()
     return result
   },
@@ -58,7 +58,7 @@ const cameraApi = {
       ...ue70handler.additionalCommands,
       cmd: `${ue70handler.commandEscape}${ue70handler.updatePreset}${numberConverter(presetNumber)}`
     })
-    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const toBeFetched = await fetch(`http://${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
     const result = await toBeFetched.text()
     return result
   },
@@ -67,7 +67,7 @@ const cameraApi = {
       ...ue70handler.additionalCommands,
       cmd: `${ue70handler.commandEscape}${ue70handler.zoom}${numberConverter(zoomSpeed)}`
     })
-    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const toBeFetched = await fetch(`http://${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
     const result = await toBeFetched.text()
     return result
   },
@@ -76,7 +76,7 @@ const cameraApi = {
       ...ue70handler.additionalCommands,
       cmd: `${ue70handler.commandEscape}${ue70handler.pan}${numberConverter(zoomSpeed)}`
     })
-    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const toBeFetched = await fetch(`http://${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
     const result = await toBeFetched.text()
     return result
   },
@@ -85,7 +85,7 @@ const cameraApi = {
       ...ue70handler.additionalCommands,
       cmd: `${ue70handler.commandEscape}${ue70handler.tilt}${numberConverter(zoomSpeed)}`
     })
-    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const toBeFetched = await fetch(`http://${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
     const result = await toBeFetched.text()
     return result
   },
@@ -95,7 +95,7 @@ const cameraApi = {
       ...ue70handler.additionalCommands,
       cmd: `${ue70handler.commandEscape}${ue70handler.panTilt}${pan}${tilt}`
     })
-    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const toBeFetched = await fetch(`http://${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
     const result = await toBeFetched.text()
     return result
   },
@@ -105,7 +105,7 @@ const cameraApi = {
       ...ue70handler.additionalCommands,
       cmd: `${ue70handler.commandEscape}${ue70handler.zoomToPoint}${zoomPoint}`
     })
-    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const toBeFetched = await fetch(`http://${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
     const result = await toBeFetched.text()
     return result
   },
@@ -115,7 +115,7 @@ const cameraApi = {
       ...ue70handler.additionalCommands,
       cmd: `${ue70handler.commandEscape}${ue70handler.focusToPoint}${focusPoint}`
     })
-    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const toBeFetched = await fetch(`http://${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
     const result = await toBeFetched.text()
     return result
   },
@@ -125,7 +125,7 @@ const cameraApi = {
       ...ue70handler.additionalCommands,
       cmd: `${ue70handler.commandEscape}${ue70handler.irisToPoint}${irisPoint}`
     })
-    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const toBeFetched = await fetch(`http://${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
     const result = await toBeFetched.text()
     return result
   },
@@ -135,7 +135,7 @@ const cameraApi = {
       ...ue70handler.additionalCommands,
       cmd: `${ue70handler.commandEscape}${ue70handler.panTilt}`
     })
-    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const toBeFetched = await fetch(`http://${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
     const result = await toBeFetched.text()
     return result
   },
@@ -145,7 +145,7 @@ const cameraApi = {
       ...ue70handler.additionalCommands,
       cmd: `${ue70handler.commandEscape}${ue70handler.getZoom}`
     })
-    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const toBeFetched = await fetch(`http://${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
     const result = await toBeFetched.text()
     return result
   },
@@ -155,7 +155,7 @@ const cameraApi = {
       ...ue70handler.additionalCommands,
       cmd: `${ue70handler.commandEscape}${ue70handler.getFocus}`
     })
-    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const toBeFetched = await fetch(`http://${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
     const result = await toBeFetched.text()
     return result
   },
@@ -165,7 +165,7 @@ const cameraApi = {
       ...ue70handler.additionalCommands,
       cmd: `${ue70handler.commandEscape}${ue70handler.getIris}`
     })
-    const toBeFetched = await fetch(`${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
+    const toBeFetched = await fetch(`http://${cameraIp}${ue70handler.commandPath}?${requestParameters}`)
     const result = await toBeFetched.text()
     return result
   }

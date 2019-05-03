@@ -10,8 +10,7 @@ exports[`Preset Update works as planned:  after setting 2 falls  1`] = `
     "number": 0,
     "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
     "project": "-",
-    "isReady": false,
-    "presetModel": {}
+    "isReady": false
   },
   "isReady": false
 }
@@ -28,8 +27,7 @@ exports[`Preset Update works as planned:  after setting to true  1`] = `
     "number": 0,
     "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
     "project": "-",
-    "isReady": true,
-    "presetModel": {}
+    "isReady": true
   },
   "isReady": true
 }
@@ -41,6 +39,30 @@ exports[`Preset Update works as planned: Before anything 1`] = `
   className="presetupdater"
 >
   {
+  "item": {
+    "_id": "c1bbbbbbbbbbbbbbbb098765",
+    "number": 0,
+    "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "project": "-"
+  },
+  "isReady": false
+}
+</div>
+`;
+
+exports[`Preset Update works as planned: after updating presets preview 1`] = `
+<div
+  className="presetupdater"
+>
+  {
+  "item": {
+    "_id": "c1bbbbbbbbbbbbbbbb098765",
+    "number": 0,
+    "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+    "project": "-",
+    "isReady": false,
+    "preview": "1904-02-29/c1bbbbbbbbbbbbbbbbbbbbbb--2077750800000.jpg"
+  },
   "isReady": false
 }
 </div>

@@ -15,6 +15,24 @@ exports[`Preset Update works as planned:  after setting 2 falls  1`] = `
     </span>
   </div>
   <div
+    className="CardContent"
+  >
+    {
+  "padding": false
+}
+    <span
+      className="flex1 center verticalCenter"
+      style={
+        Object {
+          "minHeight": 50,
+        }
+      }
+      text="noPreview"
+    >
+      noPreview
+    </span>
+  </div>
+  <div
     className="CardFooter"
   >
     {}
@@ -51,6 +69,24 @@ exports[`Preset Update works as planned:  after setting to true  1`] = `
     </span>
   </div>
   <div
+    className="CardContent"
+  >
+    {
+  "padding": false
+}
+    <span
+      className="flex1 center verticalCenter"
+      style={
+        Object {
+          "minHeight": 50,
+        }
+      }
+      text="noPreview"
+    >
+      noPreview
+    </span>
+  </div>
+  <div
     className="CardFooter"
   >
     {}
@@ -83,7 +119,77 @@ exports[`Preset Update works as planned: Before anything 1`] = `
     {}
     <span>
       Preset #
+      0
     </span>
+  </div>
+  <div
+    className="CardContent"
+  >
+    {
+  "padding": false
+}
+    <span
+      className="flex1 center verticalCenter"
+      style={
+        Object {
+          "minHeight": 50,
+        }
+      }
+      text="noPreview"
+    >
+      noPreview
+    </span>
+  </div>
+  <div
+    className="CardFooter"
+  >
+    {}
+    <div
+      className="Link"
+    >
+      {
+  "text": "Update"
+}
+    </div>
+    <div
+      className="Link"
+    >
+      {
+  "text": "ready"
+}
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Preset Update works as planned: after updating presets preview 1`] = `
+<div
+  className="Card"
+>
+  {}
+  <div
+    className="CardHeader"
+  >
+    {}
+    <span>
+      Preset #
+      0
+    </span>
+  </div>
+  <div
+    className="CardContent"
+  >
+    {
+  "padding": false
+}
+    <img
+      src="http://localhost:80/presetPreview/1904-02-29/c1bbbbbbbbbbbbbbbbbbbbbb--2077750800000.jpg"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
   </div>
   <div
     className="CardFooter"

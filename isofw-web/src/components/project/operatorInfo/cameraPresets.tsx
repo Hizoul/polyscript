@@ -1,22 +1,33 @@
-import { BlockTitle, Card, CardFooter, CardHeader, Link } from "framework7-react"
+import { BlockTitle, Card, CardContent, CardFooter, CardHeader, Link } from "framework7-react"
 import usePresetUpdater from "isofw-shared/src/components/preset/updater"
+import urls from "isofw-shared/src/globals/url"
 import val from "isofw-shared/src/globals/val"
-import { PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
+import { PresetNumberField, PresetPreviewField } from "isofw-shared/src/xpfwDefs/preset"
 import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
+import I18n from "isofw-web/src/components/i18n"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
 
 const PresetCard: React.FunctionComponent<{id: string}> = observer((props) => {
   const presetUpdater = usePresetUpdater(props.id)
+  const imageUrl = get(presetUpdater.item, String(PresetPreviewField.title))
   return (
     <Card>
       <CardHeader>
         <span>Preset #{get(presetUpdater.item, String(PresetNumberField.title))}</span>
       </CardHeader>
+      <CardContent padding={false}>
+        {imageUrl ?
+          <img src={`${urls.webPrefix}${urls.mainServer}:${val.isDebug ? 80 : urls.port}${urls.presetPreview}/${imageUrl}`} style={{width: "100%"}} /> :
+          <I18n text="noPreview" className="flex1 center verticalCenter" style={{minHeight: 50}} />}
+      </CardContent>
       <CardFooter>
-        <Link text="Update" />
+        <Link
+          text="Update"
+          onClick={presetUpdater.savePreset}
+        />
         <Link
           text={presetUpdater.isReady ? "un-ready" : "ready"}
           onClick={presetUpdater.isReady ? presetUpdater.setNotReady : presetUpdater.setReady}

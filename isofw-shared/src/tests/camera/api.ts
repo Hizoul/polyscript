@@ -27,7 +27,7 @@ const cameraApiTest = () => {
       const cameraResult = await createTestCameras(appRef.app)
       const mockCamera = await getCameraMock()
       await appRef.app.service(val.service.camera).patch(
-        cameraResult[0]._id, {[String(CameraIp.title)]: `http://localhost:${mockCamera.port}`})
+        cameraResult[0]._id, {[String(CameraIp.title)]: `localhost:${mockCamera.port}`})
       expect(toJS(DbStore)).toMatchSnapshot("Before anything")
       expect(mockCamera.requests).toMatchSnapshot("requests before anything")
       const prFields = makeSubFields(PresetAssistantForm)

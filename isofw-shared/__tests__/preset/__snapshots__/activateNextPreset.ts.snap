@@ -5,6 +5,7 @@ Object {
   "createState": Object {},
   "currentlyEditing": "",
   "fetching": Object {},
+  "formsToUpdate": Array [],
   "getFromServer": [Function],
   "getState": Object {
     "users": Object {
@@ -69,6 +70,7 @@ Object {
   "fetching": Object {
     "b19999999999999999999999": false,
   },
+  "formsToUpdate": Array [],
   "getFromServer": [Function],
   "getState": Object {
     "projects": Object {

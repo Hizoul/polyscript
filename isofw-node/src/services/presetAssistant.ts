@@ -1,16 +1,22 @@
+import * as express from "@feathersjs/express"
 import * as feathers from "@feathersjs/feathers"
 import presetCreator from "isofw-node/src/services/hooks/presetCreator"
 import cameraApi, { cameraCommand } from "isofw-shared/src/cameraApi"
 import { getPresetDataUE70 } from "isofw-shared/src/cameraApi/ue70"
 import isServerParams from "isofw-shared/src/globals/isServerParams"
+import urls from "isofw-shared/src/globals/url"
 import val from "isofw-shared/src/globals/val"
 import { CameraIp } from "isofw-shared/src/xpfwDefs/camera"
 import {
   EMPTY_PRESET, PresetActionTypeField, PresetCameraField, PresetFocusField, PresetIrisField,
-  PresetNumberField, PresetPanField, PresetProjectField, PresetTiltField, PresetZoomField
+  PresetNumberField, PresetPanField, PresetPreviewField, PresetProjectField, PresetTiltField,
+  PresetZoomField
 } from "isofw-shared/src/xpfwDefs/preset"
 import { IsActiveField, ProjectProgram, ShotPreset } from "isofw-shared/src/xpfwDefs/project"
 import { get } from "lodash"
+import * as moment from "moment"
+import { resolve } from "path"
+import { cp, mkdir } from "shelljs"
 import activateNextPresets from "./hooks/activateNextPresets"
 import ensureShotNumber from "./hooks/ensureShotNumber"
 import forkedHooks from "./hooks/forkedHooks"
@@ -18,12 +24,27 @@ import freeUnusedPresets, { freePresetsOfProject } from "./hooks/freeUnusedPrese
 import requireAuthentication from "./hooks/requireAuthentication"
 
 const useAsyncHook = global.process != null && process.env.ASYNC_HOOKS != null
+const fileDirectory = val.isDebug ? `/tmp/Polly${urls.port}` :
+(global.process != null && process.env.PREVIEW_DIRECTORY != null ?
+  process.env.PREVIEW_DIRECTORY : __dirname + "previews")
+const makePreview = async (id: string, cameraIp: string) => {
+  const filename =  `${id}-${Date.now()}.jpg`
+  const dateDirectory = moment().format("YYYY-MM-DD")
+  mkdir("-p", resolve(fileDirectory, dateDirectory))
+  if (val.isDebug) {
+    cp(resolve(__dirname, "concert.jpg"), resolve(fileDirectory, dateDirectory, filename))
+  } else {
 
+  }
+  return dateDirectory + "/" + filename
+}
 const presetAssistantConfigurator: any = (app: feathers.Application) => {
 
   app.service(val.service.camera).hooks({after: {create: presetCreator}})
-  app.service(val.service.project).hooks({after: {patch: useAsyncHook ? [forkedHooks()] :
-    [activateNextPresets, freeUnusedPresets, ensureShotNumber]}})
+  app.service(val.service.project).hooks({after: {patch: [activateNextPresets, freeUnusedPresets, ensureShotNumber]}})
+  const previewHandler: any =  express.static(fileDirectory)
+  app.use(urls.presetPreview, previewHandler)
+  console.log("Serving preset previews from ", fileDirectory)
 
   const presentAssistanceService = {
     create: async (data: any) => {
@@ -64,6 +85,7 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
     },
     patch: async (id: string, data: any, params: any) => {
       const camera = await app.service(val.service.camera).get(id, isServerParams)
+      console.log(" in camera command ", id, data)
       if (!camera) {
         return Promise.reject(" unknown Camera ")
       }
@@ -84,11 +106,19 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
           return cameraApi.goToPreset(cameraIp, data[String(PresetNumberField.title)])
         }
         case cameraCommand.updatePreset: {
-          if (val.handlePresetsSelf) {
-            const presetData = await getPresetDataUE70(cameraIp)
-            await app.service(val.service.preset).patch(data[String(PresetCameraField.title)], presetData, params)
+          const preview = makePreview(id, cameraIp)
+          const updatePromise = cameraApi.updatePreset(cameraIp, data[String(PresetNumberField.title)])
+          let patchData = {
+            [String(PresetPreviewField.title)]: await preview
           }
-          return cameraApi.updatePreset(cameraIp, data[String(PresetNumberField.title)])
+          if (val.handlePresetsSelf) {
+            patchData = {
+              ...patchData,
+              ...await getPresetDataUE70(cameraIp)
+            }
+          }
+          await app.service(val.service.preset).patch(data[String(PresetCameraField.title)], patchData, params)
+          return updatePromise
         }
         case cameraCommand.doZoom: {
           return cameraApi.doZoom(cameraIp, data[String(PresetNumberField.title)])

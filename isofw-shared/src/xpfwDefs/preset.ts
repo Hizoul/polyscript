@@ -15,6 +15,11 @@ const PresetProjectField: ExtendedJSONSchema = {
   title: "project"
 }
 
+const PresetPreviewField: ExtendedJSONSchema = {
+  type: "string",
+  title: "preview"
+}
+
 const PresetCameraField: ExtendedJSONSchema = {
   type: "string",
   title: "camera"
@@ -66,6 +71,7 @@ const PresetForm: ExtendedJSONSchema = {
     [String(PresetNumberField.title)]: PresetNumberField,
     [String(PresetProjectField.title)]: PresetProjectField,
     [String(PresetCameraField.title)]: PresetCameraField,
+    [String(PresetPreviewField.title)]: PresetPreviewField,
     [String(PresetIsReadyField.title)]: PresetIsReadyField,
     [String(PresetActionTypeField.title)]: PresetActionTypeField,
     [String(PresetPanField.title)]: PresetPanField,
@@ -84,5 +90,5 @@ PresetAssistantForm.collection = val.service.presetAssistant
 export {
   PresetForm, PresetNumberField, PresetProjectField, PresetCameraField, EMPTY_PRESET, PresetAssistantForm,
   PresetIsReadyField, PresetActionTypeField, PresetPanField, PresetTiltField, PresetZoomField,
-  PresetFocusField, PresetIrisField
+  PresetFocusField, PresetIrisField, PresetPreviewField
 }

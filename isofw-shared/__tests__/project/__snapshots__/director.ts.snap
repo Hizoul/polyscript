@@ -5,6 +5,12 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
   className="DirectorEle"
 >
   {
+  "original": {
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 42,
+    "isActive": true
+  },
   "user": {
     "_id": "u1",
     "email": "u1"
@@ -18,6 +24,7 @@ Object {
   "createState": Object {},
   "currentlyEditing": "b19999999999999999999999",
   "fetching": Object {},
+  "formsToUpdate": Array [],
   "getFromServer": [Function],
   "getState": Object {
     "projects": Object {
@@ -56,6 +63,7 @@ Object {
   "createState": Object {},
   "currentlyEditing": "",
   "fetching": Object {},
+  "formsToUpdate": Array [],
   "getFromServer": [Function],
   "getState": Object {
     "projects": Object {
@@ -113,6 +121,12 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
 >
   {
   "state": null,
+  "original": {
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 42,
+    "isActive": true
+  },
   "user": {
     "_id": "u1",
     "email": "u1"

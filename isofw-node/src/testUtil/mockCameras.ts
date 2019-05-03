@@ -9,7 +9,7 @@ const mockCameras = async (app: any) => {
   for (const camera of testCameras) {
     const cameraMock = await getCameraMock()
     await app.service(val.service.camera).patch(
-      camera._id, {[String(CameraIp.title)]: `http://localhost:${cameraMock.port}`})
+      camera._id, {[String(CameraIp.title)]: `localhost:${cameraMock.port}`})
     mockedCameras.push(cameraMock)
   }
   return mockedCameras

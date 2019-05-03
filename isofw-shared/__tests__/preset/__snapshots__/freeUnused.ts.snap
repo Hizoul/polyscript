@@ -3,10 +3,10 @@
 exports[`free unused presets after program Update works as planned:  before aanything  1`] = `
 Object {
   "currentPage": Object {},
-  "dirtyCollections": Object {},
-  "doingQuery": Object {
-    "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
+  "dirtyCollections": Object {
+    "presets": false,
   },
+  "doingQuery": Object {},
   "lists": Object {
     "presetModel": Object {
       "data": Array [
@@ -23,15 +23,15 @@ Object {
           "project": "-",
         },
         Object {
-          "_id": "c1bbbbbbbbbbbbbbbb298765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 2,
-          "project": "-",
-        },
-        Object {
           "_id": "c1bbbbbbbbbbbbbbbb398765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 3,
+          "project": "-",
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbb298765",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
           "project": "-",
         },
         Object {
@@ -55,10 +55,6 @@ Object {
     "presetModel": Object {
       "$limit": 5,
       "$skip": 0,
-      "$sort": Object {
-        "camera": 1,
-        "number": 1,
-      },
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
     },
   },
@@ -70,10 +66,9 @@ Object {
   "currentPage": Object {},
   "dirtyCollections": Object {
     "presetAssistant": true,
+    "presets": false,
   },
-  "doingQuery": Object {
-    "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
-  },
+  "doingQuery": Object {},
   "lists": Object {
     "presetModel": Object {
       "data": Array [
@@ -90,15 +85,15 @@ Object {
           "project": "b19999999999999999999999",
         },
         Object {
-          "_id": "c1bbbbbbbbbbbbbbbb298765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 2,
-          "project": "b19999999999999999999999",
-        },
-        Object {
           "_id": "c1bbbbbbbbbbbbbbbb398765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 3,
+          "project": "b19999999999999999999999",
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbb298765",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
           "project": "b19999999999999999999999",
         },
         Object {
@@ -122,10 +117,6 @@ Object {
     "presetModel": Object {
       "$limit": 5,
       "$skip": 0,
-      "$sort": Object {
-        "camera": 1,
-        "number": 1,
-      },
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
     },
   },
@@ -137,11 +128,10 @@ Object {
   "currentPage": Object {},
   "dirtyCollections": Object {
     "presetAssistant": true,
+    "presets": false,
     "projects": true,
   },
-  "doingQuery": Object {
-    "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
-  },
+  "doingQuery": Object {},
   "lists": Object {
     "presetModel": Object {
       "data": Array [
@@ -158,15 +148,15 @@ Object {
           "project": "-",
         },
         Object {
-          "_id": "c1bbbbbbbbbbbbbbbb298765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 2,
-          "project": "-",
-        },
-        Object {
           "_id": "c1bbbbbbbbbbbbbbbb398765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 3,
+          "project": "-",
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbb298765",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
           "project": "-",
         },
         Object {
@@ -190,10 +180,6 @@ Object {
     "presetModel": Object {
       "$limit": 5,
       "$skip": 0,
-      "$sort": Object {
-        "camera": 1,
-        "number": 1,
-      },
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
     },
   },
@@ -205,12 +191,10 @@ Object {
   "currentPage": Object {},
   "dirtyCollections": Object {
     "presetAssistant": true,
+    "presets": false,
     "projects": true,
   },
-  "doingQuery": Object {
-    "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
-    "undefinedpresets{\\"camera\\":\\"c2bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":5,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
-  },
+  "doingQuery": Object {},
   "lists": Object {
     "presetModel": Object {
       "data": Array [
@@ -259,10 +243,6 @@ Object {
     "presetModel": Object {
       "$limit": 5,
       "$skip": 0,
-      "$sort": Object {
-        "camera": 1,
-        "number": 1,
-      },
       "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
     },
   },

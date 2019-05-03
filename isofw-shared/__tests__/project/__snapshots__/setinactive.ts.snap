@@ -5,6 +5,7 @@ Object {
   "createState": Object {},
   "currentlyEditing": "",
   "fetching": Object {},
+  "formsToUpdate": Array [],
   "getFromServer": [Function],
   "getState": Object {
     "users": Object {
@@ -23,12 +24,13 @@ Object {
 exports[`free unused presets after program Update works as planned: after All having been freed up again 1`] = `
 Object {
   "createState": Object {
-    "freePresetGetter.assistantForm": "c1bbbbbbbbbbbbbbbb298765",
+    "freePresetGetter.assistantForm": "c1bbbbbbbbbbbbbbbb498765",
   },
   "currentlyEditing": "b19999999999999999999999",
   "fetching": Object {
     "b19999999999999999999999": false,
   },
+  "formsToUpdate": Array [],
   "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
@@ -63,7 +65,7 @@ Object {
         "program": null,
         "shot": 1,
       },
-      "undefined": "c1bbbbbbbbbbbbbbbb298765",
+      "undefined": "c1bbbbbbbbbbbbbbbb498765",
     },
     "presets": Object {
       "c1bbbbbbbbbbbbbbbb098765": Object {
@@ -78,16 +80,16 @@ Object {
         "number": 1,
         "project": "-",
       },
-      "c1bbbbbbbbbbbbbbbb298765": Object {
-        "_id": "c1bbbbbbbbbbbbbbbb298765",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "number": 2,
-        "project": "-",
-      },
       "c1bbbbbbbbbbbbbbbb398765": Object {
         "_id": "c1bbbbbbbbbbbbbbbb398765",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
         "number": 3,
+        "project": "-",
+      },
+      "c1bbbbbbbbbbbbbbbb498765": Object {
+        "_id": "c1bbbbbbbbbbbbbbbb498765",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "number": 4,
         "project": "-",
       },
     },
@@ -176,11 +178,10 @@ Object {
   "currentPage": Object {},
   "dirtyCollections": Object {
     "presetAssistant": true,
+    "presets": false,
     "projects": true,
   },
-  "doingQuery": Object {
-    "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":15,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
-  },
+  "doingQuery": Object {},
   "lists": Object {
     "list.presetModel": Object {
       "data": Array [
@@ -194,12 +195,6 @@ Object {
           "_id": "c1bbbbbbbbbbbbbbbb198765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 1,
-          "project": "-",
-        },
-        Object {
-          "_id": "c1bbbbbbbbbbbbbbbb298765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 2,
           "project": "-",
         },
         Object {
@@ -224,6 +219,12 @@ Object {
           "_id": "c1bbbbbbbbbbbbbbbb698765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 6,
+          "project": "-",
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbb298765",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
           "project": "-",
         },
         Object {
@@ -289,10 +290,6 @@ Object {
     "list.presetModel": Object {
       "$limit": 15,
       "$skip": 0,
-      "$sort": Object {
-        "camera": 1,
-        "number": 1,
-      },
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
     },
   },
@@ -302,16 +299,17 @@ Object {
 exports[`free unused presets after program Update works as planned: after reservation of four presets 1`] = `
 Object {
   "createState": Object {
-    "freePresetGetter.assistantForm": "c1bbbbbbbbbbbbbbbb298765",
+    "freePresetGetter.assistantForm": "c1bbbbbbbbbbbbbbbb498765",
   },
   "currentlyEditing": "b19999999999999999999999",
   "fetching": Object {
     "b19999999999999999999999": false,
   },
+  "formsToUpdate": Array [],
   "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
-      "undefined": "c1bbbbbbbbbbbbbbbb298765",
+      "undefined": "c1bbbbbbbbbbbbbbbb498765",
     },
     "presets": Object {
       "c1bbbbbbbbbbbbbbbb098765": Object {
@@ -326,16 +324,16 @@ Object {
         "number": 1,
         "project": "-",
       },
-      "c1bbbbbbbbbbbbbbbb298765": Object {
-        "_id": "c1bbbbbbbbbbbbbbbb298765",
-        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-        "number": 2,
-        "project": "-",
-      },
       "c1bbbbbbbbbbbbbbbb398765": Object {
         "_id": "c1bbbbbbbbbbbbbbbb398765",
         "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
         "number": 3,
+        "project": "-",
+      },
+      "c1bbbbbbbbbbbbbbbb498765": Object {
+        "_id": "c1bbbbbbbbbbbbbbbb498765",
+        "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+        "number": 4,
         "project": "-",
       },
     },
@@ -382,8 +380,9 @@ Object {
     "b19999999999999999999999": -2077750800000,
     "c1bbbbbbbbbbbbbbbb098765": -2077750800000,
     "c1bbbbbbbbbbbbbbbb198765": -2077750800000,
-    "c1bbbbbbbbbbbbbbbb298765": -2077750800000,
     "c1bbbbbbbbbbbbbbbb398765": -2077750800000,
+    "c1bbbbbbbbbbbbbbbb498765": -2077750800000,
+    "undefined": -2077750800000,
   },
   "removeState": Object {},
   "updateState": Object {
@@ -427,11 +426,10 @@ Object {
   "currentPage": Object {},
   "dirtyCollections": Object {
     "presetAssistant": true,
+    "presets": false,
     "projects": true,
   },
-  "doingQuery": Object {
-    "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":15,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
-  },
+  "doingQuery": Object {},
   "lists": Object {
     "list.presetModel": Object {
       "data": Array [
@@ -445,12 +443,6 @@ Object {
           "_id": "c1bbbbbbbbbbbbbbbb198765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 1,
-          "project": "-",
-        },
-        Object {
-          "_id": "c1bbbbbbbbbbbbbbbb298765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 2,
           "project": "-",
         },
         Object {
@@ -475,6 +467,12 @@ Object {
           "_id": "c1bbbbbbbbbbbbbbbb698765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 6,
+          "project": "-",
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbb298765",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
           "project": "-",
         },
         Object {
@@ -540,10 +538,6 @@ Object {
     "list.presetModel": Object {
       "$limit": 15,
       "$skip": 0,
-      "$sort": Object {
-        "camera": 1,
-        "number": 1,
-      },
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
     },
   },
@@ -553,10 +547,10 @@ Object {
 exports[`free unused presets after program Update works as planned: before anything 1`] = `
 Object {
   "currentPage": Object {},
-  "dirtyCollections": Object {},
-  "doingQuery": Object {
-    "undefinedpresets{\\"camera\\":\\"c1bbbbbbbbbbbbbbbbbbbbbb\\",\\"$limit\\":15,\\"$skip\\":0,\\"$sort\\":{\\"number\\":1,\\"camera\\":1}}": false,
+  "dirtyCollections": Object {
+    "presets": false,
   },
+  "doingQuery": Object {},
   "lists": Object {
     "list.presetModel": Object {
       "data": Array [
@@ -570,12 +564,6 @@ Object {
           "_id": "c1bbbbbbbbbbbbbbbb198765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 1,
-          "project": "-",
-        },
-        Object {
-          "_id": "c1bbbbbbbbbbbbbbbb298765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 2,
           "project": "-",
         },
         Object {
@@ -600,6 +588,12 @@ Object {
           "_id": "c1bbbbbbbbbbbbbbbb698765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 6,
+          "project": "-",
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbb298765",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 2,
           "project": "-",
         },
         Object {
@@ -665,10 +659,6 @@ Object {
     "list.presetModel": Object {
       "$limit": 15,
       "$skip": 0,
-      "$sort": Object {
-        "camera": 1,
-        "number": 1,
-      },
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
     },
   },

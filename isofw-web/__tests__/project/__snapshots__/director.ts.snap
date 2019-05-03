@@ -9,7 +9,9 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
   >
     <div
       className="titleBox"
-    />
+    >
+      pn1
+    </div>
   </div>
   <div
     className="flex center"
@@ -19,7 +21,9 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
     >
       <span
         className="shotNumber"
-      />
+      >
+        42
+      </span>
       <br />
       <span>
         CA 
@@ -36,7 +40,7 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
       className="Button"
     >
       {
-  "text": "previous shot",
+  "text": "Prev",
   "large": true,
   "iconFa": "step-backward"
 }
@@ -45,7 +49,7 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
       className="Button"
     >
       {
-  "text": "next shot",
+  "text": "Next",
   "large": true,
   "iconFa": "step-forward",
   "fill": true
@@ -67,7 +71,11 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
     {
   "className": "centerText"
 }
-    Automatically controlled cameras
+    <span
+      text="director.cameras"
+    >
+      Automatically controlled cameras
+    </span>
   </div>
   <div
     className="flex row center"
@@ -82,6 +90,7 @@ Object {
   "fetching": Object {
     "undefined": false,
   },
+  "formsToUpdate": Array [],
   "getFromServer": [Function],
   "getState": Object {
     "cameras": Object {},
@@ -122,6 +131,7 @@ Object {
   "createState": Object {},
   "currentlyEditing": "",
   "fetching": Object {},
+  "formsToUpdate": Array [],
   "getFromServer": [Function],
   "getState": Object {
     "projects": Object {
@@ -187,7 +197,7 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
       className="Button"
     >
       {
-  "text": "previous shot",
+  "text": "Prev",
   "large": true,
   "iconFa": "step-backward",
   "loading": false,
@@ -198,7 +208,7 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
       className="Button"
     >
       {
-  "text": "next shot",
+  "text": "Next",
   "large": true,
   "iconFa": "step-forward",
   "fill": true,
@@ -224,7 +234,11 @@ exports[` direct a test   can increase number : After manual edits 1`] = `
     {
   "className": "centerText"
 }
-    Automatically controlled cameras
+    <span
+      text="director.cameras"
+    >
+      Automatically controlled cameras
+    </span>
   </div>
   <div
     className="flex row center"
@@ -241,7 +255,9 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
   >
     <div
       className="titleBox"
-    />
+    >
+      pn1
+    </div>
   </div>
   <div
     className="flex center"
@@ -251,7 +267,9 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
     >
       <span
         className="shotNumber"
-      />
+      >
+        42
+      </span>
       <br />
       <span>
         CA 
@@ -268,7 +286,7 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
       className="Button"
     >
       {
-  "text": "previous shot",
+  "text": "Prev",
   "large": true,
   "iconFa": "step-backward"
 }
@@ -277,7 +295,7 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
       className="Button"
     >
       {
-  "text": "next shot",
+  "text": "Next",
   "large": true,
   "iconFa": "step-forward",
   "fill": true
@@ -299,7 +317,11 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
     {
   "className": "centerText"
 }
-    Automatically controlled cameras
+    <span
+      text="director.cameras"
+    >
+      Automatically controlled cameras
+    </span>
   </div>
   <div
     className="flex row center"

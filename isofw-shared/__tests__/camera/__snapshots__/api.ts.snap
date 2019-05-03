@@ -5,6 +5,7 @@ Object {
   "createState": Object {},
   "currentlyEditing": "",
   "fetching": Object {},
+  "formsToUpdate": Array [],
   "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
@@ -17,7 +18,9 @@ Object {
       },
     },
   },
-  "lastFetch": Object {},
+  "lastFetch": Object {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": -2077750800000,
+  },
   "removeState": Object {},
   "updateState": Object {
     "assistantFormc1bbbbbbbbbbbbbbbbbbbbbb": "s09",
@@ -30,31 +33,7 @@ Object {
   "createState": Object {},
   "currentlyEditing": "",
   "fetching": Object {},
-  "getFromServer": [Function],
-  "getState": Object {
-    "presetAssistant": Object {
-      "c1bbbbbbbbbbbbbbbbbbbbbb": "s05",
-    },
-    "users": Object {
-      "u1": Object {
-        "_id": "u1",
-        "email": "u1",
-      },
-    },
-  },
-  "lastFetch": Object {},
-  "removeState": Object {},
-  "updateState": Object {
-    "assistantFormc1bbbbbbbbbbbbbbbbbbbbbb": "s05",
-  },
-}
-`;
-
-exports[`Preset Update works as planned:  after Stop zooming  1`] = `
-Object {
-  "createState": Object {},
-  "currentlyEditing": "",
-  "fetching": Object {},
+  "formsToUpdate": Array [],
   "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
@@ -67,7 +46,37 @@ Object {
       },
     },
   },
-  "lastFetch": Object {},
+  "lastFetch": Object {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": -2077750800000,
+  },
+  "removeState": Object {},
+  "updateState": Object {
+    "assistantFormc1bbbbbbbbbbbbbbbbbbbbbb": "zS50",
+  },
+}
+`;
+
+exports[`Preset Update works as planned:  after Stop zooming  1`] = `
+Object {
+  "createState": Object {},
+  "currentlyEditing": "",
+  "fetching": Object {},
+  "formsToUpdate": Array [],
+  "getFromServer": [Function],
+  "getState": Object {
+    "presetAssistant": Object {
+      "c1bbbbbbbbbbbbbbbbbbbbbb": "zS50",
+    },
+    "users": Object {
+      "u1": Object {
+        "_id": "u1",
+        "email": "u1",
+      },
+    },
+  },
+  "lastFetch": Object {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": -2077750800000,
+  },
   "removeState": Object {},
   "updateState": Object {
     "assistantFormc1bbbbbbbbbbbbbbbbbbbbbb": "zS50",
@@ -80,6 +89,7 @@ Object {
   "createState": Object {},
   "currentlyEditing": "",
   "fetching": Object {},
+  "formsToUpdate": Array [],
   "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
@@ -92,7 +102,9 @@ Object {
       },
     },
   },
-  "lastFetch": Object {},
+  "lastFetch": Object {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": -2077750800000,
+  },
   "removeState": Object {},
   "updateState": Object {
     "assistantFormc1bbbbbbbbbbbbbbbbbbbbbb": "zS73",
@@ -105,6 +117,7 @@ Object {
   "createState": Object {},
   "currentlyEditing": "",
   "fetching": Object {},
+  "formsToUpdate": Array [],
   "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
@@ -117,7 +130,9 @@ Object {
       },
     },
   },
-  "lastFetch": Object {},
+  "lastFetch": Object {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": -2077750800000,
+  },
   "removeState": Object {},
   "updateState": Object {
     "assistantFormc1bbbbbbbbbbbbbbbbbbbbbb": "zS03",
@@ -130,6 +145,7 @@ Object {
   "createState": Object {},
   "currentlyEditing": "",
   "fetching": Object {},
+  "formsToUpdate": Array [],
   "getFromServer": [Function],
   "getState": Object {
     "users": Object {
@@ -153,6 +169,7 @@ Object {
   "iris": "FFF",
   "number": 0,
   "pan": "7FFF",
+  "preview": "1904-02-29/c1bbbbbbbbbbbbbbbbbbbbbb--2077750800000.jpg",
   "project": "-",
   "tilt": "7FFF",
   "zoom": "FFF",
@@ -234,20 +251,20 @@ Array [
       "res": "1",
     },
   },
-  Object {
-    "params": Object {
-      "0": "/cgi-bin/aw_ptz",
-    },
-    "query": Object {
-      "cmd": "#M05",
-      "res": "1",
-    },
-  },
 ]
 `;
 
 exports[`Preset Update works as planned: requests after getting and saving preset data 1`] = `
 Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#M09",
+      "res": "1",
+    },
+  },
   Object {
     "params": Object {
       "0": "/cgi-bin/aw_ptz",
@@ -281,15 +298,6 @@ Array [
     },
     "query": Object {
       "cmd": "#GI",
-      "res": "1",
-    },
-  },
-  Object {
-    "params": Object {
-      "0": "/cgi-bin/aw_ptz",
-    },
-    "query": Object {
-      "cmd": "#M09",
       "res": "1",
     },
   },

@@ -29,6 +29,7 @@
     "moment": "^2.24.0",
     "mongodb": "^3.1.13",
     "nedb": "^1.8.0",
+    "shelljs": "^0.8.3",
     "tiny-worker": "^2.1.2"
   },
   "devDependencies": {
@@ -40,6 +41,7 @@
     "@types/feathersjs__express": "^1.1.5",
     "@types/feathersjs__feathers": "^3.1.1",
     "@types/feathersjs__socketio": "^3.0.4",
+    "@types/shelljs": "^0.8.5",
     "@types/jest": "^24.0.11",
     "@types/mongodb": "^3.1.22",
     "@types/nedb": "^1.8.7",

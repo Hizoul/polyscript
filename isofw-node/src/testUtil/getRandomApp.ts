@@ -8,6 +8,7 @@ import feathers, { Application, Service } from "@feathersjs/feathers"
 import * as sios from "@feathersjs/socketio"
 import * as memdb from "feathers-memory"
 import * as mongoService from "feathers-mongodb"
+import urls from "isofw-shared/src/globals/url"
 import { DbStore, UserStore } from "isofw-shared/src/util/xpfwdata"
 import collections from "isofw-shared/src/xpfwDefs/collections"
 import { isString } from "lodash"
@@ -40,6 +41,7 @@ const getRandomApp = async (memoryServiceName: string,
   let db: any | undefined
   let c: any
   const port = await emptyPort()
+  urls.port = port
   app.configure(useRest ? res() : sio())
   if (useMongo) {
     c = await MongoClient.connect(`mongodb://localhost:27017/`, {useNewUrlParser: true})

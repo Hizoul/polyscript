@@ -146,7 +146,9 @@ exports[` camera mapping test  works as planned:  after Fetching cameras  1`] = 
   <div
     className="Popup"
   >
-    {}
+    {
+  "opened": false
+}
     <div
       className="BlockTitle"
     >
@@ -378,7 +380,9 @@ exports[` camera mapping test  works as planned:  after Setting Camera  1`] = `
   <div
     className="Popup"
   >
-    {}
+    {
+  "opened": false
+}
     <div
       className="BlockTitle"
     >
@@ -487,7 +491,9 @@ exports[` camera mapping test  works as planned:  after preparing cameras  1`] =
   <div
     className="Popup"
   >
-    {}
+    {
+  "opened": false
+}
     <div
       className="BlockTitle"
     >
@@ -596,7 +602,9 @@ exports[` camera mapping test  works as planned: Before anything 1`] = `
   <div
     className="Popup"
   >
-    {}
+    {
+  "opened": false
+}
     <div
       className="BlockTitle"
     >
