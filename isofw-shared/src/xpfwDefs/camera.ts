@@ -1,4 +1,4 @@
-import { ExtendedJSONSchema } from "@xpfw/form"
+import { addTimeStamp, ExtendedJSONSchema } from "@xpfw/form"
 import val from "isofw-shared/src/globals/val"
 import { changeValToRegex } from "isofw-shared/src/util/valToRegex"
 import { ProjectName } from "./project"
@@ -15,10 +15,7 @@ const CameraForm: ExtendedJSONSchema = {
     [String(ProjectName.title)]: ProjectName,
     [String(CameraIp.title)]: CameraIp
   },
-  modify: {
-    addCreatedAt: true,
-    queryModifier: changeValToRegex(String(ProjectName.title))
-  }
+  modify: [addTimeStamp("createdAt", ["create"])]
 }
 
 export {

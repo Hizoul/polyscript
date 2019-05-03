@@ -1,4 +1,4 @@
-import { ExtendedJSONSchema } from "@xpfw/form"
+import { addTimeStamp, ExtendedJSONSchema } from "@xpfw/form"
 import val from "isofw-shared/src/globals/val"
 import { cloneDeep } from "lodash"
 import { IDField } from "./commonFields"
@@ -74,13 +74,7 @@ const PresetForm: ExtendedJSONSchema = {
     [String(PresetFocusField.title)]: PresetFocusField,
     [String(PresetIrisField.title)]: PresetIrisField
   },
-  modify: {
-    addCreatedAt: true,
-    defaultSort: {
-      [String(PresetNumberField.title)]: 1,
-      [String(PresetCameraField.title)]: 1
-    }
-  }
+  modify: [addTimeStamp("createdAt", ["create"])]
 }
 
 const PresetAssistantForm: ExtendedJSONSchema = cloneDeep(PresetForm)

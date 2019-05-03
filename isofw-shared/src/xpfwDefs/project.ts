@@ -1,5 +1,5 @@
 import { MailField } from "@xpfw/data"
-import { ExtendedJSONSchema } from "@xpfw/form"
+import { addTimeStamp, ExtendedJSONSchema } from "@xpfw/form"
 import val from "isofw-shared/src/globals/val"
 import { changeValToRegex } from "isofw-shared/src/util/valToRegex"
 import { cloneDeep } from "lodash"
@@ -177,10 +177,6 @@ const ProjectForm: ExtendedJSONSchema = {
     [String(ProjectOperatorCameraMapping.title)]: ProjectOperatorCameraMapping,
     [String(IsActiveField.title)]: IsActiveField,
     [String(DisabledCameras.title)]: DisabledCameras
-  },
-  modify: {
-    addCreatedAt: true,
-    queryModifier: changeValToRegex(String(ProjectName.title))
   }
 }
 
@@ -195,10 +191,7 @@ const StrippedProjectForm: ExtendedJSONSchema = {
     [String(ProjectOperators.title)]: ProjectOperators,
     [String(ProjectOperatorCameraMapping.title)]: ProjectOperatorCameraMapping
   },
-  modify: {
-    addCreatedAt: true,
-    queryModifier: changeValToRegex(String(ProjectName.title))
-  }
+  modify: [addTimeStamp("createdAt", ["create"])]
 }
 
 export {

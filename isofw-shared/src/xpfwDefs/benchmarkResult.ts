@@ -1,7 +1,5 @@
-import { ExtendedJSONSchema } from "@xpfw/form"
+import { addTimeStamp, ExtendedJSONSchema } from "@xpfw/form"
 import val from "isofw-shared/src/globals/val"
-import { changeValToRegex } from "isofw-shared/src/util/valToRegex"
-import { ProjectName } from "./project"
 
 const NetworkTypeField: ExtendedJSONSchema = {
   type: "number",
@@ -56,7 +54,8 @@ const BenchmarkResultForm: ExtendedJSONSchema = {
     [String(ServerArriveType.title)]: ServerArriveType,
     [String(ServerSentTypeField.title)]: ServerSentTypeField,
     [String(ServerProcessTimeField.title)]: ServerProcessTimeField
-  }
+  },
+  modify: [addTimeStamp("createdAt", ["create"])]
 }
 
 export {
