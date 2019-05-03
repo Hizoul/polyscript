@@ -56,9 +56,6 @@ const BenchmarkResultForm: ExtendedJSONSchema = {
     [String(ServerArriveType.title)]: ServerArriveType,
     [String(ServerSentTypeField.title)]: ServerSentTypeField,
     [String(ServerProcessTimeField.title)]: ServerProcessTimeField
-  },
-  modify: {
-    addCreatedAt: true
   }
 }
 

@@ -24,9 +24,9 @@ const val = {
     tcp: 1,
     udp: 2,
     packetDelimiter: "_MSG_END_",
-    addServerTimeInfo: true,
-    addServerTimeInfoForWebSockets: true,
-    benchmarkEnabled: true,
+    addServerTimeInfo: false,
+    addServerTimeInfoForWebSockets: false,
+    benchmarkEnabled: false,
     networkToUse: 0,
     useCompression: false,
     useGzipCompression: false
