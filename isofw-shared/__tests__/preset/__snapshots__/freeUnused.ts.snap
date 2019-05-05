@@ -23,15 +23,15 @@ Object {
           "project": "-",
         },
         Object {
-          "_id": "c1bbbbbbbbbbbbbbbb398765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 3,
-          "project": "-",
-        },
-        Object {
           "_id": "c1bbbbbbbbbbbbbbbb298765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 2,
+          "project": "-",
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbb398765",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 3,
           "project": "-",
         },
         Object {
@@ -55,6 +55,10 @@ Object {
     "presetModel": Object {
       "$limit": 5,
       "$skip": 0,
+      "$sort": Object {
+        "_id": 1,
+        "number": 1,
+      },
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
     },
   },
@@ -85,15 +89,15 @@ Object {
           "project": "b19999999999999999999999",
         },
         Object {
-          "_id": "c1bbbbbbbbbbbbbbbb398765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 3,
-          "project": "b19999999999999999999999",
-        },
-        Object {
           "_id": "c1bbbbbbbbbbbbbbbb298765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 2,
+          "project": "b19999999999999999999999",
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbb398765",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 3,
           "project": "b19999999999999999999999",
         },
         Object {
@@ -117,6 +121,10 @@ Object {
     "presetModel": Object {
       "$limit": 5,
       "$skip": 0,
+      "$sort": Object {
+        "_id": 1,
+        "number": 1,
+      },
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
     },
   },
@@ -148,15 +156,15 @@ Object {
           "project": "-",
         },
         Object {
-          "_id": "c1bbbbbbbbbbbbbbbb398765",
-          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
-          "number": 3,
-          "project": "-",
-        },
-        Object {
           "_id": "c1bbbbbbbbbbbbbbbb298765",
           "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
           "number": 2,
+          "project": "-",
+        },
+        Object {
+          "_id": "c1bbbbbbbbbbbbbbbb398765",
+          "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
+          "number": 3,
           "project": "-",
         },
         Object {
@@ -180,6 +188,10 @@ Object {
     "presetModel": Object {
       "$limit": 5,
       "$skip": 0,
+      "$sort": Object {
+        "_id": 1,
+        "number": 1,
+      },
       "camera": "c1bbbbbbbbbbbbbbbbbbbbbb",
     },
   },
@@ -243,6 +255,10 @@ Object {
     "presetModel": Object {
       "$limit": 5,
       "$skip": 0,
+      "$sort": Object {
+        "_id": 1,
+        "number": 1,
+      },
       "camera": "c2bbbbbbbbbbbbbbbbbbbbbb",
     },
   },

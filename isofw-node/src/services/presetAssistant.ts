@@ -8,8 +8,9 @@ import urls from "isofw-shared/src/globals/url"
 import val from "isofw-shared/src/globals/val"
 import { CameraIp } from "isofw-shared/src/xpfwDefs/camera"
 import {
-  EMPTY_PRESET, PresetActionTypeField, PresetCameraField, PresetFocusField, PresetIrisField,
-  PresetNumberField, PresetPanField, PresetPreviewField, PresetProjectField, PresetTiltField,
+  defaultPresetSort, EMPTY_PRESET, PresetActionTypeField, PresetCameraField, PresetFocusField,
+  PresetIrisField, PresetNumberField, PresetPanField, PresetPreviewField, PresetProjectField,
+  PresetTiltField,
   PresetZoomField
 } from "isofw-shared/src/xpfwDefs/preset"
 import { IsActiveField, ProjectProgram, ShotPreset } from "isofw-shared/src/xpfwDefs/project"
@@ -55,7 +56,8 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
       }
       const availablePresets = await app.service(val.service.preset).find({...isServerParams, query: {
         [String(PresetCameraField.title)]: cameraId,
-        [String(PresetProjectField.title)]: EMPTY_PRESET
+        [String(PresetProjectField.title)]: EMPTY_PRESET,
+        $sort: defaultPresetSort
       }})
       if (availablePresets && availablePresets.data && availablePresets.data.length > 0) {
         const foundId = availablePresets.data[0]._id
