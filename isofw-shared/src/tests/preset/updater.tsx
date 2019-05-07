@@ -48,7 +48,7 @@ const presetUpdaterTest = (Component?: any) => {
       } else {
         expect(toJS(DbStore)).toMatchSnapshot("AfterSetting to False")
       }
-      console.log(" update pre-result ", presetId, await savePresetData(presetId)())
+      await savePresetData(presetId)()
       await promiseTimeout(2000)
       if (Component) {
         renderSnapshot(<Component id={presetId} />, "after updating presets preview")

@@ -1,5 +1,5 @@
-import { Block, Link, Navbar, NavLeft, NavTitle,
-  Page, Subnavbar } from "framework7-react"
+import { Block, Link, Navbar, NavLeft, NavRight,
+  NavTitle, Page, Subnavbar } from "framework7-react"
 import { useAuth } from "isofw-shared/src/util/xpfwdata"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
@@ -12,6 +12,7 @@ export interface IPageContainer {
   name: string
   title: string
   subtitle?: string
+  rightContent?: any
   backLink?: any
   subContent?: any
 }
@@ -30,6 +31,11 @@ const WebPageContainer: React.FunctionComponent<IPageContainer> = observer((prop
           subtitle={props.subtitle != null ? i18n.t(props.subtitle) : undefined}
           title={i18n.t(props.title)}
         />
+        {props.rightContent ? (
+          <NavRight>
+            {props.rightContent}
+          </NavRight>
+        ) : undefined}
         {props.subContent ? (
           <Subnavbar inner={false}>
             {props.subContent}

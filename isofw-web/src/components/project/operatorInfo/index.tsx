@@ -1,18 +1,18 @@
 import { Col, Icon, Link, Row } from "framework7-react"
 import useOperatorInfo from "isofw-shared/src/components/project/operatorInfo"
 import urls from "isofw-shared/src/globals/url"
-import val from "isofw-shared/src/globals/val"
+import i18n from "isofw-shared/src/util/i18n"
 import { IEditHookProps } from "isofw-shared/src/util/xpfwdata"
-import { ProjectName, ProjectShot, ShotCamera, ShotName, ShotNumber } from "isofw-shared/src/xpfwDefs/project"
+import { prependPrefix } from "isofw-shared/src/util/xpfwform"
+import { ProjectForm, ShotName, ShotNumber } from "isofw-shared/src/xpfwDefs/project"
 import WebButton from "isofw-web/src/components/button"
-import NameDisplayer from "isofw-web/src/components/displayName"
-import I18n from "isofw-web/src/components/i18n";
+import I18n from "isofw-web/src/components/i18n"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
-import i18n from "../../../../../isofw-shared/src/util/i18n";
 import LoadingPage from "../../loading"
 import "../style.sass"
+import CameraActions from "./cameraActions"
 import CameraPresets from "./cameraPresets"
 import CurrentOperatorDisplay from "./currentOperatorDisplay"
 import TablePresetItem from "./tablePresetItem"
@@ -98,28 +98,7 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
           </div>
         </Col>
       </Row>
-      <Row className="marginTopBottom">
-        <Col>
-          <WebButton large={true} fill={true} text="operator.btns.ready" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
-        </Col>
-        <Col>
-          <WebButton large={true} fill={true} text="operator.btns.update" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
-        </Col>
-        <Col>
-          <WebButton large={true} fill={true} text="operator.btns.wide" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
-        </Col>
-        <Col>
-          <WebButton large={true} fill={true} text="operator.btns.stopZoom" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
-        </Col>
-        <Col>
-          <WebButton large={true} fill={true} text="operator.btns.tele" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
-        </Col>
-        <Col>
-          <WebButton large={true} fill={true} text="operator.btns.notReady" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
-        </Col>
-        <Col>
-          <WebButton large={true} fill={true} text="operator.btns.autoScroll" iconFa="check" onClick={operatorHelper.submitEdit} loading={operatorHelper.loading} />
-        </Col>
+      <CameraActions prefix={prependPrefix(ProjectForm.title, props.prefix)}>
         <Col>
           <WebButton
             large={true}
@@ -129,7 +108,7 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
             onClick={operatorHelper.isPresetView ? operatorHelper.useScriptView : operatorHelper.usePresetView}
           />
         </Col>
-      </Row>
+      </CameraActions>
       {content}
       {operatorHelper.loading ? <LoadingPage /> : null}
     </div>

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Camera actions works as planned: requests After buttons 1`] = `
+Array [
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#Z45",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#Z55",
+      "res": "1",
+    },
+  },
+  Object {
+    "params": Object {
+      "0": "/cgi-bin/aw_ptz",
+    },
+    "query": Object {
+      "cmd": "#Z50",
+      "res": "1",
+    },
+  },
+]
+`;
+
+exports[`Camera actions works as planned: requests before anything 1`] = `Array []`;

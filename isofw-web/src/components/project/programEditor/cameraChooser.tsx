@@ -1,28 +1,41 @@
 import { BlockTitle, Card, CardContent, CardHeader, Icon, List, ListItem, Popup, Row } from "framework7-react"
 import useCameraChooser from "isofw-shared/src/components/project/cameraChooser"
 import val from "isofw-shared/src/globals/val"
-import { IFieldProps } from "isofw-shared/src/util/xpfwform"
-import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
+import { FormStore, IFieldProps } from "isofw-shared/src/util/xpfwform"
+import { ProjectCameras, ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
+import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
 import "../style.sass"
 
-const CameraChooser: React.FunctionComponent<IFieldProps> = observer((props) => {
+const CameraChooser: React.FunctionComponent<IFieldProps & {inHeader?: boolean}> = observer((props) => {
   const chooserHelper = useCameraChooser(props.schema, props.mapTo, props.prefix)
   return (
-    <div>
-      <ListItem
-        onClick={chooserHelper.showPop}
-      >
-        <div slot="title">
-          Camera:&nbsp;
-          <NameDisplayer collection={val.service.camera} id={chooserHelper.value} getNameFrom={String(ProjectName.title)} placeholder="not yet selected" />
-        </div>
-        <div slot="inner">
+    <>
+      {props.inHeader ? (
+        <div onClick={chooserHelper.showPop} className="flex verticalCenter">
+          <NameDisplayer
+            collection={val.service.camera}
+            id={chooserHelper.value ? chooserHelper.value : get(FormStore.getValue(props.prefix, undefined, {}), `${ProjectCameras.title}[0]`)}
+            getNameFrom={String(ProjectName.title)}
+          />
+          &nbsp;
           <Icon fa={"camera"} />
         </div>
-      </ListItem>
+      ) : (
+        <ListItem
+          onClick={chooserHelper.showPop}
+        >
+          <div slot="title">
+            Camera:&nbsp;
+            <NameDisplayer collection={val.service.camera} id={chooserHelper.value} getNameFrom={String(ProjectName.title)} placeholder="not yet selected" />
+          </div>
+          <div slot="inner">
+            <Icon fa={"camera"} />
+          </div>
+        </ListItem>
+      )}
       <Popup opened={chooserHelper.showPopUp} onPopupClosed={chooserHelper.hidePop}>
         <BlockTitle>Choose a camera {props.schema.title}</BlockTitle>
         <List>
@@ -40,7 +53,7 @@ const CameraChooser: React.FunctionComponent<IFieldProps> = observer((props) => 
               </ListItem>)}
         </List>
       </Popup>
-    </div>
+    </>
   )
 })
 

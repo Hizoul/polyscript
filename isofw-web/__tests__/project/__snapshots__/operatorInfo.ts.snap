@@ -203,7 +203,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Shot Ready",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -218,7 +219,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Update Preset",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -233,7 +235,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Wide",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -248,7 +251,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Stop Zoom",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -263,7 +267,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Tele",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -278,22 +283,8 @@ exports[` operator info test  works as planned: 2nd user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Not ready",
-  "iconFa": "check"
-}
-      </div>
-    </div>
-    <div
-      className="Col"
-    >
-      {}
-      <div
-        className="Button"
-      >
-        {
-  "large": true,
-  "fill": true,
-  "text": "AutoScroll",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -656,7 +647,8 @@ exports[` operator info test  works as planned: Before anything 1`] = `
   "large": true,
   "fill": true,
   "text": "Shot Ready",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -671,7 +663,8 @@ exports[` operator info test  works as planned: Before anything 1`] = `
   "large": true,
   "fill": true,
   "text": "Update Preset",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -686,7 +679,8 @@ exports[` operator info test  works as planned: Before anything 1`] = `
   "large": true,
   "fill": true,
   "text": "Wide",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -701,7 +695,8 @@ exports[` operator info test  works as planned: Before anything 1`] = `
   "large": true,
   "fill": true,
   "text": "Stop Zoom",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -716,7 +711,8 @@ exports[` operator info test  works as planned: Before anything 1`] = `
   "large": true,
   "fill": true,
   "text": "Tele",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -731,22 +727,8 @@ exports[` operator info test  works as planned: Before anything 1`] = `
   "large": true,
   "fill": true,
   "text": "Not ready",
-  "iconFa": "check"
-}
-      </div>
-    </div>
-    <div
-      className="Col"
-    >
-      {}
-      <div
-        className="Button"
-      >
-        {
-  "large": true,
-  "fill": true,
-  "text": "AutoScroll",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -1277,7 +1259,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Shot Ready",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -1292,7 +1275,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Update Preset",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -1307,7 +1291,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Wide",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -1322,7 +1307,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Stop Zoom",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -1337,7 +1323,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Tele",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -1352,22 +1339,8 @@ exports[` operator info test  works as planned: Invalid user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Not ready",
-  "iconFa": "check"
-}
-      </div>
-    </div>
-    <div
-      className="Col"
-    >
-      {}
-      <div
-        className="Button"
-      >
-        {
-  "large": true,
-  "fill": true,
-  "text": "AutoScroll",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -1898,7 +1871,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
   "large": true,
   "fill": true,
   "text": "Shot Ready",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -1913,7 +1887,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
   "large": true,
   "fill": true,
   "text": "Update Preset",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -1928,7 +1903,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
   "large": true,
   "fill": true,
   "text": "Wide",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -1943,7 +1919,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
   "large": true,
   "fill": true,
   "text": "Stop Zoom",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -1958,7 +1935,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
   "large": true,
   "fill": true,
   "text": "Tele",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -1973,22 +1951,8 @@ exports[` operator info test  works as planned: Preset view active No user selec
   "large": true,
   "fill": true,
   "text": "Not ready",
-  "iconFa": "check"
-}
-      </div>
-    </div>
-    <div
-      className="Col"
-    >
-      {}
-      <div
-        className="Button"
-      >
-        {
-  "large": true,
-  "fill": true,
-  "text": "AutoScroll",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -2559,7 +2523,8 @@ exports[` operator info test  works as planned: Preset view active first user se
   "large": true,
   "fill": true,
   "text": "Shot Ready",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -2574,7 +2539,8 @@ exports[` operator info test  works as planned: Preset view active first user se
   "large": true,
   "fill": true,
   "text": "Update Preset",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -2589,7 +2555,8 @@ exports[` operator info test  works as planned: Preset view active first user se
   "large": true,
   "fill": true,
   "text": "Wide",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -2604,7 +2571,8 @@ exports[` operator info test  works as planned: Preset view active first user se
   "large": true,
   "fill": true,
   "text": "Stop Zoom",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -2619,7 +2587,8 @@ exports[` operator info test  works as planned: Preset view active first user se
   "large": true,
   "fill": true,
   "text": "Tele",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -2634,22 +2603,8 @@ exports[` operator info test  works as planned: Preset view active first user se
   "large": true,
   "fill": true,
   "text": "Not ready",
-  "iconFa": "check"
-}
-      </div>
-    </div>
-    <div
-      className="Col"
-    >
-      {}
-      <div
-        className="Button"
-      >
-        {
-  "large": true,
-  "fill": true,
-  "text": "AutoScroll",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -3106,7 +3061,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
   "large": true,
   "fill": true,
   "text": "Shot Ready",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -3121,7 +3077,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
   "large": true,
   "fill": true,
   "text": "Update Preset",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -3136,7 +3093,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
   "large": true,
   "fill": true,
   "text": "Wide",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -3151,7 +3109,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
   "large": true,
   "fill": true,
   "text": "Stop Zoom",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -3166,7 +3125,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
   "large": true,
   "fill": true,
   "text": "Tele",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -3181,22 +3141,8 @@ exports[` operator info test  works as planned: Preset view disabled 1`] = `
   "large": true,
   "fill": true,
   "text": "Not ready",
-  "iconFa": "check"
-}
-      </div>
-    </div>
-    <div
-      className="Col"
-    >
-      {}
-      <div
-        className="Button"
-      >
-        {
-  "large": true,
-  "fill": true,
-  "text": "AutoScroll",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -3643,7 +3589,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
   "large": true,
   "fill": true,
   "text": "Shot Ready",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -3658,7 +3605,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
   "large": true,
   "fill": true,
   "text": "Update Preset",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -3673,7 +3621,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
   "large": true,
   "fill": true,
   "text": "Wide",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -3688,7 +3637,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
   "large": true,
   "fill": true,
   "text": "Stop Zoom",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -3703,7 +3653,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
   "large": true,
   "fill": true,
   "text": "Tele",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -3718,22 +3669,8 @@ exports[` operator info test  works as planned: Removed user selection 1`] = `
   "large": true,
   "fill": true,
   "text": "Not ready",
-  "iconFa": "check"
-}
-      </div>
-    </div>
-    <div
-      className="Col"
-    >
-      {}
-      <div
-        className="Button"
-      >
-        {
-  "large": true,
-  "fill": true,
-  "text": "AutoScroll",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -4264,7 +4201,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Shot Ready",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -4279,7 +4217,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Update Preset",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -4294,7 +4233,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Wide",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -4309,7 +4249,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Stop Zoom",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -4324,7 +4265,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Tele",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
@@ -4339,22 +4281,8 @@ exports[` operator info test  works as planned: first user selected 1`] = `
   "large": true,
   "fill": true,
   "text": "Not ready",
-  "iconFa": "check"
-}
-      </div>
-    </div>
-    <div
-      className="Col"
-    >
-      {}
-      <div
-        className="Button"
-      >
-        {
-  "large": true,
-  "fill": true,
-  "text": "AutoScroll",
-  "iconFa": "check"
+  "iconFa": "check",
+  "loading": false
 }
       </div>
     </div>
