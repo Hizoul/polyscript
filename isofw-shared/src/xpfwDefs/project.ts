@@ -1,7 +1,6 @@
 import { MailField } from "@xpfw/data"
 import { addTimeStamp, ExtendedJSONSchema } from "@xpfw/form"
 import val from "isofw-shared/src/globals/val"
-import { changeValToRegex } from "isofw-shared/src/util/valToRegex"
 import { cloneDeep } from "lodash"
 import { IDField } from "./commonFields"
 
@@ -15,9 +14,24 @@ const ProjectShot: ExtendedJSONSchema = {
   title: "shot"
 }
 
+const InstrumentForm: ExtendedJSONSchema = {
+  title: "projectModel",
+  collection: val.service.instruments,
+  type: "object",
+  properties: {
+    [String(IDField.title)]: IDField,
+    [String(ProjectName.title)]: ProjectName
+  }
+}
+
 const ShotName: ExtendedJSONSchema = {
   type: "string",
-  title: "pname"
+  title: "pname",
+  theme: "instrument",
+  relationship: {
+    collection: val.service.instruments,
+    namePath: String(ProjectName.title)
+  }
 }
 
 const ShotMovement: ExtendedJSONSchema = {
@@ -198,5 +212,5 @@ export {
   ProjectForm, ProjectName, ProjectShot, ProjectProgram, ShotCamera, ShotPreset, ShotImportance,
   ProjectOperators, ProjectOperatorCameraMapping, OperatorRelation, ProjectCameras, IsActiveField,
   ShotName, ShotType, ShotMovement, ShotMovementTowards, ShotDuration, ShotRemarksDirector, ShotRemarksOperator,
-  DisabledCameras, ShotNumber, StrippedProjectForm
+  DisabledCameras, ShotNumber, StrippedProjectForm, InstrumentForm
 }

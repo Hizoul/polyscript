@@ -10,9 +10,10 @@ import SearchField from "isofw-web/src/components/form/search"
 import SelectField from "isofw-web/src/components/form/select"
 import TextField from "isofw-web/src/components/form/text"
 import CameraMapInField from "isofw-web/src/components/project/cameraMapping"
-import ProgramArray from "../project/programEditor/array";
-import CameraChooser from "../project/programEditor/cameraChooser";
-import presetNumberDisplay from "../project/programEditor/presetNumberDisplay";
+import ProgramSingleRelationship from "isofw-web/src/components/project/programEditor/programSingleRelationship"
+import ProgramArray from "../project/programEditor/array"
+import CameraChooser from "../project/programEditor/cameraChooser"
+import presetNumberDisplay from "../project/programEditor/presetNumberDisplay"
 
 const programTheme = "program"
 registerWeb()
@@ -28,4 +29,5 @@ ComponentRegistry.registerComponent("string", SingleRelationship, "single")
 ComponentRegistry.registerComponent("array", CameraMapInField, ProjectOperatorCameraMapping.theme)
 ComponentRegistry.registerComponent("array", ProgramArray, programTheme)
 ComponentRegistry.registerComponent("string", CameraChooser, programTheme)
+ComponentRegistry.registerComponent("string", ProgramSingleRelationship, "instrument")
 ComponentRegistry.registerComponent("string", presetNumberDisplay, ShotPreset.theme)
