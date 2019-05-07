@@ -11,6 +11,7 @@ const val = {
   service: {
     batch: "/batch",
     user: "/users",
+    instruments: "instruments",
     project: "projects",
     camera: "cameras",
     preset: "presets",
