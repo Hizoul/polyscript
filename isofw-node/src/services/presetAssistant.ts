@@ -96,14 +96,23 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
         case cameraCommand.goToPreset: {
           if (val.handlePresetsSelf) {
             const preset = await app.service(val.service.preset).get(data[String(PresetCameraField.title)])
-            const promises = [
-              cameraApi.doPanTiltToPosition(cameraIp,
-                preset[String(PresetPanField.title)], preset[String(PresetTiltField.title)]),
-              cameraApi.doZoomToPosition(cameraIp, preset[String(PresetZoomField.title)]),
-              cameraApi.doFocusToPosition(cameraIp, preset[String(PresetFocusField.title)]),
-              cameraApi.doIrisToPosition(cameraIp, preset[String(PresetIrisField.title)])
-            ]
-            return Promise.all(promises)
+            if (val.isDebug) { // for stable api.ts.snap snapshot
+              await cameraApi.doPanTiltToPosition(cameraIp,
+                preset[String(PresetPanField.title)], preset[String(PresetTiltField.title)])
+              await cameraApi.doZoomToPosition(cameraIp, preset[String(PresetZoomField.title)])
+              await cameraApi.doFocusToPosition(cameraIp, preset[String(PresetFocusField.title)])
+              await cameraApi.doIrisToPosition(cameraIp, preset[String(PresetIrisField.title)])
+              return {ok: true}
+            } else {
+              const promises = [
+                cameraApi.doPanTiltToPosition(cameraIp,
+                  preset[String(PresetPanField.title)], preset[String(PresetTiltField.title)]),
+                cameraApi.doZoomToPosition(cameraIp, preset[String(PresetZoomField.title)]),
+                cameraApi.doFocusToPosition(cameraIp, preset[String(PresetFocusField.title)]),
+                cameraApi.doIrisToPosition(cameraIp, preset[String(PresetIrisField.title)])
+              ]
+              return Promise.all(promises)
+            }
           }
           return cameraApi.goToPreset(cameraIp, data[String(PresetNumberField.title)])
         }

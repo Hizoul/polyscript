@@ -6,7 +6,6 @@ Object {
   "currentlyEditing": "",
   "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
       "c1bbbbbbbbbbbbbbbbbbbbbb": "s09",
@@ -34,7 +33,6 @@ Object {
   "currentlyEditing": "",
   "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
       "c1bbbbbbbbbbbbbbbbbbbbbb": "zS50",
@@ -62,7 +60,6 @@ Object {
   "currentlyEditing": "",
   "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
       "c1bbbbbbbbbbbbbbbbbbbbbb": "zS50",
@@ -90,7 +87,6 @@ Object {
   "currentlyEditing": "",
   "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
       "c1bbbbbbbbbbbbbbbbbbbbbb": "zS73",
@@ -118,7 +114,6 @@ Object {
   "currentlyEditing": "",
   "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
       "c1bbbbbbbbbbbbbbbbbbbbbb": "zS03",
@@ -146,7 +141,6 @@ Object {
   "currentlyEditing": "",
   "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "users": Object {
       "u1": Object {
@@ -361,7 +355,7 @@ Array [
       "0": "/cgi-bin/aw_ptz",
     },
     "query": Object {
-      "cmd": "#AXZFFF",
+      "cmd": "#APC7FFF7FFF",
       "res": "1",
     },
   },
@@ -370,7 +364,7 @@ Array [
       "0": "/cgi-bin/aw_ptz",
     },
     "query": Object {
-      "cmd": "#APC7FFF7FFF",
+      "cmd": "#AXZFFF",
       "res": "1",
     },
   },

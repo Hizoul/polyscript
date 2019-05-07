@@ -6,7 +6,6 @@ Object {
   "currentlyEditing": "",
   "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "users": Object {
       "u1": Object {
@@ -67,11 +66,8 @@ exports[`Preset Update works as planned: after decrease to 0 1`] = `
 Object {
   "createState": Object {},
   "currentlyEditing": "b19999999999999999999999",
-  "fetching": Object {
-    "b19999999999999999999999": false,
-  },
+  "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "projects": Object {
       "b19999999999999999999999": Object {

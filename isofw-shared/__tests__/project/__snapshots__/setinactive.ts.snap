@@ -6,7 +6,6 @@ Object {
   "currentlyEditing": "",
   "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "users": Object {
       "u1": Object {
@@ -27,11 +26,8 @@ Object {
     "freePresetGetter.assistantForm": "c1bbbbbbbbbbbbbbbb398765",
   },
   "currentlyEditing": "b19999999999999999999999",
-  "fetching": Object {
-    "b19999999999999999999999": false,
-  },
+  "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
       "b19999999999999999999999": Object {
@@ -306,11 +302,8 @@ Object {
     "freePresetGetter.assistantForm": "c1bbbbbbbbbbbbbbbb398765",
   },
   "currentlyEditing": "b19999999999999999999999",
-  "fetching": Object {
-    "b19999999999999999999999": false,
-  },
+  "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
       "undefined": "c1bbbbbbbbbbbbbbbb398765",

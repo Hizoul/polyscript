@@ -1956,7 +1956,6 @@ Object {
   "currentlyEditing": "b19999999999999999999999",
   "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
       "undefined": "c2bbbbbbbbbbbbbbbb098765",
@@ -2032,7 +2031,6 @@ Object {
   "currentlyEditing": "",
   "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "users": Object {
       "u1": Object {
@@ -2055,7 +2053,6 @@ Object {
   "currentlyEditing": "",
   "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
       "undefined": "c1bbbbbbbbbbbbbbbb098765",
@@ -2092,7 +2089,6 @@ Object {
   "currentlyEditing": "",
   "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "presetAssistant": Object {
       "undefined": "c1bbbbbbbbbbbbbbbb098765",

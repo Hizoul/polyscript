@@ -87,11 +87,8 @@ exports[` direct a test   can increase number :  project Edited by client 1`] = 
 Object {
   "createState": Object {},
   "currentlyEditing": "b19999999999999999999999",
-  "fetching": Object {
-    "undefined": false,
-  },
+  "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "cameras": Object {},
     "projects": Object {
@@ -132,7 +129,6 @@ Object {
   "currentlyEditing": "",
   "fetching": Object {},
   "formsToUpdate": Array [],
-  "getFromServer": [Function],
   "getState": Object {
     "projects": Object {
       "b19999999999999999999999": Object {
