@@ -34,8 +34,8 @@ const usePresetUpdater = (id: string) => {
   return {
     item,
     isReady: get(item, String(PresetIsReadyField.title), false),
-    setReady: memo(() => updatePresetReadiness(id, true), [updatePrefix, id, true]),
-    setNotReady: memo(() => updatePresetReadiness(id, false), [updatePrefix, id, false]),
+    setReady: memo(() => updatePresetReadiness(id, true), ["setReady", updatePrefix, id, true]),
+    setNotReady: memo(() => updatePresetReadiness(id, false), ["setReady", updatePrefix, id, false]),
     savePreset: memo(() => savePresetData(id), ["savePreset", updatePrefix, id])
   }
 }
