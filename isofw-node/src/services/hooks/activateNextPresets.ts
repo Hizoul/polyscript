@@ -34,7 +34,7 @@ const activateNextPrestsOfProject = async (project: any, app: Application) => {
 }
 
 const activateNextPresets: Hook = async (hook) => {
-  await activateNextPrestsOfProject(hook.result, hook.app)
+  activateNextPrestsOfProject(hook.result, hook.app)
   return hook
 }
 

@@ -38,7 +38,7 @@ const freePresetsOfProject = async (app: Application, projectId: any, deleteAll?
 }
 
 const freeUnusedPresets: Hook = async (hook) => {
-  await freePresetsOfProject(hook.app, hook.id)
+  freePresetsOfProject(hook.app, hook.id)
   return hook
 }
 
