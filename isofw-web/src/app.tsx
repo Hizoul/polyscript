@@ -16,7 +16,8 @@ const f7params = {
   name: "My App",
   theme: "ios",
   // App id
-  id: "com.myapp.test"
+  id: "com.myapp.test",
+  autoDarkTheme: true
   // ...
 }
 

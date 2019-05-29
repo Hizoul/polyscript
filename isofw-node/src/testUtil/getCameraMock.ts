@@ -24,7 +24,7 @@ const getCameraMock = async () => {
   app.use(express.json())
   app.use(express.urlencoded({ extended: true }))
   app.configure(rest())
-  app.use("*", (request, response) => {
+  app.use("*", (request: any, response: any) => {
     requests.push({query: request.query, params: request.params})
     let type: any
     const cmd: string = get(request, "query.cmd", "")

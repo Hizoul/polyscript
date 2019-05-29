@@ -20,20 +20,20 @@
     "rnad": "adb shell input keyevent 82"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.11",
-    "@types/lodash": "^4.14.123",
-    "jest": "^24.5.0",
-    "nodemon": "^1.18.10",
-    "npm-check-updates": "^3.0.8",
-    "ts-node": "^8.0.3",
-    "typescript": "^3.3.3333",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.2.1",
-    "yarn": "^1.13.0"
+    "@types/jest": "^24.0.13",
+    "@types/lodash": "^4.14.132",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
+    "npm-check-updates": "^3.1.9",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.4.5",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1",
+    "yarn": "^1.16.0"
   },
   "dependencies": {
-    "@types/shelljs": "^0.8.3",
+    "@types/shelljs": "^0.8.5",
     "shelljs": "^0.8.3"
   }
 }
