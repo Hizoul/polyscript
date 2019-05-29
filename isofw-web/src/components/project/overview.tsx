@@ -13,10 +13,10 @@ const ItemProject: React.FunctionComponent<any> = (props) => {
     <tr>
       <td>{get(props.item, String(ProjectName.title))}</td>
       <td>
-        <WebButton text="directorr" href={`${urls.directorPage}/${get(props.item, "_id")}`} />
-        <WebButton text="programm" href={`${urls.programPage}/${get(props.item, "_id")}`} />
-        <WebButton text="operatorr" href={`${urls.operatorInfo}/${get(props.item, "_id")}`} />
-        <WebButton text="edit" href={`${urls.edit}/${ProjectForm.collection}/${get(props.item, "_id")}`} />
+        <WebButton text="project.direct" iconFa="sort-numeric-down" href={`${urls.directorPage}/${get(props.item, "_id")}`} />
+        <WebButton text="project.program" iconFa="list" href={`${urls.programPage}/${get(props.item, "_id")}`} />
+        <WebButton text="project.operate" iconFa="video" href={`${urls.operatorInfo}/${get(props.item, "_id")}`} />
+        <WebButton text="project.edit" iconFa="edit" href={`${urls.edit}/${ProjectForm.collection}/${get(props.item, "_id")}`} />
         <ProjectActiveButton id={get(props.item, "_id")} />
       </td>
     </tr>

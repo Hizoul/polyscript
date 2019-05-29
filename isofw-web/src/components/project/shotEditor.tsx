@@ -55,13 +55,6 @@ const ShotEditor = observer((props: DirectorProps) => {
           loading={directorProps.loading}
           disabled={directorProps.loading}
         />
-        <WebButton
-          large={true}
-          iconFa="sync"
-          text={"placeholder"}
-          loading={directorProps.loading}
-          disabled={directorProps.loading}
-        />
       </div>
       <BlockTitle className="centerText"><I18n text="director.cameras" /></BlockTitle>
       <WebCameraDisabler schema={DisabledCameras} prefix={prependPrefix(ProjectForm.title, props.prefix)} autoSave={true} />

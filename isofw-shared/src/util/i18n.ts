@@ -16,6 +16,12 @@ const translations = {
   remove: "Remove",
   email: "E-Mail / Username",
   password: "Password",
+  project: {
+    direct: "Direct",
+    program: "Adjust Script",
+    operate: "Operate",
+    edit: "Edit Project"
+  },
   director: {
     title: "Director",
     project: "Current Project: ",

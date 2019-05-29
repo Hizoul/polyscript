@@ -33,7 +33,7 @@ const WebPageContainer: React.FunctionComponent<IPageContainer> = observer((prop
         />
         {props.rightContent ? (
           <NavRight>
-            {props.rightContent}
+            {props.requireLoggedIn && !authProps.loggedIn ? undefined : props.rightContent}
           </NavRight>
         ) : undefined}
         {props.subContent ? (

@@ -12,13 +12,12 @@ const ProgramEditor: React.FunctionComponent<IEditHookProps> = observer((props) 
   const editHelper = useEditWithProps(props)
   return (
     <div className="flex1 column">
-      <div className="flex center">
+      <div className="flex center" style={{marginTop: "0.4rem", marginBottom: "1.5rem"}}>
         <div className="titleBox">
           {get(editHelper, "original.name")}
         </div>
       </div>
       <SharedField schema={ProjectProgram} prefix={prependPrefix(ProjectForm.title, props.prefix)} theme={programTheme} />
-      <WebButton text="save" onClick={editHelper.submitEdit} loading={editHelper.loading} />
     </div>
   )
 })
