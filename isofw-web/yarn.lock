@@ -139,7 +139,7 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@feathersjs/authentication-client@^1.0.10":
+"@feathersjs/authentication-client@^1.0.11":
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/@feathersjs/authentication-client/-/authentication-client-1.0.11.tgz#86352bf4c7179b905c9a977b26f389830c974e72"
   integrity sha512-4CWQdmdRINMMqHT1/g0N5jqw16u1RjaSPhlZtJZ0OLdqgN3tl5wL+Lb8ThPxihvt1WHiOdwGt141LvWQ446Bsw==
@@ -646,31 +646,31 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@xpfw/data-feathers@1.0.0-beta.12":
-  version "1.0.0-beta.12"
-  resolved "https://registry.yarnpkg.com/@xpfw/data-feathers/-/data-feathers-1.0.0-beta.12.tgz#6426e6a4b8d5a1fa606ddac7ff7f2e30d5821957"
-  integrity sha512-ghhKg9/pB9mop6kiH0crnyqqO2P7xZyxz/3y5XiTcMYKJ+nlN2mTR6XeaMc5kHDCYdo0/vLKWbFG79zXNxWbYQ==
+"@xpfw/data-feathers@1.0.0-beta.17":
+  version "1.0.0-beta.17"
+  resolved "https://registry.yarnpkg.com/@xpfw/data-feathers/-/data-feathers-1.0.0-beta.17.tgz#70f646d8753b88372690606fd12e68a51d835eb6"
+  integrity sha512-acd70skWUbqNmB/WZiNCkr9UUQJ8qHbiUGxES6aR8s4te83YFaiKHIBoL08nQJxuflW7tyDqIId3yG4PXsROpA==
   dependencies:
-    "@feathersjs/authentication-client" "^1.0.10"
+    "@feathersjs/authentication-client" "^1.0.11"
     "@feathersjs/feathers" "^3.3.1"
     "@feathersjs/rest-client" "^1.4.7"
     "@feathersjs/socketio-client" "^1.2.1"
     socket.io-client "^2.2.0"
 
-"@xpfw/data@1.0.0-beta.12":
-  version "1.0.0-beta.12"
-  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.12.tgz#c92043fba64e5930b2e16a3f1aa51ff2205727da"
-  integrity sha512-yb8moImLN7yO9q9oS59Op6NgyJtpYOQXLCp2X5r4i6vQx+Eo8+KtS4D19Tyt5qXot2zocqgRa2PUvIRXVs28UQ==
+"@xpfw/data@1.0.0-beta.17":
+  version "1.0.0-beta.17"
+  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.17.tgz#f5f3b22b7e73ecee68d4f2bc909a44d198757cad"
+  integrity sha512-jMcGWt1f9TcG1D+9MMxmC74R8qI0VAxZ6vR5OT2BxMsyt6uA4mHs/Xq8/T4H1Fwp7LtxXvvUEDijt4cQfPKTHg==
 
-"@xpfw/form-web@1.0.0-beta.7":
-  version "1.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@xpfw/form-web/-/form-web-1.0.0-beta.7.tgz#9f9f87b10fa75122f1f932c770137c89caf65365"
-  integrity sha512-f6abhbJxu69SphA+4ls7orJpa1rRJ66MvOduu6xYDBpoxVsvAPO3LsEsi08kDT1gLrYcxsEHXHlHa8bMp9Rh9g==
+"@xpfw/form-web@1.0.0-beta.17":
+  version "1.0.0-beta.17"
+  resolved "https://registry.yarnpkg.com/@xpfw/form-web/-/form-web-1.0.0-beta.17.tgz#f1c531b96ba37df5385eb7a10eaa9f95a7af9873"
+  integrity sha512-9Y8GkFNQ8IUmEbkaktbtWFsYaeCQK+IdXiJtqyfXQJAoJfZwie6AMJ3H3HrdbSFNjwaiYP514bjgaUUF95E76A==
 
-"@xpfw/form@1.0.0-beta.7":
-  version "1.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@xpfw/form/-/form-1.0.0-beta.7.tgz#4d5fbdf15eb63023035f0d9e8ff16ed9b1de6cae"
-  integrity sha512-4f5wSf8tdHdDCCkf28xfm9WmDuf/RpTGk7Pn4Ou+WMSrfiuHCioQuE48vfGPj00BeOJX+jj1QeOr4/ivRLBRog==
+"@xpfw/form@1.0.0-beta.17":
+  version "1.0.0-beta.17"
+  resolved "https://registry.yarnpkg.com/@xpfw/form/-/form-1.0.0-beta.17.tgz#080e407e38d0e59dd7d7022669bf42beded8e508"
+  integrity sha512-ctBVQX4B2nGyffGnsUPgfo7m/lbg7A2rU9FGDHHmfvBKqE01nRf2HCdN/PAS77LaSR0nwXUNFpEu/Yih4mT/QA==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
@@ -2660,6 +2660,13 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
+hoist-non-react-statics@^3.0.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
+  integrity sha512-0XsbTXxgiaCDYDIWFcwkmerZPSwywfUqYmwT4jzewKTQSWoE6FCMoUVOeBJWK3E/CrWbxRG3m5GzY4lnIwGRBA==
+  dependencies:
+    react-is "^16.7.0"
+
 homedir-polyfill@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/homedir-polyfill/-/homedir-polyfill-1.0.3.tgz#743298cef4e5af3e194161fbadcc2151d3a058e8"
@@ -4026,6 +4033,14 @@ mobx-react-lite@^1.1.1:
   resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-1.1.1.tgz#a8c1d813b5c1485861c2e5081ea6863772865c0a"
   integrity sha512-RQeiJmRLMX/dFCwgJxaZUT/ly9jP2vxrsONCKKhgILf1MKShGNwllN12E0+7+GlbYK4+qkfux2Bg1GSDrKrFrA==
 
+mobx-react@^5.4.4:
+  version "5.4.4"
+  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-5.4.4.tgz#b3de9c6eabcd0ed8a40036888cb0221ab9568b80"
+  integrity sha512-2mTzpyEjVB/RGk2i6KbcmP4HWcAUFox5ZRCrGvSyz49w20I4C4qql63grPpYrS9E9GKwgydBHQlA4y665LuRCQ==
+  dependencies:
+    hoist-non-react-statics "^3.0.0"
+    react-lifecycles-compat "^3.0.2"
+
 mobx@^5.9.0:
   version "5.9.0"
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-5.9.0.tgz#a08edd7132787f771409c9c33788a5df66ff7ce7"
@@ -4892,10 +4907,20 @@ react-dom@^16.8.4:
     prop-types "^15.6.2"
     scheduler "^0.13.4"
 
+react-is@^16.7.0:
+  version "16.8.6"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
+  integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
+
 react-is@^16.8.1, react-is@^16.8.4:
   version "16.8.4"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
   integrity sha512-PVadd+WaUDOAciICm/J1waJaSvgq+4rHE/K70j0PFqKhkTBsPv/82UGQJNXAngz1fOQLLxI6z1sEDmJDQhCTAA==
+
+react-lifecycles-compat@^3.0.2:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+  integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
 react-test-renderer@^16.8.4:
   version "16.8.4"
