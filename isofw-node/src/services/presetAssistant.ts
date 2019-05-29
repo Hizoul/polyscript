@@ -81,7 +81,7 @@ const presetAssistantConfigurator: any = (app: feathers.Application) => {
         }
       }
       return app.service(val.service.project).patch(id, {
-        [String(IsActiveField.title)]: false,
+        [String(IsActiveField.title)]: !isActive,
         [String(ProjectProgram.title)]: newProgram
       }, isServerParams)
     },
