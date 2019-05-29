@@ -27,12 +27,7 @@ const InstrumentForm: ExtendedJSONSchema = {
 
 const ShotName: ExtendedJSONSchema = {
   type: "string",
-  title: "pname",
-  theme: "instrument",
-  relationship: {
-    collection: val.service.instruments,
-    namePath: String(ProjectName.title)
-  }
+  title: "pname"
 }
 
 const ShotMovement: ExtendedJSONSchema = {
