@@ -2,6 +2,7 @@ import { changeValToRegex } from "@xpfw/data"
 import { addTimeStamp,  ExtendedJSONSchema } from "@xpfw/form"
 import val from "isofw-shared/src/globals/val"
 import { ProjectName } from "./project"
+import { changeValToRegexNedb } from "isofw-shared/src/util/valToRegex"
 
 const CameraIp: ExtendedJSONSchema = {
   type: "string",
@@ -15,7 +16,7 @@ const CameraForm: ExtendedJSONSchema = {
     [String(ProjectName.title)]: ProjectName,
     [String(CameraIp.title)]: CameraIp
   },
-  modify: [changeValToRegex(String(ProjectName.title), ["find"]), addTimeStamp("createdAt", ["create"])]
+  modify: [(val.useNedb ? changeValToRegexNedb(String(ProjectName.title), ["find"]) : changeValToRegex(String(ProjectName.title), ["find"])), addTimeStamp("createdAt", ["create"])]
 }
 
 export {

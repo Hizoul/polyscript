@@ -4,6 +4,7 @@ import val from "isofw-shared/src/globals/val"
 import { cloneDeep } from "lodash"
 import { IDField } from "./commonFields"
 import { changeValToRegex } from "@xpfw/data"
+import { changeValToRegexNedb } from "../util/valToRegex"
 
 const ProjectName: ExtendedJSONSchema = {
   type: "string",
@@ -188,7 +189,7 @@ const ProjectForm: ExtendedJSONSchema = {
     [String(IsActiveField.title)]: IsActiveField,
     [String(DisabledCameras.title)]: DisabledCameras
   },
-  modify: [addTimeStamp("createdAt", ["create"]),changeValToRegex(String(ProjectName.title), ["find"])]
+  modify: [addTimeStamp("createdAt", ["create"]), (val.useNedb ? changeValToRegexNedb(String(ProjectName.title), ["find"]) : changeValToRegex(String(ProjectName.title), ["find"]))]
 }
 
 const StrippedProjectForm: ExtendedJSONSchema = {
