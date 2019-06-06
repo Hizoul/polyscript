@@ -33,6 +33,7 @@ const customServiceConfigurator: any = (db: any) => {
         })
       }
     }
+    app.hooks({error: [(context) => console.log("threw error", context)]})
     return app
   }
 }

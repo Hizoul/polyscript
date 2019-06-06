@@ -28,7 +28,7 @@ const fixProjectShots = async (hook: HookContext, app: Application, project: any
 }
 
 const ensureShotNumber: Hook = async (hook) => {
-  await fixProjectShots(hook, hook.app, hook.result)
+  fixProjectShots(hook, hook.app, hook.result)
   return hook
 }
 

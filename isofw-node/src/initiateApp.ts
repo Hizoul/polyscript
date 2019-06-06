@@ -7,7 +7,7 @@ import { isObject, isString } from "lodash"
 import connectMongo from "./connectMongo"
 import initiateUdp from "./network/udp"
 
-const useNedb = process != null && process.env != null && process.env.USE_NEDB != null
+const useNedb = val.useNedb // process != null && process.env != null && process.env.USE_NEDB != null
 let networkToUse = val.network.networkToUse
 
 if (global.process != null && isString(process.env.NETWORK_TO_USE)) {

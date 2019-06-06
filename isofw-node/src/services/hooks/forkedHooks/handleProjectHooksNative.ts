@@ -121,7 +121,7 @@ const freeProjectPresets = async (db: Db, project: any) => {
     }
   }
   const presets = await presetCol.find({
-    [String(PresetProjectField.title)]: project._id.toHexString(),
+    [String(PresetProjectField.title)]: val.useNedb ? project._id : project._id.toHexString(),
     _id: {$nin: presetIdsInUse}
   }).limit(99999999).toArray()
   for (const preset of presets) {

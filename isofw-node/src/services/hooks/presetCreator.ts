@@ -5,7 +5,7 @@ import { EMPTY_PRESET, PresetCameraField,
   PresetNumberField, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset"
 
 const presetCreator: Hook = async (hook) => {
-  const cameraId = hook.result._id.toHexString()
+  const cameraId = val.useNedb ? hook.result._id : hook.result._id.toHexString()
   console.log(" created camera with ID ",  cameraId)
   for (let index = 0; index < val.maximumPresetAmount; index++) {
     const presetId = `${cameraId.substring(0, cameraId.length - String(index).length - 5)}${index}98765`

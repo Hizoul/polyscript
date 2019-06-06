@@ -83,6 +83,9 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
 
 const ProgramArray: React.FunctionComponent<IFieldProps> = observer((props) => {
   const arrayHelper = useArray(props.schema, props.mapTo, props.prefix)
+  if (arrayHelper.length == 0) {
+    arrayHelper.increaseSize()
+  }
   let i = 0
   return (
     <div className="flex1">
