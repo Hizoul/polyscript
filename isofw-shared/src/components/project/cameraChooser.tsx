@@ -1,7 +1,7 @@
 import { DbStore } from "isofw-shared/src/util/xpfwdata"
 import { ExtendedJSONSchema, FormStore, getMapTo, memo, prependPrefix } from "isofw-shared/src/util/xpfwform"
 import { PresetAssistantForm, PresetCameraField, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset"
-import { ProjectCameras, ShotPreset } from "isofw-shared/src/xpfwDefs/project"
+import { ProjectCameras, ShotPreset, ProjectOperatorCameraMapping } from "isofw-shared/src/xpfwDefs/project"
 import { flow } from "mobx"
 
 const popupVisibilityKey = "cameraChoice"
@@ -42,6 +42,16 @@ const useCameraChooser = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: s
   if (mapTo == null) { mapTo = getMapTo(schema, mapTo) }
   let cameras = FormStore.getValue(ProjectCameras.title, prefix)
   cameras = cameras ? cameras : []
+  let mappings = FormStore.getValue(ProjectOperatorCameraMapping.title, prefix)
+  const operators: any = {}
+  for (const camera of cameras) {
+    operators[camera] = []
+    for (const mapping of mappings) {
+      if (mapping.cameras.indexOf(camera) !== -1) {
+        operators[camera].push(mapping.operator)
+      }
+    }
+  }
   const arr = mapTo.substring(0, mapTo.indexOf("["))
   const pop = FormStore.getValue(arr, prependPrefix(prefix, popupVisibilityKey))
   if (pop == null || pop.length < 600) {
@@ -49,6 +59,7 @@ const useCameraChooser = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: s
   }
   return {
     cameras,
+    operators,
     value: FormStore.getValue(getMapTo(schema, mapTo), prefix),
     showPopUp: FormStore.getValue(getMapTo(schema, mapTo), prependPrefix(prefix, popupVisibilityKey), false) === true,
     hidePop: memo(() => togglePop(schema, mapTo, prefix, false), ["hidePop", mapTo, prefix, JSON.stringify(schema)]),

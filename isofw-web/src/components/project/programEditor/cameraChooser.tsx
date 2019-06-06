@@ -8,6 +8,7 @@ import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
 import "../style.sass"
+import { MailField } from "isofw-shared/src/util/xpfwdata"
 
 const CameraChooser: React.FunctionComponent<IFieldProps & {inHeader?: boolean}> = observer((props) => {
   const chooserHelper = useCameraChooser(props.schema, props.mapTo, props.prefix)
@@ -28,8 +29,7 @@ const CameraChooser: React.FunctionComponent<IFieldProps & {inHeader?: boolean}>
           onClick={chooserHelper.showPop}
         >
           <div slot="title">
-            Camera:&nbsp;
-            <NameDisplayer collection={val.service.camera} id={chooserHelper.value} getNameFrom={String(ProjectName.title)} placeholder="not yet selected" />
+            <NameDisplayer collection={val.service.camera} id={chooserHelper.value} getNameFrom={String(ProjectName.title)} placeholder="Select Camera" />
           </div>
           <div slot="inner">
             <Icon fa={"camera"} />
@@ -37,7 +37,7 @@ const CameraChooser: React.FunctionComponent<IFieldProps & {inHeader?: boolean}>
         </ListItem>
       )}
       <Popup opened={chooserHelper.showPopUp} onPopupClosed={chooserHelper.hidePop}>
-        <BlockTitle>Choose a camera {props.schema.title}</BlockTitle>
+        <BlockTitle>Choose a camera</BlockTitle>
         <List>
           {chooserHelper.cameras.map((camera: any) => <ListItem key={camera} onClick={() => {
             // TODO: do this in the hook itself instead of an onClick
@@ -45,7 +45,9 @@ const CameraChooser: React.FunctionComponent<IFieldProps & {inHeader?: boolean}>
             chooserHelper.setValueWithPreset(camera)
           }}>
                 <div slot="title">
-                  <NameDisplayer collection={val.service.camera} id={camera} getNameFrom={String(ProjectName.title)} />
+                  <NameDisplayer collection={val.service.camera} id={camera} getNameFrom={String(ProjectName.title)} /> -&nbsp;
+                  {chooserHelper.operators[camera].map((operatorId: any) => 
+                    <NameDisplayer collection={val.service.user} id={operatorId} getNameFrom={String(MailField.title)} />)}
                 </div>
                 <div slot="inner">
                   <Icon fa={"chevron"} />
