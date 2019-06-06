@@ -36,7 +36,7 @@ const CameraChooser: React.FunctionComponent<IFieldProps & {inHeader?: boolean}>
           </div>
         </ListItem>
       )}
-      <Popup opened={chooserHelper.showPopUp} onPopupClosed={chooserHelper.hidePop}>
+      <Popup opened={chooserHelper.showPopUp} onPopupClosed={chooserHelper.hidePop} animate={false}>
         <BlockTitle>Choose a camera</BlockTitle>
         <List>
           {chooserHelper.cameras.map((camera: any) => <ListItem key={camera} onClick={() => {
@@ -52,7 +52,7 @@ const CameraChooser: React.FunctionComponent<IFieldProps & {inHeader?: boolean}>
                 <div slot="inner">
                   <Icon fa={"chevron"} />
                 </div>
-              </ListItem>)}
+          </ListItem>)}
         </List>
       </Popup>
     </>
