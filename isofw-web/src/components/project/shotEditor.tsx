@@ -18,13 +18,14 @@ const ShotEditor = observer((props: DirectorProps) => {
   const directorProps: any = useDirector(props.id)
   return (
     <div className="flex1 column">
-      <div className="flex center">
+      <div className="flex center marginTopBottom">
         <div className="titleBox">
           {get(directorProps, "original.name")}
         </div>
       </div>
       <div className="flex center">
         <div className="currentBox">
+          Shot<br />
           <span className="shotNumber">{get(directorProps, "original.shot")}</span>
           <br />
           <span>CA&nbsp;
@@ -37,18 +38,19 @@ const ShotEditor = observer((props: DirectorProps) => {
           </span>
         </div>
       </div>
-      <div className="flex center">
+      <div className="flex center marginTopBottom">
         <WebButton
           text={"director.previous"}
-          large={true}
+          className="hugeButton"
           iconFa="step-backward"
           onClick={directorProps.decrease}
           loading={directorProps.loading}
           disabled={directorProps.loading}
         />
+        <div style={{width: "1.5rem"}} />
         <WebButton
           text={"director.next"}
-          large={true}
+          className="hugeButton"
           iconFa="step-forward"
           fill={true}
           onClick={directorProps.increase}
