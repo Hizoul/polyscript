@@ -2,7 +2,7 @@ import { BlockTitle } from "framework7-react"
 import useDirector, { DirectorProps } from "isofw-shared/src/components/project/directorSheet"
 import val from "isofw-shared/src/globals/val"
 import {  toJS } from "isofw-shared/src/util/xpfwdata"
-import { DisabledCameras, ProjectForm, ProjectName, ShotCamera } from "isofw-shared/src/xpfwDefs/project"
+import { DisabledCameras, ProjectForm, ProjectName, ShotCamera, ShotName } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
@@ -24,18 +24,18 @@ const ShotEditor = observer((props: DirectorProps) => {
         </div>
       </div>
       <div className="flex center">
-        <div className="currentBox">
+        <div className="currentBox shotEditorInfoBox">
           Shot<br />
           <span className="shotNumber">{get(directorProps, "original.shot")}</span>
           <br />
-          <span>CA&nbsp;
-            <NameDisplayer
-              collection={val.service.camera}
-              id={get(directorProps, `original.program[${get(directorProps, "original.shot")}].${ShotCamera.title}`)}
-              getNameFrom={String(ProjectName.title)}
-              placeholder=""
-            />
-          </span>
+          <NameDisplayer
+            collection={val.service.camera}
+            id={get(directorProps, `original.program[${get(directorProps, "original.shot")}].${ShotCamera.title}`)}
+            getNameFrom={String(ProjectName.title)}
+            placeholder=""
+          />
+          <br />
+          {get(directorProps, `original.program[${get(directorProps, "original.shot")}].${ShotName.title}`)}
         </div>
       </div>
       <div className="flex center marginTopBottom">
