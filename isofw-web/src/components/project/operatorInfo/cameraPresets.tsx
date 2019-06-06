@@ -20,7 +20,7 @@ const PresetCard: React.FunctionComponent<{id: string}> = observer((props) => {
       </CardHeader>
       <CardContent padding={false}>
         {imageUrl ?
-          <img src={`${urls.webPrefix}${urls.mainServer}:${val.isDebug ? 80 : urls.port}${urls.presetPreview}/${imageUrl}`} style={{width: "100%"}} /> :
+          <img src={`${urls.webPrefix}${urls.mainServer}:${val.isDebug ? 4201 : urls.port}${urls.presetPreview}/${imageUrl}`} style={{width: "100%"}} /> :
           <I18n text="noPreview" className="flex1 center verticalCenter" style={{minHeight: 50}} />}
       </CardContent>
       <CardFooter>

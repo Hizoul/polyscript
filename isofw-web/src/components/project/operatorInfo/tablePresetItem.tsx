@@ -34,7 +34,6 @@ const TablePresetItem: React.FunctionComponent<{item: any, currentShot: number}>
       <td>{get(props.item, String(ShotMovement.title))}</td>
       <td>{get(props.item, String(ShotMovementTowards.title))}</td>
       <td>{get(props.item, String(ShotDuration.title))}</td>
-      <td>placeholder</td>
       <td>
         {get(props.item, String(ShotRemarksDirector.title))}<br />
         {get(props.item, String(ShotRemarksOperator.title))}

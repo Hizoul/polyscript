@@ -56,7 +56,6 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
             <th>{i18n.t("operator.table.movement")}</th>
             <th>{i18n.t("operator.table.towards")}</th>
             <th>{i18n.t("operator.table.duration")}</th>
-            <th>{i18n.t("operator.table.picture")}</th>
             <th>{i18n.t("operator.table.remarks")}</th>
           </tr>
         </thead>

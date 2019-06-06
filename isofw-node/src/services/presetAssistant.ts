@@ -25,7 +25,7 @@ import freeUnusedPresets, { freePresetsOfProject } from "./hooks/freeUnusedPrese
 import requireAuthentication from "./hooks/requireAuthentication"
 
 const useAsyncHook = global.process != null && process.env.ASYNC_HOOKS != null
-const fileDirectory = val.isDebug ? `/tmp/Polly${urls.port}` :
+const fileDirectory = val.isDebug ? `/Users/sebregts/Documents/Polycast/Code/polyscript/isofw-web/webpackDist/presetPreview` :
 (global.process != null && process.env.PREVIEW_DIRECTORY != null ?
   process.env.PREVIEW_DIRECTORY : __dirname + "previews")
 const makePreview = async (id: string, cameraIp: string) => {
@@ -35,7 +35,7 @@ const makePreview = async (id: string, cameraIp: string) => {
   if (val.isDebug) {
     cp(resolve(__dirname, "concert.jpg"), resolve(fileDirectory, dateDirectory, filename))
   } else {
-
+    
   }
   return dateDirectory + "/" + filename
 }
