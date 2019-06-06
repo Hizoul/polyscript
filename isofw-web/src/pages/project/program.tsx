@@ -13,7 +13,7 @@ const ProgramPage: React.FunctionComponent<any> = (props) => {
       backLink={true}
       requireLoggedIn={true}
       name="programEditor"
-      title="Review presets"
+      title="project.program"
       rightContent={<ProgramSaveButton schema={ProjectForm} id={id} prefix="edit" />}
     >
       <ProgramEditor schema={ProjectForm} id={id} prefix="edit" />
