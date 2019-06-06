@@ -17,7 +17,7 @@ import { IsActiveField, ProjectProgram, ShotPreset } from "isofw-shared/src/xpfw
 import { get } from "lodash"
 import * as moment from "moment"
 import { resolve } from "path"
-import { cp, mkdir } from "shelljs"
+import { exec, cp, mkdir } from "shelljs"
 import activateNextPresets from "./hooks/activateNextPresets"
 import ensureShotNumber from "./hooks/ensureShotNumber"
 import forkedHooks from "./hooks/forkedHooks"
@@ -31,9 +31,11 @@ const fileDirectory = val.isDebug ? `/Users/sebregts/Documents/Polycast/Code/pol
 const makePreview = async (id: string, cameraIp: string) => {
   const filename =  `${id}-${Date.now()}.jpg`
   const dateDirectory = moment().format("YYYY-MM-DD")
+  const ffmpegPath = "/Users/sebregts/Documents/Polycast/ffmpeg"
   mkdir("-p", resolve(fileDirectory, dateDirectory))
   if (val.isDebug) {
-    cp(resolve(__dirname, "concert.jpg"), resolve(fileDirectory, dateDirectory, filename))
+    // cp(resolve(__dirname, "concert.jpg"), resolve(fileDirectory, dateDirectory, filename))
+    exec(`${ffmpegPath} -f rtsp -rtsp_transport tcp -i rtsp://${cameraIp}/MediaInput/h264/stream_1 -f image2 -vframes 1 -vf scale=128:72 -y "${resolve(fileDirectory, dateDirectory, filename)}"`)
   } else {
     
   }
