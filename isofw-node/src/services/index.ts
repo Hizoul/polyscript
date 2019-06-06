@@ -5,7 +5,7 @@ import val from "isofw-shared/src/globals/val"
 import collections from "isofw-shared/src/xpfwDefs/collections"
 import presetAssistantConfigurator from "./presetAssistant"
 import realTimeUpdate from "./realTimeUpdate"
-
+import "./atem"
 const customServiceConfigurator: any = (db: any) => {
   return (app: feathers.Application) => {
     app.configure(pluginCollections(db))
