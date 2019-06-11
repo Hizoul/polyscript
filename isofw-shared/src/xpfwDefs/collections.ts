@@ -4,7 +4,7 @@ import { PresetForm } from "./preset"
 import { InstrumentForm, ProjectForm } from "./project"
 
 const collections: any[] = [
-  ProjectForm.collection, CameraForm.collection, PresetForm.collection, BenchmarkResultForm.collection, InstrumentForm.collection
+  ProjectForm.collection, CameraForm.collection, PresetForm.collection, BenchmarkResultForm.collection
 ]
 
 export default collections
