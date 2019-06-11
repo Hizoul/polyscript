@@ -8,7 +8,7 @@ import WebButton from "isofw-web/src/components/button"
 import { cloneDeep, get, map } from "lodash"
 import * as React from "react"
 import "../style.sass"
-import { observer } from "mobx-react-lite";
+import { observer } from "mobx-react-lite"
 
 const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards,
   ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset, ShotImportance]
@@ -83,8 +83,8 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
 
 const ProgramArray: React.FunctionComponent<IFieldProps> = observer((props) => {
   const arrayHelper = useArray(props.schema, props.mapTo, props.prefix)
-  if (arrayHelper.length == 0) {
-    arrayHelper.increaseSize()
+  if (arrayHelper.length === 0) {
+    setTimeout(() => arrayHelper.increaseSize(), 800)
   }
   let i = 0
   return (
