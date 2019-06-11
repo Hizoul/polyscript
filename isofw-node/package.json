@@ -6,7 +6,7 @@
   "scripts": {
     "build": "../ci/node_modules/.bin/tsc",
     "prod": "cd dist && NODE_PATH=$NODE_PATH:./ node isofw-node/src/universalWebpackRunner",
-    "dev": "cross-env NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/nodemon -e ts,tsx --watch src --watch ../isofw-shared/src --exec '../ci/node_modules/.bin/ts-node' src/debug",
+    "dev": "cross-env SYNC_HOOKS=true NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/nodemon -e ts,tsx --watch src --watch ../isofw-shared/src --exec '../ci/node_modules/.bin/ts-node' src/debug",
     "start": "cross-env NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/ts-node src/debug",
     "devSsr": "cd webpackDist && cross-env NODE_PATH=$NODE_PATH:../:../../ ../../ci/node_modules/.bin/nodemon isoapp",
     "eval": "cross-env NODE_PATH=$NODE_PATH:../ ../ci/node_modules/.bin/ts-node src/network/evaluate",

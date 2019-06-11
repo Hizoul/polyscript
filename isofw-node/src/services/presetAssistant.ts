@@ -24,7 +24,7 @@ import forkedHooks from "./hooks/forkedHooks"
 import freeUnusedPresets, { freePresetsOfProject } from "./hooks/freeUnusedPresets"
 import requireAuthentication from "./hooks/requireAuthentication"
 
-const useAsyncHook = global.process != null && process.env.ASYNC_HOOKS != null
+const useSyncHook = global.process != null && process.env.SYNC_HOOKS != null
 const fileDirectory = val.isDebug ? `/Users/sebregts/Documents/Polycast/Code/polyscript/isofw-web/webpackDist/presetPreview` :
 (global.process != null && process.env.PREVIEW_DIRECTORY != null ?
   process.env.PREVIEW_DIRECTORY : __dirname + "previews")
@@ -44,7 +44,7 @@ const makePreview = async (id: string, cameraIp: string) => {
 const presetAssistantConfigurator: any = (app: feathers.Application) => {
 
   app.service(val.service.camera).hooks({after: {create: presetCreator}})
-  app.service(val.service.project).hooks({after: {patch: [activateNextPresets, freeUnusedPresets, ensureShotNumber]}})
+  app.service(val.service.project).hooks({after: {patch: useSyncHook ? [activateNextPresets, freeUnusedPresets, ensureShotNumber] : [forkedHooks()]}})
   const previewHandler: any =  express.static(fileDirectory)
   app.use(urls.presetPreview, previewHandler)
   console.log("Serving preset previews from ", fileDirectory)
