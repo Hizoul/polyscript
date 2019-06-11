@@ -26,7 +26,7 @@ const ShotEditor = observer((props: DirectorProps) => {
       <div className="flex center">
         <div className="currentBox shotEditorInfoBox">
           Shot<br />
-          <span className="shotNumber">{get(directorProps, "original.shot")}</span>
+          <span className="shotNumber">{get(directorProps, "original.shot", 0) + 1}</span>
           <br />
           <NameDisplayer
             collection={val.service.camera}

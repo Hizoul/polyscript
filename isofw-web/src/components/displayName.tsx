@@ -1,13 +1,15 @@
 import { IGetHookProps, MailField, useGetWithProps } from "@xpfw/data"
 import val from "isofw-shared/src/globals/val"
 import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
-import { get } from "lodash"
+import { get, isNumber } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
+
 
 export interface INameDisplayer extends IGetHookProps {
   getNameFrom: string
   placeholder?: string
+  increaseByOne?: boolean
 }
 
 export interface SubDisplayer {
@@ -17,8 +19,12 @@ export interface SubDisplayer {
 
 const NameDisplayer: React.FunctionComponent<INameDisplayer> = observer((props) => {
   const gotten = useGetWithProps(props)
+  let name = get(gotten.item, props.getNameFrom, props.placeholder)
+  if (props.increaseByOne && isNumber(name)) {
+    name += 1
+  }
   return (
-    <span>{get(gotten.item, props.getNameFrom, props.placeholder)}</span>
+    <span>{name}</span>
   )
 })
 

@@ -16,7 +16,7 @@ const PresetCard: React.FunctionComponent<{id: string}> = observer((props) => {
   return (
     <Card>
       <CardHeader>
-        <span>Preset #{get(presetUpdater.item, String(PresetNumberField.title))}</span>
+        <span>Preset #{get(presetUpdater.item, String(PresetNumberField.title), 0) + 1}</span>
       </CardHeader>
       <CardContent padding={false}>
         {imageUrl ?

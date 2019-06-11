@@ -21,12 +21,12 @@ const TablePresetItem: React.FunctionComponent<{item: any, currentShot: number}>
   const shotNumber = get(props.item, String(ShotNumber.title), 999)
   return (
     <tr id={`presetPositioner${shotNumber}`} className={props.currentShot === shotNumber ? "isActive" : ""}>
-      <td>{shotNumber}</td>
+      <td>{shotNumber + 1}</td>
       <td>
         <NameDisplayer collection={val.service.camera} id={get(props.item, String(ShotCamera.title))} getNameFrom={String(ProjectName.title)} placeholder="" />
       </td>
       <td>
-        <NameDisplayer collection={val.service.preset} id={get(props.item, String(ShotPreset.title))} getNameFrom={String(PresetNumberField.title)} placeholder="" />
+        <NameDisplayer collection={val.service.preset} id={get(props.item, String(ShotPreset.title))} getNameFrom={String(PresetNumberField.title)} placeholder="" increaseByOne={true} />
       </td>
       <td>{importance}</td>
       <td>{get(props.item, String(ShotName.title))}</td>
