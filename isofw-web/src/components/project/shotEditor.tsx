@@ -43,6 +43,7 @@ const ShotEditor = observer((props: DirectorProps) => {
           text={"director.previous"}
           className="hugeButton"
           iconFa="step-backward"
+          preventTextChange
           onClick={directorProps.decrease}
           loading={directorProps.loading}
           disabled={directorProps.loading}
@@ -53,6 +54,7 @@ const ShotEditor = observer((props: DirectorProps) => {
           className="hugeButton"
           iconFa="step-forward"
           fill={true}
+          preventTextChange
           onClick={directorProps.increase}
           loading={directorProps.loading}
           disabled={directorProps.loading}

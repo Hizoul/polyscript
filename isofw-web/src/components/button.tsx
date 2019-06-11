@@ -8,6 +8,7 @@ export interface IButton extends F7Button.Props {
   className?: string
   loading?: boolean
   disabled?: boolean
+  preventTextChange?: boolean
 }
 
 class WebButton extends React.Component<IButton, any> {
@@ -17,10 +18,9 @@ class WebButton extends React.Component<IButton, any> {
       buttonProps.onClick = undefined
       buttonProps.outline = true
     }
-    if (this.props.loading) {
+    if (!this.props.preventTextChange && this.props.loading) {
       buttonProps.text = "Loading..."
     }
-
     return (
       <Button
         {...buttonProps}
