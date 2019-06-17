@@ -1,8 +1,8 @@
 import { Hook } from "@feathersjs/feathers"
 import { get } from "lodash"
-import * as BgWorkerA from "./bg.worker"
-const BgWorker: any = BgWorkerA
+
 const forkedHooks: () => Hook = () => {
+  const BgWorker = require("./bg.worker")
   const hookWorker = new BgWorker()
   return (hook) => {
     const projectId = get(hook, `result._id`)
