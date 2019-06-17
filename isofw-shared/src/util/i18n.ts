@@ -4,6 +4,7 @@ import { vsprintf } from "sprintf-js"
 const translations = {
   home: "Home",
   name: "Name",
+  page: "Page",
   ip: "IP-Address",
   create: "Create",
   actions: "Actions",

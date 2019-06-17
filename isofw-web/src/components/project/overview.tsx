@@ -7,6 +7,8 @@ import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
 import WebButton from "../button"
+import I18n from "../i18n";
+import ListFooter from "../listFooter";
 
 const ItemProject: React.FunctionComponent<any> = (props) => {
   return (
@@ -39,13 +41,7 @@ const ProjectOverviewComponent: React.FunctionComponent<IListHookProps> = observ
           {items}
         </tbody>
       </table>
-      <WebButton
-        text="Create"
-        iconFa="plus"
-        fill={true}
-        href={`${urls.create}/${ProjectForm.collection}`}
-        style={{margin: "0.5rem"}}
-      />
+      <ListFooter createLink={`${urls.create}/${ProjectForm.collection}`} listHelper={listHelper} />
     </div>
   )
 })

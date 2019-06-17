@@ -5,8 +5,9 @@ import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
-import i18n from "../../../../isofw-shared/src/util/i18n";
+import i18n from "isofw-shared/src/util/i18n"
 import WebButton from "../button"
+import ListFooter from "../listFooter"
 
 const ItemCamera: React.FunctionComponent<any> = (props) => {
   return (
@@ -37,7 +38,7 @@ const CameraOverviewComponent: React.FunctionComponent<IListHookProps> = observe
           {items}
         </tbody>
       </table>
-      <WebButton text="Create" iconFa="plus" fill={true} href={`${urls.create}/${CameraForm.collection}`} style={{margin: "0.5rem"}} />
+      <ListFooter createLink={`${urls.create}/${CameraForm.collection}`} listHelper={listHelper} />
     </div>
   )
 })
