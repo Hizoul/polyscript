@@ -97,7 +97,8 @@ const translations = {
   duration: "Duration",
   directorRemarks: "Remarks by Director",
   operatorRemarks: "Remarks by Operator",
-  importance: "Importance of the Shot"
+  importance: "Importance of the Shot",
+  forScrollSpeed: "Content hidden while scrolling for performance reasons"
 }
 
 const i18n: {

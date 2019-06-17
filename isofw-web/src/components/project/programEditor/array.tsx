@@ -10,6 +10,7 @@ import * as React from "react"
 import "../style.sass"
 import { observer } from "mobx-react-lite"
 import { FixedSizeList } from "react-window"
+import I18n from "isofw-web/src/components/i18n"
 
 const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards,
   ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset, ShotImportance]
@@ -69,7 +70,7 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
       <div className="list fullWidthList noMargin">
         <ul className="inlineList">
           {props.isScrolling ?
-            <li className="flex1 center verticalCenter centerText">Content hidden for smoother scrolling speed</li> : (
+            <li className="flex1 center verticalCenter centerText"><I18n text="forScrollSpeed" /></li> : (
             <>
               <SharedField schema={convertedFields[7]}  prefix={props.prefix} />
               <SharedField schema={convertedFields[0]}  prefix={props.prefix} />
