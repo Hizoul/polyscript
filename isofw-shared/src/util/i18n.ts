@@ -28,7 +28,8 @@ const translations = {
     project: "Current Project: ",
     next: "Next",
     previous: "Prev",
-    cameras: "Automatically controlled cameras"
+    cameras: "Automatically controlled cameras",
+    setTo: "Jump to shot"
   },
   login: {
     btnLogin: "Login",
@@ -100,7 +101,8 @@ const translations = {
   directorRemarks: "Remarks by Director",
   operatorRemarks: "Remarks by Operator",
   importance: "Importance of the Shot",
-  forScrollSpeed: "Content hidden while scrolling for performance reasons"
+  forScrollSpeed: "Content hidden while scrolling for performance reasons",
+  seperateShotField: "Jump to shot"
 }
 
 const i18n: {
