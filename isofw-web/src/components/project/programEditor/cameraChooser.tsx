@@ -25,16 +25,14 @@ const CameraChooser: React.FunctionComponent<IFieldProps & {inHeader?: boolean}>
           <Icon fa={"camera"} />
         </div>
       ) : (
-        <ListItem
+        <li
           onClick={chooserHelper.showPop}
+          className="flex verticalCenter"
+          style={{width: 130, maxWidth: 130}}
         >
-          <div slot="title">
-            <NameDisplayer collection={val.service.camera} id={chooserHelper.value} getNameFrom={String(ProjectName.title)} placeholder="Select Camera" />
-          </div>
-          <div slot="inner">
             <Icon fa={"camera"} />
-          </div>
-        </ListItem>
+            <NameDisplayer collection={val.service.camera} id={chooserHelper.value} getNameFrom={String(ProjectName.title)} placeholder="Select Camera" />
+        </li>
       )}
       <Popup opened={chooserHelper.showPopUp} onPopupClosed={chooserHelper.hidePop} animate={false}>
         <BlockTitle>Choose a camera</BlockTitle>

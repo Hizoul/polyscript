@@ -9,6 +9,7 @@ import { cloneDeep, get, map } from "lodash"
 import * as React from "react"
 import "../style.sass"
 import { observer } from "mobx-react-lite"
+import { FixedSizeList } from "react-window"
 
 const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards,
   ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset, ShotImportance]
@@ -17,6 +18,8 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
   decreaseSize: any
   index: number
   increaseSize: any
+  style?: any
+  isScrolling?: boolean
 }> = (props) => {
   const mapTo = getMapToFromProps(props)
   const fieldHelper = useFieldWithValidation(props.schema, props.mapTo, props.prefix)
@@ -27,7 +30,7 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
     newField.title = `${mapTo}.${field.title}`
     convertedFields.push(newField)
   }
-  let classes = "currentBox withMargin"
+  let classes = "flex "
   let attentionItem: any
   if (fieldHelper.value && fieldHelper.value[String(ShotImportance.title)] === "r") {
     classes += " raised"
@@ -37,20 +40,10 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
     attentionItem = <span className="attentionText">!!</span>
   }
   return (
-    <div className={classes}>
-      <div className="flex1" style={{marginBottom: "-2rem"}}>
+    <div className={classes} style={props.style}>
+      <div className="flex column verticalCenter">
         <WebButton
-          className="boxTopLeft"
-          onClick={props.decreaseSize}
-          text=""
-          color="red"
-          fill={true}
-          round={true}
-          iconFa="times"
-        />
-        <div className="flex1">&nbsp;</div>
-        <WebButton
-          className="boxTopRight"
+          className="smallerButton"
           onClick={props.increaseSize}
           text=""
           color="green"
@@ -58,26 +51,52 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
           round={true}
           iconFa="plus"
         />
+        <div className="centerText">
+          {attentionItem}
+          {get(props, "index", -1)}
+          {attentionItem}
+        </div>
+        <WebButton
+          className="smallerButton"
+          onClick={props.decreaseSize}
+          text=""
+          color="red"
+          fill={true}
+          round={true}
+          iconFa="times"
+        />
       </div>
-      <span className="shotNumber">
-        {attentionItem}
-        {get(props, "index")}
-        {attentionItem}
-      </span>
-      <List form={true} className="noMargin">
-        <ul>
-          <SharedField schema={convertedFields[7]}  prefix={props.prefix} />
-          <SharedField schema={convertedFields[0]}  prefix={props.prefix} />
-          <SharedField schema={convertedFields[1]}  prefix={props.prefix} />
-          <SharedField schema={convertedFields[2]}  prefix={props.prefix} />
-          <SharedField schema={convertedFields[4]}  prefix={props.prefix} />
-          <SharedField schema={convertedFields[5]}  prefix={props.prefix} />
-          <SharedField schema={convertedFields[6]}  prefix={props.prefix} />
-          <SharedField schema={convertedFields[8]}  prefix={props.prefix} />
-          <SharedField schema={convertedFields[9]}  prefix={props.prefix} />
+      <div className="list fullWidthList noMargin">
+        <ul className="inlineList">
+          {props.isScrolling ?
+            <li className="flex1 center verticalCenter centerText">Content hidden for smoother scrolling speed</li> : (
+            <>
+              <SharedField schema={convertedFields[7]}  prefix={props.prefix} />
+              <SharedField schema={convertedFields[0]}  prefix={props.prefix} />
+              <SharedField schema={convertedFields[1]}  prefix={props.prefix} />
+              <SharedField schema={convertedFields[2]}  prefix={props.prefix} />
+              <SharedField schema={convertedFields[4]}  prefix={props.prefix} />
+              <SharedField schema={convertedFields[5]}  prefix={props.prefix} />
+              <SharedField schema={convertedFields[6]}  prefix={props.prefix} />
+              <SharedField schema={convertedFields[9]}  prefix={props.prefix} />
+              <SharedField schema={convertedFields[8]}  prefix={props.prefix} />
+            </>
+          )}
         </ul>
-      </List>
+      </div>
     </div>
+  )
+}
+
+const ProgramObjectListItem = (props: any) => {
+  return (
+    <ProgramObject
+      style={props.style}
+      {...props.data.props}
+      {...props.data.fields[props.index]}
+      index={props.index}
+      isScrolling={props.isScrolling}
+    />
   )
 }
 
@@ -89,14 +108,16 @@ const ProgramArray: React.FunctionComponent<IFieldProps> = observer((props) => {
   let i = 0
   return (
     <div className="flex1">
-      {arrayHelper.fields.map((subField) =>
-        <ProgramObject
-          {...props}
-          key={subField.mapTo}
-          {...subField}
-          index={++i}
-        />
-      )}
+      <FixedSizeList
+        height={get(global, "window.innerHeight", 500) - 150}
+        width={get(global, "window.innerWidth", 500)}
+        itemSize={67}
+        itemData={{fields: arrayHelper.fields, props}}
+        itemCount={arrayHelper.length}
+        useIsScrolling={true}
+      >
+        {ProgramObjectListItem}
+      </FixedSizeList>
     </div>
   )
 })
