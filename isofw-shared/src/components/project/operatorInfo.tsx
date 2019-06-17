@@ -8,6 +8,7 @@ import {
 import { find, get } from "lodash"
 
 const currentOperatorKey = `current${ProjectOperators.title}`
+const autoScrollKey = `autoScroll`
 const whichViewIsActiveKey = `operatorInView`
 const isOperatorChooserVisibleKey = `operatorChooserVisible`
 
@@ -27,6 +28,7 @@ const changeValue = (keyToUse: string, prefix?: string, toggleChooser?: boolean)
 const useOperatorInfo = (id: string, mapTo?: string, prefix?: string, defItem?: any) => {
   const editHelper = useEdit(id, ProjectForm, mapTo, prefix)
   const currentOperator = FormStore.getValue(currentOperatorKey, prefix)
+  const autoScrollEnabled = FormStore.getValue(autoScrollKey, prefix, true)
   const item = get(editHelper, "original", defItem)
   const mappings: any = find(get(item, String(ProjectOperatorCameraMapping.title), []),
     [OperatorRelation.title, currentOperator])
@@ -73,7 +75,12 @@ const useOperatorInfo = (id: string, mapTo?: string, prefix?: string, defItem?: 
     showOperatorChooser: memo(() => changeValue(isOperatorChooserVisibleKey, prefix)(true),
       [memoKey, isOperatorChooserVisibleKey, prefix, true]),
     hideOperatorChooser: memo(() => changeValue(isOperatorChooserVisibleKey, prefix)(false),
-      [memoKey, isOperatorChooserVisibleKey, prefix, false])
+      [memoKey, isOperatorChooserVisibleKey, prefix, false]),
+    autoScrollEnabled,
+    enableAutoScroll: memo(() => changeValue(autoScrollKey, prefix)(true),
+      [memoKey, autoScrollKey, prefix, true]),
+    disableAutoScroll: memo(() => changeValue(autoScrollKey, prefix)(false),
+      [memoKey, autoScrollKey, prefix, false])
   }
 }
 

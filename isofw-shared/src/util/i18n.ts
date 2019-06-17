@@ -83,7 +83,9 @@ const translations = {
       notReady: "Not ready",
       autoScroll: "AutoScroll",
       presetView: "View Presets",
-      scriptView: "View Script"
+      scriptView: "View Script",
+      disableAutoScroll: "Don't scroll",
+      enableAutoScroll: "Auto scroll"
     }
   },
   // Form Related Entries

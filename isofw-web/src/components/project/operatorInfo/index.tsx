@@ -21,14 +21,16 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
   const previousPosition = React.useState(0)
   const operatorHelper = useOperatorInfo(props.id, props.mapTo, props.prefix)
   React.useEffect(() => {
-    const newPosition = operatorHelper.currentShot
-    if (newPosition !== previousPosition[0]) {
-      previousPosition[1](newPosition)
-      const element = document.getElementById(`presetPositioner${newPosition}`)
-      if (element != null) {
-        element.scrollIntoView({
-          behavior: "smooth", block: "center", inline: "center"
-        })
+    if (operatorHelper.autoScrollEnabled) {
+      const newPosition = operatorHelper.currentShot
+      if (newPosition !== previousPosition[0]) {
+        previousPosition[1](newPosition)
+        const element = document.getElementById(`presetPositioner${newPosition}`)
+        if (element != null) {
+          element.scrollIntoView({
+            behavior: "smooth", block: "center", inline: "center"
+          })
+        }
       }
     }
   })
@@ -98,15 +100,24 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
         </Col>
       </Row>
       <CameraActions prefix={prependPrefix(ProjectForm.title, props.prefix)}>
-        <Col>
-          <WebButton
-            large={true}
-            fill={true}
-            text={operatorHelper.isPresetView ? "operator.btns.scriptView" : "operator.btns.presetView"}
-            iconFa={operatorHelper.isPresetView ? "list-ol" : "images"}
-            onClick={operatorHelper.isPresetView ? operatorHelper.useScriptView : operatorHelper.usePresetView}
-          />
-        </Col>
+      <Col>
+        <WebButton
+          large={true}
+          fill={true}
+          text={operatorHelper.autoScrollEnabled ? "operator.btns.disableAutoScroll" : "operator.btns.enableAutoScroll"}
+          iconFa={operatorHelper.autoScrollEnabled ? "angle-double-down" : "angle-double-right"}
+          onClick={operatorHelper.autoScrollEnabled ? operatorHelper.disableAutoScroll : operatorHelper.enableAutoScroll}
+        />
+      </Col>
+      <Col>
+        <WebButton
+          large={true}
+          fill={true}
+          text={operatorHelper.isPresetView ? "operator.btns.scriptView" : "operator.btns.presetView"}
+          iconFa={operatorHelper.isPresetView ? "list-ol" : "images"}
+          onClick={operatorHelper.isPresetView ? operatorHelper.useScriptView : operatorHelper.usePresetView}
+        />
+      </Col>
       </CameraActions>
       {content}
       {operatorHelper.loading ? <LoadingPage /> : null}
