@@ -88,7 +88,7 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
           <CurrentOperatorDisplay {...props} {...operatorHelper} />
         </Col>
         <Col>
-          <div className="subtitleBox withPadding">
+          <div className="subtitleBox withPadding isActive">
             <div className="subtitle"><I18n text="operator.currentShot" /></div>
             {operatorHelper.currentPreset ? (
               <div>
