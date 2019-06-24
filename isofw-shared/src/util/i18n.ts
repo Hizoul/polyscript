@@ -66,6 +66,7 @@ const translations = {
       shot: "Shot",
       camera: "CA",
       preset: "Preset",
+      description: "Description",
       importance: "!",
       name: "Name",
       type: "Type",

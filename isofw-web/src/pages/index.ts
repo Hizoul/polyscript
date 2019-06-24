@@ -26,7 +26,13 @@ const routes: any = [
     async: routeResolver(() => import("./project/program"))
   }, {
     path: `${urls.operatorInfo}/:id`,
-    async: routeResolver(() => import("./project/operatorInfo"))
+    async: routeResolver(() => import("./project/operator/info"))
+  }, {
+    path: `${urls.printScript}/:id`,
+    async: routeResolver(() => import("./project/operator/printScript"))
+  }, {
+    path: `${urls.printPreset}/:id`,
+    async: routeResolver(() => import("./project/operator/printPreset"))
   }, {
     path: `${urls.cameraOverview}`,
     async: routeResolver(() => import("./camera/overview"))

@@ -13,7 +13,9 @@ const urls = {
   edit: "/edit",
   login: "/login",
   home: "/",
-  presetPreview: "/presetPreview"
+  presetPreview: "/presetPreview",
+  printScript: "/printScript",
+  printPreset: "/printPreset"
 }
 
 export default urls

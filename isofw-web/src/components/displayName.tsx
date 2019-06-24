@@ -5,16 +5,17 @@ import { get, isNumber } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
 
-
 export interface INameDisplayer extends IGetHookProps {
   getNameFrom: string
   placeholder?: string
   increaseByOne?: boolean
+  className?: string
 }
 
 export interface SubDisplayer {
   id: string
   placeholder?: string
+  className?: string
 }
 
 const NameDisplayer: React.FunctionComponent<INameDisplayer> = observer((props) => {
@@ -24,7 +25,7 @@ const NameDisplayer: React.FunctionComponent<INameDisplayer> = observer((props) 
     name += 1
   }
   return (
-    <span>{name}</span>
+    <span className={props.className}>{name}</span>
   )
 })
 

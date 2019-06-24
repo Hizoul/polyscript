@@ -1,0 +1,33 @@
+@media print
+  .hideInPrint
+    display: none !important
+
+.printHeader
+  .printHeaderContent
+    font-size: 3rem
+    background-color: var(--f7-color-orange)
+    color: white
+    text-align: center
+    margin: 1rem 3rem
+.printTitle, .printRow
+  width: 100%
+  min-height: 4rem
+  span
+    display: inline-block
+    text-align: center
+    max-width: 10vw
+    min-width: 10vw
+    &.bigEntry
+      text-align: left
+      max-width: 65vw
+      min-width: 65vw
+      margin-left: 1rem
+    &.stylizedBorder
+      border: 1pt solid var(--f7-color-orange)
+      border-right-width: 0pt
+      border-bottom-width: 0pt
+      padding-left: 0.3rem
+      padding-top: 0.3rem
+.bigger
+  font-size: 1.3rem
+  font-weight: bold
