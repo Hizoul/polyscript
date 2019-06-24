@@ -12,6 +12,7 @@ import {
 import { ProjectCameras, ProjectProgram, ProjectShot, ShotCamera, ShotNumber, ShotPreset } from "isofw-shared/src/xpfwDefs/project"
 import { get } from "lodash"
 import { Collection, Db, ObjectId } from "mongodb"
+import promiseTimeout from "isofw-shared/src/util/promiseTimeout"
 
 const camerasPreset: {[index: string]: string | undefined} = {}
 
@@ -61,6 +62,7 @@ const activateNextPresets = async (db: Db, project: any) => {
   const program = get(project, String(ProjectProgram.title), [])
   const currentShot = get(project, String(ProjectShot.title), 0)
   const cameras = get(project, String(ProjectCameras.title), [])
+  await promiseTimeout(val.nextPresetDelay)
   if (program != null) {
     for (const camera of cameras) {
       cameraShot: for (let i = currentShot; i < program.length; i++) {
