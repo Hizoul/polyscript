@@ -5,12 +5,12 @@ import {
   ShotMovementTowards, ShotName, ShotPreset, ShotRemarksDirector, ShotRemarksOperator, ShotType
 } from "isofw-shared/src/xpfwDefs/project"
 import WebButton from "isofw-web/src/components/button"
-import { cloneDeep, get, map } from "lodash"
-import * as React from "react"
-import "../style.sass"
-import { observer } from "mobx-react-lite"
-import { FixedSizeList } from "react-window"
 import I18n from "isofw-web/src/components/i18n"
+import { cloneDeep, get, map } from "lodash"
+import { observer } from "mobx-react-lite"
+import * as React from "react"
+import { FixedSizeList } from "react-window"
+import "../style.sass"
 
 const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards,
   ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset, ShotImportance]
@@ -42,33 +42,33 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
   }
   return (
     <div className={classes} style={props.style}>
-      <div className="flex column verticalCenter">
-        <WebButton
-          className="smallerButton"
-          onClick={props.increaseSize}
-          text=""
-          color="green"
-          fill={true}
-          round={true}
-          iconFa="plus"
-        />
-        <div className="centerText">
-          {attentionItem}
-          {get(props, "index", -1)}
-          {attentionItem}
-        </div>
-        <WebButton
-          className="smallerButton"
-          onClick={props.decreaseSize}
-          text=""
-          color="red"
-          fill={true}
-          round={true}
-          iconFa="times"
-        />
-      </div>
       <div className="list fullWidthList noMargin">
         <ul className="inlineList">
+          <li className="flex column center verticalCenter centerText">
+            <WebButton
+              className="smallerButton"
+              onClick={props.increaseSize}
+              text=""
+              color="green"
+              fill={true}
+              round={true}
+              iconFa="plus"
+            />
+            <div className="centerText">
+              {attentionItem}
+              {get(props, "index", -1)}
+              {attentionItem}
+            </div>
+            <WebButton
+              className="smallerButton"
+              onClick={props.decreaseSize}
+              text=""
+              color="red"
+              fill={true}
+              round={true}
+              iconFa="times"
+            />
+          </li>
           {props.isScrolling ?
             <li className="flex1 center verticalCenter centerText"><I18n text="forScrollSpeed" /></li> : (
             <>
@@ -106,7 +106,7 @@ const ProgramArray: React.FunctionComponent<IFieldProps> = observer((props) => {
   if (arrayHelper.length === 0) {
     setTimeout(() => arrayHelper.increaseSize(), 800)
   }
-  let i = 0
+  const i = 0
   return (
     <div className="flex1">
       <FixedSizeList
