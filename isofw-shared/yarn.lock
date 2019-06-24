@@ -515,10 +515,10 @@
   resolved "https://registry.yarnpkg.com/@xpfw/data-tests/-/data-tests-1.0.0-beta.18.tgz#cae6dee77ab04153237e9f8d5b2f9317d7c6b05a"
   integrity sha512-XyErOm9umU6o/kl/i6UhngS3GDCSi6vEYl/eC+bl8+KV9ejBohOWOezEWB2MZV3bHoNjfN/+odJFAWeBnjBBuQ==
 
-"@xpfw/data@1.0.0-beta.18":
-  version "1.0.0-beta.18"
-  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.18.tgz#3ac99103b3b7d6fea1917b052ea12696f72f028f"
-  integrity sha512-xxrAmV0DK7aOprES73fhkif+4Mr3ivCaxAXqC4NHTXJkDeSsY0yJIu93XtzYEJzvEv5YwzdzuErcaep2xrsaNA==
+"@xpfw/data@1.0.0-beta.19":
+  version "1.0.0-beta.19"
+  resolved "https://registry.yarnpkg.com/@xpfw/data/-/data-1.0.0-beta.19.tgz#9d7f9b63903c3b486bfc958645404f8d60e193bc"
+  integrity sha512-nRevwTcSYhfhixPClg23y33c/nw9L+Cr9jNdlIu2kg4YAPhah67NwVR/tV2FLEJqhCl63Ynt4v2ZYPeg8Sn48w==
 
 "@xpfw/form-tests@1.0.0-beta.18":
   version "1.0.0-beta.18"
