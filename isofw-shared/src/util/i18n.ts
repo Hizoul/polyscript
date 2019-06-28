@@ -103,7 +103,9 @@ const translations = {
   operatorRemarks: "Remarks by Operator",
   importance: "Importance of the Shot",
   forScrollSpeed: "Content hidden while scrolling for performance reasons",
-  seperateShotField: "Jump to shot"
+  seperateShotField: "Jump to shot",
+  noPreview: "No Preview available for Preset yet.",
+  noPreset: "Preset will be assigned on camera selection"
 }
 
 const i18n: {
