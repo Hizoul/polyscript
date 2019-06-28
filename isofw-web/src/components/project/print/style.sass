@@ -8,13 +8,12 @@
     background-color: var(--f7-color-orange)
     color: white
     text-align: center
-    margin: 1rem 3rem
+    margin: 2rem 2rem
 .printTitle, .printRow
   width: 100%
   display: flex
   flex-direction: row
   justify-content: center
-  min-height: 4rem
   margin: 0.3rem 0rem
   span
     display: flex
@@ -22,6 +21,7 @@
     justify-content: center
     align-items: center
     &.bigEntry
+      padding: 0.5rem 0rem
       margin-left: 1rem
       flex: 9
       justify-content: start
@@ -34,3 +34,11 @@
 .bigger
   font-size: 1.3rem
   font-weight: bold
+.printPresets
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  margin: 1rem
+  img
+    min-width: 23vw
+    max-width: 23vw

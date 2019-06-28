@@ -9,6 +9,8 @@ const OperatorInfoPage: React.FunctionComponent<any> = (props) => {
     <PrintPageContainer
       requireLoggedIn={true}
       name="operatorInfo"
+      isPreset={false}
+      id={id}
     >
       <ScriptPrintView schema={{}} id={id} prefix="edit" />
     </PrintPageContainer>

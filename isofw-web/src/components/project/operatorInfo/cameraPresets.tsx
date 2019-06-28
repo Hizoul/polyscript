@@ -1,6 +1,6 @@
 import { BlockTitle, Card, CardContent, CardFooter, CardHeader, Link } from "framework7-react"
+import getPresetImgUrl from "isofw-shared/src/components/preset/getUrl"
 import usePresetUpdater from "isofw-shared/src/components/preset/updater"
-import urls from "isofw-shared/src/globals/url"
 import val from "isofw-shared/src/globals/val"
 import { PresetNumberField, PresetPreviewField } from "isofw-shared/src/xpfwDefs/preset"
 import { ProjectName } from "isofw-shared/src/xpfwDefs/project"
@@ -20,7 +20,7 @@ const PresetCard: React.FunctionComponent<{id: string}> = observer((props) => {
       </CardHeader>
       <CardContent padding={false}>
         {imageUrl ?
-          <img src={`${urls.webPrefix}${urls.mainServer}:${val.isDebug ? 4201 : urls.port}${urls.presetPreview}/${imageUrl}`} style={{width: "100%"}} /> :
+          <img src={getPresetImgUrl(presetUpdater.item)} style={{width: "100%"}} /> :
           <I18n text="noPreview" className="flex1 center verticalCenter" style={{minHeight: 50}} />}
       </CardContent>
       <CardFooter>
