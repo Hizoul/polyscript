@@ -5,6 +5,8 @@ const val = {
   isNative: true,
   useNedb: true,
   nextPresetDelay: 2000,
+  useFakePresetImages: true,
+  ffmpegPath: "/Users/sebregts/Documents/Polycast/ffmpeg",
   version: "0.1.0",
   i18nNameSpace: "main",
   channel: {

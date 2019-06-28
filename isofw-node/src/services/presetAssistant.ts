@@ -1,5 +1,6 @@
 import * as express from "@feathersjs/express"
 import * as feathers from "@feathersjs/feathers"
+import console = require("console")
 import presetCreator from "isofw-node/src/services/hooks/presetCreator"
 import cameraApi, { cameraCommand } from "isofw-shared/src/cameraApi"
 import { getPresetDataUE70 } from "isofw-shared/src/cameraApi/ue70"
@@ -29,17 +30,15 @@ const useSyncHook = global.process != null && process.env.SYNC_HOOKS != null
 const fileDirectory = val.isDebug ? resolve((useSyncHook ? "" : "../") + "../isofw-web/webpackDist") :
 (global.process != null && process.env.PREVIEW_DIRECTORY != null ?
   process.env.PREVIEW_DIRECTORY : __dirname + "previews")
-console.log("FILE DIRECTORY IS", fileDirectory)
+console.log("FILEDIRECTORY IS", fileDirectory)
 const makePreview = async (id: string, cameraIp: string) => {
   const filename =  `${id}-${Date.now()}.jpg`
   const dateDirectory = moment().format("YYYY-MM-DD")
-  const ffmpegPath = "/Users/sebregts/Documents/Polycast/ffmpeg"
   mkdir("-p", resolve(fileDirectory, urls.presetPreview.substr(1), dateDirectory))
-  if (val.isDebug) {
-    cp(resolve(__dirname, "concert.jpg"), resolve(fileDirectory, urls.presetPreview.substr(1), dateDirectory, filename))
-    // exec(`${ffmpegPath} -f rtsp -rtsp_transport tcp -i rtsp://${cameraIp}/MediaInput/h264/stream_1 -f image2 -vframes 1 -vf scale=128:72 -y "${resolve(fileDirectory, urls.presetPreview.substr(1), dateDirectory, filename)}"`)
+  if (val.useFakePresetImages) {
+    cp(resolve(useSyncHook ? "./" : "../",  "src/services/concert.jpg"), resolve(fileDirectory, urls.presetPreview.substr(1), dateDirectory, filename))
   } else {
-
+    exec(`${val.ffmpegPath} -f rtsp -rtsp_transport tcp -i rtsp://${cameraIp}/MediaInput/h264/stream_1 -f image2 -vframes 1 -vf scale=128:72 -y "${resolve(fileDirectory, urls.presetPreview.substr(1), dateDirectory, filename)}"`)
   }
   return dateDirectory + "/" + filename
 }
