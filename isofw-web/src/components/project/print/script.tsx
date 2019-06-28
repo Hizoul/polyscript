@@ -2,7 +2,7 @@ import useOperatorInfo from "isofw-shared/src/components/project/operatorInfo"
 import val from "isofw-shared/src/globals/val"
 import { IEditHookProps } from "isofw-shared/src/util/xpfwdata"
 import { PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
-import { ProjectName, ShotCamera, ShotName, ShotNumber, ShotPreset } from "isofw-shared/src/xpfwDefs/project"
+import { ProjectName, ShotCamera, ShotName, ShotNumber, ShotPreset, ShotRemarksDirector, ShotRemarksOperator } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
 import I18n from "isofw-web/src/components/i18n"
 import { observer } from "mobx-react-lite"
@@ -21,7 +21,11 @@ const ShotItem = (props: any) => {
         placeholder=""
         className="bigger"
       />
-      <span className="bigEntry stylizedBorder bigger">{props.item[String(ShotName.title)]}</span>
+      <span className="bigEntry stylizedBorder bigger">
+        {props.item[String(ShotName.title)]}<br />
+        {props.item[String(ShotRemarksDirector.title)]}<br />
+        {props.item[String(ShotRemarksOperator.title)]}
+      </span>
       <NameDisplayer
         collection={val.service.preset}
         id={props.item[String(ShotPreset.title)]}
