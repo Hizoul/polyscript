@@ -1953,7 +1953,9 @@ Object {
     "assistantForm": "c1bbbbbbbbbbbbbbbb098765",
     "freePresetGetter.assistantForm": "c2bbbbbbbbbbbbbbbb098765",
   },
-  "currentlyEditing": "b19999999999999999999999",
+  "currentlyEditing": Object {
+    "": "b19999999999999999999999",
+  },
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {
@@ -2028,7 +2030,7 @@ Object {
 exports[`Preset creation works as planned: Before preset is being pushed via real-time 1`] = `
 Object {
   "createState": Object {},
-  "currentlyEditing": "",
+  "currentlyEditing": Object {},
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {
@@ -2050,7 +2052,7 @@ Object {
   "createState": Object {
     "assistantForm": "c1bbbbbbbbbbbbbbbb098765",
   },
-  "currentlyEditing": "",
+  "currentlyEditing": Object {},
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {
@@ -2086,7 +2088,7 @@ Object {
   "createState": Object {
     "assistantForm": "c1bbbbbbbbbbbbbbbb098765",
   },
-  "currentlyEditing": "",
+  "currentlyEditing": Object {},
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {

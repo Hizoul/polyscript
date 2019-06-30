@@ -25,9 +25,9 @@ import forkedHooks from "./hooks/forkedHooks"
 import freeUnusedPresets, { freePresetsOfProject } from "./hooks/freeUnusedPresets"
 import requireAuthentication from "./hooks/requireAuthentication"
 
-const useSyncHook = global.process != null && process.env.SYNC_HOOKS != null
+const useAsyncHook = global.process != null && process.env.ASYNC_HOOKS != null
 
-const fileDirectory = val.isDebug ? resolve((useSyncHook ? "" : "../") + "../isofw-web/webpackDist") :
+const fileDirectory = val.isDebug ? resolve((useAsyncHook ? "../" : "./") + "../isofw-web/webpackDist") :
 (global.process != null && process.env.PREVIEW_DIRECTORY != null ?
   process.env.PREVIEW_DIRECTORY : __dirname + "previews")
 console.log("FILEDIRECTORY IS", fileDirectory)
@@ -36,7 +36,7 @@ const makePreview = async (id: string, cameraIp: string) => {
   const dateDirectory = moment().format("YYYY-MM-DD")
   mkdir("-p", resolve(fileDirectory, urls.presetPreview.substr(1), dateDirectory))
   if (val.useFakePresetImages) {
-    cp(resolve(useSyncHook ? "./" : "../",  "src/services/concert.jpg"), resolve(fileDirectory, urls.presetPreview.substr(1), dateDirectory, filename))
+    cp(resolve(useAsyncHook ? "../" : "./",  "src/services/concert.jpg"), resolve(fileDirectory, urls.presetPreview.substr(1), dateDirectory, filename))
   } else {
     exec(`${val.ffmpegPath} -f rtsp -rtsp_transport tcp -i rtsp://${cameraIp}/MediaInput/h264/stream_1 -f image2 -vframes 1 -vf scale=128:72 -y "${resolve(fileDirectory, urls.presetPreview.substr(1), dateDirectory, filename)}"`)
   }
@@ -45,7 +45,7 @@ const makePreview = async (id: string, cameraIp: string) => {
 const presetAssistantConfigurator: any = (app: feathers.Application) => {
 
   app.service(val.service.camera).hooks({after: {create: presetCreator}})
-  app.service(val.service.project).hooks({after: {patch: useSyncHook ? [activateNextPresets, freeUnusedPresets, ensureShotNumber] : [forkedHooks()]}})
+  app.service(val.service.project).hooks({after: {patch: useAsyncHook ? [forkedHooks()] : [activateNextPresets, freeUnusedPresets, ensureShotNumber]}})
   const previewHandler: any =  express.static(fileDirectory)
   app.use(urls.presetPreview, previewHandler)
   console.log("Serving preset previews from ", fileDirectory)

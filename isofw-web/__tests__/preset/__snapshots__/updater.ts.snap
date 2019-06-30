@@ -11,7 +11,7 @@ exports[`Preset Update works as planned:  after setting 2 falls  1`] = `
     {}
     <span>
       Preset #
-      0
+      1
     </span>
   </div>
   <div
@@ -29,7 +29,7 @@ exports[`Preset Update works as planned:  after setting 2 falls  1`] = `
       }
       text="noPreview"
     >
-      noPreview
+      No Preview available for Preset yet.
     </span>
   </div>
   <div
@@ -65,7 +65,7 @@ exports[`Preset Update works as planned:  after setting to true  1`] = `
     {}
     <span>
       Preset #
-      0
+      1
     </span>
   </div>
   <div
@@ -83,7 +83,7 @@ exports[`Preset Update works as planned:  after setting to true  1`] = `
       }
       text="noPreview"
     >
-      noPreview
+      No Preview available for Preset yet.
     </span>
   </div>
   <div
@@ -119,7 +119,7 @@ exports[`Preset Update works as planned: Before anything 1`] = `
     {}
     <span>
       Preset #
-      0
+      1
     </span>
   </div>
   <div
@@ -137,7 +137,7 @@ exports[`Preset Update works as planned: Before anything 1`] = `
       }
       text="noPreview"
     >
-      noPreview
+      No Preview available for Preset yet.
     </span>
   </div>
   <div
@@ -173,7 +173,7 @@ exports[`Preset Update works as planned: after updating presets preview 1`] = `
     {}
     <span>
       Preset #
-      0
+      1
     </span>
   </div>
   <div
@@ -183,7 +183,7 @@ exports[`Preset Update works as planned: after updating presets preview 1`] = `
   "padding": false
 }
     <img
-      src="http://localhost:80/presetPreview/1904-02-29/c1bbbbbbbbbbbbbbbbbbbbbb--2077750800000.jpg"
+      src="http://localhost:4201/presetPreview/1904-02-29/c1bbbbbbbbbbbbbbbbbbbbbb--2077750800000.jpg"
       style={
         Object {
           "width": "100%",

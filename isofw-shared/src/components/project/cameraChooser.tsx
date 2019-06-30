@@ -44,11 +44,15 @@ const useCameraChooser = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: s
   cameras = cameras ? cameras : []
   const mappings = FormStore.getValue(ProjectOperatorCameraMapping.title, prefix)
   const operators: any = {}
-  for (const camera of cameras) {
-    operators[camera] = []
-    for (const mapping of mappings) {
-      if (mapping.cameras.indexOf(camera) !== -1) {
-        operators[camera].push(mapping.operator)
+  if (Array.isArray(cameras)) {
+    for (const camera of cameras) {
+      operators[camera] = []
+      if (Array.isArray(mappings)) {
+        for (const mapping of mappings) {
+          if (mapping.cameras.indexOf(camera) !== -1) {
+            operators[camera].push(mapping.operator)
+          }
+        }
       }
     }
   }

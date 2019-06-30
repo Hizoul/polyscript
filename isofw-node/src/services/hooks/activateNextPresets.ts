@@ -1,10 +1,10 @@
 import { Application, Hook } from "@feathersjs/feathers"
 import { cameraCommand } from "isofw-shared/src/cameraApi"
 import val from "isofw-shared/src/globals/val"
+import promiseTimeout from "isofw-shared/src/util/promiseTimeout";
 import { PresetActionTypeField, PresetNumberField } from "isofw-shared/src/xpfwDefs/preset"
 import { ProjectCameras, ProjectProgram, ProjectShot, ShotCamera, ShotPreset } from "isofw-shared/src/xpfwDefs/project"
 import { get } from "lodash"
-import promiseTimeout from "isofw-shared/src/util/promiseTimeout";
 
 const camerasPreset: {[index: string]: string | undefined} = {}
 
@@ -36,7 +36,7 @@ const activateNextPrestsOfProject = async (project: any, app: Application) => {
 
 const activateNextPresets: Hook = async (hook) => {
   await promiseTimeout(val.nextPresetDelay)
-  activateNextPrestsOfProject(hook.result, hook.app)
+  await activateNextPrestsOfProject(hook.result, hook.app)
   return hook
 }
 

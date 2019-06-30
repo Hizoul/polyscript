@@ -3,7 +3,7 @@
 exports[`Preset Update works as planned:  after Going to preset 1`] = `
 Object {
   "createState": Object {},
-  "currentlyEditing": "",
+  "currentlyEditing": Object {},
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {
@@ -30,7 +30,7 @@ Object {
 exports[`Preset Update works as planned:  after Saving preset  1`] = `
 Object {
   "createState": Object {},
-  "currentlyEditing": "",
+  "currentlyEditing": Object {},
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {
@@ -57,7 +57,7 @@ Object {
 exports[`Preset Update works as planned:  after Stop zooming  1`] = `
 Object {
   "createState": Object {},
-  "currentlyEditing": "",
+  "currentlyEditing": Object {},
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {
@@ -84,7 +84,7 @@ Object {
 exports[`Preset Update works as planned:  after zooming Out  1`] = `
 Object {
   "createState": Object {},
-  "currentlyEditing": "",
+  "currentlyEditing": Object {},
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {
@@ -111,7 +111,7 @@ Object {
 exports[`Preset Update works as planned:  after zooming in  1`] = `
 Object {
   "createState": Object {},
-  "currentlyEditing": "",
+  "currentlyEditing": Object {},
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {
@@ -138,7 +138,7 @@ Object {
 exports[`Preset Update works as planned: Before anything 1`] = `
 Object {
   "createState": Object {},
-  "currentlyEditing": "",
+  "currentlyEditing": Object {},
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {

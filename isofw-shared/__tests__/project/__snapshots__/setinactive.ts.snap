@@ -3,7 +3,7 @@
 exports[`free unused presets after program Update works as planned: Before anything 1`] = `
 Object {
   "createState": Object {},
-  "currentlyEditing": "",
+  "currentlyEditing": Object {},
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {
@@ -25,7 +25,9 @@ Object {
   "createState": Object {
     "freePresetGetter.assistantForm": "c1bbbbbbbbbbbbbbbb398765",
   },
-  "currentlyEditing": "b19999999999999999999999",
+  "currentlyEditing": Object {
+    "": "b19999999999999999999999",
+  },
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {
@@ -301,7 +303,9 @@ Object {
   "createState": Object {
     "freePresetGetter.assistantForm": "c1bbbbbbbbbbbbbbbb398765",
   },
-  "currentlyEditing": "b19999999999999999999999",
+  "currentlyEditing": Object {
+    "": "b19999999999999999999999",
+  },
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {
