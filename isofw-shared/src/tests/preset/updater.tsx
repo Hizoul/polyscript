@@ -28,7 +28,7 @@ const presetUpdaterTest = (Component?: any) => {
       const mockedCameras = await mockCameras(appRef.app)
       const projectResults = await createTestProjects(appRef.app, true)
       const presetList = await ListStore.getList(PresetForm, undefined, undefined, true)
-      untypedDbStore.currentlyEditing = projectResults[0]._id.toHexString()
+      untypedDbStore.currentlyEditing[""] = projectResults[0]._id.toHexString()
       const presetId = presetList.data[0]._id
       await DbStore.getFromServer(presetId, String(PresetForm.collection))
       if (Component) {

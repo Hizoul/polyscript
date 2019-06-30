@@ -14,7 +14,7 @@ const saveAfterChange = async (schema: ExtendedJSONSchema, mapTo?: string, prefi
   const prepended = prependPrefix(ProjectForm.title, quickSavePrefix)
   FormStore.setValue(ProjectForm.title, {}, quickSavePrefix)
   FormStore.setValue(DisabledCameras.title, newValue, prepended)
-  await DbStore.patch(u.currentlyEditing, ProjectForm, undefined, quickSavePrefix)
+  await DbStore.patch(u.currentlyEditing[prefix == null ? "" : prefix], ProjectForm, undefined, quickSavePrefix)
 }
 
 const toggleCamera = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: string, camera?: string, autoSave?: boolean) => {

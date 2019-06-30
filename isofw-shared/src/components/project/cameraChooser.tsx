@@ -1,7 +1,7 @@
 import { DbStore } from "isofw-shared/src/util/xpfwdata"
 import { ExtendedJSONSchema, FormStore, getMapTo, memo, prependPrefix } from "isofw-shared/src/util/xpfwform"
 import { PresetAssistantForm, PresetCameraField, PresetProjectField } from "isofw-shared/src/xpfwDefs/preset"
-import { ProjectCameras, ShotPreset, ProjectOperatorCameraMapping } from "isofw-shared/src/xpfwDefs/project"
+import { ProjectCameras, ProjectOperatorCameraMapping, ShotPreset } from "isofw-shared/src/xpfwDefs/project"
 import { flow } from "mobx"
 
 const popupVisibilityKey = "cameraChoice"
@@ -22,7 +22,7 @@ const setValueWithPreset = (schema: ExtendedJSONSchema, mapTo?: any, prefix?: st
     FormStore.setValue(getMapTo(schema, mapTo), newValue, prefix)
     FormStore.setValue(PresetAssistantForm.title, {}, prependPrefix(freePresetKey, prefix))
     FormStore.setValue(PresetCameraField.title, newValue, creationPrefix)
-    FormStore.setValue(PresetProjectField.title, untypedDbStore.currentlyEditing, creationPrefix)
+    FormStore.setValue(PresetProjectField.title, untypedDbStore.currentlyEditing[prefix == null ? "" : prefix], creationPrefix)
     const freeId: any = yield DbStore.create(PresetAssistantForm, undefined, prependPrefix(freePresetKey, prefix))
     mapTo = mapTo.substring(0, mapTo.indexOf("]") + 1)
     FormStore.setValue(`${prependPrefix(mapTo, prefix)}.${ShotPreset.title}`, freeId)
@@ -42,7 +42,7 @@ const useCameraChooser = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: s
   if (mapTo == null) { mapTo = getMapTo(schema, mapTo) }
   let cameras = FormStore.getValue(ProjectCameras.title, prefix)
   cameras = cameras ? cameras : []
-  let mappings = FormStore.getValue(ProjectOperatorCameraMapping.title, prefix)
+  const mappings = FormStore.getValue(ProjectOperatorCameraMapping.title, prefix)
   const operators: any = {}
   for (const camera of cameras) {
     operators[camera] = []

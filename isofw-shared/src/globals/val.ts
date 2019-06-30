@@ -1,9 +1,7 @@
-import urls from "./url"
-
 const val = {
   isDebug: true,
   isNative: true,
-  useNedb: true,
+  useNedb: false,
   nextPresetDelay: 2000,
   useFakePresetImages: true,
   ffmpegPath: "/Users/sebregts/Documents/Polycast/ffmpeg",

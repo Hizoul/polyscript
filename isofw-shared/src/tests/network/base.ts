@@ -49,7 +49,7 @@ const networkTest = (useNetwork: number, client: any) => {
       expect(iDFetchedResults).toMatchSnapshot(" first available ID ")
       expect(toJS(DbStore)).toMatchSnapshot("after preset has been pushed via real-time")
       expect(toJS(DbStore)).toMatchSnapshot("Before using the utility function")
-      untypedDbStore.currentlyEditing = projectResults[0]._id.toHexString()
+      untypedDbStore.currentlyEditing[""] = projectResults[0]._id.toHexString()
       await setValueWithPreset(PresetCameraField, undefined, undefined)(cameraResult[1]._id.toHexString())
       expect(toJS(DbStore)).toMatchSnapshot("After using the utility function")
       expect(toJS(FormStore)).toMatchSnapshot("After using the utility function")
