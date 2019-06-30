@@ -8,12 +8,54 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
   "original": {
     "_id": "b19999999999999999999999",
     "name": "pn1",
-    "shot": 42,
-    "isActive": true
+    "shot": 1,
+    "isActive": true,
+    "program": [
+      {
+        "pname": "xe7KJVs6vpOQz4Fi1xxR0Wc119IgsGdY",
+        "movement": "CoCIdeoGEDSNhNGg",
+        "movementTowards": "ZjX9wiGE",
+        "duration": 2,
+        "importance": "M",
+        "type": "3",
+        "directorRemarks": "RYM1e19XmznYxijb5zxQBavngvoBgML9rhyUsEV7yr7sWK4XowAQncEHb4lOJ62M",
+        "operatorRemarks": "ApAUB0wydr2mCltK8iwVIg6b1rx7UP6vncQrrw5xk4ziUQp6Ye3Tkyy56zKwlJ7d",
+        "camera": "EkjBX7jeu8nGCCeDYkTDQyy1HWcsloe6",
+        "number": 0
+      },
+      {
+        "pname": "9md8A9vo6n2itZvtWzBDDDXf2LU4tsp3",
+        "movement": "P6Znd0GSbWPrQDse",
+        "movementTowards": "rgXirZIf",
+        "duration": 3,
+        "importance": "5",
+        "type": "3",
+        "directorRemarks": "jzeuQlL5uRPw9Mjm8uTRuWR2T9vCYkAXO7uxI4V5ymisz7nDLSPObgMhFZCYcMfx",
+        "operatorRemarks": "qMhZXod23fxWk6ZaQoPRuKcrFRoIyfqwS9y8rnRnscEVXhfvEGss0aoNd83ASZj8",
+        "camera": "6Negm31DAWJ1cKMC0FNKW8EfKb15cQtX",
+        "number": 1
+      },
+      {
+        "pname": "o7IVuQtjEpZG06SvmILgoHI8oyhuGaT6",
+        "movement": "Ntl7vm95mndrTz6v",
+        "movementTowards": "ISDgY8Uw",
+        "duration": 8,
+        "importance": "v",
+        "type": "f",
+        "directorRemarks": "9tL9JU6uHfE3FwIhpeoYuNHqoDNkb6HerlRRNtJvuv2RpKWD3LgKOZFfM6hsDiOs",
+        "operatorRemarks": "nfsCRENAD0rLsheDVi0kzHFZz2NL71uSchihRrlXNL9B6AJe3qbduVb6TR8PQcNR",
+        "camera": "2ru61zQ0ZM9fMFC0cboDOhEsumGwEXls",
+        "number": 2
+      }
+    ]
   },
   "user": {
     "_id": "u1",
     "email": "u1"
+  },
+  "numField": {
+    "title": "seperateShotField",
+    "type": "number"
   }
 }
 </div>
@@ -22,7 +64,9 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
 exports[` direct a test   can increase number :  project Edited by client 1`] = `
 Object {
   "createState": Object {},
-  "currentlyEditing": "b19999999999999999999999",
+  "currentlyEditing": Object {
+    "edit": "b19999999999999999999999",
+  },
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {
@@ -31,7 +75,45 @@ Object {
         "_id": "b19999999999999999999999",
         "isActive": true,
         "name": "pn1",
-        "shot": 43,
+        "program": Array [
+          Object {
+            "camera": "EkjBX7jeu8nGCCeDYkTDQyy1HWcsloe6",
+            "directorRemarks": "RYM1e19XmznYxijb5zxQBavngvoBgML9rhyUsEV7yr7sWK4XowAQncEHb4lOJ62M",
+            "duration": 2,
+            "importance": "M",
+            "movement": "CoCIdeoGEDSNhNGg",
+            "movementTowards": "ZjX9wiGE",
+            "number": 0,
+            "operatorRemarks": "ApAUB0wydr2mCltK8iwVIg6b1rx7UP6vncQrrw5xk4ziUQp6Ye3Tkyy56zKwlJ7d",
+            "pname": "xe7KJVs6vpOQz4Fi1xxR0Wc119IgsGdY",
+            "type": "3",
+          },
+          Object {
+            "camera": "6Negm31DAWJ1cKMC0FNKW8EfKb15cQtX",
+            "directorRemarks": "jzeuQlL5uRPw9Mjm8uTRuWR2T9vCYkAXO7uxI4V5ymisz7nDLSPObgMhFZCYcMfx",
+            "duration": 3,
+            "importance": "5",
+            "movement": "P6Znd0GSbWPrQDse",
+            "movementTowards": "rgXirZIf",
+            "number": 1,
+            "operatorRemarks": "qMhZXod23fxWk6ZaQoPRuKcrFRoIyfqwS9y8rnRnscEVXhfvEGss0aoNd83ASZj8",
+            "pname": "9md8A9vo6n2itZvtWzBDDDXf2LU4tsp3",
+            "type": "3",
+          },
+          Object {
+            "camera": "2ru61zQ0ZM9fMFC0cboDOhEsumGwEXls",
+            "directorRemarks": "9tL9JU6uHfE3FwIhpeoYuNHqoDNkb6HerlRRNtJvuv2RpKWD3LgKOZFfM6hsDiOs",
+            "duration": 8,
+            "importance": "v",
+            "movement": "Ntl7vm95mndrTz6v",
+            "movementTowards": "ISDgY8Uw",
+            "number": 2,
+            "operatorRemarks": "nfsCRENAD0rLsheDVi0kzHFZz2NL71uSchihRrlXNL9B6AJe3qbduVb6TR8PQcNR",
+            "pname": "o7IVuQtjEpZG06SvmILgoHI8oyhuGaT6",
+            "type": "f",
+          },
+        ],
+        "shot": 0,
       },
     },
     "users": Object {
@@ -50,7 +132,45 @@ Object {
       "_id": "b19999999999999999999999",
       "isActive": true,
       "name": "pn1",
-      "shot": 43,
+      "program": Array [
+        Object {
+          "camera": "EkjBX7jeu8nGCCeDYkTDQyy1HWcsloe6",
+          "directorRemarks": "RYM1e19XmznYxijb5zxQBavngvoBgML9rhyUsEV7yr7sWK4XowAQncEHb4lOJ62M",
+          "duration": 2,
+          "importance": "M",
+          "movement": "CoCIdeoGEDSNhNGg",
+          "movementTowards": "ZjX9wiGE",
+          "number": 0,
+          "operatorRemarks": "ApAUB0wydr2mCltK8iwVIg6b1rx7UP6vncQrrw5xk4ziUQp6Ye3Tkyy56zKwlJ7d",
+          "pname": "xe7KJVs6vpOQz4Fi1xxR0Wc119IgsGdY",
+          "type": "3",
+        },
+        Object {
+          "camera": "6Negm31DAWJ1cKMC0FNKW8EfKb15cQtX",
+          "directorRemarks": "jzeuQlL5uRPw9Mjm8uTRuWR2T9vCYkAXO7uxI4V5ymisz7nDLSPObgMhFZCYcMfx",
+          "duration": 3,
+          "importance": "5",
+          "movement": "P6Znd0GSbWPrQDse",
+          "movementTowards": "rgXirZIf",
+          "number": 1,
+          "operatorRemarks": "qMhZXod23fxWk6ZaQoPRuKcrFRoIyfqwS9y8rnRnscEVXhfvEGss0aoNd83ASZj8",
+          "pname": "9md8A9vo6n2itZvtWzBDDDXf2LU4tsp3",
+          "type": "3",
+        },
+        Object {
+          "camera": "2ru61zQ0ZM9fMFC0cboDOhEsumGwEXls",
+          "directorRemarks": "9tL9JU6uHfE3FwIhpeoYuNHqoDNkb6HerlRRNtJvuv2RpKWD3LgKOZFfM6hsDiOs",
+          "duration": 8,
+          "importance": "v",
+          "movement": "Ntl7vm95mndrTz6v",
+          "movementTowards": "ISDgY8Uw",
+          "number": 2,
+          "operatorRemarks": "nfsCRENAD0rLsheDVi0kzHFZz2NL71uSchihRrlXNL9B6AJe3qbduVb6TR8PQcNR",
+          "pname": "o7IVuQtjEpZG06SvmILgoHI8oyhuGaT6",
+          "type": "f",
+        },
+      ],
+      "shot": 0,
     },
     "edit.undefinedb19999999999999999999999": null,
   },
@@ -60,7 +180,7 @@ Object {
 exports[` direct a test   can increase number :  project pushed by server  1`] = `
 Object {
   "createState": Object {},
-  "currentlyEditing": "",
+  "currentlyEditing": Object {},
   "fetching": Object {},
   "formsToUpdate": Array [],
   "getState": Object {
@@ -69,7 +189,45 @@ Object {
         "_id": "b19999999999999999999999",
         "isActive": true,
         "name": "pn1",
-        "shot": 42,
+        "program": Array [
+          Object {
+            "camera": "EkjBX7jeu8nGCCeDYkTDQyy1HWcsloe6",
+            "directorRemarks": "RYM1e19XmznYxijb5zxQBavngvoBgML9rhyUsEV7yr7sWK4XowAQncEHb4lOJ62M",
+            "duration": 2,
+            "importance": "M",
+            "movement": "CoCIdeoGEDSNhNGg",
+            "movementTowards": "ZjX9wiGE",
+            "number": 0,
+            "operatorRemarks": "ApAUB0wydr2mCltK8iwVIg6b1rx7UP6vncQrrw5xk4ziUQp6Ye3Tkyy56zKwlJ7d",
+            "pname": "xe7KJVs6vpOQz4Fi1xxR0Wc119IgsGdY",
+            "type": "3",
+          },
+          Object {
+            "camera": "6Negm31DAWJ1cKMC0FNKW8EfKb15cQtX",
+            "directorRemarks": "jzeuQlL5uRPw9Mjm8uTRuWR2T9vCYkAXO7uxI4V5ymisz7nDLSPObgMhFZCYcMfx",
+            "duration": 3,
+            "importance": "5",
+            "movement": "P6Znd0GSbWPrQDse",
+            "movementTowards": "rgXirZIf",
+            "number": 1,
+            "operatorRemarks": "qMhZXod23fxWk6ZaQoPRuKcrFRoIyfqwS9y8rnRnscEVXhfvEGss0aoNd83ASZj8",
+            "pname": "9md8A9vo6n2itZvtWzBDDDXf2LU4tsp3",
+            "type": "3",
+          },
+          Object {
+            "camera": "2ru61zQ0ZM9fMFC0cboDOhEsumGwEXls",
+            "directorRemarks": "9tL9JU6uHfE3FwIhpeoYuNHqoDNkb6HerlRRNtJvuv2RpKWD3LgKOZFfM6hsDiOs",
+            "duration": 8,
+            "importance": "v",
+            "movement": "Ntl7vm95mndrTz6v",
+            "movementTowards": "ISDgY8Uw",
+            "number": 2,
+            "operatorRemarks": "nfsCRENAD0rLsheDVi0kzHFZz2NL71uSchihRrlXNL9B6AJe3qbduVb6TR8PQcNR",
+            "pname": "o7IVuQtjEpZG06SvmILgoHI8oyhuGaT6",
+            "type": "f",
+          },
+        ],
+        "shot": 1,
       },
     },
     "users": Object {
@@ -87,32 +245,6 @@ Object {
 }
 `;
 
-exports[` direct a test   can increase number : After manual edits 1`] = `
-<div
-  className="DirectorEle"
->
-  {
-  "state": {
-    "_id": "b19999999999999999999999",
-    "name": "pn1",
-    "shot": 43,
-    "isActive": true
-  },
-  "loading": false,
-  "original": {
-    "_id": "b19999999999999999999999",
-    "name": "pn1",
-    "shot": 43,
-    "isActive": true
-  },
-  "user": {
-    "_id": "u1",
-    "email": "u1"
-  }
-}
-</div>
-`;
-
 exports[` direct a test   can increase number : Before manual edits 1`] = `
 <div
   className="DirectorEle"
@@ -122,12 +254,478 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
   "original": {
     "_id": "b19999999999999999999999",
     "name": "pn1",
-    "shot": 42,
-    "isActive": true
+    "shot": 1,
+    "isActive": true,
+    "program": [
+      {
+        "pname": "xe7KJVs6vpOQz4Fi1xxR0Wc119IgsGdY",
+        "movement": "CoCIdeoGEDSNhNGg",
+        "movementTowards": "ZjX9wiGE",
+        "duration": 2,
+        "importance": "M",
+        "type": "3",
+        "directorRemarks": "RYM1e19XmznYxijb5zxQBavngvoBgML9rhyUsEV7yr7sWK4XowAQncEHb4lOJ62M",
+        "operatorRemarks": "ApAUB0wydr2mCltK8iwVIg6b1rx7UP6vncQrrw5xk4ziUQp6Ye3Tkyy56zKwlJ7d",
+        "camera": "EkjBX7jeu8nGCCeDYkTDQyy1HWcsloe6",
+        "number": 0
+      },
+      {
+        "pname": "9md8A9vo6n2itZvtWzBDDDXf2LU4tsp3",
+        "movement": "P6Znd0GSbWPrQDse",
+        "movementTowards": "rgXirZIf",
+        "duration": 3,
+        "importance": "5",
+        "type": "3",
+        "directorRemarks": "jzeuQlL5uRPw9Mjm8uTRuWR2T9vCYkAXO7uxI4V5ymisz7nDLSPObgMhFZCYcMfx",
+        "operatorRemarks": "qMhZXod23fxWk6ZaQoPRuKcrFRoIyfqwS9y8rnRnscEVXhfvEGss0aoNd83ASZj8",
+        "camera": "6Negm31DAWJ1cKMC0FNKW8EfKb15cQtX",
+        "number": 1
+      },
+      {
+        "pname": "o7IVuQtjEpZG06SvmILgoHI8oyhuGaT6",
+        "movement": "Ntl7vm95mndrTz6v",
+        "movementTowards": "ISDgY8Uw",
+        "duration": 8,
+        "importance": "v",
+        "type": "f",
+        "directorRemarks": "9tL9JU6uHfE3FwIhpeoYuNHqoDNkb6HerlRRNtJvuv2RpKWD3LgKOZFfM6hsDiOs",
+        "operatorRemarks": "nfsCRENAD0rLsheDVi0kzHFZz2NL71uSchihRrlXNL9B6AJe3qbduVb6TR8PQcNR",
+        "camera": "2ru61zQ0ZM9fMFC0cboDOhEsumGwEXls",
+        "number": 2
+      }
+    ]
   },
   "user": {
     "_id": "u1",
     "email": "u1"
+  },
+  "numField": {
+    "title": "seperateShotField",
+    "type": "number"
+  }
+}
+</div>
+`;
+
+exports[` direct a test   can increase number : reduced to 0 1`] = `
+<div
+  className="DirectorEle"
+>
+  {
+  "state": {
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 0,
+    "isActive": true,
+    "program": [
+      {
+        "pname": "xe7KJVs6vpOQz4Fi1xxR0Wc119IgsGdY",
+        "movement": "CoCIdeoGEDSNhNGg",
+        "movementTowards": "ZjX9wiGE",
+        "duration": 2,
+        "importance": "M",
+        "type": "3",
+        "directorRemarks": "RYM1e19XmznYxijb5zxQBavngvoBgML9rhyUsEV7yr7sWK4XowAQncEHb4lOJ62M",
+        "operatorRemarks": "ApAUB0wydr2mCltK8iwVIg6b1rx7UP6vncQrrw5xk4ziUQp6Ye3Tkyy56zKwlJ7d",
+        "camera": "EkjBX7jeu8nGCCeDYkTDQyy1HWcsloe6",
+        "number": 0
+      },
+      {
+        "pname": "9md8A9vo6n2itZvtWzBDDDXf2LU4tsp3",
+        "movement": "P6Znd0GSbWPrQDse",
+        "movementTowards": "rgXirZIf",
+        "duration": 3,
+        "importance": "5",
+        "type": "3",
+        "directorRemarks": "jzeuQlL5uRPw9Mjm8uTRuWR2T9vCYkAXO7uxI4V5ymisz7nDLSPObgMhFZCYcMfx",
+        "operatorRemarks": "qMhZXod23fxWk6ZaQoPRuKcrFRoIyfqwS9y8rnRnscEVXhfvEGss0aoNd83ASZj8",
+        "camera": "6Negm31DAWJ1cKMC0FNKW8EfKb15cQtX",
+        "number": 1
+      },
+      {
+        "pname": "o7IVuQtjEpZG06SvmILgoHI8oyhuGaT6",
+        "movement": "Ntl7vm95mndrTz6v",
+        "movementTowards": "ISDgY8Uw",
+        "duration": 8,
+        "importance": "v",
+        "type": "f",
+        "directorRemarks": "9tL9JU6uHfE3FwIhpeoYuNHqoDNkb6HerlRRNtJvuv2RpKWD3LgKOZFfM6hsDiOs",
+        "operatorRemarks": "nfsCRENAD0rLsheDVi0kzHFZz2NL71uSchihRrlXNL9B6AJe3qbduVb6TR8PQcNR",
+        "camera": "2ru61zQ0ZM9fMFC0cboDOhEsumGwEXls",
+        "number": 2
+      }
+    ]
+  },
+  "loading": false,
+  "original": {
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 0,
+    "isActive": true,
+    "program": [
+      {
+        "pname": "xe7KJVs6vpOQz4Fi1xxR0Wc119IgsGdY",
+        "movement": "CoCIdeoGEDSNhNGg",
+        "movementTowards": "ZjX9wiGE",
+        "duration": 2,
+        "importance": "M",
+        "type": "3",
+        "directorRemarks": "RYM1e19XmznYxijb5zxQBavngvoBgML9rhyUsEV7yr7sWK4XowAQncEHb4lOJ62M",
+        "operatorRemarks": "ApAUB0wydr2mCltK8iwVIg6b1rx7UP6vncQrrw5xk4ziUQp6Ye3Tkyy56zKwlJ7d",
+        "camera": "EkjBX7jeu8nGCCeDYkTDQyy1HWcsloe6",
+        "number": 0
+      },
+      {
+        "pname": "9md8A9vo6n2itZvtWzBDDDXf2LU4tsp3",
+        "movement": "P6Znd0GSbWPrQDse",
+        "movementTowards": "rgXirZIf",
+        "duration": 3,
+        "importance": "5",
+        "type": "3",
+        "directorRemarks": "jzeuQlL5uRPw9Mjm8uTRuWR2T9vCYkAXO7uxI4V5ymisz7nDLSPObgMhFZCYcMfx",
+        "operatorRemarks": "qMhZXod23fxWk6ZaQoPRuKcrFRoIyfqwS9y8rnRnscEVXhfvEGss0aoNd83ASZj8",
+        "camera": "6Negm31DAWJ1cKMC0FNKW8EfKb15cQtX",
+        "number": 1
+      },
+      {
+        "pname": "o7IVuQtjEpZG06SvmILgoHI8oyhuGaT6",
+        "movement": "Ntl7vm95mndrTz6v",
+        "movementTowards": "ISDgY8Uw",
+        "duration": 8,
+        "importance": "v",
+        "type": "f",
+        "directorRemarks": "9tL9JU6uHfE3FwIhpeoYuNHqoDNkb6HerlRRNtJvuv2RpKWD3LgKOZFfM6hsDiOs",
+        "operatorRemarks": "nfsCRENAD0rLsheDVi0kzHFZz2NL71uSchihRrlXNL9B6AJe3qbduVb6TR8PQcNR",
+        "camera": "2ru61zQ0ZM9fMFC0cboDOhEsumGwEXls",
+        "number": 2
+      }
+    ]
+  },
+  "user": {
+    "_id": "u1",
+    "email": "u1"
+  },
+  "numField": {
+    "title": "seperateShotField",
+    "type": "number"
+  }
+}
+</div>
+`;
+
+exports[` direct a test   can increase number : reduced to 1 1`] = `
+<div
+  className="DirectorEle"
+>
+  {
+  "state": {
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 1,
+    "isActive": true,
+    "program": [
+      {
+        "pname": "xe7KJVs6vpOQz4Fi1xxR0Wc119IgsGdY",
+        "movement": "CoCIdeoGEDSNhNGg",
+        "movementTowards": "ZjX9wiGE",
+        "duration": 2,
+        "importance": "M",
+        "type": "3",
+        "directorRemarks": "RYM1e19XmznYxijb5zxQBavngvoBgML9rhyUsEV7yr7sWK4XowAQncEHb4lOJ62M",
+        "operatorRemarks": "ApAUB0wydr2mCltK8iwVIg6b1rx7UP6vncQrrw5xk4ziUQp6Ye3Tkyy56zKwlJ7d",
+        "camera": "EkjBX7jeu8nGCCeDYkTDQyy1HWcsloe6",
+        "number": 0
+      },
+      {
+        "pname": "9md8A9vo6n2itZvtWzBDDDXf2LU4tsp3",
+        "movement": "P6Znd0GSbWPrQDse",
+        "movementTowards": "rgXirZIf",
+        "duration": 3,
+        "importance": "5",
+        "type": "3",
+        "directorRemarks": "jzeuQlL5uRPw9Mjm8uTRuWR2T9vCYkAXO7uxI4V5ymisz7nDLSPObgMhFZCYcMfx",
+        "operatorRemarks": "qMhZXod23fxWk6ZaQoPRuKcrFRoIyfqwS9y8rnRnscEVXhfvEGss0aoNd83ASZj8",
+        "camera": "6Negm31DAWJ1cKMC0FNKW8EfKb15cQtX",
+        "number": 1
+      },
+      {
+        "pname": "o7IVuQtjEpZG06SvmILgoHI8oyhuGaT6",
+        "movement": "Ntl7vm95mndrTz6v",
+        "movementTowards": "ISDgY8Uw",
+        "duration": 8,
+        "importance": "v",
+        "type": "f",
+        "directorRemarks": "9tL9JU6uHfE3FwIhpeoYuNHqoDNkb6HerlRRNtJvuv2RpKWD3LgKOZFfM6hsDiOs",
+        "operatorRemarks": "nfsCRENAD0rLsheDVi0kzHFZz2NL71uSchihRrlXNL9B6AJe3qbduVb6TR8PQcNR",
+        "camera": "2ru61zQ0ZM9fMFC0cboDOhEsumGwEXls",
+        "number": 2
+      }
+    ]
+  },
+  "loading": false,
+  "original": {
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 1,
+    "isActive": true,
+    "program": [
+      {
+        "pname": "xe7KJVs6vpOQz4Fi1xxR0Wc119IgsGdY",
+        "movement": "CoCIdeoGEDSNhNGg",
+        "movementTowards": "ZjX9wiGE",
+        "duration": 2,
+        "importance": "M",
+        "type": "3",
+        "directorRemarks": "RYM1e19XmznYxijb5zxQBavngvoBgML9rhyUsEV7yr7sWK4XowAQncEHb4lOJ62M",
+        "operatorRemarks": "ApAUB0wydr2mCltK8iwVIg6b1rx7UP6vncQrrw5xk4ziUQp6Ye3Tkyy56zKwlJ7d",
+        "camera": "EkjBX7jeu8nGCCeDYkTDQyy1HWcsloe6",
+        "number": 0
+      },
+      {
+        "pname": "9md8A9vo6n2itZvtWzBDDDXf2LU4tsp3",
+        "movement": "P6Znd0GSbWPrQDse",
+        "movementTowards": "rgXirZIf",
+        "duration": 3,
+        "importance": "5",
+        "type": "3",
+        "directorRemarks": "jzeuQlL5uRPw9Mjm8uTRuWR2T9vCYkAXO7uxI4V5ymisz7nDLSPObgMhFZCYcMfx",
+        "operatorRemarks": "qMhZXod23fxWk6ZaQoPRuKcrFRoIyfqwS9y8rnRnscEVXhfvEGss0aoNd83ASZj8",
+        "camera": "6Negm31DAWJ1cKMC0FNKW8EfKb15cQtX",
+        "number": 1
+      },
+      {
+        "pname": "o7IVuQtjEpZG06SvmILgoHI8oyhuGaT6",
+        "movement": "Ntl7vm95mndrTz6v",
+        "movementTowards": "ISDgY8Uw",
+        "duration": 8,
+        "importance": "v",
+        "type": "f",
+        "directorRemarks": "9tL9JU6uHfE3FwIhpeoYuNHqoDNkb6HerlRRNtJvuv2RpKWD3LgKOZFfM6hsDiOs",
+        "operatorRemarks": "nfsCRENAD0rLsheDVi0kzHFZz2NL71uSchihRrlXNL9B6AJe3qbduVb6TR8PQcNR",
+        "camera": "2ru61zQ0ZM9fMFC0cboDOhEsumGwEXls",
+        "number": 2
+      }
+    ]
+  },
+  "user": {
+    "_id": "u1",
+    "email": "u1"
+  },
+  "numField": {
+    "title": "seperateShotField",
+    "type": "number"
+  }
+}
+</div>
+`;
+
+exports[` direct a test   can increase number : regardless of many increases the max stays at 2 1`] = `
+<div
+  className="DirectorEle"
+>
+  {
+  "state": {
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 2,
+    "isActive": true,
+    "program": [
+      {
+        "pname": "xe7KJVs6vpOQz4Fi1xxR0Wc119IgsGdY",
+        "movement": "CoCIdeoGEDSNhNGg",
+        "movementTowards": "ZjX9wiGE",
+        "duration": 2,
+        "importance": "M",
+        "type": "3",
+        "directorRemarks": "RYM1e19XmznYxijb5zxQBavngvoBgML9rhyUsEV7yr7sWK4XowAQncEHb4lOJ62M",
+        "operatorRemarks": "ApAUB0wydr2mCltK8iwVIg6b1rx7UP6vncQrrw5xk4ziUQp6Ye3Tkyy56zKwlJ7d",
+        "camera": "EkjBX7jeu8nGCCeDYkTDQyy1HWcsloe6",
+        "number": 0
+      },
+      {
+        "pname": "9md8A9vo6n2itZvtWzBDDDXf2LU4tsp3",
+        "movement": "P6Znd0GSbWPrQDse",
+        "movementTowards": "rgXirZIf",
+        "duration": 3,
+        "importance": "5",
+        "type": "3",
+        "directorRemarks": "jzeuQlL5uRPw9Mjm8uTRuWR2T9vCYkAXO7uxI4V5ymisz7nDLSPObgMhFZCYcMfx",
+        "operatorRemarks": "qMhZXod23fxWk6ZaQoPRuKcrFRoIyfqwS9y8rnRnscEVXhfvEGss0aoNd83ASZj8",
+        "camera": "6Negm31DAWJ1cKMC0FNKW8EfKb15cQtX",
+        "number": 1
+      },
+      {
+        "pname": "o7IVuQtjEpZG06SvmILgoHI8oyhuGaT6",
+        "movement": "Ntl7vm95mndrTz6v",
+        "movementTowards": "ISDgY8Uw",
+        "duration": 8,
+        "importance": "v",
+        "type": "f",
+        "directorRemarks": "9tL9JU6uHfE3FwIhpeoYuNHqoDNkb6HerlRRNtJvuv2RpKWD3LgKOZFfM6hsDiOs",
+        "operatorRemarks": "nfsCRENAD0rLsheDVi0kzHFZz2NL71uSchihRrlXNL9B6AJe3qbduVb6TR8PQcNR",
+        "camera": "2ru61zQ0ZM9fMFC0cboDOhEsumGwEXls",
+        "number": 2
+      }
+    ]
+  },
+  "loading": false,
+  "original": {
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 2,
+    "isActive": true,
+    "program": [
+      {
+        "pname": "xe7KJVs6vpOQz4Fi1xxR0Wc119IgsGdY",
+        "movement": "CoCIdeoGEDSNhNGg",
+        "movementTowards": "ZjX9wiGE",
+        "duration": 2,
+        "importance": "M",
+        "type": "3",
+        "directorRemarks": "RYM1e19XmznYxijb5zxQBavngvoBgML9rhyUsEV7yr7sWK4XowAQncEHb4lOJ62M",
+        "operatorRemarks": "ApAUB0wydr2mCltK8iwVIg6b1rx7UP6vncQrrw5xk4ziUQp6Ye3Tkyy56zKwlJ7d",
+        "camera": "EkjBX7jeu8nGCCeDYkTDQyy1HWcsloe6",
+        "number": 0
+      },
+      {
+        "pname": "9md8A9vo6n2itZvtWzBDDDXf2LU4tsp3",
+        "movement": "P6Znd0GSbWPrQDse",
+        "movementTowards": "rgXirZIf",
+        "duration": 3,
+        "importance": "5",
+        "type": "3",
+        "directorRemarks": "jzeuQlL5uRPw9Mjm8uTRuWR2T9vCYkAXO7uxI4V5ymisz7nDLSPObgMhFZCYcMfx",
+        "operatorRemarks": "qMhZXod23fxWk6ZaQoPRuKcrFRoIyfqwS9y8rnRnscEVXhfvEGss0aoNd83ASZj8",
+        "camera": "6Negm31DAWJ1cKMC0FNKW8EfKb15cQtX",
+        "number": 1
+      },
+      {
+        "pname": "o7IVuQtjEpZG06SvmILgoHI8oyhuGaT6",
+        "movement": "Ntl7vm95mndrTz6v",
+        "movementTowards": "ISDgY8Uw",
+        "duration": 8,
+        "importance": "v",
+        "type": "f",
+        "directorRemarks": "9tL9JU6uHfE3FwIhpeoYuNHqoDNkb6HerlRRNtJvuv2RpKWD3LgKOZFfM6hsDiOs",
+        "operatorRemarks": "nfsCRENAD0rLsheDVi0kzHFZz2NL71uSchihRrlXNL9B6AJe3qbduVb6TR8PQcNR",
+        "camera": "2ru61zQ0ZM9fMFC0cboDOhEsumGwEXls",
+        "number": 2
+      }
+    ]
+  },
+  "user": {
+    "_id": "u1",
+    "email": "u1"
+  },
+  "numField": {
+    "title": "seperateShotField",
+    "type": "number"
+  }
+}
+</div>
+`;
+
+exports[` direct a test   can increase number : stays at 0 because thats minimum 1`] = `
+<div
+  className="DirectorEle"
+>
+  {
+  "state": {
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 0,
+    "isActive": true,
+    "program": [
+      {
+        "pname": "xe7KJVs6vpOQz4Fi1xxR0Wc119IgsGdY",
+        "movement": "CoCIdeoGEDSNhNGg",
+        "movementTowards": "ZjX9wiGE",
+        "duration": 2,
+        "importance": "M",
+        "type": "3",
+        "directorRemarks": "RYM1e19XmznYxijb5zxQBavngvoBgML9rhyUsEV7yr7sWK4XowAQncEHb4lOJ62M",
+        "operatorRemarks": "ApAUB0wydr2mCltK8iwVIg6b1rx7UP6vncQrrw5xk4ziUQp6Ye3Tkyy56zKwlJ7d",
+        "camera": "EkjBX7jeu8nGCCeDYkTDQyy1HWcsloe6",
+        "number": 0
+      },
+      {
+        "pname": "9md8A9vo6n2itZvtWzBDDDXf2LU4tsp3",
+        "movement": "P6Znd0GSbWPrQDse",
+        "movementTowards": "rgXirZIf",
+        "duration": 3,
+        "importance": "5",
+        "type": "3",
+        "directorRemarks": "jzeuQlL5uRPw9Mjm8uTRuWR2T9vCYkAXO7uxI4V5ymisz7nDLSPObgMhFZCYcMfx",
+        "operatorRemarks": "qMhZXod23fxWk6ZaQoPRuKcrFRoIyfqwS9y8rnRnscEVXhfvEGss0aoNd83ASZj8",
+        "camera": "6Negm31DAWJ1cKMC0FNKW8EfKb15cQtX",
+        "number": 1
+      },
+      {
+        "pname": "o7IVuQtjEpZG06SvmILgoHI8oyhuGaT6",
+        "movement": "Ntl7vm95mndrTz6v",
+        "movementTowards": "ISDgY8Uw",
+        "duration": 8,
+        "importance": "v",
+        "type": "f",
+        "directorRemarks": "9tL9JU6uHfE3FwIhpeoYuNHqoDNkb6HerlRRNtJvuv2RpKWD3LgKOZFfM6hsDiOs",
+        "operatorRemarks": "nfsCRENAD0rLsheDVi0kzHFZz2NL71uSchihRrlXNL9B6AJe3qbduVb6TR8PQcNR",
+        "camera": "2ru61zQ0ZM9fMFC0cboDOhEsumGwEXls",
+        "number": 2
+      }
+    ]
+  },
+  "loading": false,
+  "original": {
+    "_id": "b19999999999999999999999",
+    "name": "pn1",
+    "shot": 0,
+    "isActive": true,
+    "program": [
+      {
+        "pname": "xe7KJVs6vpOQz4Fi1xxR0Wc119IgsGdY",
+        "movement": "CoCIdeoGEDSNhNGg",
+        "movementTowards": "ZjX9wiGE",
+        "duration": 2,
+        "importance": "M",
+        "type": "3",
+        "directorRemarks": "RYM1e19XmznYxijb5zxQBavngvoBgML9rhyUsEV7yr7sWK4XowAQncEHb4lOJ62M",
+        "operatorRemarks": "ApAUB0wydr2mCltK8iwVIg6b1rx7UP6vncQrrw5xk4ziUQp6Ye3Tkyy56zKwlJ7d",
+        "camera": "EkjBX7jeu8nGCCeDYkTDQyy1HWcsloe6",
+        "number": 0
+      },
+      {
+        "pname": "9md8A9vo6n2itZvtWzBDDDXf2LU4tsp3",
+        "movement": "P6Znd0GSbWPrQDse",
+        "movementTowards": "rgXirZIf",
+        "duration": 3,
+        "importance": "5",
+        "type": "3",
+        "directorRemarks": "jzeuQlL5uRPw9Mjm8uTRuWR2T9vCYkAXO7uxI4V5ymisz7nDLSPObgMhFZCYcMfx",
+        "operatorRemarks": "qMhZXod23fxWk6ZaQoPRuKcrFRoIyfqwS9y8rnRnscEVXhfvEGss0aoNd83ASZj8",
+        "camera": "6Negm31DAWJ1cKMC0FNKW8EfKb15cQtX",
+        "number": 1
+      },
+      {
+        "pname": "o7IVuQtjEpZG06SvmILgoHI8oyhuGaT6",
+        "movement": "Ntl7vm95mndrTz6v",
+        "movementTowards": "ISDgY8Uw",
+        "duration": 8,
+        "importance": "v",
+        "type": "f",
+        "directorRemarks": "9tL9JU6uHfE3FwIhpeoYuNHqoDNkb6HerlRRNtJvuv2RpKWD3LgKOZFfM6hsDiOs",
+        "operatorRemarks": "nfsCRENAD0rLsheDVi0kzHFZz2NL71uSchihRrlXNL9B6AJe3qbduVb6TR8PQcNR",
+        "camera": "2ru61zQ0ZM9fMFC0cboDOhEsumGwEXls",
+        "number": 2
+      }
+    ]
+  },
+  "user": {
+    "_id": "u1",
+    "email": "u1"
+  },
+  "numField": {
+    "title": "seperateShotField",
+    "type": "number"
   }
 }
 </div>

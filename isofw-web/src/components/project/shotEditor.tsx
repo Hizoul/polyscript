@@ -16,7 +16,6 @@ import WebCameraDisabler from "./cameraDisabler"
 import "./style.sass"
 
 const ShotEditor = observer((props: DirectorProps) => {
-  console.log("PREFIX IS", props.prefix)
   const directorProps: any = useDirector(props.id)
   return (
     <div className="flex1 column">

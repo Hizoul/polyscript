@@ -10,6 +10,11 @@ exports[` camera mapping test  works as planned:  after Closing pop up  1`] = `
     "c2bbbbbbbbbbbbbbbbbbbbbb",
     "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
+  "operators": {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": [],
+    "c2bbbbbbbbbbbbbbbbbbbbbb": [],
+    "c3bbbbbbbbbbbbbbbbbbbbbb": []
+  },
   "value": "c2bbbbbbbbbbbbbbbbbbbbbb",
   "showPopUp": false
 }
@@ -26,6 +31,11 @@ exports[` camera mapping test  works as planned:  after Fetching cameras  1`] = 
     "c2bbbbbbbbbbbbbbbbbbbbbb",
     "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
+  "operators": {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": [],
+    "c2bbbbbbbbbbbbbbbbbbbbbb": [],
+    "c3bbbbbbbbbbbbbbbbbbbbbb": []
+  },
   "value": "c2bbbbbbbbbbbbbbbbbbbbbb",
   "showPopUp": false
 }
@@ -42,6 +52,11 @@ exports[` camera mapping test  works as planned:  after Opening pop up  1`] = `
     "c2bbbbbbbbbbbbbbbbbbbbbb",
     "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
+  "operators": {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": [],
+    "c2bbbbbbbbbbbbbbbbbbbbbb": [],
+    "c3bbbbbbbbbbbbbbbbbbbbbb": []
+  },
   "value": "c2bbbbbbbbbbbbbbbbbbbbbb",
   "showPopUp": true
 }
@@ -58,6 +73,11 @@ exports[` camera mapping test  works as planned:  after Setting Camera  1`] = `
     "c2bbbbbbbbbbbbbbbbbbbbbb",
     "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
+  "operators": {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": [],
+    "c2bbbbbbbbbbbbbbbbbbbbbb": [],
+    "c3bbbbbbbbbbbbbbbbbbbbbb": []
+  },
   "value": "c2bbbbbbbbbbbbbbbbbbbbbb",
   "showPopUp": false
 }
@@ -74,6 +94,11 @@ exports[` camera mapping test  works as planned:  after preparing cameras  1`] =
     "c2bbbbbbbbbbbbbbbbbbbbbb",
     "c3bbbbbbbbbbbbbbbbbbbbbb"
   ],
+  "operators": {
+    "c1bbbbbbbbbbbbbbbbbbbbbb": [],
+    "c2bbbbbbbbbbbbbbbbbbbbbb": [],
+    "c3bbbbbbbbbbbbbbbbbbbbbb": []
+  },
   "showPopUp": false
 }
 </div>
@@ -85,6 +110,7 @@ exports[` camera mapping test  works as planned: Before anything 1`] = `
 >
   {
   "cameras": [],
+  "operators": {},
   "showPopUp": false
 }
 </div>

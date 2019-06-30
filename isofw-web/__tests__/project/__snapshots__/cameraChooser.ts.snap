@@ -2,42 +2,39 @@
 
 exports[` camera mapping test  works as planned:  after Closing pop up  1`] = `
 Array [
-  <div
-    className="ListItem"
+  <li
+    className="flex verticalCenter"
+    onClick={[Function]}
+    style={
+      Object {
+        "maxWidth": 130,
+        "width": 130,
+      }
+    }
   >
-    {}
     <div
-      slot="title"
+      className="Icon"
     >
-      Camera: 
-      <span>
-        Camera#2
-      </span>
-    </div>
-    <div
-      slot="inner"
-    >
-      <div
-        className="Icon"
-      >
-        {
+      {
   "fa": "camera"
 }
-      </div>
     </div>
-  </div>,
+    <span>
+      Camera#2
+    </span>
+  </li>,
   <div
     className="Popup"
   >
     {
-  "opened": false
+  "opened": false,
+  "animate": false
 }
     <div
       className="BlockTitle"
     >
       {}
-      Choose a camera 
-      camera
+      Choose a camera
     </div>
     <div
       className="List"
@@ -53,6 +50,7 @@ Array [
           <span>
             Camera#1
           </span>
+           - 
         </div>
         <div
           slot="inner"
@@ -76,6 +74,7 @@ Array [
           <span>
             Camera#2
           </span>
+           - 
         </div>
         <div
           slot="inner"
@@ -99,6 +98,7 @@ Array [
           <span>
             Camera#3
           </span>
+           - 
         </div>
         <div
           slot="inner"
@@ -119,42 +119,39 @@ Array [
 
 exports[` camera mapping test  works as planned:  after Fetching cameras  1`] = `
 Array [
-  <div
-    className="ListItem"
+  <li
+    className="flex verticalCenter"
+    onClick={[Function]}
+    style={
+      Object {
+        "maxWidth": 130,
+        "width": 130,
+      }
+    }
   >
-    {}
     <div
-      slot="title"
+      className="Icon"
     >
-      Camera: 
-      <span>
-        Camera#2
-      </span>
-    </div>
-    <div
-      slot="inner"
-    >
-      <div
-        className="Icon"
-      >
-        {
+      {
   "fa": "camera"
 }
-      </div>
     </div>
-  </div>,
+    <span>
+      Camera#2
+    </span>
+  </li>,
   <div
     className="Popup"
   >
     {
-  "opened": false
+  "opened": false,
+  "animate": false
 }
     <div
       className="BlockTitle"
     >
       {}
-      Choose a camera 
-      camera
+      Choose a camera
     </div>
     <div
       className="List"
@@ -170,6 +167,7 @@ Array [
           <span>
             Camera#1
           </span>
+           - 
         </div>
         <div
           slot="inner"
@@ -193,6 +191,7 @@ Array [
           <span>
             Camera#2
           </span>
+           - 
         </div>
         <div
           slot="inner"
@@ -216,6 +215,7 @@ Array [
           <span>
             Camera#3
           </span>
+           - 
         </div>
         <div
           slot="inner"
@@ -236,42 +236,39 @@ Array [
 
 exports[` camera mapping test  works as planned:  after Opening pop up  1`] = `
 Array [
-  <div
-    className="ListItem"
+  <li
+    className="flex verticalCenter"
+    onClick={[Function]}
+    style={
+      Object {
+        "maxWidth": 130,
+        "width": 130,
+      }
+    }
   >
-    {}
     <div
-      slot="title"
+      className="Icon"
     >
-      Camera: 
-      <span>
-        Camera#2
-      </span>
-    </div>
-    <div
-      slot="inner"
-    >
-      <div
-        className="Icon"
-      >
-        {
+      {
   "fa": "camera"
 }
-      </div>
     </div>
-  </div>,
+    <span>
+      Camera#2
+    </span>
+  </li>,
   <div
     className="Popup"
   >
     {
-  "opened": true
+  "opened": true,
+  "animate": false
 }
     <div
       className="BlockTitle"
     >
       {}
-      Choose a camera 
-      camera
+      Choose a camera
     </div>
     <div
       className="List"
@@ -287,6 +284,7 @@ Array [
           <span>
             Camera#1
           </span>
+           - 
         </div>
         <div
           slot="inner"
@@ -310,6 +308,7 @@ Array [
           <span>
             Camera#2
           </span>
+           - 
         </div>
         <div
           slot="inner"
@@ -333,6 +332,7 @@ Array [
           <span>
             Camera#3
           </span>
+           - 
         </div>
         <div
           slot="inner"
@@ -353,42 +353,39 @@ Array [
 
 exports[` camera mapping test  works as planned:  after Setting Camera  1`] = `
 Array [
-  <div
-    className="ListItem"
+  <li
+    className="flex verticalCenter"
+    onClick={[Function]}
+    style={
+      Object {
+        "maxWidth": 130,
+        "width": 130,
+      }
+    }
   >
-    {}
     <div
-      slot="title"
+      className="Icon"
     >
-      Camera: 
-      <span>
-        not yet selected
-      </span>
-    </div>
-    <div
-      slot="inner"
-    >
-      <div
-        className="Icon"
-      >
-        {
+      {
   "fa": "camera"
 }
-      </div>
     </div>
-  </div>,
+    <span>
+      Select Camera
+    </span>
+  </li>,
   <div
     className="Popup"
   >
     {
-  "opened": false
+  "opened": false,
+  "animate": false
 }
     <div
       className="BlockTitle"
     >
       {}
-      Choose a camera 
-      camera
+      Choose a camera
     </div>
     <div
       className="List"
@@ -402,6 +399,7 @@ Array [
           slot="title"
         >
           <span />
+           - 
         </div>
         <div
           slot="inner"
@@ -423,6 +421,7 @@ Array [
           slot="title"
         >
           <span />
+           - 
         </div>
         <div
           slot="inner"
@@ -444,6 +443,7 @@ Array [
           slot="title"
         >
           <span />
+           - 
         </div>
         <div
           slot="inner"
@@ -464,42 +464,39 @@ Array [
 
 exports[` camera mapping test  works as planned:  after preparing cameras  1`] = `
 Array [
-  <div
-    className="ListItem"
+  <li
+    className="flex verticalCenter"
+    onClick={[Function]}
+    style={
+      Object {
+        "maxWidth": 130,
+        "width": 130,
+      }
+    }
   >
-    {}
     <div
-      slot="title"
+      className="Icon"
     >
-      Camera: 
-      <span>
-        not yet selected
-      </span>
-    </div>
-    <div
-      slot="inner"
-    >
-      <div
-        className="Icon"
-      >
-        {
+      {
   "fa": "camera"
 }
-      </div>
     </div>
-  </div>,
+    <span>
+      Select Camera
+    </span>
+  </li>,
   <div
     className="Popup"
   >
     {
-  "opened": false
+  "opened": false,
+  "animate": false
 }
     <div
       className="BlockTitle"
     >
       {}
-      Choose a camera 
-      camera
+      Choose a camera
     </div>
     <div
       className="List"
@@ -513,6 +510,7 @@ Array [
           slot="title"
         >
           <span />
+           - 
         </div>
         <div
           slot="inner"
@@ -534,6 +532,7 @@ Array [
           slot="title"
         >
           <span />
+           - 
         </div>
         <div
           slot="inner"
@@ -555,6 +554,7 @@ Array [
           slot="title"
         >
           <span />
+           - 
         </div>
         <div
           slot="inner"
@@ -575,42 +575,39 @@ Array [
 
 exports[` camera mapping test  works as planned: Before anything 1`] = `
 Array [
-  <div
-    className="ListItem"
+  <li
+    className="flex verticalCenter"
+    onClick={[Function]}
+    style={
+      Object {
+        "maxWidth": 130,
+        "width": 130,
+      }
+    }
   >
-    {}
     <div
-      slot="title"
+      className="Icon"
     >
-      Camera: 
-      <span>
-        not yet selected
-      </span>
-    </div>
-    <div
-      slot="inner"
-    >
-      <div
-        className="Icon"
-      >
-        {
+      {
   "fa": "camera"
 }
-      </div>
     </div>
-  </div>,
+    <span>
+      Select Camera
+    </span>
+  </li>,
   <div
     className="Popup"
   >
     {
-  "opened": false
+  "opened": false,
+  "animate": false
 }
     <div
       className="BlockTitle"
     >
       {}
-      Choose a camera 
-      camera
+      Choose a camera
     </div>
     <div
       className="List"

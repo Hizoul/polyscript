@@ -1,6 +1,7 @@
+import console = require("console")
 import { DbStore, toJS, useEdit } from "isofw-shared/src/util/xpfwdata"
 import { FormStore, memo, prependPrefix, useField } from "isofw-shared/src/util/xpfwform"
-import { ProjectForm, ProjectShot, ProjectProgram } from "isofw-shared/src/xpfwDefs/project"
+import { ProjectForm, ProjectProgram, ProjectShot } from "isofw-shared/src/xpfwDefs/project"
 
 const directorPrefix = "edit"
 const customNumberField = "seperateShotField"
@@ -10,7 +11,9 @@ const increaseShotNumber = (id: string, decrease?: boolean) => {
     return async () => {
       const valueHelper = useField(String(ProjectShot.title), prependPrefix(ProjectForm.title, directorPrefix))
       const programSize = FormStore.getValue(ProjectProgram.title, prependPrefix(ProjectForm.title, directorPrefix), [])
-      valueHelper.setValue(Math.min(programSize.length - 1, Math.max(0, valueHelper.value + (decrease ? -1 : 1))))
+      // 0 < newval < programSize.lenth - 1
+      const newValue = valueHelper.value + (decrease ? -1 : 1)
+      valueHelper.setValue(Math.max(0, Math.min(newValue, Math.max(0, programSize.length - 1))))
       const res = await DbStore.patch(id, ProjectForm, undefined, directorPrefix)
       return res
     }
