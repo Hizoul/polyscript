@@ -31,7 +31,7 @@ exports[` direct a test   can increase number :  info pushed by Server  1`] = `
         
       </span>
       <br />
-      cv5ORQke7w6T4WTKKwBrA436dhyMSeFE
+      t72crIQICSbjsxwMpgbdcaUTJfQghobI
     </div>
   </div>
   <div
@@ -134,40 +134,40 @@ Object {
         "name": "pn1",
         "program": Array [
           Object {
-            "camera": "VTEn12w1YXTkgY184rRQMjus2WKlrg5s",
-            "directorRemarks": "03GbvfcKYTRNQgYUpIwTe6s0dYc9h0y7kyb9ZKE5cxvWZU9mnyjFtQWxJjxQQq1R",
-            "duration": 2,
-            "importance": "8",
-            "movement": "q85eQrCgnUkkgaMn",
-            "movementTowards": "7rkww949",
-            "number": 0,
-            "operatorRemarks": "Wx5AlJMLT4ohkFMjdnRnwv8R1ozRGQFmBLxEuitPL8wmx9y6JBtHB7fJzOOkF0U4",
-            "pname": "RAAOUh6Udwzimhlv9WbMO03pwHhdLKKi",
-            "type": "2",
-          },
-          Object {
-            "camera": "2CXuIeoVSwo5uUwfaTMuF8YFwS4VWnnN",
-            "directorRemarks": "MGqIpQxcPYSOneTl49O58shIWv7vMrRw3kb3I6Z07tdWepveBXYeWJwoNASoUma8",
-            "duration": 5,
-            "importance": "m",
-            "movement": "GU5doORkEr6rCcAQ",
-            "movementTowards": "GUfGDwIc",
-            "number": 1,
-            "operatorRemarks": "mqsS8mhMLJr7aUO9j6LpBYezr8OU51vqub7pAUBpb3LSuo0Wpq5tb5YZClltUbat",
-            "pname": "cv5ORQke7w6T4WTKKwBrA436dhyMSeFE",
-            "type": "7",
-          },
-          Object {
-            "camera": "BThBtlqWTUUiZzdsfu1yUz47bxcfWCNW",
-            "directorRemarks": "sYtF9gUHH4OeUNEyNdt5yGOpdsSTCFlPoPemglxPbvj5AIJnaNiG9aezUDmOiAde",
+            "camera": "h9e10uDEKfpv9ynz0lVb2qV6mU0JWBFo",
+            "directorRemarks": "IGAWdl3Es5RrLgyH9i4ajUkUtSb0r93ahSGrTw4FdyI8LrrNZKoUMm2UxYI1WAtn",
             "duration": 8,
-            "importance": "j",
-            "movement": "GCFRzT8wBg8IcHNb",
-            "movementTowards": "5aZIpGgl",
+            "importance": "a",
+            "movement": "eyTbCDikPoMSt1fM",
+            "movementTowards": "RSEoqq5F",
+            "number": 0,
+            "operatorRemarks": "24MleLCrrSRUBN9j9KKiSYaZqYU3UelhkOUSTpNKrTHTCjMdXs4ybJ1g03bJmyMY",
+            "pname": "lb0pKgQm1dP2uTMfqlAdzDkBQDLwgBK0",
+            "type": "6",
+          },
+          Object {
+            "camera": "ipMvOIoliM5guD7jRCUsvP1cLnfL0FI9",
+            "directorRemarks": "ppi8BYURzhM67Qg15qjyTeuiqih79vTnp1X2T2ZVhzm1qJR7eRnvtsL03hdEe3pa",
+            "duration": 1,
+            "importance": "D",
+            "movement": "AJ6E1afGyDWOriF7",
+            "movementTowards": "uoxixgKE",
+            "number": 1,
+            "operatorRemarks": "bmsgCKGHXzzqFCQrQ1m43VGmOdRQsgekGwq4HDCVOO9k0VoBtxXMwfIFva1xe6KJ",
+            "pname": "t72crIQICSbjsxwMpgbdcaUTJfQghobI",
+            "type": "Q",
+          },
+          Object {
+            "camera": "f8Bol9P7N6SfYNR6mTfWbKj3oh3k0bnc",
+            "directorRemarks": "6zdA4Dfeqil0p987y7yJF9Ce2qwU0c5oPJXsDIOmXn8ZxtAq2Pk3cX0nTcg9KkEn",
+            "duration": 1,
+            "importance": "s",
+            "movement": "idfdbjBrAqLWs5Rm",
+            "movementTowards": "3cCjebdu",
             "number": 2,
-            "operatorRemarks": "VbzCkF2eEXiZIXHwZlGQEGKl0LbmXiKBbRqguKyIzhPCntarIY8GK1ZQNVuWkevz",
-            "pname": "dHC7zUrapYwtc3G7BgKsfkNW0NVA74kX",
-            "type": "V",
+            "operatorRemarks": "xakzYkK8Lqrjhn3vADF4ACgDunAZzVMuoDmk0jZkZkMIrtR56akUp83qV4f4OJT8",
+            "pname": "NdfmepJ8zVMgvbePeC1WaPfCpE3voyDk",
+            "type": "k",
           },
         ],
         "shot": 0,
@@ -181,10 +181,10 @@ Object {
     },
   },
   "lastFetch": Object {
-    "2CXuIeoVSwo5uUwfaTMuF8YFwS4VWnnN": -2077750800000,
-    "BThBtlqWTUUiZzdsfu1yUz47bxcfWCNW": -2077750800000,
-    "VTEn12w1YXTkgY184rRQMjus2WKlrg5s": -2077750800000,
     "b19999999999999999999999": -2077750800000,
+    "f8Bol9P7N6SfYNR6mTfWbKj3oh3k0bnc": -2077750800000,
+    "h9e10uDEKfpv9ynz0lVb2qV6mU0JWBFo": -2077750800000,
+    "ipMvOIoliM5guD7jRCUsvP1cLnfL0FI9": -2077750800000,
   },
   "removeState": Object {},
   "updateState": Object {
@@ -194,40 +194,40 @@ Object {
       "name": "pn1",
       "program": Array [
         Object {
-          "camera": "VTEn12w1YXTkgY184rRQMjus2WKlrg5s",
-          "directorRemarks": "03GbvfcKYTRNQgYUpIwTe6s0dYc9h0y7kyb9ZKE5cxvWZU9mnyjFtQWxJjxQQq1R",
-          "duration": 2,
-          "importance": "8",
-          "movement": "q85eQrCgnUkkgaMn",
-          "movementTowards": "7rkww949",
-          "number": 0,
-          "operatorRemarks": "Wx5AlJMLT4ohkFMjdnRnwv8R1ozRGQFmBLxEuitPL8wmx9y6JBtHB7fJzOOkF0U4",
-          "pname": "RAAOUh6Udwzimhlv9WbMO03pwHhdLKKi",
-          "type": "2",
-        },
-        Object {
-          "camera": "2CXuIeoVSwo5uUwfaTMuF8YFwS4VWnnN",
-          "directorRemarks": "MGqIpQxcPYSOneTl49O58shIWv7vMrRw3kb3I6Z07tdWepveBXYeWJwoNASoUma8",
-          "duration": 5,
-          "importance": "m",
-          "movement": "GU5doORkEr6rCcAQ",
-          "movementTowards": "GUfGDwIc",
-          "number": 1,
-          "operatorRemarks": "mqsS8mhMLJr7aUO9j6LpBYezr8OU51vqub7pAUBpb3LSuo0Wpq5tb5YZClltUbat",
-          "pname": "cv5ORQke7w6T4WTKKwBrA436dhyMSeFE",
-          "type": "7",
-        },
-        Object {
-          "camera": "BThBtlqWTUUiZzdsfu1yUz47bxcfWCNW",
-          "directorRemarks": "sYtF9gUHH4OeUNEyNdt5yGOpdsSTCFlPoPemglxPbvj5AIJnaNiG9aezUDmOiAde",
+          "camera": "h9e10uDEKfpv9ynz0lVb2qV6mU0JWBFo",
+          "directorRemarks": "IGAWdl3Es5RrLgyH9i4ajUkUtSb0r93ahSGrTw4FdyI8LrrNZKoUMm2UxYI1WAtn",
           "duration": 8,
-          "importance": "j",
-          "movement": "GCFRzT8wBg8IcHNb",
-          "movementTowards": "5aZIpGgl",
+          "importance": "a",
+          "movement": "eyTbCDikPoMSt1fM",
+          "movementTowards": "RSEoqq5F",
+          "number": 0,
+          "operatorRemarks": "24MleLCrrSRUBN9j9KKiSYaZqYU3UelhkOUSTpNKrTHTCjMdXs4ybJ1g03bJmyMY",
+          "pname": "lb0pKgQm1dP2uTMfqlAdzDkBQDLwgBK0",
+          "type": "6",
+        },
+        Object {
+          "camera": "ipMvOIoliM5guD7jRCUsvP1cLnfL0FI9",
+          "directorRemarks": "ppi8BYURzhM67Qg15qjyTeuiqih79vTnp1X2T2ZVhzm1qJR7eRnvtsL03hdEe3pa",
+          "duration": 1,
+          "importance": "D",
+          "movement": "AJ6E1afGyDWOriF7",
+          "movementTowards": "uoxixgKE",
+          "number": 1,
+          "operatorRemarks": "bmsgCKGHXzzqFCQrQ1m43VGmOdRQsgekGwq4HDCVOO9k0VoBtxXMwfIFva1xe6KJ",
+          "pname": "t72crIQICSbjsxwMpgbdcaUTJfQghobI",
+          "type": "Q",
+        },
+        Object {
+          "camera": "f8Bol9P7N6SfYNR6mTfWbKj3oh3k0bnc",
+          "directorRemarks": "6zdA4Dfeqil0p987y7yJF9Ce2qwU0c5oPJXsDIOmXn8ZxtAq2Pk3cX0nTcg9KkEn",
+          "duration": 1,
+          "importance": "s",
+          "movement": "idfdbjBrAqLWs5Rm",
+          "movementTowards": "3cCjebdu",
           "number": 2,
-          "operatorRemarks": "VbzCkF2eEXiZIXHwZlGQEGKl0LbmXiKBbRqguKyIzhPCntarIY8GK1ZQNVuWkevz",
-          "pname": "dHC7zUrapYwtc3G7BgKsfkNW0NVA74kX",
-          "type": "V",
+          "operatorRemarks": "xakzYkK8Lqrjhn3vADF4ACgDunAZzVMuoDmk0jZkZkMIrtR56akUp83qV4f4OJT8",
+          "pname": "NdfmepJ8zVMgvbePeC1WaPfCpE3voyDk",
+          "type": "k",
         },
       ],
       "shot": 0,
@@ -251,40 +251,40 @@ Object {
         "name": "pn1",
         "program": Array [
           Object {
-            "camera": "VTEn12w1YXTkgY184rRQMjus2WKlrg5s",
-            "directorRemarks": "03GbvfcKYTRNQgYUpIwTe6s0dYc9h0y7kyb9ZKE5cxvWZU9mnyjFtQWxJjxQQq1R",
-            "duration": 2,
-            "importance": "8",
-            "movement": "q85eQrCgnUkkgaMn",
-            "movementTowards": "7rkww949",
-            "number": 0,
-            "operatorRemarks": "Wx5AlJMLT4ohkFMjdnRnwv8R1ozRGQFmBLxEuitPL8wmx9y6JBtHB7fJzOOkF0U4",
-            "pname": "RAAOUh6Udwzimhlv9WbMO03pwHhdLKKi",
-            "type": "2",
-          },
-          Object {
-            "camera": "2CXuIeoVSwo5uUwfaTMuF8YFwS4VWnnN",
-            "directorRemarks": "MGqIpQxcPYSOneTl49O58shIWv7vMrRw3kb3I6Z07tdWepveBXYeWJwoNASoUma8",
-            "duration": 5,
-            "importance": "m",
-            "movement": "GU5doORkEr6rCcAQ",
-            "movementTowards": "GUfGDwIc",
-            "number": 1,
-            "operatorRemarks": "mqsS8mhMLJr7aUO9j6LpBYezr8OU51vqub7pAUBpb3LSuo0Wpq5tb5YZClltUbat",
-            "pname": "cv5ORQke7w6T4WTKKwBrA436dhyMSeFE",
-            "type": "7",
-          },
-          Object {
-            "camera": "BThBtlqWTUUiZzdsfu1yUz47bxcfWCNW",
-            "directorRemarks": "sYtF9gUHH4OeUNEyNdt5yGOpdsSTCFlPoPemglxPbvj5AIJnaNiG9aezUDmOiAde",
+            "camera": "h9e10uDEKfpv9ynz0lVb2qV6mU0JWBFo",
+            "directorRemarks": "IGAWdl3Es5RrLgyH9i4ajUkUtSb0r93ahSGrTw4FdyI8LrrNZKoUMm2UxYI1WAtn",
             "duration": 8,
-            "importance": "j",
-            "movement": "GCFRzT8wBg8IcHNb",
-            "movementTowards": "5aZIpGgl",
+            "importance": "a",
+            "movement": "eyTbCDikPoMSt1fM",
+            "movementTowards": "RSEoqq5F",
+            "number": 0,
+            "operatorRemarks": "24MleLCrrSRUBN9j9KKiSYaZqYU3UelhkOUSTpNKrTHTCjMdXs4ybJ1g03bJmyMY",
+            "pname": "lb0pKgQm1dP2uTMfqlAdzDkBQDLwgBK0",
+            "type": "6",
+          },
+          Object {
+            "camera": "ipMvOIoliM5guD7jRCUsvP1cLnfL0FI9",
+            "directorRemarks": "ppi8BYURzhM67Qg15qjyTeuiqih79vTnp1X2T2ZVhzm1qJR7eRnvtsL03hdEe3pa",
+            "duration": 1,
+            "importance": "D",
+            "movement": "AJ6E1afGyDWOriF7",
+            "movementTowards": "uoxixgKE",
+            "number": 1,
+            "operatorRemarks": "bmsgCKGHXzzqFCQrQ1m43VGmOdRQsgekGwq4HDCVOO9k0VoBtxXMwfIFva1xe6KJ",
+            "pname": "t72crIQICSbjsxwMpgbdcaUTJfQghobI",
+            "type": "Q",
+          },
+          Object {
+            "camera": "f8Bol9P7N6SfYNR6mTfWbKj3oh3k0bnc",
+            "directorRemarks": "6zdA4Dfeqil0p987y7yJF9Ce2qwU0c5oPJXsDIOmXn8ZxtAq2Pk3cX0nTcg9KkEn",
+            "duration": 1,
+            "importance": "s",
+            "movement": "idfdbjBrAqLWs5Rm",
+            "movementTowards": "3cCjebdu",
             "number": 2,
-            "operatorRemarks": "VbzCkF2eEXiZIXHwZlGQEGKl0LbmXiKBbRqguKyIzhPCntarIY8GK1ZQNVuWkevz",
-            "pname": "dHC7zUrapYwtc3G7BgKsfkNW0NVA74kX",
-            "type": "V",
+            "operatorRemarks": "xakzYkK8Lqrjhn3vADF4ACgDunAZzVMuoDmk0jZkZkMIrtR56akUp83qV4f4OJT8",
+            "pname": "NdfmepJ8zVMgvbePeC1WaPfCpE3voyDk",
+            "type": "k",
           },
         ],
         "shot": 1,
@@ -336,7 +336,7 @@ exports[` direct a test   can increase number : Before manual edits 1`] = `
         
       </span>
       <br />
-      cv5ORQke7w6T4WTKKwBrA436dhyMSeFE
+      t72crIQICSbjsxwMpgbdcaUTJfQghobI
     </div>
   </div>
   <div
@@ -453,7 +453,7 @@ exports[` direct a test   can increase number : reduced to 0 1`] = `
         
       </span>
       <br />
-      RAAOUh6Udwzimhlv9WbMO03pwHhdLKKi
+      lb0pKgQm1dP2uTMfqlAdzDkBQDLwgBK0
     </div>
   </div>
   <div
@@ -576,7 +576,7 @@ exports[` direct a test   can increase number : reduced to 1 1`] = `
         
       </span>
       <br />
-      cv5ORQke7w6T4WTKKwBrA436dhyMSeFE
+      t72crIQICSbjsxwMpgbdcaUTJfQghobI
     </div>
   </div>
   <div
@@ -699,7 +699,7 @@ exports[` direct a test   can increase number : regardless of many increases the
         
       </span>
       <br />
-      dHC7zUrapYwtc3G7BgKsfkNW0NVA74kX
+      NdfmepJ8zVMgvbePeC1WaPfCpE3voyDk
     </div>
   </div>
   <div
@@ -822,7 +822,7 @@ exports[` direct a test   can increase number : stays at 0 because thats minimum
         
       </span>
       <br />
-      RAAOUh6Udwzimhlv9WbMO03pwHhdLKKi
+      lb0pKgQm1dP2uTMfqlAdzDkBQDLwgBK0
     </div>
   </div>
   <div

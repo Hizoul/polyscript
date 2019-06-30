@@ -14,6 +14,7 @@ import { BackendClient, DbStore, toJS } from "isofw-shared/src/util/xpfwdata"
 import { ProjectForm, ProjectProgram, ProjectShot } from "isofw-shared/src/xpfwDefs/project"
 import * as MockDate from "mockdate"
 import * as React from "react"
+import { random } from "isofw-shared/src/util/predictableRandomness"
 MockDate.set(new Date(4, 2, 0))
 
 BackendClient.client = FeathersClient
@@ -34,6 +35,7 @@ const directorTest = (Component: any) => {
       console.log("Server patch Projects")
       const projectId = projectResults[0]._id
       BenchmarkStore.programSize = 3
+      random.setSeed(42)
       const patchRes = await appRef.app.service(val.service.project).patch(projectId, {
         [String(ProjectShot.title)]: 1,
         [String(ProjectProgram.title)]: makeRandomProgram()
