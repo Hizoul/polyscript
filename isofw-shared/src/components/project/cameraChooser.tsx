@@ -13,7 +13,6 @@ const togglePop = (schema: ExtendedJSONSchema, mapTo?: string, prefix?: string, 
     FormStore.setValue(mapTo, newValue, prependPrefix(prefix, popupVisibilityKey))
   }
 }
-const untypedDbStore: any = DbStore
 
 const setValueWithPreset = (schema: ExtendedJSONSchema, mapTo?: any, prefix?: string) => {
   if (mapTo == null) { mapTo = getMapTo(schema, mapTo)}
@@ -22,7 +21,7 @@ const setValueWithPreset = (schema: ExtendedJSONSchema, mapTo?: any, prefix?: st
     FormStore.setValue(getMapTo(schema, mapTo), newValue, prefix)
     FormStore.setValue(PresetAssistantForm.title, {}, prependPrefix(freePresetKey, prefix))
     FormStore.setValue(PresetCameraField.title, newValue, creationPrefix)
-    FormStore.setValue(PresetProjectField.title, untypedDbStore.currentlyEditing[prefix == null ? "" : prefix], creationPrefix)
+    FormStore.setValue(PresetProjectField.title, DbStore.currentlyEditing.edit, creationPrefix)
     const freeId: any = yield DbStore.create(PresetAssistantForm, undefined, prependPrefix(freePresetKey, prefix))
     mapTo = mapTo.substring(0, mapTo.indexOf("]") + 1)
     FormStore.setValue(`${prependPrefix(mapTo, prefix)}.${ShotPreset.title}`, freeId)

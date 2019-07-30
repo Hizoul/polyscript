@@ -1,6 +1,7 @@
 import { BlockTitle, Card, CardContent, CardHeader, Icon, List, ListItem, Popup, Row } from "framework7-react"
 import useCameraChooser from "isofw-shared/src/components/project/cameraChooser"
 import val from "isofw-shared/src/globals/val"
+import { DbStore, MailField, toJS } from "isofw-shared/src/util/xpfwdata"
 import { FormStore, IFieldProps } from "isofw-shared/src/util/xpfwform"
 import { ProjectCameras, ProjectName } from "isofw-shared/src/xpfwDefs/project"
 import NameDisplayer from "isofw-web/src/components/displayName"
@@ -8,7 +9,6 @@ import { get } from "lodash"
 import { observer } from "mobx-react-lite"
 import * as React from "react"
 import "../style.sass"
-import { MailField } from "isofw-shared/src/util/xpfwdata"
 
 const CameraChooser: React.FunctionComponent<IFieldProps & {inHeader?: boolean}> = observer((props) => {
   const chooserHelper = useCameraChooser(props.schema, props.mapTo, props.prefix)
@@ -44,7 +44,7 @@ const CameraChooser: React.FunctionComponent<IFieldProps & {inHeader?: boolean}>
           }}>
                 <div slot="title">
                   <NameDisplayer collection={val.service.camera} id={camera} getNameFrom={String(ProjectName.title)} /> -&nbsp;
-                  {chooserHelper.operators[camera].map((operatorId: any) => 
+                  {chooserHelper.operators[camera].map((operatorId: any) =>
                     <NameDisplayer collection={val.service.user} id={operatorId} getNameFrom={String(MailField.title)} />)}
                 </div>
                 <div slot="inner">
