@@ -1,3 +1,4 @@
+import * as HtmlWebpackPlugin from "html-webpack-plugin"
 import * as path from "path"
 import * as webpack from "webpack"
 
@@ -10,6 +11,10 @@ const webpackConfig: webpack.Configuration = {
     path: path.resolve(__dirname, "webpackDist/app")
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      title: "PolyScript",
+      template: "index.html"
+    })
   ],
   module: {
     rules: [
@@ -70,6 +75,18 @@ const webpackConfig: webpack.Configuration = {
   node: {
     dgram: "empty",
     net: "empty"
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          maxSize: 100000,
+          name: false,
+          chunks: "all"
+        }
+      }
+    }
   }
 }
 
