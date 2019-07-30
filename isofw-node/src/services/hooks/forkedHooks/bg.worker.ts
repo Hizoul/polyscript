@@ -12,12 +12,13 @@ export interface BgQueueEntry {
 console.log("Background Hook Worker starting")
 const init = async () => {
   const db = await connectMongo()
-  const queue = new Queue<BgQueueEntry>((entry) => {
+  const queue = new Queue<BgQueueEntry>(async (entry) => {
     try {
       switch (entry.data.type) {
         case "afterProjectPatch": {
           if (entry.data.projectId != null) {
-            handleProjectHooksNative(db, entry.data.projectId)
+            const result: any = await handleProjectHooksNative(db, entry.data.projectId)
+            self.postMessage(result, "hookResult")
             entry.resolve()
           }
           return Promise.resolve()

@@ -7,8 +7,10 @@ const realTimeUpdate: any = (app: feathers.Application) => {
       app.channel(val.channel.realtime)
     ]
   }
+  app.service(val.service.project).publish("updated", publisher)
   app.service(val.service.project).publish("patched", publisher)
   app.service(val.service.preset).publish("patched", publisher)
+  app.service(val.service.preset).publish("updated", publisher)
   app.on("login", (payload, { connection }) => {
     if (connection) {
       app.channel(val.channel.realtime).join(connection)

@@ -1,6 +1,7 @@
 import cameraApi, { cameraCommand } from "isofw-shared/src/cameraApi"
 import { getPresetDataUE70 } from "isofw-shared/src/cameraApi/ue70"
 import val from "isofw-shared/src/globals/val"
+import promiseTimeout from "isofw-shared/src/util/promiseTimeout"
 import { CameraIp } from "isofw-shared/src/xpfwDefs/camera"
 import {
   EMPTY_PRESET, PresetActionTypeField, PresetCameraField,
@@ -12,7 +13,6 @@ import {
 import { ProjectCameras, ProjectProgram, ProjectShot, ShotCamera, ShotNumber, ShotPreset } from "isofw-shared/src/xpfwDefs/project"
 import { get } from "lodash"
 import { Collection, Db, ObjectId } from "mongodb"
-import promiseTimeout from "isofw-shared/src/util/promiseTimeout"
 
 const camerasPreset: {[index: string]: string | undefined} = {}
 
@@ -103,8 +103,11 @@ const ensureShotNumber = async (projectCollection: Collection, project: any) => 
     }
     if (needToPushFix) {
       await projectCollection.updateOne({_id: project._id}, {$set: {[String(ProjectProgram.title)] : program}})
+      return true
     }
+    return false
   }
+  return false
 }
 
 const freeProjectPresets = async (db: Db, project: any) => {
@@ -132,14 +135,18 @@ const freeProjectPresets = async (db: Db, project: any) => {
       $set: {[String(PresetProjectField.title)]: EMPTY_PRESET}
     })
   }
+  return presets
 }
 
 const handleProjectHooksNative = async (db: Db, projectId: string) => {
   const projectCol = db.collection(val.service.project)
   const project = await projectCol.findOne({_id: new ObjectId(projectId)})
-  await activateNextPresets(db, project)
-  await ensureShotNumber(projectCol, project)
-  await freeProjectPresets(db, project)
+  const nextPresetsRes = await activateNextPresets(db, project)
+  const ensureShotNumberRes = await ensureShotNumber(projectCol, project)
+  const freeProjectPresetsRes = await freeProjectPresets(db, project)
+  return {
+    nextPresetsRes, projectChanged: ensureShotNumberRes, freeProjectPresetsRes, projectId
+  }
 }
 
 export default handleProjectHooksNative

@@ -1,8 +1,8 @@
 import { List } from "framework7-react"
-import { getMapToFromProps, IFieldProps, SharedField, useArray, useFieldWithValidation } from "isofw-shared/src/util/xpfwform"
+import { FormStore, getMapToFromProps, IFieldProps, SharedField, useArray, useFieldWithValidation } from "isofw-shared/src/util/xpfwform"
 import {
   ShotCamera, ShotDuration, ShotImportance, ShotMovement,
-  ShotMovementTowards, ShotName, ShotPreset, ShotRemarksDirector, ShotRemarksOperator, ShotType
+  ShotMovementTowards, ShotName, ShotNumber, ShotPreset, ShotRemarksDirector, ShotRemarksOperator, ShotType
 } from "isofw-shared/src/xpfwDefs/project"
 import WebButton from "isofw-web/src/components/button"
 import I18n from "isofw-web/src/components/i18n"
@@ -13,7 +13,7 @@ import { FixedSizeList } from "react-window"
 import "../style.sass"
 
 const fieldsToConvert = [ShotName, ShotType, ShotMovement, ShotMovementTowards,
-  ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset, ShotImportance]
+  ShotDuration, ShotRemarksDirector, ShotRemarksOperator, ShotCamera, ShotPreset, ShotImportance, ShotNumber]
 
 const ProgramObject: React.FunctionComponent<IFieldProps & {
   decreaseSize: any
@@ -30,6 +30,10 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
     newField.label = field.title
     newField.title = `${mapTo}.${field.title}`
     convertedFields.push(newField)
+  }
+  const shotNum = FormStore.getValue(convertedFields[10].title, props.prefix)
+  if (shotNum == null || shotNum !== props.index + 1) {
+    FormStore.setValue(convertedFields[10].title, props.index + 1, props.prefix)
   }
   let classes = "flex "
   let attentionItem: any
@@ -56,7 +60,7 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
             />
             <div className="centerText">
               {attentionItem}
-              {get(props, "index", -1)}
+              {get(props, "index", -2) + 1}
               {attentionItem}
             </div>
             <WebButton
@@ -90,6 +94,9 @@ const ProgramObject: React.FunctionComponent<IFieldProps & {
 }
 
 const ProgramObjectListItem = (props: any) => {
+  if (props.index >= props.data.fields.length) {
+    return (<div style={{height: "67px", width: "100%"}}/>)
+  }
   return (
     <ProgramObject
       style={props.style}
@@ -114,7 +121,7 @@ const ProgramArray: React.FunctionComponent<IFieldProps> = observer((props) => {
         width={get(global, "window.innerWidth", 500)}
         itemSize={67}
         itemData={{fields: arrayHelper.fields, props}}
-        itemCount={arrayHelper.length}
+        itemCount={arrayHelper.length + 3}
         useIsScrolling={true}
       >
         {ProgramObjectListItem}
