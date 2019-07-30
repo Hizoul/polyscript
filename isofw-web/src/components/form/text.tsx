@@ -60,7 +60,7 @@ const F7TextField: React.FunctionComponent<IFieldProps> = (props) => {
       type={type}
       id={get(props, "id")}
       className={get(props, "className")}
-      value={value}
+      value={value == null ? "" : value}
       label={i18n.t(get(props, "schema.label", get(props, "schema.title")))}
       step={step}
       min={min}
