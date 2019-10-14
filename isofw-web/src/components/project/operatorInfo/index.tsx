@@ -64,7 +64,7 @@ const OperatorInfo: React.FunctionComponent<IEditHookProps> = observer((props) =
         <tbody>
           {operatorHelper.filteredList.map((item: any) => {
             i++
-            return <TablePresetItem item={item} key={i} currentShot={operatorHelper.currentShot} />
+            return <TablePresetItem item={item} key={i} currentShot={(operatorHelper.currentShot + 1)} />
           })}
         </tbody>
       </table>
