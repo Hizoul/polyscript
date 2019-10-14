@@ -10,7 +10,7 @@ const fixProjectShots = async (hook: HookContext, app: Application, project: any
   if (program != null && Array.isArray(program)) {
     for (let i = 0; i < program.length; i++) {
       let programEntry = program[i]
-      const newNumber = i
+      const newNumber = i + 1
       if (programEntry == null) {
         programEntry = {}
         program[i] = programEntry
