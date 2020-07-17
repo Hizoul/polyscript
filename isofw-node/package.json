@@ -26,7 +26,7 @@
     "feathers-memory": "^3.0.2",
     "feathers-mongodb": "^4.0.4",
     "feathers-nedb": "^4.0.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "mongodb": "^3.2.7",
     "nedb": "^1.8.0",
