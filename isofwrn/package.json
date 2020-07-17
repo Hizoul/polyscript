@@ -18,7 +18,7 @@
     "base-64": "^0.1.0",
     "buffer": "^5.2.1",
     "fast-json-patch": "^2.1.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "metro-react-native-babel-preset": "^0.54.1",
     "mobx": "^5.10.1",
     "mobx-react-lite": "^1.4.0",
