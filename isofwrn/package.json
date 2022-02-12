@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@hawkingnetwork/react-native-tcp": "^3.3.2",
-    "ajv": "^6.10.0",
+    "ajv": "^6.12.3",
     "base-64": "^0.1.0",
     "buffer": "^5.2.1",
     "fast-json-patch": "^2.1.0",
