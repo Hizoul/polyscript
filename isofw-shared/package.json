@@ -22,7 +22,7 @@
     "mobx": "5",
     "mobx-react-lite": "^1.4.0",
     "mockdate": "^2.0.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "pako": "^1.0.10",
     "query-string": "^6.7.0",
     "react": "^16.8.6",
